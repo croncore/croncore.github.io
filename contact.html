@@ -40,6 +40,22 @@
     }
     </script>
 
+    <!-- Schema.org - ContactPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact Croncore Sales",
+        "description": "Get in touch with Croncore's sales team for enterprise AI solutions.",
+        "url": "https://www.croncore.com/contact.html",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "Croncore",
+            "url": "https://www.croncore.com"
+        }
+    }
+    </script>
+
     <!-- Schema.org - Organization (minimal) -->
     <script type="application/ld+json">
     {
@@ -47,7 +63,7 @@
         "@type": "Organization",
         "name": "Croncore",
         "url": "https://www.croncore.com",
-        "logo": "https://www.croncore.com/images/kk6.png",
+        "logo": "https://www.croncore.com/images/croncore-logo.png",
         "contactPoint": {
             "@type": "ContactPoint",
             "contactType": "sales",
@@ -62,8 +78,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <!-- Favicon & Icons -->
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/croncore-icon.png">
     <meta name="theme-color" content="#0A0E17">
 
     <!-- Stylesheet -->
@@ -85,16 +102,15 @@
                 <a href="index.html" class="nav-brand" aria-label="Croncore Home">
                     <img src="images/croncore-logo.png" alt="Croncore" class="nav-brand-img" width="56" height="56" loading="eager">
                 </a>
-                <div class="nav-menu" id="navMenu">
+                <div class="nav-pill">
+                    <a href="index.html" class="nav-link">Home</a>
                     <a href="index.html#services" class="nav-link">Services</a>
                     <a href="index.html#features" class="nav-link">Features</a>
                     <a href="index.html#about" class="nav-link">About</a>
                     <a href="index.html#testimonials" class="nav-link">Testimonials</a>
-                    <a href="index.html#process" class="nav-link">Process</a>
                     <a href="index.html#faq" class="nav-link">FAQ</a>
                 </div>
                 <div class="nav-actions">
-                    <a href="index.html" class="btn btn-ghost btn-sm">Home</a>
                     <a href="#contactForm" class="btn btn-glow btn-sm">
                         Get Started
                         <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -108,12 +124,12 @@
 
         <!-- Mobile overlay -->
         <div class="nav-mobile-overlay" id="mobileNav" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+            <a href="index.html">Home</a>
             <a href="index.html#services">Services</a>
             <a href="index.html#features">Features</a>
             <a href="index.html#about">About</a>
             <a href="index.html#testimonials">Testimonials</a>
             <a href="index.html#faq">FAQ</a>
-            <a href="index.html" class="btn btn-glow" style="margin-top:12px;">Back to Home</a>
         </div>
 
         <!-- ===== CONTACT PAGE ===== -->
@@ -242,7 +258,7 @@
                     </nav>
                 </div>
                 <div class="footer-bottom">
-                    <span>&copy; 2025 CRONCORE. All rights reserved.</span>
+                    <span>&copy; 2025&ndash;2026 Croncore LLC. All rights reserved.</span>
                     <div class="footer-bottom-links">
                         <a href="#">Privacy Policy</a>
                         <a href="#">Terms of Service</a>

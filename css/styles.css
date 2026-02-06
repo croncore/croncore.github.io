@@ -1272,9 +1272,33 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     font-weight: 800; letter-spacing: -0.02em;
     color: var(--text-white); margin-bottom: 18px;
 }
+.cta-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 16px 6px 12px;
+    background: var(--accent-subtle);
+    border: 1px solid var(--border-accent);
+    border-radius: var(--r-full);
+    font-family: var(--font-mono);
+    font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--text-accent); margin-bottom: 28px;
+}
 .cta-box p {
     font-size: 1.05rem; color: var(--text-secondary);
-    max-width: 500px; margin: 0 auto 36px;
+    max-width: 520px; margin: 0 auto 32px;
+}
+.cta-actions {
+    display: flex; align-items: center; justify-content: center; gap: 16px;
+    margin-bottom: 32px; flex-wrap: wrap;
+}
+.cta-trust {
+    display: flex; align-items: center; justify-content: center; gap: 24px;
+    flex-wrap: wrap;
+}
+.cta-trust-item {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 0.78rem; color: var(--text-muted);
+    font-family: var(--font-mono);
 }
 
 /* ========================================
@@ -1454,30 +1478,67 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     .about-grid { grid-template-columns: 1fr; gap: 48px; }
     .about-visual-wrap { max-width: 520px; margin: 0 auto; }
     .about-float-badge { display: none; }
+    .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
     .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 768px) {
+    .container { padding: 0 20px; }
     .nav-pill { display: none; }
     .nav-actions .btn-ghost { display: none; }
     .nav-hamburger { display: flex; }
-    .hero { padding: 120px 0 80px; }
+    .hero { padding: 110px 0 70px; }
     .hero h1 { font-size: 2.2rem; }
-    .hero-metrics { flex-wrap: wrap; gap: 24px; }
+    .hero-sub { font-size: 1rem; max-width: 100%; }
+    .hero-metrics { flex-wrap: wrap; gap: 24px; margin-top: 40px; }
+    .hero-metric-val { font-size: 1.6rem; }
+    .section-heading { font-size: clamp(1.5rem, 4vw, 2rem); }
+    .intro-text { font-size: clamp(1.1rem, 2.5vw, 1.4rem); }
+    .intro-highlights { gap: 12px; }
+    .intro-highlight { padding: 8px 16px; font-size: 0.8rem; }
     .features-grid { grid-template-columns: 1fr; }
+    .svc-card { padding: 32px; }
+    .ai-dash-metrics { grid-template-columns: 1fr; gap: 10px; }
+    .ai-dash-metric-value { font-size: 1.1rem; }
+    .about-features { gap: 10px; }
+    .about-feature { font-size: 0.82rem; }
     .testimonials-grid { grid-template-columns: 1fr; }
+    .testi-card { padding: 28px; }
     .process-grid { grid-template-columns: 1fr; gap: 40px; }
     .process-grid::before { display: none; }
     .blog-grid { grid-template-columns: 1fr; }
+    .cta-box { padding: 48px 24px; }
+    .cta-box h2 { font-size: clamp(1.4rem, 4vw, 2rem); }
+    .cta-actions { flex-direction: column; align-items: stretch; }
+    .cta-trust { flex-direction: column; gap: 10px; align-items: center; }
     .footer-grid { grid-template-columns: 1fr; gap: 32px; }
     .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
-    .cta-box { padding: 56px 28px; }
     .about-stats-grid { grid-template-columns: 1fr 1fr; }
     .contact-form { grid-template-columns: 1fr; }
     .form-actions { justify-content: stretch; }
     .form-actions .btn { width: 100%; }
 }
 @media (max-width: 480px) {
+    .container { padding: 0 16px; }
+    .hero { padding: 100px 0 60px; }
+    .hero h1 { font-size: 1.8rem; }
+    .hero-sub { font-size: 0.92rem; }
     .hero-buttons { flex-direction: column; align-items: stretch; }
-    .hero-metrics { gap: 20px; }
-    .hero-social-proof { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .hero-metrics { gap: 16px; margin-top: 32px; padding-top: 24px; }
+    .hero-metric-val { font-size: 1.4rem; }
+    .hero-social-proof { flex-direction: column; align-items: flex-start; gap: 10px; padding: 10px 14px; }
+    .hero-proof-divider { display: none; }
+    .section-heading { font-size: 1.35rem; }
+    .section-heading br { display: none; }
+    .about-stats-grid { grid-template-columns: 1fr; }
+    .about-stat { padding: 18px; }
+    .testi-card { padding: 24px; }
+    .testi-card blockquote { font-size: 0.88rem; }
+    .svc-card { padding: 28px; }
+    .blog-card-body { padding: 20px; }
+    .cta-box { padding: 40px 20px; border-radius: 20px; }
+    .faq-q { padding: 18px; font-size: 0.88rem; }
+    .faq-a p { padding: 0 18px 18px; }
+    .intro-highlights { flex-direction: column; align-items: center; }
+    .intro-bg-logo { width: 300px; height: 300px; }
+    .nav-brand-img { height: 44px; }
 }
