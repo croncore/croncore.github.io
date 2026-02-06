@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Primary SEO -->
+    <title>Contact Sales — Croncore | Enterprise AI Solutions</title>
+    <meta name="description" content="Get in touch with Croncore's sales team. Discover how our AI solutions — generative AI, conversational agents, workflow automation — can drive measurable impact for your business.">
+    <meta name="keywords" content="contact Croncore, AI solutions inquiry, enterprise AI consultation, AI consulting, business automation quote">
+    <meta name="author" content="Croncore">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.croncore.com/contact.html">
+
+    <!-- Open Graph -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Croncore">
+    <meta property="og:url" content="https://www.croncore.com/contact.html">
+    <meta property="og:title" content="Contact Sales — Croncore AI Solutions">
+    <meta property="og:description" content="Connect with our sales team to explore tailored AI strategies for your business.">
+    <meta property="og:image" content="https://www.croncore.com/images/og-cover.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@croncore">
+    <meta name="twitter:title" content="Contact Sales — Croncore">
+    <meta name="twitter:description" content="Connect with our sales team to explore tailored AI strategies for your business.">
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.croncore.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Contact Sales", "item": "https://www.croncore.com/contact.html" }
+        ]
+    }
+    </script>
+
+    <!-- Schema.org - Organization (minimal) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Croncore",
+        "url": "https://www.croncore.com",
+        "logo": "https://www.croncore.com/images/kk6.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "url": "https://www.croncore.com/contact.html",
+            "availableLanguage": "English"
+        }
+    }
+    </script>
+
+    <!-- Preconnect & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta name="theme-color" content="#0A0E17">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Background layers -->
+    <canvas id="neuralCanvas" aria-hidden="true"></canvas>
+    <div class="bg-radial-top" aria-hidden="true"></div>
+    <div class="bg-radial-bottom" aria-hidden="true"></div>
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <div class="page-content">
+
+        <!-- ===== NAVIGATION ===== -->
+        <nav class="nav" id="navbar" role="navigation" aria-label="Primary navigation">
+            <div class="container nav-inner">
+                <a href="index.html" class="nav-brand" aria-label="Croncore Home">
+                    <img src="images/croncore-logo.png" alt="Croncore" class="nav-brand-img" width="56" height="56" loading="eager">
+                </a>
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html#services" class="nav-link">Services</a>
+                    <a href="index.html#features" class="nav-link">Features</a>
+                    <a href="index.html#about" class="nav-link">About</a>
+                    <a href="index.html#testimonials" class="nav-link">Testimonials</a>
+                    <a href="index.html#process" class="nav-link">Process</a>
+                    <a href="index.html#faq" class="nav-link">FAQ</a>
+                </div>
+                <div class="nav-actions">
+                    <a href="index.html" class="btn btn-ghost btn-sm">Home</a>
+                    <a href="#contactForm" class="btn btn-glow btn-sm">
+                        Get Started
+                        <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                        <i></i><i></i><i></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile overlay -->
+        <div class="nav-mobile-overlay" id="mobileNav" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+            <a href="index.html#services">Services</a>
+            <a href="index.html#features">Features</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#testimonials">Testimonials</a>
+            <a href="index.html#faq">FAQ</a>
+            <a href="index.html" class="btn btn-glow" style="margin-top:12px;">Back to Home</a>
+        </div>
+
+        <!-- ===== CONTACT PAGE ===== -->
+        <main class="contact-page">
+            <div class="container">
+                <div class="contact-header reveal">
+                    <div class="section-tag"><span class="tag-pulse"></span> Contact Sales</div>
+                    <h1>Let's build something<br>extraordinary together</h1>
+                    <p>Discover how Croncore AI solutions can drive measurable impact for your business. Connect with our sales team to explore tailored strategies for optimizing customer interactions.</p>
+                </div>
+
+                <!-- Replace YOUR_FORM_ID with your actual Formspree form ID -->
+                <form id="contactForm" class="contact-form reveal" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+                    <div class="form-group">
+                        <input type="text" name="fullName" class="form-input" placeholder="Full Name *" required>
+                        <p class="form-error">This field is required.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-input" placeholder="Email Address *" required>
+                        <p class="form-error">Please enter a valid email address.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="industry" class="form-input" placeholder="Industry *" required>
+                        <p class="form-error">This field is required.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="country" class="form-input" placeholder="Country *" required>
+                        <p class="form-error">This field is required.</p>
+                    </div>
+
+                    <div class="form-group form-group-select">
+                        <select name="contactVolume" class="form-select" required>
+                            <option value="">Monthly Contact Volume *</option>
+                            <option value="0-1000">0 - 1,000</option>
+                            <option value="1000-10000">1,000 - 10,000</option>
+                            <option value="10000+">10,000+</option>
+                        </select>
+                        <p class="form-error">This field is required.</p>
+                    </div>
+
+                    <div class="form-group form-group-select">
+                        <select name="customerBase" class="form-select" required>
+                            <option value="">Size of Customer Base *</option>
+                            <option value="small">Small</option>
+                            <option value="medium">Medium</option>
+                            <option value="large">Large</option>
+                        </select>
+                        <p class="form-error">This field is required.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="role" class="form-input" placeholder="Role *" required>
+                        <p class="form-error">This field is required.</p>
+                    </div>
+
+                    <div class="form-group form-group-select">
+                        <select name="revenue" class="form-select" required>
+                            <option value="">Revenue *</option>
+                            <option value="under-1m">Under $1M</option>
+                            <option value="1m-10m">$1M - $10M</option>
+                            <option value="10m+">$10M+</option>
+                        </select>
+                        <p class="form-error">This field is required.</p>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <textarea name="message" class="form-textarea" placeholder="Enquiry / Message *" required></textarea>
+                        <p class="form-error">This field is required.</p>
+                    </div>
+
+                    <p class="form-privacy">
+                        We are committed to your privacy. Croncore uses the information you give us to contact you about our relevant content, products and services. For more information, see our <a href="#">Privacy Policy</a>.
+                    </p>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-glow btn-submit">
+                            <span class="btn-text">Contact Sales</span>
+                            <span class="spinner"></span>
+                            <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer" role="contentinfo">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="footer-brand-logo">
+                            <img src="images/croncore-logo.png" alt="Croncore" width="56" height="56" loading="lazy">
+                        </div>
+                        <p>AI-powered solutions for automation and business growth. Empowering companies with intelligent technology that delivers real results.</p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Instagram" rel="noopener noreferrer" target="_blank"><img src="images/insta.png" alt="Instagram" width="16" height="16"></a>
+                            <a href="#" aria-label="Facebook" rel="noopener noreferrer" target="_blank"><img src="images/fb.png" alt="Facebook" width="16" height="16"></a>
+                            <a href="#" aria-label="YouTube" rel="noopener noreferrer" target="_blank"><img src="images/yt.png" alt="YouTube" width="16" height="16"></a>
+                        </div>
+                    </div>
+                    <nav class="footer-col" aria-label="Quick links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html#about">About Us</a></li>
+                            <li><a href="index.html#services">Services</a></li>
+                            <li><a href="index.html#features">Features</a></li>
+                            <li><a href="index.html#team">Team</a></li>
+                            <li><a href="index.html#testimonials">Testimonials</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="footer-col" aria-label="Services">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="index.html#services">Generative AI</a></li>
+                            <li><a href="index.html#services">Conversational Agents</a></li>
+                            <li><a href="index.html#services">Workflow Automations</a></li>
+                            <li><a href="index.html#services">LLM Integrations</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="footer-col" aria-label="Social links">
+                        <h4>Follow Us</h4>
+                        <ul>
+                            <li><a href="#" rel="noopener noreferrer" target="_blank">Instagram</a></li>
+                            <li><a href="#" rel="noopener noreferrer" target="_blank">Twitter / X</a></li>
+                            <li><a href="#" rel="noopener noreferrer" target="_blank">Facebook</a></li>
+                            <li><a href="#" rel="noopener noreferrer" target="_blank">LinkedIn</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer-bottom">
+                    <span>&copy; 2025 CRONCORE. All rights reserved.</span>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Settings</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
