@@ -141,7 +141,7 @@
                 <a href="/" class="nav-brand" aria-label="Croncore Home">
                     <img src="images/croncore-logo.png" alt="Croncore" class="nav-brand-img" width="56" height="56" loading="eager">
                 </a>
-                <div class="nav-menu" id="navMenu">
+                <div class="nav-pill">
                     <a href="#services" class="nav-link">Services</a>
                     <a href="#features" class="nav-link">Features</a>
                     <a href="#about" class="nav-link">About</a>
@@ -181,26 +181,42 @@
                         <!-- Social proof -->
                         <div class="hero-social-proof">
                             <div class="hero-avatars">
-                                <img src="images/alex.png" alt="Client" width="40" height="40" loading="eager">
-                                <img src="images/john.png" alt="Client" width="40" height="40" loading="eager">
-                                <img src="images/t1.png" alt="Client" width="40" height="40" loading="eager">
+                                <div class="hero-avatar-ring">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                </div>
+                                <div class="hero-avatar-ring">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-secondary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                </div>
+                                <div class="hero-avatar-ring">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                </div>
+                                <div class="hero-avatar-count">+200</div>
                             </div>
+                            <div class="hero-proof-divider"></div>
                             <div class="hero-proof-info">
                                 <div class="hero-stars">
-                                    ★★★★★ <span>4.7 / 5</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <span>4.9</span>
                                 </div>
-                                <div class="hero-proof-text">200+ businesses scale</div>
+                                <div class="hero-proof-text">Trusted by 200+ businesses worldwide</div>
                             </div>
                         </div>
 
-                        <h1>Make technology your advantage with <span class="text-glow">AI solutions</span></h1>
-                        <p class="hero-sub">Seamlessly integrate AI throughout your organisation to deliver a true technology advantage — from generative AI to autonomous agents.</p>
+                        <h1>Enterprise AI that <span class="text-glow">delivers results</span>, not just promises</h1>
+                        <p class="hero-sub">We architect production-ready AI systems — generative models, autonomous agents, and intelligent workflows — that integrate seamlessly and scale with your business.</p>
                         <div class="hero-buttons">
                             <a href="contact.html" class="btn btn-glow">
                                 Schedule a Briefing
                                 <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                             </a>
-                            <a href="#services" class="btn btn-ghost">Explore Services</a>
+                            <a href="#services" class="btn btn-ghost">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                                Explore Services
+                            </a>
                         </div>
                         <div class="hero-metrics">
                             <div class="hero-metric">
@@ -230,25 +246,33 @@
                                 <span class="terminal-title">croncore-ai — main</span>
                             </div>
                             <div class="terminal-body">
-                                <div class="terminal-line"><span class="terminal-prompt">$</span><span class="terminal-cmd">croncore init --project enterprise-ai</span></div>
-                                <div class="terminal-line"><span class="terminal-comment">// Initializing AI pipeline...</span></div>
-                                <div class="terminal-line"><span class="terminal-keyword">import</span> <span class="terminal-cmd">{ GenerativeAI } </span><span class="terminal-keyword">from</span> <span class="terminal-string">'@croncore/ai'</span></div>
-                                <div class="terminal-line"><span class="terminal-keyword">import</span> <span class="terminal-cmd">{ Agent } </span><span class="terminal-keyword">from</span> <span class="terminal-string">'@croncore/agents'</span></div>
-                                <div class="terminal-line"><span class="terminal-comment">// Deploying conversational agent...</span></div>
-                                <div class="terminal-line"><span class="terminal-keyword">const</span> <span class="terminal-cmd">agent = </span><span class="terminal-keyword">await</span> <span class="terminal-cmd">Agent.deploy({</span></div>
-                                <div class="terminal-line"><span class="terminal-cmd">&nbsp;&nbsp;model: </span><span class="terminal-string">'croncore-v2'</span><span class="terminal-cmd">,</span></div>
-                                <div class="terminal-line"><span class="terminal-cmd">&nbsp;&nbsp;mode: </span><span class="terminal-string">'autonomous'</span> <span class="terminal-cmd">})</span><span class="terminal-cursor"></span></div>
+                                <div class="terminal-line"><span class="terminal-prompt">$</span><span class="terminal-cmd">croncore deploy --env production</span></div>
+                                <div class="terminal-line"><span class="terminal-comment">✓ Connected to Croncore Cloud</span></div>
+                                <div class="terminal-line"><span class="terminal-comment">✓ Loading AI models...</span></div>
+                                <div class="terminal-line">&nbsp;</div>
+                                <div class="terminal-line"><span class="terminal-keyword">const</span> <span class="terminal-cmd">pipeline = </span><span class="terminal-keyword">new</span> <span class="terminal-cmd">CroncorePipeline({</span></div>
+                                <div class="terminal-line"><span class="terminal-cmd">&nbsp;&nbsp;agents: </span><span class="terminal-string">'customer-support'</span><span class="terminal-cmd">,</span></div>
+                                <div class="terminal-line"><span class="terminal-cmd">&nbsp;&nbsp;llm: </span><span class="terminal-string">'gpt-4o'</span><span class="terminal-cmd">,</span></div>
+                                <div class="terminal-line"><span class="terminal-cmd">&nbsp;&nbsp;workflows: [</span><span class="terminal-string">'lead-scoring'</span><span class="terminal-cmd">, </span><span class="terminal-string">'auto-response'</span><span class="terminal-cmd">]</span></div>
+                                <div class="terminal-line"><span class="terminal-cmd">})</span></div>
+                                <div class="terminal-line">&nbsp;</div>
+                                <div class="terminal-line"><span class="terminal-comment">✓ 3 agents deployed — latency 42ms</span></div>
+                                <div class="terminal-line"><span class="terminal-comment">✓ Pipeline live at </span><span class="terminal-string">croncore.com/api</span><span class="terminal-cursor"></span></div>
                             </div>
                         </div>
                         <div class="terminal-float-badge top-right">
-                            <div class="float-badge-icon" style="background:rgba(0,230,118,0.1);">&#9889;</div>
+                            <div class="float-badge-icon" style="background:rgba(0,230,118,0.1);">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00E676" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                            </div>
                             <div class="float-badge-info">
                                 <div class="fb-title">Pipeline Active</div>
                                 <div class="fb-desc">14 automations running</div>
                             </div>
                         </div>
                         <div class="terminal-float-badge bottom-left">
-                            <div class="float-badge-icon" style="background:rgba(0,212,255,0.1);">&#129504;</div>
+                            <div class="float-badge-icon" style="background:rgba(0,212,255,0.1);">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00D4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.57-3.25 3.92L12 10v2"/><path d="M8 6a4 4 0 0 1 .68-2.24"/><path d="M15.32 3.76A4 4 0 0 1 16 6c0 1.57-.9 2.93-2.21 3.6"/><path d="M8.68 9.6A4.01 4.01 0 0 1 8 6"/><circle cx="12" cy="17" r="3"/><path d="M12 20v2"/><path d="M8.5 15.5L7 14"/><path d="M15.5 15.5L17 14"/></svg>
+                            </div>
                             <div class="float-badge-info">
                                 <div class="fb-title">Model Accuracy</div>
                                 <div class="fb-desc">98.7% — Production</div>
@@ -295,7 +319,7 @@
                 <div class="services-grid">
                     <article class="svc-card reveal" aria-label="Generative AI service">
                         <span class="svc-num">01</span>
-                        <div class="svc-icon">&#127912;</div>
+                        <div class="svc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
                         <h3>Generative AI</h3>
                         <p>Our AI-driven solutions generate high-quality text, images, and multimedia at scale — helping you create content faster and smarter than ever.</p>
                         <div class="svc-tags">
@@ -306,7 +330,7 @@
                     </article>
                     <article class="svc-card reveal" aria-label="Conversational Agents service">
                         <span class="svc-num">02</span>
-                        <div class="svc-icon">&#128172;</div>
+                        <div class="svc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/></svg></div>
                         <h3>Conversational Agents</h3>
                         <p>Unlock efficiency and supercharge your customer service with intelligent AI agents that understand context and drive meaningful engagement.</p>
                         <div class="svc-tags">
@@ -317,7 +341,7 @@
                     </article>
                     <article class="svc-card reveal" aria-label="Workflow Automations service">
                         <span class="svc-num">03</span>
-                        <div class="svc-icon">&#9881;&#65039;</div>
+                        <div class="svc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
                         <h3>Workflow Automations</h3>
                         <p>We automate repetitive tasks to improve operational efficiency, boost productivity, reduce human errors, and save valuable time across teams.</p>
                         <div class="svc-tags">
@@ -328,7 +352,7 @@
                     </article>
                     <article class="svc-card reveal" aria-label="LLM Integrations service">
                         <span class="svc-num">04</span>
-                        <div class="svc-icon">&#129504;</div>
+                        <div class="svc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44A2.5 2.5 0 0 1 2 17.5v-1A2.5 2.5 0 0 1 4.5 14h15a2.5 2.5 0 0 1 0 5h-1a2.5 2.5 0 0 1-2.44-1.96A2.5 2.5 0 0 1 14 14.5V4.5A2.5 2.5 0 0 1 16.5 2h1A2.5 2.5 0 0 1 20 4.5v1a2.5 2.5 0 0 1-5 0v-1A2.5 2.5 0 0 1 12 2h-2.5z"/></svg></div>
                         <h3>LLM Integrations</h3>
                         <p>Leverage advanced generative LLMs to improve decision-making, streamline operations, and surface actionable insights from your data.</p>
                         <div class="svc-tags">
@@ -343,8 +367,28 @@
 
         <!-- ===== INTRODUCTION ===== -->
         <section class="introduction reveal" aria-label="Introduction">
+            <div class="intro-bg-logo" aria-hidden="true">
+                <img src="images/croncore-icon.png" alt="" width="500" height="500" loading="lazy">
+            </div>
             <div class="container">
-                <p class="intro-text">At Croncore, we don't just build AI — we <strong>architect intelligent systems</strong> that transform how businesses operate. Our solutions blend cutting-edge research with <strong>real-world business needs</strong>, delivering technology that works from day one and scales as you grow.</p>
+                <div class="intro-tag">
+                    <span class="tag-pulse"></span> Our Philosophy
+                </div>
+                <p class="intro-text">We don't just build AI — we <strong>architect intelligent systems</strong> that transform how businesses operate. Our solutions blend cutting-edge research with <strong>real-world business needs</strong>, delivering technology that works from day one and scales as you grow.</p>
+                <div class="intro-highlights">
+                    <div class="intro-highlight">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Research-Driven AI</span>
+                    </div>
+                    <div class="intro-highlight">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Production-Ready from Day One</span>
+                    </div>
+                    <div class="intro-highlight">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Built to Scale</span>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -358,32 +402,32 @@
                 </div>
                 <div class="features-grid">
                     <article class="feat-card reveal">
-                        <div class="feat-icon">&#127911;</div>
+                        <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div>
                         <h3>AI for Customer Service</h3>
                         <p>Boost efficiency and empower your support team with AI-powered routing, sentiment analysis, and instant resolution.</p>
                     </article>
                     <article class="feat-card reveal">
-                        <div class="feat-icon">&#128200;</div>
+                        <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
                         <h3>AI for Finance</h3>
                         <p>Enhance financial success with data-driven forecasting, anomaly detection, and intelligent automation.</p>
                     </article>
                     <article class="feat-card reveal">
-                        <div class="feat-icon">&#127919;</div>
+                        <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
                         <h3>AI for Marketing</h3>
                         <p>Deliver tailored customer experiences at scale with AI-powered campaigns, personalization, and audience insights.</p>
                     </article>
                     <article class="feat-card reveal">
-                        <div class="feat-icon">&#128260;</div>
+                        <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="14" y1="4" x2="10" y2="20"/></svg></div>
                         <h3>AI for App Modernization</h3>
                         <p>Upgrade existing applications with AI capabilities, hybrid cloud integration, and modern architecture patterns.</p>
                     </article>
                     <article class="feat-card reveal">
-                        <div class="feat-icon">&#128101;</div>
+                        <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
                         <h3>AI for Human Resources</h3>
                         <p>Transform HR with AI-driven recruiting, employee engagement analytics, and automated workflows.</p>
                     </article>
                     <article class="feat-card reveal">
-                        <div class="feat-icon">&#128421;&#65039;</div>
+                        <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
                         <h3>AI for IT Operations</h3>
                         <p>Reduce costs and improve uptime with AI-driven monitoring, predictive maintenance, and AIOps automation.</p>
                     </article>
@@ -395,32 +439,173 @@
         <section class="about" id="about" aria-label="About Croncore">
             <div class="container">
                 <div class="about-grid">
-                    <div class="about-image-wrap reveal">
+                    <div class="about-visual-wrap reveal">
                         <div class="about-image-glow" aria-hidden="true"></div>
-                        <img src="images/zalan.jpg" alt="Croncore team working on AI solutions" width="500" height="500" loading="lazy">
+                        <!-- AI Dashboard Visual -->
+                        <div class="ai-dashboard">
+                            <div class="ai-dash-bar">
+                                <div class="ai-dash-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <span class="ai-dash-title">Croncore AI Dashboard</span>
+                                <div class="ai-dash-status">
+                                    <span class="ai-dash-status-dot"></span> Live
+                                </div>
+                            </div>
+                            <div class="ai-dash-body">
+                                <!-- Top metrics row -->
+                                <div class="ai-dash-metrics">
+                                    <div class="ai-dash-metric">
+                                        <div class="ai-dash-metric-label">Model Accuracy</div>
+                                        <div class="ai-dash-metric-value accent">98.7%</div>
+                                        <div class="ai-dash-metric-bar"><div class="ai-dash-metric-fill" style="width:98.7%;background:var(--accent);"></div></div>
+                                    </div>
+                                    <div class="ai-dash-metric">
+                                        <div class="ai-dash-metric-label">Throughput</div>
+                                        <div class="ai-dash-metric-value purple">1.2K/s</div>
+                                        <div class="ai-dash-metric-bar"><div class="ai-dash-metric-fill" style="width:78%;background:var(--accent-secondary);"></div></div>
+                                    </div>
+                                    <div class="ai-dash-metric">
+                                        <div class="ai-dash-metric-label">Latency</div>
+                                        <div class="ai-dash-metric-value green">42ms</div>
+                                        <div class="ai-dash-metric-bar"><div class="ai-dash-metric-fill" style="width:15%;background:var(--accent-success);"></div></div>
+                                    </div>
+                                </div>
+                                <!-- Neural network visualization -->
+                                <div class="ai-dash-neural">
+                                    <div class="ai-dash-neural-label">Neural Pipeline — Active</div>
+                                    <svg class="ai-neural-svg" viewBox="0 0 320 120" fill="none">
+                                        <!-- Connection lines -->
+                                        <line x1="40" y1="30" x2="120" y2="20" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+                                        <line x1="40" y1="30" x2="120" y2="60" stroke="rgba(0,212,255,0.3)" stroke-width="1"/>
+                                        <line x1="40" y1="30" x2="120" y2="100" stroke="rgba(0,212,255,0.15)" stroke-width="1"/>
+                                        <line x1="40" y1="60" x2="120" y2="20" stroke="rgba(0,212,255,0.15)" stroke-width="1"/>
+                                        <line x1="40" y1="60" x2="120" y2="60" stroke="rgba(0,212,255,0.3)" stroke-width="1"/>
+                                        <line x1="40" y1="60" x2="120" y2="100" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+                                        <line x1="40" y1="90" x2="120" y2="20" stroke="rgba(0,212,255,0.1)" stroke-width="1"/>
+                                        <line x1="40" y1="90" x2="120" y2="60" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+                                        <line x1="40" y1="90" x2="120" y2="100" stroke="rgba(0,212,255,0.3)" stroke-width="1"/>
+                                        <line x1="120" y1="20" x2="200" y2="30" stroke="rgba(123,97,255,0.2)" stroke-width="1"/>
+                                        <line x1="120" y1="20" x2="200" y2="90" stroke="rgba(123,97,255,0.15)" stroke-width="1"/>
+                                        <line x1="120" y1="60" x2="200" y2="30" stroke="rgba(123,97,255,0.3)" stroke-width="1"/>
+                                        <line x1="120" y1="60" x2="200" y2="90" stroke="rgba(123,97,255,0.3)" stroke-width="1"/>
+                                        <line x1="120" y1="100" x2="200" y2="30" stroke="rgba(123,97,255,0.15)" stroke-width="1"/>
+                                        <line x1="120" y1="100" x2="200" y2="90" stroke="rgba(123,97,255,0.2)" stroke-width="1"/>
+                                        <line x1="200" y1="30" x2="280" y2="60" stroke="rgba(0,230,118,0.3)" stroke-width="1"/>
+                                        <line x1="200" y1="90" x2="280" y2="60" stroke="rgba(0,230,118,0.3)" stroke-width="1"/>
+                                        <!-- Input layer nodes -->
+                                        <circle cx="40" cy="30" r="6" fill="var(--bg-card)" stroke="var(--accent)" stroke-width="1.5" class="ai-node"/>
+                                        <circle cx="40" cy="60" r="6" fill="var(--bg-card)" stroke="var(--accent)" stroke-width="1.5" class="ai-node"/>
+                                        <circle cx="40" cy="90" r="6" fill="var(--bg-card)" stroke="var(--accent)" stroke-width="1.5" class="ai-node"/>
+                                        <!-- Hidden layer nodes -->
+                                        <circle cx="120" cy="20" r="6" fill="var(--bg-card)" stroke="var(--accent-secondary)" stroke-width="1.5" class="ai-node"/>
+                                        <circle cx="120" cy="60" r="8" fill="var(--bg-card)" stroke="var(--accent-secondary)" stroke-width="1.5" class="ai-node ai-node-lg"/>
+                                        <circle cx="120" cy="100" r="6" fill="var(--bg-card)" stroke="var(--accent-secondary)" stroke-width="1.5" class="ai-node"/>
+                                        <!-- Hidden layer 2 nodes -->
+                                        <circle cx="200" cy="30" r="6" fill="var(--bg-card)" stroke="var(--accent-secondary)" stroke-width="1.5" class="ai-node"/>
+                                        <circle cx="200" cy="90" r="6" fill="var(--bg-card)" stroke="var(--accent-secondary)" stroke-width="1.5" class="ai-node"/>
+                                        <!-- Output node -->
+                                        <circle cx="280" cy="60" r="9" fill="var(--bg-card)" stroke="var(--accent-success)" stroke-width="2" class="ai-node ai-node-out"/>
+                                        <!-- Layer labels -->
+                                        <text x="40" y="112" fill="rgba(139,143,167,0.6)" font-size="8" text-anchor="middle" font-family="var(--font-mono)">Input</text>
+                                        <text x="160" y="112" fill="rgba(139,143,167,0.6)" font-size="8" text-anchor="middle" font-family="var(--font-mono)">Hidden Layers</text>
+                                        <text x="280" y="112" fill="rgba(139,143,167,0.6)" font-size="8" text-anchor="middle" font-family="var(--font-mono)">Output</text>
+                                    </svg>
+                                </div>
+                                <!-- Bottom row: agent statuses -->
+                                <div class="ai-dash-agents">
+                                    <div class="ai-dash-agent">
+                                        <div class="ai-dash-agent-dot green"></div>
+                                        <span class="ai-dash-agent-name">Lead Scoring</span>
+                                        <span class="ai-dash-agent-status">Active</span>
+                                    </div>
+                                    <div class="ai-dash-agent">
+                                        <div class="ai-dash-agent-dot green"></div>
+                                        <span class="ai-dash-agent-name">Auto-Response</span>
+                                        <span class="ai-dash-agent-status">Active</span>
+                                    </div>
+                                    <div class="ai-dash-agent">
+                                        <div class="ai-dash-agent-dot blue"></div>
+                                        <span class="ai-dash-agent-name">Sentiment</span>
+                                        <span class="ai-dash-agent-status">Training</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Floating badges -->
+                        <div class="about-float-badge about-badge-top">
+                            <div class="about-badge-icon" style="background:rgba(0,230,118,0.1);">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00E676" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            </div>
+                            <div class="about-badge-text">
+                                <span class="about-badge-title">Systems Online</span>
+                                <span class="about-badge-desc">All services operational</span>
+                            </div>
+                        </div>
+                        <div class="about-float-badge about-badge-bottom">
+                            <div class="about-badge-icon" style="background:rgba(0,212,255,0.1);">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00D4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                            </div>
+                            <div class="about-badge-text">
+                                <span class="about-badge-title">99.9% Uptime</span>
+                                <span class="about-badge-desc">Enterprise-grade reliability</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="about-content reveal">
                         <div class="section-tag"><span class="tag-pulse"></span> About Us</div>
                         <h2 class="section-heading">Learn more about our journey &amp; AI expertise</h2>
                         <p class="section-desc">Croncore is an AI-powered platform designed to help businesses streamline and optimize their growth. With advanced automation, predictive analytics, and intelligent lead management, we empower companies to attract, nurture, and convert prospects into loyal clients.</p>
+                        <div class="about-features">
+                            <div class="about-feature">
+                                <div class="about-feature-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                                </div>
+                                <span>End-to-end AI pipeline — from ideation to production deployment</span>
+                            </div>
+                            <div class="about-feature">
+                                <div class="about-feature-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-secondary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                                </div>
+                                <span>Enterprise-grade infrastructure with 99.9% uptime SLA</span>
+                            </div>
+                            <div class="about-feature">
+                                <div class="about-feature-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                </div>
+                                <span>SOC 2 compliant with bank-level data encryption</span>
+                            </div>
+                        </div>
                         <a href="contact.html" class="btn btn-glow" style="margin-top:8px;">
                             Get Started
                             <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
                         <div class="about-stats-grid">
                             <div class="about-stat">
+                                <div class="stat-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                                </div>
                                 <div class="stat-v"><span class="counter" data-target="50">0</span>K+</div>
                                 <div class="stat-l">Active Projects</div>
                             </div>
                             <div class="about-stat">
+                                <div class="stat-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-secondary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                                </div>
                                 <div class="stat-v"><span class="counter" data-target="100">0</span>K+</div>
                                 <div class="stat-l">Successful Conversions</div>
                             </div>
                             <div class="about-stat">
+                                <div class="stat-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-success)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                </div>
                                 <div class="stat-v"><span class="counter" data-target="20">0</span>K+</div>
                                 <div class="stat-l">Satisfied Clients</div>
                             </div>
                             <div class="about-stat">
+                                <div class="stat-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-warm)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9c.37.56.61 1.22.6 1.91V12"/></svg>
+                                </div>
                                 <div class="stat-v"><span class="counter" data-target="10">0</span>M+</div>
                                 <div class="stat-l">AI-Powered Decisions</div>
                             </div>
@@ -435,40 +620,67 @@
             <div class="container">
                 <div class="testimonials-top reveal">
                     <div class="section-tag"><span class="tag-pulse"></span> Testimonials</div>
-                    <h2 class="section-heading">What our happy clients say<br>about our services</h2>
+                    <h2 class="section-heading">Trusted by teams building<br>the future with AI</h2>
                     <p class="section-desc">Real results from real businesses powered by Croncore AI.</p>
                 </div>
                 <div class="testimonials-grid">
                     <article class="testi-card reveal">
-                        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div class="testi-stars">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <div class="testi-badge">Workflow Automation</div>
                         <blockquote>"Croncore transformed our workflow with powerful AI automation — generating real results and saving us countless hours every single week."</blockquote>
                         <div class="testi-author">
-                            <img src="images/t1.png" alt="Ahmed" class="testi-avatar" width="40" height="40" loading="lazy">
+                            <div class="testi-avatar-icon" style="border-color:rgba(0,212,255,0.3);">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            </div>
                             <div>
-                                <div class="testi-name">Ahmed</div>
-                                <div class="testi-handle">@Zed_Exotices</div>
+                                <div class="testi-name">Ahmed K.</div>
+                                <div class="testi-role">CEO, Zed Exotics</div>
                             </div>
                         </div>
                     </article>
                     <article class="testi-card reveal">
-                        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div class="testi-stars">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <div class="testi-badge">LLM Integration</div>
                         <blockquote>"From automating repetitive tasks to integrating advanced LLMs, Croncore optimized our entire operation — cutting errors and boosting efficiency."</blockquote>
                         <div class="testi-author">
-                            <img src="images/t2.jpg" alt="David Bluman" class="testi-avatar" width="40" height="40" loading="lazy">
+                            <div class="testi-avatar-icon" style="border-color:rgba(123,97,255,0.3);">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-secondary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            </div>
                             <div>
-                                <div class="testi-name">David Bluman</div>
-                                <div class="testi-handle">@blumandav</div>
+                                <div class="testi-name">David B.</div>
+                                <div class="testi-role">CTO, Bluman Ventures</div>
                             </div>
                         </div>
                     </article>
                     <article class="testi-card reveal">
-                        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div class="testi-stars">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <div class="testi-badge">Conversational AI</div>
                         <blockquote>"Croncore is our go-to AI partner — whether it's conversational bots, custom workflows, or actionable insights, it empowers our team daily."</blockquote>
                         <div class="testi-author">
-                            <img src="images/t3.jpg" alt="Vascore" class="testi-avatar" width="40" height="40" loading="lazy">
+                            <div class="testi-avatar-icon" style="border-color:rgba(0,230,118,0.3);">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            </div>
                             <div>
-                                <div class="testi-name">Vascore</div>
-                                <div class="testi-handle">@vascoreis</div>
+                                <div class="testi-name">Marcus R.</div>
+                                <div class="testi-role">Head of Ops, Vascore</div>
                             </div>
                         </div>
                     </article>
@@ -637,11 +849,6 @@
                             Get Started
                             <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
-                        <div class="footer-social">
-                            <a href="#" aria-label="Instagram" rel="noopener noreferrer" target="_blank"><img src="images/insta.png" alt="Instagram" width="16" height="16"></a>
-                            <a href="#" aria-label="Facebook" rel="noopener noreferrer" target="_blank"><img src="images/fb.png" alt="Facebook" width="16" height="16"></a>
-                            <a href="#" aria-label="YouTube" rel="noopener noreferrer" target="_blank"><img src="images/yt.png" alt="YouTube" width="16" height="16"></a>
-                        </div>
                     </div>
                     <nav class="footer-col" aria-label="Quick links">
                         <h4>Quick Links</h4>

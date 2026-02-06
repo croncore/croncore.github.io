@@ -65,13 +65,39 @@
     }
 
     /* ========================================
-       NAVBAR SCROLL
+       NAVBAR SCROLL + ACTIVE LINK
     ======================================== */
     const nav = document.getElementById('navbar');
     if (nav) {
-        window.addEventListener('scroll', function () {
+        var navLinks = nav.querySelectorAll('.nav-link');
+        var sections = [];
+        navLinks.forEach(function (link) {
+            var href = link.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                var sec = document.querySelector(href);
+                if (sec) sections.push({ el: sec, link: link });
+            }
+        });
+
+        function updateNav() {
             nav.classList.toggle('is-scrolled', window.scrollY > 60);
-        }, { passive: true });
+
+            if (sections.length) {
+                var scrollPos = window.scrollY + nav.offsetHeight + 80;
+                var activeLink = null;
+                for (var i = sections.length - 1; i >= 0; i--) {
+                    if (scrollPos >= sections[i].el.offsetTop) {
+                        activeLink = sections[i].link;
+                        break;
+                    }
+                }
+                navLinks.forEach(function (l) { l.classList.remove('active'); });
+                if (activeLink) activeLink.classList.add('active');
+            }
+        }
+
+        window.addEventListener('scroll', updateNav, { passive: true });
+        updateNav();
     }
 
     /* ========================================
