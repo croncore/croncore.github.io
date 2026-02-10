@@ -2,72 +2,172 @@
     'use strict';
 
     /* ========================================
-       NEURAL NETWORK CANVAS
+       THEME TOGGLE
     ======================================== */
-    const canvas = document.getElementById('neuralCanvas');
+    var STORAGE_KEY = 'croncore-theme';
+    var themeToggle = document.getElementById('themeToggle');
+    var metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+    function getPreferredTheme() {
+        var stored = localStorage.getItem(STORAGE_KEY);
+        if (stored) return stored;
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+            return 'light';
+        }
+        return 'dark';
+    }
+
+    function applyTheme(theme) {
+        if (theme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            if (metaThemeColor) metaThemeColor.setAttribute('content', '#FFFFFF');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+            if (metaThemeColor) metaThemeColor.setAttribute('content', '#0A0E17');
+        }
+    }
+
+    var currentTheme = getPreferredTheme();
+    applyTheme(currentTheme);
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function () {
+            var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+            var newTheme = isLight ? 'dark' : 'light';
+            applyTheme(newTheme);
+            localStorage.setItem(STORAGE_KEY, newTheme);
+            if (typeof updateCanvasColors === 'function') {
+                updateCanvasColors(newTheme);
+            }
+        });
+    }
+
+    if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function (e) {
+            if (!localStorage.getItem(STORAGE_KEY)) {
+                applyTheme(e.matches ? 'light' : 'dark');
+            }
+        });
+    }
+
+    /* ========================================
+       NEURAL NETWORK CANVAS (OPTIMIZED)
+    ======================================== */
+    var canvas = document.getElementById('neuralCanvas');
     if (canvas) {
-        const ctx = canvas.getContext('2d');
-        let nodes = [];
-        let w, h;
-        const NODE_COUNT = 60;
-        const CONNECTION_DIST = 180;
+        var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var isMobile = window.innerWidth <= 768;
+        var isSmallScreen = window.innerWidth <= 480;
 
-        function resize() {
-            w = canvas.width = window.innerWidth;
-            h = canvas.height = window.innerHeight;
-        }
-        window.addEventListener('resize', resize);
-        resize();
+        if (isSmallScreen || prefersReducedMotion) {
+            canvas.style.display = 'none';
+        } else {
+            var ctx = canvas.getContext('2d');
+            var nodes = [];
+            var w, h;
+            var animationId = null;
+            var isPageVisible = true;
 
-        for (let i = 0; i < NODE_COUNT; i++) {
-            nodes.push({
-                x: Math.random() * w,
-                y: Math.random() * h,
-                vx: (Math.random() - 0.5) * 0.4,
-                vy: (Math.random() - 0.5) * 0.4,
-                r: Math.random() * 2 + 1
-            });
-        }
+            var NODE_COUNT = isMobile ? 30 : 60;
+            var CONNECTION_DIST = isMobile ? 150 : 180;
+            var connDistSq = CONNECTION_DIST * CONNECTION_DIST;
 
-        function animateNetwork() {
-            ctx.clearRect(0, 0, w, h);
-            for (let i = 0; i < nodes.length; i++) {
-                const n = nodes[i];
-                n.x += n.vx;
-                n.y += n.vy;
-                if (n.x < 0 || n.x > w) n.vx *= -1;
-                if (n.y < 0 || n.y > h) n.vy *= -1;
+            // Theme-aware canvas colors
+            var canvasNodeColor = 'rgba(0, 212, 255, 0.3)';
+            var canvasLineColorBase = [0, 212, 255];
 
-                for (let j = i + 1; j < nodes.length; j++) {
-                    const m = nodes[j];
-                    const dx = n.x - m.x;
-                    const dy = n.y - m.y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-                    if (dist < CONNECTION_DIST) {
-                        const alpha = (1 - dist / CONNECTION_DIST) * 0.15;
-                        ctx.beginPath();
-                        ctx.moveTo(n.x, n.y);
-                        ctx.lineTo(m.x, m.y);
-                        ctx.strokeStyle = 'rgba(0, 212, 255, ' + alpha + ')';
-                        ctx.lineWidth = 0.5;
-                        ctx.stroke();
+            window.updateCanvasColors = function (theme) {
+                if (theme === 'light') {
+                    canvasNodeColor = 'rgba(59, 130, 217, 0.35)';
+                    canvasLineColorBase = [59, 130, 217];
+                } else {
+                    canvasNodeColor = 'rgba(0, 212, 255, 0.3)';
+                    canvasLineColorBase = [0, 212, 255];
+                }
+            };
+
+            if (document.documentElement.getAttribute('data-theme') === 'light') {
+                updateCanvasColors('light');
+            }
+
+            function resize() {
+                w = canvas.width = window.innerWidth;
+                h = canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            for (var i = 0; i < NODE_COUNT; i++) {
+                nodes.push({
+                    x: Math.random() * w,
+                    y: Math.random() * h,
+                    vx: (Math.random() - 0.5) * 0.4,
+                    vy: (Math.random() - 0.5) * 0.4,
+                    r: Math.random() * 2 + 1
+                });
+            }
+
+            function animateNetwork() {
+                if (!isPageVisible) return;
+
+                ctx.clearRect(0, 0, w, h);
+
+                for (var i = 0; i < nodes.length; i++) {
+                    var n = nodes[i];
+                    n.x += n.vx;
+                    n.y += n.vy;
+                    if (n.x < 0 || n.x > w) n.vx *= -1;
+                    if (n.y < 0 || n.y > h) n.vy *= -1;
+
+                    for (var j = i + 1; j < nodes.length; j++) {
+                        var m = nodes[j];
+                        var dx = n.x - m.x;
+                        var dy = n.y - m.y;
+                        var distSq = dx * dx + dy * dy;
+                        if (distSq < connDistSq) {
+                            var dist = Math.sqrt(distSq);
+                            var alpha = (1 - dist / CONNECTION_DIST) * 0.15;
+                            ctx.beginPath();
+                            ctx.moveTo(n.x, n.y);
+                            ctx.lineTo(m.x, m.y);
+                            ctx.strokeStyle = 'rgba(' + canvasLineColorBase[0] + ',' + canvasLineColorBase[1] + ',' + canvasLineColorBase[2] + ',' + alpha + ')';
+                            ctx.lineWidth = 0.5;
+                            ctx.stroke();
+                        }
+                    }
+
+                    ctx.beginPath();
+                    ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+                    ctx.fillStyle = canvasNodeColor;
+                    ctx.fill();
+                }
+                animationId = requestAnimationFrame(animateNetwork);
+            }
+
+            // Pause when tab is hidden
+            document.addEventListener('visibilitychange', function () {
+                if (document.hidden) {
+                    isPageVisible = false;
+                    if (animationId) {
+                        cancelAnimationFrame(animationId);
+                        animationId = null;
+                    }
+                } else {
+                    isPageVisible = true;
+                    if (!animationId) {
+                        animateNetwork();
                     }
                 }
+            });
 
-                ctx.beginPath();
-                ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(0, 212, 255, 0.3)';
-                ctx.fill();
-            }
-            requestAnimationFrame(animateNetwork);
+            animateNetwork();
         }
-        animateNetwork();
     }
 
     /* ========================================
        NAVBAR SCROLL + ACTIVE LINK
     ======================================== */
-    const nav = document.getElementById('navbar');
+    var nav = document.getElementById('navbar');
     if (nav) {
         var navLinks = nav.querySelectorAll('.nav-link');
         var sections = [];
@@ -103,22 +203,32 @@
     /* ========================================
        MOBILE MENU
     ======================================== */
-    const hamburger = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobileNav');
+    var hamburger = document.getElementById('hamburger');
+    var mobileNav = document.getElementById('mobileNav');
     if (hamburger && mobileNav) {
+        function closeMenu() {
+            hamburger.classList.remove('open');
+            mobileNav.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+
         hamburger.addEventListener('click', function () {
-            const isOpen = hamburger.classList.toggle('open');
+            var isOpen = hamburger.classList.toggle('open');
             mobileNav.classList.toggle('open');
             hamburger.setAttribute('aria-expanded', isOpen);
             document.body.style.overflow = isOpen ? 'hidden' : '';
         });
+
+        // Close button inside overlay
+        var closeBtn = document.getElementById('mobileCloseBtn');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closeMenu);
+        }
+
+        // Close on link click
         mobileNav.querySelectorAll('a').forEach(function (link) {
-            link.addEventListener('click', function () {
-                hamburger.classList.remove('open');
-                mobileNav.classList.remove('open');
-                hamburger.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = '';
-            });
+            link.addEventListener('click', closeMenu);
         });
     }
 
