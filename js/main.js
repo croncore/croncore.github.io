@@ -427,6 +427,34 @@
     }
 
     /* ========================================
+       CASE STUDIES FILTER
+    ======================================== */
+    var csFilterBtns = document.querySelectorAll('.cs-filter-btn');
+    var csCards = document.querySelectorAll('.cs-card');
+
+    if (csFilterBtns.length && csCards.length) {
+        csFilterBtns.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var filter = btn.getAttribute('data-filter');
+
+                // Update active state
+                csFilterBtns.forEach(function (b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+
+                // Show/hide cards
+                csCards.forEach(function (card) {
+                    var cat = card.getAttribute('data-category');
+                    if (filter === 'all' || cat === filter) {
+                        card.classList.remove('cs-hidden');
+                    } else {
+                        card.classList.add('cs-hidden');
+                    }
+                });
+            });
+        });
+    }
+
+    /* ========================================
        TOAST NOTIFICATIONS
     ======================================== */
     function showToast(message, type) {
