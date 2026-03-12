@@ -8,10 +8,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="images/croncore-icon.png">
+<link rel="icon" type="image/png" href="images/favicons/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="images/favicons/favicon.svg" />
+<link rel="shortcut icon" href="images/favicons/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png" />
+<link rel="manifest" href="images/favicons/site.webmanifest" />
 <meta name="theme-color" content="#0A0E17">
-<script>(function(){var t=localStorage.getItem('croncore-theme');if(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)t='light';if(t==='light')document.documentElement.setAttribute('data-theme','light');})()</script>
+<script>(function(){var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
 <link rel="stylesheet" href="css/styles.css">
 <style>
 .cs-page{padding-top:100px}
@@ -90,18 +93,18 @@
 <div class="page-content">
 <nav class="nav" id="navbar" role="navigation" aria-label="Primary navigation">
 <div class="container nav-inner">
-<a href="index.html" class="nav-brand" aria-label="Croncore Home">
+<a href="/" class="nav-brand" aria-label="Croncore Home">
 <img src="images/croncore-logo.png" alt="Croncore" class="nav-brand-img logo-dark" width="56" height="56" loading="eager">
 <img src="images/concore-logo-light-theme.png" alt="Croncore" class="nav-brand-img logo-light" width="56" height="56" loading="eager">
 </a>
 <div class="nav-pill">
-<a href="index.html" class="nav-link">Home</a>
-<a href="index.html#services" class="nav-link">Services</a>
-<a href="index.html#case-studies" class="nav-link">Case Studies</a>
-<a href="index.html#about" class="nav-link">About</a>
+<a href="/" class="nav-link">Home</a>
+<a href="/#services" class="nav-link">Services</a>
+<a href="/#case-studies" class="nav-link">Case Studies</a>
+<a href="/#about" class="nav-link">About</a>
 </div>
 <div class="nav-actions">
-<a href="contact.html" class="btn btn-glow btn-sm">Get Started<svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+<a href="contact" class="btn btn-glow btn-sm">Contact Us<svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
 <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme">
 <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
 <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -112,10 +115,10 @@
 </nav>
 <div class="nav-mobile-overlay" id="mobileNav" role="dialog" aria-modal="true" aria-label="Mobile navigation">
 <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-<a href="index.html">Home</a>
-<a href="index.html#services">Services</a>
-<a href="index.html#case-studies">Case Studies</a>
-<a href="index.html#about">About</a>
+<a href="/">Home</a>
+<a href="/#services">Services</a>
+<a href="/#case-studies">Case Studies</a>
+<a href="/#about">About</a>
 </div>
 <main class="cs-page">
 <section class="cs-hero" aria-label="Knowles Case Study Hero">
@@ -124,7 +127,7 @@
 <div class="cs-hero-content">
 <div class="container">
 <nav class="cs-breadcrumb" aria-label="Breadcrumb">
-<a href="index.html">Home</a><span>/</span><a href="index.html#case-studies">Case Studies</a><span>/</span><span>Knowles</span>
+<a href="/">Home</a><span>/</span><a href="/#case-studies">Case Studies</a><span>/</span><span>Knowles</span>
 </nav>
 <div class="cs-hero-tags">
 <span class="cs-htag cs-htag--industry">Manufacturing</span>
@@ -205,8 +208,8 @@
 <li>Measuring productivity at the rep level enables rapid iteration and improvement.</li>
 </ul>
 <div class="cs-nav-between">
-<a href="case-study-abb.html" class="cs-nav-link"><svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>Prev: ABB</a>
-<a href="case-study-fastchain.html" class="cs-nav-link">Next: FastChain<svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+<a href="case-study-abb" class="cs-nav-link"><svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>Prev: ABB</a>
+<a href="case-study-fastchain" class="cs-nav-link">Next: FastChain<svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
 </div>
 </article>
 <aside class="cs-sidebar">
@@ -222,7 +225,7 @@
 <div class="cs-cta-card">
 <h4>Ready for similar results?</h4>
 <p>Let's design an AI strategy tailored to your operations and goals.</p>
-<a href="contact.html" class="btn btn-glow" style="width:100%;justify-content:center;">Talk to Our Team<svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+<a href="contact" class="btn btn-glow" style="width:100%;justify-content:center;">Talk to Our Team<svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
 </div>
 </aside>
 </div>
@@ -239,11 +242,11 @@
 </div>
 <p>AI-powered solutions for automation and business growth.</p>
 </div>
-<nav class="footer-col" aria-label="Quick links"><h4>Quick Links</h4><ul><li><a href="index.html#about">About Us</a></li><li><a href="index.html#services">Services</a></li><li><a href="index.html#case-studies">Case Studies</a></li></ul></nav>
-<nav class="footer-col" aria-label="Case Studies"><h4>Case Studies</h4><ul><li><a href="case-study-abb.html">ABB</a></li><li><a href="case-study-knowles.html">Knowles</a></li><li><a href="case-study-fastchain.html">FastChain</a></li><li><a href="case-study-finedge.html">FinEdge</a></li></ul></nav>
-<nav class="footer-col" aria-label="Social links"><h4>Follow Us</h4><ul><li><a href="#" target="_blank">LinkedIn</a></li><li><a href="#" target="_blank">Twitter / X</a></li></ul></nav>
+<nav class="footer-col" aria-label="Quick links"><h4>Quick Links</h4><ul><li><a href="/#about">About Us</a></li><li><a href="/#services">Services</a></li><li><a href="/#case-studies">Case Studies</a></li></ul></nav>
+<nav class="footer-col" aria-label="Case Studies"><h4>Case Studies</h4><ul><li><a href="case-study-abb">ABB</a></li><li><a href="case-study-knowles">Knowles</a></li><li><a href="case-study-fastchain">FastChain</a></li><li><a href="case-study-finedge">FinEdge</a></li></ul></nav>
+<nav class="footer-col" aria-label="Social links"><h4>Follow Us</h4><ul><li><a href="https://www.instagram.com/croncoreglobal/" rel="noopener noreferrer" target="_blank">Instagram</a></li><li><a href="https://x.com/croncore_" rel="noopener noreferrer" target="_blank">Twitter / X</a></li><li><a href="https://www.facebook.com/profile.php?id=61575159626243" rel="noopener noreferrer" target="_blank">Facebook</a></li><li><a href="https://www.linkedin.com/company/croncore/" rel="noopener noreferrer" target="_blank">LinkedIn</a></li></ul></nav>
 </div>
-<div class="footer-bottom"><span>&copy; 2025&ndash;2026 Croncore LLC. All rights reserved.</span><div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div></div>
+<div class="footer-bottom"><span>&copy; 2025&ndash;2026 Croncore LLC. All rights reserved.</span><div class="footer-bottom-links"><a href="privacy-policy">Privacy Policy</a><a href="terms">Terms of Service</a></div></div>
 </div>
 </footer>
 </div>

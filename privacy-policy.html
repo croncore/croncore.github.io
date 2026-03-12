@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Primary SEO -->
+    <title>Privacy Policy — Croncore | Enterprise AI Solutions</title>
+    <meta name="description" content="Read Croncore's Privacy Policy. Learn how we collect, use, share, and safeguard your personal data when you interact with our website and AI-driven services.">
+    <meta name="keywords" content="Croncore privacy policy, data protection, GDPR, AI data security, personal data">
+    <meta name="author" content="Croncore">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.croncore.com/privacy-policy">
+
+    <!-- Open Graph -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Croncore">
+    <meta property="og:url" content="https://www.croncore.com/privacy-policy">
+    <meta property="og:title" content="Privacy Policy — Croncore">
+    <meta property="og:description" content="How Croncore collects, uses, and safeguards your personal data.">
+    <meta property="og:image" content="https://www.croncore.com/images/og-cover.png">
+
+    <!-- Preconnect & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/png" href="images/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="images/favicons/favicon.svg" />
+    <link rel="shortcut icon" href="images/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png" />
+    <link rel="manifest" href="images/favicons/site.webmanifest" />
+    <meta name="theme-color" content="#0A0E17">
+
+    <!-- Theme flash prevention -->
+    <script>(function(){var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        /* ===== POLICY PAGE HERO ===== */
+        .policy-hero {
+            padding: 160px 20px 60px;
+            text-align: center;
+            position: relative;
+        }
+        .policy-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+            border-radius: 3px;
+        }
+        .policy-hero .section-tag {
+            margin-bottom: 20px;
+        }
+        .policy-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            letter-spacing: -0.03em;
+        }
+        .policy-hero .policy-subtitle {
+            color: var(--text-muted);
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        .policy-hero .last-updated {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 20px;
+            padding: 8px 18px;
+            background: rgba(0, 212, 255, 0.06);
+            border: 1px solid rgba(0, 212, 255, 0.12);
+            border-radius: 999px;
+            font-size: 0.82rem;
+            color: var(--accent);
+            font-weight: 600;
+            font-family: var(--font-mono);
+        }
+
+        /* ===== POLICY CONTENT ===== */
+        .policy-content {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 60px 24px 100px;
+        }
+
+        /* Section blocks */
+        .policy-section {
+            margin-bottom: 48px;
+            position: relative;
+        }
+        .policy-section h2 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .policy-section h2 .section-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(0, 212, 255, 0.08);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .policy-section h2 .section-icon svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--accent);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .policy-section h3 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 28px 0 12px;
+        }
+
+        .policy-section p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.85;
+            margin-bottom: 16px;
+        }
+
+        .policy-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0 20px;
+        }
+        .policy-section ul li {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            color: var(--text-secondary);
+            font-size: 0.97rem;
+            line-height: 1.75;
+            margin-bottom: 10px;
+        }
+        .policy-section ul li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0;
+            margin-top: 0.55rem;
+        }
+        .policy-section ul li strong {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        /* Callout box for important notices */
+        .policy-callout {
+            background: rgba(0, 212, 255, 0.04);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 12px 12px 0;
+            padding: 16px 20px;
+            margin: 20px 0;
+        }
+        .policy-callout p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+        .policy-callout strong {
+            color: var(--text-primary);
+        }
+
+        /* Back to top link */
+        .policy-back-top {
+            display: flex;
+            justify-content: center;
+            padding: 0 24px 60px;
+        }
+        .policy-back-top a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .policy-back-top a:hover {
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Table of contents */
+        .policy-toc {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .policy-toc-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px 32px;
+        }
+        .policy-toc-card h3 {
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+        .policy-toc-card ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            columns: 2;
+            column-gap: 24px;
+        }
+        .policy-toc-card ol li {
+            margin-bottom: 8px;
+            break-inside: avoid;
+        }
+        .policy-toc-card ol li a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .policy-toc-card ol li a:hover {
+            color: var(--accent);
+        }
+        .policy-toc-card ol li a .toc-num {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--accent);
+            font-weight: 600;
+            min-width: 22px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .policy-hero { padding: 130px 16px 50px; }
+            .policy-content { padding: 40px 16px 60px; }
+            .policy-toc-card ol { columns: 1; }
+            .policy-section h2 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background layers -->
+    <canvas id="neuralCanvas" aria-hidden="true"></canvas>
+    <div class="bg-radial-top" aria-hidden="true"></div>
+    <div class="bg-radial-bottom" aria-hidden="true"></div>
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <div class="page-content">
+
+        <!-- ===== NAVIGATION ===== -->
+        <nav class="nav" id="navbar" role="navigation" aria-label="Primary navigation">
+            <div class="container nav-inner">
+                <a href="/" class="nav-brand" aria-label="Croncore Home">
+                    <img src="images/croncore-logo.png" alt="Croncore" class="nav-brand-img logo-dark" width="56" height="56" loading="eager">
+                    <img src="images/concore-logo-light-theme.png" alt="Croncore" class="nav-brand-img logo-light" width="56" height="56" loading="eager">
+                </a>
+                <div class="nav-pill">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/#services" class="nav-link">Services</a>
+                    <a href="/#features" class="nav-link">Features</a>
+                    <a href="/#about" class="nav-link">About</a>
+                    <a href="/#testimonials" class="nav-link">Testimonials</a>
+                    <a href="/#faq" class="nav-link">FAQ</a>
+                </div>
+                <div class="nav-actions">
+                    <a href="contact" class="btn btn-glow btn-sm">
+                        Contact Us
+                        <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme">
+                        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    </button>
+                    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                        <i></i><i></i><i></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile overlay -->
+        <div class="nav-mobile-overlay" id="mobileNav" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+            <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <a href="/">Home</a>
+            <a href="/#services">Services</a>
+            <a href="/#features">Features</a>
+            <a href="/#about">About</a>
+            <a href="/#testimonials">Testimonials</a>
+            <a href="/#faq">FAQ</a>
+        </div>
+
+        <!-- ===== PRIVACY POLICY PAGE ===== -->
+        <main>
+            <!-- Hero -->
+            <section class="policy-hero reveal">
+                <div class="section-tag"><span class="tag-pulse"></span> Legal</div>
+                <h1>Privacy Policy</h1>
+                <p class="policy-subtitle">Privacy Policy for Croncore, LLC. We are committed to data security and transparency.</p>
+                <div class="last-updated">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    Last updated: March 12, 2026
+                </div>
+            </section>
+
+            <!-- Table of Contents -->
+            <div class="policy-toc reveal">
+                <div class="policy-toc-card">
+                    <h3>Table of Contents</h3>
+                    <ol>
+                        <li><a href="#who-we-are"><span class="toc-num">01</span> Who we are</a></li>
+                        <li><a href="#data-collect"><span class="toc-num">02</span> What personal data we collect</a></li>
+                        <li><a href="#data-use"><span class="toc-num">03</span> How we use &amp; share your data</a></li>
+                        <li><a href="#data-retention"><span class="toc-num">04</span> How long we keep your info</a></li>
+                        <li><a href="#cookies"><span class="toc-num">05</span> Cookies</a></li>
+                        <li><a href="#data-processing"><span class="toc-num">06</span> Where your data is processed</a></li>
+                        <li><a href="#your-rights"><span class="toc-num">07</span> Your rights</a></li>
+                        <li><a href="#profiling"><span class="toc-num">08</span> Profiling</a></li>
+                        <li><a href="#data-security"><span class="toc-num">09</span> Data security</a></li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Policy Content -->
+            <div class="policy-content">
+
+                <p>In accordance with U.S. Data Protection Laws (including Delaware's personal data privacy acts) and the GDPR, Croncore, LLC is committed to data security and transparency. This Privacy Policy explains how we collect, use, share, and safeguard your personal data when you interact with our website and our AI-driven services.</p>
+
+                <!-- Section 1 -->
+                <section class="policy-section" id="who-we-are">
+                    <h2>
+                        <span class="section-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+                        Who we are
+                    </h2>
+                    <p>Croncore, LLC is an AI innovation and research firm incorporated in Delaware, USA. We focus on building transparent, controllable AI systems, including AI agents and generative AI integrations.</p>
+                    <p>We act as the data controller for the personal data collected through croncore.com. This website serves as a platform to showcase our research and connect with potential partners.</p>
+                    <p>This Privacy Policy is part of our Terms of Use. We update it periodically; please review it from time to time. For questions, contact us via the communication channels provided on our site.</p>
+                </section>
+
+                <!-- Section 2 -->
+                <section class="policy-section" id="data-collect">
+                    <h2>
+                        <span class="section-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span>
+                        What personal data we collect
+                    </h2>
+                    <p>We collect data necessary to provide AI consulting services and conduct professional marketing activities.</p>
+
+                    <h3>Information you provide directly</h3>
+                    <ul>
+                        <li><strong>Contact Details:</strong> Name, professional email, and phone number.</li>
+                        <li><strong>Professional Info:</strong> Company name, job title, and industry.</li>
+                        <li><strong>Inquiries:</strong> Content of communications regarding AI transformation or legacy modernization.</li>
+                        <li><strong>Recruitment:</strong> CVs and professional details when applying for open research or engineering roles.</li>
+                    </ul>
+
+                    <h3>Information we collect automatically</h3>
+                    <ul>
+                        <li><strong>Technical Data:</strong> IP address, browser type/version, and device information.</li>
+                        <li><strong>Analytics:</strong> Page views, navigation patterns, and referral sources.</li>
+                        <li><strong>Cookies:</strong> Data collected through tracking technologies to optimize site performance.</li>
+                    </ul>
+                </section>
+
+                <!-- Section 3 -->
+                <section class="policy-section" id="data-use">
+                    <h2>
+                        <span class="section-icon"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></span>
+                        How we use and share your personal information
+                    </h2>
+                    <p>We process your data to deliver AI solutions and maintain professional relationships. Your data may be shared with:</p>
+                    <ul>
+                        <li><strong>Affiliates:</strong> Croncore subsidiaries or partners involved in project delivery.</li>
+                        <li><strong>Service Providers:</strong> Third-party vendors for hosting, secure cloud computing, or analytics.</li>
+                    </ul>
+                    <div class="policy-callout">
+                        <p><strong>Non-sharing Policy:</strong> Croncore, LLC does not sell or disclose your personal data to third parties for their marketing purposes. We do not use your proprietary business data to train our general-purpose models without a separate, explicit agreement.</p>
+                    </div>
+                </section>
+
+                <!-- Section 4 -->
+                <section class="policy-section" id="data-retention">
+                    <h2>
+                        <span class="section-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+                        How long we keep your information
+                    </h2>
+                    <ul>
+                        <li><strong>Business Leads:</strong> If no relationship is established, data is typically kept for one year for analytics and potential follow-up.</li>
+                        <li><strong>Client Data:</strong> Retained for the duration of the contract plus any period required by U.S. law for tax and legal records.</li>
+                        <li><strong>Requests:</strong> Upon a valid deletion request, we will remove your data unless legal obligations require retention.</li>
+                    </ul>
+                </section>
+
+                <!-- Section 5 -->
+                <section class="policy-section" id="cookies">
+                    <h2>
+                        <span class="section-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1010 10 4 4 0 01-5-5 4 4 0 01-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg></span>
+                        Cookies
+                    </h2>
+                    <p>We use cookies to personalize your experience and understand site usage.</p>
+                    <ul>
+                        <li><strong>Functional Cookies:</strong> Ensure the website and AI demos load correctly.</li>
+                        <li><strong>Analytics Cookies:</strong> Help us identify which research topics are most relevant to our visitors.</li>
+                        <li><strong>Management:</strong> You can adjust your browser settings at any time to block or delete cookies.</li>
+                    </ul>
+                </section>
+
+                <!-- Section 6 -->
+                <section class="policy-section" id="data-processing">
+                    <h2>
+                        <span class="section-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></span>
+                        Where your data is processed
+                    </h2>
+                    <p>Your data is primarily processed in the United States. As a Delaware LLC, we adhere to U.S. data standards. For users in the EU, we ensure that any cross-border transfers are governed by Standard Contractual Clauses (SCCs) to maintain GDPR-equivalent protections.</p>
+                </section>
+
+                <!-- Section 7 -->
+                <section class="policy-section" id="your-rights">
+                    <h2>
+                        <span class="section-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+                        Your rights
+                    </h2>
+                    <p>Depending on your location, you may have the following rights regarding your data:</p>
+                    <ul>
+                        <li><strong>Right to Access &amp; Rectification:</strong> Request a copy of your data or correct inaccuracies.</li>
+                        <li><strong>Right to Erasure:</strong> Request the deletion of your personal information.</li>
+                        <li><strong>Right to Object/Restrict:</strong> Oppose processing based on legitimate interests or restrict how we use your data.</li>
+                        <li><strong>Data Portability:</strong> Request a transfer of your data to another service provider.</li>
+                        <li><strong>Withdraw Consent:</strong> Revoke consent for marketing communications at any time.</li>
+                    </ul>
+                    <p>To exercise these rights, please contact our team via the <a href="contact" style="color: var(--accent); text-decoration: underline;">website contact form</a>.</p>
+                </section>
+
+                <!-- Section 8 -->
+                <section class="policy-section" id="profiling">
+                    <h2>
+                        <span class="section-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
+                        Profiling
+                    </h2>
+                    <p>We only conduct basic profiling (such as categorizing your industry) if you have consented to receive marketing materials, ensuring we send you relevant AI research and service updates.</p>
+                </section>
+
+                <!-- Section 9 -->
+                <section class="policy-section" id="data-security">
+                    <h2>
+                        <span class="section-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></span>
+                        Data security
+                    </h2>
+                    <p>Croncore, LLC employs rigorous security measures, including:</p>
+                    <ul>
+                        <li><strong>Encryption:</strong> Protecting data both at rest and in transit.</li>
+                        <li><strong>Access Control:</strong> Limiting data access to essential personnel under strict NDAs.</li>
+                        <li><strong>Regular Audits:</strong> Annual reviews of our security practices to ensure alignment with modern AI safety standards.</li>
+                    </ul>
+                </section>
+
+            </div>
+
+            <!-- Back to top -->
+            <div class="policy-back-top">
+                <a href="/">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                    Back to Home
+                </a>
+            </div>
+        </main>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer" role="contentinfo">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="footer-brand-logo">
+                            <img src="images/croncore-logo.png" alt="Croncore" class="logo-dark" width="56" height="56" loading="lazy">
+                            <img src="images/concore-logo-light-theme.png" alt="Croncore" class="logo-light" width="56" height="56" loading="lazy">
+                        </div>
+                        <p>AI-powered solutions for automation and business growth. Empowering companies with intelligent technology that delivers real results.</p>
+                    </div>
+                    <nav class="footer-col" aria-label="Quick links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="/#about">About Us</a></li>
+                            <li><a href="/#services">Services</a></li>
+                            <li><a href="/#features">Features</a></li>
+                            <li><a href="/#testimonials">Testimonials</a></li>
+                            <li><a href="/#blog">Blog</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="footer-col" aria-label="Services">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="/#services">Generative AI</a></li>
+                            <li><a href="/#services">Conversational Agents</a></li>
+                            <li><a href="/#services">Workflow Automations</a></li>
+                            <li><a href="/#services">LLM Integrations</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="footer-col" aria-label="Social links">
+                        <h4>Follow Us</h4>
+                        <ul>
+                            <li><a href="https://www.instagram.com/croncoreglobal/" rel="noopener noreferrer" target="_blank">Instagram</a></li>
+                            <li><a href="https://x.com/croncore_" rel="noopener noreferrer" target="_blank">Twitter / X</a></li>
+                            <li><a href="https://www.facebook.com/profile.php?id=61575159626243" rel="noopener noreferrer" target="_blank">Facebook</a></li>
+                            <li><a href="https://www.linkedin.com/company/croncore/" rel="noopener noreferrer" target="_blank">LinkedIn</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer-addresses">
+                    <div class="footer-address">
+                        <h5><img src="https://flagcdn.com/w20/sa.png" alt="Saudi Arabia Flag"> Saudi Arabia</h5>
+                        <p>Prince Turki Bin Abdulaziz Al Awal Road,<br>Al Raed, Riyadh 12354</p>
+                    </div>
+                    <div class="footer-address">
+                        <h5><img src="https://flagcdn.com/w20/pk.png" alt="Pakistan Flag"> Pakistan</h5>
+                        <p>Street 36 Silk Bank Plaza Lower Basement<br>WorkZone, Islamabad</p>
+                    </div>
+                    <div class="footer-address">
+                        <h5><img src="https://flagcdn.com/w20/gb.png" alt="United Kingdom Flag"> United Kingdom</h5>
+                        <p>Office 63, Billingsgate Market,<br>London E14 5ST</p>
+                    </div>
+                    <div class="footer-address">
+                        <h5><img src="https://flagcdn.com/w20/us.png" alt="USA Flag"> USA</h5>
+                        <p>1111B S Governors Ave # 28375<br>Dover, DE 19904</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <span>&copy; 2025&ndash;2026 Croncore LLC. All rights reserved.</span>
+                    <div class="footer-bottom-links">
+                        <a href="privacy-policy">Privacy Policy</a>
+                        <a href="terms">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

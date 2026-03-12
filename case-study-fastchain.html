@@ -12,10 +12,13 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
-    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="images/croncore-icon.png">
+    <link rel="icon" type="image/png" href="images/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="images/favicons/favicon.svg" />
+    <link rel="shortcut icon" href="images/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png" />
+    <link rel="manifest" href="images/favicons/site.webmanifest" />
     <meta name="theme-color" content="#0A0E17">
-    <script>(function () { var t = localStorage.getItem('croncore-theme'); if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) t = 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light'); })()</script>
+    <script>(function () { var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light'); })()</script>
     <link rel="stylesheet" href="css/styles.css">
     <style>
         .cs-page {
@@ -504,20 +507,20 @@
     <div class="page-content">
         <nav class="nav" id="navbar" role="navigation" aria-label="Primary navigation">
             <div class="container nav-inner">
-                <a href="index.html" class="nav-brand" aria-label="Croncore Home">
+                <a href="/" class="nav-brand" aria-label="Croncore Home">
                     <img src="images/croncore-logo.png" alt="Croncore" class="nav-brand-img logo-dark" width="56"
                         height="56" loading="eager">
                     <img src="images/concore-logo-light-theme.png" alt="Croncore" class="nav-brand-img logo-light"
                         width="56" height="56" loading="eager">
                 </a>
                 <div class="nav-pill">
-                    <a href="index.html" class="nav-link">Home</a>
-                    <a href="index.html#services" class="nav-link">Services</a>
-                    <a href="index.html#case-studies" class="nav-link">Case Studies</a>
-                    <a href="index.html#about" class="nav-link">About</a>
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/#services" class="nav-link">Services</a>
+                    <a href="/#case-studies" class="nav-link">Case Studies</a>
+                    <a href="/#about" class="nav-link">About</a>
                 </div>
                 <div class="nav-actions">
-                    <a href="contact.html" class="btn btn-glow btn-sm">Get Started<svg class="arrow-icon"
+                    <a href="contact" class="btn btn-glow btn-sm">Contact Us<svg class="arrow-icon"
                             viewBox="0 0 24 24">
                             <line x1="5" y1="12" x2="19" y2="12" />
                             <polyline points="12 5 19 12 12 19" />
@@ -552,10 +555,10 @@
                     <line x1="18" y1="6" x2="6" y2="18" />
                     <line x1="6" y1="6" x2="18" y2="18" />
                 </svg></button>
-            <a href="index.html">Home</a>
-            <a href="index.html#services">Services</a>
-            <a href="index.html#case-studies">Case Studies</a>
-            <a href="index.html#about">About</a>
+            <a href="/">Home</a>
+            <a href="/#services">Services</a>
+            <a href="/#case-studies">Case Studies</a>
+            <a href="/#about">About</a>
         </div>
         <main class="cs-page">
             <section class="cs-hero" aria-label="FastChain Case Study Hero">
@@ -565,7 +568,7 @@
                 <div class="cs-hero-content">
                     <div class="container">
                         <nav class="cs-breadcrumb" aria-label="Breadcrumb">
-                            <a href="index.html">Home</a><span>/</span><a href="index.html#case-studies">Case
+                            <a href="/">Home</a><span>/</span><a href="/#case-studies">Case
                                 Studies</a><span>/</span><span>FastChain</span>
                         </nav>
                         <div class="cs-hero-tags">
@@ -714,11 +717,11 @@
                                     in 60 days.</li>
                             </ul>
                             <div class="cs-nav-between">
-                                <a href="case-study-knowles.html" class="cs-nav-link"><svg viewBox="0 0 24 24">
+                                <a href="case-study-knowles" class="cs-nav-link"><svg viewBox="0 0 24 24">
                                         <line x1="19" y1="12" x2="5" y2="12" />
                                         <polyline points="12 19 5 12 12 5" />
                                     </svg>Prev: Knowles</a>
-                                <a href="case-study-finedge.html" class="cs-nav-link">Next: FinEdge<svg
+                                <a href="case-study-finedge" class="cs-nav-link">Next: FinEdge<svg
                                         viewBox="0 0 24 24">
                                         <line x1="5" y1="12" x2="19" y2="12" />
                                         <polyline points="12 5 19 12 12 19" />
@@ -744,7 +747,7 @@
                             <div class="cs-cta-card">
                                 <h4>Ready for similar results?</h4>
                                 <p>Let's design an AI strategy tailored to your operations and goals.</p>
-                                <a href="contact.html" class="btn btn-glow"
+                                <a href="contact" class="btn btn-glow"
                                     style="width:100%;justify-content:center;">Talk to Our Team<svg class="arrow-icon"
                                         viewBox="0 0 24 24">
                                         <line x1="5" y1="12" x2="19" y2="12" />
@@ -771,30 +774,32 @@
                     <nav class="footer-col" aria-label="Quick links">
                         <h4>Quick Links</h4>
                         <ul>
-                            <li><a href="index.html#about">About Us</a></li>
-                            <li><a href="index.html#services">Services</a></li>
-                            <li><a href="index.html#case-studies">Case Studies</a></li>
+                            <li><a href="/#about">About Us</a></li>
+                            <li><a href="/#services">Services</a></li>
+                            <li><a href="/#case-studies">Case Studies</a></li>
                         </ul>
                     </nav>
                     <nav class="footer-col" aria-label="Case Studies">
                         <h4>Case Studies</h4>
                         <ul>
-                            <li><a href="case-study-abb.html">ABB</a></li>
-                            <li><a href="case-study-knowles.html">Knowles</a></li>
-                            <li><a href="case-study-fastchain.html">FastChain</a></li>
-                            <li><a href="case-study-finedge.html">FinEdge</a></li>
+                            <li><a href="case-study-abb">ABB</a></li>
+                            <li><a href="case-study-knowles">Knowles</a></li>
+                            <li><a href="case-study-fastchain">FastChain</a></li>
+                            <li><a href="case-study-finedge">FinEdge</a></li>
                         </ul>
                     </nav>
                     <nav class="footer-col" aria-label="Social links">
                         <h4>Follow Us</h4>
                         <ul>
-                            <li><a href="#" target="_blank">LinkedIn</a></li>
-                            <li><a href="#" target="_blank">Twitter / X</a></li>
+                            <li><a href="https://www.instagram.com/croncoreglobal/" rel="noopener noreferrer" target="_blank">Instagram</a></li>
+                            <li><a href="https://x.com/croncore_" rel="noopener noreferrer" target="_blank">Twitter / X</a></li>
+                            <li><a href="https://www.facebook.com/profile.php?id=61575159626243" rel="noopener noreferrer" target="_blank">Facebook</a></li>
+                            <li><a href="https://www.linkedin.com/company/croncore/" rel="noopener noreferrer" target="_blank">LinkedIn</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div class="footer-bottom"><span>&copy; 2025&ndash;2026 Croncore LLC. All rights reserved.</span>
-                    <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a>
+                    <div class="footer-bottom-links"><a href="privacy-policy">Privacy Policy</a><a href="terms">Terms of Service</a>
                     </div>
                 </div>
             </div>

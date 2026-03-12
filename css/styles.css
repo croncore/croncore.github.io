@@ -1513,7 +1513,7 @@ button {
 
 .marquee-track {
     display: flex;
-    gap: 80px;
+    gap: 40px;
     align-items: center;
     width: max-content;
     animation: scroll-marquee 25s linear infinite;
@@ -1527,8 +1527,11 @@ button {
 .marquee-item {
     flex-shrink: 0;
     display: flex;
+    justify-content: center;
     align-items: center;
-    padding: 12px 20px;
+    width: 230px;
+    height: 140px;
+    padding: 12px 10px;
     border-radius: 12px;
     transition: all var(--t-normal) var(--ease);
 }
@@ -1539,9 +1542,10 @@ button {
 }
 
 .marquee-item img {
-    height: 96px;
+    max-height: 90px;
+    max-width: 220px;
     width: auto;
-    max-width: 280px;
+    height: auto;
     object-fit: contain;
     opacity: 0.8;
     transition: all var(--t-normal) var(--ease);
@@ -3790,11 +3794,16 @@ button {
         padding: 8px 0;
     }
 
+    .nav-brand-img {
+        height: 32px;
+    }
+
     .nav-pill {
         display: none;
     }
 
-    .nav-actions .btn-ghost {
+    .nav-actions .btn-ghost,
+    .nav-actions .btn-glow {
         display: none;
     }
 
@@ -3823,6 +3832,25 @@ button {
 
     .hero-metric-val {
         font-size: 1.6rem;
+    }
+
+    .trusted-bar {
+        padding: 32px 0;
+    }
+
+    .marquee-track {
+        gap: 40px;
+    }
+
+    .marquee-item {
+        width: 140px;
+        height: 70px;
+        padding: 8px 12px;
+    }
+
+    .marquee-item img {
+        max-height: 48px;
+        max-width: 120px;
     }
 
     .section-heading {

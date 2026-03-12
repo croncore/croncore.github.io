@@ -57,7 +57,7 @@
         "contactPoint": {
             "@type": "ContactPoint",
             "contactType": "sales",
-            "url": "https://www.croncore.com/contact.html",
+            "url": "https://www.croncore.com/contact",
             "availableLanguage": "English"
         },
         "aggregateRating": {
@@ -129,12 +129,15 @@
         rel="stylesheet">
 
     <!-- Favicon & Icons -->
-    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="images/croncore-icon.png">
+    <link rel="icon" type="image/png" href="images/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="images/favicons/favicon.svg" />
+    <link rel="shortcut icon" href="images/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png" />
+    <link rel="manifest" href="images/favicons/site.webmanifest" />
     <meta name="theme-color" content="#0A0E17">
 
     <!-- Theme flash prevention -->
-    <script>(function () { var t = localStorage.getItem('croncore-theme'); if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) t = 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light'); })()</script>
+    <script>(function () { var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light'); })()</script>
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
@@ -186,9 +189,8 @@
                             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
                         </svg>
                     </button>
-                    <a href="contact.html" class="btn btn-ghost btn-sm">Contact</a>
-                    <a href="contact.html" class="btn btn-glow btn-sm">
-                        Get Started
+                    <a href="contact" class="btn btn-glow btn-sm">
+                        Contact Us
                         <svg class="arrow-icon" viewBox="0 0 24 24">
                             <line x1="5" y1="12" x2="19" y2="12" />
                             <polyline points="12 5 19 12 12 19" />
@@ -216,7 +218,7 @@
             <a href="#testimonials">Testimonials</a>
             <a href="#process">Process</a>
             <a href="#faq">FAQ</a>
-            <a href="contact.html" class="btn btn-glow" style="margin-top:12px;">Get Started</a>
+            <a href="contact" class="btn btn-glow" style="margin-top:12px;">Contact Us</a>
         </div>
 
         <main id="main-content">
@@ -290,7 +292,7 @@
                                 agents, and intelligent workflows — that integrate seamlessly and scale with your
                                 business.</p>
                             <div class="hero-buttons">
-                                <a href="contact.html" class="btn btn-glow">
+                                <a href="contact" class="btn btn-glow">
                                     Schedule a Briefing
                                     <svg class="arrow-icon" viewBox="0 0 24 24">
                                         <line x1="5" y1="12" x2="19" y2="12" />
@@ -411,41 +413,53 @@
                 <div class="marquee-wrap">
                     <div class="marquee-track">
                         <div class="marquee-item"><img src="images/logos/ChatGPT Image Mar 1, 2026, 07_42_30 PM.png"
-                                alt="Trusted Partner" height="36" loading="lazy" style="--base-scale: 1.1;"></div>
+                                alt="Trusted Partner" height="36" loading="lazy" style="--base-scale: 1;"></div>
                         <div class="marquee-item"><img src="images/logos/ChatGPT Image Mar 1, 2026, 07_44_36 PM.png"
-                                alt="Trusted Partner" height="36" loading="lazy" style="--base-scale: 2;"></div>
+                                alt="Trusted Partner" height="36" loading="lazy" style="--base-scale: 2.5;"></div>
                         <div class="marquee-item"><img src="images/logos/ChatGPT Image Mar 1, 2026, 07_47_15 PM.png"
-                                alt="Trusted Partner" height="36" loading="lazy" style="--base-scale: 1.4;"></div>
+                                alt="Trusted Partner" height="36" loading="lazy" style="--base-scale: 1.5;"></div>
                         <div class="marquee-item"><img src="images/logos/Kuwait Ports Authority .png"
-                                alt="Kuwait Ports Authority" height="36" loading="lazy" style="--base-scale: 1.2;">
+                                alt="Kuwait Ports Authority" height="36" loading="lazy" style="--base-scale: 1;">
                         </div>
                         <div class="marquee-item"><img src="images/logos/Sabzland-Logo.png" alt="Sabzland" height="36"
                                 loading="lazy" style="--base-scale: 1.8;"></div>
+                        <div class="marquee-item"><img src="images/logos/Leap.png"
+                                alt="Leap" height="36" loading="lazy" style="--base-scale: 0.9;"></div>
+                        <div class="marquee-item"><img src="images/logos/BloomLink.png"
+                                alt="BloomLink" height="36" loading="lazy" style="--base-scale: 0.9;"></div>
 
                         <!-- Duplicate 2x for seamless edge-to-edge loop -->
                         <div class="marquee-item"><img src="images/logos/ChatGPT Image Mar 1, 2026, 07_42_30 PM.png"
-                                alt="Trusted Partner" height="36" loading="lazy" style="--base-scale: 1.1;"></div>
+                                alt="Trusted Partner" height="36" loading="lazy" style="--base-scale: 1;"></div>
                         <div class="marquee-item"><img src="images/logos/ChatGPT Image Mar 1, 2026, 07_44_36 PM.png"
-                                alt="Trusted Partner" height="36" loading="lazy" style="--base-scale: 2;"></div>
+                                alt="Trusted Partner" height="36" loading="lazy" style="--base-scale: 2.5;"></div>
                         <div class="marquee-item"><img src="images/logos/ChatGPT Image Mar 1, 2026, 07_47_15 PM.png"
-                                alt="Trusted Partner" height="36" loading="lazy" style="--base-scale: 1.4;"></div>
+                                alt="Trusted Partner" height="36" loading="lazy" style="--base-scale: 1.5;"></div>
                         <div class="marquee-item"><img src="images/logos/Kuwait Ports Authority .png"
-                                alt="Kuwait Ports Authority" height="36" loading="lazy" style="--base-scale: 1.2;">
+                                alt="Kuwait Ports Authority" height="36" loading="lazy" style="--base-scale: 1;">
                         </div>
                         <div class="marquee-item"><img src="images/logos/Sabzland-Logo.png" alt="Sabzland" height="36"
                                 loading="lazy" style="--base-scale: 1.8;"></div>
+                        <div class="marquee-item"><img src="images/logos/Leap.png"
+                                alt="Leap" height="36" loading="lazy" style="--base-scale: 0.9;"></div>
+                        <div class="marquee-item"><img src="images/logos/BloomLink.png"
+                                alt="BloomLink" height="36" loading="lazy" style="--base-scale: 0.9;"></div>
 
                         <div class="marquee-item"><img src="images/logos/ChatGPT Image Mar 1, 2026, 07_42_30 PM.png"
-                                alt="Trusted Partner" height="36" loading="lazy" style="--base-scale: 1.1;"></div>
+                                alt="Trusted Partner" height="36" loading="lazy" style="--base-scale: 1;"></div>
                         <div class="marquee-item"><img src="images/logos/ChatGPT Image Mar 1, 2026, 07_44_36 PM.png"
-                                alt="Trusted Partner" height="36" loading="lazy" style="--base-scale: 2;"></div>
+                                alt="Trusted Partner" height="36" loading="lazy" style="--base-scale: 2.5;"></div>
                         <div class="marquee-item"><img src="images/logos/ChatGPT Image Mar 1, 2026, 07_47_15 PM.png"
-                                alt="Trusted Partner" height="36" loading="lazy" style="--base-scale: 1.4;"></div>
+                                alt="Trusted Partner" height="36" loading="lazy" style="--base-scale: 1.5;"></div>
                         <div class="marquee-item"><img src="images/logos/Kuwait Ports Authority .png"
-                                alt="Kuwait Ports Authority" height="36" loading="lazy" style="--base-scale: 1.2;">
+                                alt="Kuwait Ports Authority" height="36" loading="lazy" style="--base-scale: 1;">
                         </div>
                         <div class="marquee-item"><img src="images/logos/Sabzland-Logo.png" alt="Sabzland" height="36"
                                 loading="lazy" style="--base-scale: 1.8;"></div>
+                        <div class="marquee-item"><img src="images/logos/Leap.png"
+                                alt="Leap" height="36" loading="lazy" style="--base-scale: 0.9;"></div>
+                        <div class="marquee-item"><img src="images/logos/BloomLink.png"
+                                alt="BloomLink" height="36" loading="lazy" style="--base-scale: 0.9;"></div>
                     </div>
                 </div>
             </section>
@@ -612,7 +626,7 @@
                                 </div>
                             </div>
                             <div class="cs-card-footer">
-                                <a href="case-study-abb.html" class="cs-card-cta">
+                                <a href="case-study-abb" class="cs-card-cta">
                                     Read Case Study
                                     <svg class="arrow-icon" viewBox="0 0 24 24">
                                         <line x1="5" y1="12" x2="19" y2="12" />
@@ -679,7 +693,7 @@
                                 </div>
                             </div>
                             <div class="cs-card-footer">
-                                <a href="case-study-knowles.html" class="cs-card-cta">
+                                <a href="case-study-knowles" class="cs-card-cta">
                                     Read Case Study
                                     <svg class="arrow-icon" viewBox="0 0 24 24">
                                         <line x1="5" y1="12" x2="19" y2="12" />
@@ -742,7 +756,7 @@
                                 </div>
                             </div>
                             <div class="cs-card-footer">
-                                <a href="case-study-fastchain.html" class="cs-card-cta">
+                                <a href="case-study-fastchain" class="cs-card-cta">
                                     Read Case Study
                                     <svg class="arrow-icon" viewBox="0 0 24 24">
                                         <line x1="5" y1="12" x2="19" y2="12" />
@@ -805,7 +819,7 @@
                                 </div>
                             </div>
                             <div class="cs-card-footer">
-                                <a href="case-study-finedge.html" class="cs-card-cta">
+                                <a href="case-study-finedge" class="cs-card-cta">
                                     Read Case Study
                                     <svg class="arrow-icon" viewBox="0 0 24 24">
                                         <line x1="5" y1="12" x2="19" y2="12" />
@@ -838,7 +852,7 @@
                         <span class="cs-bottom-label">AI Decisions Daily</span>
                     </div>
                     <div class="cs-bottom-cta">
-                        <a href="contact.html" class="btn btn-glow">
+                        <a href="contact" class="btn btn-glow">
                             Start Your Success Story
                             <svg class="arrow-icon" viewBox="0 0 24 24">
                                 <line x1="5" y1="12" x2="19" y2="12" />
@@ -1176,8 +1190,8 @@
                             <span>SOC 2 compliant with bank-level data encryption</span>
                         </div>
                     </div>
-                    <a href="contact.html" class="btn btn-glow" style="margin-top:8px;">
-                        Get Started
+                    <a href="contact" class="btn btn-glow" style="margin-top:8px;">
+                        Contact Us
                         <svg class="arrow-icon" viewBox="0 0 24 24">
                             <line x1="5" y1="12" x2="19" y2="12" />
                             <polyline points="12 5 19 12 12 19" />
@@ -2066,7 +2080,7 @@
                 <p>Join 200+ businesses already using Croncore to automate workflows, integrate LLMs, and drive
                     measurable growth.</p>
                 <div class="cta-actions">
-                    <a href="contact.html" class="btn btn-glow">
+                    <a href="contact" class="btn btn-glow">
                         Schedule a Briefing
                         <svg class="arrow-icon" viewBox="0 0 24 24">
                             <line x1="5" y1="12" x2="19" y2="12" />
@@ -2117,8 +2131,8 @@
                     </div>
                     <p>AI-powered solutions for automation and business growth. Empowering companies with
                         intelligent technology that delivers real results.</p>
-                    <a href="contact.html" class="btn btn-glow btn-sm">
-                        Get Started
+                    <a href="contact" class="btn btn-glow btn-sm">
+                        Contact Us
                         <svg class="arrow-icon" viewBox="0 0 24 24">
                             <line x1="5" y1="12" x2="19" y2="12" />
                             <polyline points="12 5 19 12 12 19" />
@@ -2147,37 +2161,36 @@
                 <nav class="footer-col" aria-label="Social links">
                     <h4>Follow Us</h4>
                     <ul>
-                        <li><a href="#" rel="noopener noreferrer" target="_blank">Instagram</a></li>
-                        <li><a href="#" rel="noopener noreferrer" target="_blank">Twitter / X</a></li>
-                        <li><a href="#" rel="noopener noreferrer" target="_blank">Facebook</a></li>
-                        <li><a href="#" rel="noopener noreferrer" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://www.instagram.com/croncoreglobal/" rel="noopener noreferrer" target="_blank">Instagram</a></li>
+                        <li><a href="https://x.com/croncore_" rel="noopener noreferrer" target="_blank">Twitter / X</a></li>
+                        <li><a href="https://www.facebook.com/profile.php?id=61575159626243" rel="noopener noreferrer" target="_blank">Facebook</a></li>
+                        <li><a href="https://www.linkedin.com/company/croncore/" rel="noopener noreferrer" target="_blank">LinkedIn</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="footer-addresses">
                 <div class="footer-address">
-                    <h5><img src="https://flagcdn.com/w20/us.png" alt="USA Flag"> USA</h5>
-                    <p>11921 Freedom Drive, Two Fountain Square,<br>Suite 550, Reston, VA 20190</p>
-                </div>
-                <div class="footer-address">
                     <h5><img src="https://flagcdn.com/w20/sa.png" alt="Saudi Arabia Flag"> Saudi Arabia</h5>
-                    <p>Building 4236, Secondary 6253, King Saud St., An Nawras District, Dammam 32214</p>
-                </div>
-                <div class="footer-address">
-                    <h5><img src="https://flagcdn.com/w20/pt.png" alt="Portugal Flag"> Portugal</h5>
-                    <p>Avenida D. João II, 50 Edifício,<br>R. do Mar Vermelho, 1990-095 Lisbon</p>
+                    <p>Prince Turki Bin Abdulaziz Al Awal Road,<br>Al Raed, Riyadh 12354</p>
                 </div>
                 <div class="footer-address">
                     <h5><img src="https://flagcdn.com/w20/pk.png" alt="Pakistan Flag"> Pakistan</h5>
-                    <p>tkxel One World Building, Babar Block,<br>Garden Town, Lahore 54000</p>
+                    <p>Street 36 Silk Bank Plaza Lower Basement<br>WorkZone, Islamabad</p>
+                </div>
+                <div class="footer-address">
+                    <h5><img src="https://flagcdn.com/w20/gb.png" alt="United Kingdom Flag"> United Kingdom</h5>
+                    <p>Office 63, Billingsgate Market,<br>London E14 5ST</p>
+                </div>
+                <div class="footer-address">
+                    <h5><img src="https://flagcdn.com/w20/us.png" alt="USA Flag"> USA</h5>
+                    <p>1111B S Governors Ave # 28375<br>Dover, DE 19904</p>
                 </div>
             </div>
             <div class="footer-bottom">
                 <span>&copy; 2025&ndash;2026 Croncore LLC. All rights reserved.</span>
                 <div class="footer-bottom-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Cookie Settings</a>
+                    <a href="privacy-policy">Privacy Policy</a>
+                    <a href="terms">Terms of Service</a>
                 </div>
             </div>
         </div>

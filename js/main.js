@@ -11,10 +11,7 @@
     function getPreferredTheme() {
         var stored = localStorage.getItem(STORAGE_KEY);
         if (stored) return stored;
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-            return 'light';
-        }
-        return 'dark';
+        return 'light';
     }
 
     function applyTheme(theme) {
@@ -42,13 +39,16 @@
         });
     }
 
+    // Removed system theme listener to maintain light mode default
+    /*
     if (window.matchMedia) {
-        window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function (e) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
             if (!localStorage.getItem(STORAGE_KEY)) {
-                applyTheme(e.matches ? 'light' : 'dark');
+                applyTheme(e.matches ? 'dark' : 'light');
             }
         });
     }
+    */
 
     /* ========================================
        NEURAL NETWORK CANVAS (OPTIMIZED)
@@ -474,6 +474,73 @@
             toast.classList.remove('show');
             setTimeout(function () { toast.remove(); }, 400);
         }, 4000);
+    }
+
+    /* ========================================
+       WORDPRESS BLOG FETCH
+    ======================================== */
+    var blogGrid = document.querySelector('.blog-grid');
+    if (blogGrid) {
+        // WordPress REST API URL
+        var wpApiUrl = 'https://croncore.com/blog/wp-json/wp/v2/posts?_embed&per_page=3';
+        
+        // Show loading state
+        blogGrid.innerHTML = '<p style="text-align:center; width:100%; color:var(--text-muted);">Loading latest insights...</p>';
+        
+        fetch(wpApiUrl)
+            .then(function (response) {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.json();
+            })
+            .then(function (posts) {
+                if (posts.length === 0) {
+                    blogGrid.innerHTML = '<p style="text-align:center; width:100%; color:var(--text-muted);">No posts available.</p>';
+                    return;
+                }
+                
+                var html = '';
+                posts.forEach(function (post) {
+                    // Get featured image if available, else use a placeholder
+                    var imageUrl = 'images/blog1.jpeg';
+                    if (post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url) {
+                        imageUrl = post._embedded['wp:featuredmedia'][0].source_url;
+                    }
+                    
+                    // Format date
+                    var dateObj = new Date(post.date);
+                    var dateStr = dateObj.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                    
+                    // Category (getting the first one if available)
+                    var category = 'Updates';
+                    if (post._embedded && post._embedded['wp:term'] && post._embedded['wp:term'][0] && post._embedded['wp:term'][0].length > 0) {
+                        category = post._embedded['wp:term'][0][0].name;
+                    }
+                    
+                    // Create the HTML for the card
+                    html += '<article class="blog-card reveal in-view">';
+                    html += '    <img src="' + imageUrl + '" alt="' + post.title.rendered + '" class="blog-card-img" style="aspect-ratio: 4/2; object-fit: cover;" width="400" height="200" loading="lazy">';
+                    html += '    <div class="blog-card-body">';
+                    html += '        <span class="blog-card-category">' + category + '</span>';
+                    html += '        <h3 style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">' + post.title.rendered + '</h3>';
+                    html += '        <p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">' + post.excerpt.rendered.replace(/<[^>]*>?/gm, '').substring(0, 150) + '...</p>';
+                    html += '        <div class="blog-card-meta">';
+                    html += '            <span>' + dateStr + '</span>';
+                    html += '            <a href="article#' + post.id + '" class="blog-card-link">Read More <svg class="arrow-icon" viewBox="0 0 24 24">';
+                    html += '                    <line x1="5" y1="12" x2="19" y2="12" />';
+                    html += '                    <polyline points="12 5 19 12 12 19" />';
+                    html += '                </svg></a>';
+                    html += '        </div>';
+                    html += '    </div>';
+                    html += '</article>';
+                });
+                
+                blogGrid.innerHTML = html;
+            })
+            .catch(function (error) {
+                console.error('Error fetching blog posts:', error);
+                // Fallback message
+                blogGrid.innerHTML = '<p style="text-align:center; width:100%; color:var(--text-muted);">Could not load latest insights at this time.</p>';
+            });
     }
 
 })();
