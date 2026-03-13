@@ -481,11 +481,12 @@
     ======================================== */
     var blogGrid = document.querySelector('.blog-grid');
     if (blogGrid) {
-        // WordPress REST API URL
-        var wpApiUrl = 'https://croncore.com/blog/wp-json/wp/v2/posts?_embed&per_page=3';
+        // Use protocol-relative absolute path to avoid CORS/SSL issues
+        var siteUrl = window.location.origin;
+        var wpApiUrl = siteUrl + '/blog/wp-json/wp/v2/posts?_embed&per_page=3';
         
         // Show loading state
-        blogGrid.innerHTML = '<p style="text-align:center; width:100%; color:var(--text-muted);">Loading latest insights...</p>';
+        blogGrid.innerHTML = '<p style="text-align:center; width:100%; color:var(--text-muted); padding: 40px 0;">Loading latest insights...</p>';
         
         fetch(wpApiUrl)
             .then(function (response) {

@@ -551,7 +551,8 @@
                 return;
             }
 
-            var wpApiUrl = 'https://croncore.com/blog/wp-json/wp/v2/posts/' + postId + '?_embed';
+            var siteUrl = window.location.origin;
+            var wpApiUrl = siteUrl + '/blog/wp-json/wp/v2/posts/' + postId + '?_embed';
 
             fetch(wpApiUrl)
                 .then(function(r) { if (!r.ok) throw new Error('Post not found'); return r.json(); })
