@@ -481,48 +481,52 @@
     ======================================== */
     var blogGrid = document.querySelector('.blog-grid');
     if (blogGrid) {
-        // Use protocol-relative absolute path to avoid CORS/SSL issues
-        var siteUrl = window.location.origin;
-        var wpApiUrl = siteUrl + '/blog/wp-json/wp/v2/posts?_embed&per_page=3';
+        // FIXED: Using absolute URL to ensure it works on GitHub Pages and local dev
+        // Note: WordPress must be configured to allow CORS from other domains
+        var blogBaseUrl = 'https://www.croncore.com'; 
+        var wpApiUrl = blogBaseUrl + '/blog/wp-json/wp/v2/posts?_embed&per_page=3';
         
-        // Show loading state
-        blogGrid.innerHTML = '<p style="text-align:center; width:100%; color:var(--text-muted); padding: 40px 0;">Loading latest insights...</p>';
+        // Don't wipe the grid entirely; just add a subtle hint if it's currently empty
+        var hasExistingContent = blogGrid.querySelectorAll('.blog-card').length > 0;
         
         fetch(wpApiUrl)
             .then(function (response) {
-                if (!response.ok) throw new Error('Network response was not ok');
+                if (!response.ok) throw new Error('API request failed');
                 return response.json();
             })
             .then(function (posts) {
-                if (posts.length === 0) {
-                    blogGrid.innerHTML = '<p style="text-align:center; width:100%; color:var(--text-muted);">No posts available.</p>';
+                if (!posts || posts.length === 0) {
+                    if (!hasExistingContent) {
+                        blogGrid.innerHTML = '<p style="text-align:center; width:100%; color:var(--text-muted);">No posts available.</p>';
+                    }
                     return;
                 }
                 
                 var html = '';
                 posts.forEach(function (post) {
-                    // Get featured image if available, else use a placeholder
                     var imageUrl = 'images/blog1.jpeg';
                     if (post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url) {
                         imageUrl = post._embedded['wp:featuredmedia'][0].source_url;
                     }
                     
-                    // Format date
                     var dateObj = new Date(post.date);
                     var dateStr = dateObj.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
                     
-                    // Category (getting the first one if available)
                     var category = 'Updates';
                     if (post._embedded && post._embedded['wp:term'] && post._embedded['wp:term'][0] && post._embedded['wp:term'][0].length > 0) {
                         category = post._embedded['wp:term'][0][0].name;
                     }
                     
-                    // Create the HTML for the card
-                    html += '<article class="blog-card reveal in-view">';
-                    html += '    <img src="' + imageUrl + '" alt="' + post.title.rendered + '" class="blog-card-img" style="aspect-ratio: 4/2; object-fit: cover;" width="400" height="200" loading="lazy">';
+                    // Decode title to prevent &amp; issues
+                    var txt = document.createElement('textarea');
+                    txt.innerHTML = post.title.rendered;
+                    var decodedTitle = txt.value;
+
+                    html += '<article class="blog-card in-view">'; // Removed .reveal to ensure visibility
+                    html += '    <img src="' + imageUrl + '" alt="' + decodedTitle + '" class="blog-card-img" style="aspect-ratio: 4/2; object-fit: cover;" width="400" height="200" loading="lazy">';
                     html += '    <div class="blog-card-body">';
                     html += '        <span class="blog-card-category">' + category + '</span>';
-                    html += '        <h3 style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">' + post.title.rendered + '</h3>';
+                    html += '        <h3 style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">' + decodedTitle + '</h3>';
                     html += '        <p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">' + post.excerpt.rendered.replace(/<[^>]*>?/gm, '').substring(0, 150) + '...</p>';
                     html += '        <div class="blog-card-meta">';
                     html += '            <span>' + dateStr + '</span>';
@@ -535,12 +539,16 @@
                     html += '</article>';
                 });
                 
+                // Only replace content if we got valid posts
                 blogGrid.innerHTML = html;
             })
             .catch(function (error) {
                 console.error('Error fetching blog posts:', error);
-                // Fallback message
-                blogGrid.innerHTML = '<p style="text-align:center; width:100%; color:var(--text-muted);">Could not load latest insights at this time.</p>';
+                // If fetch fails, we KEEP the existing static content in the grid
+                // This ensures the site never looks broken even if the API is down or blocked by CORS
+                if (!hasExistingContent) {
+                    blogGrid.innerHTML = '<p style="text-align:center; width:100%; color:var(--text-muted);">Stay tuned for our latest insights.</p>';
+                }
             });
     }
 
