@@ -551,7 +551,7 @@
                 return;
             }
 
-            var siteUrl = window.location.origin;
+            var siteUrl = 'https://www.croncore.com'; // FIXED: Using absolute production URL
             var wpApiUrl = siteUrl + '/blog/wp-json/wp/v2/posts/' + postId + '?_embed';
 
             fetch(wpApiUrl)
