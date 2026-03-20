@@ -645,6 +645,21 @@
                     // Set content
                     document.getElementById('article-body').innerHTML = contentHtml;
 
+                    // Update "Back" links based on source
+                    var urlParams = new URLSearchParams(window.location.search);
+                    if (urlParams.get('from') === 'blogs') {
+                        var backLinks = document.querySelectorAll('.article-back, .article-back-bottom a');
+                        backLinks.forEach(function(link) {
+                            link.setAttribute('href', 'blogs');
+                            // Specifically update text for these links
+                            if (link.classList.contains('article-back')) {
+                                link.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Back to Blogs';
+                            } else {
+                                link.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Back to All Blogs';
+                            }
+                        });
+                    }
+
                     // Show article
                     document.getElementById('loading').style.display = 'none';
                     document.getElementById('article-wrapper').style.display = 'block';
