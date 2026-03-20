@@ -2,6 +2,13 @@
 <html lang="en" dir="ltr">
 
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NFNLPH3H');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -144,6 +151,10 @@
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFNLPH3H"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <!-- Background layers -->
     <canvas id="neuralCanvas" aria-hidden="true"></canvas>
@@ -167,7 +178,7 @@
                     <a href="#features" class="nav-link">Features</a>
                     <a href="#about" class="nav-link">About</a>
                     <a href="#testimonials" class="nav-link">Testimonials</a>
-                    <a href="#process" class="nav-link">Process</a>
+                    <a href="#blog" class="nav-link">Blog</a>
                     <a href="#faq" class="nav-link">FAQ</a>
                 </div>
                 <div class="nav-actions">
@@ -216,7 +227,7 @@
             <a href="#features">Features</a>
             <a href="#about">About</a>
             <a href="#testimonials">Testimonials</a>
-            <a href="#process">Process</a>
+            <a href="#blog">Blog</a>
             <a href="#faq">FAQ</a>
             <a href="contact" class="btn btn-glow" style="margin-top:12px;">Contact Us</a>
         </div>
@@ -1897,7 +1908,7 @@
                 <p class="section-desc">Stay ahead with expert perspectives on AI trends, best practices, and
                     industry breakthroughs.</p>
             </div>
-            <div class="blog-grid">
+            <div class="blog-grid" id="home-blog-grid">
                 <article class="blog-card reveal">
                     <img src="images/blog1.jpeg" alt="The Future of Generative AI in Enterprise" class="blog-card-img"
                         width="400" height="200" loading="lazy">
@@ -1949,6 +1960,31 @@
                         </div>
                     </div>
                 </article>
+                <article class="blog-card reveal">
+                    <img src="https://picsum.photos/seed/ai-future/800/400" alt="Future of AI" class="blog-card-img"
+                        width="400" height="200" loading="lazy">
+                    <div class="blog-card-body">
+                        <span class="blog-card-category">Innovation</span>
+                        <h3>The Next Frontier of Enterprise AI</h3>
+                        <p>Exploring how autonomous agents are transforming the modern workplace architecture.</p>
+                        <div class="blog-card-meta">
+                            <span>Apr 05, 2025</span>
+                            <a href="#" class="blog-card-link">Read More <svg class="arrow-icon" viewBox="0 0 24 24">
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                    <polyline points="12 5 19 12 12 19" />
+                                </svg></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="blog-see-more reveal" style="text-align: center; margin-top: 48px;">
+                <a href="blogs" class="btn btn-ghost">
+                    View All Insights
+                    <svg class="arrow-icon" viewBox="0 0 24 24">
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
@@ -2146,7 +2182,7 @@
                         <li><a href="#services">Services</a></li>
                         <li><a href="#features">Features</a></li>
                         <li><a href="#testimonials">Testimonials</a></li>
-                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="blogs">Blog</a></li>
                     </ul>
                 </nav>
                 <nav class="footer-col" aria-label="Services">

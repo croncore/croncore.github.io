@@ -479,14 +479,11 @@
     /* ========================================
        WORDPRESS BLOG FETCH
     ======================================== */
-    var blogGrid = document.querySelector('.blog-grid');
+    var blogGrid = document.querySelector('#home-blog-grid');
     if (blogGrid) {
-        // FIXED: Using absolute URL to ensure it works on GitHub Pages and local dev
-        // Note: WordPress must be configured to allow CORS from other domains
-        var blogBaseUrl = 'https://www.croncore.com'; 
-        var wpApiUrl = blogBaseUrl + '/blog/wp-json/wp/v2/posts?_embed&per_page=3';
+        var siteUrl = 'https://www.croncore.com'; 
+        var wpApiUrl = siteUrl + '/blog/wp-json/wp/v2/posts?_embed&per_page=4';
         
-        // Don't wipe the grid entirely; just add a subtle hint if it's currently empty
         var hasExistingContent = blogGrid.querySelectorAll('.blog-card').length > 0;
         
         fetch(wpApiUrl)
@@ -541,6 +538,17 @@
                 
                 // Only replace content if we got valid posts
                 blogGrid.innerHTML = html;
+
+                // Add "See More" button after the grid
+                var parent = blogGrid.parentElement;
+                if (!parent.querySelector('.blog-see-more')) {
+                    var seeMoreDiv = document.createElement('div');
+                    seeMoreDiv.className = 'blog-see-more reveal in-view';
+                    seeMoreDiv.style.textAlign = 'center';
+                    seeMoreDiv.style.marginTop = '48px';
+                    seeMoreDiv.innerHTML = '<a href="blogs" class="btn btn-ghost">View All Insights <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></a>';
+                    parent.appendChild(seeMoreDiv);
+                }
             })
             .catch(function (error) {
                 console.error('Error fetching blog posts:', error);
