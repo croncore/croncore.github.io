@@ -455,6 +455,41 @@
     }
 
     /* ========================================
+       CASE STUDIES SLIDER (HORIZONTAL SCROLL)
+    ======================================== */
+    var csGrid = document.querySelector('.cs-grid');
+    var csPrevBtn = document.querySelector('.cs-prev');
+    var csNextBtn = document.querySelector('.cs-next');
+
+    if (csGrid && csPrevBtn && csNextBtn) {
+        function updateButtons() {
+            var maxScroll = csGrid.scrollWidth - csGrid.clientWidth;
+            var isAtStart = csGrid.scrollLeft <= 10;
+            var isAtEnd = csGrid.scrollLeft >= maxScroll - 10;
+
+            csPrevBtn.style.opacity = isAtStart ? '0' : '1';
+            csPrevBtn.style.visibility = isAtStart ? 'hidden' : 'visible';
+            csNextBtn.style.opacity = isAtEnd ? '0' : '1';
+            csNextBtn.style.visibility = isAtEnd ? 'hidden' : 'visible';
+        }
+
+        csNextBtn.addEventListener('click', function() {
+            var scrollAmount = csGrid.offsetWidth * 0.8;
+            csGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+
+        csPrevBtn.addEventListener('click', function() {
+            var scrollAmount = csGrid.offsetWidth * 0.8;
+            csGrid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+
+        csGrid.addEventListener('scroll', updateButtons);
+        window.addEventListener('resize', updateButtons);
+        // Initial check after some time to ensure layout is ready
+        setTimeout(updateButtons, 500);
+    }
+
+    /* ========================================
        TOAST NOTIFICATIONS
     ======================================== */
     function showToast(message, type) {
@@ -477,12 +512,15 @@
     }
 
     /* ========================================
-       WORDPRESS BLOG FETCH
+       WORDPRESS BLOG FETCH & SLIDER
     ======================================== */
     var blogGrid = document.querySelector('#home-blog-grid');
+    var blogPrevBtn = document.querySelector('.blog-prev');
+    var blogNextBtn = document.querySelector('.blog-next');
+
     if (blogGrid) {
         var siteUrl = 'https://www.croncore.com'; 
-        var wpApiUrl = siteUrl + '/blog/wp-json/wp/v2/posts?_embed&per_page=4';
+        var wpApiUrl = siteUrl + '/blog/wp-json/wp/v2/posts?_embed&per_page=8';
         
         var hasExistingContent = blogGrid.querySelectorAll('.blog-card').length > 0;
         
@@ -514,13 +552,12 @@
                         category = post._embedded['wp:term'][0][0].name;
                     }
                     
-                    // Decode title to prevent &amp; issues
                     var txt = document.createElement('textarea');
                     txt.innerHTML = post.title.rendered;
                     var decodedTitle = txt.value;
 
-                    html += '<article class="blog-card in-view">'; // Removed .reveal to ensure visibility
-                    html += '    <img src="' + imageUrl + '" alt="' + decodedTitle + '" class="blog-card-img" style="aspect-ratio: 4/2; object-fit: cover;" width="400" height="200" loading="lazy">';
+                    html += '<article class="blog-card in-view">'; 
+                    html += '    <img src="' + imageUrl + '" alt="' + decodedTitle + '" class="blog-card-img" style="aspect-ratio: 16/9; object-fit: cover;" width="400" height="225" loading="lazy">';
                     html += '    <div class="blog-card-body">';
                     html += '        <span class="blog-card-category">' + category + '</span>';
                     html += '        <h3 style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">' + decodedTitle + '</h3>';
@@ -536,28 +573,65 @@
                     html += '</article>';
                 });
                 
-                // Only replace content if we got valid posts
                 blogGrid.innerHTML = html;
 
-                // Add "See More" button after the grid
-                var parent = blogGrid.parentElement;
-                if (!parent.querySelector('.blog-see-more')) {
-                    var seeMoreDiv = document.createElement('div');
-                    seeMoreDiv.className = 'blog-see-more reveal in-view';
-                    seeMoreDiv.style.textAlign = 'center';
-                    seeMoreDiv.style.marginTop = '48px';
-                    seeMoreDiv.innerHTML = '<a href="blogs" class="btn btn-ghost">View All Insights <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></a>';
-                    parent.appendChild(seeMoreDiv);
-                }
+                // Initialize slider logic after content is loaded
+                initBlogSlider();
             })
             .catch(function (error) {
-                console.error('Error fetching blog posts:', error);
-                // If fetch fails, we KEEP the existing static content in the grid
-                // This ensures the site never looks broken even if the API is down or blocked by CORS
-                if (!hasExistingContent) {
-                    blogGrid.innerHTML = '<p style="text-align:center; width:100%; color:var(--text-muted);">Stay tuned for our latest insights.</p>';
-                }
+                console.error('Blog fetch error:', error);
             });
+
+        function initBlogSlider() {
+            if (!blogGrid || !blogPrevBtn || !blogNextBtn) return;
+
+            function updateBlogButtons() {
+                var scrollLeft = blogGrid.scrollLeft;
+                var maxScroll = blogGrid.scrollWidth - blogGrid.clientWidth;
+                
+                // Show buttons only if content exceeds container width
+                if (blogGrid.scrollWidth > blogGrid.clientWidth + 10) {
+                    blogPrevBtn.classList.add('visible');
+                    blogNextBtn.classList.add('visible');
+                } else {
+                    blogPrevBtn.classList.remove('visible');
+                    blogNextBtn.classList.remove('visible');
+                }
+
+                // Opacity and enabled state based on scroll position
+                if (scrollLeft > 10) {
+                    blogPrevBtn.style.opacity = '1';
+                    blogPrevBtn.style.pointerEvents = 'auto';
+                } else {
+                    blogPrevBtn.style.opacity = '0.3';
+                    blogPrevBtn.style.pointerEvents = 'none';
+                }
+
+                if (scrollLeft < maxScroll - 10) {
+                    blogNextBtn.style.opacity = '1';
+                    blogNextBtn.style.pointerEvents = 'auto';
+                } else {
+                    blogNextBtn.style.opacity = '0.3';
+                    blogNextBtn.style.pointerEvents = 'none';
+                }
+            }
+
+            blogNextBtn.addEventListener('click', function () {
+                var scrollAmount = blogGrid.clientWidth * 0.8;
+                blogGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+
+            blogPrevBtn.addEventListener('click', function () {
+                var scrollAmount = blogGrid.clientWidth * 0.8;
+                blogGrid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+
+            blogGrid.addEventListener('scroll', updateBlogButtons);
+            window.addEventListener('resize', updateBlogButtons);
+            
+            // Initial check after a short delay to ensure rendering is complete
+            setTimeout(updateBlogButtons, 500);
+        }
     }
 
 })();
