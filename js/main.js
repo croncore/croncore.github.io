@@ -450,43 +450,70 @@
                         card.classList.add('cs-hidden');
                     }
                 });
+
+                // Update slider buttons after filtering
+                if (typeof updateCsGridButtons === 'function') {
+                    setTimeout(updateCsGridButtons, 300); // Small delay for rendering
+                }
             });
         });
     }
 
     /* ========================================
-       CASE STUDIES SLIDER (HORIZONTAL SCROLL)
+       CASE STUDIES SLIDER (HORIZONTAL SCROL)
     ======================================== */
     var csGrid = document.querySelector('.cs-grid');
     var csPrevBtn = document.querySelector('.cs-prev');
     var csNextBtn = document.querySelector('.cs-next');
 
-    if (csGrid && csPrevBtn && csNextBtn) {
-        function updateButtons() {
-            var maxScroll = csGrid.scrollWidth - csGrid.clientWidth;
-            var isAtStart = csGrid.scrollLeft <= 10;
-            var isAtEnd = csGrid.scrollLeft >= maxScroll - 10;
-
-            csPrevBtn.style.opacity = isAtStart ? '0' : '1';
-            csPrevBtn.style.visibility = isAtStart ? 'hidden' : 'visible';
-            csNextBtn.style.opacity = isAtEnd ? '0' : '1';
-            csNextBtn.style.visibility = isAtEnd ? 'hidden' : 'visible';
+    window.updateCsGridButtons = function() {
+        if (!csGrid || !csPrevBtn || !csNextBtn) return;
+        
+        var scrollLeft = csGrid.scrollLeft;
+        var maxScroll = csGrid.scrollWidth - csGrid.clientWidth;
+        
+        // Show buttons only if content exceeds container width
+        if (csGrid.scrollWidth > csGrid.clientWidth + 10) {
+            csPrevBtn.classList.add('visible');
+            csNextBtn.classList.add('visible');
+        } else {
+            csPrevBtn.classList.remove('visible');
+            csNextBtn.classList.remove('visible');
         }
 
+        // Opacity and enabled state based on scroll position
+        if (scrollLeft > 10) {
+            csPrevBtn.style.opacity = '1';
+            csPrevBtn.style.pointerEvents = 'auto';
+        } else {
+            csPrevBtn.style.opacity = '0.3';
+            csPrevBtn.style.pointerEvents = 'none';
+        }
+
+        if (scrollLeft < maxScroll - 10) {
+            csNextBtn.style.opacity = '1';
+            csNextBtn.style.pointerEvents = 'auto';
+        } else {
+            csNextBtn.style.opacity = '0.3';
+            csNextBtn.style.pointerEvents = 'none';
+        }
+    };
+
+    if (csGrid && csPrevBtn && csNextBtn) {
         csNextBtn.addEventListener('click', function() {
-            var scrollAmount = csGrid.offsetWidth * 0.8;
+            var scrollAmount = csGrid.clientWidth * 0.8;
             csGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
         });
 
         csPrevBtn.addEventListener('click', function() {
-            var scrollAmount = csGrid.offsetWidth * 0.8;
+            var scrollAmount = csGrid.clientWidth * 0.8;
             csGrid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
         });
 
-        csGrid.addEventListener('scroll', updateButtons);
-        window.addEventListener('resize', updateButtons);
+        csGrid.addEventListener('scroll', updateCsGridButtons);
+        window.addEventListener('resize', updateCsGridButtons);
         // Initial check after some time to ensure layout is ready
-        setTimeout(updateButtons, 500);
+        setTimeout(updateCsGridButtons, 500);
     }
 
     /* ========================================
