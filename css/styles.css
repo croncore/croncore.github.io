@@ -61,6 +61,7 @@
     --bg-glass: rgba(242, 245, 251, 0.94);
 
     --accent: #3B82D9;
+    --accent-rgb: 59, 130, 217;
     --accent-dim: rgba(59, 130, 217, 0.14);
     --accent-glow: rgba(59, 130, 217, 0.22);
     --accent-subtle: rgba(59, 130, 217, 0.07);
@@ -2971,57 +2972,40 @@ button {
     }
 }
 
-.blog-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
+/* Blog Header & Navigation */
+.blog-header-row {
     display: flex;
     justify-content: space-between;
-    pointer-events: none;
-    z-index: 10;
-    padding: 0 10px;
+    align-items: center; /* Centered with heading */
+    gap: 40px;
+    margin-top: 10px;
 }
 
-@media (min-width: 1350px) {
-    .blog-nav {
-        left: -80px;
-        width: calc(100% + 160px);
-    }
+.blog-header-text {
+    flex: 1;
+}
+
+.blog-nav {
+    display: flex;
+    gap: 8px;
+    pointer-events: auto;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .blog-nav-btn {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
     border: 1px solid var(--border-strong);
-    background: var(--bg-glass);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    color: var(--text-white);
+    background: var(--bg-card);
+    color: var(--text-secondary);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 0.4s var(--ease);
     padding: 0;
-    position: relative;
-    pointer-events: auto;
-    opacity: 0;
-    visibility: hidden;
-}
-
-.blog-nav-btn.visible {
-    opacity: 1;
-    visibility: visible;
-}
-
-.blog-nav-btn:hover {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: #000000;
-    transform: scale(1.1);
-    box-shadow: 0 0 30px var(--accent-glow);
 }
 
 .blog-nav-btn svg {
@@ -3029,12 +3013,27 @@ button {
     height: 20px;
 }
 
+.blog-nav-btn:hover {
+    background: var(--accent);
+    color: #FFFFFF !important;
+    border-color: var(--accent);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 20px var(--accent-glow);
+}
+
 .blog-prev:hover svg {
     transform: translateX(-3px);
 }
-
 .blog-next:hover svg {
     transform: translateX(3px);
+}
+
+@media (max-width: 768px) {
+    .blog-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
 }
 
 .blog-card {
@@ -4321,12 +4320,13 @@ button {
 }
 
 .cs-filter-btn.active {
-    color: #000;
+    color: #FFFFFF;
     background: var(--accent);
     border-color: var(--accent);
     font-weight: 700;
     transform: translateY(-3px);
-    box-shadow: 0 0 25px rgba(var(--accent-rgb), 0.4), 0 0 50px rgba(var(--accent-rgb), 0.1);
+    box-shadow: 0 8px 25px rgba(var(--accent-rgb), 0.4), 0 0 50px rgba(var(--accent-rgb), 0.1);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .cs-filter-btn.active::after {
@@ -4527,7 +4527,7 @@ button {
 .case-studies-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center; /* Centered alignment */
     gap: 40px;
     flex-wrap: wrap;
     margin-bottom: 12px;
@@ -4537,69 +4537,85 @@ button {
     margin-bottom: 8px;
 }
 
-/* Navigation Buttons */
-.case-studies .cs-grid-wrapper {
-    position: relative;
-    margin-top: 40px;
-}
-
-.cs-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
+/* Header controls (Filters + Nav) */
+.cs-header-controls {
     display: flex;
-    justify-content: space-between;
-    pointer-events: none;
-    z-index: 10;
-    padding: 0 10px;
+    align-items: center;
+    gap: 32px;
+    margin-top: 10px;
 }
 
-@media (min-width: 1400px) {
-    .cs-nav {
-        left: -80px;
-        width: calc(100% + 160px);
-    }
+.cs-header-divider {
+    width: 1px;
+    height: 24px;
+    background: var(--border-strong);
+    opacity: 0.6;
+}
+
+.case-studies div .cs-nav {
+    position: static;
+    transform: none;
+    display: flex;
+    gap: 8px;
+    pointer-events: auto;
+    width: auto;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .cs-nav-btn {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
     border: 1px solid var(--border-strong);
-    background: var(--bg-glass);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    color: var(--text-white);
+    background: var(--bg-card);
+    color: var(--text-secondary);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 0.4s var(--ease);
     padding: 0;
-    position: relative;
-    pointer-events: auto;
-    opacity: 0;
-    visibility: hidden;
-}
-
-.cs-nav-btn.visible {
-    opacity: 1;
-    visibility: visible;
 }
 
 .cs-nav-btn:hover {
     background: var(--accent);
+    color: #FFFFFF !important;
     border-color: var(--accent);
-    color: #000000;
-    transform: scale(1.1);
-    box-shadow: 0 0 30px var(--accent-glow);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 20px var(--accent-glow);
 }
 
 .cs-nav-btn svg {
     width: 20px;
     height: 20px;
-    transition: transform 0.4s var(--ease);
+}
+
+@media (max-width: 768px) {
+    .cs-header-controls {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        width: 100%;
+    }
+    
+    .cs-filters {
+        width: 100%;
+    }
+
+    .cs-header-divider {
+        display: none;
+    }
+
+    .cs-nav {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+/* Hide legacy nav if still present in other templates */
+.cs-grid-wrapper .cs-nav {
+    display: none;
 }
 
 .cs-prev:hover svg {
@@ -4728,8 +4744,10 @@ button {
 }
 
 [data-theme="light"] .cs-filter-btn.active {
-    color: #fff;
-    box-shadow: 0 0 0 1px rgba(74, 143, 226, 0.3), 0 4px 14px rgba(74, 143, 226, 0.18);
+    color: #FFFFFF !important;
+    background: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 8px 20px rgba(var(--accent-rgb), 0.35);
 }
 
 [data-theme="light"] .cs-industry-tag {

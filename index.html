@@ -2,6 +2,16 @@
 <html lang="en" dir="ltr">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J34ZPS4FTY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-J34ZPS4FTY');
+    </script>
+
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({
@@ -519,12 +529,31 @@
                                 <h2 class="section-heading">Industries</h2>
                                 <p class="section-desc">See how measurable outcomes show up across industries.</p>
                             </div>
-                            <div class="cs-filters" role="group" aria-label="Filter case studies">
-                                <button class="cs-filter-btn active" data-filter="all">All Industries</button>
-                                <button class="cs-filter-btn" data-filter="generative-ai">Generative AI</button>
-                                <button class="cs-filter-btn" data-filter="automation">Automation</button>
-                                <button class="cs-filter-btn" data-filter="llm">LLM Integration</button>
-                                <button class="cs-filter-btn" data-filter="agents">AI Agents</button>
+                            <div class="cs-header-controls">
+                                <div class="cs-filters" role="group" aria-label="Filter case studies">
+                                    <button class="cs-filter-btn active" data-filter="all">All Industries</button>
+                                    <button class="cs-filter-btn" data-filter="llm">LLM Integration</button>
+                                    <button class="cs-filter-btn" data-filter="agents">AI Agents</button>
+                                </div>
+                                
+                                <div class="cs-header-divider"></div>
+                                
+                                <div class="cs-nav">
+                                    <button class="cs-nav-btn cs-prev" aria-label="Previous case studies">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                                            <polyline points="12 19 5 12 12 5"></polyline>
+                                        </svg>
+                                    </button>
+                                    <button class="cs-nav-btn cs-next" aria-label="Next case studies">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            <polyline points="12 5 19 12 12 19"></polyline>
+                                        </svg>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -612,21 +641,6 @@
 
                         </div>
 
-                        <div class="cs-nav">
-                            <button class="cs-nav-btn cs-prev" aria-label="Previous case studies">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="19" y1="12" x2="5" y2="12"></line>
-                                    <polyline points="12 19 5 12 12 5"></polyline>
-                                </svg>
-                            </button>
-                            <button class="cs-nav-btn cs-next" aria-label="Next case studies">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -1688,9 +1702,29 @@
         <div class="container">
             <div class="blog-preview-top reveal">
                 <div class="section-tag"><span class="tag-pulse"></span> Blog</div>
-                <h2 class="section-heading">Latest insights & resources</h2>
-                <p class="section-desc">Stay ahead with expert perspectives on AI trends, best practices, and
-                    industry breakthroughs.</p>
+                <div class="blog-header-row">
+                    <div class="blog-header-text">
+                        <h2 class="section-heading">Latest insights & resources</h2>
+                        <p class="section-desc">Stay ahead with expert perspectives on AI trends, best practices, and
+                            industry breakthroughs.</p>
+                    </div>
+                    <div class="blog-nav">
+                        <button class="blog-nav-btn blog-prev" aria-label="Previous posts">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="19" y1="12" x2="5" y2="12"></line>
+                                <polyline points="12 19 5 12 12 5"></polyline>
+                            </svg>
+                        </button>
+                        <button class="blog-nav-btn blog-next" aria-label="Next posts">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
             </div>
             <div class="blog-grid-wrapper">
                 <div class="blog-grid" id="home-blog-grid">
@@ -1732,38 +1766,6 @@
                     </article>
                 </div>
 
-                <div class="blog-nav">
-                    <button class="blog-nav-btn blog-prev" aria-label="Previous posts">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="19" y1="12" x2="5" y2="12"></line>
-                            <polyline points="12 19 5 12 12 5"></polyline>
-                        </svg>
-                    </button>
-                    <button class="blog-nav-btn blog-next" aria-label="Next posts">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </button>
-                </div>
-
-                <div class="blog-nav">
-                    <button class="blog-nav-btn blog-prev" aria-label="Previous posts">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="19" y1="12" x2="5" y2="12"></line>
-                            <polyline points="12 19 5 12 12 5"></polyline>
-                        </svg>
-                    </button>
-                    <button class="blog-nav-btn blog-next" aria-label="Next posts">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </button>
                 </div>
             </div>
             <div class="blog-see-more reveal" style="text-align: center; margin-top: 48px;">
