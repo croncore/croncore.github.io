@@ -523,7 +523,7 @@
             <!-- ===== INDUSTRIES (CASE STUDIES) ===== -->
             <section class="case-studies" id="case-studies" aria-label="Industries and Case Studies">
                 <div class="container">
-                    <div class="case-studies-top reveal">
+                    <div class="case-studies-top">
                         <div class="case-studies-header">
                             <div>
                                 <h2 class="section-heading">Industries</h2>
@@ -532,8 +532,6 @@
                             <div class="cs-header-controls">
                                 <div class="cs-filters" role="group" aria-label="Filter case studies">
                                     <button class="cs-filter-btn active" data-filter="all">All Industries</button>
-                                    <button class="cs-filter-btn" data-filter="llm">LLM Integration</button>
-                                    <button class="cs-filter-btn" data-filter="agents">AI Agents</button>
                                 </div>
                                 
                                 <div class="cs-header-divider"></div>
@@ -561,81 +559,39 @@
                     <div class="cs-grid-wrapper">
                         <div class="cs-grid">
                             <!-- Card 1: Bezninja -->
-                            <article class="cs-card reveal" data-category="agents" aria-label="Bezninja Case Study">
+                            <article class="cs-card" data-category="agents" aria-label="Bezninja Case Study">
                                 <div class="cs-card-bg">
-                                    <img src="images/bezninja-hero.png" alt="Bezninja AI Sales Dashboard">
-                                </div>
-                                <div class="cs-card-overlay"></div>
-                                <div class="cs-card-content">
-                                    <h3 class="cs-card-industry">Sales Ops / Growth</h3>
-                                    <div class="cs-card-bottom">
-                                        <p class="cs-card-desc">Autonomous Sales Agent transforms lead conversion and
-                                            revenue growth</p>
-                                        <div class="cs-card-metric">100% <span class="suffix">lead response</span></div>
-                                        <p class="cs-card-client">with Bezninja</p>
-                                    </div>
+                                    <img src="images/case-studies/benzninja.png" alt="Bezninja — Business Services Case Study">
                                 </div>
                                 <a href="case-study-bezninja" class="cs-card-link-overlay"
                                     aria-label="Read Bezninja case study"></a>
                             </article>
 
                             <!-- Card 2: Bloomlink -->
-                            <article class="cs-card reveal" data-category="llm" aria-label="Bloomlink Case Study">
+                            <article class="cs-card" data-category="llm" aria-label="Bloomlink Case Study">
                                 <div class="cs-card-bg">
-                                    <img src="images/bloomlink-hero.png" alt="Bloomlink Neural TTS Visualization">
-                                </div>
-                                <div class="cs-card-overlay"></div>
-                                <div class="cs-card-content">
-                                    <h3 class="cs-card-industry">Telecommunications & AI</h3>
-                                    <div class="cs-card-bottom">
-                                        <p class="cs-card-desc">Sovereign Neural Voice Engine with 100% data sovereignty
-                                        </p>
-                                        <div class="cs-card-metric">100% <span class="suffix">data sovereignty</span>
-                                        </div>
-                                        <p class="cs-card-client">with Bloomlink</p>
-                                    </div>
+                                    <img src="images/case-studies/Telco @.png" alt="Bloomlink — Telecom & Call Centers Case Study">
                                 </div>
                                 <a href="case-study-bloomlink" class="cs-card-link-overlay"
                                     aria-label="Read Bloomlink case study"></a>
                             </article>
 
                             <!-- Card 3: EdTech -->
-                            <article class="cs-card reveal" data-category="llm" aria-label="EdTech Case Study">
+                            <article class="cs-card" data-category="llm" aria-label="EdTech Case Study">
                                 <div class="cs-card-bg">
-                                    <img src="images/edtech-hero.png" alt="Sovereign AI Learning Management System">
-                                </div>
-                                <div class="cs-card-overlay"></div>
-                                <div class="cs-card-content">
-                                    <h3 class="cs-card-industry">EdTech & Digital Learning</h3>
-                                    <div class="cs-card-bottom">
-                                        <p class="cs-card-desc">Founding "Privacy-First" digital learning powerhouse</p>
-                                        <div class="cs-card-metric">5× <span class="suffix">Enrollment Growth</span>
-                                        </div>
-                                        <p class="cs-card-client">with Quebec EdTech Innovator</p>
-                                    </div>
+                                    <img src="images/case-studies/Education & Digital Learning.png" alt="Education & Digital Learning Case Study">
                                 </div>
                                 <a href="case-study-edtech" class="cs-card-link-overlay"
                                     aria-label="Read EdTech case study"></a>
                             </article>
 
-                            <!-- Card 4: AI Agents (Duplicate for slider testing) -->
-                            <article class="cs-card reveal" data-category="agents" aria-label="AI Agents Test">
+                            <!-- Card 4: Oracle Merchant Services -->
+                            <article class="cs-card" data-category="agents" aria-label="Oracle Merchant Services Case Study">
                                 <div class="cs-card-bg">
-                                    <img src="images/bezninja-hero.png" alt="AI Agents Test Dashboard">
+                                    <img src="images/case-studies/Financial Services.png" alt="Oracle Merchant Services — Financial Services Case Study">
                                 </div>
-                                <div class="cs-card-overlay"></div>
-                                <div class="cs-card-content">
-                                    <h3 class="cs-card-industry">Industrial AI Agents</h3>
-                                    <div class="cs-card-bottom">
-                                        <p class="cs-card-desc">Transforming industrial operations with autonomous
-                                            agents</p>
-                                        <div class="cs-card-metric">40% <span class="suffix">efficiency gain</span>
-                                        </div>
-                                        <p class="cs-card-client">with Global Logistics</p>
-                                    </div>
-                                </div>
-                                <a href="case-study-bezninja" class="cs-card-link-overlay"
-                                    aria-label="Read AI Agents study"></a>
+                                <a href="case-study-oracle" class="cs-card-link-overlay"
+                                    aria-label="Read Oracle Merchant Services case study"></a>
                             </article>
 
 
@@ -2000,6 +1956,11 @@
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/16039991544" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
 </body>
 
 </html>
