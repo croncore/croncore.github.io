@@ -34,18 +34,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Favicon & Icons -->
-    <link rel="icon" type="image/png" href="images/favicons/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="images/favicons/favicon.svg" />
-    <link rel="shortcut icon" href="images/favicons/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png" />
-    <link rel="manifest" href="images/favicons/site.webmanifest" />
+    <link rel="icon" type="image/png" href="/images/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicons/favicon.svg" />
+    <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png" />
+    <link rel="manifest" href="/images/favicons/site.webmanifest" />
     <meta name="theme-color" content="#0A0E17">
 
     <!-- Theme flash prevention -->
     <script>(function () { var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light'); })()</script>
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
     
     <!-- Article Specific Styles -->
     <style>
@@ -340,9 +340,9 @@
         <nav class="nav" id="navbar" role="navigation" aria-label="Primary navigation">
             <div class="container nav-inner">
                 <a href="/" class="nav-brand" aria-label="Croncore Home">
-                    <img src="images/croncore-logo.png" alt="Croncore" class="nav-brand-img logo-dark" width="56"
+                    <img src="/images/croncore-logo.png" alt="Croncore" class="nav-brand-img logo-dark" width="56"
                         height="56" loading="eager">
-                    <img src="images/concore-logo-light-theme.png" alt="Croncore" class="nav-brand-img logo-light"
+                    <img src="/images/concore-logo-light-theme.png" alt="Croncore" class="nav-brand-img logo-light"
                         width="56" height="56" loading="eager">
                 </a>
                 <div class="nav-pill">
@@ -372,7 +372,7 @@
                             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
                         </svg>
                     </button>
-                    <a href="contact" class="btn btn-glow btn-sm">
+                    <a href="/contact" class="btn btn-glow btn-sm">
                         Contact Us
                         <svg class="arrow-icon" viewBox="0 0 24 24">
                             <line x1="5" y1="12" x2="19" y2="12" />
@@ -401,7 +401,7 @@
             <a href="/#testimonials">Testimonials</a>
             <a href="/#blog">Blog</a>
             <a href="/#faq">FAQ</a>
-            <a href="contact" class="btn btn-glow" style="margin-top:12px;">Contact Us</a>
+            <a href="/contact" class="btn btn-glow" style="margin-top:12px;">Contact Us</a>
         </div>
 
         <main id="main-content">
@@ -487,14 +487,14 @@
                 <div class="footer-grid">
                     <div class="footer-brand">
                         <div class="footer-brand-logo">
-                            <img src="images/croncore-logo.png" alt="Croncore" class="logo-dark" width="56" height="56"
+                            <img src="/images/croncore-logo.png" alt="Croncore" class="logo-dark" width="56" height="56"
                                 loading="lazy">
-                            <img src="images/concore-logo-light-theme.png" alt="Croncore" class="logo-light" width="56"
+                            <img src="/images/concore-logo-light-theme.png" alt="Croncore" class="logo-light" width="56"
                                 height="56" loading="lazy">
                         </div>
                         <p>AI-powered solutions for automation and business growth. Empowering companies with
                             intelligent technology that delivers real results.</p>
-                        <a href="contact" class="btn btn-glow btn-sm">
+                        <a href="/contact" class="btn btn-glow btn-sm">
                             Contact Us
                             <svg class="arrow-icon" viewBox="0 0 24 24">
                                 <line x1="5" y1="12" x2="19" y2="12" />
@@ -552,8 +552,8 @@
                 <div class="footer-bottom">
                     <span>&copy; 2025&ndash;2026 Croncore LLC. All rights reserved.</span>
                     <div class="footer-bottom-links">
-                        <a href="privacy-policy">Privacy Policy</a>
-                        <a href="terms">Terms of Service</a>
+                        <a href="/privacy-policy">Privacy Policy</a>
+                        <a href="/terms">Terms of Service</a>
                     </div>
                 </div>
             </div>
@@ -561,7 +561,7 @@
     </div>
 
     <!-- JavaScript -->
-    <script src="js/main.js"></script>
+    <script src="/js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Extract slug from URL path: /article/my-blog-slug
@@ -623,6 +623,9 @@
                     var category = '';
                     if (post._embedded && post._embedded['wp:term'] && post._embedded['wp:term'][0] && post._embedded['wp:term'][0].length > 0) {
                         category = post._embedded['wp:term'][0][0].name;
+                    }
+                    if (!category || category.toLowerCase() === 'uncategorized') {
+                        category = 'Blogs';
                     }
 
                     // Reading time estimate
