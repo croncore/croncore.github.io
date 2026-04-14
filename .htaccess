@@ -7,7 +7,16 @@ RewriteRule ^index\.html$ / [R=301,L]
 RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
 RewriteRule ^ /%1 [L,R=301]
 
-# 3. Internally map /page to /page.html (Internal Rewrite)
+# 3. Route /article/any-slug to article.html (must be before the generic rule)
+RewriteRule ^article/(.+)$ article.html [L]
+
+# 4. 301 Redirects for old case study URLs
+RewriteRule ^case-study-bezninja$ /case-study-autonomous-sales-agent-drives-record-revenue-growth [R=301,L]
+RewriteRule ^case-study-bloomlink$ /case-study-sovereign-voice-engine-for-mongolia [R=301,L]
+RewriteRule ^case-study-edtech$ /case-study-architecting-a-ground-up-digital-learning-powerhouse [R=301,L]
+RewriteRule ^case-study-oracle$ /case-study-custom-ai-voice-agent-closes-the-speed-to-lead-gap [R=301,L]
+
+# 4. Internally map /page to /page.html (Internal Rewrite)
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.*?)/?$ $1.html [L]
