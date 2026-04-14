@@ -591,7 +591,7 @@
                     html += '        <p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">' + post.excerpt.rendered.replace(/<[^>]*>?/gm, '').substring(0, 150) + '...</p>';
                     html += '        <div class="blog-card-meta">';
                     html += '            <span>' + dateStr + '</span>';
-                    html += '            <a href="article#' + post.id + '" class="blog-card-link">Read More <svg class="arrow-icon" viewBox="0 0 24 24">';
+                    html += '            <a href="article/' + post.slug + '" class="blog-card-link">Read More <svg class="arrow-icon" viewBox="0 0 24 24">';
                     html += '                    <line x1="5" y1="12" x2="19" y2="12" />';
                     html += '                    <polyline points="12 5 19 12 12 19" />';
                     html += '                </svg></a>';
