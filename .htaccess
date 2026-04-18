@@ -7,8 +7,11 @@ RewriteRule ^index\.html$ / [R=301,L]
 RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
 RewriteRule ^ /%1 [L,R=301]
 
-# 3. Route /article/any-slug to article.html (must be before the generic rule)
-RewriteRule ^article/(.+)$ article.html [L]
+# 3. Route /insights/any-slug to article.html (must be before the generic rule)
+RewriteRule ^insights/(.+)$ article.html [L]
+
+# 3b. Redirect old /article/ URLs to /insights/ for SEO
+RewriteRule ^article/(.+)$ /insights/$1 [R=301,L]
 
 # 4. 301 Redirects for old case study URLs
 RewriteRule ^case-study-bezninja$ /case-study-autonomous-sales-agent-drives-record-revenue-growth [R=301,L]

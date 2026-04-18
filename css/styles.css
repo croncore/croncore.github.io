@@ -3029,10 +3029,27 @@ button {
 }
 
 @media (max-width: 768px) {
+    .blog-preview-top {
+        position: relative;
+    }
+
     .blog-header-row {
         flex-direction: column;
         align-items: flex-start;
-        gap: 20px;
+        gap: 16px;
+    }
+
+    .blog-nav {
+        position: absolute;
+        top: 0;
+        right: 0;
+        flex-shrink: 0;
+    }
+
+    .blog-nav-btn {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
     }
 }
 
@@ -4594,14 +4611,15 @@ button {
 
 @media (max-width: 768px) {
     .cs-header-controls {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
         width: 100%;
     }
-    
+
     .cs-filters {
-        width: 100%;
+        width: auto;
     }
 
     .cs-header-divider {
@@ -4609,8 +4627,14 @@ button {
     }
 
     .cs-nav {
-        width: 100%;
-        justify-content: flex-start;
+        width: auto;
+        justify-content: flex-end;
+    }
+
+    .cs-nav-btn {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
     }
 }
 

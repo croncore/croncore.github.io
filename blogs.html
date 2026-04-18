@@ -31,6 +31,9 @@
     <!-- Preconnect & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Preconnect to WordPress for faster API + image loading -->
+    <link rel="preconnect" href="https://www.croncore.com">
+    <link rel="dns-prefetch" href="https://www.croncore.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
@@ -239,9 +242,10 @@
         document.addEventListener('DOMContentLoaded', function() {
             var blogGrid = document.getElementById('full-blog-grid');
             var loading = document.getElementById('blog-loading');
-            
+
             var siteUrl = 'https://www.croncore.com';
-            var wpApiUrl = siteUrl + '/blog/wp-json/wp/v2/posts?_embed&per_page=20';
+            // Only request the fields we need + use _embed for media & categories
+            var wpApiUrl = siteUrl + '/blog/wp-json/wp/v2/posts?_embed&per_page=20&_fields=id,date,slug,title,excerpt,_links';
 
             fetch(wpApiUrl)
                 .then(function(r) { if(!r.ok) throw new Error('API failed'); return r.json(); })
@@ -255,8 +259,23 @@
                     var html = '';
                     posts.forEach(function(post) {
                         var imageUrl = 'images/blog1.jpeg';
-                        if (post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url) {
-                            imageUrl = post._embedded['wp:featuredmedia'][0].source_url;
+                        if (post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0]) {
+                            var media = post._embedded['wp:featuredmedia'][0];
+                            // Prefer medium_large (768px) over full-size for faster loading
+                            if (media.media_details && media.media_details.sizes) {
+                                var sizes = media.media_details.sizes;
+                                if (sizes.medium_large) {
+                                    imageUrl = sizes.medium_large.source_url;
+                                } else if (sizes.medium) {
+                                    imageUrl = sizes.medium.source_url;
+                                } else if (sizes.large) {
+                                    imageUrl = sizes.large.source_url;
+                                } else {
+                                    imageUrl = media.source_url;
+                                }
+                            } else if (media.source_url) {
+                                imageUrl = media.source_url;
+                            }
                         }
                         var dateObj = new Date(post.date);
                         var dateStr = dateObj.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
@@ -278,7 +297,7 @@
                         html += '        <p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">' + post.excerpt.rendered.replace(/<[^>]*>?/gm, '').substring(0, 150) + '...</p>';
                         html += '        <div class="blog-card-meta">';
                         html += '            <span>' + dateStr + '</span>';
-                        html += '            <a href="article/' + post.slug + '" class="blog-card-link">Read More <svg class="arrow-icon" viewBox="0 0 24 24">';
+                        html += '            <a href="insights/' + post.slug + '" class="blog-card-link">Read More <svg class="arrow-icon" viewBox="0 0 24 24">';
                         html += '                    <line x1="5" y1="12" x2="19" y2="12" />';
                         html += '                    <polyline points="12 5 19 12 12 19" />';
                         html += '                </svg></a>';
