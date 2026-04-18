@@ -26,7 +26,7 @@
     <!-- Primary SEO -->
     <title id="page-title">Blog Insights — Croncore</title>
     <meta name="description" id="page-description" content="Expert insights on AI, automation, and business scaling from the Croncore team.">
-    <link rel="canonical" id="page-canonical" href="https://www.croncore.com/article">
+    <link rel="canonical" id="page-canonical" href="https://www.croncore.com/insights">
     
     <!-- Preconnect & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -564,9 +564,9 @@
     <script src="/js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Extract slug from URL path: /article/my-blog-slug
+            // Extract slug from URL path: /insights/my-blog-slug
             var pathParts = window.location.pathname.split('/');
-            var articleIndex = pathParts.indexOf('article');
+            var articleIndex = pathParts.indexOf('insights');
             var postSlug = (articleIndex !== -1 && pathParts[articleIndex + 1]) ? pathParts[articleIndex + 1] : '';
 
             // Fallback: support old hash-based URLs for backwards compatibility
@@ -578,7 +578,7 @@
                     fetch(siteUrlRedirect + '/blog/wp-json/wp/v2/posts/' + hashId)
                         .then(function(r) { return r.json(); })
                         .then(function(post) {
-                            window.location.replace('/article/' + post.slug);
+                            window.location.replace('/insights/' + post.slug);
                         })
                         .catch(function() {
                             window.location.replace('/blogs');
@@ -611,7 +611,7 @@
 
                     // Page title & SEO meta
                     document.title = title + ' — Croncore Blog';
-                    document.getElementById('page-canonical').href = 'https://www.croncore.com/article/' + post.slug;
+                    document.getElementById('page-canonical').href = 'https://www.croncore.com/insights/' + post.slug;
                     var excerpt = post.excerpt.rendered.replace(/<[^>]*>?/gm, '').trim().substring(0, 160);
                     document.getElementById('page-description').content = excerpt;
 
