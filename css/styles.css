@@ -5288,6 +5288,10 @@ button {
 .float-btn > svg:first-child {
     width: 22px;
     height: 22px;
+    min-width: 22px;
+    max-width: 22px;
+    min-height: 22px;
+    max-height: 22px;
     flex-shrink: 0;
 }
 
