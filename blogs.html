@@ -100,6 +100,18 @@
             .blog-grid { grid-template-columns: 1fr; }
         }
     </style>
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.croncore.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://www.croncore.com/blogs" }
+        ]
+    }
+    </script>
 </head>
 
 <body>
@@ -244,8 +256,7 @@
             var loading = document.getElementById('blog-loading');
 
             var siteUrl = 'https://www.croncore.com';
-            // Only request the fields we need + use _embed for media & categories
-            var wpApiUrl = siteUrl + '/blog/wp-json/wp/v2/posts?_embed&per_page=20&_fields=id,date,slug,title,excerpt,_links';
+            var wpApiUrl = siteUrl + '/blog/wp-json/wp/v2/posts?_embed&per_page=20';
 
             fetch(wpApiUrl)
                 .then(function(r) { if(!r.ok) throw new Error('API failed'); return r.json(); })
