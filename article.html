@@ -615,6 +615,20 @@
                     var excerpt = post.excerpt.rendered.replace(/<[^>]*>?/gm, '').trim().substring(0, 160);
                     document.getElementById('page-description').content = excerpt;
 
+                    // Inject BreadcrumbList structured data for SEO
+                    var breadcrumbScript = document.createElement('script');
+                    breadcrumbScript.type = 'application/ld+json';
+                    breadcrumbScript.text = JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.croncore.com/" },
+                            { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://www.croncore.com/blogs" },
+                            { "@type": "ListItem", "position": 3, "name": title, "item": "https://www.croncore.com/insights/" + post.slug }
+                        ]
+                    });
+                    document.head.appendChild(breadcrumbScript);
+
                     // Date
                     var dateObj = new Date(post.date);
                     var dateStr = dateObj.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
@@ -722,7 +736,7 @@
             <span>Contact on WhatsApp</span>
             <svg class="float-btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </a>
-        <a href="contact" class="float-btn float-btn--contact" aria-label="Contact Us">
+        <a href="/contact" class="float-btn float-btn--contact" aria-label="Contact Us">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             <span>Contact Us</span>
             <svg class="float-btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
