@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://croncore.com/sitemap.xml
+Sitemap: https://www.croncore.com/sitemap.xml

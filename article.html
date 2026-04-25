@@ -629,6 +629,37 @@
                     });
                     document.head.appendChild(breadcrumbScript);
 
+                    // Inject Article structured data for SEO (rich results)
+                    var articleImage = '';
+                    if (post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0] && post._embedded['wp:featuredmedia'][0].source_url) {
+                        articleImage = post._embedded['wp:featuredmedia'][0].source_url;
+                    }
+                    var authorName = 'Croncore';
+                    if (post._embedded && post._embedded.author && post._embedded.author[0] && post._embedded.author[0].name) {
+                        authorName = post._embedded.author[0].name;
+                    }
+                    var articleUrl = 'https://www.croncore.com/insights/' + post.slug;
+                    var articleSchema = {
+                        "@context": "https://schema.org",
+                        "@type": "Article",
+                        "mainEntityOfPage": { "@type": "WebPage", "@id": articleUrl },
+                        "headline": title,
+                        "datePublished": post.date,
+                        "dateModified": post.modified || post.date,
+                        "author": { "@type": "Person", "name": authorName },
+                        "publisher": {
+                            "@type": "Organization",
+                            "name": "Croncore",
+                            "logo": { "@type": "ImageObject", "url": "https://www.croncore.com/images/croncore-logo.png" }
+                        },
+                        "url": articleUrl
+                    };
+                    if (articleImage) { articleSchema.image = articleImage; }
+                    var articleScript = document.createElement('script');
+                    articleScript.type = 'application/ld+json';
+                    articleScript.text = JSON.stringify(articleSchema);
+                    document.head.appendChild(articleScript);
+
                     // Date
                     var dateObj = new Date(post.date);
                     var dateStr = dateObj.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
