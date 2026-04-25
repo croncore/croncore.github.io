@@ -1,5 +1,9 @@
 RewriteEngine On
 
+# 0. Force canonical host: redirect non-www to www (must run first)
+RewriteCond %{HTTP_HOST} ^croncore\.com$ [NC]
+RewriteRule ^(.*)$ https://www.croncore.com/$1 [R=301,L]
+
 # 1. Redirect /index.html to /
 RewriteRule ^index\.html$ / [R=301,L]
 
