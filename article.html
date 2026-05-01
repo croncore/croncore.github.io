@@ -24,7 +24,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- Primary SEO -->
-    <title id="page-title">Blog Insights — Croncore</title>
+    <title id="page-title">Insights — Croncore</title>
     <meta name="description" id="page-description" content="Expert insights on AI, automation, and business scaling from the Croncore team.">
     <link rel="canonical" id="page-canonical" href="https://www.croncore.com/insights">
     
@@ -353,7 +353,7 @@
                     <a href="/#features" class="nav-link">Features</a>
                     <a href="/#about" class="nav-link">About</a>
                     <a href="/#testimonials" class="nav-link">Testimonials</a>
-                    <a href="/#blog" class="nav-link">Blog</a>
+                    <a href="/#insights" class="nav-link">Insights</a>
                     <a href="/#faq" class="nav-link">FAQ</a>
                 </div>
                 <div class="nav-actions">
@@ -402,7 +402,7 @@
             <a href="/#features">Features</a>
             <a href="/#about">About</a>
             <a href="/#testimonials">Testimonials</a>
-            <a href="/#blog">Blog</a>
+            <a href="/#insights">Insights</a>
             <a href="/#faq">FAQ</a>
             <a href="/contact" class="btn btn-glow" style="margin-top:12px;">Contact Us</a>
         </div>
@@ -512,7 +512,7 @@
                             <li><a href="/#services">Services</a></li>
                             <li><a href="/#features">Features</a></li>
                             <li><a href="/#testimonials">Testimonials</a></li>
-                            <li><a href="/#blog">Blog</a></li>
+                            <li><a href="/#insights">Insights</a></li>
                         </ul>
                     </nav>
                     <nav class="footer-col" aria-label="Services">
@@ -568,7 +568,7 @@
     <script src="/js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Extract slug from URL path: /insights/my-blog-slug
+            // Extract slug from URL path: /insights/my-insights-slug
             var pathParts = window.location.pathname.split('/');
             var articleIndex = pathParts.indexOf('insights');
             var postSlug = (articleIndex !== -1 && pathParts[articleIndex + 1]) ? decodeURIComponent(pathParts[articleIndex + 1]) : '';
@@ -597,13 +597,13 @@
                     var dateStr = post.publishedAt
                         ? new Date(post.publishedAt).toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'})
                         : '';
-                    var category = post.category || 'Blogs';
+                    var category = post.category || 'Insights';
                     var heroImageUrl = post.mainImage ? Sanity.imageUrl(post.mainImage, {width: 1600, fit: 'crop', quality: 85}) : '';
                     var ogImageUrl = post.mainImage ? Sanity.imageUrl(post.mainImage, {width: 1200, fit: 'crop', quality: 80}) : '';
                     var authorName = (post.author && post.author.name) || 'Croncore';
 
                     // SEO: page title, description, canonical
-                    document.title = title + ' — Croncore Blog';
+                    document.title = title + ' — Croncore Insights';
                     var canonicalUrl = 'https://www.croncore.com/insights/' + post.slug;
                     document.getElementById('page-canonical').href = canonicalUrl;
                     var description = post.excerpt || Sanity.portableTextToPlain(post.body, 160);
@@ -617,7 +617,7 @@
                         '@type': 'BreadcrumbList',
                         'itemListElement': [
                             {'@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://www.croncore.com/'},
-                            {'@type': 'ListItem', 'position': 2, 'name': 'Insights', 'item': 'https://www.croncore.com/blogs'},
+                            {'@type': 'ListItem', 'position': 2, 'name': 'Insights', 'item': 'https://www.croncore.com/insights'},
                             {'@type': 'ListItem', 'position': 3, 'name': title, 'item': canonicalUrl}
                         ]
                     });
@@ -673,11 +673,11 @@
 
                     document.getElementById('article-body').innerHTML = bodyHtml;
 
-                    // Update "Back" links to /blogs
+                    // Update "Back" links to /insights
                     var backLinks = document.querySelectorAll('.article-back, .article-back-bottom a');
                     backLinks.forEach(function (link) {
-                        link.setAttribute('href', '/blogs');
-                        var label = link.classList.contains('article-back') ? 'Back to Blogs' : 'Back to All Blogs';
+                        link.setAttribute('href', '/insights');
+                        var label = link.classList.contains('article-back') ? 'Back to Insights' : 'Back to All Insights';
                         link.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> ' + label;
                     });
 
@@ -689,7 +689,7 @@
                     console.error('Sanity fetch error:', err);
                     document.getElementById('loading').style.display = 'none';
                     var errDiv = document.getElementById('error');
-                    errDiv.innerHTML = '<p>Could not load the article.</p><p style="font-size:0.9em;color:var(--text-muted);margin-top:10px;">' + (err && err.message ? err.message : 'Unknown error') + '</p><a href="/blogs" class="btn btn-glow" style="margin-top:20px;">Back to Blogs</a>';
+                    errDiv.innerHTML = '<p>Could not load the article.</p><p style="font-size:0.9em;color:var(--text-muted);margin-top:10px;">' + (err && err.message ? err.message : 'Unknown error') + '</p><a href="/insights" class="btn btn-glow" style="margin-top:20px;">Back to Insights</a>';
                     errDiv.style.display = 'block';
                 });
         });

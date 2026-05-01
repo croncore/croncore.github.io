@@ -1,6 +1,6 @@
 # Sanity CMS — setup & deploy
 
-This site uses **Sanity** as the blog CMS. You write posts in the Studio, and the static site fetches them from Sanity's public CDN at runtime. No build step on the website side.
+This site uses **Sanity** as the insights CMS. You write posts in the Studio, and the static site fetches them from Sanity's public CDN at runtime. No build step on the website side.
 
 - Project ID: `b5z10ias`
 - Dataset: `production`
@@ -62,7 +62,7 @@ Bookmark that URL — it's where you (and anyone you invite) write posts from an
 1. Open <https://croncore.sanity.studio> (or run `npm run dev` from `studio/` for local).
 2. Click **Post → Create new**.
 3. Fill in title (slug auto-generates), upload a featured image, pick a category and author, write the body, set publish date, hit **Publish**.
-4. The post appears on `https://www.croncore.com/blogs` within ~5 seconds (Sanity CDN cache).
+4. The post appears on `https://www.croncore.com/insights` within ~5 seconds (Sanity CDN cache).
 
 ### Editing or deleting a post
 
@@ -73,12 +73,12 @@ Open it in the Studio, edit, hit Publish again. To unpublish, use the dropdown n
 ## How the frontend talks to Sanity
 
 - `js/sanity.js` — small wrapper around Sanity's public GROQ HTTP API + a Portable Text → HTML renderer. No npm dependencies, ~5KB.
-- `js/main.js` — homepage blog preview (8 latest posts).
-- `blogs.html` — full listing (50 latest posts).
+- `js/main.js` — homepage insights preview (8 latest posts).
+- `insights.html` — full listing (50 latest posts).
 - `article.html` — single post by slug, parses `/insights/<slug>` from URL.
 
 URLs:
-- `/blogs` — listing
+- `/insights` — listing
 - `/insights/<slug>` — single post (rewritten to `article.html` by `_redirects`)
 
 The Cloudflare Pages `_redirects` file handles the URL rewrites that the old Apache `.htaccess` used to do. The `.htaccess` file is dead on Cloudflare Pages and is kept only for documentation.
@@ -93,9 +93,9 @@ studio/                  # Sanity Studio (CMS admin) — NOT deployed to Cloudfl
   sanity.config.ts
   sanity.cli.ts
   package.json
-js/sanity.js             # Sanity client + Portable Text renderer (loaded by all blog pages)
-js/main.js               # Site-wide JS, includes homepage blog fetch
-blogs.html               # Blog listing
+js/sanity.js             # Sanity client + Portable Text renderer (loaded by all insights pages)
+js/main.js               # Site-wide JS, includes homepage insights fetch
+insights.html               # Insights listing
 article.html             # Single article page, served at /insights/<slug>
 _redirects               # Cloudflare Pages routing (replaces old .htaccess)
 .assetsignore            # Tells Cloudflare not to upload studio/, .git/, etc.
@@ -105,7 +105,7 @@ _redirects               # Cloudflare Pages routing (replaces old .htaccess)
 
 ## Troubleshooting
 
-**"Error loading blogs" on the live site** — almost always missing CORS origin. Check step 1 above.
+**"Error loading insights" on the live site** — almost always missing CORS origin. Check step 1 above.
 
 **Studio won't start (`npm run dev`)** — make sure you ran `npm install` inside `studio/` first, and that `npx sanity login` completed.
 

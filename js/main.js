@@ -539,15 +539,15 @@
     }
 
     /* ========================================
-       SANITY BLOG FETCH & SLIDER (homepage preview)
+       SANITY INSIGHTS FETCH & SLIDER (homepage preview)
     ======================================== */
-    var blogGrid = document.querySelector('#home-blog-grid');
-    var blogPrevBtn = document.querySelector('.blog-prev');
-    var blogNextBtn = document.querySelector('.blog-next');
+    var insightsGrid = document.querySelector('#home-insights-grid');
+    var insightsPrevBtn = document.querySelector('.insights-prev');
+    var insightsNextBtn = document.querySelector('.insights-next');
 
-    if (blogGrid && typeof Sanity !== 'undefined') {
-        var hasExistingContent = blogGrid.querySelectorAll('.blog-card').length > 0;
-        var FALLBACK_IMG = 'images/blog1.jpeg';
+    if (insightsGrid && typeof Sanity !== 'undefined') {
+        var hasExistingContent = insightsGrid.querySelectorAll('.insights-card').length > 0;
+        var FALLBACK_IMG = 'images/insights1.jpeg';
 
         var groq = '*[_type == "post" && defined(slug.current)] | order(publishedAt desc) [0...8] {' +
             '"slug": slug.current, title, excerpt, publishedAt,' +
@@ -562,7 +562,7 @@
             .then(function (posts) {
                 if (!posts || posts.length === 0) {
                     if (!hasExistingContent) {
-                        blogGrid.innerHTML = '<p style="text-align:center; width:100%; color:var(--text-muted);">No posts available.</p>';
+                        insightsGrid.innerHTML = '<p style="text-align:center; width:100%; color:var(--text-muted);">No posts available.</p>';
                     }
                     return;
                 }
@@ -575,18 +575,18 @@
                     var dateStr = post.publishedAt
                         ? new Date(post.publishedAt).toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'})
                         : '';
-                    var category = post.category || 'Blogs';
+                    var category = post.category || 'Insights';
                     var excerpt = post.excerpt || Sanity.portableTextToPlain(post.body, 150);
 
-                    return '<article class="blog-card in-view">' +
-                        '<img src="' + img + '" alt="' + escHtml(alt) + '" class="blog-card-img" style="aspect-ratio: 16/9; object-fit: cover;" width="400" height="225" loading="lazy">' +
-                        '<div class="blog-card-body">' +
-                            '<span class="blog-card-category">' + escHtml(category) + '</span>' +
+                    return '<article class="insights-card in-view">' +
+                        '<img src="' + img + '" alt="' + escHtml(alt) + '" class="insights-card-img" style="aspect-ratio: 16/9; object-fit: cover;" width="400" height="225" loading="lazy">' +
+                        '<div class="insights-card-body">' +
+                            '<span class="insights-card-category">' + escHtml(category) + '</span>' +
                             '<h3 style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">' + escHtml(post.title || '') + '</h3>' +
                             '<p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">' + escHtml(excerpt) + '</p>' +
-                            '<div class="blog-card-meta">' +
+                            '<div class="insights-card-meta">' +
                                 '<span>' + dateStr + '</span>' +
-                                '<a href="insights/' + encodeURIComponent(post.slug) + '" class="blog-card-link">Read More <svg class="arrow-icon" viewBox="0 0 24 24">' +
+                                '<a href="insights/' + encodeURIComponent(post.slug) + '" class="insights-card-link">Read More <svg class="arrow-icon" viewBox="0 0 24 24">' +
                                     '<line x1="5" y1="12" x2="19" y2="12" />' +
                                     '<polyline points="12 5 19 12 12 19" />' +
                                 '</svg></a>' +
@@ -595,62 +595,62 @@
                     '</article>';
                 }).join('');
 
-                blogGrid.innerHTML = html;
-                initBlogSlider();
+                insightsGrid.innerHTML = html;
+                initInsightsSlider();
             })
             .catch(function (error) {
-                console.error('Sanity blog fetch error:', error);
+                console.error('Sanity insights fetch error:', error);
             });
 
-        function initBlogSlider() {
-            if (!blogGrid || !blogPrevBtn || !blogNextBtn) return;
+        function initInsightsSlider() {
+            if (!insightsGrid || !insightsPrevBtn || !insightsNextBtn) return;
 
-            function updateBlogButtons() {
-                var scrollLeft = blogGrid.scrollLeft;
-                var maxScroll = blogGrid.scrollWidth - blogGrid.clientWidth;
+            function updateInsightsButtons() {
+                var scrollLeft = insightsGrid.scrollLeft;
+                var maxScroll = insightsGrid.scrollWidth - insightsGrid.clientWidth;
                 
                 // Show buttons only if content exceeds container width
-                if (blogGrid.scrollWidth > blogGrid.clientWidth + 10) {
-                    blogPrevBtn.classList.add('visible');
-                    blogNextBtn.classList.add('visible');
+                if (insightsGrid.scrollWidth > insightsGrid.clientWidth + 10) {
+                    insightsPrevBtn.classList.add('visible');
+                    insightsNextBtn.classList.add('visible');
                 } else {
-                    blogPrevBtn.classList.remove('visible');
-                    blogNextBtn.classList.remove('visible');
+                    insightsPrevBtn.classList.remove('visible');
+                    insightsNextBtn.classList.remove('visible');
                 }
 
                 // Opacity and enabled state based on scroll position
                 if (scrollLeft > 10) {
-                    blogPrevBtn.style.opacity = '1';
-                    blogPrevBtn.style.pointerEvents = 'auto';
+                    insightsPrevBtn.style.opacity = '1';
+                    insightsPrevBtn.style.pointerEvents = 'auto';
                 } else {
-                    blogPrevBtn.style.opacity = '0.3';
-                    blogPrevBtn.style.pointerEvents = 'none';
+                    insightsPrevBtn.style.opacity = '0.3';
+                    insightsPrevBtn.style.pointerEvents = 'none';
                 }
 
                 if (scrollLeft < maxScroll - 10) {
-                    blogNextBtn.style.opacity = '1';
-                    blogNextBtn.style.pointerEvents = 'auto';
+                    insightsNextBtn.style.opacity = '1';
+                    insightsNextBtn.style.pointerEvents = 'auto';
                 } else {
-                    blogNextBtn.style.opacity = '0.3';
-                    blogNextBtn.style.pointerEvents = 'none';
+                    insightsNextBtn.style.opacity = '0.3';
+                    insightsNextBtn.style.pointerEvents = 'none';
                 }
             }
 
-            blogNextBtn.addEventListener('click', function () {
-                var scrollAmount = blogGrid.clientWidth * 0.8;
-                blogGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            insightsNextBtn.addEventListener('click', function () {
+                var scrollAmount = insightsGrid.clientWidth * 0.8;
+                insightsGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
             });
 
-            blogPrevBtn.addEventListener('click', function () {
-                var scrollAmount = blogGrid.clientWidth * 0.8;
-                blogGrid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            insightsPrevBtn.addEventListener('click', function () {
+                var scrollAmount = insightsGrid.clientWidth * 0.8;
+                insightsGrid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
             });
 
-            blogGrid.addEventListener('scroll', updateBlogButtons);
-            window.addEventListener('resize', updateBlogButtons);
+            insightsGrid.addEventListener('scroll', updateInsightsButtons);
+            window.addEventListener('resize', updateInsightsButtons);
             
             // Initial check after a short delay to ensure rendering is complete
-            setTimeout(updateBlogButtons, 500);
+            setTimeout(updateInsightsButtons, 500);
         }
     }
 

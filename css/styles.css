@@ -167,10 +167,10 @@
     border-color: rgba(74, 143, 226, 0.08);
 }
 
-/* --- Service, Feature, Blog cards & Stats --- */
+/* --- Service, Feature, Insights cards & Stats --- */
 [data-theme="light"] .svc-card,
 [data-theme="light"] .feat-card,
-[data-theme="light"] .blog-card {
+[data-theme="light"] .insights-card {
     background: #FFFFFF;
     border-color: rgba(74, 143, 226, 0.1);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(74, 143, 226, 0.04);
@@ -190,7 +190,7 @@
 
 [data-theme="light"] .svc-card:hover,
 [data-theme="light"] .feat-card:hover,
-[data-theme="light"] .blog-card:hover {
+[data-theme="light"] .insights-card:hover {
     border-color: rgba(74, 143, 226, 0.25);
     box-shadow: 0 8px 32px rgba(74, 143, 226, 0.1), 0 0 0 1px rgba(74, 143, 226, 0.08);
 }
@@ -347,7 +347,7 @@
     background: linear-gradient(180deg, #F2F5FB 0%, #FAFBFE 100%);
 }
 
-[data-theme="light"] .blog-preview {
+[data-theme="light"] .insights-preview {
     background: #FFFFFF;
 }
 
@@ -406,12 +406,12 @@
     color: #0F1824;
 }
 
-/* --- Blog cards --- */
-[data-theme="light"] .blog-card-img {
+/* --- Insights cards --- */
+[data-theme="light"] .insights-card-img {
     filter: brightness(0.98) saturate(1.05);
 }
 
-[data-theme="light"] .blog-card-category {
+[data-theme="light"] .insights-card-category {
     background: rgba(74, 143, 226, 0.06);
     border-color: rgba(74, 143, 226, 0.15);
 }
@@ -2915,27 +2915,27 @@ button {
 }
 
 /* ========================================
-   BLOG PREVIEW
+   INSIGHTS PREVIEW
 ======================================== */
-.blog-preview {
+.insights-preview {
     padding: var(--section-pad) 0;
 }
 
-.blog-preview-top {
+.insights-preview-top {
     text-align: center;
     margin-bottom: 64px;
 }
 
-.blog-preview-top .section-desc {
+.insights-preview-top .section-desc {
     margin: 0 auto;
 }
 
-.blog-grid-wrapper {
+.insights-grid-wrapper {
     position: relative;
     width: 100%;
 }
 
-.blog-grid {
+.insights-grid {
     display: flex;
     gap: 32px;
     overflow-x: auto;
@@ -2947,37 +2947,37 @@ button {
     -webkit-overflow-scrolling: touch;
 }
 
-.blog-grid::-webkit-scrollbar {
+.insights-grid::-webkit-scrollbar {
     display: none; /* Chrome/Safari */
 }
 
 @media (min-width: 1200px) {
-    .blog-card {
+    .insights-card {
         flex: 0 0 calc(25% - 24px); /* 4 cards per view */
         scroll-snap-align: start;
     }
 }
 
 @media (max-width: 1199px) and (min-width: 768px) {
-    .blog-card {
+    .insights-card {
         flex: 0 0 calc(50% - 16px); /* 2 cards per view */
         scroll-snap-align: start;
     }
 }
 
 @media (max-width: 767px) {
-    .blog-card {
+    .insights-card {
         flex: 0 0 85%; /* Mostly one card plus peek */
         scroll-snap-align: center;
     }
     
-    .blog-grid {
+    .insights-grid {
         gap: 20px;
     }
 }
 
-/* Blog Header & Navigation */
-.blog-header-row {
+/* Insights Header & Navigation */
+.insights-header-row {
     display: flex;
     justify-content: space-between;
     align-items: center; /* Centered with heading */
@@ -2985,11 +2985,11 @@ button {
     margin-top: 10px;
 }
 
-.blog-header-text {
+.insights-header-text {
     flex: 1;
 }
 
-.blog-nav {
+.insights-nav {
     display: flex;
     gap: 8px;
     pointer-events: auto;
@@ -2997,7 +2997,7 @@ button {
     visibility: visible !important;
 }
 
-.blog-nav-btn {
+.insights-nav-btn {
     width: 44px;
     height: 44px;
     border-radius: 12px;
@@ -3013,12 +3013,12 @@ button {
     touch-action: manipulation;
 }
 
-.blog-nav-btn svg {
+.insights-nav-btn svg {
     width: 20px;
     height: 20px;
 }
 
-.blog-nav-btn:hover {
+.insights-nav-btn:hover {
     background: var(--accent);
     color: #FFFFFF !important;
     border-color: var(--accent);
@@ -3026,39 +3026,39 @@ button {
     box-shadow: 0 10px 20px var(--accent-glow);
 }
 
-.blog-prev:hover svg {
+.insights-prev:hover svg {
     transform: translateX(-3px);
 }
-.blog-next:hover svg {
+.insights-next:hover svg {
     transform: translateX(3px);
 }
 
 @media (max-width: 768px) {
-    .blog-preview-top {
+    .insights-preview-top {
         position: relative;
     }
 
-    .blog-header-row {
+    .insights-header-row {
         flex-direction: column;
         align-items: flex-start;
         gap: 16px;
     }
 
-    .blog-nav {
+    .insights-nav {
         position: absolute;
         top: 0;
         right: 0;
         flex-shrink: 0;
     }
 
-    .blog-nav-btn {
+    .insights-nav-btn {
         width: 38px;
         height: 38px;
         border-radius: 10px;
     }
 }
 
-.blog-card {
+.insights-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--r-xl);
@@ -3066,13 +3066,13 @@ button {
     transition: all var(--t-normal) var(--ease);
 }
 
-.blog-card:hover {
+.insights-card:hover {
     border-color: var(--border-accent);
     transform: translateY(-5px);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 212, 255, 0.03);
 }
 
-.blog-card-img {
+.insights-card-img {
     width: 100%;
     height: 200px;
     object-fit: cover;
@@ -3080,15 +3080,15 @@ button {
     transition: transform 0.6s var(--ease);
 }
 
-.blog-card:hover .blog-card-img {
+.insights-card:hover .insights-card-img {
     transform: scale(1.06);
 }
 
-.blog-card-body {
+.insights-card-body {
     padding: 28px;
 }
 
-.blog-card-category {
+.insights-card-category {
     display: inline-block;
     padding: 4px 12px;
     border-radius: var(--r-full);
@@ -3103,7 +3103,7 @@ button {
     margin-bottom: 14px;
 }
 
-.blog-card h3 {
+.insights-card h3 {
     font-family: var(--font-display);
     font-size: 1.1rem;
     font-weight: 700;
@@ -3112,14 +3112,14 @@ button {
     line-height: 1.4;
 }
 
-.blog-card p {
+.insights-card p {
     font-size: 0.85rem;
     color: var(--text-secondary);
     line-height: 1.7;
     margin-bottom: 18px;
 }
 
-.blog-card-meta {
+.insights-card-meta {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -3129,7 +3129,7 @@ button {
     border-top: 1px solid var(--border);
 }
 
-.blog-card-link {
+.insights-card-link {
     font-family: var(--font-display);
     font-weight: 700;
     font-size: 0.8rem;
@@ -3140,16 +3140,16 @@ button {
     transition: all var(--t-fast);
 }
 
-.blog-card-link:hover {
+.insights-card-link:hover {
     gap: 12px;
     color: var(--text-white);
 }
 
-.blog-card-link svg {
+.insights-card-link svg {
     transition: transform var(--t-fast);
 }
 
-.blog-card-link:hover svg {
+.insights-card-link:hover svg {
     transform: translateX(4px);
 }
 
@@ -4110,7 +4110,7 @@ button {
         display: none;
     }
 
-    .blog-grid {
+    .insights-grid {
         grid-template-columns: 1fr;
     }
 
@@ -4236,7 +4236,7 @@ button {
         padding: 28px;
     }
 
-    .blog-card-body {
+    .insights-card-body {
         padding: 20px;
     }
 
@@ -4290,7 +4290,7 @@ button {
 .services,
 .features,
 .testimonials,
-.blog-preview,
+.insights-preview,
 .process,
 .faq,
 .cta,
