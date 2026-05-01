@@ -24,26 +24,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- Primary SEO -->
-    <title>Blog & Insights — Croncore | Enterprise AI & Automation</title>
+    <title>Insights — Croncore | Enterprise AI & Automation</title>
     <meta name="description"
         content="Stay updated with the latest trends in Generative AI, Conversational Agents, and Workflow Automation. Expert insights from the Croncore team.">
     <meta name="author" content="Croncore">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.croncore.com/blogs">
+    <link rel="canonical" href="https://www.croncore.com/insights">
 
     <!-- Open Graph -->
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Croncore">
-    <meta property="og:url" content="https://www.croncore.com/blogs">
-    <meta property="og:title" content="Blog & Insights — Croncore | Enterprise AI & Automation">
+    <meta property="og:url" content="https://www.croncore.com/insights">
+    <meta property="og:title" content="Insights — Croncore | Enterprise AI & Automation">
     <meta property="og:description" content="Stay updated with the latest trends in Generative AI, Conversational Agents, and Workflow Automation. Expert insights from the Croncore team.">
     <meta property="og:image" content="https://www.croncore.com/images/croncore-logo.png">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@croncore">
-    <meta name="twitter:title" content="Blog & Insights — Croncore">
+    <meta name="twitter:title" content="Insights — Croncore">
     <meta name="twitter:description" content="Expert insights on AI, automation, and business scaling from the Croncore team.">
     <meta name="twitter:image" content="https://www.croncore.com/images/croncore-logo.png">
 
@@ -73,26 +73,26 @@
     <link rel="stylesheet" href="css/styles.css?v=4">
 
     <style>
-        .blog-hero {
+        .insights-hero {
             padding: 160px 0 80px;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
-        .blog-hero h1 {
+        .insights-hero h1 {
             font-size: clamp(2.5rem, 5vw, 4rem);
             margin-bottom: 20px;
         }
-        .blog-hero p {
+        .insights-hero p {
             max-width: 600px;
             margin: 0 auto;
             color: var(--text-secondary);
             font-size: 1.1rem;
         }
-        .blog-section {
+        .insights-section {
             padding: 40px 0 100px;
         }
-        .blog-loading {
+        .insights-loading {
             text-align: center;
             padding: 100px 0;
             color: var(--text-muted);
@@ -108,16 +108,16 @@
         @keyframes spin { 100% { transform: rotate(360deg); } }
         
         /* Ensure 3-column grid on desktop, 1 on mobile */
-        .blog-grid {
+        .insights-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
         }
         @media (max-width: 992px) {
-            .blog-grid { grid-template-columns: repeat(2, 1fr); }
+            .insights-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 640px) {
-            .blog-grid { grid-template-columns: 1fr; }
+            .insights-grid { grid-template-columns: 1fr; }
         }
     </style>
 
@@ -128,7 +128,7 @@
         "@type": "BreadcrumbList",
         "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.croncore.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://www.croncore.com/blogs" }
+            { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://www.croncore.com/insights" }
         ]
     }
     </script>
@@ -160,7 +160,7 @@
                     <a href="/#features" class="nav-link">Features</a>
                     <a href="/#about" class="nav-link">About</a>
                     <a href="/#testimonials" class="nav-link">Testimonials</a>
-                    <a href="/#blog" class="nav-link">Blog</a>
+                    <a href="/#insights" class="nav-link">Insights</a>
                     <a href="/#faq" class="nav-link">FAQ</a>
                 </div>
                 <div class="nav-actions">
@@ -206,27 +206,27 @@
             <a href="/#features">Features</a>
             <a href="/#about">About</a>
             <a href="/#testimonials">Testimonials</a>
-            <a href="/#blog">Blog</a>
+            <a href="/#insights">Insights</a>
             <a href="/#faq">FAQ</a>
             <a href="contact" class="btn btn-glow" style="margin-top:12px;">Contact Us</a>
         </div>
 
         <main id="main-content">
-            <header class="blog-hero">
+            <header class="insights-hero">
                 <div class="container">
-                    <div class="section-tag"><span class="tag-pulse"></span> Blog</div>
+                    <div class="section-tag"><span class="tag-pulse"></span> Insights</div>
                     <h1 class="text-glow">Insights & Perspectives</h1>
                     <p>Expert analysis on the intersection of AI, automation, and the future of enterprise technology.</p>
                 </div>
             </header>
 
-            <section class="blog-section">
+            <section class="insights-section">
                 <div class="container">
-                    <div id="blog-loading" class="blog-loading">
+                    <div id="insights-loading" class="insights-loading">
                         <div class="loader-spinner"></div>
                         <p>Loading latest insights...</p>
                     </div>
-                    <div class="blog-grid" id="full-blog-grid">
+                    <div class="insights-grid" id="full-insights-grid">
                         <!-- Posts injected here -->
                     </div>
                 </div>
@@ -273,9 +273,9 @@
     <script src="js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            var blogGrid = document.getElementById('full-blog-grid');
-            var loading = document.getElementById('blog-loading');
-            var FALLBACK_IMG = 'images/blog1.jpeg';
+            var insightsGrid = document.getElementById('full-insights-grid');
+            var loading = document.getElementById('insights-loading');
+            var FALLBACK_IMG = 'images/insights1.jpeg';
 
             var groq = '*[_type == "post" && defined(slug.current)] | order(publishedAt desc) [0...50] {' +
                 '"slug": slug.current, title, excerpt, publishedAt,' +
@@ -288,7 +288,7 @@
                 .then(function (posts) {
                     loading.style.display = 'none';
                     if (!posts || posts.length === 0) {
-                        blogGrid.innerHTML = '<p style="text-align:center;width:100%;color:var(--text-muted);">No posts yet — check back soon.</p>';
+                        insightsGrid.innerHTML = '<p style="text-align:center;width:100%;color:var(--text-muted);">No posts yet — check back soon.</p>';
                         return;
                     }
 
@@ -300,18 +300,18 @@
                         var dateStr = post.publishedAt
                             ? new Date(post.publishedAt).toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'})
                             : '';
-                        var category = post.category || 'Blogs';
+                        var category = post.category || 'Insights';
                         var excerpt = post.excerpt || Sanity.portableTextToPlain(post.body, 150);
 
-                        return '<article class="blog-card in-view">' +
-                            '<img src="' + img + '" alt="' + escapeAttr(alt) + '" class="blog-card-img" style="aspect-ratio: 16/9; object-fit: cover;" width="400" height="225" loading="lazy">' +
-                            '<div class="blog-card-body">' +
-                                '<span class="blog-card-category">' + escapeHtml(category) + '</span>' +
+                        return '<article class="insights-card in-view">' +
+                            '<img src="' + img + '" alt="' + escapeAttr(alt) + '" class="insights-card-img" style="aspect-ratio: 16/9; object-fit: cover;" width="400" height="225" loading="lazy">' +
+                            '<div class="insights-card-body">' +
+                                '<span class="insights-card-category">' + escapeHtml(category) + '</span>' +
                                 '<h3 style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">' + escapeHtml(post.title || '') + '</h3>' +
                                 '<p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">' + escapeHtml(excerpt) + '</p>' +
-                                '<div class="blog-card-meta">' +
+                                '<div class="insights-card-meta">' +
                                     '<span>' + dateStr + '</span>' +
-                                    '<a href="insights/' + encodeURIComponent(post.slug) + '" class="blog-card-link">Read More <svg class="arrow-icon" viewBox="0 0 24 24">' +
+                                    '<a href="insights/' + encodeURIComponent(post.slug) + '" class="insights-card-link">Read More <svg class="arrow-icon" viewBox="0 0 24 24">' +
                                         '<line x1="5" y1="12" x2="19" y2="12" />' +
                                         '<polyline points="12 5 19 12 12 19" />' +
                                     '</svg></a>' +
@@ -320,11 +320,11 @@
                         '</article>';
                     }).join('');
 
-                    blogGrid.innerHTML = html;
+                    insightsGrid.innerHTML = html;
                 })
                 .catch(function (err) {
                     loading.style.display = 'none';
-                    blogGrid.innerHTML = '<p style="text-align:center;width:100%;color:var(--text-muted);">Error loading blogs. Please try again later.</p>';
+                    insightsGrid.innerHTML = '<p style="text-align:center;width:100%;color:var(--text-muted);">Error loading insights. Please try again later.</p>';
                     console.error('Sanity fetch error:', err);
                 });
 

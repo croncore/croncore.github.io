@@ -1,6 +1,6 @@
 # Croncore Sanity Studio
 
-Admin/CMS for blog posts on https://www.croncore.com
+Admin/CMS for insights posts on https://www.croncore.com
 
 ## Local development
 
@@ -40,7 +40,7 @@ In Sanity dashboard → API → CORS Origins → **Add origin**:
 
 ## Schema
 
-- `post` — blog post (title, slug, mainImage, excerpt, category, author, publishedAt, body)
+- `post` — insights post (title, slug, mainImage, excerpt, category, author, publishedAt, body)
 - `category` — referenced by post
 - `author` — referenced by post
 - `blockContent` — rich text format for body

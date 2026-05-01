@@ -1,6 +1,6 @@
 /* ============================================================
    Sanity client + Portable Text renderer (vanilla JS, no deps)
-   Used by index.html (home preview), blogs.html, article.html
+   Used by index.html (home preview), insights.html, article.html
    ============================================================ */
 (function (global) {
     'use strict';

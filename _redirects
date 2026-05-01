@@ -8,6 +8,10 @@
 # Old /article/<slug> URLs -> /insights/<slug> (SEO 301)
 /article/*  /insights/:splat  301
 
+# Old /blogs and /blog URLs -> /insights (SEO 301)
+/blogs  /insights  301
+/blog   /insights  301
+
 # Legacy case-study URL redirects (carry over from old .htaccess)
 /case-study-bezninja  /case-study-autonomous-sales-agent-drives-record-revenue-growth  301
 /case-study-bloomlink  /case-study-sovereign-voice-engine-for-mongolia  301
