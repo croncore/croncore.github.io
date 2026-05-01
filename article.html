@@ -31,6 +31,9 @@
     <!-- Preconnect & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Preconnect to Sanity (CMS API + image CDN) -->
+    <link rel="preconnect" href="https://b5z10ias.apicdn.sanity.io">
+    <link rel="preconnect" href="https://cdn.sanity.io">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Favicon & Icons -->
@@ -561,200 +564,132 @@
     </div>
 
     <!-- JavaScript -->
+    <script src="/js/sanity.js"></script>
     <script src="/js/main.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Extract slug from URL path: /insights/my-blog-slug
             var pathParts = window.location.pathname.split('/');
             var articleIndex = pathParts.indexOf('insights');
-            var postSlug = (articleIndex !== -1 && pathParts[articleIndex + 1]) ? pathParts[articleIndex + 1] : '';
-
-            // Fallback: support old hash-based URLs for backwards compatibility
-            if (!postSlug && window.location.hash) {
-                var hashId = window.location.hash.replace('#', '');
-                if (hashId) {
-                    // Redirect old hash URLs to new slug-based URLs
-                    var siteUrlRedirect = 'https://www.croncore.com';
-                    fetch(siteUrlRedirect + '/blog/wp-json/wp/v2/posts/' + hashId)
-                        .then(function(r) { return r.json(); })
-                        .then(function(post) {
-                            window.location.replace('/insights/' + post.slug);
-                        })
-                        .catch(function() {
-                            window.location.replace('/blogs');
-                        });
-                    return;
-                }
-            }
+            var postSlug = (articleIndex !== -1 && pathParts[articleIndex + 1]) ? decodeURIComponent(pathParts[articleIndex + 1]) : '';
 
             if (!postSlug) {
                 document.getElementById('loading').style.display = 'none';
-                var errDiv = document.getElementById('error');
-                errDiv.innerHTML = '<p>Could not load the article.</p><a href="/" class="btn btn-glow" style="margin-top: 20px;">Return Home</a>';
-                errDiv.style.display = 'block';
+                var errDiv0 = document.getElementById('error');
+                errDiv0.innerHTML = '<p>Could not load the article.</p><a href="/" class="btn btn-glow" style="margin-top: 20px;">Return Home</a>';
+                errDiv0.style.display = 'block';
                 return;
             }
 
-            var siteUrl = 'https://www.croncore.com';
-            var wpApiUrl = siteUrl + '/blog/wp-json/wp/v2/posts?slug=' + encodeURIComponent(postSlug) + '&_embed';
+            var groq = '*[_type == "post" && slug.current == $slug][0]{' +
+                '"slug": slug.current, title, excerpt, publishedAt, _updatedAt,' +
+                'mainImage{asset->{url}, alt},' +
+                '"category": category->title,' +
+                '"author": author->{name, "image": image.asset->url},' +
+                'body' +
+            '}';
 
-            fetch(wpApiUrl)
-                .then(function(r) { if (!r.ok) throw new Error('Post not found'); return r.json(); })
-                .then(function(data) {
-                    // Slug endpoint returns an array
-                    var post = Array.isArray(data) ? data[0] : data;
+            Sanity.fetch(groq, {slug: postSlug})
+                .then(function (post) {
                     if (!post) throw new Error('Post not found');
-                    // Decode title
-                    var tmp = document.createElement('div');
-                    tmp.innerHTML = post.title.rendered;
-                    var title = tmp.textContent;
 
-                    // Page title & SEO meta
+                    var title = post.title || '';
+                    var dateStr = post.publishedAt
+                        ? new Date(post.publishedAt).toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'})
+                        : '';
+                    var category = post.category || 'Blogs';
+                    var heroImageUrl = post.mainImage ? Sanity.imageUrl(post.mainImage, {width: 1600, fit: 'crop', quality: 85}) : '';
+                    var ogImageUrl = post.mainImage ? Sanity.imageUrl(post.mainImage, {width: 1200, fit: 'crop', quality: 80}) : '';
+                    var authorName = (post.author && post.author.name) || 'Croncore';
+
+                    // SEO: page title, description, canonical
                     document.title = title + ' — Croncore Blog';
-                    document.getElementById('page-canonical').href = 'https://www.croncore.com/insights/' + post.slug;
-                    var excerpt = post.excerpt.rendered.replace(/<[^>]*>?/gm, '').trim().substring(0, 160);
-                    document.getElementById('page-description').content = excerpt;
+                    var canonicalUrl = 'https://www.croncore.com/insights/' + post.slug;
+                    document.getElementById('page-canonical').href = canonicalUrl;
+                    var description = post.excerpt || Sanity.portableTextToPlain(post.body, 160);
+                    document.getElementById('page-description').content = description;
 
-                    // Inject BreadcrumbList structured data for SEO
+                    // BreadcrumbList structured data
                     var breadcrumbScript = document.createElement('script');
                     breadcrumbScript.type = 'application/ld+json';
                     breadcrumbScript.text = JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "BreadcrumbList",
-                        "itemListElement": [
-                            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.croncore.com/" },
-                            { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://www.croncore.com/blogs" },
-                            { "@type": "ListItem", "position": 3, "name": title, "item": "https://www.croncore.com/insights/" + post.slug }
+                        '@context': 'https://schema.org',
+                        '@type': 'BreadcrumbList',
+                        'itemListElement': [
+                            {'@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://www.croncore.com/'},
+                            {'@type': 'ListItem', 'position': 2, 'name': 'Insights', 'item': 'https://www.croncore.com/blogs'},
+                            {'@type': 'ListItem', 'position': 3, 'name': title, 'item': canonicalUrl}
                         ]
                     });
                     document.head.appendChild(breadcrumbScript);
 
-                    // Inject Article structured data for SEO (rich results)
-                    var articleImage = '';
-                    if (post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0] && post._embedded['wp:featuredmedia'][0].source_url) {
-                        articleImage = post._embedded['wp:featuredmedia'][0].source_url;
-                    }
-                    var authorName = 'Croncore';
-                    if (post._embedded && post._embedded.author && post._embedded.author[0] && post._embedded.author[0].name) {
-                        authorName = post._embedded.author[0].name;
-                    }
-                    var articleUrl = 'https://www.croncore.com/insights/' + post.slug;
+                    // Article structured data
                     var articleSchema = {
-                        "@context": "https://schema.org",
-                        "@type": "Article",
-                        "mainEntityOfPage": { "@type": "WebPage", "@id": articleUrl },
-                        "headline": title,
-                        "datePublished": post.date,
-                        "dateModified": post.modified || post.date,
-                        "author": { "@type": "Person", "name": authorName },
-                        "publisher": {
-                            "@type": "Organization",
-                            "name": "Croncore",
-                            "logo": { "@type": "ImageObject", "url": "https://www.croncore.com/images/croncore-logo.png" }
+                        '@context': 'https://schema.org',
+                        '@type': 'Article',
+                        'mainEntityOfPage': {'@type': 'WebPage', '@id': canonicalUrl},
+                        'headline': title,
+                        'datePublished': post.publishedAt,
+                        'dateModified': post._updatedAt || post.publishedAt,
+                        'author': {'@type': 'Person', 'name': authorName},
+                        'publisher': {
+                            '@type': 'Organization',
+                            'name': 'Croncore',
+                            'logo': {'@type': 'ImageObject', 'url': 'https://www.croncore.com/images/croncore-logo.png'}
                         },
-                        "url": articleUrl
+                        'url': canonicalUrl
                     };
-                    if (articleImage) { articleSchema.image = articleImage; }
+                    if (ogImageUrl) articleSchema.image = ogImageUrl;
                     var articleScript = document.createElement('script');
                     articleScript.type = 'application/ld+json';
                     articleScript.text = JSON.stringify(articleSchema);
                     document.head.appendChild(articleScript);
 
-                    // Date
-                    var dateObj = new Date(post.date);
-                    var dateStr = dateObj.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-
-                    // Category
-                    var category = '';
-                    if (post._embedded && post._embedded['wp:term'] && post._embedded['wp:term'][0] && post._embedded['wp:term'][0].length > 0) {
-                        category = post._embedded['wp:term'][0][0].name;
-                    }
-                    if (!category || category.toLowerCase() === 'uncategorized') {
-                        category = 'Blogs';
-                    }
-
-                    // Reading time estimate
-                    var contentText = post.content.rendered.replace(/<[^>]*>?/gm, '');
-                    var wordCount = contentText.trim().split(/\s+/).length;
+                    // Reading time (rough estimate: 200 wpm)
+                    var plainBody = Sanity.portableTextToPlain(post.body, 999999);
+                    var wordCount = plainBody.trim().split(/\s+/).filter(Boolean).length;
                     var readingTime = Math.max(1, Math.ceil(wordCount / 200));
                     var readingStr = readingTime + ' min read';
 
-                    // Clean content: remove the first image if it matches the featured image
-                    var contentHtml = post.content.rendered;
-                    var hasImage = post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0] && post._embedded['wp:featuredmedia'][0].source_url;
-                    if (hasImage) {
-                        var featuredSrc = post._embedded['wp:featuredmedia'][0].source_url;
-                        // Remove the first <img> or <figure> containing the featured image
-                        var tempDiv = document.createElement('div');
-                        tempDiv.innerHTML = contentHtml;
-                        var firstImg = tempDiv.querySelector('img');
-                        if (firstImg) {
-                            var imgSrc = firstImg.getAttribute('src') || '';
-                            // Check if the first image in the content matches the featured image
-                            if (imgSrc === featuredSrc || imgSrc.includes(featuredSrc.split('/').pop())) {
-                                var parent = firstImg.closest('figure') || firstImg.closest('.wp-block-image') || firstImg.parentElement;
-                                if (parent && parent !== tempDiv) {
-                                    parent.remove();
-                                } else {
-                                    firstImg.remove();
-                                }
-                            }
-                        }
-                        contentHtml = tempDiv.innerHTML;
-                    }
+                    var bodyHtml = Sanity.portableTextToHtml(post.body || []);
 
-                    // Decide layout: hero banner (with image) or simple header (no image)
-                    if (hasImage) {
-                        var imgUrl = post._embedded['wp:featuredmedia'][0].source_url;
-                        document.getElementById('article-image').src = imgUrl;
-                        document.getElementById('article-image').alt = title;
+                    // Layout: hero banner (with image) or simple header (no image)
+                    if (heroImageUrl) {
+                        var heroImg = document.getElementById('article-image');
+                        heroImg.src = heroImageUrl;
+                        heroImg.alt = (post.mainImage && post.mainImage.alt) || title;
                         document.getElementById('hero-banner').style.display = 'block';
-                        document.getElementById('article-headline').innerHTML = post.title.rendered;
+                        document.getElementById('article-headline').textContent = title;
                         document.getElementById('article-date').textContent = dateStr;
                         document.getElementById('reading-time-val').textContent = readingStr;
-                        if (category) {
-                            document.getElementById('article-category').textContent = category;
-                        } else {
-                            document.getElementById('article-category').style.display = 'none';
-                        }
+                        document.getElementById('article-category').textContent = category;
                     } else {
                         document.getElementById('hero-no-image').style.display = 'block';
-                        document.getElementById('article-headline-alt').innerHTML = post.title.rendered;
+                        document.getElementById('article-headline-alt').textContent = title;
                         document.getElementById('article-date-alt').textContent = dateStr;
                         document.getElementById('reading-time-val-alt').textContent = readingStr;
-                        if (category) {
-                            document.getElementById('article-category-alt').textContent = category;
-                        } else {
-                            document.getElementById('article-category-alt').style.display = 'none';
-                        }
+                        document.getElementById('article-category-alt').textContent = category;
                     }
 
-                    // Set content
-                    document.getElementById('article-body').innerHTML = contentHtml;
+                    document.getElementById('article-body').innerHTML = bodyHtml;
 
-                    // Update "Back" links to point to blogs
+                    // Update "Back" links to /blogs
                     var backLinks = document.querySelectorAll('.article-back, .article-back-bottom a');
-                    backLinks.forEach(function(link) {
+                    backLinks.forEach(function (link) {
                         link.setAttribute('href', '/blogs');
-                        if (link.classList.contains('article-back')) {
-                            link.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Back to Blogs';
-                        } else {
-                            link.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Back to All Blogs';
-                        }
+                        var label = link.classList.contains('article-back') ? 'Back to Blogs' : 'Back to All Blogs';
+                        link.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> ' + label;
                     });
 
-                    // Show article
                     document.getElementById('loading').style.display = 'none';
                     document.getElementById('article-wrapper').style.display = 'block';
-
-                    // Scroll to top
                     window.scrollTo(0, 0);
                 })
-                .catch(function(err) {
-                    console.error('Error fetching post:', err);
+                .catch(function (err) {
+                    console.error('Sanity fetch error:', err);
                     document.getElementById('loading').style.display = 'none';
                     var errDiv = document.getElementById('error');
-                    errDiv.innerHTML = '<p>Could not load the article.</p><p style="font-size:0.9em;color:var(--text-muted);margin-top:10px;">Error: ' + err.message + '</p><a href="/" class="btn btn-glow" style="margin-top:20px;">Return Home</a>';
+                    errDiv.innerHTML = '<p>Could not load the article.</p><p style="font-size:0.9em;color:var(--text-muted);margin-top:10px;">' + (err && err.message ? err.message : 'Unknown error') + '</p><a href="/blogs" class="btn btn-glow" style="margin-top:20px;">Back to Blogs</a>';
                     errDiv.style.display = 'block';
                 });
         });
