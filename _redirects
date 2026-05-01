@@ -2,8 +2,8 @@
 # Format: source destination [status]
 # Status 200 = rewrite (URL stays the same), 301 = redirect
 
-# Article pages: /insights/<slug> -> serve article.html
-/insights/*  /article.html  200
+# Article pages: /insights/<slug> -> serve article.html (without .html, Cloudflare strips it)
+/insights/*  /article  200
 
 # Old /article/<slug> URLs -> /insights/<slug> (SEO 301)
 /article/*  /insights/:splat  301
