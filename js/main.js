@@ -539,23 +539,26 @@
     }
 
     /* ========================================
-       WORDPRESS BLOG FETCH & SLIDER
+       SANITY BLOG FETCH & SLIDER (homepage preview)
     ======================================== */
     var blogGrid = document.querySelector('#home-blog-grid');
     var blogPrevBtn = document.querySelector('.blog-prev');
     var blogNextBtn = document.querySelector('.blog-next');
 
-    if (blogGrid) {
-        var siteUrl = 'https://www.croncore.com'; 
-        var wpApiUrl = siteUrl + '/blog/wp-json/wp/v2/posts?_embed&per_page=8';
-        
+    if (blogGrid && typeof Sanity !== 'undefined') {
         var hasExistingContent = blogGrid.querySelectorAll('.blog-card').length > 0;
-        
-        fetch(wpApiUrl)
-            .then(function (response) {
-                if (!response.ok) throw new Error('API request failed');
-                return response.json();
-            })
+        var FALLBACK_IMG = 'images/blog1.jpeg';
+
+        var groq = '*[_type == "post" && defined(slug.current)] | order(publishedAt desc) [0...8] {' +
+            '"slug": slug.current, title, excerpt, publishedAt,' +
+            'mainImage{asset->{url}, alt},' +
+            '"category": category->title,' +
+            'body' +
+        '}';
+
+        function escHtml(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
+
+        Sanity.fetch(groq)
             .then(function (posts) {
                 if (!posts || posts.length === 0) {
                     if (!hasExistingContent) {
@@ -563,51 +566,40 @@
                     }
                     return;
                 }
-                
-                var html = '';
-                posts.forEach(function (post) {
-                    var imageUrl = 'images/blog1.jpeg';
-                    if (post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url) {
-                        imageUrl = post._embedded['wp:featuredmedia'][0].source_url;
-                    }
-                    
-                    var dateObj = new Date(post.date);
-                    var dateStr = dateObj.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-                    
-                    var category = 'Blogs';
-                    if (post._embedded && post._embedded['wp:term'] && post._embedded['wp:term'][0] && post._embedded['wp:term'][0].length > 0) {
-                        category = post._embedded['wp:term'][0][0].name;
-                    }
-                    if (category.toLowerCase() === 'uncategorized') { category = 'Blogs'; }
-                    
-                    var txt = document.createElement('textarea');
-                    txt.innerHTML = post.title.rendered;
-                    var decodedTitle = txt.value;
 
-                    html += '<article class="blog-card in-view">'; 
-                    html += '    <img src="' + imageUrl + '" alt="' + decodedTitle + '" class="blog-card-img" style="aspect-ratio: 16/9; object-fit: cover;" width="400" height="225" loading="lazy">';
-                    html += '    <div class="blog-card-body">';
-                    html += '        <span class="blog-card-category">' + category + '</span>';
-                    html += '        <h3 style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">' + decodedTitle + '</h3>';
-                    html += '        <p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">' + post.excerpt.rendered.replace(/<[^>]*>?/gm, '').substring(0, 150) + '...</p>';
-                    html += '        <div class="blog-card-meta">';
-                    html += '            <span>' + dateStr + '</span>';
-                    html += '            <a href="article/' + post.slug + '" class="blog-card-link">Read More <svg class="arrow-icon" viewBox="0 0 24 24">';
-                    html += '                    <line x1="5" y1="12" x2="19" y2="12" />';
-                    html += '                    <polyline points="12 5 19 12 12 19" />';
-                    html += '                </svg></a>';
-                    html += '        </div>';
-                    html += '    </div>';
-                    html += '</article>';
-                });
-                
+                var html = posts.map(function (post) {
+                    var img = post.mainImage
+                        ? Sanity.imageUrl(post.mainImage, {width: 800, fit: 'crop', quality: 80})
+                        : FALLBACK_IMG;
+                    var alt = (post.mainImage && post.mainImage.alt) || post.title || '';
+                    var dateStr = post.publishedAt
+                        ? new Date(post.publishedAt).toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'})
+                        : '';
+                    var category = post.category || 'Blogs';
+                    var excerpt = post.excerpt || Sanity.portableTextToPlain(post.body, 150);
+
+                    return '<article class="blog-card in-view">' +
+                        '<img src="' + img + '" alt="' + escHtml(alt) + '" class="blog-card-img" style="aspect-ratio: 16/9; object-fit: cover;" width="400" height="225" loading="lazy">' +
+                        '<div class="blog-card-body">' +
+                            '<span class="blog-card-category">' + escHtml(category) + '</span>' +
+                            '<h3 style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">' + escHtml(post.title || '') + '</h3>' +
+                            '<p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">' + escHtml(excerpt) + '</p>' +
+                            '<div class="blog-card-meta">' +
+                                '<span>' + dateStr + '</span>' +
+                                '<a href="insights/' + encodeURIComponent(post.slug) + '" class="blog-card-link">Read More <svg class="arrow-icon" viewBox="0 0 24 24">' +
+                                    '<line x1="5" y1="12" x2="19" y2="12" />' +
+                                    '<polyline points="12 5 19 12 12 19" />' +
+                                '</svg></a>' +
+                            '</div>' +
+                        '</div>' +
+                    '</article>';
+                }).join('');
+
                 blogGrid.innerHTML = html;
-
-                // Initialize slider logic after content is loaded
                 initBlogSlider();
             })
             .catch(function (error) {
-                console.error('Blog fetch error:', error);
+                console.error('Sanity blog fetch error:', error);
             });
 
         function initBlogSlider() {
