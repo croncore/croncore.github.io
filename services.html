@@ -89,7 +89,7 @@
     <script>(function(){var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="css/styles.css?v=4">
+    <link rel="stylesheet" href="css/styles.css?v=9">
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -115,8 +115,9 @@
                 <div class="nav-pill">
                     <a href="/services" class="nav-link active">Services</a>
                     <a href="/#about" class="nav-link">About</a>
-                    <a href="/#case-studies" class="nav-link">Case Studies</a>
+                    <a href="/#testimonials" class="nav-link">Testimonials</a>
                     <a href="/#insights" class="nav-link">Insights</a>
+                    <a href="/#faq" class="nav-link">FAQ</a>
                 </div>
                 <div class="nav-actions">
                     <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme">
@@ -124,7 +125,7 @@
                         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
                     </button>
                     <a href="contact" class="btn btn-glow btn-sm">
-                        Get Started
+                        Contact Us
                         <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                     </a>
                     <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
@@ -139,12 +140,12 @@
             <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
             </button>
-            <a href="/">Home</a>
             <a href="/services">Services</a>
             <a href="/#about">About</a>
-            <a href="/#case-studies">Case Studies</a>
+            <a href="/#testimonials">Testimonials</a>
             <a href="/#insights">Insights</a>
-            <a href="contact" class="btn btn-glow" style="margin-top:12px;">Get Started</a>
+            <a href="/#faq">FAQ</a>
+            <a href="contact" class="btn btn-glow" style="margin-top:12px;">Contact Us</a>
         </div>
 
         <main>
@@ -213,7 +214,7 @@
                     </div>
 
                     <!-- Service 1: AI Agents & Automations -->
-                    <div class="sp-service-card reveal">
+                    <div class="sp-service-card reveal" id="ai-agents-automations">
                         <div class="sp-service-body">
                             <div class="sp-service-icon">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
@@ -221,12 +222,12 @@
                             <h3>AI Agents & Automations</h3>
                             <p>We design and deploy autonomous AI agents that handle complex, multi-step tasks end-to-end — from enterprise workflows to intelligent sales pipelines — with no human in the loop.</p>
                             <div class="sp-service-checks">
-                                <div class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Enterprise AI Agents</div>
-                                <div class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Sales & CRM Chatbots</div>
-                                <div class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Operations Automation</div>
-                                <div class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Process & Document AI</div>
+                                <a href="/services/enterprise-ai-agents" class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Enterprise AI Agents</a>
+                                <a href="/services/sales-crm-chatbots" class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Sales & CRM Chatbots</a>
+                                <a href="/services/operations-automation" class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Operations Automation</a>
+                                <a href="/services/process-document-ai" class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Process & Document AI</a>
                             </div>
-                            <a href="contact" class="btn btn-glow btn-sm">
+                            <a href="/services/enterprise-ai-agents" class="btn btn-glow btn-sm">
                                 Learn More
                                 <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                             </a>
@@ -241,7 +242,7 @@
                     </div>
 
                     <!-- Service 2: AI Models & Intelligence -->
-                    <div class="sp-service-card reveal">
+                    <div class="sp-service-card reveal" id="ai-models-intelligence">
                         <div class="sp-service-body">
                             <div class="sp-service-icon">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
@@ -249,12 +250,12 @@
                             <h3>AI Models & Intelligence</h3>
                             <p>We build and fine-tune custom language and speech models tailored to your domain, language, and data — from multilingual systems to low-resource edge cases that off-the-shelf models can't handle.</p>
                             <div class="sp-service-checks">
-                                <div class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Custom LLM Training</div>
-                                <div class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Model Fine-Tuning</div>
-                                <div class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Multilingual & Low-Resource AI</div>
-                                <div class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Speech AI — STT & TTS</div>
+                                <a href="/services/custom-llm-training" class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Custom LLM Training</a>
+                                <a href="/services/model-fine-tuning" class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Model Fine-Tuning</a>
+                                <a href="/services/multilingual-low-resource-ai" class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Multilingual & Low-Resource AI</a>
+                                <a href="/services/speech-ai" class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Speech AI — STT & TTS</a>
                             </div>
-                            <a href="contact" class="btn btn-glow btn-sm">
+                            <a href="/services/custom-llm-training" class="btn btn-glow btn-sm">
                                 Learn More
                                 <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                             </a>
@@ -269,7 +270,7 @@
                     </div>
 
                     <!-- Service 3: Compliant & Regulated AI -->
-                    <div class="sp-service-card reveal">
+                    <div class="sp-service-card reveal" id="compliant-regulated-ai">
                         <div class="sp-service-body">
                             <div class="sp-service-icon">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -277,12 +278,12 @@
                             <h3>Compliant & Regulated AI</h3>
                             <p>We build AI systems engineered for regulated industries — education, healthcare, finance — with data sovereignty, on-premise deployment, and full regulatory compliance built in from day one.</p>
                             <div class="sp-service-checks">
-                                <div class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> GDPR-Compliant AI Systems</div>
-                                <div class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> EdTech AI Platforms</div>
-                                <div class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Data Sovereignty & On-Premise AI</div>
-                                <div class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Regulatory AI Consulting</div>
+                                <a href="/services/gdpr-compliant-ai-systems" class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> GDPR-Compliant AI Systems</a>
+                                <a href="/services/edtech-ai-platforms" class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> EdTech AI Platforms</a>
+                                <a href="/services/data-sovereignty-on-premise-ai" class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Data Sovereignty & On-Premise AI</a>
+                                <a href="/services/regulatory-ai-consulting" class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Regulatory AI Consulting</a>
                             </div>
-                            <a href="contact" class="btn btn-glow btn-sm">
+                            <a href="/services/gdpr-compliant-ai-systems" class="btn btn-glow btn-sm">
                                 Learn More
                                 <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                             </a>
@@ -297,7 +298,7 @@
                     </div>
 
                     <!-- Service 4: Infrastructure & MLOps -->
-                    <div class="sp-service-card reveal">
+                    <div class="sp-service-card reveal" id="infrastructure-mlops">
                         <div class="sp-service-body">
                             <div class="sp-service-icon">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
@@ -305,12 +306,12 @@
                             <h3>Infrastructure & MLOps</h3>
                             <p>We manage the full AI infrastructure lifecycle — from model serving and deployment pipelines to observability and cost control — so your team ships faster and operates leaner.</p>
                             <div class="sp-service-checks">
-                                <div class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Model Deployment & Serving</div>
-                                <div class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> MLOps Pipelines</div>
-                                <div class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Monitoring & Observability</div>
-                                <div class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> AI Cost Optimisation</div>
+                                <a href="/services/model-deployment-serving" class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Model Deployment & Serving</a>
+                                <a href="/services/mlops-pipelines" class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> MLOps Pipelines</a>
+                                <a href="/services/monitoring-observability" class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Monitoring & Observability</a>
+                                <a href="/services/ai-cost-optimization" class="sp-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> AI Cost Optimisation</a>
                             </div>
-                            <a href="contact" class="btn btn-glow btn-sm">
+                            <a href="/services/model-deployment-serving" class="btn btn-glow btn-sm">
                                 Learn More
                                 <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                             </a>
@@ -561,7 +562,7 @@
     </div>
 
     <!-- JavaScript -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=4"></script>
 
     <!-- Float Buttons -->
     <div class="float-btns">
