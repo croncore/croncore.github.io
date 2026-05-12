@@ -23,10 +23,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- Primary SEO -->
+    <!-- Primary SEO (populated dynamically from Sanity in the script below) -->
     <title id="page-title">Insights — Croncore</title>
     <meta name="description" id="page-description" content="Expert insights on AI, automation, and business scaling from the Croncore team.">
+    <meta name="robots" id="page-robots" content="index, follow">
+    <meta name="author" id="page-author" content="Croncore">
     <link rel="canonical" id="page-canonical" href="https://www.croncore.com/insights">
+
+    <!-- Open Graph (populated dynamically) -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Croncore">
+    <meta property="og:url" id="og-url" content="https://www.croncore.com/insights">
+    <meta property="og:title" id="og-title" content="Insights — Croncore">
+    <meta property="og:description" id="og-description" content="Expert insights on AI, automation, and business scaling from the Croncore team.">
+    <meta property="og:image" id="og-image" content="https://www.croncore.com/images/croncore-logo.png">
+    <meta property="article:published_time" id="og-published" content="">
+    <meta property="article:modified_time" id="og-modified" content="">
+    <meta property="article:author" id="og-author" content="Croncore">
+    <meta property="article:section" id="og-section" content="Insights">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@croncore">
+    <meta name="twitter:title" id="tw-title" content="Insights — Croncore">
+    <meta name="twitter:description" id="tw-description" content="Expert insights on AI, automation, and business scaling from the Croncore team.">
+    <meta name="twitter:image" id="tw-image" content="https://www.croncore.com/images/croncore-logo.png">
     
     <!-- Preconnect & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -352,7 +374,7 @@
                     <a href="/services" class="nav-link">Services</a>
                     <a href="/#about" class="nav-link">About</a>
                     <a href="/#testimonials" class="nav-link">Testimonials</a>
-                    <a href="/#insights" class="nav-link">Insights</a>
+                    <a href="#" class="nav-link">Resources</a>
                     <a href="/#faq" class="nav-link">FAQ</a>
                 </div>
                 <div class="nav-actions">
@@ -400,7 +422,7 @@
             <a href="/services">Services</a>
             <a href="/#about">About</a>
             <a href="/#testimonials">Testimonials</a>
-            <a href="/#insights">Insights</a>
+            <a href="#">Resources</a>
             <a href="/#faq">FAQ</a>
             <a href="/contact" class="btn btn-glow" style="margin-top:12px;">Contact Us</a>
         </div>
@@ -511,6 +533,7 @@
                             <li><a href="/#features">Features</a></li>
                             <li><a href="/#testimonials">Testimonials</a></li>
                             <li><a href="/#insights">Insights</a></li>
+                            <li><a href="/newsroom">Newsroom</a></li>
                         </ul>
                     </nav>
                     <nav class="footer-col" aria-label="Services">
@@ -566,20 +589,31 @@
     <script src="/js/main.js?v=4"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // ---- Soft-404 helper: when a slug doesn't match any post, mark
+            //      the page noindex and bounce to /404.html so search engines
+            //      see a proper "page not found" rather than the homepage.
+            function handleNotFound() {
+                document.getElementById('page-robots').setAttribute('content', 'noindex, nofollow');
+                document.title = 'Article Not Found — Croncore';
+                document.getElementById('loading').style.display = 'none';
+                var errDiv = document.getElementById('error');
+                errDiv.innerHTML = '<p>This article does not exist or has been moved. Redirecting you to our 404 page&hellip;</p><a href="/insights" class="btn btn-glow" style="margin-top:20px;">Back to Insights</a>';
+                errDiv.style.display = 'block';
+                // Replace (not push) so the broken URL is not in browser history.
+                setTimeout(function () { window.location.replace('/404.html'); }, 50);
+            }
+
             // Extract slug from URL path: /insights/my-insights-slug
             var pathParts = window.location.pathname.split('/');
             var articleIndex = pathParts.indexOf('insights');
             var postSlug = (articleIndex !== -1 && pathParts[articleIndex + 1]) ? decodeURIComponent(pathParts[articleIndex + 1]) : '';
 
             if (!postSlug) {
-                document.getElementById('loading').style.display = 'none';
-                var errDiv0 = document.getElementById('error');
-                errDiv0.innerHTML = '<p>Could not load the article.</p><a href="/" class="btn btn-glow" style="margin-top: 20px;">Return Home</a>';
-                errDiv0.style.display = 'block';
+                handleNotFound();
                 return;
             }
 
-            var groq = '*[_type == "post" && slug.current == $slug][0]{' +
+            var groq = '*[_type == "post" && slug.current == $slug && !(_id in path("drafts.**"))][0]{' +
                 '"slug": slug.current, title, excerpt, publishedAt, _updatedAt,' +
                 'mainImage{asset->{url}, alt},' +
                 '"category": category->title,' +
@@ -589,7 +623,10 @@
 
             Sanity.fetch(groq, {slug: postSlug})
                 .then(function (post) {
-                    if (!post) throw new Error('Post not found');
+                    if (!post) {
+                        handleNotFound();
+                        return;
+                    }
 
                     var title = post.title || '';
                     var dateStr = post.publishedAt
@@ -597,15 +634,31 @@
                         : '';
                     var category = post.category || 'Insights';
                     var heroImageUrl = post.mainImage ? Sanity.imageUrl(post.mainImage, {width: 1600, fit: 'crop', quality: 85}) : '';
-                    var ogImageUrl = post.mainImage ? Sanity.imageUrl(post.mainImage, {width: 1200, fit: 'crop', quality: 80}) : '';
+                    var ogImageUrl = post.mainImage ? Sanity.imageUrl(post.mainImage, {width: 1200, fit: 'crop', quality: 80}) : 'https://www.croncore.com/images/croncore-logo.png';
                     var authorName = (post.author && post.author.name) || 'Croncore';
 
                     // SEO: page title, description, canonical
                     document.title = title + ' — Croncore Insights';
-                    var canonicalUrl = 'https://www.croncore.com/insights/' + post.slug;
+                    var canonicalUrl = 'https://www.croncore.com/insights/' + encodeURIComponent(post.slug);
                     document.getElementById('page-canonical').href = canonicalUrl;
                     var description = post.excerpt || Sanity.portableTextToPlain(post.body, 160);
                     document.getElementById('page-description').content = description;
+                    document.getElementById('page-author').content = authorName;
+
+                    // Open Graph
+                    document.getElementById('og-url').content = canonicalUrl;
+                    document.getElementById('og-title').content = title;
+                    document.getElementById('og-description').content = description;
+                    document.getElementById('og-image').content = ogImageUrl;
+                    document.getElementById('og-published').content = post.publishedAt || '';
+                    document.getElementById('og-modified').content = post._updatedAt || post.publishedAt || '';
+                    document.getElementById('og-author').content = authorName;
+                    document.getElementById('og-section').content = category;
+
+                    // Twitter
+                    document.getElementById('tw-title').content = title;
+                    document.getElementById('tw-description').content = description;
+                    document.getElementById('tw-image').content = ogImageUrl;
 
                     // BreadcrumbList structured data
                     var breadcrumbScript = document.createElement('script');
@@ -685,9 +738,12 @@
                 })
                 .catch(function (err) {
                     console.error('Sanity fetch error:', err);
+                    // Network / API failure - don't redirect to /404 (the post might exist),
+                    // but tell crawlers not to index this transient failure.
+                    document.getElementById('page-robots').setAttribute('content', 'noindex, follow');
                     document.getElementById('loading').style.display = 'none';
                     var errDiv = document.getElementById('error');
-                    errDiv.innerHTML = '<p>Could not load the article.</p><p style="font-size:0.9em;color:var(--text-muted);margin-top:10px;">' + (err && err.message ? err.message : 'Unknown error') + '</p><a href="/insights" class="btn btn-glow" style="margin-top:20px;">Back to Insights</a>';
+                    errDiv.innerHTML = '<p>We could not load this article right now. Please try again in a moment.</p><p style="font-size:0.9em;color:var(--text-muted);margin-top:10px;">' + (err && err.message ? err.message : 'Unknown error') + '</p><a href="/insights" class="btn btn-glow" style="margin-top:20px;">Back to Insights</a>';
                     errDiv.style.display = 'block';
                 });
         });

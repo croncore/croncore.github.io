@@ -34,7 +34,7 @@
     --font-body: 'Manrope', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
 
-    --section-pad: clamp(80px, 10vw, 140px);
+    --section-pad: clamp(56px, 6vw, 88px);
 
     --r-sm: 8px;
     --r-md: 14px;
@@ -852,7 +852,13 @@ button {
     backdrop-filter: blur(20px) saturate(1.2);
     border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-    transition: all var(--t-normal) var(--ease);
+    /* Explicit transitions only — border-radius/border-color are excluded so
+       the merge with the mega menu snaps in both directions, preventing the
+       curve-mismatch glitch during dropdown fade-in/out. */
+    transition:
+        background var(--t-normal) var(--ease),
+        box-shadow var(--t-normal) var(--ease),
+        padding var(--t-normal) var(--ease);
 }
 
 .nav.is-scrolled {
@@ -1017,10 +1023,9 @@ button {
    HERO
 ======================================== */
 .hero {
-    min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 140px 0 100px;
+    padding: 170px 0 60px;
     position: relative;
     overflow: hidden;
 }
@@ -1580,6 +1585,135 @@ button {
     100% {
         transform: translateX(-33.333%);
     }
+}
+
+/* ========================================
+   TRUSTED BY (STATIC) — homepage hero band
+   Replaces the scrolling marquee with a single
+   static row of customer logos plus a headline
+   and three trust-stat pills above.
+======================================== */
+.trusted-static {
+    padding: 48px 0 44px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, rgba(0, 212, 255, 0.015) 0%, transparent 40%, transparent 60%, rgba(0, 212, 255, 0.015) 100%);
+    text-align: center;
+}
+
+.trusted-static-headline {
+    max-width: 780px;
+    margin: 0 auto 28px;
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    line-height: 1.7;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--text-muted);
+}
+
+[data-theme="light"] .trusted-static-headline {
+    color: var(--text-secondary);
+}
+
+.trusted-static-stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px 28px;
+    margin-bottom: 44px;
+}
+
+.trusted-stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 4px;
+    color: var(--text-secondary);
+    font-family: var(--font-display);
+    font-size: 0.92rem;
+}
+
+.trusted-stat-icon {
+    width: 18px;
+    height: 18px;
+    color: var(--accent);
+    flex-shrink: 0;
+}
+
+.trusted-stat-value {
+    font-weight: 700;
+    color: var(--text-white);
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+}
+
+[data-theme="light"] .trusted-stat-value {
+    color: var(--text-primary);
+}
+
+.trusted-stat-label {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+[data-theme="light"] .trusted-stat-label {
+    color: var(--text-secondary);
+}
+
+/* 6 equal-width grid slots — guarantees a single row on desktop.
+   Each slot is the same height. Images inside fill the slot via
+   object-fit: contain with a per-logo --scale variable that
+   compensates for source-image padding / visual density. */
+.trusted-static-logos {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center;
+    gap: 28px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.trusted-static-logo {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trusted-static-logo img {
+    max-height: calc(46px * var(--scale, 1));
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.78;
+    filter: grayscale(0.15);
+    transition: opacity var(--t-fast) var(--ease), filter var(--t-fast) var(--ease);
+}
+
+.trusted-static-logo img:hover {
+    opacity: 1;
+    filter: grayscale(0);
+}
+
+[data-theme="light"] .trusted-static-logo img {
+    opacity: 0.85;
+}
+
+@media (max-width: 980px) {
+    .trusted-static-logos { grid-template-columns: repeat(3, 1fr); row-gap: 32px; }
+}
+
+@media (max-width: 560px) {
+    .trusted-static { padding: 48px 0 40px; }
+    .trusted-static-headline { font-size: 0.68rem; letter-spacing: 0.12em; }
+    .trusted-static-stats { gap: 10px 18px; margin-bottom: 32px; }
+    .trusted-static-logos { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .trusted-static-logo { height: 50px; }
+    .trusted-static-logo img { max-height: calc(38px * var(--scale, 1)); }
 }
 
 /* ========================================
@@ -3701,8 +3835,7 @@ a.svc-tag:hover {
    CONTACT FORM PAGE
 ======================================== */
 .contact-page {
-    min-height: 100vh;
-    padding: 160px 0 100px;
+    padding: 170px 0 60px;
 }
 
 .contact-header {
@@ -5393,7 +5526,7 @@ a.svc-tag:hover {
 
 /* --- Hero --- */
 .sp-hero {
-    padding: clamp(120px, 14vw, 180px) 0 var(--section-pad);
+    padding: clamp(120px, 12vw, 170px) 0 60px;
     position: relative;
     overflow: hidden;
     background: linear-gradient(160deg, rgba(var(--accent-rgb), 0.06) 0%, transparent 40%, transparent 60%, rgba(var(--accent-rgb), 0.04) 100%);
@@ -6606,7 +6739,7 @@ a.sp-check:hover {
     backdrop-filter: blur(24px) saturate(1.3);
     -webkit-backdrop-filter: blur(24px) saturate(1.3);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    /* Top is flat (joins navbar), bottom is rounded */
+    /* Top is flat (joins navbar), bottom is rounded — match navbar's open-state radius */
     border-radius: 0 0 28px 28px;
     /* Hide the top border so the seam with navbar disappears */
     border-top-color: transparent;
@@ -6617,7 +6750,9 @@ a.sp-check:hover {
     visibility: hidden;
     pointer-events: none;
     z-index: 199;
-    transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), visibility 0.25s var(--ease);
+    /* No transition on close — disappears instantly so it stays in sync with
+       the navbar's instant pill-snap, avoiding the curve-mismatch on close. */
+    transition: none;
     overflow: hidden;
 }
 
@@ -6635,17 +6770,20 @@ a.sp-check:hover {
     visibility: visible;
     pointer-events: auto;
     transform: translateX(-50%) translateY(0);
+    /* Smooth fade/slide only when opening; close is instant (see base rule). */
+    transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), visibility 0.25s var(--ease);
 }
 
-/* When the mega menu is open, flatten the navbar's bottom edge so
-   the navbar and menu read as one continuous expanding pill. */
+/* When the mega menu is open, flatten the navbar's bottom corners so it
+   joins seamlessly with the menu, AND reduce the top corners from the
+   full pill radius to 28px so the combined navbar+menu shape reads as
+   one uniform rounded container (instead of pill-top / square-bottom).
+   Radius/border-color change is instant — if it animated, the navbar's
+   curve would briefly mismatch the dropdown's flat top during fade-in. */
 .nav.nav-mega-open {
-    border-bottom-left-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
+    border-radius: 28px 28px 0 0 !important;
     border-bottom-color: transparent !important;
     transition:
-        border-radius 0.25s var(--ease),
-        border-color 0.25s var(--ease),
         background var(--t-normal) var(--ease),
         box-shadow var(--t-normal) var(--ease);
 }
@@ -6972,12 +7110,143 @@ a.sp-check:hover {
     height: 14px;
 }
 
+/* ============================================================
+   NAV RESOURCES DROPDOWN — compact two-item variant
+   Reuses .nav-megamenu shell (.is-open, theme tokens, glow)
+   so visual language matches the Services mega-menu.
+   ============================================================ */
+
+.nav-resources-trigger {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.nav-resources-inner {
+    /* Same width as services mega-menu — let the two items breathe */
+    grid-template-columns: 1fr 288px;
+    min-height: 360px;
+    padding: 14px;
+    gap: 14px;
+}
+
+.nav-resources-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    align-content: start;
+    position: relative;
+    z-index: 1;
+}
+
+.nav-resources-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+    text-decoration: none;
+    transition: all var(--t-fast) var(--ease);
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="light"] .nav-resources-item {
+    background: rgba(74, 143, 226, 0.04);
+    border-color: rgba(74, 143, 226, 0.12);
+}
+
+.nav-resources-item:hover {
+    background: rgba(0, 212, 255, 0.06);
+    border-color: rgba(0, 212, 255, 0.28);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.32), 0 0 24px rgba(0, 212, 255, 0.08);
+}
+
+[data-theme="light"] .nav-resources-item:hover {
+    background: rgba(74, 143, 226, 0.08);
+    border-color: rgba(74, 143, 226, 0.32);
+    box-shadow: 0 10px 28px rgba(74, 143, 226, 0.14);
+}
+
+.nav-resources-item-icon {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid rgba(0, 212, 255, 0.22);
+    color: var(--accent);
+    transition: all var(--t-fast) var(--ease);
+}
+
+[data-theme="light"] .nav-resources-item-icon {
+    background: rgba(74, 143, 226, 0.1);
+    border-color: rgba(74, 143, 226, 0.25);
+}
+
+.nav-resources-item-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.nav-resources-item:hover .nav-resources-item-icon {
+    background: rgba(0, 212, 255, 0.18);
+    border-color: rgba(0, 212, 255, 0.4);
+}
+
+[data-theme="light"] .nav-resources-item:hover .nav-resources-item-icon {
+    background: rgba(74, 143, 226, 0.16);
+    border-color: rgba(74, 143, 226, 0.4);
+}
+
+.nav-resources-item-body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.nav-resources-item-body strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-white);
+    letter-spacing: -0.01em;
+    transition: color var(--t-fast) var(--ease);
+}
+
+.nav-resources-item:hover .nav-resources-item-body strong {
+    color: var(--accent);
+}
+
+.nav-resources-item-body span {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
 @media (max-width: 1100px) {
     .nav-megamenu {
         display: none !important;
     }
     .nav-mega-chevron {
         display: none;
+    }
+}
+
+@media (max-width: 880px) {
+    .nav-resources-items {
+        grid-template-columns: 1fr;
     }
 }
 
