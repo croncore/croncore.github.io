@@ -281,6 +281,198 @@
     })();
 
     /* ========================================
+       NAV RESOURCES DROPDOWN
+       Compact two-item dropdown (Insights + Newsroom)
+       with a featured spotlight on the right.
+       Shares the .nav-megamenu shell so visuals match
+       the Services mega-menu exactly.
+    ======================================== */
+    (function initResourcesMenu() {
+        var resourcesTrigger = null;
+        var navItems = document.querySelectorAll('.nav-pill .nav-link, .nav-pill > a, .nav-pill > button');
+        for (var i = 0; i < navItems.length; i++) {
+            if ((navItems[i].textContent || '').trim().toLowerCase() === 'resources') {
+                resourcesTrigger = navItems[i];
+                break;
+            }
+        }
+        if (!resourcesTrigger) return;
+
+        var ITEMS = [
+            {
+                href: '/insights',
+                title: 'Insights',
+                desc: 'Expert articles on AI engineering, automation, and enterprise scaling.',
+                iconSvg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>'
+            },
+            {
+                href: '/newsroom',
+                title: 'Newsroom',
+                desc: 'Product launches, partnerships, and milestones from the Croncore team.',
+                iconSvg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11h12a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v6"/><line x1="8" y1="15" x2="14" y2="15"/><line x1="8" y1="18" x2="12" y2="18"/></svg>'
+            }
+        ];
+
+        var SPOTLIGHT = {
+            tag: 'Featured',
+            title: 'Sovereign voice engine for Mongolia',
+            desc: 'How we shipped a national-scale, in-country AI system in an underserved language.',
+            href: '/case-study-sovereign-voice-engine-for-mongolia',
+            cta: 'Read the case study'
+        };
+
+        var ARROW_RIGHT_R = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+
+        // The Resources entry is a trigger only — no navigation on click.
+        if (resourcesTrigger.tagName === 'A') {
+            resourcesTrigger.addEventListener('click', function (e) { e.preventDefault(); });
+        }
+
+        // Decorate with chevron
+        resourcesTrigger.classList.add('nav-resources-trigger');
+        resourcesTrigger.setAttribute('aria-haspopup', 'true');
+        resourcesTrigger.setAttribute('aria-expanded', 'false');
+        if (!resourcesTrigger.querySelector('.nav-mega-chevron')) {
+            var chev = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            chev.setAttribute('class', 'nav-mega-chevron');
+            chev.setAttribute('viewBox', '0 0 24 24');
+            chev.setAttribute('fill', 'none');
+            chev.setAttribute('stroke', 'currentColor');
+            chev.setAttribute('stroke-width', '2.5');
+            chev.setAttribute('stroke-linecap', 'round');
+            chev.setAttribute('stroke-linejoin', 'round');
+            chev.innerHTML = '<polyline points="6 9 12 15 18 9"/>';
+            resourcesTrigger.appendChild(chev);
+        }
+
+        // Build menu DOM
+        var menu = document.createElement('div');
+        menu.className = 'nav-megamenu nav-megamenu--resources';
+        menu.id = 'navResourcesMenu';
+        menu.setAttribute('role', 'menu');
+        menu.setAttribute('aria-label', 'Resources');
+
+        var inner = document.createElement('div');
+        inner.className = 'nav-megamenu-inner nav-resources-inner';
+
+        var itemsCol = document.createElement('div');
+        itemsCol.className = 'nav-resources-items';
+        ITEMS.forEach(function (item) {
+            var a = document.createElement('a');
+            a.className = 'nav-resources-item';
+            a.href = item.href;
+            a.innerHTML =
+                '<span class="nav-resources-item-icon">' + item.iconSvg + '</span>' +
+                '<span class="nav-resources-item-body">' +
+                    '<strong>' + item.title + '</strong>' +
+                    '<span>' + item.desc + '</span>' +
+                '</span>';
+            itemsCol.appendChild(a);
+        });
+
+        var spot = document.createElement('div');
+        spot.className = 'nav-mega-spotlight';
+        spot.innerHTML =
+            '<span class="nav-spotlight-tag">' + SPOTLIGHT.tag + '</span>' +
+            '<div class="nav-spotlight-content">' +
+            '<h4>' + SPOTLIGHT.title + '</h4>' +
+            '<p>' + SPOTLIGHT.desc + '</p>' +
+            '</div>' +
+            '<a class="nav-spotlight-link" href="' + SPOTLIGHT.href + '">' + SPOTLIGHT.cta + ' ' + ARROW_RIGHT_R + '</a>';
+
+        inner.appendChild(itemsCol);
+        inner.appendChild(spot);
+        menu.appendChild(inner);
+        document.body.appendChild(menu);
+
+        // Position flush under nav (same logic as services menu)
+        var navEl = document.querySelector('.nav');
+        function positionMenu() {
+            if (!navEl) return;
+            var rect = navEl.getBoundingClientRect();
+            menu.style.top = (rect.bottom - 1) + 'px';
+        }
+        positionMenu();
+        window.addEventListener('scroll', positionMenu, { passive: true });
+        window.addEventListener('resize', positionMenu);
+
+        var hideTimer;
+        function open() {
+            if (window.innerWidth <= 1100) return;
+            clearTimeout(hideTimer);
+            positionMenu();
+            if (navEl) navEl.classList.add('nav-mega-open');
+            resourcesTrigger.classList.add('is-open');
+            resourcesTrigger.setAttribute('aria-expanded', 'true');
+            menu.classList.add('is-open');
+        }
+        function close() {
+            if (navEl) navEl.classList.remove('nav-mega-open');
+            resourcesTrigger.classList.remove('is-open');
+            resourcesTrigger.setAttribute('aria-expanded', 'false');
+            menu.classList.remove('is-open');
+        }
+        function delayedClose() {
+            clearTimeout(hideTimer);
+            hideTimer = setTimeout(close, 180);
+        }
+
+        resourcesTrigger.addEventListener('mouseenter', open);
+        resourcesTrigger.addEventListener('mouseleave', delayedClose);
+        resourcesTrigger.addEventListener('focus', open);
+        menu.addEventListener('mouseenter', function () { clearTimeout(hideTimer); });
+        menu.addEventListener('mouseleave', delayedClose);
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') close();
+        });
+        document.addEventListener('click', function (e) {
+            if (!menu.contains(e.target) && !resourcesTrigger.contains(e.target)) close();
+        });
+
+        // Mobile overlay: replace Resources entry with an accordion holding Insights + Newsroom
+        var mobileOverlay = document.getElementById('mobileNav');
+        if (mobileOverlay) {
+            var mobileLinks = mobileOverlay.querySelectorAll('a, button');
+            var mobileResourcesLink = null;
+            for (var j = 0; j < mobileLinks.length; j++) {
+                if ((mobileLinks[j].textContent || '').trim().toLowerCase() === 'resources') {
+                    mobileResourcesLink = mobileLinks[j];
+                    break;
+                }
+            }
+            if (mobileResourcesLink) {
+                var group = document.createElement('div');
+                group.className = 'nav-mobile-services-group';
+
+                var toggle = document.createElement('button');
+                toggle.type = 'button';
+                toggle.className = 'nav-mobile-services-toggle';
+                toggle.innerHTML = '<span>Resources</span>' +
+                    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+
+                var list = document.createElement('div');
+                list.className = 'nav-mobile-services-list';
+                ITEMS.forEach(function (item) {
+                    var a = document.createElement('a');
+                    a.href = item.href;
+                    a.textContent = item.title;
+                    list.appendChild(a);
+                });
+
+                group.appendChild(toggle);
+                group.appendChild(list);
+                mobileResourcesLink.parentNode.replaceChild(group, mobileResourcesLink);
+
+                toggle.addEventListener('click', function () {
+                    var isOpen = toggle.classList.toggle('is-open');
+                    list.classList.toggle('is-open', isOpen);
+                });
+            }
+        }
+    })();
+
+    /* ========================================
        THEME TOGGLE
     ======================================== */
     var STORAGE_KEY = 'croncore-theme';
@@ -452,7 +644,7 @@
         var sections = [];
         navLinks.forEach(function (link) {
             var href = link.getAttribute('href');
-            if (href && href.startsWith('#')) {
+            if (href && href.length > 1 && href.startsWith('#')) {
                 var sec = document.querySelector(href);
                 if (sec) sections.push({ el: sec, link: link });
             }

@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J34ZPS4FTY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-J34ZPS4FTY');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NFNLPH3H');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Primary SEO -->
+    <title>Newsroom — Croncore | AI Product Launches, Partnerships & Milestones</title>
+    <meta name="description"
+        content="Latest news from Croncore — product launches, enterprise partnerships, sovereign AI deployments, and milestones from the team building production-grade AI.">
+    <meta name="author" content="Croncore">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.croncore.com/newsroom">
+
+    <!-- Open Graph -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Croncore">
+    <meta property="og:url" content="https://www.croncore.com/newsroom">
+    <meta property="og:title" content="Newsroom — Croncore">
+    <meta property="og:description" content="Product launches, enterprise partnerships, and milestones from the team building production-grade AI.">
+    <meta property="og:image" content="https://www.croncore.com/images/croncore-logo.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@croncore">
+    <meta name="twitter:title" content="Newsroom — Croncore">
+    <meta name="twitter:description" content="Product launches, partnerships, and milestones from the Croncore team.">
+    <meta name="twitter:image" content="https://www.croncore.com/images/croncore-logo.png">
+
+    <!-- Preconnect & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/png" href="images/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="images/favicons/favicon.svg" />
+    <link rel="shortcut icon" href="images/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png" />
+    <link rel="manifest" href="images/favicons/site.webmanifest" />
+    <meta name="theme-color" content="#0A0E17">
+
+    <!-- Theme flash prevention -->
+    <script>(function () { var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light'); })()</script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css?v=9">
+
+    <style>
+        .newsroom-hero {
+            padding: 160px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .newsroom-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 20px;
+        }
+        .newsroom-hero p {
+            max-width: 640px;
+            margin: 0 auto;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* ===== Featured lead story ===== */
+        .newsroom-featured {
+            padding: 24px 0 16px;
+        }
+        .newsroom-featured-card {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 0;
+            border-radius: 24px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all var(--t-base) var(--ease);
+        }
+        [data-theme="light"] .newsroom-featured-card {
+            background: rgba(74, 143, 226, 0.04);
+            border-color: rgba(74, 143, 226, 0.15);
+        }
+        .newsroom-featured-card:hover {
+            border-color: rgba(0, 212, 255, 0.3);
+            box-shadow: 0 14px 50px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 212, 255, 0.1);
+        }
+        [data-theme="light"] .newsroom-featured-card:hover {
+            border-color: rgba(74, 143, 226, 0.35);
+            box-shadow: 0 14px 50px rgba(74, 143, 226, 0.15);
+        }
+        .newsroom-featured-img {
+            width: 100%;
+            height: 100%;
+            min-height: 360px;
+            object-fit: cover;
+            display: block;
+        }
+        .newsroom-featured-body {
+            padding: 44px 44px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 14px;
+        }
+        .newsroom-featured-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent);
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            align-self: flex-start;
+        }
+        [data-theme="light"] .newsroom-featured-tag {
+            background: rgba(74, 143, 226, 0.1);
+            border-color: rgba(74, 143, 226, 0.25);
+        }
+        .newsroom-featured-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+        }
+        .newsroom-featured-meta .dot {
+            width: 4px; height: 4px; border-radius: 50%;
+            background: var(--text-muted);
+        }
+        .newsroom-featured-body h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.6rem, 3vw, 2.1rem);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--text-white);
+            letter-spacing: -0.02em;
+            margin: 0;
+        }
+        .newsroom-featured-body p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin: 0;
+        }
+        .newsroom-featured-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--accent);
+            text-decoration: none;
+            transition: gap var(--t-fast) var(--ease);
+            margin-top: 6px;
+        }
+        .newsroom-featured-link:hover { gap: 12px; }
+        .newsroom-featured-link svg { width: 16px; height: 16px; }
+
+        @media (max-width: 880px) {
+            .newsroom-featured-card { grid-template-columns: 1fr; }
+            .newsroom-featured-img { min-height: 240px; }
+            .newsroom-featured-body { padding: 30px 26px; }
+        }
+
+        /* ===== Filter chips ===== */
+        .newsroom-filters {
+            padding: 32px 0 20px;
+        }
+        .newsroom-filters-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .newsroom-chip {
+            padding: 10px 18px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: all var(--t-fast) var(--ease);
+        }
+        [data-theme="light"] .newsroom-chip {
+            background: rgba(74, 143, 226, 0.04);
+            border-color: rgba(74, 143, 226, 0.15);
+        }
+        .newsroom-chip:hover {
+            color: var(--text-white);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+        [data-theme="light"] .newsroom-chip:hover {
+            color: var(--text-primary);
+            border-color: rgba(74, 143, 226, 0.35);
+        }
+        .newsroom-chip.is-active {
+            background: rgba(0, 212, 255, 0.12);
+            border-color: rgba(0, 212, 255, 0.4);
+            color: var(--accent);
+        }
+        [data-theme="light"] .newsroom-chip.is-active {
+            background: rgba(74, 143, 226, 0.12);
+            border-color: rgba(74, 143, 226, 0.4);
+        }
+
+        /* ===== News grid (reuses .insights-card) ===== */
+        .newsroom-section { padding: 20px 0 100px; }
+        .newsroom-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        @media (max-width: 992px) {
+            .newsroom-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 640px) {
+            .newsroom-grid { grid-template-columns: 1fr; }
+        }
+        .newsroom-grid .insights-card[hidden] { display: none !important; }
+
+        .newsroom-empty {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-muted);
+        }
+    </style>
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.croncore.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Newsroom", "item": "https://www.croncore.com/newsroom" }
+        ]
+    }
+    </script>
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFNLPH3H"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <canvas id="neuralCanvas" aria-hidden="true"></canvas>
+    <div class="bg-radial-top" aria-hidden="true"></div>
+    <div class="bg-radial-bottom" aria-hidden="true"></div>
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <div class="page-content">
+        <!-- ===== NAVIGATION ===== -->
+        <nav class="nav" id="navbar" role="navigation" aria-label="Primary navigation">
+            <div class="container nav-inner">
+                <a href="/" class="nav-brand" aria-label="Croncore Home">
+                    <img src="images/croncore-logo.png" alt="Croncore" class="nav-brand-img logo-dark" width="56"
+                        height="56" loading="eager">
+                    <img src="images/concore-logo-light-theme.png" alt="Croncore" class="nav-brand-img logo-light"
+                        width="56" height="56" loading="eager">
+                </a>
+                <div class="nav-pill">
+                    <a href="/services" class="nav-link">Services</a>
+                    <a href="/#about" class="nav-link">About</a>
+                    <a href="/#testimonials" class="nav-link">Testimonials</a>
+                    <a href="#" class="nav-link active">Resources</a>
+                    <a href="/#faq" class="nav-link">FAQ</a>
+                </div>
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme">
+                        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                        </svg>
+                        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5" />
+                            <line x1="12" y1="1" x2="12" y2="3" />
+                            <line x1="12" y1="21" x2="12" y2="23" />
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                            <line x1="1" y1="12" x2="3" y2="12" />
+                            <line x1="21" y1="12" x2="23" y2="12" />
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                        </svg>
+                    </button>
+                    <a href="contact" class="btn btn-glow btn-sm">
+                        Contact Us
+                        <svg class="arrow-icon" viewBox="0 0 24 24">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                    </a>
+                    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                        <i></i><i></i><i></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <!-- Mobile overlay -->
+        <div class="nav-mobile-overlay" id="mobileNav" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+            <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+            <a href="/services">Services</a>
+            <a href="/#about">About</a>
+            <a href="/#testimonials">Testimonials</a>
+            <a href="#">Resources</a>
+            <a href="/#faq">FAQ</a>
+            <a href="contact" class="btn btn-glow" style="margin-top:12px;">Contact Us</a>
+        </div>
+
+        <main id="main-content">
+            <header class="newsroom-hero">
+                <div class="container">
+                    <div class="section-tag"><span class="tag-pulse"></span> Newsroom</div>
+                    <h1 class="text-glow">Newsroom</h1>
+                    <p>Product launches, enterprise partnerships, sovereign AI deployments, and milestones from the team building production-grade AI.</p>
+                </div>
+            </header>
+
+            <!-- ===== FEATURED LEAD STORY ===== -->
+            <section class="newsroom-featured">
+                <div class="container">
+                    <article class="newsroom-featured-card">
+                        <img class="newsroom-featured-img" src="images/case-studies/Telco @.jpg"
+                             alt="Croncore launches Mongolia's first sovereign voice AI" loading="eager"
+                             width="800" height="500">
+                        <div class="newsroom-featured-body">
+                            <span class="newsroom-featured-tag">Featured · Product</span>
+                            <div class="newsroom-featured-meta">
+                                <span>April 28, 2026</span>
+                                <span class="dot" aria-hidden="true"></span>
+                                <span>5 min read</span>
+                            </div>
+                            <h2>Croncore launches Mongolia's first sovereign voice AI for the Khalkha language</h2>
+                            <p>A national-scale, in-country speech engine — STT and TTS — purpose-built for an underserved language. Deployed entirely on Mongolian infrastructure, with zero cross-border data flow.</p>
+                            <a href="/case-study-sovereign-voice-engine-for-mongolia" class="newsroom-featured-link">
+                                Read the announcement
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"/>
+                                    <polyline points="12 5 19 12 12 19"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ===== FILTER CHIPS ===== -->
+            <section class="newsroom-filters" aria-label="Filter news by category">
+                <div class="container">
+                    <div class="newsroom-filters-row" role="tablist">
+                        <button class="newsroom-chip is-active" type="button" data-filter="all" role="tab" aria-selected="true">All News</button>
+                        <button class="newsroom-chip" type="button" data-filter="product" role="tab" aria-selected="false">Product</button>
+                        <button class="newsroom-chip" type="button" data-filter="partnerships" role="tab" aria-selected="false">Partnerships</button>
+                        <button class="newsroom-chip" type="button" data-filter="company" role="tab" aria-selected="false">Company</button>
+                        <button class="newsroom-chip" type="button" data-filter="awards" role="tab" aria-selected="false">Awards</button>
+                        <button class="newsroom-chip" type="button" data-filter="events" role="tab" aria-selected="false">Events</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== NEWS GRID ===== -->
+            <section class="newsroom-section">
+                <div class="container">
+                    <div class="newsroom-grid" id="newsroomGrid">
+
+                        <article class="insights-card in-view" data-category="partnerships">
+                            <img src="images/case-studies/Financial Services.jpg" alt="Saudi telecom partnership" class="insights-card-img" style="aspect-ratio: 16/9; object-fit: cover;" width="400" height="225" loading="lazy">
+                            <div class="insights-card-body">
+                                <span class="insights-card-category">Partnerships</span>
+                                <h3>Croncore signs multi-year enterprise AI partnership with leading Saudi telecom</h3>
+                                <p>Joint engagement covers conversational agents, sovereign LLM deployment, and fraud-detection automation across consumer and B2B lines.</p>
+                                <div class="insights-card-meta">
+                                    <span>April 14, 2026</span>
+                                    <a href="#" class="insights-card-link">Read More <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="insights-card in-view" data-category="product">
+                            <img src="images/insights1.jpeg" alt="Sub-200ms speech inference" class="insights-card-img" style="aspect-ratio: 16/9; object-fit: cover;" width="400" height="225" loading="lazy">
+                            <div class="insights-card-body">
+                                <span class="insights-card-category">Product</span>
+                                <h3>Sub-200ms latency: Croncore's new speech inference stack ships to production</h3>
+                                <p>A redesigned streaming pipeline delivers true real-time voice for outbound and inbound agents — even on commodity GPU classes.</p>
+                                <div class="insights-card-meta">
+                                    <span>April 02, 2026</span>
+                                    <a href="#" class="insights-card-link">Read More <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="insights-card in-view" data-category="company">
+                            <img src="images/insights2.jpeg" alt="Riyadh engineering hub" class="insights-card-img" style="aspect-ratio: 16/9; object-fit: cover;" width="400" height="225" loading="lazy">
+                            <div class="insights-card-body">
+                                <span class="insights-card-category">Company</span>
+                                <h3>Croncore opens new engineering hub in Riyadh to support GCC enterprise demand</h3>
+                                <p>The expansion brings on-the-ground delivery teams for regulated AI engagements across Saudi Arabia, UAE, and Kuwait.</p>
+                                <div class="insights-card-meta">
+                                    <span>March 22, 2026</span>
+                                    <a href="#" class="insights-card-link">Read More <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="insights-card in-view" data-category="awards">
+                            <img src="images/insights3.jpeg" alt="MENA Tech Summit award" class="insights-card-img" style="aspect-ratio: 16/9; object-fit: cover;" width="400" height="225" loading="lazy">
+                            <div class="insights-card-body">
+                                <span class="insights-card-category">Awards</span>
+                                <h3>Croncore wins "Best Sovereign AI Solution" at MENA Tech Summit 2026</h3>
+                                <p>Judging panel cited the Khalkha-language voice engine and on-prem regulated-AI deployments as standout work in the region.</p>
+                                <div class="insights-card-meta">
+                                    <span>March 11, 2026</span>
+                                    <a href="#" class="insights-card-link">Read More <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="insights-card in-view" data-category="partnerships">
+                            <img src="images/insights4.jpeg" alt="NVIDIA Inception" class="insights-card-img" style="aspect-ratio: 16/9; object-fit: cover;" width="400" height="225" loading="lazy">
+                            <div class="insights-card-body">
+                                <span class="insights-card-category">Partnerships</span>
+                                <h3>Croncore joins NVIDIA Inception to accelerate enterprise agent deployments</h3>
+                                <p>The collaboration unlocks priority access to next-generation inference hardware and joint engineering on low-latency agent serving.</p>
+                                <div class="insights-card-meta">
+                                    <span>February 27, 2026</span>
+                                    <a href="#" class="insights-card-link">Read More <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="insights-card in-view" data-category="product">
+                            <img src="images/case-studies/Education & Digital Learning.jpg" alt="Air-gapped AI" class="insights-card-img" style="aspect-ratio: 16/9; object-fit: cover;" width="400" height="225" loading="lazy">
+                            <div class="insights-card-body">
+                                <span class="insights-card-category">Product</span>
+                                <h3>On-prem AI now ships air-gapped for regulated financial environments</h3>
+                                <p>A hardened deployment profile lets banks and insurers run Croncore agents fully disconnected — model, vector store, and orchestration in-country.</p>
+                                <div class="insights-card-meta">
+                                    <span>February 14, 2026</span>
+                                    <a href="#" class="insights-card-link">Read More <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="insights-card in-view" data-category="events">
+                            <img src="images/insights1.jpeg" alt="Web Summit 2026" class="insights-card-img" style="aspect-ratio: 16/9; object-fit: cover;" width="400" height="225" loading="lazy">
+                            <div class="insights-card-body">
+                                <span class="insights-card-category">Events</span>
+                                <h3>Croncore CTO to keynote at Web Summit 2026 on the future of regulated AI</h3>
+                                <p>The talk explores how sovereign AI, EU AI Act compliance, and on-prem deployment are reshaping enterprise procurement.</p>
+                                <div class="insights-card-meta">
+                                    <span>January 30, 2026</span>
+                                    <a href="#" class="insights-card-link">Read More <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="insights-card in-view" data-category="product">
+                            <img src="images/insights2.jpeg" alt="Enterprise agent SDK" class="insights-card-img" style="aspect-ratio: 16/9; object-fit: cover;" width="400" height="225" loading="lazy">
+                            <div class="insights-card-body">
+                                <span class="insights-card-category">Product</span>
+                                <h3>Croncore opens early-access for its enterprise agent SDK</h3>
+                                <p>The SDK gives engineering teams a first-class way to wire agents into internal systems without rebuilding orchestration from scratch.</p>
+                                <div class="insights-card-meta">
+                                    <span>January 15, 2026</span>
+                                    <a href="#" class="insights-card-link">Read More <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="insights-card in-view" data-category="company">
+                            <img src="images/insights3.jpeg" alt="Series milestone" class="insights-card-img" style="aspect-ratio: 16/9; object-fit: cover;" width="400" height="225" loading="lazy">
+                            <div class="insights-card-body">
+                                <span class="insights-card-category">Company</span>
+                                <h3>Croncore crosses 50+ enterprise deployments across MENA, EU, and Central Asia</h3>
+                                <p>A milestone for the team — and a signal that production-grade AI is shifting from pilots to standard infrastructure for regulated industries.</p>
+                                <div class="insights-card-meta">
+                                    <span>January 04, 2026</span>
+                                    <a href="#" class="insights-card-link">Read More <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                    <p class="newsroom-empty" id="newsroomEmpty" hidden>No news in this category yet — check back soon.</p>
+                </div>
+            </section>
+
+            <!-- ===== CTA ===== -->
+            <section class="cta" id="cta" aria-label="Call to action">
+                <div class="container">
+                    <div class="cta-box reveal">
+                        <div class="cta-tag">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                            </svg>
+                            Stay in the loop
+                        </div>
+                        <h2>Working on something newsworthy?<br><span class="text-glow">Let's talk.</span></h2>
+                        <p>Press, partnerships, or analyst inquiries — we respond within one business day.</p>
+                        <div class="cta-actions">
+                            <a href="contact" class="btn btn-glow">
+                                Get in touch
+                                <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+                            </a>
+                        </div>
+                        <a href="mailto:press@croncore.com" class="cta-email-link">press@croncore.com</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer" role="contentinfo">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="footer-brand-logo">
+                            <img src="images/croncore-logo.png" alt="Croncore" class="logo-dark" width="56" height="56" loading="lazy">
+                            <img src="images/concore-logo-light-theme.png" alt="Croncore" class="logo-light" width="56" height="56" loading="lazy">
+                        </div>
+                        <p>AI-powered solutions for automation and business growth. Empowering companies with intelligent technology that delivers real results.</p>
+                        <a href="contact" class="btn btn-glow btn-sm">
+                            Contact Us
+                            <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+                        </a>
+                    </div>
+                    <nav class="footer-col" aria-label="Quick links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="/#about">About Us</a></li>
+                            <li><a href="services">Services</a></li>
+                            <li><a href="/#testimonials">Testimonials</a></li>
+                            <li><a href="insights">Insights</a></li>
+                            <li><a href="newsroom">Newsroom</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="footer-col" aria-label="Services">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="services#sp-services">AI Agents & Automations</a></li>
+                            <li><a href="services#sp-services">AI Models & Intelligence</a></li>
+                            <li><a href="services#sp-services">Compliant & Regulated AI</a></li>
+                            <li><a href="services#sp-services">Infrastructure & MLOps</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="footer-col" aria-label="Social links">
+                        <h4>Follow Us</h4>
+                        <ul>
+                            <li><a href="https://www.instagram.com/croncoreglobal/" rel="noopener noreferrer" target="_blank">Instagram</a></li>
+                            <li><a href="https://x.com/croncore_" rel="noopener noreferrer" target="_blank">Twitter / X</a></li>
+                            <li><a href="https://www.facebook.com/profile.php?id=61575159626243" rel="noopener noreferrer" target="_blank">Facebook</a></li>
+                            <li><a href="https://www.linkedin.com/company/croncore/" rel="noopener noreferrer" target="_blank">LinkedIn</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer-addresses">
+                    <div class="footer-address">
+                        <h5><img src="https://flagcdn.com/w20/sa.png" alt="Saudi Arabia Flag"> Saudi Arabia</h5>
+                        <p>Prince Turki Bin Abdulaziz Al Awal Road,<br>Al Raed, Riyadh 12354</p>
+                    </div>
+                    <div class="footer-address">
+                        <h5><img src="https://flagcdn.com/w20/pk.png" alt="Pakistan Flag"> Pakistan</h5>
+                        <p>Street 36 Silk Bank Plaza Lower Basement<br>WorkZone, Islamabad</p>
+                    </div>
+                    <div class="footer-address">
+                        <h5><img src="https://flagcdn.com/w20/gb.png" alt="United Kingdom Flag"> United Kingdom</h5>
+                        <p>Office 63, Billingsgate Market,<br>London E14 5ST</p>
+                    </div>
+                    <div class="footer-address">
+                        <h5><img src="https://flagcdn.com/w20/us.png" alt="USA Flag"> USA</h5>
+                        <p>1111B S Governors Ave # 28375<br>Dover, DE 19904</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <span>&copy; 2026 Croncore LLC. All rights reserved.</span>
+                    <div class="footer-bottom-links">
+                        <a href="privacy-policy">Privacy Policy</a>
+                        <a href="terms">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js?v=4"></script>
+    <script>
+        (function () {
+            var chips = document.querySelectorAll('.newsroom-chip');
+            var cards = document.querySelectorAll('#newsroomGrid .insights-card');
+            var empty = document.getElementById('newsroomEmpty');
+
+            chips.forEach(function (chip) {
+                chip.addEventListener('click', function () {
+                    chips.forEach(function (c) {
+                        c.classList.remove('is-active');
+                        c.setAttribute('aria-selected', 'false');
+                    });
+                    chip.classList.add('is-active');
+                    chip.setAttribute('aria-selected', 'true');
+
+                    var filter = chip.getAttribute('data-filter');
+                    var visible = 0;
+                    cards.forEach(function (card) {
+                        var match = filter === 'all' || card.getAttribute('data-category') === filter;
+                        if (match) {
+                            card.removeAttribute('hidden');
+                            visible++;
+                        } else {
+                            card.setAttribute('hidden', '');
+                        }
+                    });
+                    if (empty) empty.hidden = visible !== 0;
+                });
+            });
+        })();
+    </script>
+
+    <!-- Float Buttons -->
+    <div class="float-btns">
+        <a href="https://wa.me/16039991544" target="_blank" rel="noopener noreferrer" class="float-btn float-btn--whatsapp" aria-label="Contact on WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span>Contact on WhatsApp</span>
+            <svg class="float-btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+        <a href="contact" class="float-btn float-btn--contact" aria-label="Contact Us">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span>Contact Us</span>
+            <svg class="float-btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+    </div>
+</body>
+</html>
