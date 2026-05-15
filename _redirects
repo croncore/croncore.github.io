@@ -1,0 +1,37 @@
+# Cloudflare Pages / Netlify routing
+# Format: source destination [status]
+# Status 200 = rewrite (URL stays the same), 301 = permanent redirect, 404 = not found
+
+# ---------- Article routing ----------
+# Sanity posts are pre-rendered at build time into /insights/<slug>.html
+# (see scripts/generate-insights.js). Cloudflare Pages serves them automatically
+# when a request matches the file name (e.g. /insights/foo -> insights/foo.html).
+# Slugs without a pre-rendered file fall through to the 404 rule at the bottom.
+
+# ---------- Legacy URL redirects (301) ----------
+# Old /article/<slug> URLs -> /insights/<slug>
+/article/*  /insights/:splat  301
+
+# Old /blogs and /blog URLs -> /insights
+/blogs  /insights  301
+/blog   /insights  301
+
+# Old WordPress blog post URLs (now retired) -> /insights hub
+/insights/custom-ai-chatbot-development      /insights  301
+/insights/unleash-your-business-potential    /insights  301
+/insights/how-ai-agents-are-becoming-your-newes  /insights  301
+/insights/the-predictive-pivot               /insights  301
+
+# Old contact slug -> /contact
+/contact-sales  /contact  301
+
+# Legacy case-study URL redirects (carry over from old .htaccess)
+/case-study-bezninja  /case-study-autonomous-sales-agent-drives-record-revenue-growth  301
+/case-study-bloomlink  /case-study-sovereign-voice-engine-for-mongolia  301
+/case-study-edtech  /case-study-architecting-a-ground-up-digital-learning-powerhouse  301
+/case-study-oracle  /case-study-custom-ai-voice-agent-closes-the-speed-to-lead-gap  301
+/case-study-knowles  /case-study-custom-ai-voice-agent-closes-the-speed-to-lead-gap  301
+
+# ---------- 404 fallback ----------
+# Anything that did not match above and is not a real file -> 404 page with HTTP 404
+/*  /404.html  404

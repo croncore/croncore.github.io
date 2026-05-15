@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J34ZPS4FTY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-J34ZPS4FTY');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NFNLPH3H');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Primary SEO -->
+    <title>Insights — Croncore | Enterprise AI & Automation</title>
+    <meta name="description"
+        content="Stay updated with the latest trends in Generative AI, Conversational Agents, and Workflow Automation. Expert insights from the Croncore team.">
+    <meta name="author" content="Croncore">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.croncore.com/insights">
+
+    <!-- Open Graph -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Croncore">
+    <meta property="og:url" content="https://www.croncore.com/insights">
+    <meta property="og:title" content="Insights — Croncore | Enterprise AI & Automation">
+    <meta property="og:description" content="Stay updated with the latest trends in Generative AI, Conversational Agents, and Workflow Automation. Expert insights from the Croncore team.">
+    <meta property="og:image" content="https://www.croncore.com/images/croncore-logo.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@croncore">
+    <meta name="twitter:title" content="Insights — Croncore">
+    <meta name="twitter:description" content="Expert insights on AI, automation, and business scaling from the Croncore team.">
+    <meta name="twitter:image" content="https://www.croncore.com/images/croncore-logo.png">
+
+    <!-- Preconnect & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Preconnect to Sanity (CMS API + image CDN) -->
+    <link rel="preconnect" href="https://b5z10ias.apicdn.sanity.io">
+    <link rel="preconnect" href="https://cdn.sanity.io">
+    <link rel="dns-prefetch" href="https://b5z10ias.apicdn.sanity.io">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/png" href="images/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="images/favicons/favicon.svg" />
+    <link rel="shortcut icon" href="images/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png" />
+    <link rel="manifest" href="images/favicons/site.webmanifest" />
+    <meta name="theme-color" content="#0A0E17">
+
+    <!-- Theme flash prevention -->
+    <script>(function () { var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light'); })()</script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css?v=9">
+
+    <style>
+        .insights-hero {
+            padding: 160px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .insights-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 20px;
+        }
+        .insights-hero p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        .insights-section {
+            padding: 24px 0 60px;
+        }
+        .insights-loading {
+            text-align: center;
+            padding: 100px 0;
+            color: var(--text-muted);
+        }
+        .loader-spinner {
+            width: 40px; height: 40px;
+            border: 3px solid rgba(0, 212, 255, 0.15);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 20px;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        
+        /* Ensure 3-column grid on desktop, 1 on mobile */
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        @media (max-width: 992px) {
+            .insights-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 640px) {
+            .insights-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.croncore.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://www.croncore.com/insights" }
+        ]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFNLPH3H"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
+    <!-- Background layers -->
+    <canvas id="neuralCanvas" aria-hidden="true"></canvas>
+    <div class="bg-radial-top" aria-hidden="true"></div>
+    <div class="bg-radial-bottom" aria-hidden="true"></div>
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <div class="page-content">
+        <!-- ===== NAVIGATION ===== -->
+        <nav class="nav" id="navbar" role="navigation" aria-label="Primary navigation">
+            <div class="container nav-inner">
+                <a href="/" class="nav-brand" aria-label="Croncore Home">
+                    <img src="images/croncore-logo.png" alt="Croncore" class="nav-brand-img logo-dark" width="56"
+                        height="56" loading="eager">
+                    <img src="images/concore-logo-light-theme.png" alt="Croncore" class="nav-brand-img logo-light"
+                        width="56" height="56" loading="eager">
+                </a>
+                <div class="nav-pill">
+                    <a href="/services" class="nav-link">Services</a>
+                    <a href="/#about" class="nav-link">About</a>
+                    <a href="/#testimonials" class="nav-link">Testimonials</a>
+                    <a href="#" class="nav-link active">Resources</a>
+                    <a href="/#faq" class="nav-link">FAQ</a>
+                </div>
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme">
+                        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                        </svg>
+                        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5" />
+                            <line x1="12" y1="1" x2="12" y2="3" />
+                            <line x1="12" y1="21" x2="12" y2="23" />
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                            <line x1="1" y1="12" x2="3" y2="12" />
+                            <line x1="21" y1="12" x2="23" y2="12" />
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                        </svg>
+                    </button>
+                    <a href="contact" class="btn btn-glow btn-sm">
+                        Contact Us
+                        <svg class="arrow-icon" viewBox="0 0 24 24">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                    </a>
+                    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                        <i></i><i></i><i></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <!-- Mobile overlay -->
+        <div class="nav-mobile-overlay" id="mobileNav" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+            <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+            <a href="/services">Services</a>
+            <a href="/#about">About</a>
+            <a href="/#testimonials">Testimonials</a>
+            <a href="#">Resources</a>
+            <a href="/#faq">FAQ</a>
+            <a href="contact" class="btn btn-glow" style="margin-top:12px;">Contact Us</a>
+        </div>
+
+        <main id="main-content">
+            <header class="insights-hero">
+                <div class="container">
+                    <div class="section-tag"><span class="tag-pulse"></span> Insights</div>
+                    <h1 class="text-glow">Insights & Perspectives</h1>
+                    <p>Expert analysis on the intersection of AI, automation, and the future of enterprise technology.</p>
+                </div>
+            </header>
+
+            <section class="insights-section">
+                <div class="container">
+                    <div id="insights-loading" class="insights-loading">
+                        <div class="loader-spinner"></div>
+                        <p>Loading latest insights...</p>
+                    </div>
+                    <div class="insights-grid" id="full-insights-grid">
+                        <!-- Posts injected here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer" role="contentinfo">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="footer-brand-logo">
+                            <img src="images/croncore-logo.png" alt="Croncore" class="logo-dark" width="56" height="56"
+                                loading="lazy">
+                            <img src="images/concore-logo-light-theme.png" alt="Croncore" class="logo-light" width="56"
+                                height="56" loading="lazy">
+                        </div>
+                        <p>AI-powered solutions for automation and business growth. Empowering companies with
+                            intelligent technology that delivers real results.</p>
+                        <a href="contact" class="btn btn-glow btn-sm">
+                            Contact Us
+                            <svg class="arrow-icon" viewBox="0 0 24 24">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </a>
+                    </div>
+                    <nav class="footer-col" aria-label="Quick links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="/#about">About Us</a></li>
+                            <li><a href="services">Services</a></li>
+                            <li><a href="/#features">Features</a></li>
+                            <li><a href="/#testimonials">Testimonials</a></li>
+                            <li><a href="insights">Insights</a></li>
+                            <li><a href="case-studies">Case Studies</a></li>
+                            <li><a href="newsroom">Newsroom</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="footer-col" aria-label="Services">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="services#sp-services">AI Agents & Automations</a></li>
+                            <li><a href="services#sp-services">AI Models & Intelligence</a></li>
+                            <li><a href="services#sp-services">Compliant & Regulated AI</a></li>
+                            <li><a href="services#sp-services">Infrastructure & MLOps</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="footer-col" aria-label="Social links">
+                        <h4>Follow Us</h4>
+                        <ul>
+                            <li><a href="https://www.instagram.com/croncoreglobal/" rel="noopener noreferrer"
+                                    target="_blank">Instagram</a></li>
+                            <li><a href="https://x.com/croncore_" rel="noopener noreferrer" target="_blank">Twitter / X</a>
+                            </li>
+                            <li><a href="https://www.facebook.com/profile.php?id=61575159626243" rel="noopener noreferrer"
+                                    target="_blank">Facebook</a></li>
+                            <li><a href="https://www.linkedin.com/company/croncore/" rel="noopener noreferrer"
+                                    target="_blank">LinkedIn</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer-addresses">
+                    <div class="footer-address">
+                        <h5><img src="https://flagcdn.com/w20/sa.png" alt="Saudi Arabia Flag"> Saudi Arabia</h5>
+                        <p>Prince Turki Bin Abdulaziz Al Awal Road,<br>Al Raed, Riyadh 12354</p>
+                    </div>
+                    <div class="footer-address">
+                        <h5><img src="https://flagcdn.com/w20/pk.png" alt="Pakistan Flag"> Pakistan</h5>
+                        <p>Street 36 Silk Bank Plaza Lower Basement<br>WorkZone, Islamabad</p>
+                    </div>
+                    <div class="footer-address">
+                        <h5><img src="https://flagcdn.com/w20/gb.png" alt="United Kingdom Flag"> United Kingdom</h5>
+                        <p>Office 63, Billingsgate Market,<br>London E14 5ST</p>
+                    </div>
+                    <div class="footer-address">
+                        <h5><img src="https://flagcdn.com/w20/us.png" alt="USA Flag"> USA</h5>
+                        <p>1111B S Governors Ave # 28375<br>Dover, DE 19904</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <span>&copy; 2026 Croncore LLC. All rights reserved.</span>
+                    <div class="footer-bottom-links">
+                        <a href="privacy-policy">Privacy Policy</a>
+                        <a href="terms">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/sanity.js"></script>
+    <script src="js/main.js?v=4"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var insightsGrid = document.getElementById('full-insights-grid');
+            var loading = document.getElementById('insights-loading');
+            var FALLBACK_IMG = 'images/insights1.jpeg';
+
+            var groq = '*[_type == "post" && defined(slug.current)] | order(publishedAt desc) [0...50] {' +
+                '"slug": slug.current, title, excerpt, publishedAt,' +
+                'mainImage{asset->{url}, alt},' +
+                '"category": category->title,' +
+                'body' +
+            '}';
+
+            Sanity.fetch(groq)
+                .then(function (posts) {
+                    loading.style.display = 'none';
+                    if (!posts || posts.length === 0) {
+                        insightsGrid.innerHTML = '<p style="text-align:center;width:100%;color:var(--text-muted);">No posts yet — check back soon.</p>';
+                        return;
+                    }
+
+                    var html = posts.map(function (post) {
+                        var img = post.mainImage
+                            ? Sanity.imageUrl(post.mainImage, {width: 800, fit: 'crop', quality: 80})
+                            : FALLBACK_IMG;
+                        var alt = (post.mainImage && post.mainImage.alt) || post.title || '';
+                        var dateStr = post.publishedAt
+                            ? new Date(post.publishedAt).toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'})
+                            : '';
+                        var category = post.category || 'Insights';
+                        var excerpt = post.excerpt || Sanity.portableTextToPlain(post.body, 150);
+
+                        return '<article class="insights-card in-view">' +
+                            '<img src="' + img + '" alt="' + escapeAttr(alt) + '" class="insights-card-img" style="aspect-ratio: 16/9; object-fit: cover;" width="400" height="225" loading="lazy">' +
+                            '<div class="insights-card-body">' +
+                                '<span class="insights-card-category">' + escapeHtml(category) + '</span>' +
+                                '<h3 style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">' + escapeHtml(post.title || '') + '</h3>' +
+                                '<p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">' + escapeHtml(excerpt) + '</p>' +
+                                '<div class="insights-card-meta">' +
+                                    '<span>' + dateStr + '</span>' +
+                                    '<a href="insights/' + encodeURIComponent(post.slug) + '" class="insights-card-link">Read More <svg class="arrow-icon" viewBox="0 0 24 24">' +
+                                        '<line x1="5" y1="12" x2="19" y2="12" />' +
+                                        '<polyline points="12 5 19 12 12 19" />' +
+                                    '</svg></a>' +
+                                '</div>' +
+                            '</div>' +
+                        '</article>';
+                    }).join('');
+
+                    insightsGrid.innerHTML = html;
+                })
+                .catch(function (err) {
+                    loading.style.display = 'none';
+                    insightsGrid.innerHTML = '<p style="text-align:center;width:100%;color:var(--text-muted);">Error loading insights. Please try again later.</p>';
+                    console.error('Sanity fetch error:', err);
+                });
+
+            function escapeHtml(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
+            function escapeAttr(s) { return escapeHtml(s); }
+        });
+    </script>
+
+    <!-- Float Buttons -->
+    <div class="float-btns">
+        <a href="https://wa.me/16039991544" target="_blank" rel="noopener noreferrer" class="float-btn float-btn--whatsapp" aria-label="Contact on WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span>Contact on WhatsApp</span>
+            <svg class="float-btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+        <a href="contact" class="float-btn float-btn--contact" aria-label="Contact Us">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span>Contact Us</span>
+            <svg class="float-btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+    </div>
+</body>
+</html>

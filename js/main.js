@@ -2,6 +2,477 @@
     'use strict';
 
     /* ========================================
+       NAV MEGA MENU
+       Injects a Tkxel-style mega-menu under the
+       Services nav link on every page.
+    ======================================== */
+    (function initMegaMenu() {
+        // Match any nav-pill anchor that points to the services page,
+        // regardless of whether it's relative ("services") or absolute ("/services").
+        var servicesLink = null;
+        var navAnchors = document.querySelectorAll('.nav-pill a');
+        for (var i = 0; i < navAnchors.length; i++) {
+            var href = navAnchors[i].getAttribute('href') || '';
+            if (href === '/services' || href === 'services' || href === '/services/' || href === 'services/') {
+                servicesLink = navAnchors[i];
+                break;
+            }
+        }
+        if (!servicesLink) return;
+
+        var GROUPS = [
+            {
+                id: 'agents',
+                title: 'AI Agents & Automations',
+                anchor: '/services#ai-agents-automations',
+                items: [
+                    { href: '/services/enterprise-ai-agents', title: 'Enterprise AI Agents', desc: 'Autonomous agents that reason, plan, and act across your systems.' },
+                    { href: '/services/sales-crm-chatbots', title: 'Sales & CRM Chatbots', desc: 'Conversational agents that qualify leads and close, not just chat.' },
+                    { href: '/services/operations-automation', title: 'Operations Automation', desc: 'Internal workflows handled — ticket triage, approvals, helpdesk.' },
+                    { href: '/services/process-document-ai', title: 'Process & Document AI', desc: 'Documents that read themselves and trigger the next action.' }
+                ]
+            },
+            {
+                id: 'models',
+                title: 'AI Models & Intelligence',
+                anchor: '/services#ai-models-intelligence',
+                items: [
+                    { href: '/services/custom-llm-training', title: 'Custom LLM Training', desc: 'Foundation models built on your data, your infrastructure.' },
+                    { href: '/services/model-fine-tuning', title: 'Model Fine-Tuning', desc: 'SFT, DPO, RLHF, LoRA — adapted to your domain and voice.' },
+                    { href: '/services/multilingual-low-resource-ai', title: 'Multilingual & Low-Resource AI', desc: 'AI for languages no one else builds for — sovereign by design.' },
+                    { href: '/services/speech-ai', title: 'Speech AI — STT & TTS', desc: 'Voice models tuned to accent, dialect, and real-time latency.' }
+                ]
+            },
+            {
+                id: 'compliant',
+                title: 'Compliant & Regulated AI',
+                anchor: '/services#compliant-regulated-ai',
+                items: [
+                    { href: '/services/gdpr-compliant-ai-systems', title: 'GDPR-Compliant AI Systems', desc: 'AI engineered for the EU regulatory bar from day one.' },
+                    { href: '/services/edtech-ai-platforms', title: 'EdTech AI Platforms', desc: 'Tutoring, assessment, and curriculum AI schools actually trust.' },
+                    { href: '/services/data-sovereignty-on-premise-ai', title: 'Data Sovereignty & On-Premise AI', desc: 'Air-gapped, in-country AI for sovereign and regulated workloads.' },
+                    { href: '/services/regulatory-ai-consulting', title: 'Regulatory AI Consulting', desc: 'Senior advisory on AI governance, EU AI Act, model risk.' }
+                ]
+            },
+            {
+                id: 'mlops',
+                title: 'Infrastructure & MLOps',
+                anchor: '/services#infrastructure-mlops',
+                items: [
+                    { href: '/services/model-deployment-serving', title: 'Model Deployment & Serving', desc: 'Production model serving with sub-second latency and SLOs.' },
+                    { href: '/services/mlops-pipelines', title: 'MLOps Pipelines', desc: 'CI/CD for AI — versioned data, eval gates, safe deploys.' },
+                    { href: '/services/monitoring-observability', title: 'Monitoring & Observability', desc: 'Catch drift, hallucinations, and quality regressions before users do.' },
+                    { href: '/services/ai-cost-optimization', title: 'AI Cost Optimisation', desc: '30–60% off your AI bill without sacrificing quality.' }
+                ]
+            }
+        ];
+
+        var SPOTLIGHT = {
+            tag: 'Featured Case Study',
+            title: 'Sovereign voice engine for Mongolia',
+            desc: 'How we shipped a national-scale, in-country AI system in an underserved language.',
+            href: '/case-study-sovereign-voice-engine-for-mongolia',
+            cta: 'Read the case study'
+        };
+
+        var ARROW_RIGHT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+
+        // ---- Decorate the Services link with chevron ----
+        servicesLink.classList.add('nav-services-trigger');
+        servicesLink.setAttribute('aria-haspopup', 'true');
+        servicesLink.setAttribute('aria-expanded', 'false');
+        if (!servicesLink.querySelector('.nav-mega-chevron')) {
+            var chev = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            chev.setAttribute('class', 'nav-mega-chevron');
+            chev.setAttribute('viewBox', '0 0 24 24');
+            chev.setAttribute('fill', 'none');
+            chev.setAttribute('stroke', 'currentColor');
+            chev.setAttribute('stroke-width', '2.5');
+            chev.setAttribute('stroke-linecap', 'round');
+            chev.setAttribute('stroke-linejoin', 'round');
+            chev.innerHTML = '<polyline points="6 9 12 15 18 9"/>';
+            servicesLink.appendChild(chev);
+        }
+
+        // ---- Build mega-menu DOM ----
+        var menu = document.createElement('div');
+        menu.className = 'nav-megamenu';
+        menu.id = 'navMegaMenu';
+        menu.setAttribute('role', 'menu');
+        menu.setAttribute('aria-label', 'Services');
+
+        var inner = document.createElement('div');
+        inner.className = 'nav-megamenu-inner';
+
+        // Parents column
+        var parentsCol = document.createElement('div');
+        parentsCol.className = 'nav-mega-parents';
+        GROUPS.forEach(function (g, i) {
+            var btn = document.createElement('button');
+            btn.className = 'nav-mega-parent' + (i === 0 ? ' active' : '');
+            btn.type = 'button';
+            btn.setAttribute('data-parent', g.id);
+            btn.innerHTML = '<span>' + g.title + '</span>' +
+                '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>';
+            parentsCol.appendChild(btn);
+        });
+
+        // Subs column
+        var subsCol = document.createElement('div');
+        subsCol.className = 'nav-mega-subs';
+        GROUPS.forEach(function (g, i) {
+            var subgroup = document.createElement('div');
+            subgroup.className = 'nav-mega-subgroup' + (i === 0 ? ' active' : '');
+            subgroup.setAttribute('data-parent', g.id);
+            g.items.forEach(function (item) {
+                var a = document.createElement('a');
+                a.className = 'nav-mega-sub';
+                a.href = item.href;
+                a.innerHTML = '<strong>' + item.title + '</strong><span>' + item.desc + '</span>';
+                subgroup.appendChild(a);
+            });
+            var allLink = document.createElement('a');
+            allLink.className = 'nav-mega-all';
+            allLink.href = g.anchor;
+            allLink.innerHTML = 'View all ' + g.title + ' ' + ARROW_RIGHT;
+            subgroup.appendChild(allLink);
+            subsCol.appendChild(subgroup);
+        });
+
+        // Spotlight column
+        var spot = document.createElement('div');
+        spot.className = 'nav-mega-spotlight';
+        spot.innerHTML =
+            '<span class="nav-spotlight-tag">' + SPOTLIGHT.tag + '</span>' +
+            '<div class="nav-spotlight-content">' +
+            '<h4>' + SPOTLIGHT.title + '</h4>' +
+            '<p>' + SPOTLIGHT.desc + '</p>' +
+            '</div>' +
+            '<a class="nav-spotlight-link" href="' + SPOTLIGHT.href + '">' + SPOTLIGHT.cta + ' ' + ARROW_RIGHT + '</a>';
+
+        inner.appendChild(parentsCol);
+        inner.appendChild(subsCol);
+        inner.appendChild(spot);
+        menu.appendChild(inner);
+        document.body.appendChild(menu);
+
+        // ---- Position relative to nav (flush, no gap — they read as one panel) ----
+        var navEl = document.querySelector('.nav');
+        function positionMenu() {
+            if (!navEl) return;
+            var rect = navEl.getBoundingClientRect();
+            // Sit exactly at the navbar's bottom edge with a 1px overlap to
+            // collapse any sub-pixel rendering seam between the two surfaces.
+            menu.style.top = (rect.bottom - 1) + 'px';
+        }
+        positionMenu();
+        window.addEventListener('scroll', positionMenu, { passive: true });
+        window.addEventListener('resize', positionMenu);
+
+        // ---- Open / close ----
+        var hideTimer;
+        function open() {
+            if (window.innerWidth <= 1100) return;
+            clearTimeout(hideTimer);
+            positionMenu();
+            if (navEl) navEl.classList.add('nav-mega-open');
+            servicesLink.classList.add('is-open');
+            servicesLink.setAttribute('aria-expanded', 'true');
+            menu.classList.add('is-open');
+        }
+        function close() {
+            if (navEl) navEl.classList.remove('nav-mega-open');
+            servicesLink.classList.remove('is-open');
+            servicesLink.setAttribute('aria-expanded', 'false');
+            menu.classList.remove('is-open');
+        }
+        function delayedClose() {
+            clearTimeout(hideTimer);
+            hideTimer = setTimeout(close, 180);
+        }
+
+        servicesLink.addEventListener('mouseenter', open);
+        servicesLink.addEventListener('mouseleave', delayedClose);
+        servicesLink.addEventListener('focus', open);
+        menu.addEventListener('mouseenter', function () { clearTimeout(hideTimer); });
+        menu.addEventListener('mouseleave', delayedClose);
+
+        // ESC closes
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') close();
+        });
+
+        // Click outside closes
+        document.addEventListener('click', function (e) {
+            if (!menu.contains(e.target) && !servicesLink.contains(e.target)) close();
+        });
+
+        // ---- Parent tab interactions (hover/click to switch group) ----
+        var parentBtns = parentsCol.querySelectorAll('.nav-mega-parent');
+        var subgroups = subsCol.querySelectorAll('.nav-mega-subgroup');
+        function activate(parentId) {
+            parentBtns.forEach(function (b) {
+                b.classList.toggle('active', b.getAttribute('data-parent') === parentId);
+            });
+            subgroups.forEach(function (g) {
+                g.classList.toggle('active', g.getAttribute('data-parent') === parentId);
+            });
+        }
+        parentBtns.forEach(function (b) {
+            b.addEventListener('mouseenter', function () { activate(b.getAttribute('data-parent')); });
+            b.addEventListener('focus', function () { activate(b.getAttribute('data-parent')); });
+            b.addEventListener('click', function (e) {
+                e.preventDefault();
+                activate(b.getAttribute('data-parent'));
+            });
+        });
+
+        // ---- Mobile overlay: enhance with services accordion ----
+        var mobileOverlay = document.getElementById('mobileNav');
+        if (mobileOverlay) {
+            var mobileAnchors = mobileOverlay.querySelectorAll('a');
+            var mobileServicesLink = null;
+            for (var j = 0; j < mobileAnchors.length; j++) {
+                var mhref = mobileAnchors[j].getAttribute('href') || '';
+                if (mhref === '/services' || mhref === 'services' || mhref === '/services/' || mhref === 'services/') {
+                    mobileServicesLink = mobileAnchors[j];
+                    break;
+                }
+            }
+            if (mobileServicesLink) {
+                var group = document.createElement('div');
+                group.className = 'nav-mobile-services-group';
+
+                var toggle = document.createElement('button');
+                toggle.type = 'button';
+                toggle.className = 'nav-mobile-services-toggle';
+                toggle.innerHTML = '<span>Services</span>' +
+                    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+
+                var list = document.createElement('div');
+                list.className = 'nav-mobile-services-list';
+                var overview = document.createElement('a');
+                overview.href = '/services';
+                overview.textContent = 'All services overview';
+                list.appendChild(overview);
+                GROUPS.forEach(function (g) {
+                    var title = document.createElement('span');
+                    title.className = 'nav-mobile-services-group-title';
+                    title.textContent = g.title;
+                    list.appendChild(title);
+                    g.items.forEach(function (item) {
+                        var a = document.createElement('a');
+                        a.href = item.href;
+                        a.textContent = item.title;
+                        list.appendChild(a);
+                    });
+                });
+
+                group.appendChild(toggle);
+                group.appendChild(list);
+                mobileServicesLink.parentNode.replaceChild(group, mobileServicesLink);
+
+                toggle.addEventListener('click', function () {
+                    var isOpen = toggle.classList.toggle('is-open');
+                    list.classList.toggle('is-open', isOpen);
+                });
+            }
+        }
+    })();
+
+    /* ========================================
+       NAV RESOURCES DROPDOWN
+       Compact two-item dropdown (Insights + Newsroom)
+       with a featured spotlight on the right.
+       Shares the .nav-megamenu shell so visuals match
+       the Services mega-menu exactly.
+    ======================================== */
+    (function initResourcesMenu() {
+        var resourcesTrigger = null;
+        var navItems = document.querySelectorAll('.nav-pill .nav-link, .nav-pill > a, .nav-pill > button');
+        for (var i = 0; i < navItems.length; i++) {
+            if ((navItems[i].textContent || '').trim().toLowerCase() === 'resources') {
+                resourcesTrigger = navItems[i];
+                break;
+            }
+        }
+        if (!resourcesTrigger) return;
+
+        var ITEMS = [
+            {
+                href: '/insights',
+                title: 'Insights',
+                desc: 'Expert articles on AI engineering, automation, and enterprise scaling.',
+                iconSvg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>'
+            },
+            {
+                href: '/newsroom',
+                title: 'Newsroom',
+                desc: 'Product launches, partnerships, and milestones from the Croncore team.',
+                iconSvg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11h12a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v6"/><line x1="8" y1="15" x2="14" y2="15"/><line x1="8" y1="18" x2="12" y2="18"/></svg>'
+            }
+        ];
+
+        var SPOTLIGHT = {
+            tag: 'Featured',
+            title: 'Sovereign voice engine for Mongolia',
+            desc: 'How we shipped a national-scale, in-country AI system in an underserved language.',
+            href: '/case-study-sovereign-voice-engine-for-mongolia',
+            cta: 'Read the case study'
+        };
+
+        var ARROW_RIGHT_R = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+
+        // The Resources entry is a trigger only — no navigation on click.
+        if (resourcesTrigger.tagName === 'A') {
+            resourcesTrigger.addEventListener('click', function (e) { e.preventDefault(); });
+        }
+
+        // Decorate with chevron
+        resourcesTrigger.classList.add('nav-resources-trigger');
+        resourcesTrigger.setAttribute('aria-haspopup', 'true');
+        resourcesTrigger.setAttribute('aria-expanded', 'false');
+        if (!resourcesTrigger.querySelector('.nav-mega-chevron')) {
+            var chev = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            chev.setAttribute('class', 'nav-mega-chevron');
+            chev.setAttribute('viewBox', '0 0 24 24');
+            chev.setAttribute('fill', 'none');
+            chev.setAttribute('stroke', 'currentColor');
+            chev.setAttribute('stroke-width', '2.5');
+            chev.setAttribute('stroke-linecap', 'round');
+            chev.setAttribute('stroke-linejoin', 'round');
+            chev.innerHTML = '<polyline points="6 9 12 15 18 9"/>';
+            resourcesTrigger.appendChild(chev);
+        }
+
+        // Build menu DOM
+        var menu = document.createElement('div');
+        menu.className = 'nav-megamenu nav-megamenu--resources';
+        menu.id = 'navResourcesMenu';
+        menu.setAttribute('role', 'menu');
+        menu.setAttribute('aria-label', 'Resources');
+
+        var inner = document.createElement('div');
+        inner.className = 'nav-megamenu-inner nav-resources-inner';
+
+        var itemsCol = document.createElement('div');
+        itemsCol.className = 'nav-resources-items';
+        ITEMS.forEach(function (item) {
+            var a = document.createElement('a');
+            a.className = 'nav-resources-item';
+            a.href = item.href;
+            a.innerHTML =
+                '<span class="nav-resources-item-icon">' + item.iconSvg + '</span>' +
+                '<span class="nav-resources-item-body">' +
+                    '<strong>' + item.title + '</strong>' +
+                    '<span>' + item.desc + '</span>' +
+                '</span>';
+            itemsCol.appendChild(a);
+        });
+
+        var spot = document.createElement('div');
+        spot.className = 'nav-mega-spotlight';
+        spot.innerHTML =
+            '<span class="nav-spotlight-tag">' + SPOTLIGHT.tag + '</span>' +
+            '<div class="nav-spotlight-content">' +
+            '<h4>' + SPOTLIGHT.title + '</h4>' +
+            '<p>' + SPOTLIGHT.desc + '</p>' +
+            '</div>' +
+            '<a class="nav-spotlight-link" href="' + SPOTLIGHT.href + '">' + SPOTLIGHT.cta + ' ' + ARROW_RIGHT_R + '</a>';
+
+        inner.appendChild(itemsCol);
+        inner.appendChild(spot);
+        menu.appendChild(inner);
+        document.body.appendChild(menu);
+
+        // Position flush under nav (same logic as services menu)
+        var navEl = document.querySelector('.nav');
+        function positionMenu() {
+            if (!navEl) return;
+            var rect = navEl.getBoundingClientRect();
+            menu.style.top = (rect.bottom - 1) + 'px';
+        }
+        positionMenu();
+        window.addEventListener('scroll', positionMenu, { passive: true });
+        window.addEventListener('resize', positionMenu);
+
+        var hideTimer;
+        function open() {
+            if (window.innerWidth <= 1100) return;
+            clearTimeout(hideTimer);
+            positionMenu();
+            if (navEl) navEl.classList.add('nav-mega-open');
+            resourcesTrigger.classList.add('is-open');
+            resourcesTrigger.setAttribute('aria-expanded', 'true');
+            menu.classList.add('is-open');
+        }
+        function close() {
+            if (navEl) navEl.classList.remove('nav-mega-open');
+            resourcesTrigger.classList.remove('is-open');
+            resourcesTrigger.setAttribute('aria-expanded', 'false');
+            menu.classList.remove('is-open');
+        }
+        function delayedClose() {
+            clearTimeout(hideTimer);
+            hideTimer = setTimeout(close, 180);
+        }
+
+        resourcesTrigger.addEventListener('mouseenter', open);
+        resourcesTrigger.addEventListener('mouseleave', delayedClose);
+        resourcesTrigger.addEventListener('focus', open);
+        menu.addEventListener('mouseenter', function () { clearTimeout(hideTimer); });
+        menu.addEventListener('mouseleave', delayedClose);
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') close();
+        });
+        document.addEventListener('click', function (e) {
+            if (!menu.contains(e.target) && !resourcesTrigger.contains(e.target)) close();
+        });
+
+        // Mobile overlay: replace Resources entry with an accordion holding Insights + Newsroom
+        var mobileOverlay = document.getElementById('mobileNav');
+        if (mobileOverlay) {
+            var mobileLinks = mobileOverlay.querySelectorAll('a, button');
+            var mobileResourcesLink = null;
+            for (var j = 0; j < mobileLinks.length; j++) {
+                if ((mobileLinks[j].textContent || '').trim().toLowerCase() === 'resources') {
+                    mobileResourcesLink = mobileLinks[j];
+                    break;
+                }
+            }
+            if (mobileResourcesLink) {
+                var group = document.createElement('div');
+                group.className = 'nav-mobile-services-group';
+
+                var toggle = document.createElement('button');
+                toggle.type = 'button';
+                toggle.className = 'nav-mobile-services-toggle';
+                toggle.innerHTML = '<span>Resources</span>' +
+                    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+
+                var list = document.createElement('div');
+                list.className = 'nav-mobile-services-list';
+                ITEMS.forEach(function (item) {
+                    var a = document.createElement('a');
+                    a.href = item.href;
+                    a.textContent = item.title;
+                    list.appendChild(a);
+                });
+
+                group.appendChild(toggle);
+                group.appendChild(list);
+                mobileResourcesLink.parentNode.replaceChild(group, mobileResourcesLink);
+
+                toggle.addEventListener('click', function () {
+                    var isOpen = toggle.classList.toggle('is-open');
+                    list.classList.toggle('is-open', isOpen);
+                });
+            }
+        }
+    })();
+
+    /* ========================================
        THEME TOGGLE
     ======================================== */
     var STORAGE_KEY = 'croncore-theme';
@@ -11,10 +482,7 @@
     function getPreferredTheme() {
         var stored = localStorage.getItem(STORAGE_KEY);
         if (stored) return stored;
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-            return 'light';
-        }
-        return 'dark';
+        return 'light';
     }
 
     function applyTheme(theme) {
@@ -42,13 +510,16 @@
         });
     }
 
+    // Removed system theme listener to maintain light mode default
+    /*
     if (window.matchMedia) {
-        window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function (e) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
             if (!localStorage.getItem(STORAGE_KEY)) {
-                applyTheme(e.matches ? 'light' : 'dark');
+                applyTheme(e.matches ? 'dark' : 'light');
             }
         });
     }
+    */
 
     /* ========================================
        NEURAL NETWORK CANVAS (OPTIMIZED)
@@ -173,7 +644,7 @@
         var sections = [];
         navLinks.forEach(function (link) {
             var href = link.getAttribute('href');
-            if (href && href.startsWith('#')) {
+            if (href && href.length > 1 && href.startsWith('#')) {
                 var sec = document.querySelector(href);
                 if (sec) sections.push({ el: sec, link: link });
             }
@@ -427,6 +898,96 @@
     }
 
     /* ========================================
+       CASE STUDIES FILTER
+    ======================================== */
+    var csFilterBtns = document.querySelectorAll('.cs-filter-btn');
+    var csCards = document.querySelectorAll('.cs-card');
+
+    if (csFilterBtns.length && csCards.length) {
+        csFilterBtns.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var filter = btn.getAttribute('data-filter');
+
+                // Update active state
+                csFilterBtns.forEach(function (b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+
+                // Show/hide cards
+                csCards.forEach(function (card) {
+                    var cat = card.getAttribute('data-category');
+                    if (filter === 'all' || cat === filter) {
+                        card.classList.remove('cs-hidden');
+                    } else {
+                        card.classList.add('cs-hidden');
+                    }
+                });
+
+                // Update slider buttons after filtering
+                if (typeof updateCsGridButtons === 'function') {
+                    setTimeout(updateCsGridButtons, 300); // Small delay for rendering
+                }
+            });
+        });
+    }
+
+    /* ========================================
+       CASE STUDIES SLIDER (HORIZONTAL SCROL)
+    ======================================== */
+    var csGrid = document.querySelector('.cs-grid');
+    var csPrevBtn = document.querySelector('.cs-prev');
+    var csNextBtn = document.querySelector('.cs-next');
+
+    window.updateCsGridButtons = function() {
+        if (!csGrid || !csPrevBtn || !csNextBtn) return;
+        
+        var scrollLeft = csGrid.scrollLeft;
+        var maxScroll = csGrid.scrollWidth - csGrid.clientWidth;
+        
+        // Show buttons only if content exceeds container width
+        if (csGrid.scrollWidth > csGrid.clientWidth + 10) {
+            csPrevBtn.classList.add('visible');
+            csNextBtn.classList.add('visible');
+        } else {
+            csPrevBtn.classList.remove('visible');
+            csNextBtn.classList.remove('visible');
+        }
+
+        // Opacity and enabled state based on scroll position
+        if (scrollLeft > 10) {
+            csPrevBtn.style.opacity = '1';
+            csPrevBtn.style.pointerEvents = 'auto';
+        } else {
+            csPrevBtn.style.opacity = '0.3';
+            csPrevBtn.style.pointerEvents = 'none';
+        }
+
+        if (scrollLeft < maxScroll - 10) {
+            csNextBtn.style.opacity = '1';
+            csNextBtn.style.pointerEvents = 'auto';
+        } else {
+            csNextBtn.style.opacity = '0.3';
+            csNextBtn.style.pointerEvents = 'none';
+        }
+    };
+
+    if (csGrid && csPrevBtn && csNextBtn) {
+        csNextBtn.addEventListener('click', function() {
+            var scrollAmount = csGrid.clientWidth * 0.8;
+            csGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+
+        csPrevBtn.addEventListener('click', function() {
+            var scrollAmount = csGrid.clientWidth * 0.8;
+            csGrid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+
+        csGrid.addEventListener('scroll', updateCsGridButtons);
+        window.addEventListener('resize', updateCsGridButtons);
+        // Initial check after some time to ensure layout is ready
+        setTimeout(updateCsGridButtons, 500);
+    }
+
+    /* ========================================
        TOAST NOTIFICATIONS
     ======================================== */
     function showToast(message, type) {
@@ -446,6 +1007,122 @@
             toast.classList.remove('show');
             setTimeout(function () { toast.remove(); }, 400);
         }, 4000);
+    }
+
+    /* ========================================
+       SANITY INSIGHTS FETCH & SLIDER (homepage preview)
+    ======================================== */
+    var insightsGrid = document.querySelector('#home-insights-grid');
+    var insightsPrevBtn = document.querySelector('.insights-prev');
+    var insightsNextBtn = document.querySelector('.insights-next');
+
+    if (insightsGrid && typeof Sanity !== 'undefined') {
+        var hasExistingContent = insightsGrid.querySelectorAll('.insights-card').length > 0;
+        var FALLBACK_IMG = 'images/insights1.jpeg';
+
+        var groq = '*[_type == "post" && defined(slug.current)] | order(publishedAt desc) [0...8] {' +
+            '"slug": slug.current, title, excerpt, publishedAt,' +
+            'mainImage{asset->{url}, alt},' +
+            '"category": category->title,' +
+            'body' +
+        '}';
+
+        function escHtml(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
+
+        Sanity.fetch(groq)
+            .then(function (posts) {
+                if (!posts || posts.length === 0) {
+                    if (!hasExistingContent) {
+                        insightsGrid.innerHTML = '<p style="text-align:center; width:100%; color:var(--text-muted);">No posts available.</p>';
+                    }
+                    return;
+                }
+
+                var html = posts.map(function (post) {
+                    var img = post.mainImage
+                        ? Sanity.imageUrl(post.mainImage, {width: 800, fit: 'crop', quality: 80})
+                        : FALLBACK_IMG;
+                    var alt = (post.mainImage && post.mainImage.alt) || post.title || '';
+                    var dateStr = post.publishedAt
+                        ? new Date(post.publishedAt).toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'})
+                        : '';
+                    var category = post.category || 'Insights';
+                    var excerpt = post.excerpt || Sanity.portableTextToPlain(post.body, 150);
+
+                    return '<article class="insights-card in-view">' +
+                        '<img src="' + img + '" alt="' + escHtml(alt) + '" class="insights-card-img" style="aspect-ratio: 16/9; object-fit: cover;" width="400" height="225" loading="lazy">' +
+                        '<div class="insights-card-body">' +
+                            '<span class="insights-card-category">' + escHtml(category) + '</span>' +
+                            '<h3 style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">' + escHtml(post.title || '') + '</h3>' +
+                            '<p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">' + escHtml(excerpt) + '</p>' +
+                            '<div class="insights-card-meta">' +
+                                '<span>' + dateStr + '</span>' +
+                                '<a href="insights/' + encodeURIComponent(post.slug) + '" class="insights-card-link">Read More <svg class="arrow-icon" viewBox="0 0 24 24">' +
+                                    '<line x1="5" y1="12" x2="19" y2="12" />' +
+                                    '<polyline points="12 5 19 12 12 19" />' +
+                                '</svg></a>' +
+                            '</div>' +
+                        '</div>' +
+                    '</article>';
+                }).join('');
+
+                insightsGrid.innerHTML = html;
+                initInsightsSlider();
+            })
+            .catch(function (error) {
+                console.error('Sanity insights fetch error:', error);
+            });
+
+        function initInsightsSlider() {
+            if (!insightsGrid || !insightsPrevBtn || !insightsNextBtn) return;
+
+            function updateInsightsButtons() {
+                var scrollLeft = insightsGrid.scrollLeft;
+                var maxScroll = insightsGrid.scrollWidth - insightsGrid.clientWidth;
+                
+                // Show buttons only if content exceeds container width
+                if (insightsGrid.scrollWidth > insightsGrid.clientWidth + 10) {
+                    insightsPrevBtn.classList.add('visible');
+                    insightsNextBtn.classList.add('visible');
+                } else {
+                    insightsPrevBtn.classList.remove('visible');
+                    insightsNextBtn.classList.remove('visible');
+                }
+
+                // Opacity and enabled state based on scroll position
+                if (scrollLeft > 10) {
+                    insightsPrevBtn.style.opacity = '1';
+                    insightsPrevBtn.style.pointerEvents = 'auto';
+                } else {
+                    insightsPrevBtn.style.opacity = '0.3';
+                    insightsPrevBtn.style.pointerEvents = 'none';
+                }
+
+                if (scrollLeft < maxScroll - 10) {
+                    insightsNextBtn.style.opacity = '1';
+                    insightsNextBtn.style.pointerEvents = 'auto';
+                } else {
+                    insightsNextBtn.style.opacity = '0.3';
+                    insightsNextBtn.style.pointerEvents = 'none';
+                }
+            }
+
+            insightsNextBtn.addEventListener('click', function () {
+                var scrollAmount = insightsGrid.clientWidth * 0.8;
+                insightsGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+
+            insightsPrevBtn.addEventListener('click', function () {
+                var scrollAmount = insightsGrid.clientWidth * 0.8;
+                insightsGrid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+
+            insightsGrid.addEventListener('scroll', updateInsightsButtons);
+            window.addEventListener('resize', updateInsightsButtons);
+            
+            // Initial check after a short delay to ensure rendering is complete
+            setTimeout(updateInsightsButtons, 500);
+        }
     }
 
 })();
