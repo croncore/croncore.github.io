@@ -3,8 +3,10 @@
 # Status 200 = rewrite (URL stays the same), 301 = permanent redirect, 404 = not found
 
 # ---------- Article routing ----------
-# /insights/<slug> -> serve article.html (Cloudflare strips the .html on output)
-/insights/*  /article  200
+# Sanity posts are pre-rendered at build time into /insights/<slug>.html
+# (see scripts/generate-insights.js). Cloudflare Pages serves them automatically
+# when a request matches the file name (e.g. /insights/foo -> insights/foo.html).
+# Slugs without a pre-rendered file fall through to the 404 rule at the bottom.
 
 # ---------- Legacy URL redirects (301) ----------
 # Old /article/<slug> URLs -> /insights/<slug>
