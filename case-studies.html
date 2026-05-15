@@ -24,36 +24,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- Primary SEO -->
-    <title>Insights — Croncore | Enterprise AI & Automation</title>
+    <title>Case Studies — Croncore | Enterprise AI & Automation</title>
     <meta name="description"
-        content="Stay updated with the latest trends in Generative AI, Conversational Agents, and Workflow Automation. Expert insights from the Croncore team.">
+        content="Explore Croncore's enterprise AI case studies — measurable outcomes across sales automation, voice agents, telecom, EdTech, and financial services.">
     <meta name="author" content="Croncore">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.croncore.com/insights">
+    <link rel="canonical" href="https://www.croncore.com/case-studies">
 
     <!-- Open Graph -->
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Croncore">
-    <meta property="og:url" content="https://www.croncore.com/insights">
-    <meta property="og:title" content="Insights — Croncore | Enterprise AI & Automation">
-    <meta property="og:description" content="Stay updated with the latest trends in Generative AI, Conversational Agents, and Workflow Automation. Expert insights from the Croncore team.">
+    <meta property="og:url" content="https://www.croncore.com/case-studies">
+    <meta property="og:title" content="Case Studies — Croncore | Enterprise AI & Automation">
+    <meta property="og:description" content="Explore Croncore's enterprise AI case studies — measurable outcomes across sales automation, voice agents, telecom, EdTech, and financial services.">
     <meta property="og:image" content="https://www.croncore.com/images/croncore-logo.png">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@croncore">
-    <meta name="twitter:title" content="Insights — Croncore">
-    <meta name="twitter:description" content="Expert insights on AI, automation, and business scaling from the Croncore team.">
+    <meta name="twitter:title" content="Case Studies — Croncore">
+    <meta name="twitter:description" content="Measurable outcomes from Croncore's enterprise AI deployments — sales agents, voice AI, telecom, EdTech, and finance.">
     <meta name="twitter:image" content="https://www.croncore.com/images/croncore-logo.png">
 
     <!-- Preconnect & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Preconnect to Sanity (CMS API + image CDN) -->
-    <link rel="preconnect" href="https://b5z10ias.apicdn.sanity.io">
-    <link rel="preconnect" href="https://cdn.sanity.io">
-    <link rel="dns-prefetch" href="https://b5z10ias.apicdn.sanity.io">
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
@@ -73,51 +69,74 @@
     <link rel="stylesheet" href="css/styles.css?v=9">
 
     <style>
-        .insights-hero {
-            padding: 160px 0 80px;
+        .cs-page-hero {
+            padding: 160px 0 60px;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
-        .insights-hero h1 {
+        .cs-page-hero h1 {
             font-size: clamp(2.5rem, 5vw, 4rem);
             margin-bottom: 20px;
         }
-        .insights-hero p {
-            max-width: 600px;
+        .cs-page-hero p {
+            max-width: 640px;
             margin: 0 auto;
             color: var(--text-secondary);
             font-size: 1.1rem;
         }
-        .insights-section {
-            padding: 24px 0 60px;
+        .cs-page-section {
+            padding: 24px 0 80px;
         }
-        .insights-loading {
-            text-align: center;
-            padding: 100px 0;
-            color: var(--text-muted);
-        }
-        .loader-spinner {
-            width: 40px; height: 40px;
-            border: 3px solid rgba(0, 212, 255, 0.15);
-            border-top-color: var(--accent);
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-            margin: 0 auto 20px;
-        }
-        @keyframes spin { 100% { transform: rotate(360deg); } }
-        
-        /* Ensure 3-column grid on desktop, 1 on mobile */
-        .insights-grid {
+        /* Static 3-column grid (matches insights page rhythm) */
+        .cs-page-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
+            gap: 28px;
         }
         @media (max-width: 992px) {
-            .insights-grid { grid-template-columns: repeat(2, 1fr); }
+            .cs-page-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 640px) {
-            .insights-grid { grid-template-columns: 1fr; }
+            .cs-page-grid { grid-template-columns: 1fr; }
+        }
+        /* Override .cs-card flex sizing from index carousel so cards fit grid cells */
+        .cs-page-grid .cs-card {
+            flex: initial;
+            height: 460px;
+        }
+        @media (max-width: 767px) {
+            .cs-page-grid .cs-card { height: 420px; }
+        }
+        .cs-card-info {
+            position: absolute;
+            inset: auto 0 0 0;
+            z-index: 2;
+            padding: 24px 28px 26px;
+            pointer-events: none;
+        }
+        .cs-card-info .cs-card-industry {
+            font-size: 1.35rem;
+            margin-bottom: 6px;
+        }
+        .cs-card-info .cs-card-tag {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent);
+            background: rgba(0, 212, 255, 0.10);
+            border: 1px solid rgba(0, 212, 255, 0.25);
+            padding: 4px 10px;
+            border-radius: 999px;
+            margin-bottom: 14px;
+        }
+        .cs-card-info .cs-card-blurb {
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 0.92rem;
+            line-height: 1.45;
+            margin: 0;
         }
     </style>
 
@@ -128,7 +147,7 @@
         "@type": "BreadcrumbList",
         "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.croncore.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://www.croncore.com/insights" }
+            { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://www.croncore.com/case-studies" }
         ]
     }
     </script>
@@ -138,7 +157,7 @@
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFNLPH3H"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    
+
     <!-- Background layers -->
     <canvas id="neuralCanvas" aria-hidden="true"></canvas>
     <div class="bg-radial-top" aria-hidden="true"></div>
@@ -212,22 +231,76 @@
         </div>
 
         <main id="main-content">
-            <header class="insights-hero">
+            <header class="cs-page-hero">
                 <div class="container">
-                    <div class="section-tag"><span class="tag-pulse"></span> Insights</div>
-                    <h1 class="text-glow">Insights & Perspectives</h1>
-                    <p>Expert analysis on the intersection of AI, automation, and the future of enterprise technology.</p>
+                    <div class="section-tag"><span class="tag-pulse"></span> Case Studies</div>
+                    <h1 class="text-glow">Real outcomes, real industries</h1>
+                    <p>See how Croncore deploys AI agents, voice systems, and automation across sales, telecom, education, and financial services.</p>
                 </div>
             </header>
 
-            <section class="insights-section">
+            <section class="cs-page-section">
                 <div class="container">
-                    <div id="insights-loading" class="insights-loading">
-                        <div class="loader-spinner"></div>
-                        <p>Loading latest insights...</p>
-                    </div>
-                    <div class="insights-grid" id="full-insights-grid">
-                        <!-- Posts injected here -->
+                    <div class="cs-page-grid">
+                        <!-- Card 1: Bezninja -->
+                        <article class="cs-card" data-category="agents" aria-label="Bezninja Case Study">
+                            <div class="cs-card-bg">
+                                <img src="images/case-studies/benzninja.jpg" alt="Bezninja — Business Services Case Study" loading="lazy">
+                            </div>
+                            <div class="cs-card-overlay"></div>
+                            <div class="cs-card-info">
+                                <span class="cs-card-tag">Sales Automation</span>
+                                <h3 class="cs-card-industry">Bezninja</h3>
+                                <p class="cs-card-blurb">Autonomous sales agent drives record revenue growth across inbound and outbound funnels.</p>
+                            </div>
+                            <a href="case-study-autonomous-sales-agent-drives-record-revenue-growth" class="cs-card-link-overlay"
+                                aria-label="Read Bezninja case study"></a>
+                        </article>
+
+                        <!-- Card 2: Bloomlink -->
+                        <article class="cs-card" data-category="llm" aria-label="Bloomlink Case Study">
+                            <div class="cs-card-bg">
+                                <img src="images/case-studies/Telco @.jpg" alt="Bloomlink — Telecom & Call Centers Case Study" loading="lazy">
+                            </div>
+                            <div class="cs-card-overlay"></div>
+                            <div class="cs-card-info">
+                                <span class="cs-card-tag">Voice AI · Telecom</span>
+                                <h3 class="cs-card-industry">Bloomlink</h3>
+                                <p class="cs-card-blurb">Sovereign voice engine for Mongolia — a low-latency, on-region speech stack for national telecom.</p>
+                            </div>
+                            <a href="case-study-sovereign-voice-engine-for-mongolia" class="cs-card-link-overlay"
+                                aria-label="Read Bloomlink case study"></a>
+                        </article>
+
+                        <!-- Card 3: EdTech -->
+                        <article class="cs-card" data-category="llm" aria-label="EdTech Case Study">
+                            <div class="cs-card-bg">
+                                <img src="images/case-studies/Education & Digital Learning.jpg" alt="Education & Digital Learning Case Study" loading="lazy">
+                            </div>
+                            <div class="cs-card-overlay"></div>
+                            <div class="cs-card-info">
+                                <span class="cs-card-tag">EdTech · Platform</span>
+                                <h3 class="cs-card-industry">Digital Learning Powerhouse</h3>
+                                <p class="cs-card-blurb">Architecting a ground-up digital learning platform with adaptive AI tutoring at the core.</p>
+                            </div>
+                            <a href="case-study-architecting-a-ground-up-digital-learning-powerhouse" class="cs-card-link-overlay"
+                                aria-label="Read EdTech case study"></a>
+                        </article>
+
+                        <!-- Card 4: Oracle Merchant Services -->
+                        <article class="cs-card" data-category="agents" aria-label="Oracle Merchant Services Case Study">
+                            <div class="cs-card-bg">
+                                <img src="images/case-studies/Financial Services.jpg" alt="Oracle Merchant Services — Financial Services Case Study" loading="lazy">
+                            </div>
+                            <div class="cs-card-overlay"></div>
+                            <div class="cs-card-info">
+                                <span class="cs-card-tag">Financial Services</span>
+                                <h3 class="cs-card-industry">Oracle Merchant Services</h3>
+                                <p class="cs-card-blurb">Custom AI voice agent closes the speed-to-lead gap and lifts qualified conversation volume.</p>
+                            </div>
+                            <a href="case-study-custom-ai-voice-agent-closes-the-speed-to-lead-gap" class="cs-card-link-overlay"
+                                aria-label="Read Oracle Merchant Services case study"></a>
+                        </article>
                     </div>
                 </div>
             </section>
@@ -319,69 +392,7 @@
     </div>
 
     <!-- JavaScript -->
-    <script src="js/sanity.js"></script>
     <script src="js/main.js?v=4"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var insightsGrid = document.getElementById('full-insights-grid');
-            var loading = document.getElementById('insights-loading');
-            var FALLBACK_IMG = 'images/insights1.jpeg';
-
-            var groq = '*[_type == "post" && defined(slug.current)] | order(publishedAt desc) [0...50] {' +
-                '"slug": slug.current, title, excerpt, publishedAt,' +
-                'mainImage{asset->{url}, alt},' +
-                '"category": category->title,' +
-                'body' +
-            '}';
-
-            Sanity.fetch(groq)
-                .then(function (posts) {
-                    loading.style.display = 'none';
-                    if (!posts || posts.length === 0) {
-                        insightsGrid.innerHTML = '<p style="text-align:center;width:100%;color:var(--text-muted);">No posts yet — check back soon.</p>';
-                        return;
-                    }
-
-                    var html = posts.map(function (post) {
-                        var img = post.mainImage
-                            ? Sanity.imageUrl(post.mainImage, {width: 800, fit: 'crop', quality: 80})
-                            : FALLBACK_IMG;
-                        var alt = (post.mainImage && post.mainImage.alt) || post.title || '';
-                        var dateStr = post.publishedAt
-                            ? new Date(post.publishedAt).toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'})
-                            : '';
-                        var category = post.category || 'Insights';
-                        var excerpt = post.excerpt || Sanity.portableTextToPlain(post.body, 150);
-
-                        return '<article class="insights-card in-view">' +
-                            '<img src="' + img + '" alt="' + escapeAttr(alt) + '" class="insights-card-img" style="aspect-ratio: 16/9; object-fit: cover;" width="400" height="225" loading="lazy">' +
-                            '<div class="insights-card-body">' +
-                                '<span class="insights-card-category">' + escapeHtml(category) + '</span>' +
-                                '<h3 style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">' + escapeHtml(post.title || '') + '</h3>' +
-                                '<p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">' + escapeHtml(excerpt) + '</p>' +
-                                '<div class="insights-card-meta">' +
-                                    '<span>' + dateStr + '</span>' +
-                                    '<a href="insights/' + encodeURIComponent(post.slug) + '" class="insights-card-link">Read More <svg class="arrow-icon" viewBox="0 0 24 24">' +
-                                        '<line x1="5" y1="12" x2="19" y2="12" />' +
-                                        '<polyline points="12 5 19 12 12 19" />' +
-                                    '</svg></a>' +
-                                '</div>' +
-                            '</div>' +
-                        '</article>';
-                    }).join('');
-
-                    insightsGrid.innerHTML = html;
-                })
-                .catch(function (err) {
-                    loading.style.display = 'none';
-                    insightsGrid.innerHTML = '<p style="text-align:center;width:100%;color:var(--text-muted);">Error loading insights. Please try again later.</p>';
-                    console.error('Sanity fetch error:', err);
-                });
-
-            function escapeHtml(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
-            function escapeAttr(s) { return escapeHtml(s); }
-        });
-    </script>
 
     <!-- Float Buttons -->
     <div class="float-btns">

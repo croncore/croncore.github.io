@@ -11,8 +11,11 @@ RewriteRule ^index\.html$ / [R=301,L]
 RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
 RewriteRule ^ /%1 [L,R=301]
 
-# 3. Route /insights/any-slug to article.html (must be before the generic rule)
-RewriteRule ^insights/(.+)$ article.html [L]
+# 3. Sanity posts are pre-rendered at build time to /insights/<slug>.html
+#    (see scripts/generate-insights.js). Serve them when they exist; unmatched
+#    slugs fall through to the 404 fallback at the bottom of this file.
+RewriteCond %{DOCUMENT_ROOT}/insights/$1.html -f
+RewriteRule ^insights/(.+)$ insights/$1.html [L]
 
 # 3b. Redirect old /article/ URLs to /insights/ for SEO
 RewriteRule ^article/(.+)$ /insights/$1 [R=301,L]

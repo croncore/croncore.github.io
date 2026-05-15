@@ -1633,6 +1633,74 @@ button {
     color: var(--text-secondary);
     font-family: var(--font-display);
     font-size: 0.92rem;
+    text-decoration: none;
+    transition: opacity var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
+}
+
+a.trusted-stat:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+
+a.trusted-stat:hover .trusted-stat-label {
+    color: var(--text-white);
+}
+
+[data-theme="light"] a.trusted-stat:hover .trusted-stat-label {
+    color: var(--text-primary);
+}
+
+/* Review tag layouts (Clutch + Trustpilot) */
+.trusted-stat--review {
+    gap: 10px;
+}
+
+.trusted-stat-brand {
+    height: 16px;
+    width: auto;
+    display: block;
+    /* Default (dark mode) — invert dark Clutch wordmark to white */
+    filter: brightness(0) invert(1);
+}
+
+[data-theme="light"] .trusted-stat-brand {
+    filter: none;
+}
+
+.trusted-stat-brand-icon {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+}
+
+.trusted-stat-stars {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.trusted-stat-stars svg {
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+.trusted-stat--clutch .trusted-stat-stars svg {
+    color: #9aa3ad;
+}
+
+.trusted-stat-stars--tp .tp-star {
+    background: #00b67a;
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trusted-stat-stars--tp .tp-star svg {
+    width: 14px;
+    height: 14px;
 }
 
 .trusted-stat-icon {
@@ -1668,9 +1736,10 @@ button {
    compensates for source-image padding / visual density. */
 .trusted-static-logos {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     align-items: center;
-    gap: 28px;
+    row-gap: 28px;
+    column-gap: 4px;
     max-width: 1100px;
     margin: 0 auto;
 }
@@ -1707,13 +1776,44 @@ button {
     .trusted-static-logos { grid-template-columns: repeat(3, 1fr); row-gap: 32px; }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 640px) {
     .trusted-static { padding: 48px 0 40px; }
     .trusted-static-headline { font-size: 0.68rem; letter-spacing: 0.12em; }
-    .trusted-static-stats { gap: 10px 18px; margin-bottom: 32px; }
-    .trusted-static-logos { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-    .trusted-static-logo { height: 50px; }
-    .trusted-static-logo img { max-height: calc(38px * var(--scale, 1)); }
+    .trusted-static-stats { gap: 10px 18px; margin-bottom: 32px; flex-wrap: wrap; justify-content: center; }
+
+    /* Horizontal swipe slider on small screens */
+    .trusted-static-logos {
+        display: flex;
+        grid-template-columns: none;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        gap: 24px;
+        padding: 8px 4px 16px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        /* Edge fade hints there's more to swipe */
+        mask-image: linear-gradient(90deg, transparent 0, black 24px, black calc(100% - 24px), transparent 100%);
+        -webkit-mask-image: linear-gradient(90deg, transparent 0, black 24px, black calc(100% - 24px), transparent 100%);
+    }
+    .trusted-static-logos::-webkit-scrollbar { display: none; }
+
+    .trusted-static-logo {
+        flex: 0 0 auto;
+        width: 110px;
+        height: 56px;
+        scroll-snap-align: center;
+    }
+    .trusted-static-logo img {
+        max-height: calc(40px * var(--scale, 1));
+        max-width: 100px;
+    }
+}
+
+@media (max-width: 380px) {
+    .trusted-static-logo { width: 100px; }
 }
 
 /* ========================================
@@ -5224,6 +5324,21 @@ a.svc-tag:hover {
     background: var(--accent-subtle);
     border-color: var(--accent);
     color: var(--text-accent);
+}
+
+/* Service panel image (replaces abstract gradient shapes) */
+.svc-panel-img {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    transition: filter 0.6s var(--ease), opacity 0.6s var(--ease), transform 0.6s var(--ease);
+    pointer-events: none;
+    user-select: none;
+}
+
+.svc-panel:hover .svc-panel-img {
+    filter: blur(35px);
+    opacity: 0.6;
 }
 
 /* Abstract Shapes (Clear by default, using sub-elements) */

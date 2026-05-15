@@ -15,8 +15,26 @@ export const postType = defineType({
       name: 'slug',
       title: 'Slug (URL)',
       type: 'slug',
-      options: {source: 'title', maxLength: 96},
-      validation: (rule) => rule.required(),
+      description: 'Lowercase letters, numbers, and hyphens only. Click Generate after typing the title.',
+      options: {
+        source: 'title',
+        maxLength: 96,
+        slugify: (input) =>
+          input
+            .toLowerCase()
+            .trim()
+            .replace(/[^\w\s-]/g, '')
+            .replace(/[\s_-]+/g, '-')
+            .replace(/^-+|-+$/g, ''),
+      },
+      validation: (rule) =>
+        rule.required().custom((slug) => {
+          if (!slug || !slug.current) return 'Slug is required'
+          if (!/^[a-z0-9-]+$/.test(slug.current)) {
+            return 'Slug must contain only lowercase letters, numbers, and hyphens (no spaces, underscores, or uppercase).'
+          }
+          return true
+        }),
     }),
     defineField({
       name: 'mainImage',
