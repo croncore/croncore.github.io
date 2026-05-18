@@ -227,57 +227,8 @@
             });
         });
 
-        // ---- Mobile overlay: enhance with services accordion ----
-        var mobileOverlay = document.getElementById('mobileNav');
-        if (mobileOverlay) {
-            var mobileAnchors = mobileOverlay.querySelectorAll('a');
-            var mobileServicesLink = null;
-            for (var j = 0; j < mobileAnchors.length; j++) {
-                var mhref = mobileAnchors[j].getAttribute('href') || '';
-                if (mhref === '/services' || mhref === 'services' || mhref === '/services/' || mhref === 'services/') {
-                    mobileServicesLink = mobileAnchors[j];
-                    break;
-                }
-            }
-            if (mobileServicesLink) {
-                var group = document.createElement('div');
-                group.className = 'nav-mobile-services-group';
-
-                var toggle = document.createElement('button');
-                toggle.type = 'button';
-                toggle.className = 'nav-mobile-services-toggle';
-                toggle.innerHTML = '<span>Services</span>' +
-                    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
-
-                var list = document.createElement('div');
-                list.className = 'nav-mobile-services-list';
-                var overview = document.createElement('a');
-                overview.href = '/services';
-                overview.textContent = 'All services overview';
-                list.appendChild(overview);
-                GROUPS.forEach(function (g) {
-                    var title = document.createElement('span');
-                    title.className = 'nav-mobile-services-group-title';
-                    title.textContent = g.title;
-                    list.appendChild(title);
-                    g.items.forEach(function (item) {
-                        var a = document.createElement('a');
-                        a.href = item.href;
-                        a.textContent = item.title;
-                        list.appendChild(a);
-                    });
-                });
-
-                group.appendChild(toggle);
-                group.appendChild(list);
-                mobileServicesLink.parentNode.replaceChild(group, mobileServicesLink);
-
-                toggle.addEventListener('click', function () {
-                    var isOpen = toggle.classList.toggle('is-open');
-                    list.classList.toggle('is-open', isOpen);
-                });
-            }
-        }
+        // Expose the services data to initMobileNav (defined later in this IIFE)
+        window.__croncoreNavGroups = GROUPS;
     })();
 
     /* ========================================
@@ -430,46 +381,233 @@
             if (!menu.contains(e.target) && !resourcesTrigger.contains(e.target)) close();
         });
 
-        // Mobile overlay: replace Resources entry with an accordion holding Insights + Newsroom
-        var mobileOverlay = document.getElementById('mobileNav');
-        if (mobileOverlay) {
-            var mobileLinks = mobileOverlay.querySelectorAll('a, button');
-            var mobileResourcesLink = null;
-            for (var j = 0; j < mobileLinks.length; j++) {
-                if ((mobileLinks[j].textContent || '').trim().toLowerCase() === 'resources') {
-                    mobileResourcesLink = mobileLinks[j];
-                    break;
-                }
-            }
-            if (mobileResourcesLink) {
-                var group = document.createElement('div');
-                group.className = 'nav-mobile-services-group';
+        // Expose the resources data to initMobileNav (defined later in this IIFE)
+        window.__croncoreNavResources = ITEMS;
+    })();
 
-                var toggle = document.createElement('button');
-                toggle.type = 'button';
-                toggle.className = 'nav-mobile-services-toggle';
-                toggle.innerHTML = '<span>Resources</span>' +
-                    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+    /* ========================================
+       MOBILE NAV — TKXEL-STYLE DRILLDOWN
+       Builds the multi-panel mobile menu inside #mobileNav.
+       Root panel + Services drilldown (with accordions) + Resources drilldown.
+    ======================================== */
+    (function initMobileNav() {
+        var overlay = document.getElementById('mobileNav');
+        if (!overlay) return;
 
-                var list = document.createElement('div');
-                list.className = 'nav-mobile-services-list';
-                ITEMS.forEach(function (item) {
-                    var a = document.createElement('a');
-                    a.href = item.href;
-                    a.textContent = item.title;
-                    list.appendChild(a);
-                });
+        var GROUPS = window.__croncoreNavGroups || [];
+        var RESOURCES = window.__croncoreNavResources || [];
 
-                group.appendChild(toggle);
-                group.appendChild(list);
-                mobileResourcesLink.parentNode.replaceChild(group, mobileResourcesLink);
+        // GROUPS data uses absolute paths like "/services/foo" — those work on
+        // every page (root or nested) so we can use them as-is.
+        var origAnchors = overlay.querySelectorAll('a');
+        function fix(href) { return href; }
 
-                toggle.addEventListener('click', function () {
-                    var isOpen = toggle.classList.toggle('is-open');
-                    list.classList.toggle('is-open', isOpen);
-                });
-            }
+        // ---- Capture original simple links (About / Testimonials / FAQ) and the Contact CTA
+        //      so they survive the rebuild with their per-page hrefs intact. ----
+        var aboutHref = '#about';
+        var testHref = '#testimonials';
+        var faqHref = '#faq';
+        var contactHref = 'contact';
+        for (var k = 0; k < origAnchors.length; k++) {
+            var ahref = origAnchors[k].getAttribute('href') || '';
+            var atext = (origAnchors[k].textContent || '').trim().toLowerCase();
+            if (atext === 'about' || ahref.indexOf('#about') !== -1) aboutHref = ahref;
+            else if (atext === 'testimonials' || ahref.indexOf('#testimonials') !== -1) testHref = ahref;
+            else if (atext === 'faq' || ahref.indexOf('#faq') !== -1) faqHref = ahref;
+            else if (atext === 'contact us' || atext === 'contact') contactHref = ahref;
         }
+
+        // ---- Logo: pull from the page's nav-brand so we get the right paths ----
+        var navBrand = document.querySelector('.nav-brand');
+        var brandHTML = navBrand ? navBrand.innerHTML : '';
+
+        // ---- SVGs ----
+        // Unicode arrow glyphs — render reliably across all browsers without any SVG quirks.
+        var CHEV_RIGHT     = '<span class="mobile-link-chevron" aria-hidden="true">›</span>';
+        var CHEV_LEFT      = '<span class="mobile-back-chevron" aria-hidden="true">‹</span>';
+        var CHEV_DOWN      = '<span class="mobile-accordion-chevron" aria-hidden="true">⌄</span>';
+        var ARROW_R_CTA    = '<span class="mobile-cta-arrow" aria-hidden="true">→</span>';
+        // Close button still uses an SVG — explicit width/height + viewBox ensure it paints reliably.
+        var CLOSE_X    = '<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+
+        // ---- Wipe original children and rebuild ----
+        overlay.innerHTML = '';
+
+        // ---- Header ----
+        var header = document.createElement('div');
+        header.className = 'mobile-nav-header';
+        var brandLink = document.createElement('a');
+        brandLink.className = 'mobile-nav-brand';
+        brandLink.href = '/';
+        brandLink.setAttribute('aria-label', 'Croncore Home');
+        brandLink.innerHTML = brandHTML;
+        var closeBtn = document.createElement('button');
+        closeBtn.className = 'mobile-close-btn';
+        closeBtn.id = 'mobileCloseBtn';
+        closeBtn.setAttribute('aria-label', 'Close menu');
+        closeBtn.innerHTML = CLOSE_X;
+        header.appendChild(brandLink);
+        header.appendChild(closeBtn);
+        overlay.appendChild(header);
+
+        // ---- Panels viewport ----
+        var panels = document.createElement('div');
+        panels.className = 'mobile-panels';
+        overlay.appendChild(panels);
+
+        // ---- Root panel ----
+        var rootPanel = document.createElement('div');
+        rootPanel.className = 'mobile-panel mobile-panel--root';
+
+        function makeRootLink(label, href) {
+            var a = document.createElement('a');
+            a.href = href;
+            // Plain links (no sublinks) get no chevron — only drilldown triggers do.
+            a.innerHTML = '<span>' + label + '</span>';
+            return a;
+        }
+        function makeRootTrigger(label, panelId) {
+            var b = document.createElement('button');
+            b.type = 'button';
+            b.className = 'mobile-link';
+            b.setAttribute('data-panel', panelId);
+            b.setAttribute('aria-haspopup', 'true');
+            b.innerHTML = '<span>' + label + '</span>' + CHEV_RIGHT;
+            return b;
+        }
+
+        rootPanel.appendChild(makeRootTrigger('Services', 'services'));
+        rootPanel.appendChild(makeRootLink('About', aboutHref));
+        rootPanel.appendChild(makeRootLink('Testimonials', testHref));
+        rootPanel.appendChild(makeRootTrigger('Resources', 'resources'));
+        rootPanel.appendChild(makeRootLink('FAQ', faqHref));
+
+        var ctaWrap = document.createElement('div');
+        ctaWrap.className = 'mobile-panel-cta-wrap';
+        var ctaBtn = document.createElement('a');
+        ctaBtn.className = 'btn btn-glow mobile-panel-cta';
+        ctaBtn.href = contactHref;
+        ctaBtn.innerHTML = 'Contact Us' + ARROW_R_CTA;
+        ctaWrap.appendChild(ctaBtn);
+        rootPanel.appendChild(ctaWrap);
+
+        panels.appendChild(rootPanel);
+
+        // ---- Services drilldown panel ----
+        var servicesPanel = document.createElement('div');
+        servicesPanel.className = 'mobile-panel mobile-panel--services';
+        servicesPanel.setAttribute('data-panel-id', 'services');
+
+        var sBack = document.createElement('button');
+        sBack.type = 'button';
+        sBack.className = 'mobile-panel-back';
+        sBack.setAttribute('data-back', '');
+        sBack.innerHTML = CHEV_LEFT + '<span>Services</span>';
+        servicesPanel.appendChild(sBack);
+
+        GROUPS.forEach(function (g) {
+            var accordion = document.createElement('div');
+            accordion.className = 'mobile-accordion';
+
+            var toggle = document.createElement('button');
+            toggle.type = 'button';
+            toggle.className = 'mobile-accordion-toggle';
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.innerHTML = '<span>' + g.title + '</span>' + CHEV_DOWN;
+
+            var list = document.createElement('div');
+            list.className = 'mobile-accordion-list';
+
+            g.items.forEach(function (item) {
+                var a = document.createElement('a');
+                a.href = fix(item.href);
+                a.textContent = item.title;
+                list.appendChild(a);
+            });
+
+            accordion.appendChild(toggle);
+            accordion.appendChild(list);
+            servicesPanel.appendChild(accordion);
+
+            toggle.addEventListener('click', function () {
+                var isOpen = accordion.classList.toggle('is-open');
+                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+        });
+
+        var sCta = document.createElement('a');
+        sCta.className = 'mobile-panel-outline-cta';
+        sCta.href = fix('/services');
+        sCta.innerHTML = '<span>View all services</span>' + ARROW_R_CTA;
+        servicesPanel.appendChild(sCta);
+
+        panels.appendChild(servicesPanel);
+
+        // ---- Resources drilldown panel ----
+        var resourcesPanel = document.createElement('div');
+        resourcesPanel.className = 'mobile-panel mobile-panel--resources';
+        resourcesPanel.setAttribute('data-panel-id', 'resources');
+
+        var rBack = document.createElement('button');
+        rBack.type = 'button';
+        rBack.className = 'mobile-panel-back';
+        rBack.setAttribute('data-back', '');
+        rBack.innerHTML = CHEV_LEFT + '<span>Resources</span>';
+        resourcesPanel.appendChild(rBack);
+
+        // Resources are flat blue-bullet items, like tkxel's Company panel
+        var resList = document.createElement('div');
+        resList.className = 'mobile-accordion-list';
+        resList.style.maxHeight = 'none';
+        RESOURCES.forEach(function (item) {
+            var a = document.createElement('a');
+            a.href = fix(item.href);
+            a.textContent = item.title;
+            resList.appendChild(a);
+        });
+        resourcesPanel.appendChild(resList);
+
+        panels.appendChild(resourcesPanel);
+
+        // ---- Panel switching ----
+        function openSubpanel(id) {
+            var target = panels.querySelector('[data-panel-id="' + id + '"]');
+            if (!target) return;
+            // Reset all subpanels
+            panels.querySelectorAll('.mobile-panel:not(.mobile-panel--root)').forEach(function (p) {
+                p.classList.remove('is-active');
+            });
+            target.classList.add('is-active');
+            rootPanel.classList.add('is-pushed');
+        }
+        function backToRoot() {
+            panels.querySelectorAll('.mobile-panel:not(.mobile-panel--root)').forEach(function (p) {
+                p.classList.remove('is-active');
+            });
+            rootPanel.classList.remove('is-pushed');
+        }
+
+        // Wire root triggers
+        rootPanel.querySelectorAll('[data-panel]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                openSubpanel(btn.getAttribute('data-panel'));
+            });
+        });
+
+        // Wire back buttons
+        panels.querySelectorAll('[data-back]').forEach(function (btn) {
+            btn.addEventListener('click', backToRoot);
+        });
+
+        // Expose for the hamburger toggle to call on close
+        overlay.__resetPanels = function () {
+            backToRoot();
+            panels.querySelectorAll('.mobile-accordion.is-open').forEach(function (a) {
+                a.classList.remove('is-open');
+                var t = a.querySelector('.mobile-accordion-toggle');
+                if (t) t.setAttribute('aria-expanded', 'false');
+            });
+        };
     })();
 
     /* ========================================
@@ -682,6 +820,10 @@
             mobileNav.classList.remove('open');
             hamburger.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
+            // Reset to root panel + close any open accordions after the slide-out
+            setTimeout(function () {
+                if (typeof mobileNav.__resetPanels === 'function') mobileNav.__resetPanels();
+            }, 260);
         }
 
         hamburger.addEventListener('click', function () {
@@ -689,17 +831,25 @@
             mobileNav.classList.toggle('open');
             hamburger.setAttribute('aria-expanded', isOpen);
             document.body.style.overflow = isOpen ? 'hidden' : '';
+            if (!isOpen && typeof mobileNav.__resetPanels === 'function') {
+                setTimeout(mobileNav.__resetPanels, 260);
+            }
         });
 
-        // Close button inside overlay
-        var closeBtn = document.getElementById('mobileCloseBtn');
-        if (closeBtn) {
-            closeBtn.addEventListener('click', closeMenu);
-        }
+        // Close button (rebuilt inside overlay by initMobileNav — use event delegation)
+        mobileNav.addEventListener('click', function (e) {
+            var btn = e.target.closest && e.target.closest('#mobileCloseBtn, .mobile-close-btn');
+            if (btn) closeMenu();
+        });
 
-        // Close on link click
-        mobileNav.querySelectorAll('a').forEach(function (link) {
-            link.addEventListener('click', closeMenu);
+        // Close on real link click (anchors that navigate). Buttons that just open subpanels stay.
+        mobileNav.addEventListener('click', function (e) {
+            var a = e.target.closest && e.target.closest('a[href]');
+            if (!a) return;
+            var href = a.getAttribute('href');
+            // Only close on navigations — skip empty href / "#"
+            if (!href || href === '#') return;
+            closeMenu();
         });
     }
 

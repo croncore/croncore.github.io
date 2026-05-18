@@ -106,14 +106,8 @@
     background: rgba(74, 143, 226, 0.06);
 }
 
-[data-theme="light"] .nav-mobile-overlay {
-    background: rgba(248, 250, 253, 0.98);
-}
-
-[data-theme="light"] .mobile-close-btn {
-    background: rgba(74, 143, 226, 0.06);
-    border-color: rgba(74, 143, 226, 0.15);
-}
+/* (Light-mode mobile-nav background handled via CSS vars in the
+   mobile-nav block — kept centralised so panels + header inherit consistently.) */
 
 /* --- Hero --- */
 [data-theme="light"] .hero-social-proof {
@@ -966,57 +960,357 @@ button {
     transform: rotate(-45deg) translate(3px, -5px);
 }
 
-/* Mobile overlay */
+/* ========================================
+   MOBILE NAVIGATION — TKXEL-STYLE DRILLDOWN
+======================================== */
 .nav-mobile-overlay {
-    display: none;
+    --mobile-bg: #0A0E17;
+    --mobile-border: rgba(255, 255, 255, 0.06);
+    --mobile-border-strong: rgba(255, 255, 255, 0.08);
+    --mobile-row-hover: rgba(255, 255, 255, 0.04);
+    --mobile-back-bg: rgba(255, 255, 255, 0.035);
+    --mobile-back-bg-hover: rgba(255, 255, 255, 0.06);
+    --mobile-text: var(--text-white);
+    --mobile-text-muted: var(--text-secondary);
     position: fixed;
     inset: 0;
-    background: rgba(5, 8, 16, 0.96);
-    backdrop-filter: blur(30px);
-    z-index: 150;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 24px;
+    z-index: 250;
+    background: var(--mobile-bg);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.22s ease, visibility 0s linear 0.22s;
+    overflow: hidden;
+}
+
+[data-theme="light"] .nav-mobile-overlay {
+    --mobile-bg: #FFFFFF;
+    --mobile-border: rgba(15, 24, 36, 0.08);
+    --mobile-border-strong: rgba(15, 24, 36, 0.1);
+    --mobile-row-hover: rgba(15, 24, 36, 0.035);
+    --mobile-back-bg: rgba(15, 24, 36, 0.035);
+    --mobile-back-bg-hover: rgba(15, 24, 36, 0.06);
+    --mobile-text: #0F1824;
+    --mobile-text-muted: #5a6776;
 }
 
 .nav-mobile-overlay.open {
-    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.22s ease, visibility 0s linear 0s;
 }
 
-.nav-mobile-overlay a {
-    font-family: var(--font-display);
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--text-secondary);
-    transition: color var(--t-fast);
-}
-
-.nav-mobile-overlay a:hover {
-    color: var(--text-accent);
-}
-
-/* Mobile close button */
-.mobile-close-btn {
+/* Mobile header — logo + close button, sticky at top */
+.mobile-nav-header {
     position: absolute;
-    top: 24px;
-    right: 24px;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 22px;
+    z-index: 5;
+    border-bottom: 1px solid var(--mobile-border);
+    background: var(--mobile-bg);
+}
+
+.mobile-nav-header .mobile-nav-brand {
+    display: flex;
+    align-items: center;
+}
+
+.mobile-nav-header .nav-brand-img {
+    height: 36px;
+    width: auto;
+}
+
+.mobile-close-btn {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid var(--border-strong);
+    background: transparent;
+    border: none;
     display: grid;
     place-items: center;
-    color: var(--text-white);
-    transition: all var(--t-fast) var(--ease);
-    z-index: 10;
+    color: var(--mobile-text);
+    cursor: pointer;
+    transition: color var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
 }
 
 .mobile-close-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
+    color: var(--accent);
+    transform: scale(1.05);
+}
+
+/* Panels viewport — clips horizontally so panels slide in/out cleanly */
+.mobile-panels {
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    background: var(--mobile-bg);
+}
+
+.mobile-panel {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    transform: translateX(100%);
+    transition: transform 0.36s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--mobile-bg);
+}
+
+.mobile-panel.is-active {
+    transform: translateX(0);
+}
+
+.mobile-panel--root {
+    transform: translateX(0);
+}
+
+.mobile-panel--root.is-pushed {
+    transform: translateX(-22%);
+}
+
+/* Drilldown back-header bar (e.g. "‹ Services") */
+.mobile-panel-back {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 18px 24px;
+    background: var(--mobile-back-bg);
+    border: none;
+    border-bottom: 1px solid var(--mobile-border);
+    color: var(--mobile-text);
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    transition: background var(--t-fast) var(--ease);
+}
+
+.mobile-panel-back:hover {
+    background: var(--mobile-back-bg-hover);
+}
+
+.mobile-panel-back svg {
+    width: 18px;
+    height: 18px;
+    color: var(--mobile-text-muted);
+    flex-shrink: 0;
+}
+
+.mobile-back-chevron {
+    display: inline-block;
+    font-size: 1.4rem;
+    line-height: 1;
+    color: var(--mobile-text-muted);
+    flex-shrink: 0;
+}
+
+/* Top-level link rows (root panel) */
+.mobile-panel--root > a,
+.mobile-panel--root > button.mobile-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 22px 24px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--mobile-border);
+    color: var(--mobile-text);
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background var(--t-fast) var(--ease);
+}
+
+.mobile-panel--root > a:hover,
+.mobile-panel--root > a:active,
+.mobile-panel--root > button.mobile-link:hover,
+.mobile-panel--root > button.mobile-link:active {
+    background: var(--mobile-row-hover);
+}
+
+.mobile-link-chevron {
+    display: inline-block;
+    font-size: 1.6rem;
+    line-height: 1;
+    font-weight: 400;
+    color: var(--mobile-text-muted);
+    opacity: 0.55;
+    flex-shrink: 0;
+    margin-left: 14px;
+    transition: opacity var(--t-fast) var(--ease), color var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
+}
+
+.mobile-panel--root > a:hover .mobile-link-chevron,
+.mobile-panel--root > a:active .mobile-link-chevron,
+.mobile-panel--root > button.mobile-link:hover .mobile-link-chevron,
+.mobile-panel--root > button.mobile-link:active .mobile-link-chevron {
+    opacity: 1;
+    color: var(--accent);
+}
+
+/* CTA pinned at bottom of root panel */
+.mobile-panel-cta-wrap {
+    margin-top: auto;
+    padding: 28px 24px 36px;
+    display: flex;
+    justify-content: center;
+}
+
+.mobile-panel-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    max-width: 280px;
+    padding: 14px 32px;
+    font-size: 0.95rem;
+    text-decoration: none;
+}
+
+.mobile-panel-cta svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+/* Accordion items (inside drilldown subpanels) */
+.mobile-accordion {
+    border-bottom: 1px solid var(--mobile-border);
+}
+
+.mobile-accordion-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 22px 24px;
+    background: transparent;
+    border: none;
+    color: var(--mobile-text);
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.mobile-accordion-toggle .mobile-accordion-chevron {
+    display: inline-block;
+    font-size: 1.3rem;
+    line-height: 1;
+    color: var(--mobile-text-muted);
+    opacity: 0.7;
+    flex-shrink: 0;
+    margin-left: 14px;
+    transition: transform 0.25s var(--ease), opacity 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.mobile-accordion.is-open .mobile-accordion-toggle {
+    background: var(--accent);
+    color: #FFFFFF;
+}
+
+.mobile-accordion.is-open .mobile-accordion-toggle .mobile-accordion-chevron {
+    transform: rotate(180deg);
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+.mobile-accordion-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-accordion.is-open .mobile-accordion-list {
+    max-height: 900px;
+}
+
+.mobile-accordion-list a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 24px;
+    color: var(--mobile-text);
+    font-size: 0.98rem;
+    font-weight: 400;
+    text-decoration: none;
+    border-bottom: 1px solid var(--mobile-border);
+    transition: background var(--t-fast) var(--ease);
+}
+
+.mobile-accordion-list a:last-child {
+    border-bottom: none;
+}
+
+.mobile-accordion-list a:hover,
+.mobile-accordion-list a:active {
+    background: var(--mobile-row-hover);
+}
+
+.mobile-accordion-list a::before {
+    content: '';
+    width: 9px;
+    height: 9px;
+    background: var(--accent);
+    border-radius: 1px;
+    flex-shrink: 0;
+}
+
+/* Outlined "View all services" CTA inside subpanels */
+.mobile-panel-outline-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 24px 24px 32px;
+    padding: 18px 24px;
+    background: transparent;
+    border: 1px solid var(--mobile-border-strong);
+    border-radius: 4px;
+    color: var(--mobile-text);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
+}
+
+.mobile-panel-outline-cta:hover {
+    background: var(--mobile-row-hover);
     border-color: var(--accent);
     color: var(--accent);
+}
+
+.mobile-panel-outline-cta .mobile-cta-arrow,
+.mobile-panel-cta .mobile-cta-arrow {
+    display: inline-block;
+    font-size: 1.1em;
+    line-height: 1;
+    transform: translateY(-1px);
+    transition: transform var(--t-fast) var(--ease);
+}
+
+.mobile-panel-outline-cta:hover .mobile-cta-arrow {
+    transform: translate(3px, -1px);
 }
 
 /* ========================================
@@ -7365,90 +7659,7 @@ a.sp-check:hover {
     }
 }
 
-/* Mobile mega-list inside hamburger overlay */
-.nav-mobile-overlay .nav-mobile-services-group {
-    width: 100%;
-    max-width: 320px;
-    text-align: left;
-}
-
-.nav-mobile-overlay .nav-mobile-services-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 8px 0;
-    background: transparent;
-    border: none;
-    color: var(--text-secondary);
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: color var(--t-fast) var(--ease);
-}
-
-.nav-mobile-overlay .nav-mobile-services-toggle:hover,
-.nav-mobile-overlay .nav-mobile-services-toggle.is-open {
-    color: var(--accent);
-}
-
-.nav-mobile-overlay .nav-mobile-services-toggle svg {
-    width: 20px;
-    height: 20px;
-    transition: transform var(--t-fast) var(--ease);
-    flex-shrink: 0;
-}
-
-.nav-mobile-overlay .nav-mobile-services-toggle.is-open svg {
-    transform: rotate(180deg);
-}
-
-.nav-mobile-overlay .nav-mobile-services-list {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height var(--t-base) var(--ease);
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    padding-left: 12px;
-    border-left: 1px solid var(--border);
-    margin-top: 4px;
-}
-
-.nav-mobile-overlay .nav-mobile-services-list.is-open {
-    max-height: 1000px;
-}
-
-.nav-mobile-overlay .nav-mobile-services-list a {
-    font-size: 0.95rem;
-    padding: 10px 0;
-    color: var(--text-muted);
-    border-bottom: 1px solid var(--border-subtle);
-}
-
-.nav-mobile-overlay .nav-mobile-services-list a:last-child {
-    border-bottom: none;
-}
-
-.nav-mobile-overlay .nav-mobile-services-group-title {
-    display: block;
-    margin-top: 14px;
-    margin-bottom: 4px;
-    padding-top: 12px;
-    border-top: 1px solid var(--border);
-    font-family: var(--font-mono, var(--font-body));
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--text-accent);
-}
-
-.nav-mobile-overlay .nav-mobile-services-list .nav-mobile-services-group-title:first-child {
-    margin-top: 4px;
-    padding-top: 0;
-    border-top: none;
-}
+/* (Legacy mobile mega-list styles removed — replaced by the
+   tkxel-style drilldown panels defined in the main mobile nav block.) */
 
 
