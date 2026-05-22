@@ -20,54 +20,80 @@
         }
         if (!servicesLink) return;
 
+        // Slot 3 ("AI Agents & Automations") holds all 16 subservices — agents
+        // lead, so the 4-item preview matches the title and the rest reveal behind
+        // the inline "Show more" toggle. The other three slots have 4 each. Each
+        // group carries its own right-rail spotlight (see renderSpotlight).
         var GROUPS = [
+            {
+                id: 'custom-software',
+                title: 'Custom Software Development',
+                anchor: '/services#custom-software-development',
+                spotlight: { tag: 'Featured', title: 'Built once, scales forever.', desc: 'Engineering software that grows with your business — not against it.', href: '/services#custom-software-development', cta: 'View all Custom Software Development' },
+                items: [
+                    { href: '/services/web-saas-applications', title: 'Web & SaaS Applications', desc: 'Modern, scalable web platforms built with React, Next.js, and Node.js — fast to ship, easy to grow.' },
+                    { href: '/services/enterprise-application-development', title: 'Enterprise Application Development', desc: 'Mission-critical systems in .NET, Java, and Python that handle the load your business actually runs on.' },
+                    { href: '/services/api-development-integrations', title: 'API Development & Integrations', desc: 'Connect the tools you already use. REST, GraphQL, and event-driven architectures that make your stack talk.' },
+                    { href: '/services/cloud-native-devops', title: 'Cloud-Native & DevOps', desc: "AWS, Azure, Docker, Kubernetes — built for scale from day one, deployed with CI/CD pipelines that don't break." }
+                ]
+            },
+            {
+                id: 'cyber-security',
+                title: 'Cyber Security & Data',
+                anchor: '/services#cyber-security-data',
+                spotlight: { tag: 'Featured', title: 'Security that scales. Data that speaks.', desc: 'Defense and intelligence built into one operational layer.', href: '/services#cyber-security-data', cta: 'View all Cyber Security & Data' },
+                items: [
+                    { href: '/services/security-assessments-pen-testing', title: 'Security Assessments & Pen Testing', desc: 'Find the gaps before someone else does. Vulnerability assessments, pen testing, and OWASP-aligned audits.' },
+                    { href: '/services/managed-security-soc', title: 'Managed Security & SOC', desc: '24/7 monitoring with SIEM, threat detection, and incident response — so your team can sleep at night.' },
+                    { href: '/services/zero-trust-identity', title: 'Zero Trust & Identity', desc: 'Modern access architecture. SSO, IAM, MFA, and zero trust frameworks that secure users wherever they work.' },
+                    { href: '/services/data-engineering-analytics', title: 'Data Engineering & Analytics', desc: 'Pipelines, warehouses, and dashboards. Power BI, Tableau, and modern data stacks that turn raw data into answers.' }
+                ]
+            },
             {
                 id: 'agents',
                 title: 'AI Agents & Automations',
                 anchor: '/services#ai-agents-automations',
+                previewCount: 4,
+                spotlight: { tag: 'Featured Case Study', title: 'Sovereign voice engine for Mongolia', desc: 'How we shipped a national-scale, in-country AI system in an underserved language.', href: '/case-study-sovereign-voice-engine-for-mongolia', cta: 'Read the case study' },
                 items: [
+                    // Agents — shown in the 4-item preview
                     { href: '/services/enterprise-ai-agents', title: 'Enterprise AI Agents', desc: 'Autonomous agents that reason, plan, and act across your systems.' },
                     { href: '/services/sales-crm-chatbots', title: 'Sales & CRM Chatbots', desc: 'Conversational agents that qualify leads and close, not just chat.' },
                     { href: '/services/operations-automation', title: 'Operations Automation', desc: 'Internal workflows handled — ticket triage, approvals, helpdesk.' },
-                    { href: '/services/process-document-ai', title: 'Process & Document AI', desc: 'Documents that read themselves and trigger the next action.' }
-                ]
-            },
-            {
-                id: 'models',
-                title: 'AI Models & Intelligence',
-                anchor: '/services#ai-models-intelligence',
-                items: [
-                    { href: '/services/custom-llm-training', title: 'Custom LLM Training', desc: 'Foundation models built on your data, your infrastructure.' },
-                    { href: '/services/model-fine-tuning', title: 'Model Fine-Tuning', desc: 'SFT, DPO, RLHF, LoRA — adapted to your domain and voice.' },
-                    { href: '/services/multilingual-low-resource-ai', title: 'Multilingual & Low-Resource AI', desc: 'AI for languages no one else builds for — sovereign by design.' },
-                    { href: '/services/speech-ai', title: 'Speech AI — STT & TTS', desc: 'Voice models tuned to accent, dialect, and real-time latency.' }
-                ]
-            },
-            {
-                id: 'compliant',
-                title: 'Compliant & Regulated AI',
-                anchor: '/services#compliant-regulated-ai',
-                items: [
+                    { href: '/services/process-document-ai', title: 'Process & Document AI', desc: 'Documents that read themselves and trigger the next action.' },
+                    // Compliance & regulated
                     { href: '/services/gdpr-compliant-ai-systems', title: 'GDPR-Compliant AI Systems', desc: 'AI engineered for the EU regulatory bar from day one.' },
                     { href: '/services/edtech-ai-platforms', title: 'EdTech AI Platforms', desc: 'Tutoring, assessment, and curriculum AI schools actually trust.' },
                     { href: '/services/data-sovereignty-on-premise-ai', title: 'Data Sovereignty & On-Premise AI', desc: 'Air-gapped, in-country AI for sovereign and regulated workloads.' },
-                    { href: '/services/regulatory-ai-consulting', title: 'Regulatory AI Consulting', desc: 'Senior advisory on AI governance, EU AI Act, model risk.' }
-                ]
-            },
-            {
-                id: 'mlops',
-                title: 'Infrastructure & MLOps',
-                anchor: '/services#infrastructure-mlops',
-                items: [
+                    { href: '/services/regulatory-ai-consulting', title: 'Regulatory AI Consulting', desc: 'Senior advisory on AI governance, EU AI Act, model risk.' },
+                    // Models & intelligence
+                    { href: '/services/custom-llm-training', title: 'Custom LLM Training', desc: 'Foundation models built on your data, your infrastructure.' },
+                    { href: '/services/model-fine-tuning', title: 'Model Fine-Tuning', desc: 'SFT, DPO, RLHF, LoRA — adapted to your domain and voice.' },
+                    { href: '/services/multilingual-low-resource-ai', title: 'Multilingual & Low-Resource AI', desc: 'AI for languages no one else builds for — sovereign by design.' },
+                    { href: '/services/speech-ai', title: 'Speech AI — STT & TTS', desc: 'Voice models tuned to accent, dialect, and real-time latency.' },
+                    // Infrastructure & MLOps
                     { href: '/services/model-deployment-serving', title: 'Model Deployment & Serving', desc: 'Production model serving with sub-second latency and SLOs.' },
                     { href: '/services/mlops-pipelines', title: 'MLOps Pipelines', desc: 'CI/CD for AI — versioned data, eval gates, safe deploys.' },
                     { href: '/services/monitoring-observability', title: 'Monitoring & Observability', desc: 'Catch drift, hallucinations, and quality regressions before users do.' },
                     { href: '/services/ai-cost-optimization', title: 'AI Cost Optimisation', desc: '30–60% off your AI bill without sacrificing quality.' }
                 ]
+            },
+            {
+                id: 'erp',
+                title: 'ERP & Enterprise Platforms',
+                anchor: '/services#erp-enterprise-platforms',
+                spotlight: { tag: 'Featured', title: 'Run the business on rails.', desc: 'ERP that fits your workflow — not a template forced on your team.', href: '/services#erp-enterprise-platforms', cta: 'View all ERP & Enterprise Platforms' },
+                items: [
+                    { href: '/services/erp-implementation', title: 'ERP Implementation', desc: 'Microsoft Dynamics 365, NetSuite, and SAP — deployed with the configuration, migration, and training that make rollouts stick.' },
+                    { href: '/services/salesforce-servicenow', title: 'Salesforce & ServiceNow', desc: 'CRM and ITSM done right. Custom workflows, integrations, and Lightning/Now Platform development that fits your operation.' },
+                    { href: '/services/platform-customization-extensions', title: 'Platform Customization & Extensions', desc: 'Bend your ERP to your business, not the reverse. Custom modules, plugins, and workflows on every major platform.' },
+                    { href: '/services/migrations-modernization', title: 'Migrations & Modernization', desc: 'Move off legacy. We migrate from on-prem to cloud ERPs with zero data loss and minimal downtime.' }
+                ]
             }
         ];
 
-        var SPOTLIGHT = {
+        // Right-rail spotlight. Each group supplies its own; this is the fallback.
+        var DEFAULT_SPOTLIGHT = {
             tag: 'Featured Case Study',
             title: 'Sovereign voice engine for Mongolia',
             desc: 'How we shipped a national-scale, in-country AI system in an underserved language.',
@@ -104,12 +130,19 @@
         var inner = document.createElement('div');
         inner.className = 'nav-megamenu-inner';
 
+        // Default to the first real (non-placeholder) group so hovering Services
+        // never opens onto an empty "Coming soon" panel.
+        var defaultActiveIndex = 0;
+        for (var gi = 0; gi < GROUPS.length; gi++) {
+            if (!GROUPS[gi].placeholder) { defaultActiveIndex = gi; break; }
+        }
+
         // Parents column
         var parentsCol = document.createElement('div');
         parentsCol.className = 'nav-mega-parents';
         GROUPS.forEach(function (g, i) {
             var btn = document.createElement('button');
-            btn.className = 'nav-mega-parent' + (i === 0 ? ' active' : '');
+            btn.className = 'nav-mega-parent' + (i === defaultActiveIndex ? ' active' : '') + (g.placeholder ? ' is-placeholder' : '');
             btn.type = 'button';
             btn.setAttribute('data-parent', g.id);
             btn.innerHTML = '<span>' + g.title + '</span>' +
@@ -122,15 +155,49 @@
         subsCol.className = 'nav-mega-subs';
         GROUPS.forEach(function (g, i) {
             var subgroup = document.createElement('div');
-            subgroup.className = 'nav-mega-subgroup' + (i === 0 ? ' active' : '');
+            subgroup.className = 'nav-mega-subgroup' + (i === defaultActiveIndex ? ' active' : '');
             subgroup.setAttribute('data-parent', g.id);
-            g.items.forEach(function (item) {
+
+            // Placeholder groups have no subservices yet.
+            if (g.placeholder || !g.items || !g.items.length) {
+                var empty = document.createElement('div');
+                empty.className = 'nav-mega-empty';
+                empty.innerHTML = '<strong>Coming soon</strong><span>New services are on the way.</span>';
+                subgroup.appendChild(empty);
+                subsCol.appendChild(subgroup);
+                return;
+            }
+
+            // Show the preview count up front; extras stay hidden until "Show more".
+            var preview = g.previewCount || g.items.length;
+            g.items.forEach(function (item, idx) {
                 var a = document.createElement('a');
-                a.className = 'nav-mega-sub';
+                a.className = 'nav-mega-sub' + (idx >= preview ? ' is-extra' : '');
                 a.href = item.href;
                 a.innerHTML = '<strong>' + item.title + '</strong><span>' + item.desc + '</span>';
                 subgroup.appendChild(a);
             });
+
+            // Inline "Show more" toggle — reveals the hidden extras without leaving the menu.
+            var hiddenCount = g.items.length - preview;
+            if (hiddenCount > 0) {
+                var moreBtn = document.createElement('button');
+                moreBtn.type = 'button';
+                moreBtn.className = 'nav-mega-showmore';
+                moreBtn.setAttribute('aria-expanded', 'false');
+                moreBtn.innerHTML = '<span class="nav-mega-showmore-label">Show more (' + hiddenCount + ')</span>' +
+                    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+                (function (sg, btn, n) {
+                    btn.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        var expanded = sg.classList.toggle('show-all');
+                        btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+                        btn.querySelector('.nav-mega-showmore-label').textContent = expanded ? 'Show less' : 'Show more (' + n + ')';
+                    });
+                })(subgroup, moreBtn, hiddenCount);
+                subgroup.appendChild(moreBtn);
+            }
+
             var allLink = document.createElement('a');
             allLink.className = 'nav-mega-all';
             allLink.href = g.anchor;
@@ -139,16 +206,20 @@
             subsCol.appendChild(subgroup);
         });
 
-        // Spotlight column
+        // Spotlight column — its content swaps to match the active group.
         var spot = document.createElement('div');
         spot.className = 'nav-mega-spotlight';
-        spot.innerHTML =
-            '<span class="nav-spotlight-tag">' + SPOTLIGHT.tag + '</span>' +
-            '<div class="nav-spotlight-content">' +
-            '<h4>' + SPOTLIGHT.title + '</h4>' +
-            '<p>' + SPOTLIGHT.desc + '</p>' +
-            '</div>' +
-            '<a class="nav-spotlight-link" href="' + SPOTLIGHT.href + '">' + SPOTLIGHT.cta + ' ' + ARROW_RIGHT + '</a>';
+        function renderSpotlight(g) {
+            var s = (g && g.spotlight) || DEFAULT_SPOTLIGHT;
+            spot.innerHTML =
+                '<span class="nav-spotlight-tag">' + s.tag + '</span>' +
+                '<div class="nav-spotlight-content">' +
+                '<h4>' + s.title + '</h4>' +
+                '<p>' + s.desc + '</p>' +
+                '</div>' +
+                '<a class="nav-spotlight-link" href="' + s.href + '">' + s.cta + ' ' + ARROW_RIGHT + '</a>';
+        }
+        renderSpotlight(GROUPS[defaultActiveIndex]);
 
         inner.appendChild(parentsCol);
         inner.appendChild(subsCol);
@@ -210,6 +281,8 @@
         // ---- Parent tab interactions (hover/click to switch group) ----
         var parentBtns = parentsCol.querySelectorAll('.nav-mega-parent');
         var subgroups = subsCol.querySelectorAll('.nav-mega-subgroup');
+        var GROUP_BY_ID = {};
+        GROUPS.forEach(function (g) { GROUP_BY_ID[g.id] = g; });
         function activate(parentId) {
             parentBtns.forEach(function (b) {
                 b.classList.toggle('active', b.getAttribute('data-parent') === parentId);
@@ -217,6 +290,7 @@
             subgroups.forEach(function (g) {
                 g.classList.toggle('active', g.getAttribute('data-parent') === parentId);
             });
+            if (GROUP_BY_ID[parentId]) renderSpotlight(GROUP_BY_ID[parentId]);
         }
         parentBtns.forEach(function (b) {
             b.addEventListener('mouseenter', function () { activate(b.getAttribute('data-parent')); });
@@ -507,7 +581,7 @@
 
         GROUPS.forEach(function (g) {
             var accordion = document.createElement('div');
-            accordion.className = 'mobile-accordion';
+            accordion.className = 'mobile-accordion' + (g.placeholder ? ' is-placeholder' : '');
 
             var toggle = document.createElement('button');
             toggle.type = 'button';
@@ -518,12 +592,19 @@
             var list = document.createElement('div');
             list.className = 'mobile-accordion-list';
 
-            g.items.forEach(function (item) {
-                var a = document.createElement('a');
-                a.href = fix(item.href);
-                a.textContent = item.title;
-                list.appendChild(a);
-            });
+            if (g.placeholder || !g.items || !g.items.length) {
+                var soon = document.createElement('span');
+                soon.className = 'mobile-accordion-soon';
+                soon.textContent = 'Coming soon';
+                list.appendChild(soon);
+            } else {
+                g.items.forEach(function (item) {
+                    var a = document.createElement('a');
+                    a.href = fix(item.href);
+                    a.textContent = item.title;
+                    list.appendChild(a);
+                });
+            }
 
             accordion.appendChild(toggle);
             accordion.appendChild(list);
@@ -851,6 +932,52 @@
             if (!href || href === '#') return;
             closeMenu();
         });
+    }
+
+    /* ========================================
+       FLOATING CONTACT BUTTONS — collapse toggle
+       Adds a small "×" handle above the floating WhatsApp /
+       Contact buttons. Clicking it collapses them into compact
+       icon-only circles (the same look as the mobile version);
+       expanding restores the labels. The choice is remembered
+       per visitor. Runs on DOM ready because the .float-btns
+       markup sits after this script in the page.
+    ======================================== */
+    function initFloatButtons() {
+        var floatBtns = document.querySelector('.float-btns');
+        if (!floatBtns || floatBtns.querySelector('.float-toggle')) return;
+
+        var STORAGE_KEY = 'croncore-float-collapsed';
+        var ICON_CLOSE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+        var ICON_OPEN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>';
+
+        var toggle = document.createElement('button');
+        toggle.type = 'button';
+        toggle.className = 'float-toggle';
+        floatBtns.insertBefore(toggle, floatBtns.firstChild);
+
+        function render(collapsed) {
+            floatBtns.classList.toggle('is-collapsed', collapsed);
+            toggle.innerHTML = collapsed ? ICON_OPEN : ICON_CLOSE;
+            toggle.setAttribute('aria-label', collapsed ? 'Show contact buttons' : 'Minimize contact buttons');
+            toggle.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+            toggle.setAttribute('title', collapsed ? 'Show contact buttons' : 'Minimize');
+        }
+
+        var startCollapsed = false;
+        try { startCollapsed = localStorage.getItem(STORAGE_KEY) === '1'; } catch (e) {}
+        render(startCollapsed);
+
+        toggle.addEventListener('click', function () {
+            var collapsed = !floatBtns.classList.contains('is-collapsed');
+            render(collapsed);
+            try { localStorage.setItem(STORAGE_KEY, collapsed ? '1' : '0'); } catch (e) {}
+        });
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initFloatButtons);
+    } else {
+        initFloatButtons();
     }
 
     /* ========================================
