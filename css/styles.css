@@ -1241,7 +1241,21 @@ button {
 }
 
 .mobile-accordion.is-open .mobile-accordion-list {
-    max-height: 900px;
+    max-height: 1400px; /* tall enough for the 16-item AI Agents group */
+}
+
+/* Placeholder ("Coming soon") row inside a mobile accordion */
+.mobile-accordion-soon {
+    display: block;
+    padding: 18px 24px;
+    color: var(--mobile-text);
+    opacity: 0.55;
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+.mobile-accordion.is-placeholder .mobile-accordion-toggle {
+    opacity: 0.6;
 }
 
 .mobile-accordion-list a {
@@ -5620,6 +5634,17 @@ a.svc-tag:hover {
     color: var(--text-accent);
 }
 
+/* Placeholder ("Coming Soon") home panels */
+.svc-panel-soon {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.svc-panel--placeholder .svc-panel-img {
+    opacity: 0.4;
+}
+
 /* Service panel image (replaces abstract gradient shapes) */
 .svc-panel-img {
     width: 160px;
@@ -5925,6 +5950,62 @@ a.svc-tag:hover {
 
     .float-btn span,
     .float-btn-arrow {
+        display: none;
+    }
+}
+
+/* Floating buttons — collapse toggle (the small "×" handle) */
+.float-toggle {
+    align-self: flex-end;
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.08));
+    background: var(--bg-elevated, #fff);
+    color: var(--text-secondary, #6b7280);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.float-toggle svg {
+    width: 15px;
+    height: 15px;
+}
+
+.float-toggle:hover {
+    background: var(--accent, #4A8FE2);
+    color: #fff;
+    border-color: var(--accent, #4A8FE2);
+    transform: scale(1.08);
+}
+
+/* Collapsed state — compact icon-only circles, matching the mobile look */
+.float-btns.is-collapsed {
+    align-items: flex-end;
+}
+
+.float-btns.is-collapsed .float-btn {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    justify-content: center;
+    gap: 0;
+    border-radius: 50%;
+}
+
+.float-btns.is-collapsed .float-btn span,
+.float-btns.is-collapsed .float-btn-arrow {
+    display: none;
+}
+
+/* The toggle is only useful on desktop — on mobile the buttons are already compact */
+@media (max-width: 768px) {
+    .float-toggle {
         display: none;
     }
 }
@@ -6242,6 +6323,24 @@ a.sp-check:hover {
 .sp-check svg {
     color: var(--accent);
     flex-shrink: 0;
+}
+
+/* Placeholder ("Coming Soon") service cards */
+.sp-soon-badge {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    padding: 8px 16px;
+    border-radius: var(--r-full);
+    border: 1px dashed var(--border);
+    color: var(--text-muted);
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.sp-service-card--placeholder .sp-service-icon {
+    opacity: 0.6;
 }
 
 /* Service Visual Placeholder */
@@ -7413,6 +7512,95 @@ a.sp-check:hover {
 
 .nav-mega-all:hover svg {
     transform: translateX(2px);
+}
+
+/* ---- Inline "Show more" toggle + hidden extras ---- */
+/* Keep tall (expanded) lists inside the viewport — scroll within the column. */
+.nav-mega-subs {
+    max-height: 62vh;
+    overflow-y: auto;
+}
+
+.nav-mega-sub.is-extra {
+    display: none;
+}
+
+.nav-mega-subgroup.show-all .nav-mega-sub.is-extra {
+    display: block;
+}
+
+.nav-mega-showmore {
+    grid-column: 1 / -1;
+    margin: 4px 4px 0;
+    padding: 12px 16px;
+    border-radius: 14px;
+    border: 1px dashed rgba(255, 255, 255, 0.12);
+    background: transparent;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all var(--t-fast) var(--ease);
+}
+
+.nav-mega-showmore:hover {
+    color: var(--accent);
+    border-color: rgba(0, 212, 255, 0.3);
+    border-style: solid;
+    background: rgba(0, 212, 255, 0.06);
+}
+
+[data-theme="light"] .nav-mega-showmore {
+    border-color: rgba(74, 143, 226, 0.2);
+}
+
+[data-theme="light"] .nav-mega-showmore:hover {
+    border-color: rgba(74, 143, 226, 0.4);
+    background: rgba(74, 143, 226, 0.08);
+}
+
+.nav-mega-showmore svg {
+    width: 14px;
+    height: 14px;
+    margin-left: auto;
+    transition: transform var(--t-fast) var(--ease);
+}
+
+.nav-mega-subgroup.show-all .nav-mega-showmore svg {
+    transform: rotate(180deg);
+}
+
+/* ---- "Coming soon" placeholder (empty groups) ---- */
+.nav-mega-empty {
+    grid-column: 1 / -1;
+    padding: 28px 16px;
+    text-align: center;
+}
+
+.nav-mega-empty strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-white);
+    margin-bottom: 6px;
+}
+
+.nav-mega-empty span {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.nav-mega-parent.is-placeholder {
+    opacity: 0.5;
 }
 
 /* ---- Right: spotlight ---- */
