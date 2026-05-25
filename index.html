@@ -136,11 +136,17 @@
     </script>
 
     <!-- Preconnect & Fonts -->
+    <!-- Load Google Fonts without blocking first paint; dropped unused 300 weight
+         (CSS only uses 400/500/600/700/800). display=swap renders fallback text instantly. -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
-        rel="stylesheet">
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
+    </noscript>
 
     <!-- Favicon & Icons -->
     <link rel="icon" type="image/png" href="images/favicons/favicon-96x96.png" sizes="96x96" />
@@ -1938,9 +1944,9 @@
     </footer>
     </div>
 
-    <!-- JavaScript -->
-    <script src="js/sanity.js"></script>
-    <script src="js/main.js?v=4"></script>
+    <!-- JavaScript (deferred: parse off the main thread, execute in order after DOM is ready) -->
+    <script defer src="js/sanity.js"></script>
+    <script defer src="js/main.js?v=4"></script>
 
     <!-- Float Buttons -->
     <div class="float-btns">
