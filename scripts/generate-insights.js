@@ -431,6 +431,77 @@ function renderPostHtml(post) {
   return html;
 }
 
+// ---------- /insights hub: pre-render the card list ----------
+// The hub page (insights.html) used to fetch its card list client-side, so
+// crawlers indexed the "Loading latest insights…" placeholder. We bake the
+// same cards the client renders into the page between idempotent markers; the
+// client script then only enhances (refreshes) them on a successful fetch.
+
+function formatDateShort(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return '';
+  return d.toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'});
+}
+
+function renderListCard(post) {
+  const FALLBACK_IMG = 'images/insights1.jpeg';
+  const img = post.mainImage
+    ? imageUrl(post.mainImage, {width: 800, fit: 'crop', quality: 80})
+    : FALLBACK_IMG;
+  const alt = (post.mainImage && post.mainImage.alt) || post.title || '';
+  const dateStr = formatDateShort(post.publishedAt);
+  const category = post.category || 'Insights';
+  const excerpt = (post.excerpt && post.excerpt.trim()) || portableTextToPlain(post.body, 150);
+  return '<article class="insights-card in-view">' +
+    '<img src="' + escapeAttr(img) + '" alt="' + escapeAttr(alt) + '" class="insights-card-img" style="aspect-ratio: 16/9; object-fit: cover;" width="400" height="225" loading="lazy">' +
+    '<div class="insights-card-body">' +
+      '<span class="insights-card-category">' + escapeHtml(category) + '</span>' +
+      '<h3 style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">' + escapeHtml(post.title || '') + '</h3>' +
+      '<p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">' + escapeHtml(excerpt) + '</p>' +
+      '<div class="insights-card-meta">' +
+        '<span>' + escapeHtml(dateStr) + '</span>' +
+        '<a href="insights/' + encodeURIComponent(post.slug) + '" class="insights-card-link">Read More <svg class="arrow-icon" viewBox="0 0 24 24">' +
+          '<line x1="5" y1="12" x2="19" y2="12" />' +
+          '<polyline points="12 5 19 12 12 19" />' +
+        '</svg></a>' +
+      '</div>' +
+    '</div>' +
+  '</article>';
+}
+
+function updateInsightsListPage(posts) {
+  const listPath = path.join(ROOT, 'insights.html');
+  if (!fs.existsSync(listPath)) {
+    console.warn('  ! insights.html not found; skipping hub pre-render');
+    return 0;
+  }
+  let html = fs.readFileSync(listPath, 'utf8');
+  const START = '<!-- INSIGHTS_LIST_START -->';
+  const END = '<!-- INSIGHTS_LIST_END -->';
+  const s = html.indexOf(START);
+  const e = html.indexOf(END);
+  if (s === -1 || e === -1) {
+    console.warn('  ! insights.html markers (INSIGHTS_LIST_START/END) not found; skipping hub pre-render');
+    return 0;
+  }
+  const top = posts.slice(0, 50);
+  const cards = top.map(renderListCard).join('\n                        ');
+  const block =
+    START + '\n' +
+    '                    <div id="insights-loading" class="insights-loading" style="display:none;">\n' +
+    '                        <div class="loader-spinner"></div>\n' +
+    '                        <p>Loading latest insights...</p>\n' +
+    '                    </div>\n' +
+    '                    <div class="insights-grid" id="full-insights-grid">\n' +
+    '                        ' + cards + '\n' +
+    '                    </div>\n' +
+    '                    ' + END;
+  html = html.slice(0, s) + block + html.slice(e + END.length);
+  fs.writeFileSync(listPath, html, 'utf8');
+  return top.length;
+}
+
 // ---------- Main ----------
 
 async function main() {
@@ -467,6 +538,12 @@ async function main() {
   }, null, 2), 'utf8');
 
   console.log('Wrote ' + ok + ' file(s) to ' + OUT_DIR + (failed ? (' (' + failed + ' failed)') : ''));
+
+  // Pre-render the /insights hub card list so crawlers see real content.
+  const listCount = updateInsightsListPage(usable);
+  if (listCount) {
+    console.log('Pre-rendered ' + listCount + ' card(s) into insights.html');
+  }
 }
 
 main().catch((err) => {

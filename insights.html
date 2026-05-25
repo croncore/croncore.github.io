@@ -222,13 +222,16 @@
 
             <section class="insights-section">
                 <div class="container">
-                    <div id="insights-loading" class="insights-loading">
+                    <!-- INSIGHTS_LIST_START -->
+                    <div id="insights-loading" class="insights-loading" style="display:none;">
                         <div class="loader-spinner"></div>
                         <p>Loading latest insights...</p>
                     </div>
                     <div class="insights-grid" id="full-insights-grid">
-                        <!-- Posts injected here -->
+                        <article class="insights-card in-view"><img src="https://cdn.sanity.io/images/b5z10ias/production/9fa561ecc822581cae0ff21d6df33b99cb4cd69d-4896x3264.jpg?w=800&amp;fit=crop&amp;q=80&amp;auto=format" alt="AI-Integration-Services" class="insights-card-img" style="aspect-ratio: 16/9; object-fit: cover;" width="400" height="225" loading="lazy"><div class="insights-card-body"><span class="insights-card-category">Blogs</span><h3 style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">AI Integration Services: The Complete 2026 Guide (Costs, Use Cases &amp; How to Choose a Partner)</h3><p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">Most enterprises today don&#39;t have an &quot;AI problem.&quot; They have an AI integration problem.</p><div class="insights-card-meta"><span>May 2, 2026</span><a href="insights/AI-Integration-Services" class="insights-card-link">Read More <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></a></div></div></article>
+                        <article class="insights-card in-view"><img src="https://cdn.sanity.io/images/b5z10ias/production/6b9023aad6372c6392265c232df471dd7be8ed60-9047x6031.jpg?w=800&amp;fit=crop&amp;q=80&amp;auto=format" alt="IT Staff Augmentation Services: Scale Your Tech Team in 2026" class="insights-card-img" style="aspect-ratio: 16/9; object-fit: cover;" width="400" height="225" loading="lazy"><div class="insights-card-body"><span class="insights-card-category">IT Staff Augmentation Services</span><h3 style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">IT Staff Augmentation Services: Scale Your Tech Team in 2026</h3><p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">Looking for elite IT staff augmentation services in the US? Learn how to bridge your skill gaps, scale fast with top 1% tech talent, and reduce overhead costs.</p><div class="insights-card-meta"><span>May 1, 2026</span><a href="insights/it-staff-augmentation-services-guide" class="insights-card-link">Read More <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></a></div></div></article>
                     </div>
+                    <!-- INSIGHTS_LIST_END -->
                 </div>
             </section>
         </main>
@@ -327,6 +330,12 @@
             var loading = document.getElementById('insights-loading');
             var FALLBACK_IMG = 'images/insights1.jpeg';
 
+            // Cards are pre-rendered into the grid at build time (see scripts/generate-insights.js)
+            // so crawlers and no-JS visitors get real content. Only REPLACE them on a genuine
+            // successful fetch — never wipe them on empty/error, otherwise a timed-out fetch
+            // (e.g. in Googlebot's renderer) would blank the page back to a placeholder.
+            var hadPrerendered = !!insightsGrid.querySelector('.insights-card');
+
             var groq = '*[_type == "post" && defined(slug.current)] | order(publishedAt desc) [0...50] {' +
                 '"slug": slug.current, title, excerpt, publishedAt,' +
                 'mainImage{asset->{url}, alt},' +
@@ -338,7 +347,9 @@
                 .then(function (posts) {
                     loading.style.display = 'none';
                     if (!posts || posts.length === 0) {
-                        insightsGrid.innerHTML = '<p style="text-align:center;width:100%;color:var(--text-muted);">No posts yet — check back soon.</p>';
+                        if (!hadPrerendered) {
+                            insightsGrid.innerHTML = '<p style="text-align:center;width:100%;color:var(--text-muted);">No posts yet — check back soon.</p>';
+                        }
                         return;
                     }
 
@@ -374,7 +385,9 @@
                 })
                 .catch(function (err) {
                     loading.style.display = 'none';
-                    insightsGrid.innerHTML = '<p style="text-align:center;width:100%;color:var(--text-muted);">Error loading insights. Please try again later.</p>';
+                    if (!hadPrerendered) {
+                        insightsGrid.innerHTML = '<p style="text-align:center;width:100%;color:var(--text-muted);">Error loading insights. Please try again later.</p>';
+                    }
                     console.error('Sanity fetch error:', err);
                 });
 
