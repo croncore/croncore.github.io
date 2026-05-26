@@ -25,6 +25,10 @@
 # Old contact slug -> /contact
 /contact-sales  /contact  301
 
+# Short links for the SLED landing page (use these in outreach/ads)
+/sled         /sled-delivery-partner  301
+/sled-primes  /sled-delivery-partner  301
+
 # Legacy case-study URL redirects (carry over from old .htaccess)
 /case-study-bezninja  /case-study-autonomous-sales-agent-drives-record-revenue-growth  301
 /case-study-bloomlink  /case-study-sovereign-voice-engine-for-mongolia  301

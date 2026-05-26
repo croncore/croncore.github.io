@@ -199,6 +199,12 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://www.croncore.com/sled-delivery-partner</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.croncore.com/case-study-sovereign-voice-engine-for-mongolia</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>yearly</changefreq>
@@ -219,6 +225,18 @@
   <url>
     <loc>https://www.croncore.com/case-study-autonomous-sales-agent-drives-record-revenue-growth</loc>
     <lastmod>2026-05-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.croncore.com/case-study-ai-driven-materials-management-plan</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.croncore.com/case-study-multi-site-it-modernization-for-nonprofit</loc>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
