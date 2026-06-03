@@ -68,48 +68,93 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .sled-hero::before{content:'';position:absolute;top:-10%;left:-15%;width:55%;height:80%;background:radial-gradient(ellipse at center,rgba(0,212,255,.13),transparent 60%);pointer-events:none;z-index:0;filter:blur(40px)}
 .sled-hero::after{content:'';position:absolute;top:5%;right:-10%;width:50%;height:70%;background:radial-gradient(ellipse at center,rgba(123,97,255,.10),transparent 60%);pointer-events:none;z-index:0;filter:blur(50px)}
 .sled-hero .container{position:relative;z-index:1}
-.sled-hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center}
+.sled-hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:3rem;align-items:center}
+.sled-hero-grid>div:first-child{position:relative;z-index:2}
 @media(max-width:1000px){.sled-hero-grid{grid-template-columns:1fr;gap:2.2rem}}
 .sled-hero .section-tag{margin-bottom:24px;animation:fadeUp .7s var(--ease) 0s both}
-.sled-hero h1{font-family:var(--font-display);font-size:clamp(2.6rem,5.4vw,4.1rem);font-weight:800;line-height:1.06;letter-spacing:-.03em;color:var(--text-primary);margin-bottom:1.3rem;animation:slideUpVisible .8s var(--ease) .1s both}
-.sled-hero h1 .text-glow{background:linear-gradient(135deg,var(--accent) 0%,#66E0FF 30%,var(--accent-secondary) 60%,var(--accent) 100%);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradient-text 4s ease infinite}
+.sled-hero h1{font-family:var(--font-display);font-size:clamp(2.4rem,4.6vw,3.5rem);font-weight:800;line-height:1.08;letter-spacing:-.03em;color:var(--text-primary);margin-bottom:1.3rem;animation:slideUpVisible .8s var(--ease) .1s both;max-width:540px}
+.sled-hero h1 .text-glow{background:linear-gradient(135deg,#3B82F6 0%,#60A5FA 35%,#3B82F6 65%,#1D4ED8 100%);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;white-space:nowrap;animation:gradient-text 4s ease infinite}
 @keyframes gradient-text{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-.sled-hero p.sled-lead{font-size:1.15rem;line-height:1.75;color:var(--text-secondary);max-width:600px;margin-bottom:2rem;animation:fadeUp .7s var(--ease) .2s both}
-.sled-cta-row{display:flex;gap:.9rem;flex-wrap:wrap;margin-bottom:3rem;animation:fadeUp .7s var(--ease) .3s both}
-.sled-hero-stats{display:flex;gap:2.8rem;flex-wrap:wrap;padding-top:1.6rem;border-top:1px solid var(--border);animation:fadeUp .7s var(--ease) .4s both}
-.sled-stat{display:flex;flex-direction:column;gap:.3rem}
-.sled-stat-num{font-family:var(--font-display);font-size:clamp(1.8rem,2.4vw,2.15rem);font-weight:800;color:var(--text-primary);letter-spacing:-.03em;line-height:1}
-.sled-stat-num .accent{background:linear-gradient(135deg,var(--accent),var(--accent-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.sled-stat-label{font-family:var(--font-mono);font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted)}
+.sled-hero p.sled-lead{font-size:1.15rem;line-height:1.75;color:var(--text-secondary);max-width:540px;margin-bottom:2rem;animation:fadeUp .7s var(--ease) .2s both}
+.sled-cta-row{display:flex;gap:.9rem;flex-wrap:wrap;animation:fadeUp .7s var(--ease) .4s both}
 
-/* ===== Profile Card (hero right) ===== */
-.sled-profile{background:var(--bg-card);border:1px solid var(--border);border-radius:1.25rem;padding:1.6rem;position:relative;overflow:hidden;box-shadow:0 24px 60px rgba(0,212,255,.08),0 1px 0 rgba(255,255,255,.04) inset;animation:slideUpVisible .9s var(--ease) .25s both;transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s var(--ease)}
-.sled-profile:hover{transform:translateY(-4px);box-shadow:0 32px 80px rgba(0,212,255,.14),0 1px 0 rgba(255,255,255,.06) inset;border-color:rgba(0,212,255,.32)}
-.sled-profile::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at top right,rgba(0,212,255,.10),transparent 60%),radial-gradient(circle at bottom left,rgba(123,97,255,.08),transparent 55%);pointer-events:none}
-/* animated corner accent on the profile card */
-.sled-profile::after{content:'';position:absolute;top:-2px;left:-2px;right:-2px;bottom:-2px;border-radius:1.25rem;padding:1px;background:linear-gradient(135deg,rgba(0,212,255,.4),transparent 35%,transparent 65%,rgba(123,97,255,.4));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;opacity:.6}
-.sled-profile-head{display:flex;align-items:flex-start;gap:1rem;padding-bottom:1.1rem;border-bottom:1px solid var(--border);position:relative}
-.sled-avatar{width:54px;height:54px;border-radius:.7rem;background:linear-gradient(135deg,rgba(0,212,255,.18),rgba(123,97,255,.18));border:1px solid rgba(0,212,255,.3);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-weight:800;color:var(--accent);font-size:1.15rem;flex-shrink:0}
-.sled-profile-id{flex:1;min-width:0}
-.sled-profile-name{font-family:var(--font-display);font-size:1.3rem;font-weight:800;color:var(--text-primary);letter-spacing:-.02em;margin-bottom:.2rem}
-.sled-profile-sub{font-size:.86rem;color:var(--text-muted);display:flex;align-items:center;gap:.4rem}
-.sled-profile-sub svg{width:13px;height:13px;flex-shrink:0}
-.sled-fit-badge{position:relative;font-family:var(--font-mono);font-size:.72rem;font-weight:700;color:var(--accent-success);background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.32);border-radius:999px;padding:.3rem .75rem;letter-spacing:.05em;animation:sled-fit-pulse 2.4s ease-in-out infinite}
-@keyframes sled-fit-pulse{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,.25)}50%{box-shadow:0 0 0 5px rgba(34,197,94,0)}}
-.sled-profile-section{padding-top:1.1rem;position:relative}
-.sled-profile-section + .sled-profile-section{margin-top:0.4rem}
-.sled-profile-label{font-family:var(--font-mono);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.55rem}
-.sled-profile-text{font-size:.92rem;color:var(--text-secondary);line-height:1.65}
-.sled-pills{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.2rem}
-.sled-pill{font-size:.78rem;font-weight:600;color:var(--accent);background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.22);border-radius:.45rem;padding:.35rem .7rem;letter-spacing:.01em}
-.sled-codes-row{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-top:.4rem}
-@media(max-width:480px){.sled-codes-row{grid-template-columns:1fr}}
-.sled-code-card{background:rgba(0,212,255,.04);border:1px solid rgba(0,212,255,.18);border-radius:.7rem;padding:.85rem .9rem}
-.sled-code-card:nth-child(2){background:rgba(123,97,255,.04);border-color:rgba(123,97,255,.22)}
-.sled-code-card .label{font-family:var(--font-mono);font-size:.64rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.3rem}
-.sled-code-card .code{font-family:var(--font-display);font-size:1.45rem;font-weight:800;color:var(--accent);line-height:1;letter-spacing:-.02em;margin-bottom:.45rem}
-.sled-code-card:nth-child(2) .code{color:var(--accent-secondary)}
-.sled-code-card .desc{font-size:.74rem;color:var(--text-secondary);line-height:1.45}
+/* ===== Hero feature pills (Find RFPs / Stay compliant / Win more) ===== */
+.sled-hero-feats{display:flex;gap:2.2rem;flex-wrap:wrap;margin-bottom:2.2rem;animation:fadeUp .7s var(--ease) .3s both}
+.sled-feat{display:flex;flex-direction:column;align-items:flex-start;gap:.65rem;max-width:130px}
+.sled-feat-icon{width:56px;height:56px;border-radius:50%;background:rgba(148,163,184,.18);display:flex;align-items:center;justify-content:center;color:#3B82F6}
+.sled-feat-icon svg{width:26px;height:26px}
+.sled-feat-text{font-size:.85rem;line-height:1.45;color:var(--text-secondary);font-weight:500}
+
+/* ===== Hero visual (right side: US map + RFP card + ACTIVE badge) ===== */
+.sled-hero-visual{position:relative;min-height:540px;animation:slideUpVisible .9s var(--ease) .25s both}
+@media(max-width:1000px){.sled-hero-visual{min-height:560px}}
+@media(max-width:560px){.sled-hero-visual{min-height:auto;padding-top:.5rem}}
+
+/* US map background */
+.sled-map{position:absolute;inset:-20px -90px -20px -60px;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:0}
+.sled-map::before{content:'';position:absolute;left:50%;top:50%;width:55%;height:65%;transform:translate(-50%,-50%);background:radial-gradient(ellipse at center,rgba(59,130,246,.06),transparent 70%);filter:blur(18px);pointer-events:none}
+.sled-map .sled-map-img{width:100%;height:100%;object-fit:contain;opacity:1;filter:drop-shadow(0 6px 18px rgba(59,130,246,.08))}
+@media(max-width:1000px){.sled-map{inset:-20px -40px -20px -40px}}
+@media(max-width:560px){.sled-map{inset:-10px -10px -10px -10px}}
+[data-theme="dark"] .sled-map .sled-map-img{opacity:.55;filter:drop-shadow(0 6px 18px rgba(96,165,250,.15))}
+.sled-map .sled-dots{position:absolute;inset:0;pointer-events:none}
+.sled-map .sled-dots svg{width:100%;height:100%}
+.sled-map .sled-dots circle{fill:#3B82F6;opacity:.8}
+.sled-map .sled-dots circle.dot-bright{fill:#3B82F6;opacity:1;filter:drop-shadow(0 0 10px rgba(59,130,246,.55))}
+[data-theme="dark"] .sled-map .sled-dots circle{fill:#60A5FA;opacity:.75}
+[data-theme="dark"] .sled-map .sled-dots circle.dot-bright{fill:#60A5FA;opacity:1;filter:drop-shadow(0 0 12px rgba(96,165,250,.7))}
+
+/* RFP Status ACTIVE badge (floating top-right) */
+.sled-active-badge{position:absolute;top:0;right:0;width:170px;height:170px;background:linear-gradient(160deg,#DBEAFE 0%,#93C5FD 55%,#60A5FA 100%);color:#fff;border-radius:1.4rem;padding:1.2rem 1rem;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.55rem;border:2px solid rgba(255,255,255,.95);box-shadow:0 25px 50px -10px rgba(59,130,246,.45),0 8px 20px -6px rgba(59,130,246,.28),inset 0 2px 8px rgba(255,255,255,.55),inset 0 -8px 18px rgba(29,78,216,.15);z-index:3;animation:sled-active-float 4s ease-in-out infinite}
+@keyframes sled-active-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.sled-active-badge .lbl{font-family:var(--font-display);font-size:.85rem;font-weight:600;letter-spacing:.01em;color:#fff;opacity:.92;line-height:1;text-shadow:0 1px 2px rgba(29,78,216,.25)}
+.sled-active-badge .val{font-family:var(--font-display);font-size:1.85rem;font-weight:800;letter-spacing:.04em;line-height:1;color:#fff;text-shadow:0 2px 4px rgba(29,78,216,.3)}
+.sled-active-badge .cal{width:42px;height:42px;display:flex;align-items:center;justify-content:center;margin-top:.15rem;filter:drop-shadow(0 2px 3px rgba(29,78,216,.25))}
+.sled-active-badge .cal svg{width:38px;height:38px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+/* RFP card */
+.sled-rfp-card{position:relative;z-index:2;background:var(--bg-card);border:1px solid var(--border);border-radius:1.5rem;padding:1.4rem;box-shadow:0 30px 60px rgba(15,30,80,.12),0 1px 0 rgba(255,255,255,.04) inset;max-width:400px;margin:2.5rem auto 0;display:flex;flex-direction:column;gap:.7rem;transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.sled-rfp-card:hover{transform:translateY(-4px);box-shadow:0 40px 80px rgba(15,30,80,.18),0 1px 0 rgba(255,255,255,.06) inset}
+.sled-rfp-logo{display:flex;align-items:center;justify-content:flex-start;padding:.25rem .25rem 1rem}
+.sled-rfp-logo img{max-height:64px;width:auto;object-fit:contain}
+[data-theme="dark"] .sled-rfp-logo img{filter:brightness(0.95) contrast(1.05)}
+
+/* RFP Details sub-card */
+.sled-rfp-box{background:transparent;border:1px solid var(--border);border-radius:.85rem;padding:1rem 1.1rem;transition:border-color .25s,box-shadow .25s}
+.sled-rfp-box:hover{border-color:rgba(59,130,246,.35)}
+.sled-rfp-label{font-family:var(--font-mono);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#3B82F6;margin-bottom:.45rem}
+.sled-rfp-value{font-family:var(--font-display);font-size:1.1rem;font-weight:800;color:var(--text-primary);letter-spacing:-.01em;line-height:1.3;margin-bottom:.25rem}
+.sled-rfp-posted{font-size:.8rem;color:var(--text-muted);margin:0}
+
+/* Row sub-cards (Scope / Guidelines / Deadline) */
+.sled-rfp-row{display:flex;align-items:center;gap:.85rem;padding:.9rem 1.1rem;border:1px solid var(--border);border-radius:.85rem;background:transparent;text-decoration:none;color:inherit}
+.sled-rfp-row-icon{width:28px;height:28px;display:flex;align-items:center;justify-content:center;color:#3B82F6;flex-shrink:0}
+.sled-rfp-row-icon svg{width:26px;height:26px}
+.sled-rfp-row-body{flex:1;min-width:0}
+.sled-rfp-row-title{font-size:.92rem;font-weight:600;color:var(--text-primary);line-height:1.3}
+.sled-rfp-row-sub{font-size:.78rem;color:var(--text-muted);margin-top:.15rem}
+.sled-rfp-chevron{color:var(--text-muted);flex-shrink:0}
+.sled-rfp-chevron svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.sled-rfp-cta{display:flex;align-items:center;justify-content:center;width:100%;background:linear-gradient(135deg,#3B82F6 0%,#60A5FA 50%,#3B82F6 100%);background-size:200% 100%;color:#fff;border:none;border-radius:.9rem;padding:.95rem 1rem;font-size:.95rem;font-weight:700;cursor:pointer;text-decoration:none;margin-top:.7rem;transition:transform .25s,box-shadow .25s,background-position .4s;box-shadow:0 12px 28px rgba(59,130,246,.32),0 1px 0 rgba(255,255,255,.18) inset}
+.sled-rfp-cta:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(59,130,246,.45);color:#fff;background-position:100% 0}
+
+/* Coverage line (Federal · State · Local · Education) */
+.sled-coverage{display:flex;align-items:center;justify-content:center;gap:.7rem;margin-top:1.3rem;font-size:.85rem;font-weight:600;color:var(--text-secondary);position:relative;z-index:2}
+.sled-coverage .flag{font-size:1rem;line-height:1}
+.sled-coverage .dot{width:3px;height:3px;border-radius:50%;background:var(--text-muted);opacity:.5}
+.sled-coverage .item{color:var(--text-secondary)}
+
+@media(max-width:560px){
+    .sled-hero-feats{gap:1.4rem}
+    .sled-feat{max-width:100px}
+    .sled-rfp-card{padding:1.2rem;margin-top:1.5rem}
+    .sled-active-badge{width:130px;height:130px;padding:.85rem;border-width:1.5px;gap:.35rem}
+    .sled-active-badge .lbl{font-size:.72rem}
+    .sled-active-badge .val{font-size:1.4rem}
+    .sled-active-badge .cal{width:32px;height:32px}
+    .sled-active-badge .cal svg{width:30px;height:30px}
+    .sled-coverage{flex-wrap:wrap;font-size:.78rem}
+}
 
 /* ===== Section base ===== */
 .sled-section{padding:5rem 0;position:relative}
@@ -282,72 +327,180 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="container">
 <div class="sled-hero-grid">
 <div>
-<div class="section-tag"><span class="tag-pulse"></span> Built for SLED Primes · Bid-Stage Ready</div>
-<h1>Your remote delivery partner for <span class="text-glow">SLED wins.</span></h1>
-<p class="sled-lead">US Primes call us when an SLED RFP lands and the schedule is brutal. Croncore plugs in as a subcontractor across AI, cybersecurity, ERP/CRM and EdTech — with past performance, NAICS coverage, and compliance posture ready to drop into your proposal.</p>
+<h1>Powering procurement across the <span class="text-glow">US SLED.</span></h1>
+<p class="sled-lead">From RFP tracking to compliance — Croncore helps you win in federal, state, and local government markets.</p>
+
+<div class="sled-hero-feats">
+    <div class="sled-feat">
+        <div class="sled-feat-icon">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="8" stroke="#3B82F6" stroke-width="1.8"/>
+                <circle cx="12" cy="12" r="3" stroke="#3B82F6" stroke-width="1.8"/>
+                <line x1="12" y1="2" x2="12" y2="5" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round"/>
+                <line x1="12" y1="19" x2="12" y2="22" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round"/>
+                <line x1="2" y1="12" x2="5" y2="12" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round"/>
+                <line x1="19" y1="12" x2="22" y2="12" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+        </div>
+        <div class="sled-feat-text">Find the right RFPs</div>
+    </div>
+    <div class="sled-feat">
+        <div class="sled-feat-icon">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 2 4 5v7c0 5 3.5 8 8 10 4.5-2 8-5 8-10V5l-8-3z" stroke="#3B82F6" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M8.5 12.2 10.8 14.5 15.5 9.8" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <div class="sled-feat-text">Stay compliant with ease</div>
+    </div>
+    <div class="sled-feat">
+        <div class="sled-feat-icon">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <line x1="6" y1="20" x2="6" y2="14" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="12" y1="20" x2="12" y2="10" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="18" y1="20" x2="18" y2="6" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="18" cy="4" r="1.2" fill="#3B82F6"/>
+            </svg>
+        </div>
+        <div class="sled-feat-text">Win more. Deliver better.</div>
+    </div>
+</div>
+
 <div class="sled-cta-row">
     <a href="contact" class="btn btn-glow">Request capability statement<svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
     <a href="#past-performance" class="btn btn-ghost">See past performance<svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
 </div>
-<div class="sled-hero-stats">
-    <div class="sled-stat">
-        <div class="sled-stat-num">50<span class="accent">+</span></div>
-        <div class="sled-stat-label">Enterprise Deployments</div>
-    </div>
-    <div class="sled-stat">
-        <div class="sled-stat-num">5.0</div>
-        <div class="sled-stat-label">Clutch &amp; Trustpilot</div>
-    </div>
-    <div class="sled-stat">
-        <div class="sled-stat-num">48h</div>
-        <div class="sled-stat-label">Bid-Team Turnaround</div>
-    </div>
-</div>
 </div>
 
-<aside class="sled-profile" aria-label="Croncore SLED fit profile">
-<div class="sled-profile-head">
-    <div class="sled-avatar">CC</div>
-    <div class="sled-profile-id">
-        <div class="sled-profile-name">Croncore</div>
-        <div class="sled-profile-sub">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            Remote · US-aligned hours
+<aside class="sled-hero-visual" aria-label="Sample SLED RFP">
+    <!-- US map backdrop (lower 48 outline + city dots) -->
+    <div class="sled-map" aria-hidden="true">
+        <img src="images/us-map.svg" alt="" class="sled-map-img" loading="lazy">
+        <div class="sled-dots">
+            <svg viewBox="120 130 830 470" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                <!-- Major city dots placed using the real us-map SVG coordinate system -->
+                <circle cx="172" cy="170" r="4.5" class="dot-bright"/>   <!-- Seattle -->
+                <circle cx="160" cy="220" r="3.8"/>                          <!-- Portland OR -->
+                <circle cx="100" cy="290" r="3.8"/>                          <!-- SF Bay (offscreen sidewise but close) -->
+                <circle cx="190" cy="380" r="4.5" class="dot-bright"/>   <!-- LA -->
+                <circle cx="180" cy="395" r="3.8"/>                          <!-- San Diego -->
+                <circle cx="230" cy="370" r="3.8"/>                          <!-- Las Vegas -->
+                <circle cx="250" cy="395" r="3.8"/>                          <!-- Phoenix -->
+                <circle cx="270" cy="290" r="3.8"/>                          <!-- Salt Lake -->
+                <circle cx="350" cy="320" r="4.5" class="dot-bright"/>   <!-- Denver -->
+                <circle cx="380" cy="190" r="3.8"/>                          <!-- Billings -->
+                <circle cx="475" cy="220" r="3.8"/>                          <!-- Minneapolis -->
+                <circle cx="540" cy="270" r="3.8"/>                          <!-- Des Moines -->
+                <circle cx="580" cy="275" r="3.8"/>                          <!-- Chicago dot 2 -->
+                <circle cx="600" cy="200" r="4.5" class="dot-bright"/>   <!-- Chicago -->
+                <circle cx="560" cy="345" r="3.8"/>                          <!-- St. Louis -->
+                <circle cx="500" cy="395" r="3.8"/>                          <!-- OKC -->
+                <circle cx="530" cy="420" r="3.8"/>                          <!-- Dallas -->
+                <circle cx="540" cy="475" r="3.8"/>                          <!-- Houston -->
+                <circle cx="630" cy="455" r="3.8"/>                          <!-- New Orleans -->
+                <circle cx="680" cy="395" r="3.8"/>                          <!-- Atlanta -->
+                <circle cx="640" cy="190" r="3.8"/>                          <!-- Detroit -->
+                <circle cx="720" cy="285" r="3.8"/>                          <!-- DC -->
+                <circle cx="760" cy="345" r="3.8"/>                          <!-- Charlotte -->
+                <circle cx="780" cy="265" r="4.5" class="dot-bright"/>   <!-- NYC -->
+                <circle cx="765" cy="240" r="3.8"/>                          <!-- Albany -->
+                <circle cx="810" cy="230" r="3.8"/>                          <!-- Boston -->
+                <circle cx="850" cy="190" r="3.8"/>                          <!-- Portland ME -->
+                <circle cx="760" cy="470" r="4.5" class="dot-bright"/>   <!-- Miami -->
+                <circle cx="720" cy="430" r="3.8"/>                          <!-- Tampa -->
+            </svg>
         </div>
     </div>
-    <div class="sled-fit-badge">High Fit</div>
-</div>
 
-<div class="sled-profile-section">
-    <div class="sled-profile-label">Relevance Assessment</div>
-    <p class="sled-profile-text">LLM fine-tuning, AI development, cybersecurity (SIEM, SSO, penetration testing), Salesforce, and Power BI align precisely with high-demand SLED categories in AI, security, and data analytics.</p>
-</div>
-
-<div class="sled-profile-section">
-    <div class="sled-profile-label">SLED Fit Areas</div>
-    <div class="sled-pills">
-        <span class="sled-pill">AI &amp; Data Analytics</span>
-        <span class="sled-pill">Cybersecurity</span>
-        <span class="sled-pill">ERP / CRM for Government</span>
-        <span class="sled-pill">Education Technology</span>
-    </div>
-</div>
-
-<div class="sled-profile-section">
-    <div class="sled-profile-label">Procurement Codes</div>
-    <div class="sled-codes-row">
-        <div class="sled-code-card">
-            <div class="label">NAICS Primary</div>
-            <div class="code">541715</div>
-            <div class="desc">R&amp;D in Physical, Engineering &amp; Life Sciences (AI/ML)</div>
-        </div>
-        <div class="sled-code-card">
-            <div class="label">NIGP Primary</div>
-            <div class="code">920-24</div>
-            <div class="desc">Artificial Intelligence, LLM &amp; Machine Learning Services</div>
+    <!-- Floating ACTIVE badge -->
+    <div class="sled-active-badge" aria-hidden="true">
+        <div class="lbl">RFP Status</div>
+        <div class="val">ACTIVE</div>
+        <div class="cal">
+            <svg viewBox="0 0 32 32" aria-hidden="true">
+                <rect x="4" y="7" width="24" height="22" rx="3.5"/>
+                <line x1="10" y1="4" x2="10" y2="9"/>
+                <line x1="22" y1="4" x2="22" y2="9"/>
+                <line x1="4" y1="13" x2="28" y2="13"/>
+                <circle cx="10" cy="18" r="1" fill="#fff" stroke="none"/>
+                <circle cx="16" cy="18" r="1" fill="#fff" stroke="none"/>
+                <circle cx="22" cy="18" r="1" fill="#fff" stroke="none"/>
+                <circle cx="10" cy="23" r="1" fill="#fff" stroke="none"/>
+                <circle cx="16" cy="23" r="1" fill="#fff" stroke="none"/>
+                <circle cx="22" cy="23" r="1" fill="#fff" stroke="none"/>
+            </svg>
         </div>
     </div>
-</div>
+
+    <!-- RFP card -->
+    <div class="sled-rfp-card">
+        <div class="sled-rfp-logo">
+            <img src="images/logos/wesley-logo.png" alt="Wesley Community Center" loading="lazy">
+        </div>
+
+        <div class="sled-rfp-box">
+            <div class="sled-rfp-label">RFP Details</div>
+            <div class="sled-rfp-value">Estimated Project Value: $764,000</div>
+            <div class="sled-rfp-posted">Posted: May 14, 2026</div>
+        </div>
+
+        <div class="sled-rfp-row">
+            <div class="sled-rfp-row-icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <rect x="5" y="5" width="14" height="16" rx="2" fill="rgba(96,165,250,.18)" stroke="#3B82F6" stroke-width="1.6"/>
+                    <rect x="9" y="3" width="6" height="3.5" rx="1" fill="#3B82F6"/>
+                    <path d="M8.5 12.5 11 15l4.5-5" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="sled-rfp-row-body">
+                <div class="sled-rfp-row-title">Project Scope</div>
+            </div>
+            <div class="sled-rfp-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+        </div>
+
+        <div class="sled-rfp-row">
+            <div class="sled-rfp-row-icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M6 3h8l4 4v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" fill="rgba(96,165,250,.18)" stroke="#3B82F6" stroke-width="1.6" stroke-linejoin="round"/>
+                    <path d="M14 3v5h4" stroke="#3B82F6" stroke-width="1.6" stroke-linejoin="round"/>
+                    <line x1="8" y1="13" x2="15" y2="13" stroke="#3B82F6" stroke-width="1.5" stroke-linecap="round"/>
+                    <line x1="8" y1="16.5" x2="13" y2="16.5" stroke="#3B82F6" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="sled-rfp-row-body">
+                <div class="sled-rfp-row-title">Proposal Guidelines</div>
+            </div>
+            <div class="sled-rfp-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+        </div>
+
+        <div class="sled-rfp-row">
+            <div class="sled-rfp-row-icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <rect x="3" y="5" width="18" height="16" rx="2" fill="rgba(96,165,250,.18)" stroke="#3B82F6" stroke-width="1.6"/>
+                    <line x1="3.8" y1="10" x2="20.2" y2="10" stroke="#3B82F6" stroke-width="1.6"/>
+                    <line x1="8" y1="3" x2="8" y2="7" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="16" y1="3" x2="16" y2="7" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="12" cy="15.5" r="2" fill="#3B82F6"/>
+                </svg>
+            </div>
+            <div class="sled-rfp-row-body">
+                <div class="sled-rfp-row-title">Submission Deadline</div>
+                <div class="sled-rfp-row-sub">July 30, 2026</div>
+            </div>
+            <div class="sled-rfp-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+        </div>
+
+        <a href="contact" class="sled-rfp-cta">Request RFP Package</a>
+    </div>
+
+    <!-- Coverage line -->
+    <div class="sled-coverage">
+        <span class="flag" aria-hidden="true">🇺🇸</span>
+        <span class="item">Federal</span><span class="dot"></span>
+        <span class="item">State</span><span class="dot"></span>
+        <span class="item">Local</span><span class="dot"></span>
+        <span class="item">Education</span>
+    </div>
 </aside>
 
 </div>
@@ -408,7 +561,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 <div class="sled-fit-grid">
     <div class="sled-fit">
-        <div class="sled-fit-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 2v10l8 4"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="sled-fit-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 2v10l8 4"/><circle cx="12" cy="12" r="3.8"/></svg></div>
         <div class="sled-fit-body">
             <h3>AI &amp; Data Analytics</h3>
             <p>LLM fine-tuning, predictive analytics, Power BI dashboards, ML model deployment for agencies.</p>
