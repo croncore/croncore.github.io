@@ -36,6 +36,10 @@
 /case-study-oracle  /case-study-custom-ai-voice-agent-closes-the-speed-to-lead-gap  301
 /case-study-knowles  /case-study-custom-ai-voice-agent-closes-the-speed-to-lead-gap  301
 
+# Retired case studies — force 404 (rule fires before any stale cached file)
+/case-study-multi-site-it-modernization-for-nonprofit  /404.html  404
+/case-study-ai-driven-materials-management-plan        /404.html  404
+
 # ---------- 404 fallback ----------
 # Anything that did not match above and is not a real file -> 404 page with HTTP 404
 /*  /404.html  404
