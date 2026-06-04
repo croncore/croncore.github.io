@@ -173,16 +173,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .sled-section-head.row{display:grid;grid-template-columns:1.3fr 1fr;gap:2rem;align-items:end}
 @media(max-width:900px){.sled-section-head.row{grid-template-columns:1fr;gap:.9rem}}
 
-/* ===== Benefit grid (Why US primes pick Croncore) ===== */
-.sled-benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
-@media(max-width:900px){.sled-benefit-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.sled-benefit-grid{grid-template-columns:1fr}}
-.sled-benefit{background:var(--bg-card);border:1px solid var(--border);border-radius:1rem;padding:1.5rem;transition:border-color .25s,transform .25s}
-.sled-benefit:hover{border-color:rgba(0,212,255,.35);transform:translateY(-3px)}
-.sled-benefit-icon{width:38px;height:38px;border-radius:.55rem;background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.2);display:flex;align-items:center;justify-content:center;color:var(--accent);margin-bottom:1rem}
-.sled-benefit-icon svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.sled-benefit h3{font-family:var(--font-display);font-size:1.02rem;font-weight:700;color:var(--text-primary);margin-bottom:.55rem;letter-spacing:-.01em;line-height:1.3}
-.sled-benefit p{font-size:.88rem;line-height:1.65;color:var(--text-muted);margin:0}
+/* ===== Approach cards (Six disciplines) ===== */
+.sled-approach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.15rem}
+@media(max-width:920px){.sled-approach-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.sled-approach-grid{grid-template-columns:1fr}}
+.sled-acard{position:relative;overflow:hidden;background:var(--bg-card);border:1px solid var(--border);border-radius:1rem;padding:1.75rem 1.65rem 1.85rem;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+.sled-acard::after{content:"";position:absolute;left:0;top:0;height:3px;width:100%;background:linear-gradient(90deg,var(--accent),var(--accent-secondary,#7b61ff));transform:scaleX(0);transform-origin:left;transition:transform .45s ease}
+.sled-acard:hover{transform:translateY(-4px);border-color:rgba(0,212,255,.35);box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.sled-acard:hover::after{transform:scaleX(1)}
+.sled-acard .num{font-family:var(--font-mono);font-size:.82rem;font-weight:700;color:var(--accent);letter-spacing:.06em}
+.sled-acard h3{font-family:var(--font-display);font-size:1.18rem;font-weight:700;color:var(--text-primary);margin:.85rem 0 .65rem;letter-spacing:-.015em;line-height:1.3}
+.sled-acard p{font-size:.92rem;line-height:1.6;color:var(--text-muted);margin:0}
 
 /* ===== Fit areas (4 cards 2x2) ===== */
 .sled-fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
@@ -251,6 +252,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 /* Brand pill in nav for SLED */
 .sled-brand-pill{font-family:var(--font-mono);font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.25);border-radius:.35rem;padding:.2rem .55rem;margin-left:.55rem;vertical-align:middle}
+
+/* ===== Process steps (How We Worked — always dark) ===== */
+.sled-process{background:#0c1422;color:#f1f5fb;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+.sled-process .sled-eyebrow{color:var(--accent);background:rgba(0,212,255,.1);border-color:rgba(0,212,255,.28)}
+.sled-process .sled-section-head h2{color:#f1f5fb}
+.sled-process .sled-sub{color:rgba(241,245,251,.72)}
+.sled-steps{display:grid;grid-template-columns:1fr;gap:0;max-width:920px;margin-inline:auto;margin-top:2.5rem}
+.sled-step{display:grid;grid-template-columns:96px 1fr;gap:clamp(20px,4vw,48px);padding:34px 0;align-items:start}
+.sled-step + .sled-step{border-top:1px solid rgba(255,255,255,.08)}
+.sled-step .s-num{font-family:var(--font-display);font-weight:600;font-size:clamp(40px,5vw,60px);color:#f1f5fb;line-height:1;letter-spacing:-.03em;opacity:.92}
+.sled-step .s-num .o{color:var(--accent)}
+.sled-step .s-body h3{font-family:var(--font-display);color:#f1f5fb;font-size:clamp(20px,2.4vw,26px);font-weight:700;margin:0;letter-spacing:-.015em;line-height:1.25}
+.sled-step .s-body p{color:rgba(241,245,251,.72);font-size:16px;margin:10px 0 0;line-height:1.6;max-width:620px}
+@media(max-width:540px){.sled-step{grid-template-columns:1fr;gap:6px}}
+
+/* ===== Case study card grid (reuses global .cs-card from styles.css) ===== */
+.sled-cs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+@media(max-width:992px){.sled-cs-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.sled-cs-grid{grid-template-columns:1fr}}
+.sled-cs-grid .cs-card{flex:initial;height:460px}
+@media(max-width:767px){.sled-cs-grid .cs-card{height:420px}}
+.sled-cs-grid .cs-card-info{position:absolute;inset:auto 0 0 0;z-index:2;padding:24px 28px 26px;pointer-events:none}
+.sled-cs-grid .cs-card-info .cs-card-industry{font-size:1.35rem;margin-bottom:6px}
+.sled-cs-grid .cs-card-info .cs-card-tag{display:inline-block;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.25);padding:4px 10px;border-radius:999px;margin-bottom:14px}
+.sled-cs-grid .cs-card-info .cs-card-blurb{color:rgba(255,255,255,.78);font-size:.92rem;line-height:1.45;margin:0}
 </style>
 
 <!-- Schema.org - BreadcrumbList -->
@@ -303,9 +329,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <span class="sled-brand-pill">SLED</span>
 </a>
 <div class="nav-pill">
-    <a href="#fit-areas" class="nav-link">Capabilities</a>
+    <a href="#case-studies" class="nav-link">Case Studies</a>
     <a href="#procurement-codes" class="nav-link">Codes</a>
-    <a href="#past-performance" class="nav-link">Past Performance</a>
+    <a href="#process" class="nav-link">Process</a>
     <a href="#compliance" class="nav-link">Compliance</a>
 </div>
 <div class="nav-actions">
@@ -320,9 +346,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </nav>
 <div class="nav-mobile-overlay" id="mobileNav" role="dialog" aria-modal="true" aria-label="Mobile navigation">
 <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-    <a href="#fit-areas">Capabilities</a>
+    <a href="#case-studies">Case Studies</a>
     <a href="#procurement-codes">Codes</a>
-    <a href="#past-performance">Past Performance</a>
+    <a href="#process">Process</a>
     <a href="#compliance">Compliance</a>
     <a href="contact" class="btn btn-glow" style="margin-top:12px;">Brief our team</a>
 </div>
@@ -438,85 +464,145 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 </section>
 
-<!-- ===== WHY US PRIMES PICK CRONCORE ===== -->
-<section class="sled-section sled-section--alt" aria-labelledby="why-heading">
+<!-- ===== CRONCORE'S APPROACH ===== -->
+<section class="sled-section sled-section--alt" aria-labelledby="approach-heading">
 <div class="container">
 <div class="sled-section-head">
-    <div class="sled-eyebrow">Why US Primes Pick Croncore</div>
-    <h2 id="why-heading">We make your SLED bid stronger, faster, and cheaper to win.</h2>
+    <div class="sled-eyebrow">Croncore's Approach</div>
+    <h2 id="approach-heading">Six disciplines, one compliant, high-scoring submission.</h2>
+    <p class="sled-sub">We worked behind the prime's brand to turn a methodology-weighted solicitation into a clear, defensible, on-deadline response.</p>
 </div>
-<div class="sled-benefit-grid">
-    <div class="sled-benefit">
-        <div class="sled-benefit-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-        <h3>Bid-stage ready in 48 hours</h3>
-        <p>Capability statements, past performance write-ups, LOC, and pricing — turned around fast enough to make your proposal deadline.</p>
-    </div>
-    <div class="sled-benefit">
-        <div class="sled-benefit-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="14" y2="17"/></svg></div>
-        <h3>Past performance you can cite</h3>
-        <p>Documented SLED-aligned delivery across SIEM, AI, ERP/CRM and EdTech. Reference letters available under NDA.</p>
-    </div>
-    <div class="sled-benefit">
-        <div class="sled-benefit-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3>Dedicated US-aligned pods</h3>
-        <p>Engineers and PMs work in US time zones with your prime's PMO. No handoffs, no offshore lag.</p>
-    </div>
-    <div class="sled-benefit">
-        <div class="sled-benefit-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-        <h3>Compliance-aware delivery</h3>
-        <p>FedRAMP-aware cloud patterns, CMMC L2 control mapping, Section 508 accessibility, FERPA/CJIS handling.</p>
-    </div>
-    <div class="sled-benefit">
-        <div class="sled-benefit-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-        <h3>Cost structure built for primes</h3>
-        <p>Documented blended rates that protect your wrap rate and keep your bid competitive against the incumbent.</p>
-    </div>
-    <div class="sled-benefit">
-        <div class="sled-benefit-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-        <h3>Remote-first by design</h3>
-        <p>Pods serve North America, MENA, and EU clients. Async-fluent, documentation-first, audit-ready.</p>
-    </div>
+<div class="sled-approach-grid">
+    <article class="sled-acard">
+        <div class="num">01</div>
+        <h3>Bid Strategy &amp; Win Themes</h3>
+        <p>Analyzed the scorecard and competitive field; defined positioning that set the bid apart from generalist competitors.</p>
+    </article>
+    <article class="sled-acard">
+        <div class="num">02</div>
+        <h3>Proposal Writing &amp; Review</h3>
+        <p>Authored and edited a compliant technical narrative built around the 45% methodology weighting.</p>
+    </article>
+    <article class="sled-acard">
+        <div class="num">03</div>
+        <h3>Compliance Assurance</h3>
+        <p>Checked every mandatory rule: page count, font size, section order, certifications, and envelope separation.</p>
+    </article>
+    <article class="sled-acard">
+        <div class="num">04</div>
+        <h3>Cost Proposal Support</h3>
+        <p>Structured a competitive fee narrative and rate presentation to maximize value scoring.</p>
+    </article>
+    <article class="sled-acard">
+        <div class="num">05</div>
+        <h3>Timeline &amp; Project Planning</h3>
+        <p>Built a realistic delivery schedule and phased approach aligned to the City's milestones.</p>
+    </article>
+    <article class="sled-acard">
+        <div class="num">06</div>
+        <h3>Submission Readiness</h3>
+        <p>Final QC and packaging for a clean, on-deadline e-procurement submission.</p>
+    </article>
 </div>
 </div>
 </section>
 
-<!-- ===== SLED FIT AREAS ===== -->
-<section class="sled-section" id="fit-areas" aria-labelledby="fit-heading">
+<!-- ===== SLED CASE STUDIES ===== -->
+<section class="sled-section" id="case-studies" aria-labelledby="cs-heading">
 <div class="container">
-<div class="sled-section-head row">
-    <div>
-        <div class="sled-eyebrow">SLED Fit Areas</div>
-        <h2 id="fit-heading">Four practice areas. All SLED-aligned.</h2>
-    </div>
-    <p class="sled-sub">Every capability below maps to active demand inside state, local, and education procurement pipelines.</p>
+<div class="sled-section-head">
+    <div class="sled-eyebrow">SLED Case Studies</div>
+    <h2 id="cs-heading">Proof from real SLED pursuits.</h2>
+    <p class="sled-sub">Methodology-weighted, strict-spec, accessibility-mandated — three live RFPs where Croncore built the winning response behind a U.S. prime.</p>
 </div>
-<div class="sled-fit-grid">
-    <div class="sled-fit">
-        <div class="sled-fit-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 2v10l8 4"/><circle cx="12" cy="12" r="3.8"/></svg></div>
-        <div class="sled-fit-body">
-            <h3>AI &amp; Data Analytics</h3>
-            <p>LLM fine-tuning, predictive analytics, Power BI dashboards, ML model deployment for agencies.</p>
+<div class="sled-cs-grid">
+    <!-- Card: Derby Downtown Lighting RFP -->
+    <article class="cs-card" data-category="govcon" aria-label="Derby Downtown Lighting RFP Case Study">
+        <div class="cs-card-bg">
+            <img src="images/case-studies/derby-downtown.jpg" alt="Derby Downtown District Photometric Study &amp; Lighting Plan Case Study" loading="lazy">
+        </div>
+        <div class="cs-card-overlay"></div>
+        <div class="cs-card-info">
+            <span class="cs-card-tag">Government Proposal Support</span>
+            <h3 class="cs-card-industry">Derby Downtown Lighting RFP</h3>
+            <p class="cs-card-blurb">Inside a methodology-weighted municipal lighting RFP, and how Croncore built the winning response for a U.S. prime.</p>
+        </div>
+        <a href="case-study-derby-downtown-lighting-rfp" class="cs-card-link-overlay" aria-label="Read Derby Downtown Lighting RFP case study"></a>
+    </article>
+
+    <!-- Card: Macomb Community College AV Equipment RFQ -->
+    <article class="cs-card" data-category="govcon" aria-label="Macomb Community College AV Equipment RFQ Case Study">
+        <div class="cs-card-bg">
+            <img src="images/case-studies/macomb-community-college.jpg" alt="Macomb Community College AV Equipment RFQ — Government Proposal Support Case Study" loading="lazy">
+        </div>
+        <div class="cs-card-overlay"></div>
+        <div class="cs-card-info">
+            <span class="cs-card-tag">Higher Ed &middot; Public Purchasing</span>
+            <h3 class="cs-card-industry">Macomb Community College AV RFQ</h3>
+            <p class="cs-card-blurb">Inside a strict-specification, commodity-driven AV equipment RFQ, and how Croncore built the winning response.</p>
+        </div>
+        <a href="case-study-macomb-community-college-av-equipment-rfq" class="cs-card-link-overlay" aria-label="Read Macomb Community College AV Equipment RFQ case study"></a>
+    </article>
+
+    <!-- Card: South Platte Renew Website RFP -->
+    <article class="cs-card" data-category="govcon" aria-label="South Platte Renew Website RFP Case Study">
+        <div class="cs-card-bg">
+            <img src="images/case-studies/south-platte-renew.jpg" alt="South Platte Renew Digital Transformation — Municipal Website RFP Case Study" loading="lazy">
+        </div>
+        <div class="cs-card-overlay"></div>
+        <div class="cs-card-info">
+            <span class="cs-card-tag">Municipal Water &middot; Public Utilities</span>
+            <h3 class="cs-card-industry">South Platte Renew Website RFP</h3>
+            <p class="cs-card-blurb">Inside a WordPress and accessibility-mandated municipal RFP, and how Croncore built the winning response.</p>
+        </div>
+        <a href="case-study-south-platte-renew-website-rfp" class="cs-card-link-overlay" aria-label="Read South Platte Renew Website RFP case study"></a>
+    </article>
+</div>
+</div>
+</section>
+
+<!-- ===== HOW WE WORKED (5-STEP PROCESS) ===== -->
+<section class="sled-section sled-process" id="process" aria-labelledby="process-heading">
+<div class="container">
+<div class="sled-section-head">
+    <div class="sled-eyebrow">How We Worked</div>
+    <h2 id="process-heading">A five-step path from solicitation to submission.</h2>
+    <p class="sled-sub">A repeatable method we run on every government pursuit, tuned to this RFP's scoring levers and compliance traps.</p>
+</div>
+<div class="sled-steps">
+    <div class="sled-step">
+        <div class="s-num"><span class="o">0</span>1</div>
+        <div class="s-body">
+            <h3>Understand the project</h3>
+            <p>Dissect the solicitation, scope, and evaluation criteria to find the scoring levers and compliance traps.</p>
         </div>
     </div>
-    <div class="sled-fit">
-        <div class="sled-fit-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <div class="sled-fit-body">
-            <h3>Cybersecurity</h3>
-            <p>SIEM/SOC operations, SSO/IAM, penetration testing, zero-trust architecture, incident response.</p>
+    <div class="sled-step">
+        <div class="s-num"><span class="o">0</span>2</div>
+        <div class="s-body">
+            <h3>Align with the prime</h3>
+            <p>Onboarding to confirm scope, timeline, roles, and documentation.</p>
         </div>
     </div>
-    <div class="sled-fit">
-        <div class="sled-fit-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
-        <div class="sled-fit-body">
-            <h3>ERP / CRM for Government</h3>
-            <p>Salesforce Gov Cloud, custom workflow automation, citizen services portals, case management.</p>
+    <div class="sled-step">
+        <div class="s-num"><span class="o">0</span>3</div>
+        <div class="s-body">
+            <h3>Build the winning strategy</h3>
+            <p>Structure the proposal, sharpen differentiation, and shape pricing and risk mitigation.</p>
         </div>
     </div>
-    <div class="sled-fit">
-        <div class="sled-fit-icon"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
-        <div class="sled-fit-body">
-            <h3>Education Technology</h3>
-            <p>K-12 and higher-ed platforms, LMS integrations, student data systems, AI tutors and assessment.</p>
+    <div class="sled-step">
+        <div class="s-num"><span class="o">0</span>4</div>
+        <div class="s-body">
+            <h3>Develop &amp; optimize the documents</h3>
+            <p>Draft and review technical and financial submissions for compliance and impact.</p>
+        </div>
+    </div>
+    <div class="sled-step">
+        <div class="s-num"><span class="o">0</span>5</div>
+        <div class="s-body">
+            <h3>Prepare for submission &amp; evaluation</h3>
+            <p>Final quality control plus interview and presentation coaching where required.</p>
         </div>
     </div>
 </div>
@@ -603,61 +689,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 </section>
 
-<!-- ===== PAST PERFORMANCE ===== -->
-<section class="sled-section" id="past-performance" aria-labelledby="perf-heading">
-<div class="container">
-<div class="sled-section-head row">
-    <div>
-        <div class="sled-eyebrow">Past Performance</div>
-        <h2 id="perf-heading">SLED-aligned delivery you can cite.</h2>
-    </div>
-    <p class="sled-sub">Anonymized snapshots from prior engagements. Full reference letters, scope, and contacts are available under NDA to qualified primes.</p>
-</div>
-<div class="sled-perf-grid">
-
-    <!-- Real: Macomb Community College AV Equipment RFQ -->
-    <article class="sled-perf">
-        <span class="sled-perf-tag">Higher Ed · Public Purchasing</span>
-        <h3>AV Equipment RFQ for a US Community College</h3>
-        <p class="sled-perf-body">Authored a strict-specification, lowest-price bid for an Extron and ScreenBeam AV equipment RFQ at Macomb Community College, Michigan. Pricing intelligence vs. distributor networks, FOB freight isolation, ARO logistics map, and dual-inbox electronic submission — all behind the prime's brand, under NDA.</p>
-        <div class="sled-perf-stats">
-            <div class="sled-perf-stat"><div class="num green">100%</div><div class="lbl">Spec &amp; Forms Compliance</div></div>
-            <div class="sled-perf-stat"><div class="num accent">Full Lot</div><div class="lbl">All 6 Line Items Awarded</div></div>
-            <div class="sled-perf-stat"><div class="num purple">90+</div><div class="lbl">Competing Firms</div></div>
-        </div>
-        <a href="case-study-macomb-community-college-av-equipment-rfq" class="sled-perf-link">Read case study<svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-    </article>
-
-    <!-- Real: South Platte Renew Digital Transformation -->
-    <article class="sled-perf">
-        <span class="sled-perf-tag">Municipal Water · WordPress / Accessibility</span>
-        <h3>Website Redesign for a Colorado Water Resource Recovery Facility</h3>
-        <p class="sled-perf-body">Delivered bid strategy, technical architecture, and full proposal development for South Platte Renew (City of Englewood, CO). WordPress-only mandate, WCAG 2.2 A/AA and C.R.S. § 24-85-101 compliance, with VPAT enforcement and multi-stakeholder governance baked into the response — under NDA to a US Prime.</p>
-        <div class="sled-perf-stats">
-            <div class="sled-perf-stat"><div class="num green">100%</div><div class="lbl">Format &amp; Submission Compliance</div></div>
-            <div class="sled-perf-stat"><div class="num accent">$306K</div><div class="lbl">Engagement Value</div></div>
-            <div class="sled-perf-stat"><div class="num purple">WCAG 2.2</div><div class="lbl">A/AA Aligned</div></div>
-        </div>
-        <a href="case-study-south-platte-renew-website-rfp" class="sled-perf-link">Read case study<svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-    </article>
-
-    <!-- Anonymized aggregate -->
-    <article class="sled-perf">
-        <span class="sled-perf-tag">Municipal · SIEM / SOC</span>
-        <h3>24/7 Security Operations for a Mid-Sized US Municipality</h3>
-        <p class="sled-perf-body">Stood up a remote SOC pod under a Prime, ingesting high-volume telemetry into Splunk + Sentinel with custom detection rules mapped to MITRE ATT&amp;CK. Anonymized aggregate; full scope and references available under NDA.</p>
-        <div class="sled-perf-stats">
-            <div class="sled-perf-stat"><div class="num green">68%</div><div class="lbl">MTTR Reduced</div></div>
-            <div class="sled-perf-stat"><div class="num purple">-74%</div><div class="lbl">False Positives</div></div>
-            <div class="sled-perf-stat"><div class="num accent">24/7/365</div><div class="lbl">Coverage</div></div>
-        </div>
-        <a href="contact" class="sled-perf-link">Request references<svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-    </article>
-
-</div>
-</div>
-</section>
-
 <!-- ===== COMPLIANCE POSTURE ===== -->
 <section class="sled-section sled-section--alt" id="compliance" aria-labelledby="compliance-heading">
 <div class="container">
@@ -708,9 +739,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <a href="contact" class="btn btn-glow btn-sm">Brief our team<svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
 </div>
 <nav class="footer-col" aria-label="SLED quick links"><h4>SLED</h4><ul>
-<li><a href="#fit-areas">Fit Areas</a></li>
+<li><a href="#case-studies">Case Studies</a></li>
 <li><a href="#procurement-codes">Procurement Codes</a></li>
-<li><a href="#past-performance">Past Performance</a></li>
+<li><a href="#process">Process</a></li>
 <li><a href="#compliance">Compliance Posture</a></li>
 </ul></nav>
 <nav class="footer-col" aria-label="Case Studies"><h4>SLED Case Studies</h4><ul>
