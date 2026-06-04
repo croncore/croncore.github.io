@@ -460,6 +460,198 @@
     })();
 
     /* ========================================
+       NAV CASE STUDIES MEGA MENU
+       Categorized mega-menu (mirrors Services shell)
+       under the Case Studies nav link. Only activates
+       on pages where a "Case Studies" link is present
+       in the nav-pill (currently the home page).
+    ======================================== */
+    (function initCaseStudiesMenu() {
+        var trigger = null;
+        var navItems = document.querySelectorAll('.nav-pill .nav-link, .nav-pill > a, .nav-pill > button');
+        for (var i = 0; i < navItems.length; i++) {
+            if ((navItems[i].textContent || '').trim().toLowerCase() === 'case studies') {
+                trigger = navItems[i];
+                break;
+            }
+        }
+        if (!trigger) return;
+
+        var GROUPS = [
+            {
+                id: 'cs-agents',
+                title: 'AI Agents, Voice & Platforms',
+                anchor: '/case-studies',
+                spotlight: {
+                    tag: 'Featured Case Study',
+                    title: 'Sovereign voice engine for Mongolia',
+                    desc: 'How we shipped a national-scale, in-country AI system in an underserved language.',
+                    href: '/case-study-sovereign-voice-engine-for-mongolia',
+                    cta: 'Read the case study'
+                },
+                items: [
+                    { href: '/case-study-autonomous-sales-agent-drives-record-revenue-growth', title: 'Bezninja — Autonomous Sales Agent', desc: 'Record revenue growth across inbound and outbound sales funnels.' },
+                    { href: '/case-study-custom-ai-voice-agent-closes-the-speed-to-lead-gap', title: 'Oracle Merchant Services — AI Voice Agent', desc: 'Custom voice agent closes the speed-to-lead gap and lifts qualified conversations.' },
+                    { href: '/case-study-sovereign-voice-engine-for-mongolia', title: 'Bloomlink — Sovereign Voice for Mongolia', desc: 'Low-latency, in-region speech stack built for national telecom.' },
+                    { href: '/case-study-architecting-a-ground-up-digital-learning-powerhouse', title: 'Digital Learning Powerhouse', desc: 'Ground-up edtech platform with adaptive AI tutoring at the core.' }
+                ]
+            },
+            {
+                id: 'cs-sled',
+                title: 'SLED / Public Sector',
+                anchor: '/case-studies',
+                spotlight: {
+                    tag: 'Featured',
+                    title: 'Croncore for State, Local & Education',
+                    desc: 'Methodology-led RFP and RFQ responses that win on substance — not boilerplate.',
+                    href: '/sled-delivery-partner',
+                    cta: 'See SLED capabilities'
+                },
+                items: [
+                    { href: '/case-study-derby-downtown-lighting-rfp', title: 'Derby Downtown Lighting RFP', desc: 'Methodology-weighted municipal lighting RFP, built for a U.S. prime.' },
+                    { href: '/case-study-macomb-community-college-av-equipment-rfq', title: 'Macomb Community College AV RFQ', desc: 'Strict-specification, commodity-driven AV equipment response.' },
+                    { href: '/case-study-south-platte-renew-website-rfp', title: 'South Platte Renew Website RFP', desc: 'WordPress and accessibility-mandated municipal RFP win.' }
+                ]
+            }
+        ];
+
+        var DEFAULT_SPOTLIGHT = GROUPS[0].spotlight;
+
+        var ARROW_RIGHT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+
+        // Decorate trigger with chevron
+        trigger.classList.add('nav-services-trigger');
+        trigger.setAttribute('aria-haspopup', 'true');
+        trigger.setAttribute('aria-expanded', 'false');
+        if (!trigger.querySelector('.nav-mega-chevron')) {
+            var chev = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            chev.setAttribute('class', 'nav-mega-chevron');
+            chev.setAttribute('viewBox', '0 0 24 24');
+            chev.setAttribute('fill', 'none');
+            chev.setAttribute('stroke', 'currentColor');
+            chev.setAttribute('stroke-width', '2.5');
+            chev.setAttribute('stroke-linecap', 'round');
+            chev.setAttribute('stroke-linejoin', 'round');
+            chev.innerHTML = '<polyline points="6 9 12 15 18 9"/>';
+            trigger.appendChild(chev);
+        }
+
+        // Build menu DOM (reuses Services mega-menu structure/CSS)
+        var menu = document.createElement('div');
+        menu.className = 'nav-megamenu';
+        menu.id = 'navCaseStudiesMenu';
+        menu.setAttribute('role', 'menu');
+        menu.setAttribute('aria-label', 'Case Studies');
+
+        var inner = document.createElement('div');
+        inner.className = 'nav-megamenu-inner';
+
+        var defaultActiveIndex = 0;
+
+        var parentsCol = document.createElement('div');
+        parentsCol.className = 'nav-mega-parents';
+        GROUPS.forEach(function (g, i) {
+            var btn = document.createElement('button');
+            btn.className = 'nav-mega-parent' + (i === defaultActiveIndex ? ' active' : '');
+            btn.type = 'button';
+            btn.setAttribute('data-parent', g.id);
+            btn.innerHTML = '<span>' + g.title + '</span>' +
+                '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>';
+            parentsCol.appendChild(btn);
+        });
+
+        var subsCol = document.createElement('div');
+        subsCol.className = 'nav-mega-subs';
+        GROUPS.forEach(function (g, i) {
+            var subgroup = document.createElement('div');
+            subgroup.className = 'nav-mega-subgroup' + (i === defaultActiveIndex ? ' active' : '');
+            subgroup.setAttribute('data-parent', g.id);
+
+            g.items.forEach(function (item) {
+                var a = document.createElement('a');
+                a.className = 'nav-mega-sub';
+                a.href = item.href;
+                a.innerHTML = '<strong>' + item.title + '</strong><span>' + item.desc + '</span>';
+                subgroup.appendChild(a);
+            });
+
+            var allLink = document.createElement('a');
+            allLink.className = 'nav-mega-all';
+            allLink.href = g.anchor;
+            allLink.innerHTML = 'View all case studies ' + ARROW_RIGHT;
+            subgroup.appendChild(allLink);
+            subsCol.appendChild(subgroup);
+        });
+
+        var spot = document.createElement('div');
+        spot.className = 'nav-mega-spotlight';
+        function renderSpotlight(g) {
+            var s = (g && g.spotlight) || DEFAULT_SPOTLIGHT;
+            spot.innerHTML =
+                '<span class="nav-spotlight-tag">' + s.tag + '</span>' +
+                '<div class="nav-spotlight-content">' +
+                '<h4>' + s.title + '</h4>' +
+                '<p>' + s.desc + '</p>' +
+                '</div>' +
+                '<a class="nav-spotlight-link" href="' + s.href + '">' + s.cta + ' ' + ARROW_RIGHT + '</a>';
+        }
+        renderSpotlight(GROUPS[defaultActiveIndex]);
+
+        inner.appendChild(parentsCol);
+        inner.appendChild(subsCol);
+        inner.appendChild(spot);
+        menu.appendChild(inner);
+        document.body.appendChild(menu);
+
+        var navEl = document.querySelector('.nav');
+        function positionMenu() {
+            if (!navEl) return;
+            var rect = navEl.getBoundingClientRect();
+            menu.style.top = (rect.bottom - 1) + 'px';
+        }
+        positionMenu();
+        window.addEventListener('scroll', positionMenu, { passive: true });
+        window.addEventListener('resize', positionMenu);
+
+        var hideTimer;
+        function open() {
+            if (window.innerWidth <= 1100) return;
+            clearTimeout(hideTimer);
+            positionMenu();
+            if (navEl) navEl.classList.add('nav-mega-open');
+            trigger.classList.add('is-open');
+            trigger.setAttribute('aria-expanded', 'true');
+            menu.classList.add('is-open');
+        }
+        function close() {
+            if (navEl) navEl.classList.remove('nav-mega-open');
+            trigger.classList.remove('is-open');
+            trigger.setAttribute('aria-expanded', 'false');
+            menu.classList.remove('is-open');
+        }
+        function delayedClose() {
+            clearTimeout(hideTimer);
+            hideTimer = setTimeout(close, 180);
+        }
+
+        trigger.addEventListener('mouseenter', open);
+        trigger.addEventListener('mouseleave', delayedClose);
+        trigger.addEventListener('focus', open);
+        menu.addEventListener('mouseenter', function () { clearTimeout(hideTimer); });
+        menu.addEventListener('mouseleave', delayedClose);
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') close();
+        });
+        document.addEventListener('click', function (e) {
+            if (!menu.contains(e.target) && !trigger.contains(e.target)) close();
+        });
+
+        // Expose to initMobileNav so the mobile drilldown can mirror this group
+        window.__croncoreNavCaseStudies = GROUPS;
+    })();
+
+    /* ========================================
        MOBILE NAV — TKXEL-STYLE DRILLDOWN
        Builds the multi-panel mobile menu inside #mobileNav.
        Root panel + Services drilldown (with accordions) + Resources drilldown.
@@ -470,6 +662,7 @@
 
         var GROUPS = window.__croncoreNavGroups || [];
         var RESOURCES = window.__croncoreNavResources || [];
+        var CASE_STUDIES = window.__croncoreNavCaseStudies || null;
 
         // GROUPS data uses absolute paths like "/services/foo" — those work on
         // every page (root or nested) so we can use them as-is.
@@ -482,6 +675,7 @@
         var testHref = '#testimonials';
         var faqHref = '#faq';
         var contactHref = 'contact';
+        var hasCaseStudiesNav = !!CASE_STUDIES;
         for (var k = 0; k < origAnchors.length; k++) {
             var ahref = origAnchors[k].getAttribute('href') || '';
             var atext = (origAnchors[k].textContent || '').trim().toLowerCase();
@@ -489,6 +683,7 @@
             else if (atext === 'testimonials' || ahref.indexOf('#testimonials') !== -1) testHref = ahref;
             else if (atext === 'faq' || ahref.indexOf('#faq') !== -1) faqHref = ahref;
             else if (atext === 'contact us' || atext === 'contact') contactHref = ahref;
+            else if (atext === 'case studies') hasCaseStudiesNav = true;
         }
 
         // ---- Logo: pull from the page's nav-brand so we get the right paths ----
@@ -551,7 +746,11 @@
         }
 
         rootPanel.appendChild(makeRootTrigger('Services', 'services'));
-        rootPanel.appendChild(makeRootLink('About', aboutHref));
+        if (hasCaseStudiesNav) {
+            rootPanel.appendChild(makeRootTrigger('Case Studies', 'case-studies'));
+        } else {
+            rootPanel.appendChild(makeRootLink('About', aboutHref));
+        }
         rootPanel.appendChild(makeRootLink('Testimonials', testHref));
         rootPanel.appendChild(makeRootTrigger('Resources', 'resources'));
         rootPanel.appendChild(makeRootLink('FAQ', faqHref));
@@ -649,6 +848,57 @@
         resourcesPanel.appendChild(resList);
 
         panels.appendChild(resourcesPanel);
+
+        // ---- Case Studies drilldown panel (only on pages with the Case Studies nav) ----
+        if (CASE_STUDIES && CASE_STUDIES.length) {
+            var csPanel = document.createElement('div');
+            csPanel.className = 'mobile-panel mobile-panel--case-studies';
+            csPanel.setAttribute('data-panel-id', 'case-studies');
+
+            var csBack = document.createElement('button');
+            csBack.type = 'button';
+            csBack.className = 'mobile-panel-back';
+            csBack.setAttribute('data-back', '');
+            csBack.innerHTML = CHEV_LEFT + '<span>Case Studies</span>';
+            csPanel.appendChild(csBack);
+
+            CASE_STUDIES.forEach(function (g) {
+                var accordion = document.createElement('div');
+                accordion.className = 'mobile-accordion';
+
+                var toggle = document.createElement('button');
+                toggle.type = 'button';
+                toggle.className = 'mobile-accordion-toggle';
+                toggle.setAttribute('aria-expanded', 'false');
+                toggle.innerHTML = '<span>' + g.title + '</span>' + CHEV_DOWN;
+
+                var list = document.createElement('div');
+                list.className = 'mobile-accordion-list';
+                g.items.forEach(function (item) {
+                    var a = document.createElement('a');
+                    a.href = fix(item.href);
+                    a.textContent = item.title;
+                    list.appendChild(a);
+                });
+
+                accordion.appendChild(toggle);
+                accordion.appendChild(list);
+                csPanel.appendChild(accordion);
+
+                toggle.addEventListener('click', function () {
+                    var isOpen = accordion.classList.toggle('is-open');
+                    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+            });
+
+            var csCta = document.createElement('a');
+            csCta.className = 'mobile-panel-outline-cta';
+            csCta.href = fix('/case-studies');
+            csCta.innerHTML = '<span>View all case studies</span>' + ARROW_R_CTA;
+            csPanel.appendChild(csCta);
+
+            panels.appendChild(csPanel);
+        }
 
         // ---- Panel switching ----
         function openSubpanel(id) {
