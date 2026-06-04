@@ -73,38 +73,48 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .sled-hero h1{font-family:var(--font-display);font-size:clamp(2.4rem,4.6vw,3.5rem);font-weight:800;line-height:1.08;letter-spacing:-.03em;color:var(--text-primary);margin-bottom:1.3rem;animation:slideUpVisible .8s var(--ease) .1s both;max-width:540px}
 .sled-hero h1 .text-glow{background:linear-gradient(135deg,#3B82F6 0%,#60A5FA 35%,#3B82F6 65%,#1D4ED8 100%);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;white-space:nowrap;animation:gradient-text 4s ease infinite}
 @keyframes gradient-text{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-.sled-hero p.sled-lead{font-size:1.15rem;line-height:1.75;color:var(--text-secondary);max-width:480px;margin-bottom:0;animation:fadeUp .7s var(--ease) .2s both}
+.sled-hero p.sled-lead{font-size:1.15rem;line-height:1.75;color:var(--text-secondary);max-width:520px;margin-bottom:0;animation:fadeUp .7s var(--ease) .2s both}
+.sled-hero p.sled-lead+p.sled-lead{margin-top:1rem;animation-delay:.28s}
 
 /* ===== Hero visual (right side: US map + RFP card + ACTIVE badge + Capitol) ===== */
 .sled-hero-visual{position:relative;min-height:600px;animation:slideUpVisible .9s var(--ease) .25s both}
 @media(max-width:1000px){.sled-hero-visual{min-height:auto;padding-top:1rem}}
 
 /* US map watermark — anchored to the right side of the hero */
-.sled-map{position:absolute;inset:0;display:flex;align-items:center;justify-content:flex-end;padding-right:4%;pointer-events:none;z-index:0;opacity:.32}
-.sled-map .sled-map-img{width:50%;max-width:850px;height:auto;object-fit:contain;filter:blur(2.5px)}
-@media(max-width:1000px){.sled-map{opacity:.25}.sled-map .sled-map-img{width:80%}}
-@media(max-width:560px){.sled-map{opacity:.18}.sled-map .sled-map-img{width:95%}}
-[data-theme="dark"] .sled-map{opacity:.22}
+.sled-map{position:absolute;inset:0;display:flex;align-items:center;justify-content:flex-end;padding-right:2%;pointer-events:none;z-index:0;opacity:.3}
+.sled-map .sled-map-img{width:70%;max-width:1100px;height:auto;object-fit:contain}
+/* Default (no attribute) = dark mode → show dark map */
+.sled-map .sled-map-img--light{display:none}
+.sled-map .sled-map-img--dark{display:block}
+/* Light mode override — show light map, restore stronger opacity */
+[data-theme="light"] .sled-map{opacity:.4}
+[data-theme="light"] .sled-map .sled-map-img--light{display:block}
+[data-theme="light"] .sled-map .sled-map-img--dark{display:none}
+@media(max-width:1000px){.sled-map{opacity:.22}[data-theme="light"] .sled-map{opacity:.3}.sled-map .sled-map-img{width:95%}}
+@media(max-width:560px){.sled-map{opacity:.16}[data-theme="light"] .sled-map{opacity:.2}.sled-map .sled-map-img{width:100%}}
 
 /* Capitol dome image (transparent PNG), in FRONT of everything */
-.sled-capitol{position:absolute;right:-58px;bottom:-40px;width:100%;max-width:620px;height:auto;z-index:3;pointer-events:none;animation:fadeUp .9s var(--ease) .3s both;filter:drop-shadow(0 18px 28px rgba(15,30,80,.18))}
-[data-theme="dark"] .sled-capitol{opacity:.92}
+.sled-capitol{position:absolute;right:-73px;bottom:-40px;width:100%;max-width:620px;height:auto;z-index:3;pointer-events:none;animation:sled-capitol-in .9s var(--ease) .3s both;filter:drop-shadow(0 18px 28px rgba(15,30,80,.18))}
+@keyframes sled-capitol-in{from{opacity:0;transform:translateY(24px)}to{opacity:.9;transform:translateY(0)}}
+[data-theme="dark"] .sled-capitol{animation-name:sled-capitol-in-dark}
+@keyframes sled-capitol-in-dark{from{opacity:0;transform:translateY(24px)}to{opacity:.82;transform:translateY(0)}}
 @media(max-width:1000px){.sled-capitol{right:0;bottom:-30px;width:70%;max-width:500px}}
 @media(max-width:560px){.sled-capitol{position:relative;right:auto;bottom:auto;width:75%;max-width:320px;margin:1.5rem auto 0;display:block}}
 
 /* RFP Status ACTIVE badge — rectangular pill (teal) */
-.sled-active-badge{position:absolute;top:0;right:24px;display:flex;align-items:center;gap:1rem;background:linear-gradient(160deg,#2F6E7B 0%,#1F525C 60%,#173E47 100%);color:#fff;border-radius:.85rem;padding:.95rem 1.15rem;border:1px solid rgba(255,255,255,.14);box-shadow:0 18px 40px -10px rgba(22,63,73,.45),0 8px 18px -6px rgba(22,63,73,.28),inset 0 1px 0 rgba(255,255,255,.18);z-index:4;animation:sled-active-float 4s ease-in-out infinite,fadeUp .7s var(--ease) .35s both}
-@keyframes sled-active-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.sled-active-badge{position:absolute;top:0;right:24px;display:flex;align-items:center;gap:1rem;background:linear-gradient(160deg,#2F6E7B 0%,#1F525C 60%,#173E47 100%);color:#fff;border-radius:.85rem;padding:.95rem 1.15rem;border:1px solid rgba(255,255,255,.14);box-shadow:0 18px 40px -10px rgba(22,63,73,.45),0 8px 18px -6px rgba(22,63,73,.28),inset 0 1px 0 rgba(255,255,255,.18);z-index:4;animation:sled-active-float 5.5s cubic-bezier(.45,.05,.55,.95) 5s infinite,fadeUp .7s var(--ease) .35s both}
+@keyframes sled-active-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 .sled-active-badge .sled-active-text{display:flex;flex-direction:column;gap:.18rem;text-align:left}
 .sled-active-badge .lbl{font-family:var(--font-mono);font-size:.62rem;font-weight:600;letter-spacing:.16em;color:rgba(255,255,255,.75);text-transform:uppercase;line-height:1}
 .sled-active-badge .val{font-family:var(--font-display);font-size:1.3rem;font-weight:800;color:#fff;letter-spacing:.05em;line-height:1}
 .sled-active-badge .sled-active-icon{width:28px;height:28px;color:rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .sled-active-badge .sled-active-icon svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 
-/* RFP card */
-.sled-rfp-card{position:absolute;left:90px;top:50px;z-index:2;background:var(--bg-card);border:1px solid var(--border);border-radius:1.25rem;padding:1.2rem;box-shadow:0 30px 60px rgba(15,30,80,.13),0 4px 12px rgba(15,30,80,.05);max-width:500px;display:flex;flex-direction:column;gap:.55rem;transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
-.sled-rfp-card:hover{transform:translateY(-3px);box-shadow:0 36px 70px rgba(15,30,80,.18)}
+/* RFP card — decorative, non-interactive, gentle drift left and back */
+.sled-rfp-card{position:absolute;left:90px;top:50px;z-index:2;background:var(--bg-card);border:1px solid var(--border);border-radius:1.25rem;padding:1.2rem;box-shadow:0 30px 60px rgba(15,30,80,.13),0 4px 12px rgba(15,30,80,.05);max-width:500px;display:flex;flex-direction:column;gap:.55rem;pointer-events:none;animation:sled-rfp-card-drift 6s ease-in-out 5s infinite}
+@keyframes sled-rfp-card-drift{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 @media(max-width:1000px){.sled-rfp-card{position:relative;left:auto;top:auto;margin:60px auto 0}}
+@media(prefers-reduced-motion:reduce){.sled-rfp-card{animation:none}}
 
 /* Card header */
 .sled-rfp-head{display:flex;flex-direction:column;gap:.4rem;padding:.2rem .2rem .15rem}
@@ -123,9 +133,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .sled-rfp-meta .lbl{font-family:var(--font-mono);font-size:.6rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);line-height:1}
 .sled-rfp-meta .val{font-family:var(--font-display);font-size:1rem;font-weight:800;color:var(--text-primary);letter-spacing:-.01em;line-height:1.1}
 
-/* Row sub-cards (Scope / Guidelines / Deadline) */
-.sled-rfp-row{display:flex;align-items:center;gap:.85rem;padding:.85rem 1rem;border:1px solid var(--border);border-radius:.85rem;background:transparent;text-decoration:none;color:inherit;transition:border-color .2s,background .2s}
-.sled-rfp-row:hover{border-color:rgba(59,130,246,.35);background:rgba(59,130,246,.03)}
+/* Row sub-cards (Scope / Guidelines / Deadline) — static */
+.sled-rfp-row{display:flex;align-items:center;gap:.85rem;padding:.85rem 1rem;border:1px solid var(--border);border-radius:.85rem;background:transparent;text-decoration:none;color:inherit}
 .sled-rfp-row-icon{width:32px;height:32px;border-radius:50%;background:rgba(241,245,249,.6);display:flex;align-items:center;justify-content:center;color:var(--text-muted);flex-shrink:0}
 [data-theme="dark"] .sled-rfp-row-icon{background:rgba(255,255,255,.04)}
 .sled-rfp-row-icon svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
@@ -135,9 +144,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .sled-rfp-chevron{color:var(--text-muted);flex-shrink:0}
 .sled-rfp-chevron svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
-/* CTA — dark navy (matches design) */
-.sled-rfp-cta{display:flex;align-items:center;justify-content:center;width:100%;background:linear-gradient(135deg,#0F1B3D 0%,#192C5B 50%,#0F1B3D 100%);background-size:200% 100%;color:#fff;border:none;border-radius:.85rem;padding:.95rem 1rem;font-size:.95rem;font-weight:700;cursor:pointer;text-decoration:none;margin-top:.4rem;transition:transform .25s,box-shadow .25s,background-position .4s;box-shadow:0 12px 28px rgba(15,27,61,.32),0 1px 0 rgba(255,255,255,.08) inset}
-.sled-rfp-cta:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(15,27,61,.45);color:#fff;background-position:100% 0}
+/* CTA — dark navy, decorative, gentle counter-drift */
+.sled-rfp-cta{display:flex;align-items:center;justify-content:center;width:100%;background:linear-gradient(135deg,#0F1B3D 0%,#192C5B 50%,#0F1B3D 100%);color:#fff;border:none;border-radius:.85rem;padding:.95rem 1rem;font-size:.95rem;font-weight:700;text-decoration:none;margin-top:.4rem;box-shadow:0 12px 28px rgba(15,27,61,.32),0 1px 0 rgba(255,255,255,.08) inset;animation:sled-cta-drift 5s cubic-bezier(.45,.05,.55,.95) 5s infinite}
+@keyframes sled-cta-drift{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+@media(prefers-reduced-motion:reduce){.sled-rfp-cta{animation:none}}
 
 @media(max-width:560px){
     .sled-rfp-card{padding:1.15rem;max-width:100%}
@@ -323,13 +333,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="sled-hero" aria-label="SLED Delivery Partner Hero">
 <!-- US map background — spans the whole hero as a faded watermark -->
 <div class="sled-map" aria-hidden="true">
-    <img src="images/us-map.svg" alt="" class="sled-map-img" loading="lazy">
+    <img src="images/us-map.png" alt="" class="sled-map-img sled-map-img--light" loading="lazy">
+    <img src="images/us-map-dark.png" alt="" class="sled-map-img sled-map-img--dark" loading="lazy">
 </div>
 <div class="container">
 <div class="sled-hero-grid">
 <div>
 <h1>Powering procurement across the <span class="text-glow">US SLED.</span></h1>
-<p class="sled-lead">From RFP tracking to compliance — Croncore helps you win in federal, state, and local government markets.</p>
+<p class="sled-lead">We help US prime contractors review SLED opportunities, prepare stronger bid responses, and move faster before submission.</p>
+<p class="sled-lead">From RFQ review to requirement mapping, compliance checks, pricing support, and technical delivery planning, we help your team decide what to pursue and how to respond with confidence.</p>
 </div>
 
 <aside class="sled-hero-visual" aria-label="Sample SLED RFP">
@@ -374,7 +386,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </div>
 
-        <a href="contact" class="sled-rfp-row">
+        <div class="sled-rfp-row" aria-hidden="true">
             <div class="sled-rfp-row-icon">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                     <path d="M9 4h6a2 2 0 0 1 2 2v0H7v0a2 2 0 0 1 2-2z"/>
@@ -387,9 +399,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="sled-rfp-row-title">Project Scope</div>
             </div>
             <div class="sled-rfp-chevron"><svg viewBox="0 0 24 24" fill="none"><polyline points="9 18 15 12 9 6"/></svg></div>
-        </a>
+        </div>
 
-        <a href="contact" class="sled-rfp-row">
+        <div class="sled-rfp-row" aria-hidden="true">
             <div class="sled-rfp-row-icon">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                     <path d="M4 5a2 2 0 0 1 2-2h5v18H6a2 2 0 0 1-2-2V5z"/>
@@ -400,9 +412,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="sled-rfp-row-title">Proposal Guidelines</div>
             </div>
             <div class="sled-rfp-chevron"><svg viewBox="0 0 24 24" fill="none"><polyline points="9 18 15 12 9 6"/></svg></div>
-        </a>
+        </div>
 
-        <a href="contact" class="sled-rfp-row">
+        <div class="sled-rfp-row" aria-hidden="true">
             <div class="sled-rfp-row-icon">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                     <rect x="3" y="5" width="18" height="16" rx="2"/>
@@ -416,9 +428,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="sled-rfp-row-sub">July 30, 2026</div>
             </div>
             <div class="sled-rfp-chevron"><svg viewBox="0 0 24 24" fill="none"><polyline points="9 18 15 12 9 6"/></svg></div>
-        </a>
+        </div>
 
-        <a href="contact" class="sled-rfp-cta">Request RFP Package</a>
+        <div class="sled-rfp-cta" aria-hidden="true">Request RFP Package</div>
     </div>
 </aside>
 
