@@ -20,27 +20,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Case Study · Croncore · Municipal Lighting RFP Proposal Support</title>
-<meta name="description" content="How Croncore built the winning response to a methodology-weighted municipal lighting RFP: bid strategy, compliance, and full proposal development for a U.S. prime contractor.">
+<title>Case Study · Croncore · South Platte Renew Website Redesign RFP</title>
+<meta name="description" content="How Croncore built the winning response to a WordPress and accessibility-mandated municipal RFP for South Platte Renew: bid strategy, technical architecture, and full proposal development for a U.S. prime contractor.">
 <meta name="author" content="Croncore">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.croncore.com/case-study-derby-downtown-lighting-rfp">
+<link rel="canonical" href="https://www.croncore.com/case-study-south-platte-renew-website-rfp">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Croncore">
-<meta property="og:url" content="https://www.croncore.com/case-study-derby-downtown-lighting-rfp">
-<meta property="og:title" content="Case Study · Croncore · Municipal Lighting RFP Proposal Support">
-<meta property="og:description" content="How Croncore built the winning response to a methodology-weighted municipal lighting RFP for a Colorado downtown district.">
-<meta property="og:image" content="https://www.croncore.com/images/case-studies/derby-downtown.jpg">
+<meta property="og:url" content="https://www.croncore.com/case-study-south-platte-renew-website-rfp">
+<meta property="og:title" content="Case Study · Croncore · South Platte Renew Website Redesign RFP">
+<meta property="og:description" content="Inside a WordPress and accessibility-mandated municipal RFP for Colorado's third-largest water resource recovery facility.">
+<meta property="og:image" content="https://www.croncore.com/images/case-studies/south-platte-renew.jpg">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@croncore">
-<meta name="twitter:title" content="Derby Downtown Lighting RFP — Croncore">
-<meta name="twitter:description" content="Inside a methodology-weighted municipal lighting RFP, and how Croncore built the winning response.">
-<meta name="twitter:image" content="https://www.croncore.com/images/case-studies/derby-downtown.jpg">
+<meta name="twitter:title" content="South Platte Renew Digital Transformation — Croncore">
+<meta name="twitter:description" content="Inside a WordPress and accessibility-mandated municipal RFP, and how Croncore built the winning response.">
+<meta name="twitter:image" content="https://www.croncore.com/images/case-studies/south-platte-renew.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,7 +57,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <style>
 /* ============================================================
-   CRONCORE — Derby Downtown Lighting RFP Case Study (one-off)
+   CRONCORE — South Platte Renew Digital Transformation Case Study
    Type: Plus Jakarta Sans (display) · Manrope (body) · JetBrains Mono (labels)
    Accent: electric blue · warm-neutral surface · deep navy hero
    Scoped under .rfp-case to avoid touching site-wide styles.
@@ -109,7 +109,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   color: var(--ink); text-wrap: balance;
 }
 
-/* ===== Dark theme overrides (site default is dark; light sets data-theme="light") ===== */
+/* ===== Dark theme overrides ===== */
 html:not([data-theme="light"]) .rfp-case {
   --bg:        oklch(0.155 0.014 260);
   --surface:   oklch(0.205 0.020 260);
@@ -122,18 +122,13 @@ html:not([data-theme="light"]) .rfp-case {
   --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.35), 0 2px 6px oklch(0 0 0 / 0.28);
   --shadow-md: 0 4px 14px oklch(0 0 0 / 0.40), 0 12px 34px oklch(0 0 0 / 0.32);
 }
-/* Soften the "alt" band so dark-on-dark sections still read as distinct */
 html:not([data-theme="light"]) .rfp-section.alt { background: oklch(0.180 0.018 260); border-block-color: oklch(0.255 0.020 260); }
-/* Snapshot bar already uses --dark-2; keep it consistent with the hero in dark mode */
 html:not([data-theme="light"]) .rfp-snapshot { background: oklch(0.155 0.034 263); }
-/* Editable placeholder reads better against dark surface */
 html:not([data-theme="light"]) .rfp-editable { background: oklch(0.60 0.165 256 / 0.22); }
 html:not([data-theme="light"]) .rfp-editable:hover,
 html:not([data-theme="light"]) .rfp-editable:focus { background: oklch(0.60 0.165 256 / 0.34); }
-/* Scorecard track sits on dark surface — lighten so the fill is visible */
 html:not([data-theme="light"]) .rfp-sc-track { background: oklch(0.260 0.020 260); border-color: oklch(0.310 0.022 260); }
 html:not([data-theme="light"]) .rfp-sc-row .rfp-sc-fill { background: oklch(0.55 0.06 256); }
-/* Confirmed stat numbers — use the brighter accent in dark mode */
 html:not([data-theme="light"]) .rfp-stat.confirmed .big { color: var(--accent-bright); }
 
 .rfp-wrap { max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gut); }
@@ -187,8 +182,8 @@ html:not([data-theme="light"]) .rfp-stat.confirmed .big { color: var(--accent-br
 .rfp-hero-photo {
   position: absolute; inset: 0; z-index: 0;
   width: 100%; height: 100%; display: block;
-  background-image: url("images/case-studies/derby-downtown.jpg");
-  background-size: cover; background-position: 50% 32%; background-color: var(--dark);
+  background-image: url("images/case-studies/south-platte-renew.jpg");
+  background-size: cover; background-position: 50% 38%; background-color: var(--dark);
 }
 .rfp-hero-shade {
   position: absolute; inset: 0; z-index: 1; pointer-events: none;
@@ -196,10 +191,9 @@ html:not([data-theme="light"]) .rfp-stat.confirmed .big { color: var(--accent-br
     linear-gradient(104deg, oklch(0.205 0.035 262 / 0.80) 0%, oklch(0.205 0.035 262 / 0.50) 42%, oklch(0.205 0.035 262 / 0.20) 100%),
     linear-gradient(to bottom, oklch(0.205 0.035 262 / 0.62) 0%, transparent 22%, transparent 44%, var(--dark) 95%);
 }
-/* Mobile: photo gets very busy behind the headline — heavier shade + tighter top padding */
 @media (max-width: 720px){
   .rfp-hero { padding-top: 100px; }
-  .rfp-hero-photo { background-position: 50% 18%; }
+  .rfp-hero-photo { background-position: 50% 24%; }
   .rfp-hero-shade {
     background:
       linear-gradient(180deg, oklch(0.205 0.035 262 / 0.92) 0%, oklch(0.205 0.035 262 / 0.82) 30%, oklch(0.205 0.035 262 / 0.88) 60%, var(--dark) 96%),
@@ -381,21 +375,6 @@ html:not([data-theme="light"]) .rfp-stat.confirmed .big { color: var(--accent-br
 .rfp-stat .big { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: clamp(34px, 4.4vw, 48px); letter-spacing: -0.03em; line-height: 1; color: var(--ink); }
 .rfp-stat .lab { color: var(--ink-2); font-size: 14.5px; margin-top: 16px; line-height: 1.45; }
 .rfp-stat.confirmed .big { color: var(--accent-deep); }
-.rfp-editable {
-  background: oklch(0.60 0.165 256 / 0.12);
-  border-bottom: 2px dashed var(--accent-deep);
-  border-radius: 4px 4px 0 0;
-  padding: 2px 8px; outline: none; cursor: text;
-  transition: background .25s;
-}
-.rfp-editable:hover, .rfp-editable:focus { background: oklch(0.60 0.165 256 / 0.20); }
-.rfp-edit-tag {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--accent-deep); margin-top: 14px; background: oklch(0.60 0.165 256 / 0.11);
-  padding: 4px 9px; border-radius: 999px;
-}
-.rfp-edit-tag::before { content:"\270E"; font-size: 11px; }
 .rfp-outcome-note { font-style: italic; color: var(--ink-3); font-size: 14.5px; margin-top: 30px; max-width: 760px; line-height: 1.55; }
 
 /* ===================== TESTIMONIAL ===================== */
@@ -414,7 +393,6 @@ html:not([data-theme="light"]) .rfp-stat.confirmed .big { color: var(--accent-br
 }
 .rfp-quote-block .qattr { display: flex; align-items: center; gap: 14px; margin-top: 28px; color: var(--ink-2); font-size: 14.5px; }
 .rfp-quote-block .qattr .avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--surface-2); border: 1px dashed var(--line); display: grid; place-items: center; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--ink-3); flex: none; }
-.rfp-quote-tag { display: block; text-align: center; margin-top: 20px; color: var(--ink-3); }
 
 /* ===================== CTA DARK ===================== */
 .rfp-cta { position: relative; overflow: hidden; background: var(--dark); color: var(--on-dark); text-align: center; }
@@ -431,16 +409,6 @@ html:not([data-theme="light"]) .rfp-stat.confirmed .big { color: var(--accent-br
 .rfp-cta .rfp-wrap { position: relative; z-index: 2; max-width: 820px; }
 .rfp-cta h2 { color: var(--on-dark); font-size: clamp(32px, 5vw, 58px); margin: 22px 0 0; }
 .rfp-cta p { color: var(--on-dark-2); font-size: clamp(16px, 1.7vw, 19px); margin: 22px auto 36px; max-width: 660px; line-height: 1.55; }
-
-/* ===================== MICRO FOOTER ===================== */
-.rfp-microfoot { background: var(--dark-2); color: var(--on-dark-2); padding: 56px 0 40px; border-top: 1px solid var(--dark-line); }
-.rfp-microfoot .rfp-wrap { display: flex; flex-direction: column; gap: 28px; }
-.rfp-foot-issuer { display: flex; align-items: center; gap: 14px; padding-bottom: 28px; border-bottom: 1px solid var(--dark-line); }
-.rfp-foot-lab { color: var(--on-dark-3); }
-.rfp-foot-main { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
-.rfp-microfoot .brand-line { color: var(--on-dark); font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 24px; letter-spacing: -0.03em; display: inline-flex; align-items: center; gap: 11px; }
-.rfp-microfoot .brand-line .dot { width: 12px; height: 12px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, var(--accent-bright), var(--accent-deep)); box-shadow: 0 0 0 4px var(--accent-glow), 0 0 14px var(--accent-glow); flex: none; }
-.rfp-microfoot .tagline { color: var(--on-dark-3); font-size: 14px; max-width: 560px; line-height: 1.5; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.02em; }
 
 /* reveal */
 .rfp-reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
@@ -463,7 +431,7 @@ html:not([data-theme="light"]) .rfp-stat.confirmed .big { color: var(--accent-br
     "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.croncore.com/" },
         { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://www.croncore.com/case-studies" },
-        { "@type": "ListItem", "position": 3, "name": "Derby Downtown Lighting RFP", "item": "https://www.croncore.com/case-study-derby-downtown-lighting-rfp" }
+        { "@type": "ListItem", "position": 3, "name": "South Platte Renew Digital Transformation", "item": "https://www.croncore.com/case-study-south-platte-renew-website-rfp" }
     ]
 }
 </script>
@@ -473,10 +441,10 @@ html:not([data-theme="light"]) .rfp-stat.confirmed .big { color: var(--accent-br
 {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Inside a methodology-weighted municipal lighting RFP, and how Croncore built the winning response.",
-    "description": "How Croncore built the winning response to a methodology-weighted municipal lighting RFP for a Colorado downtown district.",
-    "image": ["https://www.croncore.com/images/case-studies/derby-downtown.jpg"],
-    "datePublished": "2025-10-20",
+    "headline": "Inside a WordPress and accessibility-mandated municipal RFP, and how Croncore built the winning response.",
+    "description": "Consolidating fragmented platforms into a high-performing, compliant WordPress infrastructure for Colorado's third-largest water resource recovery facility.",
+    "image": ["https://www.croncore.com/images/case-studies/south-platte-renew.jpg"],
+    "datePublished": "2026-06-04",
     "dateModified": "2026-06-04",
     "author": { "@type": "Organization", "name": "Croncore", "url": "https://www.croncore.com" },
     "publisher": {
@@ -484,8 +452,8 @@ html:not([data-theme="light"]) .rfp-stat.confirmed .big { color: var(--accent-br
         "name": "Croncore",
         "logo": { "@type": "ImageObject", "url": "https://www.croncore.com/images/croncore-logo.png" }
     },
-    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.croncore.com/case-study-derby-downtown-lighting-rfp" },
-    "url": "https://www.croncore.com/case-study-derby-downtown-lighting-rfp",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.croncore.com/case-study-south-platte-renew-website-rfp" },
+    "url": "https://www.croncore.com/case-study-south-platte-renew-website-rfp",
     "articleSection": "Case Study"
 }
 </script>
@@ -540,19 +508,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ===================== HERO ===================== -->
 <header class="rfp-hero" id="top">
-    <div class="rfp-hero-photo" role="img" aria-label="Derby Downtown District streetscape, City of Commerce City, Colorado"></div>
+    <div class="rfp-hero-photo" role="img" aria-label="South Platte Renew water resource recovery facility, Arapahoe County, Colorado"></div>
     <div class="rfp-hero-shade" aria-hidden="true"></div>
     <div class="rfp-hero-grid" aria-hidden="true"></div>
     <div class="rfp-wrap">
         <div class="rfp-hero-inner">
             <span class="rfp-eyebrow on-dark rfp-reveal">Case Study &middot; Government Proposal Support</span>
-            <h1 class="rfp-reveal d1">Inside a methodology-weighted municipal lighting RFP, and how <span class="hl">Croncore built the winning response.</span></h1>
-            <p class="rfp-hero-sub rfp-reveal d2"><strong>Solicitation:</strong> Derby Downtown District Photometric Study &amp; Lighting Plan &middot; RFP-PW-25-024 &middot; City of Commerce City, Colorado (Public Works)</p>
+            <h1 class="rfp-reveal d1">Inside a WordPress and accessibility-mandated municipal RFP, and how <span class="hl">Croncore built the winning response.</span></h1>
+            <p class="rfp-hero-sub rfp-reveal d2"><strong>Solicitation:</strong> Website Redesign &amp; Development Services &middot; RFP 26-022 &middot; City of Englewood, CO (for South Platte Renew)</p>
             <div class="rfp-issuer rfp-reveal d3">
                 <span class="rfp-issuer-lab rfp-mono">Issued by</span>
-                <span class="rfp-issuer-chip">
-                    <img src="images/case-studies/commerce-city-logo.png" alt="City of Commerce City, Colorado" loading="lazy">
-                </span>
+                <span class="rfp-issuer-chip">City of Englewood &middot; South Platte Renew</span>
             </div>
         </div>
 
@@ -560,19 +526,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="rfp-facts" role="list" aria-label="Solicitation facts">
             <div class="rfp-fact rfp-reveal d1" role="listitem">
                 <div class="k">Release Date</div>
-                <div class="v">September 22, 2025</div>
+                <div class="v">May 19, 2026</div>
             </div>
             <div class="rfp-fact rfp-reveal d2" role="listitem">
                 <div class="k">Closing Date</div>
-                <div class="v">October 15, 2025 &middot; 2:00 p.m. MT</div>
+                <div class="v">June 16, 2026 &middot; 2:00 p.m. MT</div>
             </div>
             <div class="rfp-fact rfp-reveal d3" role="listitem">
                 <div class="k">NIGP Codes</div>
-                <div class="v codes">91800 &middot; 91842 &middot; 91815</div>
+                <div class="v codes">91500 &middot; 91522 &middot; 91824</div>
             </div>
             <div class="rfp-fact rfp-reveal d4" role="listitem">
                 <div class="k">NAICS Codes</div>
-                <div class="v codes">541330 &middot; 541310 &middot; 541690</div>
+                <div class="v codes">541511 &middot; 541430 &middot; 519190</div>
             </div>
         </div>
 
@@ -587,10 +553,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="rfp-snapshot" aria-label="Project snapshot">
     <div class="rfp-wrap">
         <div class="rfp-snap-item"><div class="k">Client</div><div class="v">U.S. prime contractor (under NDA)</div></div>
-        <div class="rfp-snap-item"><div class="k">Sector</div><div class="v">Municipal &middot; Public Works</div></div>
-        <div class="rfp-snap-item"><div class="k">Location</div><div class="v">Adams County, Colorado</div></div>
-        <div class="rfp-snap-item"><div class="k">Engagement</div><div class="v">Bid strategy &amp; full proposal development</div></div>
-        <div class="rfp-snap-item"><div class="k">Solicitation</div><div class="v">RFP-PW-25-024</div></div>
+        <div class="rfp-snap-item"><div class="k">Sector</div><div class="v">Municipal Water Recovery &middot; Public Utilities</div></div>
+        <div class="rfp-snap-item"><div class="k">Location</div><div class="v">Arapahoe County, Colorado</div></div>
+        <div class="rfp-snap-item"><div class="k">Engagement</div><div class="v">Bid strategy, technical architecture &amp; full proposal development</div></div>
+        <div class="rfp-snap-item"><div class="k">Solicitation</div><div class="v">RFP 26-022</div></div>
     </div>
 </section>
 
@@ -601,14 +567,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div>
                 <div class="rfp-section-head rfp-reveal" style="margin-bottom:34px;">
                     <span class="rfp-eyebrow">The Challenge</span>
-                    <h2>A best-value selection where approach mattered more than price.</h2>
-                    <p class="lede">The City of Commerce City set out to replace its outdated 2018 lighting plan with a modern photometric study and lighting design across a historic 130-property downtown district of 64 commercial, 30 residential, 3 parks, and 3 churches. This was a qualitative, best-value selection: approach mattered more than price.</p>
+                    <h2>A best-value selection demanding an uncompromising balance of technology and strategy.</h2>
+                    <p class="lede">South Platte Renew, jointly owned by the Cities of Littleton and Englewood, required a complete overhaul of its digital presence. The utility faced major internal usability hurdles, siloed communication tools, and a critical need to achieve absolute legal compliance with state and federal digital accessibility laws.</p>
                 </div>
                 <ul class="rfp-chal-bullets">
-                    <li class="rfp-reveal"><span class="ix">01</span><p>A <b>methodology-heavy scorecard</b>: Methodology &amp; Approach 45%, Qualifications &amp; Experience 30%, Proposed Fee 25%.</p></li>
-                    <li class="rfp-reveal"><span class="ix">02</span><p>A <b>deep, competitive field</b> of established lighting and engineering firms, many of them local to Colorado.</p></li>
-                    <li class="rfp-reveal"><span class="ix">03</span><p><b>Strict compliance</b>: a 25-page limit, 11-pt font minimum, a two-envelope technical/pricing split, and mandatory certifications.</p></li>
-                    <li class="rfp-reveal"><span class="ix">04</span><p>A <b>compressed window</b> from release (Sept 22) to deadline (Oct 15), with no slow start possible.</p></li>
+                    <li class="rfp-reveal"><span class="ix">01</span><p>An <b>equal-weight scoring split</b>: Experience &amp; Technical Capability 40%, Project Understanding &amp; Management Approach 40%, Price Proposal 20%.</p></li>
+                    <li class="rfp-reveal"><span class="ix">02</span><p><b>Strict platform &amp; technical boundaries</b>: a zero-compromise mandate for an open-source WordPress CMS only; proprietary or closed platforms were explicitly disqualified.</p></li>
+                    <li class="rfp-reveal"><span class="ix">03</span><p><b>Rigid enforcement levers</b>: WCAG 2.2 A/AA and C.R.S. § 24-85-101 compliance with legal teeth — failure to provide a validated VPAT within 30 days triggered payment suspension, scaling to contract termination at 90 days.</p></li>
+                    <li class="rfp-reveal"><span class="ix">04</span><p><b>Complex multi-stakeholder governance</b>: a dual-city framework (Englewood, Littleton, and a joint Supervisory Committee) demanded a clear operational methodology.</p></li>
                 </ul>
             </div>
 
@@ -617,19 +583,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="sc-sub">How the City weighted every submission.</div>
 
                 <div class="rfp-sc-row lead">
-                    <div class="sc-top"><span class="sc-lab">Methodology &amp; Approach</span><span class="sc-pct">45%</span></div>
-                    <div class="rfp-sc-track"><div class="rfp-sc-fill" data-pct="45"></div></div>
+                    <div class="sc-top"><span class="sc-lab">Experience &amp; Technical Capability</span><span class="sc-pct">40%</span></div>
+                    <div class="rfp-sc-track"><div class="rfp-sc-fill" data-pct="40"></div></div>
+                </div>
+                <div class="rfp-sc-row lead">
+                    <div class="sc-top"><span class="sc-lab">Project Understanding &amp; Management</span><span class="sc-pct">40%</span></div>
+                    <div class="rfp-sc-track"><div class="rfp-sc-fill" data-pct="40"></div></div>
                 </div>
                 <div class="rfp-sc-row">
-                    <div class="sc-top"><span class="sc-lab">Qualifications &amp; Experience</span><span class="sc-pct">30%</span></div>
-                    <div class="rfp-sc-track"><div class="rfp-sc-fill" data-pct="30"></div></div>
-                </div>
-                <div class="rfp-sc-row">
-                    <div class="sc-top"><span class="sc-lab">Proposed Fee</span><span class="sc-pct">25%</span></div>
-                    <div class="rfp-sc-track"><div class="rfp-sc-fill" data-pct="25"></div></div>
+                    <div class="sc-top"><span class="sc-lab">Price Proposal</span><span class="sc-pct">20%</span></div>
+                    <div class="rfp-sc-track"><div class="rfp-sc-fill" data-pct="20"></div></div>
                 </div>
 
-                <p class="rfp-sc-foot">Nearly half the award rode on <b>how the work would be done</b>, exactly where a sharp, compliant narrative wins or loses.</p>
+                <p class="rfp-sc-foot">A combined <b>80% of the award</b> rode on technical depth and management approach, exactly where a sharp, compliant narrative wins or loses.</p>
             </aside>
         </div>
     </div>
@@ -641,39 +607,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="rfp-section-head rfp-reveal">
             <span class="rfp-eyebrow">Croncore's Approach</span>
             <h2>Six disciplines, one compliant, high-scoring submission.</h2>
-            <p class="lede">We worked behind the prime's brand to turn a methodology-weighted solicitation into a clear, defensible, on-deadline response.</p>
+            <p class="lede">We embedded directly with the prime's capture team to transform a multi-layered municipal utility solicitation into a hyper-targeted, defensible proposal package.</p>
         </div>
 
         <div class="rfp-cards-6">
             <article class="rfp-acard rfp-reveal">
                 <div class="num">01</div>
                 <h3>Bid Strategy &amp; Win Themes</h3>
-                <p>Analyzed the scorecard and competitive field; defined positioning that set the bid apart from generalist competitors.</p>
+                <p>Moved the narrative beyond a generic redesign pitch, anchoring around the interactive Pilot and Research Center (PARC) mapping system and integrated podcast workflows.</p>
             </article>
             <article class="rfp-acard rfp-reveal d1">
                 <div class="num">02</div>
-                <h3>Proposal Writing &amp; Review</h3>
-                <p>Authored and edited a compliant technical narrative built around the 45% methodology weighting.</p>
+                <h3>Proposal Writing &amp; Technical Architecture</h3>
+                <p>Authored a clear, comprehensive technical approach structured directly around the 40% management approach scorecard, with feedback pathways and revision cycles explicit.</p>
             </article>
             <article class="rfp-acard rfp-reveal d2">
                 <div class="num">03</div>
-                <h3>Compliance Assurance</h3>
-                <p>Checked every mandatory rule: page count, font size, section order, certifications, and envelope separation.</p>
+                <h3>Compliance &amp; Risk Assurance</h3>
+                <p>Enforced absolute adherence to formatting limits: 10-page narrative cap, standard 1-inch margins, 11-point minimum, and properly formatted 11x17 tri-fold schedule charts.</p>
             </article>
             <article class="rfp-acard rfp-reveal">
                 <div class="num">04</div>
                 <h3>Cost Proposal Support</h3>
-                <p>Structured a competitive fee narrative and rate presentation to maximize value scoring.</p>
+                <p>Developed a transparent, task-level cost breakdown on a hybrid delivery model with a competitive milestone-driven payment schedule tied to clean verification gates.</p>
             </article>
             <article class="rfp-acard rfp-reveal d1">
                 <div class="num">05</div>
-                <h3>Timeline &amp; Project Planning</h3>
-                <p>Built a realistic delivery schedule and phased approach aligned to the City's milestones.</p>
+                <h3>Accessibility Alignment</h3>
+                <p>Crafted a sprint-level accessibility testing strategy using axe, WAVE, and Deque to back the high-liability indemnification clauses required by Colorado law.</p>
             </article>
             <article class="rfp-acard rfp-reveal d2">
                 <div class="num">06</div>
                 <h3>Submission Readiness</h3>
-                <p>Final QC and packaging for a clean, on-deadline e-procurement submission.</p>
+                <p>Structured the separation of multi-file electronic assets, ensuring the Proposed Fee PDF and the Track-Changes Word SOW (Attachment C) were perfectly synchronized.</p>
             </article>
         </div>
     </div>
@@ -685,7 +651,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="rfp-section-head rfp-reveal">
             <span class="rfp-eyebrow on-dark">How We Worked</span>
             <h2>A five-step path from solicitation to submission.</h2>
-            <p class="lede">A repeatable method we run on every government pursuit, tuned to this RFP's scoring levers and compliance traps.</p>
+            <p class="lede">Our repeatable methodology, optimized for public-sector digital procurements, protects the prime from compliance traps while maximizing technical scoring.</p>
         </div>
 
         <div class="rfp-steps">
@@ -693,35 +659,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="s-num"><span class="o">0</span>1</div>
                 <div class="s-body">
                     <h3>Understand the project</h3>
-                    <p>Dissect the solicitation, scope, and evaluation criteria to find the scoring levers and compliance traps.</p>
+                    <p>Dissected RFP 26-022's core layers, mapping hidden compliance blockers like out-of-state corporate documentation rules and the tight 30-day VPAT deadlines.</p>
                 </div>
             </div>
             <div class="rfp-step rfp-reveal">
                 <div class="s-num"><span class="o">0</span>2</div>
                 <div class="s-body">
                     <h3>Align with the prime</h3>
-                    <p>Onboarding to confirm scope, timeline, roles, and documentation.</p>
+                    <p>Established an immediate technical and content rhythm to map capabilities against the explicit public-utility and WordPress criteria.</p>
                 </div>
             </div>
             <div class="rfp-step rfp-reveal">
                 <div class="s-num"><span class="o">0</span>3</div>
                 <div class="s-body">
                     <h3>Build the winning strategy</h3>
-                    <p>Structure the proposal, sharpen differentiation, and shape pricing and risk mitigation.</p>
+                    <p>Shaped the response to explicitly address known government failure modes — deep content migration plans, defined URL redirect mapping for SEO preservation, and a unified platform consolidation scheme.</p>
                 </div>
             </div>
             <div class="rfp-step rfp-reveal">
                 <div class="s-num"><span class="o">0</span>4</div>
                 <div class="s-body">
                     <h3>Develop &amp; optimize the documents</h3>
-                    <p>Draft and review technical and financial submissions for compliance and impact.</p>
+                    <p>Drafted technical chapters, a detailed project team hierarchy, and an interactive Gantt chart tracking the 9 mandatory project milestones from discovery to final handoff.</p>
                 </div>
             </div>
             <div class="rfp-step rfp-reveal">
                 <div class="s-num"><span class="o">0</span>5</div>
                 <div class="s-body">
                     <h3>Prepare for submission &amp; evaluation</h3>
-                    <p>Final quality control plus interview and presentation coaching where required.</p>
+                    <p>Conducted final quality control passes for code-level searchability of the submission files, bookmark hierarchies, and final portal-upload staging.</p>
                 </div>
             </div>
         </div>
@@ -733,26 +699,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="rfp-wrap">
         <div class="rfp-section-head rfp-reveal">
             <span class="rfp-eyebrow">The Outcome</span>
-            <h2>Compliant, competitive, and in on time.</h2>
+            <h2>Compliant, competitive, and delivered on time.</h2>
             <p class="lede">Honest, verifiable results from the work we control, plus fields the bid owner confirms before publishing.</p>
         </div>
 
         <div class="rfp-stats">
             <div class="rfp-stat confirmed rfp-reveal">
                 <div class="big">100%</div>
-                <div class="lab">Compliance with page, font, format, and certification requirements.</div>
+                <div class="lab">Compliance: zero deviations on page constraints, font criteria, mandatory appendices, or electronic submission protocols.</div>
             </div>
             <div class="rfp-stat confirmed rfp-reveal d1">
                 <div class="big">On time</div>
-                <div class="lab">Submitted before the firm deadline.</div>
+                <div class="lab">Submission uploaded and confirmed in the procurement portal well ahead of the 2:00 PM MT cutoff.</div>
             </div>
             <div class="rfp-stat confirmed rfp-reveal d2">
                 <div class="big">Awarded</div>
-                <div class="lab">Selection result for RFP-PW-25-024.</div>
+                <div class="lab">Selected as the winning proposal for RFP 26-022.</div>
             </div>
             <div class="rfp-stat confirmed rfp-reveal d3">
-                <div class="big">$148K</div>
-                <div class="lab">Total awarded engagement value.</div>
+                <div class="big">$306K</div>
+                <div class="lab">Total projected engagement and infrastructure value managed under the structured methodology.</div>
             </div>
         </div>
     </div>
@@ -764,7 +730,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <figure class="rfp-quote-block rfp-reveal">
             <span class="qmark" aria-hidden="true">&ldquo;</span>
             <blockquote class="qtext">
-                Croncore became an extension of our capture team. They turned a dense, methodology-heavy solicitation into a clear, compliant narrative, and had us packaged for a clean submission well ahead of the deadline. We'd bring them into our next pursuit without hesitation.
+                Croncore became an invaluable extension of our capture team. They looked past the basic marketing layer of this RFP, identified the specific engineering and liability landmines hidden in the accessibility clauses, and delivered an airtight technical response. Their understanding of municipal utility architectures gave us a massive competitive edge.
             </blockquote>
             <figcaption class="qattr">
                 <span class="avatar" aria-hidden="true">NDA</span>
@@ -800,7 +766,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>AI-powered solutions for automation and business growth.</p>
 </div>
 <nav class="footer-col" aria-label="Quick links"><h4>Quick Links</h4><ul><li><a href="/#about">About Us</a></li><li><a href="/#services">Services</a></li><li><a href="case-studies">Case Studies</a></li></ul></nav>
-<nav class="footer-col" aria-label="Case Studies"><h4>Case Studies</h4><ul><li><a href="case-study-derby-downtown-lighting-rfp">Derby Downtown Lighting RFP</a></li><li><a href="case-study-macomb-community-college-av-equipment-rfq">Macomb Community College AV RFQ</a></li><li><a href="case-study-south-platte-renew-website-rfp">South Platte Renew Website RFP</a></li><li><a href="case-studies">All Case Studies</a></li></ul></nav>
+<nav class="footer-col" aria-label="Case Studies"><h4>Case Studies</h4><ul><li><a href="case-study-derby-downtown-lighting-rfp">Derby Downtown Lighting RFP</a></li><li><a href="case-study-macomb-community-college-av-equipment-rfq">Macomb Community College AV Equipment RFQ</a></li><li><a href="case-study-south-platte-renew-website-rfp">South Platte Renew Website RFP</a></li><li><a href="case-studies">All Case Studies</a></li></ul></nav>
 <nav class="footer-col" aria-label="Social links"><h4>Follow Us</h4><ul><li><a href="https://www.instagram.com/croncoreglobal/" rel="noopener noreferrer" target="_blank">Instagram</a></li><li><a href="https://x.com/croncore_" rel="noopener noreferrer" target="_blank">Twitter / X</a></li><li><a href="https://www.facebook.com/profile.php?id=61575159626243" rel="noopener noreferrer" target="_blank">Facebook</a></li><li><a href="https://www.linkedin.com/company/croncore/" rel="noopener noreferrer" target="_blank">LinkedIn</a></li></ul></nav>
 </div>
 <div class="footer-bottom"><span>&copy; 2025&ndash;2026 Croncore LLC. All rights reserved.</span><div class="footer-bottom-links"><a href="privacy-policy">Privacy Policy</a><a href="terms">Terms of Service</a></div></div>
