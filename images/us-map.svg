@@ -3,8 +3,8 @@
   <title>Blank map of the United States, territories not included</title>
 <defs>
 <style type="text/css">
-.state {fill:#FFFFFF}
-.borders {stroke:#A8C5EF; stroke-width:1.1}
+.state {fill:#A8C5EF; stroke:#A8C5EF; stroke-width:0.5}
+.borders {stroke:none; fill:none}
 </style>
 </defs>
 
