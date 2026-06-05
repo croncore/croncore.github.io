@@ -20,8 +20,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SLED Delivery Partner for US Primes — Remote Subcontractor | Croncore</title>
-<meta name="description" content="Croncore is the remote delivery partner US Primes call when an SLED RFP lands. AI, cybersecurity, ERP/CRM and EdTech — past performance, NAICS coverage, and compliance posture ready to drop into your proposal in 48 hours.">
+<title>SLED Delivery Partner for US Primes: Remote Subcontractor | Croncore</title>
+<meta name="description" content="Croncore is the remote delivery partner US Primes call when an SLED RFP lands. AI, cybersecurity, ERP/CRM and EdTech. Past performance, NAICS coverage, and compliance posture ready to drop into your proposal in 48 hours.">
 <meta name="author" content="Croncore">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.croncore.com/sled-delivery-partner">
@@ -31,15 +31,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Croncore">
 <meta property="og:url" content="https://www.croncore.com/sled-delivery-partner">
-<meta property="og:title" content="SLED Delivery Partner for US Primes — Croncore">
-<meta property="og:description" content="Remote subcontractor for US Primes bidding on SLED RFPs. AI, cybersecurity, ERP/CRM, EdTech — capability statements ready in 48 hours.">
+<meta property="og:title" content="SLED Delivery Partner for US Primes | Croncore">
+<meta property="og:description" content="Remote subcontractor for US Primes bidding on SLED RFPs. AI, cybersecurity, ERP/CRM, EdTech. Capability statements ready in 48 hours.">
 <meta property="og:image" content="https://www.croncore.com/images/croncore-logo.png">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@croncore">
-<meta name="twitter:title" content="SLED Delivery Partner for US Primes — Croncore">
-<meta name="twitter:description" content="The remote bench US Primes call when an SLED RFP lands — bid-stage ready in 48 hours.">
+<meta name="twitter:title" content="SLED Delivery Partner for US Primes | Croncore">
+<meta name="twitter:description" content="The remote bench US Primes call when an SLED RFP lands, bid-stage ready in 48 hours.">
 <meta name="twitter:image" content="https://www.croncore.com/images/croncore-logo.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,7 +58,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 /* ===== SLED page styles ===== */
 .sled-page{padding-top:120px}
 
-/* Eyebrow tag used in section heads (sub-sections only — hero uses .section-tag) */
+/* Eyebrow tag used in section heads (sub-sections only, hero uses .section-tag) */
 .sled-eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--font-mono);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.22);border-radius:999px;padding:.4rem .85rem;margin-bottom:1.3rem}
 .sled-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(0,212,255,.18)}
 
@@ -78,15 +78,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 /* ===== Hero visual (right side: US map + RFP card + ACTIVE badge + Capitol) ===== */
 .sled-hero-visual{position:relative;min-height:600px;animation:slideUpVisible .9s var(--ease) .25s both}
-@media(max-width:1000px){.sled-hero-visual{min-height:auto;padding-top:1rem}}
+@media(max-width:1000px){.sled-hero-visual{position:relative;min-height:auto;padding:40px 0 60px;display:block}}
 
-/* US map watermark — anchored to the right side of the hero */
+/* US map watermark, anchored to the right side of the hero */
 .sled-map{position:absolute;inset:0;display:flex;align-items:center;justify-content:flex-end;padding-right:2%;pointer-events:none;z-index:0;opacity:.3}
 .sled-map .sled-map-img{width:70%;max-width:1100px;height:auto;object-fit:contain}
 /* Default (no attribute) = dark mode → show dark map */
 .sled-map .sled-map-img--light{display:none}
 .sled-map .sled-map-img--dark{display:block}
-/* Light mode override — show light map, restore stronger opacity */
+/* Light mode override, show light map, restore stronger opacity */
 [data-theme="light"] .sled-map{opacity:.4}
 [data-theme="light"] .sled-map .sled-map-img--light{display:block}
 [data-theme="light"] .sled-map .sled-map-img--dark{display:none}
@@ -98,10 +98,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 @keyframes sled-capitol-in{from{opacity:0;transform:translateY(24px)}to{opacity:.9;transform:translateY(0)}}
 [data-theme="dark"] .sled-capitol{animation-name:sled-capitol-in-dark}
 @keyframes sled-capitol-in-dark{from{opacity:0;transform:translateY(24px)}to{opacity:.82;transform:translateY(0)}}
-@media(max-width:1000px){.sled-capitol{right:0;bottom:-30px;width:70%;max-width:500px}}
-@media(max-width:560px){.sled-capitol{position:relative;right:auto;bottom:auto;width:75%;max-width:320px;margin:1.5rem auto 0;display:block}}
+@media(max-width:1000px){.sled-capitol{position:absolute;top:170px;left:50%;transform:translateX(calc(-50% + 10px));right:auto;bottom:auto;width:120%;max-width:120%;height:680px;object-fit:contain;object-position:top;margin:0;display:block;z-index:3;animation:none;opacity:1}}
 
-/* RFP Status ACTIVE badge — rectangular pill (teal) */
+/* RFP Status ACTIVE badge, rectangular pill (teal) */
 .sled-active-badge{position:absolute;top:0;right:24px;display:flex;align-items:center;gap:1rem;background:linear-gradient(160deg,#2F6E7B 0%,#1F525C 60%,#173E47 100%);color:#fff;border-radius:.85rem;padding:.95rem 1.15rem;border:1px solid rgba(255,255,255,.14);box-shadow:0 18px 40px -10px rgba(22,63,73,.45),0 8px 18px -6px rgba(22,63,73,.28),inset 0 1px 0 rgba(255,255,255,.18);z-index:4;animation:sled-active-float 5.5s cubic-bezier(.45,.05,.55,.95) 5s infinite,fadeUp .7s var(--ease) .35s both}
 @keyframes sled-active-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 .sled-active-badge .sled-active-text{display:flex;flex-direction:column;gap:.18rem;text-align:left}
@@ -110,10 +109,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .sled-active-badge .sled-active-icon{width:28px;height:28px;color:rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .sled-active-badge .sled-active-icon svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 
-/* RFP card — decorative, non-interactive, gentle drift left and back */
+/* RFP card, decorative, non-interactive, gentle drift left and back */
 .sled-rfp-card{position:absolute;left:90px;top:50px;z-index:2;background:var(--bg-card);border:1px solid var(--border);border-radius:1.25rem;padding:1.2rem;box-shadow:0 30px 60px rgba(15,30,80,.13),0 4px 12px rgba(15,30,80,.05);max-width:500px;display:flex;flex-direction:column;gap:.55rem;pointer-events:none;animation:sled-rfp-card-drift 6s ease-in-out 5s infinite}
 @keyframes sled-rfp-card-drift{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@media(max-width:1000px){.sled-rfp-card{position:relative;left:auto;top:auto;margin:60px auto 0}}
+@media(max-width:1000px){.sled-rfp-card{position:relative;left:auto;top:auto;margin:0;max-width:100%;width:100%;animation:none}}
 @media(prefers-reduced-motion:reduce){.sled-rfp-card{animation:none}}
 
 /* Card header */
@@ -133,7 +132,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .sled-rfp-meta .lbl{font-family:var(--font-mono);font-size:.6rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);line-height:1}
 .sled-rfp-meta .val{font-family:var(--font-display);font-size:1rem;font-weight:800;color:var(--text-primary);letter-spacing:-.01em;line-height:1.1}
 
-/* Row sub-cards (Scope / Guidelines / Deadline) — static */
+/* Row sub-cards (Scope / Guidelines / Deadline), static */
 .sled-rfp-row{display:flex;align-items:center;gap:.85rem;padding:.85rem 1rem;border:1px solid var(--border);border-radius:.85rem;background:transparent;text-decoration:none;color:inherit}
 .sled-rfp-row-icon{width:32px;height:32px;border-radius:50%;background:rgba(241,245,249,.6);display:flex;align-items:center;justify-content:center;color:var(--text-muted);flex-shrink:0}
 [data-theme="dark"] .sled-rfp-row-icon{background:rgba(255,255,255,.04)}
@@ -144,15 +143,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .sled-rfp-chevron{color:var(--text-muted);flex-shrink:0}
 .sled-rfp-chevron svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
-/* CTA — dark navy, decorative, gentle counter-drift */
+/* CTA, dark navy, decorative, gentle counter-drift */
 .sled-rfp-cta{display:flex;align-items:center;justify-content:center;width:100%;background:linear-gradient(135deg,#0F1B3D 0%,#192C5B 50%,#0F1B3D 100%);color:#fff;border:none;border-radius:.85rem;padding:.95rem 1rem;font-size:.95rem;font-weight:700;text-decoration:none;margin-top:.4rem;box-shadow:0 12px 28px rgba(15,27,61,.32),0 1px 0 rgba(255,255,255,.08) inset;animation:sled-cta-drift 5s cubic-bezier(.45,.05,.55,.95) 5s infinite}
 @keyframes sled-cta-drift{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 @media(prefers-reduced-motion:reduce){.sled-rfp-cta{animation:none}}
 
+@media(max-width:1000px){
+    .sled-active-badge{position:absolute;top:30px;right:0}
+    .sled-rfp-card{z-index:1}
+}
 @media(max-width:560px){
     .sled-rfp-card{padding:1.15rem;max-width:100%}
     .sled-rfp-id{font-size:1.4rem}
-    .sled-active-badge{top:10px;right:10px;padding:.7rem .9rem;gap:.65rem}
+    .sled-active-badge{padding:.7rem .9rem;gap:.65rem}
     .sled-active-badge .lbl{font-size:.58rem}
     .sled-active-badge .val{font-size:1.05rem}
     .sled-active-badge .sled-active-icon svg{width:20px;height:20px}
@@ -241,6 +244,68 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .sled-comp-check svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
 .sled-comp-text{font-size:.83rem;color:var(--text-secondary);line-height:1.55;font-weight:500}
 
+/* ===== FAQ ===== */
+.sled-faq{padding:5rem 0}
+
+/* Two-column card */
+.sled-faq-card{display:grid;grid-template-columns:420px 1fr;gap:4rem;align-items:start}
+@media(max-width:1100px){.sled-faq-card{grid-template-columns:340px 1fr;gap:3rem}}
+@media(max-width:960px){.sled-faq-card{grid-template-columns:1fr;gap:2.5rem}}
+
+/* Left column */
+.sled-faq-col-left{position:sticky;top:120px}
+@media(max-width:960px){.sled-faq-col-left{position:static}}
+
+.sled-faq-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:.38rem 1rem;margin-bottom:1.4rem}
+.sled-faq-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.5);flex-shrink:0}
+[data-theme="light"] .sled-faq-eyebrow{color:#3b82d9;background:rgba(59,130,217,.07);border-color:rgba(59,130,217,.2)}
+[data-theme="light"] .sled-faq-eyebrow::before{background:#3b82d9}
+
+.sled-faq-heading{font-family:var(--font-display);font-size:clamp(1.9rem,2.8vw,2.6rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;color:var(--text-primary);margin:0 0 1.1rem}
+.sled-faq-intro{font-size:.93rem;line-height:1.75;color:var(--text-muted)}
+
+/* Right column */
+.sled-faq-col-right{display:flex;flex-direction:column;gap:.55rem}
+
+/* Each item */
+.sled-faq-item{border-radius:.85rem;border:1px solid rgba(255,255,255,.1);background:#111827;overflow:hidden;transition:border-color .2s,background .2s}
+.sled-faq-item:hover{border-color:rgba(255,255,255,.18)}
+.sled-faq-item.open{border-color:rgba(0,212,255,.4);background:#0f1e30}
+[data-theme="light"] .sled-faq-item{background:#fff;border-color:#e2e8f0;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+[data-theme="light"] .sled-faq-item:hover{border-color:#c7d7f0;box-shadow:0 3px 12px rgba(59,130,217,.09)}
+[data-theme="light"] .sled-faq-item.open{border-color:rgba(59,130,217,.5);box-shadow:0 4px 18px rgba(59,130,217,.11)}
+
+/* Header row */
+.sled-faq-item-header{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.2rem 1.3rem;background:none;border:none;cursor:pointer;text-align:left}
+
+/* Left side of header: icon + title */
+.sled-faq-title-wrap{display:flex;align-items:center;gap:.9rem;flex:1;min-width:0}
+
+/* ? icon, plain text character inside a styled circle */
+.sled-faq-item-icon{width:34px;height:34px;border-radius:50%;border:1.5px solid rgba(255,255,255,.2);background:rgba(255,255,255,.04);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);font-size:.95rem;font-weight:700;line-height:1;flex-shrink:0;transition:border-color .2s,color .2s,background .2s}
+.sled-faq-item.open .sled-faq-item-icon{border-color:rgba(0,212,255,.55);color:#00d4ff;background:rgba(0,212,255,.08)}
+[data-theme="light"] .sled-faq-item-icon{border-color:rgba(59,130,217,.4);background:rgba(59,130,217,.06);color:#3b82d9}
+[data-theme="light"] .sled-faq-item.open .sled-faq-item-icon{border-color:#3b82d9;color:#1d4ed8;background:rgba(59,130,217,.1)}
+
+/* Title text */
+.sled-faq-item-title{font-family:var(--font-display);font-size:1rem;font-weight:700;letter-spacing:-.01em;line-height:1.35;color:#f1f5f9}
+[data-theme="light"] .sled-faq-item-title{color:#0f172a}
+
+/* Toggle arrow, same tiny SVG as reference */
+.sled-faq-item-toggle{flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:transform .28s cubic-bezier(.4,0,.2,1)}
+.sled-faq-item.open .sled-faq-item-toggle{transform:rotate(180deg)}
+.sled-faq-item-toggle .faq-arrow-fill{fill:rgba(255,255,255,.4);transition:fill .2s}
+.sled-faq-item.open .sled-faq-item-toggle .faq-arrow-fill{fill:#00d4ff}
+[data-theme="light"] .sled-faq-item-toggle .faq-arrow-fill{fill:#94a3b8}
+[data-theme="light"] .sled-faq-item.open .sled-faq-item-toggle .faq-arrow-fill{fill:#3b82d9}
+
+/* Body, CSS grid expand */
+.sled-faq-item-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .28s cubic-bezier(.4,0,.2,1)}
+.sled-faq-item.open .sled-faq-item-body{grid-template-rows:1fr}
+.sled-faq-item-body-inner{overflow:hidden}
+.sled-faq-item-body-inner p{margin:0;padding:0 1.3rem 1.3rem 4.55rem;font-size:.9rem;line-height:1.78;color:#94a3b8}
+[data-theme="light"] .sled-faq-item-body-inner p{color:#64748b}
+
 /* ===== Final CTA ===== */
 .sled-final{padding:6rem 0;text-align:center}
 .sled-final-card{background:linear-gradient(135deg,rgba(0,212,255,.06),rgba(123,97,255,.06));border:1px solid rgba(0,212,255,.22);border-radius:1.5rem;padding:3.5rem 2rem;position:relative;overflow:hidden;max-width:780px;margin:0 auto}
@@ -250,10 +315,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .sled-final-card p{font-size:1rem;color:var(--text-muted);line-height:1.7;margin-bottom:2rem;max-width:540px;margin-left:auto;margin-right:auto;position:relative}
 .sled-final-card .btn{position:relative}
 
+/* Hero CTA buttons row */
+.sled-hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem;animation:fadeUp .7s var(--ease) .32s both}
+
 /* Brand pill in nav for SLED */
 .sled-brand-pill{font-family:var(--font-mono);font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.25);border-radius:.35rem;padding:.2rem .55rem;margin-left:.55rem;vertical-align:middle}
 
-/* ===== Process steps (How We Worked — always dark) ===== */
+/* ===== Process steps (How We Worked, always dark) ===== */
 .sled-process{background:#0c1422;color:#f1f5fb;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
 .sled-process .sled-eyebrow{color:var(--accent);background:rgba(0,212,255,.1);border-color:rgba(0,212,255,.28)}
 .sled-process .sled-section-head h2{color:#f1f5fb}
@@ -297,7 +365,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "SLED Subcontracting & Remote Delivery for US Primes",
-    "description": "Croncore is a remote subcontractor to US Primes bidding on State, Local, and Education (SLED) RFPs across AI, cybersecurity, ERP/CRM, and EdTech — with past performance, NAICS/NIGP coverage, and compliance posture ready to plug into your proposal.",
+    "description": "Croncore is a remote subcontractor to US Primes bidding on State, Local, and Education (SLED) RFPs across AI, cybersecurity, ERP/CRM, and EdTech, with past performance, NAICS/NIGP coverage, and compliance posture ready to plug into your proposal.",
     "provider": {
         "@type": "Organization",
         "name": "Croncore",
@@ -357,7 +425,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ===== HERO ===== -->
 <section class="sled-hero" aria-label="SLED Delivery Partner Hero">
-<!-- US map background — spans the whole hero as a faded watermark -->
+<!-- US map background, spans the whole hero as a faded watermark -->
 <div class="sled-map" aria-hidden="true">
     <img src="images/us-map.png" alt="" class="sled-map-img sled-map-img--light" loading="lazy">
     <img src="images/us-map-dark.png" alt="" class="sled-map-img sled-map-img--dark" loading="lazy">
@@ -367,7 +435,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div>
 <h1>Powering procurement across the <span class="text-glow">US SLED.</span></h1>
 <p class="sled-lead">We help US prime contractors review SLED opportunities, prepare stronger bid responses, and move faster before submission.</p>
-<p class="sled-lead">From RFQ review to requirement mapping, compliance checks, pricing support, and technical delivery planning, we help your team decide what to pursue and how to respond with confidence.</p>
+<div class="sled-hero-btns">
+    <a href="#case-studies" class="btn btn-glow">View SLED Portfolio<svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <a href="contact" class="btn btn-outline">Contact Us<svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+</div>
 </div>
 
 <aside class="sled-hero-visual" aria-label="Sample SLED RFP">
@@ -513,7 +584,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="sled-section-head">
     <div class="sled-eyebrow">SLED Case Studies</div>
     <h2 id="cs-heading">Proof from real SLED pursuits.</h2>
-    <p class="sled-sub">Methodology-weighted, strict-spec, accessibility-mandated — three live RFPs where Croncore built the winning response behind a U.S. prime.</p>
+    <p class="sled-sub">Methodology-weighted, strict-spec, accessibility-mandated. Three live RFPs where Croncore built the winning response behind a U.S. prime.</p>
 </div>
 <div class="sled-cs-grid">
     <!-- Card: Derby Downtown Lighting RFP -->
@@ -533,7 +604,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Card: Macomb Community College AV Equipment RFQ -->
     <article class="cs-card" data-category="govcon" aria-label="Macomb Community College AV Equipment RFQ Case Study">
         <div class="cs-card-bg">
-            <img src="images/case-studies/macomb-community-college.jpg" alt="Macomb Community College AV Equipment RFQ — Government Proposal Support Case Study" loading="lazy">
+            <img src="images/case-studies/macomb-community-college.jpg" alt="Macomb Community College AV Equipment RFQ, Government Proposal Support Case Study" loading="lazy">
         </div>
         <div class="cs-card-overlay"></div>
         <div class="cs-card-info">
@@ -547,7 +618,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Card: South Platte Renew Website RFP -->
     <article class="cs-card" data-category="govcon" aria-label="South Platte Renew Website RFP Case Study">
         <div class="cs-card-bg">
-            <img src="images/case-studies/south-platte-renew.jpg" alt="South Platte Renew Digital Transformation — Municipal Website RFP Case Study" loading="lazy">
+            <img src="images/case-studies/south-platte-renew.jpg" alt="South Platte Renew Digital Transformation, Municipal Website RFP Case Study" loading="lazy">
         </div>
         <div class="cs-card-overlay"></div>
         <div class="cs-card-info">
@@ -615,7 +686,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="sled-section-head row">
     <div>
         <div class="sled-eyebrow">Procurement Codes</div>
-        <h2 id="codes-heading">Drop us into your proposal — codes already lined up.</h2>
+        <h2 id="codes-heading">Drop us into your proposal. Codes already lined up.</h2>
     </div>
     <p class="sled-sub">We deliver across the NAICS and NIGP codes that SLED RFPs cite most often. Use this list verbatim in your teaming agreement.</p>
 </div>
@@ -696,7 +767,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div>
         <div class="sled-eyebrow">Compliance Posture</div>
         <h2 id="compliance-heading" style="font-family:var(--font-display);font-size:clamp(1.7rem,3vw,2.4rem);font-weight:800;line-height:1.18;letter-spacing:-.02em;color:var(--text-primary);margin:.9rem 0 .8rem;">Built to clear your prime's risk review.</h2>
-        <p style="font-size:1rem;color:var(--text-muted);line-height:1.7;margin-bottom:1.6rem">Our delivery model is shaped around the controls your contracts officer will ask about — so subcontracting Croncore doesn't add risk to your bid.</p>
+        <p style="font-size:1rem;color:var(--text-muted);line-height:1.7;margin-bottom:1.6rem">Our delivery model is shaped around the controls your contracts officer will ask about, so subcontracting Croncore doesn't add risk to your bid.</p>
         <a href="contact" class="btn btn-glow">Request compliance brief<svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
     </div>
     <div class="sled-compliance-list">
@@ -713,12 +784,108 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 </section>
 
+<!-- ===== FAQ ===== -->
+<section class="sled-faq" aria-labelledby="faq-heading">
+<div class="container">
+<div class="sled-faq-card">
+
+    <div class="sled-faq-col-left">
+        <div class="sled-faq-eyebrow">FAQ</div>
+        <h2 class="sled-faq-heading" id="faq-heading">Frequently Asked Questions</h2>
+        <p class="sled-faq-intro">Still deciding if you need support on a SLED opportunity? Here are the most common questions prime contractors ask before sharing an RFP or RFQ with us.</p>
+    </div>
+
+    <div class="sled-faq-col-right">
+
+        <div class="sled-faq-item">
+            <button type="button" class="sled-faq-item-header" aria-expanded="false">
+                <div class="sled-faq-title-wrap">
+                    <span class="sled-faq-item-icon">?</span>
+                    <span class="sled-faq-item-title">Do you only support software-related SLED bids?</span>
+                </div>
+                <span class="sled-faq-item-toggle" aria-hidden="true">
+                    <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="faq-arrow-fill" d="M6 4.5L10.5 0.5a.75.75 0 0 1 1 1.12l-5.25 4.5a.75.75 0 0 1-1 0L.25 1.62A.75.75 0 0 1 1.25.5L6 4.5Z"/></svg>
+                </span>
+            </button>
+            <div class="sled-faq-item-body"><div class="sled-faq-item-body-inner"><p>Mostly yes. We are strongest when the opportunity includes software, portals, automation, data systems, AI, integrations, cloud, dashboards, or digital transformation. If the RFP has a meaningful technology component, we're a fit.</p></div></div>
+        </div>
+
+        <div class="sled-faq-item">
+            <button type="button" class="sled-faq-item-header" aria-expanded="false">
+                <div class="sled-faq-title-wrap">
+                    <span class="sled-faq-item-icon">?</span>
+                    <span class="sled-faq-item-title">Can you work as a subcontractor?</span>
+                </div>
+                <span class="sled-faq-item-toggle" aria-hidden="true">
+                    <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="faq-arrow-fill" d="M6 4.5L10.5 0.5a.75.75 0 0 1 1 1.12l-5.25 4.5a.75.75 0 0 1-1 0L.25 1.62A.75.75 0 0 1 1.25.5L6 4.5Z"/></svg>
+                </span>
+            </button>
+            <div class="sled-faq-item-body"><div class="sled-faq-item-body-inner"><p>Yes. We can support as a technical subcontractor, delivery partner, or behind-the-scenes pre-bid support team, whatever structure your teaming agreement requires. NDA-ready and nameable in your proposal within 48 hours.</p></div></div>
+        </div>
+
+        <div class="sled-faq-item">
+            <button type="button" class="sled-faq-item-header" aria-expanded="false">
+                <div class="sled-faq-title-wrap">
+                    <span class="sled-faq-item-icon">?</span>
+                    <span class="sled-faq-item-title">Can you help before the bid/no-bid decision?</span>
+                </div>
+                <span class="sled-faq-item-toggle" aria-hidden="true">
+                    <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="faq-arrow-fill" d="M6 4.5L10.5 0.5a.75.75 0 0 1 1 1.12l-5.25 4.5a.75.75 0 0 1-1 0L.25 1.62A.75.75 0 0 1 1.25.5L6 4.5Z"/></svg>
+                </span>
+            </button>
+            <div class="sled-faq-item-body"><div class="sled-faq-item-body-inner"><p>Yes. We can review the opportunity and help identify fit, risks, effort, and a possible delivery approach, so you decide before committing your team's time.</p></div></div>
+        </div>
+
+        <div class="sled-faq-item">
+            <button type="button" class="sled-faq-item-header" aria-expanded="false">
+                <div class="sled-faq-title-wrap">
+                    <span class="sled-faq-item-icon">?</span>
+                    <span class="sled-faq-item-title">Do you write the full proposal?</span>
+                </div>
+                <span class="sled-faq-item-toggle" aria-hidden="true">
+                    <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="faq-arrow-fill" d="M6 4.5L10.5 0.5a.75.75 0 0 1 1 1.12l-5.25 4.5a.75.75 0 0 1-1 0L.25 1.62A.75.75 0 0 1 1.25.5L6 4.5Z"/></svg>
+                </span>
+            </button>
+            <div class="sled-faq-item-body"><div class="sled-faq-item-body-inner"><p>We can support technical sections, compliance mapping, scope review, solution planning, and proposal structure. For legal, financial, and formal procurement language, the prime contractor reviews and approves everything before submission.</p></div></div>
+        </div>
+
+        <div class="sled-faq-item">
+            <button type="button" class="sled-faq-item-header" aria-expanded="false">
+                <div class="sled-faq-title-wrap">
+                    <span class="sled-faq-item-icon">?</span>
+                    <span class="sled-faq-item-title">Can you support after award?</span>
+                </div>
+                <span class="sled-faq-item-toggle" aria-hidden="true">
+                    <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="faq-arrow-fill" d="M6 4.5L10.5 0.5a.75.75 0 0 1 1 1.12l-5.25 4.5a.75.75 0 0 1-1 0L.25 1.62A.75.75 0 0 1 1.25.5L6 4.5Z"/></svg>
+                </span>
+            </button>
+            <div class="sled-faq-item-body"><div class="sled-faq-item-body-inner"><p>Yes. We can support design, development, integrations, QA, deployment, and maintenance, continuing as your delivery partner through the full contract term.</p></div></div>
+        </div>
+
+        <div class="sled-faq-item">
+            <button type="button" class="sled-faq-item-header" aria-expanded="false">
+                <div class="sled-faq-title-wrap">
+                    <span class="sled-faq-item-icon">?</span>
+                    <span class="sled-faq-item-title">Do you guarantee a win?</span>
+                </div>
+                <span class="sled-faq-item-toggle" aria-hidden="true">
+                    <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="faq-arrow-fill" d="M6 4.5L10.5 0.5a.75.75 0 0 1 1 1.12l-5.25 4.5a.75.75 0 0 1-1 0L.25 1.62A.75.75 0 0 1 1.25.5L6 4.5Z"/></svg>
+                </span>
+            </button>
+            <div class="sled-faq-item-body"><div class="sled-faq-item-body-inner"><p>No. No honest partner can guarantee that. We help improve readiness, clarity, compliance, and technical strength, giving your bid the best possible chance.</p></div></div>
+        </div>
+
+    </div>
+</div>
+</div>
+</section>
+
 <!-- ===== FINAL CTA ===== -->
 <section class="sled-final" aria-label="Brief our SLED team">
 <div class="container">
 <div class="sled-final-card">
     <h2>Have an SLED RFP on the clock?</h2>
-    <p>Brief our SLED team. We'll come back with a capability statement, draft past performance write-up, and indicative pricing within 48 hours — ready to drop into your proposal.</p>
+    <p>Brief our SLED team. We'll come back with a capability statement, draft past performance write-up, and indicative pricing within 48 hours, ready to drop into your proposal.</p>
     <a href="contact" class="btn btn-glow">Brief our SLED team<svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
 </div>
 </div>
@@ -735,7 +902,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <img src="images/croncore-logo.png" alt="Croncore" class="logo-dark" width="56" height="56" loading="lazy">
 <img src="images/concore-logo-light-theme.png" alt="Croncore" class="logo-light" width="56" height="56" loading="lazy">
 </div>
-<p>Remote SLED delivery partner for US Primes. AI, cybersecurity, ERP/CRM, and EdTech — bid-stage ready, compliance-aware, NDA-friendly.</p>
+<p>Remote SLED delivery partner for US Primes. AI, cybersecurity, ERP/CRM, and EdTech. Bid-stage ready, compliance-aware, NDA-friendly.</p>
 <a href="contact" class="btn btn-glow btn-sm">Brief our team<svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
 </div>
 <nav class="footer-col" aria-label="SLED quick links"><h4>SLED</h4><ul>
@@ -757,12 +924,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li><a href="privacy-policy">Privacy</a></li>
 </ul></nav>
 </div>
-<div class="footer-bottom"><span>&copy; 2025&ndash;2026 Croncore LLC — Remote SLED Delivery Partner</span><div class="footer-bottom-links"><a href="privacy-policy">Privacy Policy</a><a href="terms">Terms of Service</a></div></div>
+<div class="footer-bottom"><span>&copy; 2025/2026 Croncore LLC, Remote SLED Delivery Partner</span><div class="footer-bottom-links"><a href="privacy-policy">Privacy Policy</a><a href="terms">Terms of Service</a></div></div>
 </div>
 </footer>
 </div>
 
 <script src="js/main.js?v=4"></script>
+<script>
+document.querySelectorAll('.sled-faq-item-header').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const item = btn.closest('.sled-faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.sled-faq-item.open').forEach(el => {
+            el.classList.remove('open');
+            el.querySelector('.sled-faq-item-header').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+            item.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
+        }
+    });
+});
+// Open first FAQ by default
+const firstFaq = document.querySelector('.sled-faq-item');
+if (firstFaq) {
+    firstFaq.classList.add('open');
+    firstFaq.querySelector('.sled-faq-item-header').setAttribute('aria-expanded', 'true');
+}
+</script>
 
 <!-- Float Buttons -->
 <div class="float-btns">
