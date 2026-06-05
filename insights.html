@@ -24,7 +24,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- Primary SEO -->
-    <title>Insights — Croncore | Enterprise AI & Automation</title>
+    <title>Insights, Croncore | Enterprise AI & Automation</title>
     <meta name="description"
         content="Stay updated with the latest trends in Generative AI, Conversational Agents, and Workflow Automation. Expert insights from the Croncore team.">
     <meta name="author" content="Croncore">
@@ -36,14 +36,14 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Croncore">
     <meta property="og:url" content="https://www.croncore.com/insights">
-    <meta property="og:title" content="Insights — Croncore | Enterprise AI & Automation">
+    <meta property="og:title" content="Insights, Croncore | Enterprise AI & Automation">
     <meta property="og:description" content="Stay updated with the latest trends in Generative AI, Conversational Agents, and Workflow Automation. Expert insights from the Croncore team.">
     <meta property="og:image" content="https://www.croncore.com/images/croncore-logo.png">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@croncore">
-    <meta name="twitter:title" content="Insights — Croncore">
+    <meta name="twitter:title" content="Insights, Croncore">
     <meta name="twitter:description" content="Expert insights on AI, automation, and business scaling from the Croncore team.">
     <meta name="twitter:image" content="https://www.croncore.com/images/croncore-logo.png">
 
@@ -157,10 +157,10 @@
                 </a>
                 <div class="nav-pill">
                     <a href="/services" class="nav-link">Services</a>
-                    <a href="/#about" class="nav-link">About</a>
+                    <a href="/case-studies" class="nav-link">Case Studies</a>
                     <a href="/#testimonials" class="nav-link">Testimonials</a>
-                    <a href="#" class="nav-link active">Resources</a>
-                    <a href="/#faq" class="nav-link">FAQ</a>
+                    <a href="#" class="nav-link">Resources</a>
+
                 </div>
                 <div class="nav-actions">
                     <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme">
@@ -204,11 +204,11 @@
                 </svg>
             </button>
             <a href="/services">Services</a>
-            <a href="/#about">About</a>
+            <a href="/case-studies">Case Studies</a>
             <a href="/#testimonials">Testimonials</a>
             <a href="#">Resources</a>
-            <a href="/#faq">FAQ</a>
-            <a href="contact" class="btn btn-glow" style="margin-top:12px;">Contact Us</a>
+
+            <a href="/contact" class="btn btn-glow" style="margin-top:12px;">Contact Us</a>
         </div>
 
         <main id="main-content">
@@ -265,7 +265,7 @@
                             <li><a href="/#features">Features</a></li>
                             <li><a href="/#testimonials">Testimonials</a></li>
                             <li><a href="insights">Insights</a></li>
-                            <li><a href="case-studies">Case Studies</a></li>
+                            <li><a href="/case-studies">Case Studies</a></li>
                             <li><a href="newsroom">Newsroom</a></li>
                         </ul>
                     </nav>
@@ -332,7 +332,7 @@
 
             // Cards are pre-rendered into the grid at build time (see scripts/generate-insights.js)
             // so crawlers and no-JS visitors get real content. Only REPLACE them on a genuine
-            // successful fetch — never wipe them on empty/error, otherwise a timed-out fetch
+            // successful fetch, never wipe them on empty/error, otherwise a timed-out fetch
             // (e.g. in Googlebot's renderer) would blank the page back to a placeholder.
             var hadPrerendered = !!insightsGrid.querySelector('.insights-card');
 
@@ -348,7 +348,7 @@
                     loading.style.display = 'none';
                     if (!posts || posts.length === 0) {
                         if (!hadPrerendered) {
-                            insightsGrid.innerHTML = '<p style="text-align:center;width:100%;color:var(--text-muted);">No posts yet — check back soon.</p>';
+                            insightsGrid.innerHTML = '<p style="text-align:center;width:100%;color:var(--text-muted);">No posts yet, check back soon.</p>';
                         }
                         return;
                     }
