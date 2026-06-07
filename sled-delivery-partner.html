@@ -338,9 +338,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 /* ===== Case study card grid (reuses global .cs-card from styles.css) ===== */
 .sled-cs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 @media(max-width:992px){.sled-cs-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:640px){.sled-cs-grid{grid-template-columns:1fr}}
 .sled-cs-grid .cs-card{flex:initial;height:460px}
 @media(max-width:767px){.sled-cs-grid .cs-card{height:420px}}
+/* Mobile: horizontal swipe carousel (mirrors home .cs-grid scroller) */
+@media(max-width:640px){
+.sled-cs-grid{display:flex;gap:16px;overflow-x:auto;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;-ms-overflow-style:none;scroll-snap-type:x mandatory;padding:10px 0 16px}
+.sled-cs-grid::-webkit-scrollbar{display:none}
+.sled-cs-grid .cs-card{flex:0 0 82%;scroll-snap-align:center}
+}
 .sled-cs-grid .cs-card-info{position:absolute;inset:auto 0 0 0;z-index:2;padding:24px 28px 26px;pointer-events:none}
 .sled-cs-grid .cs-card-info .cs-card-industry{font-size:1.35rem;margin-bottom:6px}
 .sled-cs-grid .cs-card-info .cs-card-tag{display:inline-block;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.25);padding:4px 10px;border-radius:999px;margin-bottom:14px}
@@ -628,6 +633,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <a href="case-study-south-platte-renew-website-rfp" class="cs-card-link-overlay" aria-label="Read South Platte Renew Website RFP case study"></a>
     </article>
+</div>
+<div style="display:flex;justify-content:center;margin-top:44px;">
+    <a href="sled-case-studies" class="btn btn-glow">Show All SLED Case Studies<svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
 </div>
 </div>
 </section>
@@ -929,7 +937,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 </div>
 
-<script src="js/main.js?v=4"></script>
+<script src="js/main.js?v=5"></script>
 <script>
 document.querySelectorAll('.sled-faq-item-header').forEach(btn => {
     btn.addEventListener('click', () => {

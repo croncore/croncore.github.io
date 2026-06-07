@@ -499,7 +499,7 @@
             {
                 id: 'cs-sled',
                 title: 'SLED / Public Sector',
-                anchor: '/case-studies',
+                anchor: '/sled-case-studies',
                 spotlight: {
                     tag: 'Featured',
                     title: 'Croncore for State, Local & Education',
@@ -510,7 +510,8 @@
                 items: [
                     { href: '/case-study-derby-downtown-lighting-rfp', title: 'Derby Downtown Lighting RFP', desc: 'Methodology-weighted municipal lighting RFP, built for a U.S. prime.' },
                     { href: '/case-study-macomb-community-college-av-equipment-rfq', title: 'Macomb Community College AV RFQ', desc: 'Strict-specification, commodity-driven AV equipment response.' },
-                    { href: '/case-study-south-platte-renew-website-rfp', title: 'South Platte Renew Website RFP', desc: 'WordPress and accessibility-mandated municipal RFP win.' }
+                    { href: '/case-study-south-platte-renew-website-rfp', title: 'South Platte Renew Website RFP', desc: 'WordPress and accessibility-mandated municipal RFP win.' },
+                    { href: '/case-study-airfield-maintenance-pitkin-county-rfp', title: 'Airfield Maintenance, Pitkin County', desc: 'Time-critical airfield closure RFP with optimized cost models.' }
                 ]
             }
         ];
@@ -546,7 +547,13 @@
         var inner = document.createElement('div');
         inner.className = 'nav-megamenu-inner';
 
+        // On the SLED landing page, default to the SLED / Public Sector group.
         var defaultActiveIndex = 0;
+        if (window.location.pathname.indexOf('sled-delivery-partner') !== -1) {
+            for (var gi = 0; gi < GROUPS.length; gi++) {
+                if (GROUPS[gi].id === 'cs-sled') { defaultActiveIndex = gi; break; }
+            }
+        }
 
         var parentsCol = document.createElement('div');
         parentsCol.className = 'nav-mega-parents';
@@ -645,6 +652,29 @@
         });
         document.addEventListener('click', function (e) {
             if (!menu.contains(e.target) && !trigger.contains(e.target)) close();
+        });
+
+        // ---- Parent tab interactions (hover/click to switch group) ----
+        var parentBtns = parentsCol.querySelectorAll('.nav-mega-parent');
+        var subgroups = subsCol.querySelectorAll('.nav-mega-subgroup');
+        var GROUP_BY_ID = {};
+        GROUPS.forEach(function (g) { GROUP_BY_ID[g.id] = g; });
+        function activate(parentId) {
+            parentBtns.forEach(function (b) {
+                b.classList.toggle('active', b.getAttribute('data-parent') === parentId);
+            });
+            subgroups.forEach(function (g) {
+                g.classList.toggle('active', g.getAttribute('data-parent') === parentId);
+            });
+            if (GROUP_BY_ID[parentId]) renderSpotlight(GROUP_BY_ID[parentId]);
+        }
+        parentBtns.forEach(function (b) {
+            b.addEventListener('mouseenter', function () { activate(b.getAttribute('data-parent')); });
+            b.addEventListener('focus', function () { activate(b.getAttribute('data-parent')); });
+            b.addEventListener('click', function (e) {
+                e.preventDefault();
+                activate(b.getAttribute('data-parent'));
+            });
         });
 
         // Expose to initMobileNav so the mobile drilldown can mirror this group
