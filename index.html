@@ -170,7 +170,7 @@
 .hero-slide.active{opacity:1;pointer-events:auto}
 
 /* Progress bar nav */
-.hero-carousel-nav{display:flex;justify-content:center;align-items:center;gap:10px;padding:16px 0 22px}
+.hero-carousel-nav{display:flex;justify-content:flex-start;align-items:center;gap:10px;padding:12px 0 20px}
 .hcn-btn{width:56px;height:6px;border-radius:999px;border:none;padding:0;cursor:pointer;position:relative;overflow:hidden;background:rgba(148,163,184,.22);flex-shrink:0}
 [data-theme="light"] .hcn-btn{background:rgba(100,116,139,.18)}
 .hcn-fill{position:absolute;inset:0;width:0%;height:100%;background:#3B82F6;border-radius:999px}
@@ -178,7 +178,7 @@
 @keyframes hcn-progress{to{width:100%}}
 
 /* ===== SLED hero slide (Slide 2) ===== */
-.hero-slide--sled{display:flex;align-items:center;padding:170px 0 60px;position:relative;overflow:hidden}
+.hero-slide--sled{display:flex;align-items:center;padding:120px 0 40px;position:relative;overflow:hidden}
 .hero-slide--sled::before{content:'';position:absolute;top:-10%;left:-15%;width:55%;height:80%;background:radial-gradient(ellipse at center,rgba(0,212,255,.10),transparent 60%);pointer-events:none;z-index:0;filter:blur(40px)}
 .hero-slide--sled::after{content:'';position:absolute;top:5%;right:-10%;width:50%;height:70%;background:radial-gradient(ellipse at center,rgba(123,97,255,.08),transparent 60%);pointer-events:none;z-index:0;filter:blur(50px)}
 .hero-slide--sled>.container{position:relative;z-index:1;width:100%}
@@ -239,7 +239,7 @@
 
 /* Mobile responsive */
 @media(max-width:1000px){
-  .hero-slide--sled{padding:150px 0 40px}
+  .hero-slide--sled{padding:110px 0 30px}
   .hero-slide--sled .sled-hero-grid{grid-template-columns:1fr;gap:2rem;min-height:auto}
   .hero-slide--sled .sled-hero-visual{min-height:auto;padding:40px 0 60px;display:block}
   .hero-slide--sled .sled-capitol{position:absolute;top:170px;left:50%;transform:translateX(calc(-50% + 10px));right:auto;bottom:auto;width:120%;max-width:120%;height:680px;object-fit:contain;object-position:top}
@@ -540,6 +540,7 @@
  </div><!-- /.hero-carousel-slides -->
 
  <!-- Progress bar navigation -->
+ <div class="container">
  <div class="hero-carousel-nav" aria-label="Hero carousel navigation">
  <button class="hcn-btn active" data-idx="0" aria-label="Enterprise AI hero">
  <span class="hcn-fill"></span>
@@ -547,6 +548,7 @@
  <button class="hcn-btn" data-idx="1" aria-label="SLED delivery partner">
  <span class="hcn-fill"></span>
  </button>
+ </div>
  </div>
 
  </div><!-- /.hero-carousel -->
