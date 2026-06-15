@@ -43,21 +43,10 @@
     ============================================================
     -->
 
- <!-- Google tag (gtag.js) -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-J34ZPS4FTY"></script>
- <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-J34ZPS4FTY');
-    </script>
-
- <!-- Google Tag Manager -->
- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NFNLPH3H');</script>
+ <!-- Analytics (deferred after page load) -->
+<script>
+(function(){function l(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-J34ZPS4FTY';document.head.appendChild(s);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag('js',new Date());gtag('config','G-J34ZPS4FTY');(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NFNLPH3H');}if(document.readyState==='complete'){l();}else{window.addEventListener('load',l);}})();
+</script>
 
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -129,7 +118,7 @@
  <script>(function(){var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
 
  <!-- Stylesheet -->
- <link rel="stylesheet" href="/css/styles.css?v=9">
+ <link rel="stylesheet" href="/css/styles.css?v=10">
 </head>
 <body>
  <!-- Google Tag Manager (noscript) -->
@@ -478,7 +467,7 @@
  </div>
 
  <!-- JavaScript -->
- <script src="/js/main.js?v=5"></script>
+ <script src="/js/main.js?v=6"></script>
 
  <!-- Float Buttons -->
  <div class="float-btns">
