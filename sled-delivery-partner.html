@@ -30,9 +30,17 @@
 <meta name="twitter:description" content="The remote bench US Primes call when an SLED RFP lands, bid-stage ready in 48 hours.">
 <meta name="twitter:image" content="https://www.croncore.com/images/croncore-logo.webp">
 
+<!-- Preload LCP image -->
+<link rel="preload" as="image" href="images/capitol-dome.webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="style"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
+</noscript>
 <link rel="icon" type="image/png" href="images/favicons/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="images/favicons/favicon.svg" />
 <link rel="shortcut icon" href="images/favicons/favicon.ico" />
@@ -415,8 +423,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="sled-hero" aria-label="SLED Delivery Partner Hero">
 <!-- US map background, spans the whole hero as a faded watermark -->
 <div class="sled-map" aria-hidden="true">
- <img src="images/us-map.webp" alt="" class="sled-map-img sled-map-img--light" loading="lazy" width="1646" height="956">
- <img src="images/us-map-dark.webp" alt="" class="sled-map-img sled-map-img--dark" loading="lazy" width="1536" height="1024">
+ <img src="images/us-map.webp" alt="" class="sled-map-img sled-map-img--light" width="1646" height="956">
+ <img src="images/us-map-dark.webp" alt="" class="sled-map-img sled-map-img--dark" width="1536" height="1024">
 </div>
 <div class="container">
 <div class="sled-hero-grid">
@@ -431,7 +439,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <aside class="sled-hero-visual" aria-label="Sample SLED RFP">
  <!-- Capitol dome -->
- <img class="sled-capitol" src="images/capitol-dome.webp" alt="US Capitol building" loading="lazy" width="1024" height="1024">
+ <img class="sled-capitol" src="images/capitol-dome.webp" alt="US Capitol building" fetchpriority="high" width="1024" height="1024">
 
  <!-- Floating ACTIVE badge -->
  <div class="sled-active-badge" aria-hidden="true">
