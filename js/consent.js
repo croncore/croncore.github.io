@@ -31,44 +31,88 @@
   function injectStyles() {
     var s = document.createElement('style');
     s.textContent = [
-      '#cc-banner{position:fixed;bottom:0;left:0;right:0;z-index:9999;padding:14px 24px;background:var(--bg-card,#131829);border-top:1px solid var(--border-accent,rgba(0,212,255,.15));display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-family:var(--font-body,Manrope,sans-serif);box-shadow:0 -4px 24px rgba(0,0,0,.3);animation:cc-up .3s ease}',
+      /* Banner — glass treatment matching the nav */
+      '#cc-banner{position:fixed;bottom:0;left:0;right:0;z-index:10000;padding:16px 24px;background:var(--bg-glass,rgba(15,19,32,0.88));backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-top:1px solid var(--border-accent,rgba(0,212,255,.15));display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-family:var(--font-body,"Manrope",sans-serif);box-shadow:0 -4px 32px rgba(0,0,0,.18);animation:cc-up .3s ease}',
       '@keyframes cc-up{from{transform:translateY(100%)}to{transform:translateY(0)}}',
-      '#cc-banner .cc-text{flex:1;min-width:200px;font-size:13px;line-height:1.55;color:var(--text-secondary,#8B8FA7)}',
-      '#cc-banner .cc-text a{color:var(--accent,#00D4FF);text-decoration:underline}',
+      '#cc-banner .cc-text{flex:1;min-width:180px;font-size:13px;line-height:1.55;color:var(--text-secondary,#8B8FA7)}',
+      '#cc-banner .cc-text a{color:var(--text-accent,#00D4FF);text-decoration:underline}',
       '#cc-banner .cc-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}',
-      '.cc-btn{padding:8px 18px;border-radius:var(--r-full,9999px);font-size:13px;font-weight:600;cursor:pointer;border:none;font-family:inherit;transition:opacity .15s,border-color .15s,color .15s;line-height:1}',
-      '.cc-btn-primary{background:var(--accent,#00D4FF);color:#050810}',
-      '.cc-btn-primary:hover{opacity:.85}',
+
+      /* Base button — matches site .btn */
+      '.cc-btn{display:inline-flex;align-items:center;justify-content:center;padding:9px 20px;border-radius:var(--r-full,9999px);font-size:13px;font-weight:600;cursor:pointer;border:none;font-family:var(--font-display,"Plus Jakarta Sans",sans-serif);transition:opacity .15s,transform .15s,box-shadow .2s,border-color .2s,color .2s;line-height:1;white-space:nowrap;position:relative;overflow:hidden}',
+
+      /* Primary — mirrors .btn-glow */
+      '.cc-btn-primary{background:linear-gradient(135deg,var(--accent,#00D4FF),var(--accent-secondary,#7B61FF));color:#000;box-shadow:0 0 0 1px rgba(var(--accent-rgb,0,212,255),.3),0 4px 16px rgba(var(--accent-rgb,0,212,255),.18)}',
+      '.cc-btn-primary:hover{opacity:.9;transform:translateY(-1px);box-shadow:0 0 0 1px rgba(var(--accent-rgb,0,212,255),.5),0 8px 28px rgba(var(--accent-rgb,0,212,255),.25)}',
+      /* Light theme: blue gradient needs white text for contrast */
+      '[data-theme=light] .cc-btn-primary{color:#fff}',
+
+      /* Outline — mirrors .btn-outline */
       '.cc-btn-outline{background:transparent;color:var(--text-secondary,#8B8FA7);border:1px solid var(--border-strong,rgba(255,255,255,.1))}',
-      '.cc-btn-outline:hover{color:var(--text-primary,#E0E2EA);border-color:var(--border-accent,rgba(0,212,255,.2))}',
-      '.cc-btn-ghost{background:transparent;color:var(--text-secondary,#8B8FA7);text-decoration:underline;padding:8px 4px}',
-      '.cc-btn-ghost:hover{color:var(--text-primary,#E0E2EA)}',
-      '#cc-modal{position:fixed;inset:0;z-index:10000;display:flex;align-items:flex-end;justify-content:center;padding-bottom:24px;background:rgba(0,0,0,.55);animation:cc-fade .2s ease}',
+      '.cc-btn-outline:hover{color:var(--text-primary,#E0E2EA);border-color:var(--border-accent,rgba(0,212,255,.3));background:var(--accent-subtle,rgba(0,212,255,.06))}',
+
+      /* Ghost */
+      '.cc-btn-ghost{background:transparent;color:var(--text-muted,#4D5168);text-decoration:underline;padding:9px 4px;border:none}',
+      '.cc-btn-ghost:hover{color:var(--text-secondary,#8B8FA7)}',
+
+      /* Modal overlay */
+      '#cc-modal{position:fixed;inset:0;z-index:10001;display:flex;align-items:flex-end;justify-content:center;padding-bottom:24px;background:rgba(0,0,0,.55);animation:cc-fade .2s ease}',
       '@keyframes cc-fade{from{opacity:0}to{opacity:1}}',
-      '#cc-panel{background:var(--bg-card,#131829);border-radius:var(--r-lg,20px) var(--r-lg,20px) 0 0;padding:28px 24px 32px;width:100%;max-width:540px;border:1px solid var(--border-accent,rgba(0,212,255,.15));box-shadow:0 -8px 40px rgba(0,0,0,.4);max-height:88vh;overflow-y:auto}',
+
+      /* Modal panel — elevated card */
+      '#cc-panel{background:var(--bg-elevated,#0F1320);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-radius:var(--r-lg,20px) var(--r-lg,20px) 0 0;padding:28px 24px 32px;width:100%;max-width:540px;border:1px solid var(--border-accent,rgba(0,212,255,.15));box-shadow:0 -8px 40px rgba(0,0,0,.3);max-height:88vh;overflow-y:auto}',
       '@media(min-width:600px){#cc-modal{align-items:center;padding-bottom:0}#cc-panel{border-radius:var(--r-lg,20px);margin:auto}}',
+
+      /* Modal typography */
       '#cc-panel h2{margin:0 0 8px;font-size:17px;font-weight:700;color:var(--text-primary,#E0E2EA);font-family:var(--font-display,"Plus Jakarta Sans",sans-serif)}',
       '#cc-panel>p{margin:0 0 20px;font-size:13px;color:var(--text-secondary,#8B8FA7);line-height:1.6}',
-      '#cc-panel>p a{color:var(--accent,#00D4FF);text-decoration:underline}',
+      '#cc-panel>p a{color:var(--text-accent,#00D4FF);text-decoration:underline}',
+
+      /* Rows */
       '.cc-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--border,rgba(255,255,255,.05))}',
       '.cc-row:last-of-type{border-bottom:none}',
-      '.cc-row-info .cc-row-title{font-size:14px;font-weight:600;color:var(--text-primary,#E0E2EA)}',
+      '.cc-row-info .cc-row-title{font-size:14px;font-weight:600;color:var(--text-primary,#E0E2EA);font-family:var(--font-display,"Plus Jakarta Sans",sans-serif)}',
       '.cc-row-info .cc-row-desc{font-size:12px;color:var(--text-secondary,#8B8FA7);margin-top:2px}',
       '.cc-always-on{font-size:12px;color:var(--text-muted,#4D5168);font-style:italic;white-space:nowrap}',
+
+      /* Toggle switch */
       '.cc-switch{position:relative;width:44px;height:24px;flex-shrink:0}',
       '.cc-switch input{opacity:0;width:0;height:0;position:absolute}',
       '.cc-track{position:absolute;inset:0;background:var(--border-strong,rgba(255,255,255,.1));border-radius:12px;cursor:pointer;transition:background .2s}',
       '.cc-switch input:checked+.cc-track{background:var(--accent,#00D4FF)}',
       '.cc-track::after{content:"";position:absolute;width:18px;height:18px;background:#fff;border-radius:50%;top:3px;left:3px;transition:transform .2s}',
       '.cc-switch input:checked+.cc-track::after{transform:translateX(20px)}',
+
+      /* Modal buttons */
       '.cc-modal-btns{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}',
-      '.cc-modal-btns .cc-btn{flex:1;padding:10px 20px;text-align:center}'
+      '.cc-modal-btns .cc-btn{flex:1;padding:11px 20px;text-align:center}'
     ].join('');
     document.head.appendChild(s);
   }
 
-  var modalTrigger = null;
+  // ── Float button collision avoidance (Day 1) ─────────────────────────────
+  function getFloatBtns() {
+    return document.querySelector('.float-btns');
+  }
 
+  function pushFloatBtns() {
+    var banner = document.getElementById('cc-banner');
+    var btns = getFloatBtns();
+    if (banner && btns) {
+      btns.style.bottom = (banner.offsetHeight + 16) + 'px';
+      btns.style.transition = 'bottom .3s ease';
+    }
+    document.body.style.paddingBottom = (banner ? banner.offsetHeight : 0) + 'px';
+  }
+
+  function resetFloatBtns() {
+    var btns = getFloatBtns();
+    if (btns) { btns.style.bottom = ''; }
+    document.body.style.paddingBottom = '';
+  }
+
+  // ── Focus trap (Day 2) ───────────────────────────────────────────────────
+  var modalTrigger = null;
   var FOCUSABLE = 'a[href],button:not([disabled]),input,textarea,select,[tabindex]:not([tabindex="-1"])';
 
   function trapFocus(container, e) {
@@ -94,8 +138,10 @@
   function removeBanner() {
     var el = document.getElementById('cc-banner');
     if (el) { document.removeEventListener('keydown', el._keyHandler); el.remove(); }
+    resetFloatBtns();
     setPageInert(false);
   }
+
   function removeModal() {
     var el = document.getElementById('cc-modal');
     if (el) { document.removeEventListener('keydown', el._keyHandler); el.remove(); }
@@ -129,6 +175,9 @@
     document.getElementById('cc-accept').onclick = function () { accept(true, true); };
     document.getElementById('cc-reject').onclick = function () { accept(false, false); };
     document.getElementById('cc-prefs').onclick = function () { removeBanner(); showModal(); };
+
+    // Push float buttons above the banner
+    requestAnimationFrame(function () { setTimeout(pushFloatBtns, 50); });
 
     // Focus first button
     setTimeout(function () {
@@ -197,11 +246,10 @@
     showModal();
   };
 
-  // Called by "Do Not Sell or Share My Info" footer link
   window.doNotSell = function () {
     accept(false, false);
     var flash = document.createElement('div');
-    flash.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--bg-card,#131829);border:1px solid var(--border-accent,rgba(0,212,255,.2));color:var(--text-primary,#E0E2EA);font-family:var(--font-body,Manrope,sans-serif);font-size:13px;padding:10px 20px;border-radius:var(--r-full,9999px);z-index:10001;box-shadow:0 4px 20px rgba(0,0,0,.4)';
+    flash.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--bg-elevated,#0F1320);backdrop-filter:blur(12px);border:1px solid var(--border-accent,rgba(0,212,255,.2));color:var(--text-primary,#E0E2EA);font-family:var(--font-body,"Manrope",sans-serif);font-size:13px;padding:10px 20px;border-radius:var(--r-full,9999px);z-index:10001;box-shadow:0 4px 20px rgba(0,0,0,.3)';
     flash.textContent = 'Opt-out saved. No analytics or ad cookies will be set.';
     document.body.appendChild(flash);
     setTimeout(function () { flash.remove(); }, 4000);
@@ -209,7 +257,6 @@
 
   function init() {
     injectStyles();
-    // Honor Global Privacy Control — treat as opt-out, no banner needed
     if (navigator.globalPrivacyControl) {
       save(false, false);
       gtagUpdate(false, false);
