@@ -57,7 +57,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <script>(function () { var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light'); })()</script>
 
  <!-- Stylesheet -->
- <link rel="stylesheet" href="/css/styles.css?v=10">
+ <link rel="stylesheet" href="/css/styles.css?v=11">
  
  <!-- Article Specific Styles -->
  <style>
@@ -339,6 +339,8 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <!-- Google Tag Manager (noscript) -->
  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFNLPH3H"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+ 
+ <a href="#main-content" class="skip-link">Skip to main content</a>
  <!-- End Google Tag Manager (noscript) -->
  <!-- Background layers -->
  <canvas id="neuralCanvas" aria-hidden="true"></canvas>
@@ -361,7 +363,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <a href="/services" class="nav-link">Services</a>
  <a href="/case-studies" class="nav-link">Case Studies</a>
  <a href="/#testimonials" class="nav-link">Testimonials</a>
- <a href="#" class="nav-link">Resources</a>
+ <a href="/sled-delivery-partner" class="nav-link">SLED</a>
 
  </div>
  <div class="nav-actions">
@@ -409,7 +411,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <a href="/services">Services</a>
  <a href="/case-studies">Case Studies</a>
  <a href="/#testimonials">Testimonials</a>
- <a href="#">Resources</a>
+ <a href="/sled-delivery-partner">SLED</a>
 
  <a href="/contact" class="btn btn-glow" style="margin-top:12px;">Contact Us</a>
  </div>
@@ -521,7 +523,8 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <li><a href="/#testimonials">Testimonials</a></li>
  <li><a href="/#insights">Insights</a></li>
  <li><a href="/newsroom">Newsroom</a></li>
- </ul>
+ <li><a href="/sled-delivery-partner">SLED</a></li>
+</ul>
  </nav>
  <nav class="footer-col" aria-label="Services">
  <h4>Services</h4>
@@ -565,8 +568,8 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <div class="footer-bottom-links">
  <a href="/privacy-policy">Privacy Policy</a>
  <a href="/terms">Terms of Service</a>
- <a href="javascript:void(0)" onclick="openConsentSettings();return false">Cookie Settings</a>
- <a href="javascript:void(0)" onclick="doNotSell();return false">Do Not Sell or Share My Info</a>
+ <button type="button" onclick="openConsentSettings()">Cookie Settings</button>
+ <button type="button" onclick="doNotSell()">Do Not Sell or Share My Info</button>
  </div>
  </div>
  </div>

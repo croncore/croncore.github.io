@@ -144,7 +144,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <script>(function () { var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light'); })()</script>
 
  <!-- Stylesheet -->
- <link rel="stylesheet" href="css/styles.css?v=10">
+ <link rel="stylesheet" href="css/styles.css?v=11">
 
  <style>
 /* ===== Hero Carousel ===== */
@@ -155,6 +155,9 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
 
 /* Progress bar nav */
 .hero-carousel-nav{display:flex;justify-content:flex-start;align-items:center;gap:10px;padding:12px 0 20px}
+.hcn-pause{display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;border:1px solid var(--border-strong);background:transparent;color:var(--text-secondary);cursor:pointer;transition:all .2s;flex-shrink:0}
+.hcn-pause:hover{border-color:var(--accent);color:var(--accent)}
+@media(prefers-reduced-motion:reduce){.hcn-btn.active .hcn-fill{animation:none!important;width:100%}}
 .hcn-btn{width:56px;height:6px;border-radius:999px;border:none;padding:0;cursor:pointer;position:relative;overflow:hidden;background:rgba(148,163,184,.22);flex-shrink:0}
 [data-theme="light"] .hcn-btn{background:rgba(100,116,139,.18)}
 .hcn-fill{position:absolute;inset:0;width:0%;height:100%;background:#3B82F6;border-radius:999px}
@@ -252,6 +255,8 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <!-- Google Tag Manager (noscript) -->
  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFNLPH3H" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
+ 
+ <a href="#main-content" class="skip-link">Skip to main content</a>
  <!-- End Google Tag Manager (noscript) -->
 
  <!-- Background layers -->
@@ -276,7 +281,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
 
  <a href="/case-studies" class="nav-link">Case Studies</a>
  <a href="#testimonials" class="nav-link">Testimonials</a>
- <a href="#" class="nav-link">Resources</a>
+ <a href="/sled-delivery-partner" class="nav-link">SLED</a>
  </div>
  <div class="nav-actions">
  <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme">
@@ -324,18 +329,18 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
 
  <a href="/case-studies">Case Studies</a>
  <a href="#testimonials">Testimonials</a>
- <a href="#">Resources</a>
+ <a href="/sled-delivery-partner">SLED</a>
  <a href="/contact" class="btn btn-glow" style="margin-top:12px;">Contact Us</a>
  </div>
 
  <main id="main-content">
 
  <!-- ===== HERO CAROUSEL ===== -->
- <div class="hero-carousel">
+ <div class="hero-carousel" role="region" aria-roledescription="carousel" aria-label="Homepage highlights">
  <div class="hero-carousel-slides">
 
  <!-- Slide 1: Main AI hero -->
- <header class="hero hero-slide active" id="hero">
+ <header class="hero hero-slide active" id="hero" role="group" aria-roledescription="slide" aria-label="1 of 2">
  <div class="container">
  <div class="hero-grid">
  <div class="hero-content">
@@ -440,7 +445,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  </header>
 
  <!-- Slide 2: SLED hero -->
- <div class="hero-slide hero-slide--sled" aria-label="SLED Delivery Partner">
+ <div class="hero-slide hero-slide--sled" role="group" aria-roledescription="slide" aria-label="2 of 2" aria-hidden="true" inert>
  <div class="sled-map" aria-hidden="true">
  <img src="images/us-map.webp" alt="" class="sled-map-img sled-map-img--light" loading="lazy" width="1646" height="956">
  <img src="images/us-map-dark.webp" alt="" class="sled-map-img sled-map-img--dark" loading="lazy" width="1536" height="1024">
@@ -448,7 +453,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <div class="container">
  <div class="sled-hero-grid">
  <div>
- <h1>Powering procurement across the <span class="text-glow">US SLED.</span></h1>
+ <h2>Powering procurement across the <span class="text-glow">US SLED.</span></h2>
  <p class="sled-lead">We help US prime contractors review SLED opportunities, prepare stronger bid responses, and move faster before submission.</p>
  <div class="sled-hero-btns">
  <a href="sled-delivery-partner" class="btn btn-glow">Explore SLED Portfolio<svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
@@ -525,12 +530,16 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
 
  <!-- Progress bar navigation -->
  <div class="container">
- <div class="hero-carousel-nav" aria-label="Hero carousel navigation">
- <button class="hcn-btn active" data-idx="0" aria-label="Enterprise AI hero">
+ <div class="hero-carousel-nav" aria-label="Hero carousel controls">
+ <button class="hcn-btn active" data-idx="0" aria-label="Go to slide 1: Enterprise AI">
  <span class="hcn-fill"></span>
  </button>
- <button class="hcn-btn" data-idx="1" aria-label="SLED delivery partner">
+ <button class="hcn-btn" data-idx="1" aria-label="Go to slide 2: SLED">
  <span class="hcn-fill"></span>
+ </button>
+ <button class="hcn-pause" id="hcnPause" aria-label="Pause carousel" aria-pressed="false">
+ <svg class="hcn-icon-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+ <svg class="hcn-icon-play" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
  </button>
  </div>
  </div>
@@ -2069,6 +2078,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <li><a href="#testimonials">Testimonials</a></li>
  <li><a href="insights">Insights</a></li>
  <li><a href="/case-studies">Case Studies</a></li>
+<li><a href="/sled-delivery-partner">SLED</a></li>
  <li><a href="newsroom">Newsroom</a></li>
  </ul>
  </nav>
@@ -2118,8 +2128,8 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <div class="footer-bottom-links">
  <a href="privacy-policy">Privacy Policy</a>
  <a href="terms">Terms of Service</a>
- <a href="javascript:void(0)" onclick="openConsentSettings();return false">Cookie Settings</a>
- <a href="javascript:void(0)" onclick="doNotSell();return false">Do Not Sell or Share My Info</a>
+ <button type="button" onclick="openConsentSettings()">Cookie Settings</button>
+ <button type="button" onclick="doNotSell()">Do Not Sell or Share My Info</button>
  </div>
  </div>
  </div>
@@ -2131,35 +2141,88 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
     (function () {
       'use strict';
       var DURATION = 6000;
-      var slides, btns, cur, timer;
+      var slides, btns, cur, timer, paused;
+      var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function setSlideVisibility(idx, active) {
+        if (active) {
+          slides[idx].removeAttribute('aria-hidden');
+          slides[idx].removeAttribute('inert');
+        } else {
+          slides[idx].setAttribute('aria-hidden', 'true');
+          slides[idx].setAttribute('inert', '');
+        }
+      }
 
       function goTo(i) {
         if (i === cur) return;
         slides[cur].classList.remove('active');
         btns[cur].classList.remove('active');
+        setSlideVisibility(cur, false);
 
         cur = ((i % slides.length) + slides.length) % slides.length;
 
         slides[cur].classList.add('active');
-        // Restart fill animation by removing/re-adding active class after reflow
+        setSlideVisibility(cur, true);
         var fill = btns[cur].querySelector('.hcn-fill');
         btns[cur].classList.remove('active');
         if (fill) { fill.style.animation = 'none'; void fill.offsetWidth; fill.style.animation = ''; }
         btns[cur].classList.add('active');
 
+        if (!paused && !reducedMotion) scheduleNext();
+      }
+
+      function scheduleNext() {
         clearTimeout(timer);
         timer = setTimeout(function () { goTo(cur + 1); }, DURATION);
+      }
+
+      function setPaused(state) {
+        paused = state;
+        var btn = document.getElementById('hcnPause');
+        if (!btn) return;
+        btn.setAttribute('aria-pressed', String(state));
+        btn.setAttribute('aria-label', state ? 'Play carousel' : 'Pause carousel');
+        btn.querySelector('.hcn-icon-pause').style.display = state ? 'none' : '';
+        btn.querySelector('.hcn-icon-play').style.display = state ? '' : 'none';
+        if (state) {
+          clearTimeout(timer);
+        } else {
+          scheduleNext();
+        }
       }
 
       function init() {
         slides = Array.from(document.querySelectorAll('.hero-slide'));
         btns   = Array.from(document.querySelectorAll('.hcn-btn'));
+        var pauseBtn = document.getElementById('hcnPause');
         if (!slides.length || !btns.length) return;
         cur = 0;
+        paused = false;
+
+        // Set initial aria visibility
+        slides.forEach(function (s, i) { setSlideVisibility(i, i === 0); });
+
         btns.forEach(function (btn, i) {
           btn.addEventListener('click', function () { goTo(i); });
         });
-        timer = setTimeout(function () { goTo(1); }, DURATION);
+
+        if (pauseBtn) {
+          pauseBtn.addEventListener('click', function () { setPaused(!paused); });
+        }
+
+        // Pause on hover/focus-within
+        var carousel = document.querySelector('.hero-carousel');
+        if (carousel) {
+          carousel.addEventListener('mouseenter', function () { if (!paused) { clearTimeout(timer); } });
+          carousel.addEventListener('mouseleave', function () { if (!paused && !reducedMotion) scheduleNext(); });
+          carousel.addEventListener('focusin', function () { if (!paused) { clearTimeout(timer); } });
+          carousel.addEventListener('focusout', function (e) {
+            if (!carousel.contains(e.relatedTarget) && !paused && !reducedMotion) scheduleNext();
+          });
+        }
+
+        if (!reducedMotion) scheduleNext();
       }
 
       if (document.readyState === 'loading') {
@@ -2173,6 +2236,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <!-- JavaScript (deferred: parse off the main thread, execute in order after DOM is ready) -->
  <script defer src="js/sanity.js"></script>
  <script defer src="js/main.js?v=6"></script>
+ <script defer src="js/a11y.js?v=1"></script>
 
  <!-- Float Buttons -->
  <div class="float-btns">

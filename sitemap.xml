@@ -241,7 +241,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.croncore.com/insights/AI%20Integration%20Services</loc>
+    <loc>https://www.croncore.com/insights/AI-Integration-Services</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -317,5 +317,23 @@
     <lastmod>2026-06-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.croncore.com/ai-consulting-services</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.croncore.com/case-studies</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.croncore.com/insights/it-staff-augmentation-services-guide</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
