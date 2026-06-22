@@ -94,12 +94,14 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <script>(function(){var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
 
  <!-- Stylesheet -->
- <link rel="stylesheet" href="css/styles.css?v=10">
+ <link rel="stylesheet" href="css/styles.css?v=11">
 </head>
 <body>
  <!-- Google Tag Manager (noscript) -->
  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFNLPH3H"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+ 
+ <a href="#main-content" class="skip-link">Skip to main content</a>
  <!-- End Google Tag Manager (noscript) -->
 
  <!-- Background layers -->
@@ -121,7 +123,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <a href="/services" class="nav-link">Services</a>
  <a href="/case-studies" class="nav-link">Case Studies</a>
  <a href="/#testimonials" class="nav-link">Testimonials</a>
- <a href="#" class="nav-link">Resources</a>
+ <a href="/sled-delivery-partner" class="nav-link">SLED</a>
 
  </div>
  <div class="nav-actions">
@@ -148,13 +150,13 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <a href="/services">Services</a>
  <a href="/case-studies">Case Studies</a>
  <a href="/#testimonials">Testimonials</a>
- <a href="#">Resources</a>
+ <a href="/sled-delivery-partner">SLED</a>
 
  <a href="#contactForm" class="btn btn-glow" style="margin-top:12px;">Get Started</a>
  </div>
 
  <!-- ===== CONTACT PAGE ===== -->
- <main class="contact-page">
+ <main id="main-content" class="contact-page">
  <div class="container">
  <div class="contact-header reveal">
  <div class="section-tag"><span class="tag-pulse"></span> Contact Sales</div>
@@ -163,31 +165,36 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  </div>
 
  <!-- Replace YOUR_FORM_ID with your actual Formspree form ID -->
- <form id="contactForm" class="contact-form reveal" action="https://formspree.io/f/mlgwernn" method="POST">
+ <form id="contactForm" class="contact-form reveal" action="https://formspree.io/f/mlgwernn" method="POST" novalidate>
 
  <div class="form-group">
- <input type="text" name="fullName" class="form-input" placeholder="Full Name *" required>
- <p class="form-error">This field is required.</p>
+ <label for="fullName" class="sr-only">Full Name</label>
+ <input type="text" id="fullName" name="fullName" class="form-input" placeholder="Full Name *" required aria-required="true" aria-describedby="error-fullName">
+ <p id="error-fullName" class="form-error" role="alert">This field is required.</p>
  </div>
 
  <div class="form-group">
- <input type="email" name="email" class="form-input" placeholder="Email Address *" required>
- <p class="form-error">Please enter a valid email address.</p>
+ <label for="email" class="sr-only">Email Address</label>
+ <input type="email" id="email" name="email" class="form-input" placeholder="Email Address *" required aria-required="true" aria-describedby="error-email">
+ <p id="error-email" class="form-error" role="alert">Please enter a valid email address.</p>
  </div>
 
  <div class="form-group">
- <input type="text" name="industry" class="form-input" placeholder="Industry *" required>
- <p class="form-error">This field is required.</p>
+ <label for="industry" class="sr-only">Industry</label>
+ <input type="text" id="industry" name="industry" class="form-input" placeholder="Industry *" required aria-required="true" aria-describedby="error-industry">
+ <p id="error-industry" class="form-error" role="alert">This field is required.</p>
  </div>
 
  <div class="form-group">
- <input type="text" name="country" class="form-input" placeholder="Country *" required>
- <p class="form-error">This field is required.</p>
+ <label for="country" class="sr-only">Country</label>
+ <input type="text" id="country" name="country" class="form-input" placeholder="Country *" required aria-required="true" aria-describedby="error-country">
+ <p id="error-country" class="form-error" role="alert">This field is required.</p>
  </div>
 
  <div class="form-group full-width">
- <textarea name="message" class="form-textarea" placeholder="Enquiry / Message *" required></textarea>
- <p class="form-error">This field is required.</p>
+ <label for="message" class="sr-only">Enquiry / Message</label>
+ <textarea id="message" name="message" class="form-textarea" placeholder="Enquiry / Message *" required aria-required="true" aria-describedby="error-message"></textarea>
+ <p id="error-message" class="form-error" role="alert">This field is required.</p>
  </div>
 
  <p class="form-privacy">
@@ -225,7 +232,8 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <li><a href="/#testimonials">Testimonials</a></li>
  <li><a href="/insights">Insights</a></li>
  <li><a href="/newsroom">Newsroom</a></li>
- </ul>
+ <li><a href="/sled-delivery-partner">SLED</a></li>
+</ul>
  </nav>
  <nav class="footer-col" aria-label="Services">
  <h4>Services</h4>
@@ -251,8 +259,8 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <div class="footer-bottom-links">
  <a href="privacy-policy">Privacy Policy</a>
  <a href="terms">Terms of Service</a>
- <a href="javascript:void(0)" onclick="openConsentSettings();return false">Cookie Settings</a>
- <a href="javascript:void(0)" onclick="doNotSell();return false">Do Not Sell or Share My Info</a>
+ <button type="button" onclick="openConsentSettings()">Cookie Settings</button>
+ <button type="button" onclick="doNotSell()">Do Not Sell or Share My Info</button>
  </div>
  </div>
  </div>
@@ -261,6 +269,51 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
 
  <!-- JavaScript -->
  <script src="js/main.js?v=6"></script>
+ <script defer src="js/a11y.js?v=1"></script>
+ 
+ <script>
+ (function () {
+   'use strict';
+   var form = document.getElementById('contactForm');
+   if (!form) return;
+
+   // aria-invalid mirrors .error class on inputs via MutationObserver
+   form.querySelectorAll('[required]').forEach(function (field) {
+     new MutationObserver(function () {
+       if (field.classList.contains('error')) {
+         field.setAttribute('aria-invalid', 'true');
+       } else {
+         field.removeAttribute('aria-invalid');
+       }
+     }).observe(field, { attributes: true, attributeFilter: ['class'] });
+
+     // Also clear aria-invalid on input
+     field.addEventListener('input', function () {
+       field.removeAttribute('aria-invalid');
+     });
+   });
+
+   // After submit: focus first errored field
+   form.addEventListener('submit', function () {
+     setTimeout(function () {
+       var first = form.querySelector('[aria-invalid="true"], .error');
+       if (first) first.focus();
+     }, 0);
+   });
+
+   // Make dynamically-created toast divs accessible
+   new MutationObserver(function (muts) {
+     muts.forEach(function (m) {
+       m.addedNodes.forEach(function (n) {
+         if (n.nodeType === 1 && n.classList && n.classList.contains('toast')) {
+           n.setAttribute('aria-live', n.classList.contains('error') ? 'assertive' : 'polite');
+           n.setAttribute('role', n.classList.contains('error') ? 'alert' : 'status');
+         }
+       });
+     });
+   }).observe(document.body, { childList: true });
+ })();
+ </script>
 
  <!-- SLED contact form customisation -->
  <script>

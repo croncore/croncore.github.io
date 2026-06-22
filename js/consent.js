@@ -67,8 +67,41 @@
     document.head.appendChild(s);
   }
 
-  function removeBanner() { var el = document.getElementById('cc-banner'); if (el) el.remove(); }
-  function removeModal() { var el = document.getElementById('cc-modal'); if (el) el.remove(); }
+  var modalTrigger = null;
+
+  var FOCUSABLE = 'a[href],button:not([disabled]),input,textarea,select,[tabindex]:not([tabindex="-1"])';
+
+  function trapFocus(container, e) {
+    var els = Array.from(container.querySelectorAll(FOCUSABLE)).filter(function (el) {
+      return !el.closest('[inert]') && el.offsetParent !== null;
+    });
+    if (!els.length) return;
+    var first = els[0], last = els[els.length - 1];
+    if (e.key === 'Tab') {
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+      } else {
+        if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    }
+  }
+
+  function setPageInert(state) {
+    var pc = document.querySelector('.page-content') || document.querySelector('main');
+    if (pc) { state ? pc.setAttribute('inert', '') : pc.removeAttribute('inert'); }
+  }
+
+  function removeBanner() {
+    var el = document.getElementById('cc-banner');
+    if (el) { document.removeEventListener('keydown', el._keyHandler); el.remove(); }
+    setPageInert(false);
+  }
+  function removeModal() {
+    var el = document.getElementById('cc-modal');
+    if (el) { document.removeEventListener('keydown', el._keyHandler); el.remove(); }
+    setPageInert(false);
+    if (modalTrigger) { modalTrigger.focus(); modalTrigger = null; }
+  }
 
   function accept(analytics, ads) {
     removeBanner();
@@ -82,9 +115,11 @@
     var el = document.createElement('div');
     el.id = 'cc-banner';
     el.setAttribute('role', 'dialog');
+    el.setAttribute('aria-modal', 'true');
     el.setAttribute('aria-label', 'Cookie consent');
+    el.setAttribute('aria-describedby', 'cc-banner-text');
     el.innerHTML =
-      '<p class="cc-text">We use cookies to understand how visitors use our site and improve performance. See our <a href="privacy-policy">Privacy Policy</a>.</p>' +
+      '<p id="cc-banner-text" class="cc-text">We use cookies to understand how visitors use our site and improve performance. See our <a href="privacy-policy">Privacy Policy</a>.</p>' +
       '<div class="cc-actions">' +
         '<button class="cc-btn cc-btn-primary" id="cc-accept">Accept all</button>' +
         '<button class="cc-btn cc-btn-outline" id="cc-reject">Reject non-essential</button>' +
@@ -94,6 +129,20 @@
     document.getElementById('cc-accept').onclick = function () { accept(true, true); };
     document.getElementById('cc-reject').onclick = function () { accept(false, false); };
     document.getElementById('cc-prefs').onclick = function () { removeBanner(); showModal(); };
+
+    // Focus first button
+    setTimeout(function () {
+      var first = el.querySelector('button');
+      if (first) first.focus();
+    }, 50);
+
+    // Focus trap + Esc
+    el._keyHandler = function (e) {
+      if (e.key === 'Escape') { accept(false, false); return; }
+      trapFocus(el, e);
+    };
+    document.addEventListener('keydown', el._keyHandler);
+    setPageInert(true);
   }
 
   function showModal() {
@@ -106,10 +155,11 @@
     overlay.setAttribute('role', 'dialog');
     overlay.setAttribute('aria-modal', 'true');
     overlay.setAttribute('aria-label', 'Cookie preferences');
+    overlay.setAttribute('aria-describedby', 'cc-panel-desc');
     overlay.innerHTML =
       '<div id="cc-panel">' +
         '<h2>Cookie Preferences</h2>' +
-        '<p>Essential cookies are always on. Choose which optional cookies you allow. See our <a href="privacy-policy">Privacy Policy</a>.</p>' +
+        '<p id="cc-panel-desc">Essential cookies are always on. Choose which optional cookies you allow. See our <a href="privacy-policy">Privacy Policy</a>.</p>' +
         '<div class="cc-row"><div class="cc-row-info"><div class="cc-row-title">Essential</div><div class="cc-row-desc">Site navigation, security, theme preferences.</div></div><span class="cc-always-on">Always on</span></div>' +
         '<div class="cc-row"><div class="cc-row-info"><div class="cc-row-title">Analytics</div><div class="cc-row-desc">Helps us understand how visitors use the site (Google Analytics 4).</div></div><label class="cc-switch"><input type="checkbox" id="cc-chk-a"' + (a ? ' checked' : '') + '><span class="cc-track"></span></label></div>' +
         '<div class="cc-row"><div class="cc-row-info"><div class="cc-row-title">Advertising</div><div class="cc-row-desc">Used to measure ad effectiveness and personalization.</div></div><label class="cc-switch"><input type="checkbox" id="cc-chk-ads"' + (ads ? ' checked' : '') + '><span class="cc-track"></span></label></div>' +
@@ -124,10 +174,25 @@
       accept(document.getElementById('cc-chk-a').checked, document.getElementById('cc-chk-ads').checked);
     };
     document.getElementById('cc-all').onclick = function () { accept(true, true); };
+
+    // Focus first button
+    setTimeout(function () {
+      var first = overlay.querySelector('button');
+      if (first) first.focus();
+    }, 50);
+
+    // Focus trap + Esc
+    overlay._keyHandler = function (e) {
+      if (e.key === 'Escape') { removeModal(); return; }
+      trapFocus(overlay, e);
+    };
+    document.addEventListener('keydown', overlay._keyHandler);
+    setPageInert(true);
   }
 
-  // Called by "Cookie Settings" footer link
+  // Called by "Cookie Settings" footer button
   window.openConsentSettings = function () {
+    modalTrigger = document.activeElement;
     removeBanner();
     showModal();
   };
