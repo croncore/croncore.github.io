@@ -1145,7 +1145,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 </div>
 
-<script src="js/main.js?v=6"></script>
+<script src="js/main.js?v=7"></script>
+<script>
+(function(){
+  var overlay=document.getElementById('mobileNav');
+  if(!overlay)return;
+  var brand=document.querySelector('.nav-brand');
+  var brandHTML=brand?brand.innerHTML:'';
+  var g='<span class="mobile-cta-arrow" aria-hidden="true">→</span>';
+  overlay.innerHTML=
+    '<div class="mobile-nav-header">'+
+    '<a class="mobile-nav-brand" href="/" aria-label="Croncore Home">'+brandHTML+'</a>'+
+    '<button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">'+
+    '<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">'+
+    '<line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'+
+    '<line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'+
+    '</svg></button></div>'+
+    '<div class="mobile-panels">'+
+    '<div class="mobile-panel mobile-panel--root">'+
+    '<a href="#case-studies"><span>Case Studies</span></a>'+
+    '<a href="#procurement-codes"><span>Codes</span></a>'+
+    '<a href="#process"><span>Process</span></a>'+
+    '<a href="#compliance"><span>Compliance</span></a>'+
+    '<div class="mobile-panel-cta-wrap">'+
+    '<a href="contact?source=sled" class="btn btn-glow mobile-panel-cta">Brief our team '+g+'</a>'+
+    '</div></div></div>';
+  overlay.__resetPanels=null;
+})();
+</script>
  <script defer src="js/a11y.js?v=2"></script>
  
 <script>
