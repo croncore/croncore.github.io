@@ -54,7 +54,7 @@
  <script>(function () { var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light'); })()</script>
 
  <!-- Stylesheet -->
- <link rel="stylesheet" href="css/styles.css?v=10">
+ <link rel="stylesheet" href="css/styles.css?v=12">
 
  <style>
         .newsroom-hero {
@@ -266,6 +266,8 @@
  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFNLPH3H"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
+ 
+ <a href="#main-content" class="skip-link">Skip to main content</a>
  <canvas id="neuralCanvas" aria-hidden="true"></canvas>
  <div class="bg-radial-top" aria-hidden="true"></div>
  <div class="bg-radial-bottom" aria-hidden="true"></div>
@@ -285,7 +287,7 @@
  <a href="/services" class="nav-link">Services</a>
  <a href="/case-studies" class="nav-link">Case Studies</a>
  <a href="/#testimonials" class="nav-link">Testimonials</a>
- <a href="#" class="nav-link">Resources</a>
+ <a href="/sled-delivery-partner" class="nav-link">SLED</a>
 
  </div>
  <div class="nav-actions">
@@ -332,7 +334,7 @@
  <a href="/services">Services</a>
  <a href="/case-studies">Case Studies</a>
  <a href="/#testimonials">Testimonials</a>
- <a href="#">Resources</a>
+ <a href="/sled-delivery-partner">SLED</a>
 
  <a href="/contact" class="btn btn-glow" style="margin-top:12px;">Contact Us</a>
  </div>
@@ -350,7 +352,7 @@
  <section class="newsroom-featured">
  <div class="container">
  <article class="newsroom-featured-card">
- <img class="newsroom-featured-img" src="images/case-studies/Telco @.jpg"
+ <img class="newsroom-featured-img" src="images/case-studies/telco.webp"
                              alt="Croncore launches Mongolia's first sovereign voice AI" loading="eager"
                              width="800" height="500">
  <div class="newsroom-featured-body">
@@ -394,7 +396,7 @@
  <div class="newsroom-grid" id="newsroomGrid">
 
  <article class="insights-card in-view" data-category="partnerships">
- <img src="images/case-studies/Financial Services.jpg" alt="Saudi telecom partnership" class="insights-card-img" style="aspect-ratio: 16/9; object-fit: cover;" width="400" height="225" loading="lazy">
+ <img src="images/case-studies/financial-services.webp" alt="Saudi telecom partnership" class="insights-card-img" style="aspect-ratio: 16/9; object-fit: cover;" width="400" height="225" loading="lazy">
  <div class="insights-card-body">
  <span class="insights-card-category">Partnerships</span>
  <h3>Croncore signs multi year enterprise AI partnership with leading Saudi telecom</h3>
@@ -459,7 +461,7 @@
  </article>
 
  <article class="insights-card in-view" data-category="product">
- <img src="images/case-studies/Education & Digital Learning.jpg" alt="Air-gapped AI" class="insights-card-img" style="aspect-ratio: 16/9; object-fit: cover;" width="400" height="225" loading="lazy">
+ <img src="images/case-studies/education-digital-learning.webp" alt="Air-gapped AI" class="insights-card-img" style="aspect-ratio: 16/9; object-fit: cover;" width="400" height="225" loading="lazy">
  <div class="insights-card-body">
  <span class="insights-card-category">Product</span>
  <h3>On prem AI now ships air gapped for regulated financial environments</h3>
@@ -562,6 +564,7 @@
  <li><a href="/#testimonials">Testimonials</a></li>
  <li><a href="insights">Insights</a></li>
  <li><a href="/case-studies">Case Studies</a></li>
+<li><a href="/sled-delivery-partner">SLED</a></li>
  <li><a href="newsroom">Newsroom</a></li>
  </ul>
  </nav>
@@ -607,6 +610,8 @@
  <div class="footer-bottom-links">
  <a href="privacy-policy">Privacy Policy</a>
  <a href="terms">Terms of Service</a>
+ <button type="button" onclick="openConsentSettings()">Cookie Settings</button>
+ <button type="button" onclick="doNotSell()">Do Not Sell or Share My Info</button>
  </div>
  </div>
  </div>
@@ -614,7 +619,9 @@
  </div>
 
  <!-- JavaScript -->
- <script src="js/main.js?v=6"></script>
+ <script src="js/main.js?v=7"></script>
+ <script defer src="js/a11y.js?v=2"></script>
+ 
  <script>
         (function () {
             var chips = document.querySelectorAll('.newsroom-chip');

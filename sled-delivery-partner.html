@@ -40,7 +40,7 @@
 <link rel="manifest" href="images/favicons/site.webmanifest" />
 <meta name="theme-color" content="#0A0E17">
 <script>(function(){var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
-<link rel="stylesheet" href="css/styles.css?v=10">
+<link rel="stylesheet" href="css/styles.css?v=12">
 
 <style>
 /* ===== SLED page styles ===== */
@@ -105,9 +105,9 @@
 
 /* Card header */
 .sled-rfp-head{display:flex;flex-direction:column;gap:.4rem;padding:.2rem .2rem .15rem}
-.sled-rfp-eyebrow{font-family:var(--font-mono);font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted)}
+.sled-rfp-eyebrow{font-family:var(--font-mono);font-size:.75rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--text-secondary)}
 .sled-rfp-id{font-family:var(--font-display);font-size:1.7rem;font-weight:800;color:var(--text-primary);letter-spacing:-.02em;line-height:1.1;margin:0}
-.sled-rfp-desc{font-size:.83rem;line-height:1.55;color:var(--text-muted);margin:0;max-width:340px}
+.sled-rfp-desc{font-size:.83rem;line-height:1.55;color:var(--text-secondary);margin:0;max-width:340px}
 
 /* Meta row: value | posted */
 .sled-rfp-meta{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:.85rem;padding:.85rem 1rem;background:rgba(241,245,249,.5)}
@@ -117,7 +117,7 @@
 .sled-rfp-meta .meta-icon{width:32px;height:32px;border-radius:50%;background:#fff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-weight:700;font-family:var(--font-display);font-size:1rem;flex-shrink:0;line-height:1}
 [data-theme="dark"] .sled-rfp-meta .meta-icon{background:rgba(255,255,255,.05)}
 .sled-rfp-meta .meta-info{display:flex;flex-direction:column;gap:.22rem;min-width:0}
-.sled-rfp-meta .lbl{font-family:var(--font-mono);font-size:.6rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);line-height:1}
+.sled-rfp-meta .lbl{font-family:var(--font-mono);font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-secondary);line-height:1}
 .sled-rfp-meta .val{font-family:var(--font-display);font-size:1rem;font-weight:800;color:var(--text-primary);letter-spacing:-.01em;line-height:1.1}
 
 /* Row sub-cards (Scope / Guidelines / Deadline), static */
@@ -127,7 +127,7 @@
 .sled-rfp-row-icon svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .sled-rfp-row-body{flex:1;min-width:0}
 .sled-rfp-row-title{font-size:.9rem;font-weight:600;color:var(--text-primary);line-height:1.3}
-.sled-rfp-row-sub{font-size:.75rem;color:var(--text-muted);margin-top:.15rem}
+.sled-rfp-row-sub{font-size:.75rem;color:var(--text-secondary);margin-top:.15rem}
 .sled-rfp-chevron{color:var(--text-muted);flex-shrink:0}
 .sled-rfp-chevron svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
@@ -371,7 +371,9 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFNLPH3H"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<canvas id="neuralCanvas" aria-hidden="true"></canvas>
+
+ <a href="#main-content" class="skip-link">Skip to main content</a>
+ <canvas id="neuralCanvas" aria-hidden="true"></canvas>
 <div class="bg-radial-top" aria-hidden="true"></div>
 <div class="bg-radial-bottom" aria-hidden="true"></div>
 <div class="noise-overlay" aria-hidden="true"></div>
@@ -453,7 +455,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <div class="sled-rfp-card">
  <div class="sled-rfp-head">
  <div class="sled-rfp-eyebrow">Request for Proposal</div>
- <h2 class="sled-rfp-id">RFP PW 25 024</h2>
+ <h2 class="sled-rfp-id">RFP IT 26 031</h2>
  <p class="sled-rfp-desc">We invite qualified firms to submit proposals for this upcoming project opportunity.</p>
  </div>
 
@@ -1037,12 +1039,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li><a href="privacy-policy">Privacy</a></li>
 </ul></nav>
 </div>
-<div class="footer-bottom"><span>&copy; 2025/2026 Croncore LLC, Remote SLED Delivery Partner</span><div class="footer-bottom-links"><a href="privacy-policy">Privacy Policy</a><a href="terms">Terms of Service</a></div></div>
+<div class="footer-bottom"><span>&copy; 2025/2026 Croncore LLC, Remote SLED Delivery Partner</span><div class="footer-bottom-links"><a href="privacy-policy">Privacy Policy</a><a href="terms">Terms of Service</a><button type="button" onclick="openConsentSettings()">Cookie Settings</button><button type="button" onclick="doNotSell()">Do Not Sell or Share My Info</button></div></div>
 </div>
 </footer>
 </div>
 
-<script src="js/main.js?v=6"></script>
+<script src="js/main.js?v=7"></script>
+<script>
+(function(){
+  var overlay=document.getElementById('mobileNav');
+  if(!overlay)return;
+  var brand=document.querySelector('.nav-brand');
+  var brandHTML=brand?brand.innerHTML:'';
+  var g='<span class="mobile-cta-arrow" aria-hidden="true">→</span>';
+  overlay.innerHTML=
+    '<div class="mobile-nav-header">'+
+    '<a class="mobile-nav-brand" href="/" aria-label="Croncore Home">'+brandHTML+'</a>'+
+    '<button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">'+
+    '<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">'+
+    '<line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'+
+    '<line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'+
+    '</svg></button></div>'+
+    '<div class="mobile-panels">'+
+    '<div class="mobile-panel mobile-panel--root">'+
+    '<a href="#case-studies"><span>Case Studies</span></a>'+
+    '<a href="#procurement-codes"><span>Codes</span></a>'+
+    '<a href="#process"><span>Process</span></a>'+
+    '<a href="#compliance"><span>Compliance</span></a>'+
+    '<div class="mobile-panel-cta-wrap">'+
+    '<a href="contact?source=sled" class="btn btn-glow mobile-panel-cta">Brief our team '+g+'</a>'+
+    '</div></div></div>';
+  overlay.__resetPanels=null;
+})();
+</script>
+ <script defer src="js/a11y.js?v=2"></script>
+ 
 <script>
 document.querySelectorAll('.sled-faq-item-header').forEach(btn => {
     btn.addEventListener('click', () => {

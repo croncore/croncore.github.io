@@ -53,7 +53,7 @@
  <script>(function () { var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light'); })()</script>
 
  <!-- Stylesheet -->
- <link rel="stylesheet" href="css/styles.css?v=10">
+ <link rel="stylesheet" href="css/styles.css?v=12">
 
  <style>
         .cs-page-hero {
@@ -145,6 +145,8 @@
  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFNLPH3H"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
+ 
+ <a href="#main-content" class="skip-link">Skip to main content</a>
  <!-- Background layers -->
  <canvas id="neuralCanvas" aria-hidden="true"></canvas>
  <div class="bg-radial-top" aria-hidden="true"></div>
@@ -165,7 +167,7 @@
  <a href="/services" class="nav-link">Services</a>
  <a href="/case-studies" class="nav-link">Case Studies</a>
  <a href="/#testimonials" class="nav-link">Testimonials</a>
- <a href="#" class="nav-link">Resources</a>
+ <a href="/sled-delivery-partner" class="nav-link">SLED</a>
 
  </div>
  <div class="nav-actions">
@@ -212,7 +214,7 @@
  <a href="/services">Services</a>
  <a href="/case-studies">Case Studies</a>
  <a href="/#testimonials">Testimonials</a>
- <a href="#">Resources</a>
+ <a href="/sled-delivery-partner">SLED</a>
 
  <a href="/contact" class="btn btn-glow" style="margin-top:12px;">Contact Us</a>
  </div>
@@ -412,7 +414,7 @@
  <!-- Card 2: Bloomlink -->
  <article class="cs-card" data-category="llm" aria-label="Bloomlink Case Study">
  <div class="cs-card-bg">
- <img src="images/case-studies/Telco @.jpg" alt="Bloomlink, Telecom & Call Centers Case Study" loading="lazy">
+ <img src="images/case-studies/telco.webp" alt="Bloomlink, Telecom & Call Centers Case Study" loading="lazy">
  </div>
  <div class="cs-card-overlay"></div>
  <div class="cs-card-info">
@@ -427,7 +429,7 @@
  <!-- Card 3: EdTech -->
  <article class="cs-card" data-category="llm" aria-label="EdTech Case Study">
  <div class="cs-card-bg">
- <img src="images/case-studies/Education & Digital Learning.jpg" alt="Education & Digital Learning Case Study" loading="lazy">
+ <img src="images/case-studies/education-digital-learning.webp" alt="Education & Digital Learning Case Study" loading="lazy">
  </div>
  <div class="cs-card-overlay"></div>
  <div class="cs-card-info">
@@ -442,7 +444,7 @@
  <!-- Card 4: Oracle Merchant Services -->
  <article class="cs-card" data-category="agents" aria-label="Oracle Merchant Services Case Study">
  <div class="cs-card-bg">
- <img src="images/case-studies/Financial Services.jpg" alt="Oracle Merchant Services, Financial Services Case Study" loading="lazy">
+ <img src="images/case-studies/financial-services.webp" alt="Oracle Merchant Services, Financial Services Case Study" loading="lazy">
  </div>
  <div class="cs-card-overlay"></div>
  <div class="cs-card-info">
@@ -489,6 +491,7 @@
  <li><a href="/#testimonials">Testimonials</a></li>
  <li><a href="insights">Insights</a></li>
  <li><a href="/case-studies">Case Studies</a></li>
+<li><a href="/sled-delivery-partner">SLED</a></li>
  <li><a href="newsroom">Newsroom</a></li>
  </ul>
  </nav>
@@ -538,6 +541,8 @@
  <div class="footer-bottom-links">
  <a href="privacy-policy">Privacy Policy</a>
  <a href="terms">Terms of Service</a>
+ <button type="button" onclick="openConsentSettings()">Cookie Settings</button>
+ <button type="button" onclick="doNotSell()">Do Not Sell or Share My Info</button>
  </div>
  </div>
  </div>
@@ -545,7 +550,9 @@
  </div>
 
  <!-- JavaScript -->
- <script src="js/main.js?v=6"></script>
+ <script src="js/main.js?v=7"></script>
+ <script defer src="js/a11y.js?v=2"></script>
+ 
 
  <!-- Float Buttons -->
  <div class="float-btns">
