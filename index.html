@@ -248,6 +248,48 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
   .hero-slide--sled .sled-rfp-card,.hero-slide--sled .sled-active-badge{animation:none!important}
   .hcn-btn.active .hcn-fill{animation:none!important;width:100%}
 }
+
+/* ===== Testimonial Spotlight (tspot) ===== */
+.tspot{padding:var(--section-pad) 0;background:var(--bg-primary)}
+.tspot-header{text-align:center;margin-bottom:52px}
+.tspot-header .section-desc{text-align:center;margin-left:auto;margin-right:auto}
+.tspot-inner{text-align:center}
+.tspot-panels{position:relative;max-width:680px;margin:0 auto;height:360px}
+.tspot-panel{position:absolute;top:0;left:0;right:0;opacity:0;visibility:hidden;transition:opacity .4s cubic-bezier(.25,.46,.45,.94);pointer-events:none}
+.tspot-panel.active{opacity:1;visibility:visible;pointer-events:auto;animation:tspot-in .4s cubic-bezier(.25,.46,.45,.94) forwards}
+@keyframes tspot-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.tspot-av-wrap{width:62px;height:62px;border-radius:50%;overflow:hidden;margin:0 auto 28px;border:2px solid rgba(0,0,0,.08)}
+.tspot-av-svg{width:62px;height:62px;display:block}
+.tspot-av-bg{fill:#c8d0e7}.tspot-av-fg{fill:#7480a0}
+.tspot-quote{font-size:clamp(1.3rem,2.6vw,1.8rem);line-height:1.55;color:var(--text-secondary);font-style:normal;font-weight:400;max-width:660px;margin:0 auto 22px}
+.tspot-attr{font-size:.95rem;color:var(--text-secondary);margin-bottom:20px;line-height:1.5}
+.tspot-attr strong{color:var(--text-primary);font-weight:600}
+.tspot-link{display:inline-flex;align-items:center;gap:4px;font-size:.9rem;font-weight:600;color:var(--accent);text-decoration:none;transition:opacity .2s}
+.tspot-link:hover{opacity:.72}
+.tspot-divider{position:relative;width:100%;height:1px;background:var(--border-strong);margin:0;overflow:hidden}
+.tspot-divider-bar{position:absolute;top:0;left:0;height:100%;width:25%;background:var(--accent);transition:transform .4s cubic-bezier(.25,.46,.45,.94)}
+.tspot-logos{display:flex;align-items:center;justify-content:space-between;padding:28px 0 0;gap:0}
+.tspot-logo-btn{flex:1;display:flex;justify-content:center;align-items:center;background:none;border:none;cursor:pointer;padding:8px 12px;opacity:.3;filter:grayscale(1) brightness(1.4);transition:opacity .3s,filter .3s}
+.tspot-logo-btn.active{opacity:1;filter:none}
+.tspot-logo-btn:hover:not(.active){opacity:.55}
+.tspot-logo-btn img{height:32px;width:auto;max-width:130px;object-fit:contain;display:block}
+.tspot-logo-btn .tspot-benz-logo{height:62px;width:auto;max-width:76px}
+.tspot-logo-btn .tspot-edu-logo{height:44px;width:auto;max-width:180px;display:block}
+.tspot-wordmark{height:28px;width:auto;max-width:130px;display:block}
+.tspot-logo-btn--svg{opacity:.3;filter:none}
+.tspot-logo-btn--svg.active{opacity:1}
+[data-theme=light] .tspot-av-wrap{border-color:rgba(0,0,0,.1)}
+[data-theme=light] .tspot-av-bg{fill:#dde4f0}
+[data-theme=light] .tspot-av-fg{fill:#8c97b8}
+[data-theme=light] .tspot-logo-btn img{mix-blend-mode:multiply}
+[data-theme=light] .tspot-logo-btn .tspot-benz-logo{mix-blend-mode:multiply}
+[data-theme=light] .tspot-logo-btn{filter:grayscale(1) brightness(.65)}
+[data-theme=light] .tspot-logo-btn.active{filter:none;opacity:1}
+[data-theme=light] .tspot-logo-btn--svg{filter:none}
+[data-theme=light] .tspot-divider{background:rgba(0,0,0,.1)}
+
+/* ===== Clutch stars override ===== */
+.trusted-stat--clutch .trusted-stat-stars svg{color:var(--accent);width:20px;height:20px}
     </style>
 </head>
 
