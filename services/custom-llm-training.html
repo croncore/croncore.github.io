@@ -74,7 +74,7 @@
 
  <script>(function(){var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
 
- <link rel="stylesheet" href="/css/styles.css?v=10">
+ <link rel="stylesheet" href="/css/styles.css?v=15">
 </head>
 <body>
  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFNLPH3H"
@@ -178,32 +178,32 @@
  <div class="sp-why-grid reveal">
  <div class="sp-why-card">
  <div class="sp-why-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
- <h4>Dataset Curation</h4>
+ <h3>Dataset Curation</h3>
  <p>Sourcing, cleaning, deduplication, and quality filtering at scale, including synthetic data generation when the corpus is thin.</p>
  </div>
  <div class="sp-why-card">
  <div class="sp-why-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
- <h4>Pretraining at Scale</h4>
+ <h3>Pretraining at Scale</h3>
  <p>Distributed training across H100 / A100 clusters with mixed precision, gradient checkpointing, and efficient parallelism strategies.</p>
  </div>
  <div class="sp-why-card">
  <div class="sp-why-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
- <h4>Domain Adaptation</h4>
+ <h3>Domain Adaptation</h3>
  <p>Continued pretraining on industry specific corpora, legal, medical, financial, scientific, without losing general capability.</p>
  </div>
  <div class="sp-why-card">
  <div class="sp-why-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
- <h4>Eval Harness Design</h4>
+ <h3>Eval Harness Design</h3>
  <p>Custom benchmarks that test what actually matters for your use case, not just public leaderboards.</p>
  </div>
  <div class="sp-why-card">
  <div class="sp-why-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
- <h4>Distillation & Compression</h4>
+ <h3>Distillation & Compression</h3>
  <p>Larger teacher models distilled into faster, cheaper students, with measured trade offs on capability.</p>
  </div>
  <div class="sp-why-card">
  <div class="sp-why-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
- <h4>Sovereign Deployment</h4>
+ <h3>Sovereign Deployment</h3>
  <p>Full ownership of weights, training data, and serving infrastructure, including air gapped on premise options.</p>
  </div>
  </div>
@@ -220,22 +220,22 @@
  <div class="sp-process-grid reveal">
  <div class="sp-process-card">
  <span class="sp-process-num">01</span>
- <h4>Scoping & Eval Design</h4>
+ <h3>Scoping & Eval Design</h3>
  <p>We define the model's job, the success metrics, and the eval harness, before any GPU spins up.</p>
  </div>
  <div class="sp-process-card">
  <span class="sp-process-num">02</span>
- <h4>Data Pipeline</h4>
+ <h3>Data Pipeline</h3>
  <p>Sourcing, cleaning, tokenization, and quality filtering, building the corpus that defines what the model knows.</p>
  </div>
  <div class="sp-process-card">
  <span class="sp-process-num">03</span>
- <h4>Training Runs</h4>
+ <h3>Training Runs</h3>
  <p>Pretraining on your cluster or ours, with intermediate evals and the ability to stop early if signals are off.</p>
  </div>
  <div class="sp-process-card">
  <span class="sp-process-num">04</span>
- <h4>Alignment & Handoff</h4>
+ <h3>Alignment & Handoff</h3>
  <p>Instruction tuning, safety alignment, and operational handover with monitoring and retraining playbooks.</p>
  </div>
  </div>
@@ -256,25 +256,25 @@
  <div class="cs-card-bg">
  <img src="/images/case-studies/benzninja.jpg" alt="Bezninja, Business Services Case Study" loading="lazy">
  </div>
- <a href="/case-study-autonomous-sales-agent-drives-record-revenue-growth" class="cs-card-link-overlay" aria-label="Read Bezninja case study"></a>
+ <a href="/case-studies/autonomous-sales-agent-drives-record-revenue-growth" class="cs-card-link-overlay" aria-label="Read Bezninja case study"></a>
  </article>
  <article class="cs-card">
  <div class="cs-card-bg">
  <img src="/images/case-studies/telco.webp" alt="Bloomlink, Telecom & Call Centers Case Study" loading="lazy">
  </div>
- <a href="/case-study-sovereign-voice-engine-for-mongolia" class="cs-card-link-overlay" aria-label="Read Bloomlink case study"></a>
+ <a href="/case-studies/sovereign-voice-engine-for-mongolia" class="cs-card-link-overlay" aria-label="Read Bloomlink case study"></a>
  </article>
  <article class="cs-card">
  <div class="cs-card-bg">
  <img src="/images/case-studies/education-digital-learning.webp" alt="Education & Digital Learning Case Study" loading="lazy">
  </div>
- <a href="/case-study-architecting-a-ground-up-digital-learning-powerhouse" class="cs-card-link-overlay" aria-label="Read EdTech case study"></a>
+ <a href="/case-studies/architecting-a-ground-up-digital-learning-powerhouse" class="cs-card-link-overlay" aria-label="Read EdTech case study"></a>
  </article>
  <article class="cs-card">
  <div class="cs-card-bg">
  <img src="/images/case-studies/financial-services.webp" alt="Oracle Merchant Services, Financial Services Case Study" loading="lazy">
  </div>
- <a href="/case-study-custom-ai-voice-agent-closes-the-speed-to-lead-gap" class="cs-card-link-overlay" aria-label="Read Oracle Merchant Services case study"></a>
+ <a href="/case-studies/custom-ai-voice-agent-closes-the-speed-to-lead-gap" class="cs-card-link-overlay" aria-label="Read Oracle Merchant Services case study"></a>
  </article>
  </div>
  </div>

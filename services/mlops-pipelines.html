@@ -19,7 +19,7 @@
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
  <title>MLOps Pipelines, Croncore | CI/CD for Production AI</title>
- <meta name="description" content="Croncore designs MLOps pipelines that turn AI development into a repeatable engineering practice, training pipelines, eval harnesses, dataset versioning, and automated deploys.">
+ <meta name="description" content="Croncore designs MLOps pipelines that turn AI development into a repeatable engineering practice, with automated training and versioned datasets.">
  <meta name="keywords" content="MLOps, ML pipelines, CI/CD for ML, model training pipeline, dataset versioning, experiment tracking, automated retraining, Croncore">
  <meta name="author" content="Croncore">
  <meta name="robots" content="index, follow">
@@ -74,7 +74,7 @@
 
  <script>(function(){var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
 
- <link rel="stylesheet" href="/css/styles.css?v=10">
+ <link rel="stylesheet" href="/css/styles.css?v=15">
 </head>
 <body>
  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFNLPH3H"
@@ -178,32 +178,32 @@
  <div class="sp-why-grid reveal">
  <div class="sp-why-card">
  <div class="sp-why-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
- <h4>Dataset Versioning</h4>
+ <h3>Dataset Versioning</h3>
  <p>DVC, LakeFS, or your data platform's native versioning, so every training run is tied to an exact, reproducible dataset state.</p>
  </div>
  <div class="sp-why-card">
  <div class="sp-why-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
- <h4>Training Pipelines</h4>
+ <h3>Training Pipelines</h3>
  <p>Reproducible training across notebooks, batch jobs, and distributed clusters, orchestrated via Airflow, Argo, Kubeflow, or Prefect.</p>
  </div>
  <div class="sp-why-card">
  <div class="sp-why-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
- <h4>Experiment Tracking</h4>
+ <h3>Experiment Tracking</h3>
  <p>MLflow, Weights & Biases, or Neptune, every run logged with config, metrics, and artifacts your team can compare in seconds.</p>
  </div>
  <div class="sp-why-card">
  <div class="sp-why-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
- <h4>Eval Gated Promotion</h4>
+ <h3>Eval Gated Promotion</h3>
  <p>Models can't reach production without passing your eval suite. Quality gates, regression checks, and approval workflows in CI.</p>
  </div>
  <div class="sp-why-card">
  <div class="sp-why-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
- <h4>Automated Retraining</h4>
+ <h3>Automated Retraining</h3>
  <p>Drift triggers and scheduled retrains feeding the same pipeline, with rollback if the new model regresses on key metrics.</p>
  </div>
  <div class="sp-why-card">
  <div class="sp-why-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
- <h4>Model Registry</h4>
+ <h3>Model Registry</h3>
  <p>One source of truth for model lineage, what data, what code, what version, what's in production. Audit ready by default.</p>
  </div>
  </div>
@@ -220,22 +220,22 @@
  <div class="sp-process-grid reveal">
  <div class="sp-process-card">
  <span class="sp-process-num">01</span>
- <h4>Stack Audit</h4>
+ <h3>Stack Audit</h3>
  <p>What you already have, orchestrator, registry, data warehouse, and where the rough edges are causing real pain.</p>
  </div>
  <div class="sp-process-card">
  <span class="sp-process-num">02</span>
- <h4>Pipeline Design</h4>
+ <h3>Pipeline Design</h3>
  <p>End to end design, with one new component at a time, validated against your real workloads before going wider.</p>
  </div>
  <div class="sp-process-card">
  <span class="sp-process-num">03</span>
- <h4>Build & Backfill</h4>
+ <h3>Build & Backfill</h3>
  <p>We build the pipeline and backfill historical models into the registry, so you start with a coherent picture, not just future runs.</p>
  </div>
  <div class="sp-process-card">
  <span class="sp-process-num">04</span>
- <h4>Embed & Train</h4>
+ <h3>Embed & Train</h3>
  <p>We pair with your team for the first few real cycles, then transfer ownership with documentation and on call playbooks.</p>
  </div>
  </div>
@@ -256,25 +256,25 @@
  <div class="cs-card-bg">
  <img src="/images/case-studies/benzninja.jpg" alt="Bezninja, Business Services Case Study" loading="lazy">
  </div>
- <a href="/case-study-autonomous-sales-agent-drives-record-revenue-growth" class="cs-card-link-overlay" aria-label="Read Bezninja case study"></a>
+ <a href="/case-studies/autonomous-sales-agent-drives-record-revenue-growth" class="cs-card-link-overlay" aria-label="Read Bezninja case study"></a>
  </article>
  <article class="cs-card">
  <div class="cs-card-bg">
  <img src="/images/case-studies/telco.webp" alt="Bloomlink, Telecom & Call Centers Case Study" loading="lazy">
  </div>
- <a href="/case-study-sovereign-voice-engine-for-mongolia" class="cs-card-link-overlay" aria-label="Read Bloomlink case study"></a>
+ <a href="/case-studies/sovereign-voice-engine-for-mongolia" class="cs-card-link-overlay" aria-label="Read Bloomlink case study"></a>
  </article>
  <article class="cs-card">
  <div class="cs-card-bg">
  <img src="/images/case-studies/education-digital-learning.webp" alt="Education & Digital Learning Case Study" loading="lazy">
  </div>
- <a href="/case-study-architecting-a-ground-up-digital-learning-powerhouse" class="cs-card-link-overlay" aria-label="Read EdTech case study"></a>
+ <a href="/case-studies/architecting-a-ground-up-digital-learning-powerhouse" class="cs-card-link-overlay" aria-label="Read EdTech case study"></a>
  </article>
  <article class="cs-card">
  <div class="cs-card-bg">
  <img src="/images/case-studies/financial-services.webp" alt="Oracle Merchant Services, Financial Services Case Study" loading="lazy">
  </div>
- <a href="/case-study-custom-ai-voice-agent-closes-the-speed-to-lead-gap" class="cs-card-link-overlay" aria-label="Read Oracle Merchant Services case study"></a>
+ <a href="/case-studies/custom-ai-voice-agent-closes-the-speed-to-lead-gap" class="cs-card-link-overlay" aria-label="Read Oracle Merchant Services case study"></a>
  </article>
  </div>
  </div>

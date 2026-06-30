@@ -144,7 +144,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <script>(function () { var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light'); })()</script>
 
  <!-- Stylesheet -->
- <link rel="stylesheet" href="css/styles.css?v=12">
+ <link rel="stylesheet" href="css/styles.css?v=13">
 
  <style>
 /* ===== Hero Carousel ===== */
@@ -171,7 +171,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
 .hero-slide--sled>.container{position:relative;z-index:1;width:100%}
 .hero-slide--sled .sled-hero-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:3rem;align-items:center;min-height:420px}
 .hero-slide--sled .sled-hero-grid>div:first-child{position:relative;z-index:2}
-.hero-slide--sled h1,.hero-slide--sled h2{font-family:var(--font-display);font-size:clamp(2rem,3.5vw,2.8rem);font-weight:800;line-height:1.12;letter-spacing:-.03em;color:var(--text-primary);margin-bottom:1.3rem;max-width:580px}
+.hero-slide--sled h1,.hero-slide--sled h2{font-family:var(--font-display);font-size:clamp(2.4rem,4.2vw,3.4rem);font-weight:800;line-height:1.18;letter-spacing:-.025em;color:var(--text-primary);margin-bottom:1.3rem;max-width:580px}
 .hero-slide--sled h1 .text-glow,.hero-slide--sled h2 .text-glow{background:linear-gradient(135deg,var(--accent) 0,#66e0ff 30%,var(--accent-secondary) 60%,var(--accent) 100%);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:4s infinite gradient-text}
 @keyframes cs-grad{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 .hero-slide--sled .sled-lead{font-size:1.15rem;line-height:1.75;color:var(--text-secondary);max-width:520px;margin-bottom:0}
@@ -248,6 +248,48 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
   .hero-slide--sled .sled-rfp-card,.hero-slide--sled .sled-active-badge{animation:none!important}
   .hcn-btn.active .hcn-fill{animation:none!important;width:100%}
 }
+
+/* ===== Testimonial Spotlight (tspot) ===== */
+.tspot{padding:var(--section-pad) 0;background:var(--bg-primary)}
+.tspot-header{text-align:center;margin-bottom:52px}
+.tspot-header .section-desc{text-align:center;margin-left:auto;margin-right:auto}
+.tspot-inner{text-align:center}
+.tspot-panels{position:relative;max-width:680px;margin:0 auto;height:360px}
+.tspot-panel{position:absolute;top:0;left:0;right:0;opacity:0;visibility:hidden;transition:opacity .4s cubic-bezier(.25,.46,.45,.94);pointer-events:none}
+.tspot-panel.active{opacity:1;visibility:visible;pointer-events:auto;animation:tspot-in .4s cubic-bezier(.25,.46,.45,.94) forwards}
+@keyframes tspot-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.tspot-av-wrap{width:62px;height:62px;border-radius:50%;overflow:hidden;margin:0 auto 28px;border:2px solid rgba(0,0,0,.08)}
+.tspot-av-svg{width:62px;height:62px;display:block}
+.tspot-av-bg{fill:#c8d0e7}.tspot-av-fg{fill:#7480a0}
+.tspot-quote{font-size:clamp(1.3rem,2.6vw,1.8rem);line-height:1.55;color:var(--text-secondary);font-style:normal;font-weight:400;max-width:660px;margin:0 auto 22px}
+.tspot-attr{font-size:.95rem;color:var(--text-secondary);margin-bottom:20px;line-height:1.5}
+.tspot-attr strong{color:var(--text-primary);font-weight:600}
+.tspot-link{display:inline-flex;align-items:center;gap:4px;font-size:.9rem;font-weight:600;color:var(--accent);text-decoration:none;transition:opacity .2s}
+.tspot-link:hover{opacity:.72}
+.tspot-divider{position:relative;width:100%;height:1px;background:var(--border-strong);margin:0;overflow:hidden}
+.tspot-divider-bar{position:absolute;top:0;left:0;height:100%;width:25%;background:var(--accent);transition:transform .4s cubic-bezier(.25,.46,.45,.94)}
+.tspot-logos{display:flex;align-items:center;justify-content:space-between;padding:28px 0 0;gap:0}
+.tspot-logo-btn{flex:1;display:flex;justify-content:center;align-items:center;background:none;border:none;cursor:pointer;padding:8px 12px;opacity:.3;filter:grayscale(1) brightness(1.4);transition:opacity .3s,filter .3s}
+.tspot-logo-btn.active{opacity:1;filter:none}
+.tspot-logo-btn:hover:not(.active){opacity:.55}
+.tspot-logo-btn img{height:32px;width:auto;max-width:130px;object-fit:contain;display:block}
+.tspot-logo-btn .tspot-benz-logo{height:62px;width:auto;max-width:76px}
+.tspot-logo-btn .tspot-edu-logo{height:44px;width:auto;max-width:180px;display:block}
+.tspot-wordmark{height:28px;width:auto;max-width:130px;display:block}
+.tspot-logo-btn--svg{opacity:.3;filter:none}
+.tspot-logo-btn--svg.active{opacity:1}
+[data-theme=light] .tspot-av-wrap{border-color:rgba(0,0,0,.1)}
+[data-theme=light] .tspot-av-bg{fill:#dde4f0}
+[data-theme=light] .tspot-av-fg{fill:#8c97b8}
+[data-theme=light] .tspot-logo-btn img{mix-blend-mode:multiply}
+[data-theme=light] .tspot-logo-btn .tspot-benz-logo{mix-blend-mode:multiply}
+[data-theme=light] .tspot-logo-btn{filter:grayscale(1) brightness(.65)}
+[data-theme=light] .tspot-logo-btn.active{filter:none;opacity:1}
+[data-theme=light] .tspot-logo-btn--svg{filter:none}
+[data-theme=light] .tspot-divider{background:rgba(0,0,0,.1)}
+
+/* ===== Clutch stars override ===== */
+.trusted-stat--clutch .trusted-stat-stars svg{color:var(--accent);width:20px;height:20px}
     </style>
 </head>
 
@@ -574,7 +616,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  </a>
  </div>
  <div class="trusted-static-logos">
- <div class="trusted-static-logo"><img src="images/logos/ChatGPT Image Mar 1, 2026, 07_42_30 PM.webp" alt="BENZ Ninja" loading="lazy" style="--scale: 1.15;" width="342" height="280"></div>
+ <div class="trusted-static-logo"><img src="images/logos/benz.webp" alt="BENZ Ninja" loading="lazy" style="--scale: 1.15;" width="342" height="280"></div>
  <div class="trusted-static-logo"><img src="images/logos/ChatGPT Image Mar 1, 2026, 07_47_15 PM.webp" alt="Web Summit" loading="lazy" style="--scale: 1.7;" width="400" height="266"></div>
  <div class="trusted-static-logo"><img src="images/logos/Kuwait Ports Authority .webp" alt="Kuwait Ports Authority" loading="lazy" style="--scale: 1.15;" width="400" height="272"></div>
  <div class="trusted-static-logo"><img src="images/logos/Sabzland-Logo.webp" alt="Sabzland" loading="lazy" style="--scale: 2.05;" width="400" height="266"></div>
@@ -723,7 +765,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <div class="cs-card-bg">
  <img src="images/case-studies/benzninja.webp" alt="Bezninja, Business Services Case Study" loading="lazy" width="1080" height="1350">
  </div>
- <a href="case-study-autonomous-sales-agent-drives-record-revenue-growth" class="cs-card-link-overlay"
+ <a href="case-studies/autonomous-sales-agent-drives-record-revenue-growth" class="cs-card-link-overlay"
                                     aria-label="Read Bezninja case study"></a>
  </article>
 
@@ -732,7 +774,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <div class="cs-card-bg">
  <img src="images/case-studies/telco.webp" alt="Bloomlink, Telecom & Call Centers Case Study" loading="lazy" width="1080" height="1350">
  </div>
- <a href="case-study-sovereign-voice-engine-for-mongolia" class="cs-card-link-overlay"
+ <a href="case-studies/sovereign-voice-engine-for-mongolia" class="cs-card-link-overlay"
                                     aria-label="Read Bloomlink case study"></a>
  </article>
 
@@ -741,7 +783,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <div class="cs-card-bg">
  <img src="images/case-studies/education-digital-learning.webp" alt="Education & Digital Learning Case Study" loading="lazy" width="1080" height="1350">
  </div>
- <a href="case-study-architecting-a-ground-up-digital-learning-powerhouse" class="cs-card-link-overlay"
+ <a href="case-studies/architecting-a-ground-up-digital-learning-powerhouse" class="cs-card-link-overlay"
                                     aria-label="Read EdTech case study"></a>
  </article>
 
@@ -750,7 +792,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <div class="cs-card-bg">
  <img src="images/case-studies/financial-services.webp" alt="Oracle Merchant Services, Financial Services Case Study" loading="lazy" width="1080" height="1350">
  </div>
- <a href="case-study-custom-ai-voice-agent-closes-the-speed-to-lead-gap" class="cs-card-link-overlay"
+ <a href="case-studies/custom-ai-voice-agent-closes-the-speed-to-lead-gap" class="cs-card-link-overlay"
                                     aria-label="Read Oracle Merchant Services case study"></a>
  </article>
 
@@ -759,7 +801,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <div class="cs-card-bg">
  <img src="images/case-studies/macomb-community-college.webp" alt="Macomb Community College AV Equipment RFQ, Government Proposal Support Case Study" loading="lazy" width="1000" height="666">
  </div>
- <a href="case-study-macomb-community-college-av-equipment-rfq" class="cs-card-link-overlay"
+ <a href="case-studies/macomb-community-college-av-equipment-rfq" class="cs-card-link-overlay"
                                     aria-label="Read Macomb Community College AV Equipment RFQ case study"></a>
  </article>
 
@@ -768,7 +810,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <div class="cs-card-bg">
  <img src="images/case-studies/south-platte-renew.webp" alt="South Platte Renew Digital Transformation, Municipal Website RFP Case Study" loading="lazy" width="1280" height="853">
  </div>
- <a href="case-study-south-platte-renew-website-rfp" class="cs-card-link-overlay"
+ <a href="case-studies/south-platte-renew-website-rfp" class="cs-card-link-overlay"
                                     aria-label="Read South Platte Renew Website RFP case study"></a>
  </article>
 
@@ -1098,607 +1140,103 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  </section>
 
  <!-- ===== TESTIMONIALS ===== -->
- <section class="testimonials" id="testimonials" aria-label="Client testimonials">
- <div class="container">
- <div class="testimonials-top reveal">
- <div class="section-tag"><span class="tag-pulse"></span> Testimonials</div>
- <h2 class="section-heading">Trusted by teams building<br>the future with AI</h2>
- <p class="section-desc">Real results from real businesses powered by Croncore AI.</p>
- </div>
- <div class="testimonials-marquee-container">
- <div class="testi-marquee-column">
- <div class="testi-marquee-track">
- <article class="testi-card">
- <div class="testi-stars">
- <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg>
- </div>
- <blockquote>Croncore became an extension of our capture team. Their pricing intelligence and compliance mapping had us packaged for a clean submission well ahead of the deadline. We'd bring them into our next pursuit without hesitation.</blockquote>
- <div class="testi-author">
- <div class="testi-avatar-icon"><span>NDA</span></div>
- <div>
- <div class="testi-name">U.S. Prime Contractor</div>
- <div class="testi-role">Macomb Community College AV Equipment RFQ · Under NDA</div>
- </div>
- </div>
- </article>
- <article class="testi-card">
- <div class="testi-stars">
- <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg>
- </div>
- <blockquote>Croncore turned a dense, compliance-heavy ERP solicitation into a clear, technically credible narrative. They had us packaged for a clean submission well ahead of the deadline.</blockquote>
- <div class="testi-author">
- <div class="testi-avatar-icon"><span>NDA</span></div>
- <div>
- <div class="testi-name">U.S. Prime Contractor</div>
- <div class="testi-role">Rochester City School District ERP RFP · Under NDA</div>
- </div>
- </div>
- </article>
- <article class="testi-card">
- <div class="testi-stars">
- <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg>
- </div>
- <blockquote>Croncore parsed an incredibly dense procurement puzzle. They translated our complex architecture into an exceptionally clear, compliant roadmap that directly answered the district's integration concerns before we hit the printing deadline.</blockquote>
- <div class="testi-author">
- <div class="testi-avatar-icon"><span>NDA</span></div>
- <div>
- <div class="testi-name">U.S. Prime Contractor</div>
- <div class="testi-role">Kansas City Public Schools Data Dashboard RFP · Under NDA</div>
- </div>
- </div>
- </article>
- <article class="testi-card">
- <div class="testi-stars">
- <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg>
- </div>
- <blockquote>Croncore became an extension of our capture team. Their pricing intelligence and compliance mapping had us packaged for a clean submission well ahead of the deadline. We'd bring them into our next pursuit without hesitation.</blockquote>
- <div class="testi-author">
- <div class="testi-avatar-icon"><span>NDA</span></div>
- <div>
- <div class="testi-name">U.S. Prime Contractor</div>
- <div class="testi-role">Macomb Community College AV Equipment RFQ · Under NDA</div>
- </div>
- </div>
- </article>
- <article class="testi-card">
- <div class="testi-stars">
- <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg>
- </div>
- <blockquote>Croncore turned a dense, compliance-heavy ERP solicitation into a clear, technically credible narrative. They had us packaged for a clean submission well ahead of the deadline.</blockquote>
- <div class="testi-author">
- <div class="testi-avatar-icon"><span>NDA</span></div>
- <div>
- <div class="testi-name">U.S. Prime Contractor</div>
- <div class="testi-role">Rochester City School District ERP RFP · Under NDA</div>
- </div>
- </div>
- </article>
- <article class="testi-card">
- <div class="testi-stars">
- <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg>
- </div>
- <blockquote>Croncore parsed an incredibly dense procurement puzzle. They translated our complex architecture into an exceptionally clear, compliant roadmap that directly answered the district's integration concerns before we hit the printing deadline.</blockquote>
- <div class="testi-author">
- <div class="testi-avatar-icon"><span>NDA</span></div>
- <div>
- <div class="testi-name">U.S. Prime Contractor</div>
- <div class="testi-role">Kansas City Public Schools Data Dashboard RFP · Under NDA</div>
- </div>
- </div>
- </article>
- </div>
- </div>
- <div class="testi-marquee-column">
- <div class="testi-marquee-track-reverse">
- <article class="testi-card">
- <div class="testi-stars">
- <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg>
- </div>
- <blockquote>Croncore became a seamless extension of our capture team for this aviation pursuit. They turned a highly sensitive, data-heavy airfield specification into a perfectly calibrated cost model and a bulletproof safety compliance narrative.</blockquote>
- <div class="testi-author">
- <div class="testi-avatar-icon"><span>NDA</span></div>
- <div>
- <div class="testi-name">U.S. Prime Contractor</div>
- <div class="testi-role">Pitkin County Airport Airfield Maintenance RFP · Under NDA</div>
- </div>
- </div>
- </article>
- <article class="testi-card">
- <div class="testi-stars">
- <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg>
- </div>
- <blockquote>Croncore flawlessly augmented our capture operations for this sealed bid. They kept our proposal aligned with the district's rigid Palo Alto mandates and guaranteed we hit the portal clean and fully compliant. An indispensable partner for our public sector pursuits.</blockquote>
- <div class="testi-author">
- <div class="testi-avatar-icon"><span>NDA</span></div>
- <div>
- <div class="testi-name">U.S. Prime Contractor</div>
- <div class="testi-role">Boulder Valley School District Firewall Optimization ITB · Under NDA</div>
- </div>
- </div>
- </article>
- <article class="testi-card">
- <div class="testi-stars">
- <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg>
- </div>
- <blockquote>Croncore removed the operational stress of this municipal submission. They navigated dense New York state compliance standards and ensured our administrative package was flawlessly organized for a clean submission well ahead of the deadline.</blockquote>
- <div class="testi-author">
- <div class="testi-avatar-icon"><span>NDA</span></div>
- <div>
- <div class="testi-name">U.S. Prime Contractor</div>
- <div class="testi-role">Town of Amherst Comprehensive Plan RFQ · Under NDA</div>
- </div>
- </div>
- </article>
- <article class="testi-card">
- <div class="testi-stars">
- <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg>
- </div>
- <blockquote>Croncore became a seamless extension of our capture team for this aviation pursuit. They turned a highly sensitive, data-heavy airfield specification into a perfectly calibrated cost model and a bulletproof safety compliance narrative.</blockquote>
- <div class="testi-author">
- <div class="testi-avatar-icon"><span>NDA</span></div>
- <div>
- <div class="testi-name">U.S. Prime Contractor</div>
- <div class="testi-role">Pitkin County Airport Airfield Maintenance RFP · Under NDA</div>
- </div>
- </div>
- </article>
- <article class="testi-card">
- <div class="testi-stars">
- <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg>
- </div>
- <blockquote>Croncore flawlessly augmented our capture operations for this sealed bid. They kept our proposal aligned with the district's rigid Palo Alto mandates and guaranteed we hit the portal clean and fully compliant. An indispensable partner for our public sector pursuits.</blockquote>
- <div class="testi-author">
- <div class="testi-avatar-icon"><span>NDA</span></div>
- <div>
- <div class="testi-name">U.S. Prime Contractor</div>
- <div class="testi-role">Boulder Valley School District Firewall Optimization ITB · Under NDA</div>
- </div>
- </div>
- </article>
- <article class="testi-card">
- <div class="testi-stars">
- <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg>
- </div>
- <blockquote>Croncore removed the operational stress of this municipal submission. They navigated dense New York state compliance standards and ensured our administrative package was flawlessly organized for a clean submission well ahead of the deadline.</blockquote>
- <div class="testi-author">
- <div class="testi-avatar-icon"><span>NDA</span></div>
- <div>
- <div class="testi-name">U.S. Prime Contractor</div>
- <div class="testi-role">Town of Amherst Comprehensive Plan RFQ · Under NDA</div>
- </div>
- </div>
- </article>
- </div>
- </div>
- <div class="testi-marquee-column">
- <div class="testi-marquee-track">
- <article class="testi-card">
- <div class="testi-stars">
- <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg>
- </div>
- <blockquote>The team is really professional and did very well with the project. We will work with them again.</blockquote>
- <div class="testi-author">
- <div class="testi-avatar-icon"><span>OA</span></div>
- <div>
- <div class="testi-name">Otgonkhuu Amsarvaa</div>
- <div class="testi-role">CEO, Bloomlink</div>
- </div>
- </div>
- </article>
- <article class="testi-card">
- <div class="testi-stars">
- <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg>
- </div>
- <blockquote>Excellent to work with. Really listening, creative, and helping.</blockquote>
- <div class="testi-author">
- <div class="testi-avatar-icon"><span>BZ</span></div>
- <div>
- <div class="testi-name">Bezninja Leadership Team</div>
- <div class="testi-role">Autonomous Sales Agent Platform</div>
- </div>
- </div>
- </article>
- <article class="testi-card">
- <div class="testi-stars">
- <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg>
- </div>
- <blockquote>Great collaboration with the team — professional, responsive, and attentive. The work was well executed from start to finish. Highly recommended.</blockquote>
- <div class="testi-author">
- <div class="testi-avatar-icon"><span>QE</span></div>
- <div>
- <div class="testi-name">Founder</div>
- <div class="testi-role">Quebec EdTech Startup</div>
- </div>
- </div>
- </article>
- <article class="testi-card">
- <div class="testi-stars">
- <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg>
- </div>
- <blockquote>The team is really professional and did very well with the project. We will work with them again.</blockquote>
- <div class="testi-author">
- <div class="testi-avatar-icon"><span>OA</span></div>
- <div>
- <div class="testi-name">Otgonkhuu Amsarvaa</div>
- <div class="testi-role">CEO, Bloomlink</div>
- </div>
- </div>
- </article>
- <article class="testi-card">
- <div class="testi-stars">
- <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg>
- </div>
- <blockquote>Excellent to work with. Really listening, creative, and helping.</blockquote>
- <div class="testi-author">
- <div class="testi-avatar-icon"><span>BZ</span></div>
- <div>
- <div class="testi-name">Bezninja Leadership Team</div>
- <div class="testi-role">Autonomous Sales Agent Platform</div>
- </div>
- </div>
- </article>
- <article class="testi-card">
- <div class="testi-stars">
- <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg> <svg width="14" height="14" viewBox="0 0 24 24" fill="#FACC15"
-                                            stroke="none">
- <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
- </svg>
- </div>
- <blockquote>Great collaboration with the team — professional, responsive, and attentive. The work was well executed from start to finish. Highly recommended.</blockquote>
- <div class="testi-author">
- <div class="testi-avatar-icon"><span>QE</span></div>
- <div>
- <div class="testi-name">Founder</div>
- <div class="testi-role">Quebec EdTech Startup</div>
- </div>
- </div>
- </article>
- </div>
- </div>
- </div>
- </div>
- </div>
- </section>
+ <section class="tspot" id="testimonials" aria-label="Client testimonials">
+  <div class="container">
+   <div class="tspot-header reveal">
+    <div class="section-tag"><span class="tag-pulse"></span> Testimonials</div>
+    <h2 class="section-heading">Trusted by teams building<br>the future with AI</h2>
+    <p class="section-desc">Real results from real businesses powered by Croncore AI.</p>
+   </div>
 
+   <div class="tspot-inner reveal">
+
+    <!-- Quote panels -->
+    <div class="tspot-panels">
+
+     <div class="tspot-panel active" id="tspot-benzninja" role="tabpanel" aria-labelledby="tspot-btn-benzninja">
+      <div class="tspot-av-wrap"><svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="tspot-av-svg" aria-hidden="true"><circle cx="30" cy="30" r="30" class="tspot-av-bg"/><circle cx="30" cy="22" r="9" class="tspot-av-fg"/><ellipse cx="30" cy="47" rx="16" ry="11" class="tspot-av-fg"/></svg></div>
+      <blockquote class="tspot-quote">&#8220;Excellent to work with. Really listening, creative, and helping.&#8221;</blockquote>
+      <p class="tspot-attr"><strong>Bezninja Leadership Team,</strong> Autonomous Sales Agent Platform</p>
+      <a href="/case-studies/autonomous-sales-agent-drives-record-revenue-growth" class="tspot-link">Read the case study ›</a>
+     </div>
+
+     <div class="tspot-panel" id="tspot-bloomslink" role="tabpanel" aria-labelledby="tspot-btn-bloomslink">
+      <div class="tspot-av-wrap"><svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="tspot-av-svg" aria-hidden="true"><circle cx="30" cy="30" r="30" class="tspot-av-bg"/><circle cx="30" cy="22" r="9" class="tspot-av-fg"/><ellipse cx="30" cy="47" rx="16" ry="11" class="tspot-av-fg"/></svg></div>
+      <blockquote class="tspot-quote">&#8220;The team is really professional and did very well with the project. We will work with them again.&#8221;</blockquote>
+      <p class="tspot-attr"><strong>Otgonkhuu Amsarvaa,</strong> CEO, Bloomlink</p>
+      <a href="/case-studies/sovereign-voice-engine-for-mongolia" class="tspot-link">Read the case study ›</a>
+     </div>
+
+     <div class="tspot-panel" id="tspot-edumersion" role="tabpanel" aria-labelledby="tspot-btn-edumersion">
+      <div class="tspot-av-wrap"><svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="tspot-av-svg" aria-hidden="true"><circle cx="30" cy="30" r="30" class="tspot-av-bg"/><circle cx="30" cy="22" r="9" class="tspot-av-fg"/><ellipse cx="30" cy="47" rx="16" ry="11" class="tspot-av-fg"/></svg></div>
+      <blockquote class="tspot-quote">&#8220;Great collaboration with the team &#8212; professional, responsive, and attentive. The work was well executed from start to finish. Highly recommended.&#8221;</blockquote>
+      <p class="tspot-attr"><strong>Founder,</strong> Edumersion</p>
+      <a href="/case-studies/architecting-a-ground-up-digital-learning-powerhouse" class="tspot-link">Read the case study ›</a>
+     </div>
+
+     <div class="tspot-panel" id="tspot-orical" role="tabpanel" aria-labelledby="tspot-btn-orical">
+      <div class="tspot-av-wrap"><svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="tspot-av-svg" aria-hidden="true"><circle cx="30" cy="30" r="30" class="tspot-av-bg"/><circle cx="30" cy="22" r="9" class="tspot-av-fg"/><ellipse cx="30" cy="47" rx="16" ry="11" class="tspot-av-fg"/></svg></div>
+      <blockquote class="tspot-quote">&#8220;Croncore closed our speed-to-lead gap overnight. The AI voice agent scaled our outreach to match 10+ callers &#8212; our team now focuses exclusively on qualified opportunities.&#8221;</blockquote>
+      <p class="tspot-attr"><strong>Director of Operations,</strong> Oracle Merchant Services</p>
+      <a href="/case-studies/custom-ai-voice-agent-closes-the-speed-to-lead-gap" class="tspot-link">Read the case study ›</a>
+     </div>
+
+    </div><!-- /.tspot-panels -->
+
+    <!-- Full-width divider with sliding highlight -->
+    <div class="tspot-divider" aria-hidden="true"><span class="tspot-divider-bar"></span></div>
+
+    <!-- Logo tabs — spread full width -->
+    <div class="tspot-logos" role="tablist" aria-label="Select client">
+     <button class="tspot-logo-btn active" id="tspot-btn-benzninja" data-index="0" role="tab" aria-selected="true" aria-controls="tspot-benzninja"><img src="images/logos/benz.webp" alt="BenzNinja" loading="lazy" class="tspot-benz-logo"></button>
+     <button class="tspot-logo-btn" id="tspot-btn-bloomslink" data-index="1" role="tab" aria-selected="false" aria-controls="tspot-bloomslink"><img src="images/logos/BloomLink.webp" alt="BloomsLink" loading="lazy"></button>
+     <button class="tspot-logo-btn" id="tspot-btn-edumersion" data-index="2" role="tab" aria-selected="false" aria-controls="tspot-edumersion"><img src="images/logos/edu-logo.webp" alt="Edumersion" loading="lazy" class="tspot-edu-logo"></button>
+     <button class="tspot-logo-btn tspot-logo-btn--svg" id="tspot-btn-orical" data-index="3" role="tab" aria-selected="false" aria-controls="tspot-orical">
+      <svg class="tspot-wordmark" viewBox="0 0 148 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Oracle Merchant Services" role="img">
+       <rect x="1" y="8" width="26" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/>
+       <line x1="1" y1="14.5" x2="27" y2="14.5" stroke="currentColor" stroke-width="1.5"/>
+       <circle cx="8" cy="21" r="2.2" fill="currentColor"/>
+       <text x="35" y="24" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" font-size="14" fill="currentColor">Orical</text>
+       <text x="35" y="34" font-family="'Plus Jakarta Sans',sans-serif" font-weight="500" font-size="8" fill="currentColor" letter-spacing="1.2">MERCHANT SERVICES</text>
+      </svg>
+     </button>
+    </div>
+
+   </div><!-- /.tspot-inner -->
+  </div><!-- /.container -->
+ </section>
+ <script>
+ (function(){
+  var panels=document.querySelectorAll('.tspot-panel');
+  var btns=document.querySelectorAll('.tspot-logo-btn');
+  var bar=document.querySelector('.tspot-divider-bar');
+  if(!panels.length||!btns.length||!bar)return;
+  var current=0,timer,paused=false;
+  function activate(i){
+   panels[current].classList.remove('active');
+   btns[current].classList.remove('active');
+   btns[current].setAttribute('aria-selected','false');
+   current=(i+panels.length)%panels.length;
+   panels[current].classList.add('active');
+   btns[current].classList.add('active');
+   btns[current].setAttribute('aria-selected','true');
+   bar.style.transform='translateX('+(current*100)+'%)';
+  }
+  btns.forEach(function(btn,i){
+   btn.addEventListener('click',function(){clearInterval(timer);activate(i);if(!paused)startTimer();});
+  });
+  function startTimer(){clearInterval(timer);timer=setInterval(function(){activate(current+1);},6000);}
+  var sec=document.querySelector('.tspot');
+  if(sec){
+   sec.addEventListener('mouseenter',function(){paused=true;clearInterval(timer);});
+   sec.addEventListener('mouseleave',function(){paused=false;startTimer();});
+  }
+  bar.style.transition='none';
+  bar.style.transform='translateX(0%)';
+  requestAnimationFrame(function(){bar.style.transition='';});
+  startTimer();
+ })();
+ </script>
 
  <!-- ===== RECOGNITION ===== -->
  <section class="recognition" id="recognition" aria-label="Awards and Certification">
@@ -2103,8 +1641,18 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
     (function () {
       'use strict';
       var DURATION = 6000;
-      var slides, btns, cur, timer, paused;
+      var slides, btns, cur, timer;
+      var userPaused = false;
+      var hovering   = false;
+      var elapsed    = 0;   // ms elapsed on current slide before last freeze
+      var resumeAt   = 0;   // Date.now() when countdown last resumed (0 = not running)
       var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function isFrozen() { return userPaused || hovering; }
+
+      function curFill() {
+        return btns && btns[cur] ? btns[cur].querySelector('.hcn-fill') : null;
+      }
 
       function setSlideVisibility(idx, active) {
         if (active) {
@@ -2116,6 +1664,26 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
         }
       }
 
+      /* Stop timer + animation, snapshot elapsed. Safe to call when already frozen. */
+      function doFreeze() {
+        clearTimeout(timer);
+        if (resumeAt > 0) { elapsed += Date.now() - resumeAt; resumeAt = 0; }
+        var f = curFill();
+        if (f) f.style.animationPlayState = 'paused';
+      }
+
+      /* Resume timer + animation only when neither user-paused nor hovering. */
+      function doThaw() {
+        if (isFrozen()) return;
+        var f = curFill();
+        if (f) f.style.animationPlayState = 'running';
+        if (!reducedMotion) {
+          var rem = Math.max(400, DURATION - elapsed);
+          resumeAt = Date.now();
+          timer = setTimeout(function () { goTo(cur + 1); }, rem);
+        }
+      }
+
       function goTo(i) {
         if (i === cur) return;
         slides[cur].classList.remove('active');
@@ -2123,68 +1691,69 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
         setSlideVisibility(cur, false);
 
         cur = ((i % slides.length) + slides.length) % slides.length;
+        elapsed  = 0;
+        resumeAt = 0;
 
         slides[cur].classList.add('active');
         setSlideVisibility(cur, true);
-        var fill = btns[cur].querySelector('.hcn-fill');
+
+        var f = btns[cur].querySelector('.hcn-fill');
         btns[cur].classList.remove('active');
-        if (fill) { fill.style.animation = 'none'; void fill.offsetWidth; fill.style.animation = ''; }
+        if (f) { f.style.animation = 'none'; void f.offsetWidth; f.style.animation = ''; }
         btns[cur].classList.add('active');
 
-        if (!paused && !reducedMotion) scheduleNext();
-      }
-
-      function scheduleNext() {
-        clearTimeout(timer);
-        timer = setTimeout(function () { goTo(cur + 1); }, DURATION);
+        if (isFrozen()) {
+          if (f) f.style.animationPlayState = 'paused';
+        } else {
+          doThaw();
+        }
       }
 
       function setPaused(state) {
-        paused = state;
+        userPaused = state;
         var btn = document.getElementById('hcnPause');
-        if (!btn) return;
-        btn.setAttribute('aria-pressed', String(state));
-        btn.setAttribute('aria-label', state ? 'Play carousel' : 'Pause carousel');
-        btn.querySelector('.hcn-icon-pause').style.display = state ? 'none' : '';
-        btn.querySelector('.hcn-icon-play').style.display = state ? '' : 'none';
-        if (state) {
-          clearTimeout(timer);
-        } else {
-          scheduleNext();
+        if (btn) {
+          btn.setAttribute('aria-pressed', String(state));
+          btn.setAttribute('aria-label', state ? 'Play carousel' : 'Pause carousel');
+          btn.querySelector('.hcn-icon-pause').style.display = state ? 'none' : '';
+          btn.querySelector('.hcn-icon-play').style.display  = state ? ''     : 'none';
         }
+        if (state) { doFreeze(); } else { hovering = false; doThaw(); }
       }
 
       function init() {
         slides = Array.from(document.querySelectorAll('.hero-slide'));
         btns   = Array.from(document.querySelectorAll('.hcn-btn'));
-        var pauseBtn = document.getElementById('hcnPause');
         if (!slides.length || !btns.length) return;
-        cur = 0;
-        paused = false;
+        cur = 0; userPaused = false; hovering = false; elapsed = 0; resumeAt = 0;
 
-        // Set initial aria visibility
         slides.forEach(function (s, i) { setSlideVisibility(i, i === 0); });
-
         btns.forEach(function (btn, i) {
           btn.addEventListener('click', function () { goTo(i); });
         });
 
+        var pauseBtn = document.getElementById('hcnPause');
         if (pauseBtn) {
-          pauseBtn.addEventListener('click', function () { setPaused(!paused); });
+          pauseBtn.addEventListener('click', function () { setPaused(!userPaused); });
         }
 
-        // Pause on hover/focus-within
         var carousel = document.querySelector('.hero-carousel');
         if (carousel) {
-          carousel.addEventListener('mouseenter', function () { if (!paused) { clearTimeout(timer); } });
-          carousel.addEventListener('mouseleave', function () { if (!paused && !reducedMotion) scheduleNext(); });
-          carousel.addEventListener('focusin', function () { if (!paused) { clearTimeout(timer); } });
+          carousel.addEventListener('mouseenter', function () {
+            if (!hovering) { hovering = true; if (!userPaused) doFreeze(); }
+          });
+          carousel.addEventListener('mouseleave', function () {
+            if (hovering) { hovering = false; doThaw(); }
+          });
+          carousel.addEventListener('focusin', function () {
+            if (!hovering) { hovering = true; if (!userPaused) doFreeze(); }
+          });
           carousel.addEventListener('focusout', function (e) {
-            if (!carousel.contains(e.relatedTarget) && !paused && !reducedMotion) scheduleNext();
+            if (hovering && !carousel.contains(e.relatedTarget)) { hovering = false; doThaw(); }
           });
         }
 
-        if (!reducedMotion) scheduleNext();
+        doThaw();
       }
 
       if (document.readyState === 'loading') {

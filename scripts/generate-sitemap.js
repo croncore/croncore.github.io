@@ -24,37 +24,64 @@ const API_VERSION = '2024-10-01';
 const TODAY = new Date().toISOString().slice(0, 10);
 
 const STATIC_PAGES = [
-  {loc: '/',           changefreq: 'weekly',  priority: '1.0'},
-  {loc: '/services',   changefreq: 'monthly', priority: '0.9'},
-  {loc: '/insights',   changefreq: 'weekly',  priority: '0.9'},
-  {loc: '/newsroom',   changefreq: 'weekly',  priority: '0.85'},
-  {loc: '/contact',    changefreq: 'monthly', priority: '0.8'},
+  {loc: '/',                       changefreq: 'weekly',  priority: '1.0'},
+  {loc: '/services',               changefreq: 'monthly', priority: '0.9'},
+  {loc: '/case-studies',           changefreq: 'monthly', priority: '0.9'},
+  {loc: '/insights',               changefreq: 'weekly',  priority: '0.9'},
+  {loc: '/newsroom',               changefreq: 'weekly',  priority: '0.85'},
+  {loc: '/sled-delivery-partner',  changefreq: 'monthly', priority: '0.8'},
+  {loc: '/sled-case-studies',      changefreq: 'monthly', priority: '0.8'},
+  {loc: '/ai-consulting-services', changefreq: 'monthly', priority: '0.8'},
+  {loc: '/contact',                changefreq: 'monthly', priority: '0.8'},
 ];
 
 const SERVICE_SLUGS = [
+  'web-saas-applications',
+  'enterprise-application-development',
+  'api-development-integrations',
+  'cloud-native-devops',
+  'security-assessments-pen-testing',
+  'managed-security-soc',
+  'zero-trust-identity',
+  'data-engineering-analytics',
   'enterprise-ai-agents',
   'sales-crm-chatbots',
   'operations-automation',
   'process-document-ai',
-  'custom-llm-training',
-  'model-fine-tuning',
-  'multilingual-low-resource-ai',
-  'speech-ai',
   'gdpr-compliant-ai-systems',
   'edtech-ai-platforms',
   'data-sovereignty-on-premise-ai',
   'regulatory-ai-consulting',
+  'custom-llm-training',
+  'model-fine-tuning',
+  'multilingual-low-resource-ai',
+  'speech-ai',
   'model-deployment-serving',
   'mlops-pipelines',
   'monitoring-observability',
   'ai-cost-optimization',
+  'erp-implementation',
+  'salesforce-servicenow',
+  'platform-customization-extensions',
+  'migrations-modernization',
 ];
 
 const CASE_STUDIES = [
-  'case-study-sovereign-voice-engine-for-mongolia',
-  'case-study-custom-ai-voice-agent-closes-the-speed-to-lead-gap',
-  'case-study-architecting-a-ground-up-digital-learning-powerhouse',
-  'case-study-autonomous-sales-agent-drives-record-revenue-growth',
+  'sovereign-voice-engine-for-mongolia',
+  'custom-ai-voice-agent-closes-the-speed-to-lead-gap',
+  'architecting-a-ground-up-digital-learning-powerhouse',
+  'autonomous-sales-agent-drives-record-revenue-growth',
+  'derby-downtown-lighting-rfp',
+  'macomb-community-college-av-equipment-rfq',
+  'south-platte-renew-website-rfp',
+  'airfield-maintenance-pitkin-county-rfp',
+  'rochester-erp-system-rfp',
+  'boulder-valley-firewall-optimization-itb',
+  'kansas-city-public-schools-data-dashboard-rfp',
+  'tiburon-sea-level-rise-rfp',
+  'town-of-amherst-comprehensive-plan-rfq',
+  'uta-6g-network-gpus-ifb',
+  'summerville-boone-street-sidewalk-rfp',
 ];
 
 const LEGAL_PAGES = [
@@ -131,7 +158,7 @@ async function main() {
   })));
 
   CASE_STUDIES.forEach((slug) => entries.push(urlEntry({
-    loc: SITE_URL + '/' + slug,
+    loc: SITE_URL + '/case-studies/' + slug,
     lastmod: TODAY,
     changefreq: 'yearly',
     priority: '0.8',

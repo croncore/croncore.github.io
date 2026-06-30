@@ -29,12 +29,30 @@
 /sled         /sled-delivery-partner  301
 /sled-primes  /sled-delivery-partner  301
 
-# Legacy case-study URL redirects (carry over from old .htaccess)
-/case-study-bezninja  /case-study-autonomous-sales-agent-drives-record-revenue-growth  301
-/case-study-bloomlink  /case-study-sovereign-voice-engine-for-mongolia  301
-/case-study-edtech  /case-study-architecting-a-ground-up-digital-learning-powerhouse  301
-/case-study-oracle  /case-study-custom-ai-voice-agent-closes-the-speed-to-lead-gap  301
-/case-study-knowles  /case-study-custom-ai-voice-agent-closes-the-speed-to-lead-gap  301
+# Legacy case-study short-alias redirects (carry over from old .htaccess)
+# Point straight at the final /case-studies/ URL to avoid a 301 -> 301 chain
+/case-study-bezninja  /case-studies/autonomous-sales-agent-drives-record-revenue-growth  301
+/case-study-bloomlink  /case-studies/sovereign-voice-engine-for-mongolia  301
+/case-study-edtech  /case-studies/architecting-a-ground-up-digital-learning-powerhouse  301
+/case-study-oracle  /case-studies/custom-ai-voice-agent-closes-the-speed-to-lead-gap  301
+/case-study-knowles  /case-studies/custom-ai-voice-agent-closes-the-speed-to-lead-gap  301
+
+# Moved case-study URLs: /case-study-<slug> -> /case-studies/<slug>
+/case-study-airfield-maintenance-pitkin-county-rfp  /case-studies/airfield-maintenance-pitkin-county-rfp  301
+/case-study-architecting-a-ground-up-digital-learning-powerhouse  /case-studies/architecting-a-ground-up-digital-learning-powerhouse  301
+/case-study-autonomous-sales-agent-drives-record-revenue-growth  /case-studies/autonomous-sales-agent-drives-record-revenue-growth  301
+/case-study-boulder-valley-firewall-optimization-itb  /case-studies/boulder-valley-firewall-optimization-itb  301
+/case-study-custom-ai-voice-agent-closes-the-speed-to-lead-gap  /case-studies/custom-ai-voice-agent-closes-the-speed-to-lead-gap  301
+/case-study-derby-downtown-lighting-rfp  /case-studies/derby-downtown-lighting-rfp  301
+/case-study-kansas-city-public-schools-data-dashboard-rfp  /case-studies/kansas-city-public-schools-data-dashboard-rfp  301
+/case-study-macomb-community-college-av-equipment-rfq  /case-studies/macomb-community-college-av-equipment-rfq  301
+/case-study-rochester-erp-system-rfp  /case-studies/rochester-erp-system-rfp  301
+/case-study-south-platte-renew-website-rfp  /case-studies/south-platte-renew-website-rfp  301
+/case-study-sovereign-voice-engine-for-mongolia  /case-studies/sovereign-voice-engine-for-mongolia  301
+/case-study-summerville-boone-street-sidewalk-rfp  /case-studies/summerville-boone-street-sidewalk-rfp  301
+/case-study-tiburon-sea-level-rise-rfp  /case-studies/tiburon-sea-level-rise-rfp  301
+/case-study-town-of-amherst-comprehensive-plan-rfq  /case-studies/town-of-amherst-comprehensive-plan-rfq  301
+/case-study-uta-6g-network-gpus-ifb  /case-studies/uta-6g-network-gpus-ifb  301
 
 # Retired case studies — force 404 (rule fires before any stale cached file)
 /case-study-multi-site-it-modernization-for-nonprofit  /404.html  404

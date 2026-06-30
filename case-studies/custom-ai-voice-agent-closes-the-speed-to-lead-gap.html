@@ -7,51 +7,50 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
 </script>
 
 <meta charset="UTF-8">
-  <link rel="preload" as="image" href="images/case-studies/south-platte-renew.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="/images/case-studies/financial-services.webp" fetchpriority="high">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Case Study · Croncore · South Platte Renew Website Redesign RFP</title>
-<meta name="description" content="How Croncore built a WordPress and accessibility-compliant municipal website RFP response for South Platte Renew, Colorado.">
+<title>Oracle Merchant Services Case Study, AI Voice Agent | Croncore</title>
+<meta name="description" content="How Croncore's custom AI Voice Agent closed the speed to lead gap for Oracle Merchant Services, delivering 10+ FTE equivalent outreach.">
 <meta name="author" content="Croncore">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.croncore.com/case-study-south-platte-renew-website-rfp">
+<link rel="canonical" href="https://www.croncore.com/case-studies/custom-ai-voice-agent-closes-the-speed-to-lead-gap">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Croncore">
-<meta property="og:url" content="https://www.croncore.com/case-study-south-platte-renew-website-rfp">
-<meta property="og:title" content="Case Study · Croncore · South Platte Renew Website Redesign RFP">
-<meta property="og:description" content="Inside a WordPress and accessibility-mandated municipal RFP for Colorado's third-largest water resource recovery facility.">
-<meta property="og:image" content="https://www.croncore.com/images/case-studies/south-platte-renew.jpg">
+<meta property="og:url" content="https://www.croncore.com/case-studies/custom-ai-voice-agent-closes-the-speed-to-lead-gap">
+<meta property="og:title" content="Oracle Merchant Services Case Study, AI Voice Agent | Croncore">
+<meta property="og:description" content="How Croncore's custom AI Voice Agent closed the speed to lead gap for Oracle Merchant Services, delivering 10+ FTE equivalent outreach.">
+<meta property="og:image" content="https://www.croncore.com/images/case-studies/financial-services.webp">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@croncore">
-<meta name="twitter:title" content="South Platte Renew Digital Transformation, Croncore">
-<meta name="twitter:description" content="Inside a WordPress and accessibility-mandated municipal RFP, and how Croncore built the winning response.">
-<meta name="twitter:image" content="https://www.croncore.com/images/case-studies/south-platte-renew.jpg">
+<meta name="twitter:title" content="Oracle Merchant Services Case Study, AI Voice Agent | Croncore">
+<meta name="twitter:description" content="A custom AI Voice Agent closed the speed to lead gap, delivering 10+ FTE equivalent outreach for Oracle Merchant Services.">
+<meta name="twitter:image" content="https://www.croncore.com/images/case-studies/financial-services.webp">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- Site fonts: Plus Jakarta Sans (display), Manrope (body), JetBrains Mono (labels) -->
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="images/favicons/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="images/favicons/favicon.svg" />
-<link rel="shortcut icon" href="images/favicons/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png" />
-<link rel="manifest" href="images/favicons/site.webmanifest" />
+<link rel="icon" type="image/png" href="/images/favicons/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/images/favicons/favicon.svg" />
+<link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png" />
+<link rel="manifest" href="/images/favicons/site.webmanifest" />
 <meta name="theme-color" content="#1d2433">
 <script>(function(){var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
-<link rel="stylesheet" href="css/styles.css?v=12">
+<link rel="stylesheet" href="/css/styles.css?v=15">
 
 <style>
 /* ============================================================
-   CRONCORE, South Platte Renew Digital Transformation Case Study
+   CRONCORE, Oracle Merchant Services Case Study
    Type: Plus Jakarta Sans (display) · Manrope (body) · JetBrains Mono (labels)
    Accent: electric blue · warm-neutral surface · deep navy hero
    Scoped under .rfp-case to avoid touching site-wide styles.
    ============================================================ */
-
 .rfp-case{
   /* neutrals */
   --bg:        oklch(0.984 0.004 255);
@@ -98,7 +97,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
   color: var(--ink); text-wrap: balance;
 }
 
-/* ===== Dark theme overrides ===== */
+/* ===== Dark theme overrides (site default is dark; light sets data-theme="light") ===== */
 html:not([data-theme="light"]) .rfp-case {
   --bg:        oklch(0.155 0.014 260);
   --surface:   oklch(0.205 0.020 260);
@@ -111,13 +110,18 @@ html:not([data-theme="light"]) .rfp-case {
   --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.35), 0 2px 6px oklch(0 0 0 / 0.28);
   --shadow-md: 0 4px 14px oklch(0 0 0 / 0.40), 0 12px 34px oklch(0 0 0 / 0.32);
 }
+/* Soften the "alt" band so dark-on-dark sections still read as distinct */
 html:not([data-theme="light"]) .rfp-section.alt { background: oklch(0.180 0.018 260); border-block-color: oklch(0.255 0.020 260); }
+/* Snapshot bar already uses --dark-2; keep it consistent with the hero in dark mode */
 html:not([data-theme="light"]) .rfp-snapshot { background: oklch(0.155 0.034 263); }
+/* Editable placeholder reads better against dark surface */
 html:not([data-theme="light"]) .rfp-editable { background: oklch(0.60 0.165 256 / 0.22); }
 html:not([data-theme="light"]) .rfp-editable:hover,
 html:not([data-theme="light"]) .rfp-editable:focus { background: oklch(0.60 0.165 256 / 0.34); }
+/* Scorecard track sits on dark surface, lighten so the fill is visible */
 html:not([data-theme="light"]) .rfp-sc-track { background: oklch(0.260 0.020 260); border-color: oklch(0.310 0.022 260); }
 html:not([data-theme="light"]) .rfp-sc-row .rfp-sc-fill { background: oklch(0.55 0.06 256); }
+/* Confirmed stat numbers, use the brighter accent in dark mode */
 html:not([data-theme="light"]) .rfp-stat.confirmed .big { color: var(--accent-bright); }
 
 .rfp-wrap { max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gut); }
@@ -171,8 +175,7 @@ html:not([data-theme="light"]) .rfp-stat.confirmed .big { color: var(--accent-br
 .rfp-hero-photo {
   position: absolute; inset: 0; z-index: 0;
   width: 100%; height: 100%; display: block;
-  background-image: url("images/case-studies/south-platte-renew.jpg");
-  background-size: cover; background-position: 50% 38%; background-color: var(--dark);
+  background-size: cover; background-position: 50% 32%; background-color: var(--dark);
 }
 .rfp-hero-shade {
   position: absolute; inset: 0; z-index: 1; pointer-events: none;
@@ -180,9 +183,10 @@ html:not([data-theme="light"]) .rfp-stat.confirmed .big { color: var(--accent-br
     linear-gradient(104deg, oklch(0.205 0.035 262 / 0.80) 0%, oklch(0.205 0.035 262 / 0.50) 42%, oklch(0.205 0.035 262 / 0.20) 100%),
     linear-gradient(to bottom, oklch(0.205 0.035 262 / 0.62) 0%, transparent 22%, transparent 44%, var(--dark) 95%);
 }
+/* Mobile: photo gets very busy behind the headline, heavier shade + tighter top padding */
 @media (max-width: 720px){
   .rfp-hero { padding-top: 100px; }
-  .rfp-hero-photo { background-position: 50% 24%; }
+  .rfp-hero-photo { background-position: 50% 18%; }
   .rfp-hero-shade {
     background:
       linear-gradient(180deg, oklch(0.205 0.035 262 / 0.92) 0%, oklch(0.205 0.035 262 / 0.82) 30%, oklch(0.205 0.035 262 / 0.88) 60%, var(--dark) 96%),
@@ -364,6 +368,21 @@ html:not([data-theme="light"]) .rfp-stat.confirmed .big { color: var(--accent-br
 .rfp-stat .big { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: clamp(34px, 4.4vw, 48px); letter-spacing: -0.03em; line-height: 1; color: var(--ink); }
 .rfp-stat .lab { color: var(--ink-2); font-size: 14.5px; margin-top: 16px; line-height: 1.45; }
 .rfp-stat.confirmed .big { color: var(--accent-deep); }
+.rfp-editable {
+  background: oklch(0.60 0.165 256 / 0.12);
+  border-bottom: 2px dashed var(--accent-deep);
+  border-radius: 4px 4px 0 0;
+  padding: 2px 8px; outline: none; cursor: text;
+  transition: background .25s;
+}
+.rfp-editable:hover, .rfp-editable:focus { background: oklch(0.60 0.165 256 / 0.20); }
+.rfp-edit-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--accent-deep); margin-top: 14px; background: oklch(0.60 0.165 256 / 0.11);
+  padding: 4px 9px; border-radius: 999px;
+}
+.rfp-edit-tag::before { content:"\270E"; font-size: 11px; }
 .rfp-outcome-note { font-style: italic; color: var(--ink-3); font-size: 14.5px; margin-top: 30px; max-width: 760px; line-height: 1.55; }
 
 /* ===================== TESTIMONIAL ===================== */
@@ -382,6 +401,7 @@ html:not([data-theme="light"]) .rfp-stat.confirmed .big { color: var(--accent-br
 }
 .rfp-quote-block .qattr { display: flex; align-items: center; gap: 14px; margin-top: 28px; color: var(--ink-2); font-size: 14.5px; }
 .rfp-quote-block .qattr .avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--surface-2); border: 1px dashed var(--line); display: grid; place-items: center; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--ink-3); flex: none; }
+.rfp-quote-tag { display: block; text-align: center; margin-top: 20px; color: var(--ink-3); }
 
 /* ===================== CTA DARK ===================== */
 .rfp-cta { position: relative; overflow: hidden; background: var(--dark); color: var(--on-dark); text-align: center; }
@@ -399,6 +419,16 @@ html:not([data-theme="light"]) .rfp-stat.confirmed .big { color: var(--accent-br
 .rfp-cta h2 { color: var(--on-dark); font-size: clamp(32px, 5vw, 58px); margin: 22px 0 0; }
 .rfp-cta p { color: var(--on-dark-2); font-size: clamp(16px, 1.7vw, 19px); margin: 22px auto 36px; max-width: 660px; line-height: 1.55; }
 
+/* ===================== MICRO FOOTER ===================== */
+.rfp-microfoot { background: var(--dark-2); color: var(--on-dark-2); padding: 56px 0 40px; border-top: 1px solid var(--dark-line); }
+.rfp-microfoot .rfp-wrap { display: flex; flex-direction: column; gap: 28px; }
+.rfp-foot-issuer { display: flex; align-items: center; gap: 14px; padding-bottom: 28px; border-bottom: 1px solid var(--dark-line); }
+.rfp-foot-lab { color: var(--on-dark-3); }
+.rfp-foot-main { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+.rfp-microfoot .brand-line { color: var(--on-dark); font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 24px; letter-spacing: -0.03em; display: inline-flex; align-items: center; gap: 11px; }
+.rfp-microfoot .brand-line .dot { width: 12px; height: 12px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, var(--accent-bright), var(--accent-deep)); box-shadow: 0 0 0 4px var(--accent-glow), 0 0 14px var(--accent-glow); flex: none; }
+.rfp-microfoot .tagline { color: var(--on-dark-3); font-size: 14px; max-width: 560px; line-height: 1.5; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.02em; }
+
 /* reveal */
 .rfp-reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
 .rfp-reveal.in { opacity: 1; transform: none; }
@@ -410,6 +440,8 @@ html:not([data-theme="light"]) .rfp-stat.confirmed .big { color: var(--accent-br
   .rfp-reveal { opacity: 1; transform: none; transition: none; }
   .rfp-sc-fill { transition: none; }
 }
+
+.rfp-hero-photo { background-image: url("images/case-studies/financial-services.webp"); }
 </style>
 
 <!-- Schema.org - BreadcrumbList -->
@@ -420,7 +452,7 @@ html:not([data-theme="light"]) .rfp-stat.confirmed .big { color: var(--accent-br
     "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.croncore.com/" },
         { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://www.croncore.com/case-studies" },
-        { "@type": "ListItem", "position": 3, "name": "South Platte Renew Digital Transformation", "item": "https://www.croncore.com/case-study-south-platte-renew-website-rfp" }
+        { "@type": "ListItem", "position": 3, "name": "Oracle Merchant Services", "item": "https://www.croncore.com/case-studies/custom-ai-voice-agent-closes-the-speed-to-lead-gap" }
     ]
 }
 </script>
@@ -430,20 +462,21 @@ html:not([data-theme="light"]) .rfp-stat.confirmed .big { color: var(--accent-br
 {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Inside a WordPress and accessibility-mandated municipal RFP, and how Croncore built the winning response.",
-    "description": "Consolidating fragmented platforms into a high-performing, compliant WordPress infrastructure for Colorado's third-largest water resource recovery facility.",
-    "image": ["https://www.croncore.com/images/case-studies/south-platte-renew.jpg"],
-    "datePublished": "2026-06-04",
-    "dateModified": "2026-06-04",
+    "headline": "Custom AI Voice Agent Closes the Speed to Lead Gap",
+    "description": "How Croncore's custom AI Voice Agent closed the speed to lead gap for Oracle Merchant Services, delivering 10+ FTE equivalent outreach.",
+    "image": ["https://www.croncore.com/images/case-studies/financial-services.webp"],
+    "datePublished": "2025-08-14",
+    "dateModified": "2026-07-01",
     "author": { "@type": "Organization", "name": "Croncore", "url": "https://www.croncore.com" },
     "publisher": {
         "@type": "Organization",
         "name": "Croncore",
         "logo": { "@type": "ImageObject", "url": "https://www.croncore.com/images/croncore-logo.png" }
     },
-    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.croncore.com/case-study-south-platte-renew-website-rfp" },
-    "url": "https://www.croncore.com/case-study-south-platte-renew-website-rfp",
-    "articleSection": "Case Study"
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.croncore.com/case-studies/custom-ai-voice-agent-closes-the-speed-to-lead-gap" },
+    "url": "https://www.croncore.com/case-studies/custom-ai-voice-agent-closes-the-speed-to-lead-gap",
+    "articleSection": "Case Study",
+    "about": { "@type": "Organization", "name": "Oracle Merchant Services" }
 }
 </script>
 </head>
@@ -464,8 +497,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <nav class="nav" id="navbar" role="navigation" aria-label="Primary navigation">
 <div class="container nav-inner">
 <a href="/" class="nav-brand" aria-label="Croncore Home">
-<img src="images/croncore-logo.png" alt="Croncore" class="nav-brand-img logo-dark" width="56" height="56" loading="eager">
-<img src="images/concore-logo-light-theme.png" alt="Croncore" class="nav-brand-img logo-light" width="56" height="56" loading="eager">
+<img src="/images/croncore-logo.png" alt="Croncore" class="nav-brand-img logo-dark" width="56" height="56" loading="eager">
+<img src="/images/concore-logo-light-theme.png" alt="Croncore" class="nav-brand-img logo-light" width="56" height="56" loading="eager">
 </a>
 <div class="nav-pill">
  <a href="/services" class="nav-link">Services</a>
@@ -479,7 +512,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
 <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
 </button>
-<a href="contact" class="btn btn-glow btn-sm">Contact Us<svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+<a href="/contact" class="btn btn-glow btn-sm">Contact Us<svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
 <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"><i></i><i></i><i></i></button>
 </div>
 </div>
@@ -499,42 +532,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ===================== HERO ===================== -->
 <header class="rfp-hero" id="top">
- <div class="rfp-hero-photo" role="img" aria-label="South Platte Renew water resource recovery facility, Arapahoe County, Colorado"></div>
+ <div class="rfp-hero-photo" role="img" aria-label="Oracle Merchant Services custom AI voice agent outbound calling"></div>
  <div class="rfp-hero-shade" aria-hidden="true"></div>
  <div class="rfp-hero-grid" aria-hidden="true"></div>
  <div class="rfp-wrap">
  <div class="rfp-hero-inner">
- <span class="rfp-eyebrow on-dark rfp-reveal">Case Study &middot; Government Proposal Support</span>
- <h1 class="rfp-reveal d1">Inside a WordPress and accessibility mandated municipal RFP, and how <span class="hl">Croncore built the winning response.</span></h1>
- <p class="rfp-hero-sub rfp-reveal d2"><strong>Solicitation:</strong> Website Redesign &amp; Development Services &middot; RFP 26 022 &middot; City of Englewood, CO (for South Platte Renew)</p>
+ <span class="rfp-eyebrow on-dark rfp-reveal">Case Study &middot; AI Voice Agent</span>
+ <h1 class="rfp-reveal d1">Custom AI Voice Agent closes <span class="hl">the speed to lead gap.</span></h1>
+ <p class="rfp-hero-sub rfp-reveal d2">How a bespoke AI Voice Agent transformed top of funnel operations from a manual grind into an automated outreach engine.</p>
  <div class="rfp-issuer rfp-reveal d3">
- <span class="rfp-issuer-lab rfp-mono">Issued by</span>
- <span class="rfp-issuer-chip">City of Englewood &middot; South Platte Renew</span>
+ <span class="rfp-issuer-lab rfp-mono">Client</span>
+ <span class="rfp-issuer-chip">Oracle Merchant Services</span>
  </div>
  </div>
 
- <!-- solicitation facts strip -->
- <div class="rfp-facts" role="list" aria-label="Solicitation facts">
- <div class="rfp-fact rfp-reveal d1" role="listitem">
- <div class="k">Release Date</div>
- <div class="v">May 19, 2026</div>
- </div>
- <div class="rfp-fact rfp-reveal d2" role="listitem">
- <div class="k">Closing Date</div>
- <div class="v">June 16, 2026 &middot; 2:00 p.m. MT</div>
- </div>
- <div class="rfp-fact rfp-reveal d3" role="listitem">
- <div class="k">NIGP Codes</div>
- <div class="v codes">91500 &middot; 91522 &middot; 91824</div>
- </div>
- <div class="rfp-fact rfp-reveal d4" role="listitem">
- <div class="k">NAICS Codes</div>
- <div class="v codes">541511 &middot; 541430 &middot; 519190</div>
- </div>
+ <div class="rfp-facts" role="list" aria-label="Project facts">
+<div class="rfp-fact rfp-reveal"><div class="k">Industry</div><div class="v">Fintech &middot; Merchant Services</div></div>
+<div class="rfp-fact rfp-reveal"><div class="k">Service</div><div class="v">AI Voice Agent</div></div>
+<div class="rfp-fact rfp-reveal"><div class="k">Platform</div><div class="v">Voice Synthesis + NLU</div></div>
+<div class="rfp-fact rfp-reveal"><div class="k">Key Metric</div><div class="v">10+ FTE Equivalent Output</div></div>
  </div>
 
  <div class="rfp-hero-cta rfp-reveal d2">
- <a href="contact" class="rfp-btn">Contact Us <span class="arrow" aria-hidden="true">&rarr;</span></a>
+ <a href="/contact" class="rfp-btn">Contact Us <span class="arrow" aria-hidden="true">&rarr;</span></a>
  </div>
  </div>
  <div class="rfp-hero-foot" aria-hidden="true"></div>
@@ -543,52 +563,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ===================== SNAPSHOT BAR ===================== -->
 <section class="rfp-snapshot" aria-label="Project snapshot">
  <div class="rfp-wrap">
- <div class="rfp-snap-item"><div class="k">Client</div><div class="v">U.S. prime contractor (under NDA)</div></div>
- <div class="rfp-snap-item"><div class="k">Sector</div><div class="v">Municipal Water Recovery &middot; Public Utilities</div></div>
- <div class="rfp-snap-item"><div class="k">Location</div><div class="v">Arapahoe County, Colorado</div></div>
- <div class="rfp-snap-item"><div class="k">Engagement</div><div class="v">Bid strategy, technical architecture &amp; full proposal development</div></div>
- <div class="rfp-snap-item"><div class="k">Solicitation</div><div class="v">RFP 26 022</div></div>
+<div class="rfp-snap-item"><div class="k">Client</div><div class="v">Oracle Merchant Services</div></div>
+<div class="rfp-snap-item"><div class="k">Sector</div><div class="v">Fintech &middot; Merchant Services</div></div>
+<div class="rfp-snap-item"><div class="k">Engagement</div><div class="v">Custom AI Voice Agent Build</div></div>
+<div class="rfp-snap-item"><div class="k">Tech Stack</div><div class="v">Voice Cloning, NLU, CRM Integration</div></div>
+<div class="rfp-snap-item"><div class="k">Key Result</div><div class="v">Zero Lead Decay</div></div>
  </div>
 </section>
 
 <!-- ===================== CHALLENGE ===================== -->
 <section class="rfp-section rfp-challenge" id="challenge">
  <div class="rfp-wrap">
- <div class="rfp-grid">
- <div>
  <div class="rfp-section-head rfp-reveal" style="margin-bottom:34px;">
  <span class="rfp-eyebrow">The Challenge</span>
- <h2>A best value selection demanding an uncompromising balance of technology and strategy.</h2>
- <p class="lede">South Platte Renew, jointly owned by the Cities of Littleton and Englewood, required a complete overhaul of its digital presence. The utility faced major internal usability hurdles, siloed communication tools, and a critical need to achieve absolute legal compliance with state and federal digital accessibility laws.</p>
+ <h2>In merchant services, a lead goes cold in minutes.</h2>
+ <p class="lede">Oracle Merchant Services faced a challenge familiar to many high growth financial service providers: the speed to lead gap.</p>
  </div>
  <ul class="rfp-chal-bullets">
- <li class="rfp-reveal"><span class="ix">01</span><p>An <b>equal weight scoring split</b>: Experience &amp; Technical Capability 40%, Project Understanding &amp; Management Approach 40%, Price Proposal 20%.</p></li>
- <li class="rfp-reveal"><span class="ix">02</span><p><b>Strict platform &amp; technical boundaries</b>: a zero compromise mandate for an open source WordPress CMS only; proprietary or closed platforms were explicitly disqualified.</p></li>
- <li class="rfp-reveal"><span class="ix">03</span><p><b>Rigid enforcement levers</b>: WCAG 2.2 A/AA and C.R.S. § 24 85 101 compliance with legal teeth, failure to provide a validated VPAT within 30 days triggered payment suspension, scaling to contract termination at 90 days.</p></li>
- <li class="rfp-reveal"><span class="ix">04</span><p><b>Complex multi stakeholder governance</b>: a dual city framework (Englewood, Littleton, and a joint Supervisory Committee) demanded a clear operational methodology.</p></li>
+<li class="rfp-reveal"><span class="ix">01</span><p><b>Speed to lead gap:</b> in the competitive merchant services industry, a lead can go cold within minutes of first contact.</p></li>
+<li class="rfp-reveal"><span class="ix">02</span><p><b>Manual bottleneck:</b> cold outreach and qualification work led to inconsistent follow ups and missed opportunities.</p></li>
+<li class="rfp-reveal"><span class="ix">03</span><p><b>Headcount ceiling:</b> scaling lead generation meant either hiring aggressively or accepting slower coverage.</p></li>
+<li class="rfp-reveal"><span class="ix">04</span><p><b>Brand risk:</b> any automation had to keep the personal touch that defines the Oracle Merchant Services brand.</p></li>
  </ul>
- </div>
-
- <aside class="rfp-scorecard rfp-reveal d2" aria-label="Evaluation scorecard weighting">
- <div class="sc-title">Evaluation scorecard</div>
- <div class="sc-sub">How the City weighted every submission.</div>
-
- <div class="rfp-sc-row lead">
- <div class="sc-top"><span class="sc-lab">Experience &amp; Technical Capability</span><span class="sc-pct">40%</span></div>
- <div class="rfp-sc-track"><div class="rfp-sc-fill" data-pct="40"></div></div>
- </div>
- <div class="rfp-sc-row lead">
- <div class="sc-top"><span class="sc-lab">Project Understanding &amp; Management</span><span class="sc-pct">40%</span></div>
- <div class="rfp-sc-track"><div class="rfp-sc-fill" data-pct="40"></div></div>
- </div>
- <div class="rfp-sc-row">
- <div class="sc-top"><span class="sc-lab">Price Proposal</span><span class="sc-pct">20%</span></div>
- <div class="rfp-sc-track"><div class="rfp-sc-fill" data-pct="20"></div></div>
- </div>
-
- <p class="rfp-sc-foot">A combined <b>80% of the award</b> rode on technical depth and management approach, exactly where a sharp, compliant narrative wins or loses.</p>
- </aside>
- </div>
  </div>
 </section>
 
@@ -597,41 +593,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <div class="rfp-wrap">
  <div class="rfp-section-head rfp-reveal">
  <span class="rfp-eyebrow">Croncore's Approach</span>
- <h2>Six disciplines, one compliant, high scoring submission.</h2>
- <p class="lede">We embedded directly with the prime's capture team to transform a multi layered municipal utility solicitation into a hyper targeted, defensible proposal package.</p>
+ <h2>A seamless extension of the existing sales team.</h2>
+ <p class="lede">We partnered with Oracle Merchant Services to build a bespoke automated AI Voice Agent, designed to be a natural extension of the team rather than a robotic dialer.</p>
  </div>
 
  <div class="rfp-cards-6">
- <article class="rfp-acard rfp-reveal">
- <div class="num">01</div>
- <h3>Bid Strategy &amp; Win Themes</h3>
- <p>Moved the narrative beyond a generic redesign pitch, anchoring around the interactive Pilot and Research Center (PARC) mapping system and integrated podcast workflows.</p>
- </article>
- <article class="rfp-acard rfp-reveal d1">
- <div class="num">02</div>
- <h3>Proposal Writing &amp; Technical Architecture</h3>
- <p>Authored a clear, comprehensive technical approach structured directly around the 40% management approach scorecard, with feedback pathways and revision cycles explicit.</p>
- </article>
- <article class="rfp-acard rfp-reveal d2">
- <div class="num">03</div>
- <h3>Compliance &amp; Risk Assurance</h3>
- <p>Enforced absolute adherence to formatting limits: 10 page narrative cap, standard 1 inch margins, 11 point minimum, and properly formatted 11x17 tri fold schedule charts.</p>
- </article>
- <article class="rfp-acard rfp-reveal">
- <div class="num">04</div>
- <h3>Cost Proposal Support</h3>
- <p>Developed a transparent, task level cost breakdown on a hybrid delivery model with a competitive milestone driven payment schedule tied to clean verification gates.</p>
- </article>
- <article class="rfp-acard rfp-reveal d1">
- <div class="num">05</div>
- <h3>Accessibility Alignment</h3>
- <p>Crafted a sprint level accessibility testing strategy using axe, WAVE, and Deque to back the high liability indemnification clauses required by Colorado law.</p>
- </article>
- <article class="rfp-acard rfp-reveal d2">
- <div class="num">06</div>
- <h3>Submission Readiness</h3>
- <p>Structured the separation of multi file electronic assets, ensuring the Proposed Fee PDF and the Track Changes Word SOW (Attachment C) were perfectly synchronized.</p>
- </article>
+<article class="rfp-acard rfp-reveal"><div class="num">01</div><h3>Voice Cloning &amp; Persona</h3><p>Used advanced voice synthesis to model the agent after an actual employee's voice, keeping outreach familiar and on brand.</p></article>
+<article class="rfp-acard rfp-reveal"><div class="num">02</div><h3>Knowledge Integration</h3><p>Trained the agent on the company's service offerings, industry terminology, and common merchant pain points.</p></article>
+<article class="rfp-acard rfp-reveal"><div class="num">03</div><h3>Autonomous Outreach</h3><p>Programmed the agent to handle high volume outbound calling, identify decision makers, and deliver a tailored pitch.</p></article>
+<article class="rfp-acard rfp-reveal"><div class="num">04</div><h3>Smart Qualification</h3><p>Built a logic layer that qualifies prospects in real time, passing only high intent leads to the human closing team.</p></article>
  </div>
  </div>
 </section>
@@ -641,46 +611,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <div class="rfp-wrap">
  <div class="rfp-section-head rfp-reveal">
  <span class="rfp-eyebrow on-dark">How We Worked</span>
- <h2>A five step path from solicitation to submission.</h2>
- <p class="lede">Our repeatable methodology, optimized for public sector digital procurements, protects the prime from compliance traps while maximizing technical scoring.</p>
+ <h2>A five step path from problem to production.</h2>
+ <p class="lede">A repeatable delivery method we run on every AI engagement, tuned to this project's data, integrations, and quality bar.</p>
  </div>
 
  <div class="rfp-steps">
- <div class="rfp-step rfp-reveal">
- <div class="s-num"><span class="o">0</span>1</div>
- <div class="s-body">
- <h3>Understand the project</h3>
- <p>Dissected RFP 26 022's core layers, mapping hidden compliance blockers like out of state corporate documentation rules and the tight 30 day VPAT deadlines.</p>
- </div>
- </div>
- <div class="rfp-step rfp-reveal">
- <div class="s-num"><span class="o">0</span>2</div>
- <div class="s-body">
- <h3>Align with the prime</h3>
- <p>Established an immediate technical and content rhythm to map capabilities against the explicit public utility and WordPress criteria.</p>
- </div>
- </div>
- <div class="rfp-step rfp-reveal">
- <div class="s-num"><span class="o">0</span>3</div>
- <div class="s-body">
- <h3>Build the winning strategy</h3>
- <p>Shaped the response to explicitly address known government failure modes, deep content migration plans, defined URL redirect mapping for SEO preservation, and a unified platform consolidation scheme.</p>
- </div>
- </div>
- <div class="rfp-step rfp-reveal">
- <div class="s-num"><span class="o">0</span>4</div>
- <div class="s-body">
- <h3>Develop &amp; optimize the documents</h3>
- <p>Drafted technical chapters, a detailed project team hierarchy, and an interactive Gantt chart tracking the 9 mandatory project milestones from discovery to final handoff.</p>
- </div>
- </div>
- <div class="rfp-step rfp-reveal">
- <div class="s-num"><span class="o">0</span>5</div>
- <div class="s-body">
- <h3>Prepare for submission &amp; evaluation</h3>
- <p>Conducted final quality control passes for code level searchability of the submission files, bookmark hierarchies, and final portal upload staging.</p>
- </div>
- </div>
+<div class="rfp-step rfp-reveal">
+<div class="s-num"><span class="o">0</span>1</div>
+<div class="s-body"><h3>Discover the problem</h3><p>We map the workflow, data, and KPIs that show exactly where the manual process breaks down.</p></div>
+</div>
+<div class="rfp-step rfp-reveal">
+<div class="s-num"><span class="o">0</span>2</div>
+<div class="s-body"><h3>Design the system</h3><p>We architect the agent, model, or pipeline and choose the integration points into your existing tools.</p></div>
+</div>
+<div class="rfp-step rfp-reveal">
+<div class="s-num"><span class="o">0</span>3</div>
+<div class="s-body"><h3>Build &amp; train</h3><p>We develop the engine, fine tune it on your real data and voice, and wire it into production systems.</p></div>
+</div>
+<div class="rfp-step rfp-reveal">
+<div class="s-num"><span class="o">0</span>4</div>
+<div class="s-body"><h3>Test &amp; harden</h3><p>We validate quality, edge cases, and failure modes before anything touches a real customer.</p></div>
+</div>
+<div class="rfp-step rfp-reveal">
+<div class="s-num"><span class="o">0</span>5</div>
+<div class="s-body"><h3>Launch &amp; scale</h3><p>We ship to production with monitoring in place, then iterate based on real usage.</p></div>
+</div>
  </div>
  </div>
 </section>
@@ -690,40 +645,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <div class="rfp-wrap">
  <div class="rfp-section-head rfp-reveal">
  <span class="rfp-eyebrow">The Outcome</span>
- <h2>Compliant, competitive, and delivered on time.</h2>
- <p class="lede">Honest, verifiable results from the work we control, plus fields the bid owner confirms before publishing.</p>
+ <h2>A manual grind turned into an automated engine.</h2>
+ <p class="lede">By implementing the AI Voice Agent, Oracle Merchant Services transformed its top of funnel operations end to end.</p>
  </div>
 
  <div class="rfp-stats">
- <div class="rfp-stat confirmed rfp-reveal">
- <div class="big">100%</div>
- <div class="lab">Compliance: zero deviations on page constraints, font criteria, mandatory appendices, or electronic submission protocols.</div>
- </div>
- <div class="rfp-stat confirmed rfp-reveal d1">
- <div class="big">On time</div>
- <div class="lab">Submission uploaded and confirmed in the procurement portal well ahead of the 2:00 PM MT cutoff.</div>
- </div>
- <div class="rfp-stat confirmed rfp-reveal d2">
- <div class="big">Awarded</div>
- <div class="lab">Selected as the winning proposal for RFP 26 022.</div>
- </div>
- <div class="rfp-stat confirmed rfp-reveal d3">
- <div class="big">$306K</div>
- <div class="lab">Total projected engagement and infrastructure value managed under the structured methodology.</div>
- </div>
+<div class="rfp-stat confirmed rfp-reveal"><div class="big">10+</div><div class="lab">FTE equivalent outreach without added headcount.</div></div>
+<div class="rfp-stat confirmed rfp-reveal"><div class="big">0s</div><div class="lab">Lead decay, every new contact reached instantly.</div></div>
+<div class="rfp-stat confirmed rfp-reveal"><div class="big">100%</div><div class="lab">Brand consistent pitch on every single call.</div></div>
+<div class="rfp-stat confirmed rfp-reveal"><div class="big">High Intent</div><div class="lab">Handoffs only, so reps focus on closing.</div></div>
  </div>
  </div>
 </section>
 
-<!-- ===================== TESTIMONIAL ===================== -->
+
+
 <!-- ===================== CTA ===================== -->
 <section class="rfp-section rfp-cta" id="cta">
  <div class="rfp-wrap">
  <span class="rfp-eyebrow on-dark rfp-reveal" style="justify-content:center;">Let's Talk</span>
- <h2 class="rfp-reveal d1">Have a government RFP on the horizon?</h2>
- <p class="rfp-reveal d2">Croncore helps primes and teaming partners turn complex public solicitations into compliant, high scoring, on deadline proposals, quietly, under NDA, behind your brand. Learn more about <a href="/sled-delivery-partner">Croncore's SLED delivery partner program for US primes</a>.</p>
+ <h2 class="rfp-reveal d1">Have an AI project like this in mind?</h2>
+ <p class="rfp-reveal d2">Croncore designs and ships production AI systems, agents, voice engines, and custom models end to end, with the engineering rigor production systems demand.</p>
  <div class="rfp-reveal d2" style="display:flex;justify-content:center;">
- <a href="contact" class="rfp-btn">Contact Us <span class="arrow" aria-hidden="true">&rarr;</span></a>
+ <a href="/contact" class="rfp-btn">Contact Us <span class="arrow" aria-hidden="true">&rarr;</span></a>
  </div>
  </div>
 </section>
@@ -736,24 +680,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="footer-grid">
 <div class="footer-brand">
 <div class="footer-brand-logo">
-<img src="images/croncore-logo.png" alt="Croncore" class="logo-dark" width="56" height="56" loading="lazy">
-<img src="images/concore-logo-light-theme.png" alt="Croncore" class="logo-light" width="56" height="56" loading="lazy">
+<img src="/images/croncore-logo.png" alt="Croncore" class="logo-dark" width="56" height="56" loading="lazy">
+<img src="/images/concore-logo-light-theme.png" alt="Croncore" class="logo-light" width="56" height="56" loading="lazy">
 </div>
 <p>AI powered solutions for automation and business growth.</p>
 </div>
 <nav class="footer-col" aria-label="Quick links"><h4>Quick Links</h4><ul><li><a href="/#about">About Us</a></li><li><a href="/#services">Services</a></li><li><a href="/case-studies">Case Studies</a></li>
 <li><a href="/sled-delivery-partner">SLED</a></li></ul></nav>
-<nav class="footer-col" aria-label="Case Studies"><h4>Case Studies</h4><ul><li><a href="case-study-derby-downtown-lighting-rfp">Derby Downtown Lighting RFP</a></li><li><a href="case-study-macomb-community-college-av-equipment-rfq">Macomb Community College AV Equipment RFQ</a></li><li><a href="case-study-south-platte-renew-website-rfp">South Platte Renew Website RFP</a></li><li><a href="case-studies">All Case Studies</a></li></ul></nav>
+<nav class="footer-col" aria-label="Case Studies"><h4>Case Studies</h4><ul><li><a href="/case-studies/autonomous-sales-agent-drives-record-revenue-growth">Bezninja</a></li>
+<li><a href="/case-studies/sovereign-voice-engine-for-mongolia">Bloomlink</a></li>
+<li><a href="/case-studies/architecting-a-ground-up-digital-learning-powerhouse">EdTech</a></li><li><a href="/case-studies">All Case Studies</a></li></ul></nav>
 <nav class="footer-col" aria-label="Social links"><h4>Follow Us</h4><ul><li><a href="https://www.instagram.com/croncoreglobal/" rel="noopener noreferrer" target="_blank">Instagram</a></li><li><a href="https://x.com/croncore_" rel="noopener noreferrer" target="_blank">Twitter / X</a></li><li><a href="https://www.facebook.com/profile.php?id=61575159626243" rel="noopener noreferrer" target="_blank">Facebook</a></li><li><a href="https://www.linkedin.com/company/croncore/" rel="noopener noreferrer" target="_blank">LinkedIn</a></li></ul></nav>
 </div>
-<div class="footer-bottom"><span>&copy; 2025/2026 Croncore LLC. All rights reserved.</span><div class="footer-bottom-links"><a href="privacy-policy">Privacy Policy</a><a href="terms">Terms of Service</a><button type="button" onclick="openConsentSettings()">Cookie Settings</button><button type="button" onclick="doNotSell()">Do Not Sell or Share My Info</button></div></div>
+<div class="footer-bottom"><span>&copy; 2025/2026 Croncore LLC. All rights reserved.</span><div class="footer-bottom-links"><a href="/privacy-policy">Privacy Policy</a><a href="/terms">Terms of Service</a><button type="button" onclick="openConsentSettings()">Cookie Settings</button><button type="button" onclick="doNotSell()">Do Not Sell or Share My Info</button></div></div>
 </div>
 </footer>
 
 </div>
-<script src="js/main.js?v=7"></script>
- <script defer src="js/a11y.js?v=2"></script>
- 
+<script src="/js/main.js?v=7"></script>
+ <script defer src="/js/a11y.js?v=2"></script>
+
 
 <!-- Reveal + scorecard fill animation -->
 <script>
@@ -794,12 +740,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <span>Contact on WhatsApp</span>
  <svg class="float-btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
  </a>
- <a href="contact" class="float-btn float-btn--contact" aria-label="Contact Us">
+ <a href="/contact" class="float-btn float-btn--contact" aria-label="Contact Us">
  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
  <span>Contact Us</span>
  <svg class="float-btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
  </a>
 </div>
-<script defer src="js/consent.js?v=1"></script>
+<script defer src="/js/consent.js?v=1"></script>
 </body>
 </html>
