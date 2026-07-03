@@ -65,9 +65,10 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
 .sled-hero .container{position:relative;z-index:1}
 .sled-hero-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:3rem;align-items:center;min-height:480px}
 .sled-hero-grid>div:first-child{position:relative;z-index:2}
-@media(max-width:1000px){.sled-hero-grid{grid-template-columns:1fr;gap:2.2rem;min-height:auto}}
+@media(max-width:1000px){.sled-hero-grid{grid-template-columns:minmax(0,1fr);gap:2.2rem;min-height:auto}}
 .sled-hero h1{font-family:var(--font-display);font-size:clamp(2.4rem,4.6vw,3.5rem);font-weight:800;line-height:1.08;letter-spacing:-.03em;color:var(--text-primary);margin-bottom:1.3rem;animation:slideUpVisible .8s var(--ease) .1s both;max-width:540px}
 .sled-hero h1 .text-glow{background:linear-gradient(135deg,#3B82F6 0%,#60A5FA 35%,#3B82F6 65%,#1D4ED8 100%);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;white-space:nowrap;animation:gradient-text 4s ease infinite}
+@media(max-width:1000px){.sled-hero h1 .text-glow{white-space:normal}}
 @keyframes gradient-text{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 .sled-hero p.sled-lead{font-size:1.15rem;line-height:1.75;color:var(--text-secondary);max-width:520px;margin-bottom:0;animation:fadeUp .7s var(--ease) .2s both}
 .sled-hero p.sled-lead+p.sled-lead{margin-top:1rem;animation-delay:.28s}
@@ -313,6 +314,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
 
 /* Hero CTA buttons row */
 .sled-hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem;animation:fadeUp .7s var(--ease) .32s both}
+@media(max-width:480px){.sled-hero-btns{flex-direction:column;align-items:stretch}.sled-hero-btns .btn{width:100%}}
 
 /* Brand pill in nav for SLED */
 .sled-brand-pill{font-family:var(--font-mono);font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.25);border-radius:.35rem;padding:.2rem .55rem;margin-left:.55rem;vertical-align:middle}
@@ -488,7 +490,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p class="sled-lead">We help primes turn SLED opportunities winnable bids, ready to submit, faster.</p>
 <div class="sled-hero-btns">
  <a href="contact?source=sled&amp;intent=team" class="btn btn-glow">Team with us on a bid<svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
- <a href="#case-studies" class="btn btn-outline">View SLED Portfolio<svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+ <a href="#case-studies" class="btn btn-ghost">View SLED Portfolio<svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
 </div>
 </div>
 
