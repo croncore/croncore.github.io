@@ -144,7 +144,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <script>(function () { var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light'); })()</script>
 
  <!-- Stylesheet -->
- <link rel="stylesheet" href="css/styles.css?v=13">
+ <link rel="stylesheet" href="css/styles.css?v=17">
 
  <style>
 /* ===== Hero Carousel ===== */
@@ -227,13 +227,17 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
 /* Mobile responsive */
 @media(max-width:1000px){
   .hero-slide--sled{padding:110px 0 30px}
-  .hero-slide--sled .sled-hero-grid{grid-template-columns:1fr;gap:2rem;min-height:auto}
+  .hero-slide--sled .sled-hero-grid{grid-template-columns:minmax(0,1fr);gap:2rem;min-height:auto}
   .hero-slide--sled .sled-hero-visual{min-height:auto;padding:40px 0 60px;display:block}
   .hero-slide--sled .sled-capitol{position:absolute;top:170px;left:50%;transform:translateX(calc(-50% + 10px));right:auto;bottom:auto;width:120%;max-width:120%;height:680px;object-fit:contain;object-position:top}
   .hero-slide--sled .sled-active-badge{top:30px;right:0}
   .hero-slide--sled .sled-rfp-card{position:relative;left:auto;top:auto;margin:0;max-width:100%;width:100%;animation:none}
   .hero-slide--sled .sled-map{opacity:.18}
   [data-theme="light"] .hero-slide--sled .sled-map{opacity:.3}
+}
+@media(max-width:480px){
+  .hero-slide--sled .sled-hero-btns{flex-direction:column;align-items:stretch}
+  .hero-slide--sled .sled-hero-btns .btn{width:100%}
 }
 @media(max-width:560px){
   .hero-slide--sled .sled-active-badge{padding:.7rem .9rem;gap:.65rem}
@@ -248,45 +252,6 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
   .hero-slide--sled .sled-rfp-card,.hero-slide--sled .sled-active-badge{animation:none!important}
   .hcn-btn.active .hcn-fill{animation:none!important;width:100%}
 }
-
-/* ===== Testimonial Spotlight (tspot) ===== */
-.tspot{padding:var(--section-pad) 0;background:var(--bg-primary)}
-.tspot-header{text-align:center;margin-bottom:52px}
-.tspot-header .section-desc{text-align:center;margin-left:auto;margin-right:auto}
-.tspot-inner{text-align:center}
-.tspot-panels{position:relative;max-width:680px;margin:0 auto;height:360px}
-.tspot-panel{position:absolute;top:0;left:0;right:0;opacity:0;visibility:hidden;transition:opacity .4s cubic-bezier(.25,.46,.45,.94);pointer-events:none}
-.tspot-panel.active{opacity:1;visibility:visible;pointer-events:auto;animation:tspot-in .4s cubic-bezier(.25,.46,.45,.94) forwards}
-@keyframes tspot-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.tspot-av-wrap{width:62px;height:62px;border-radius:50%;overflow:hidden;margin:0 auto 28px;border:2px solid rgba(0,0,0,.08)}
-.tspot-av-svg{width:62px;height:62px;display:block}
-.tspot-av-bg{fill:#c8d0e7}.tspot-av-fg{fill:#7480a0}
-.tspot-quote{font-size:clamp(1.3rem,2.6vw,1.8rem);line-height:1.55;color:var(--text-secondary);font-style:normal;font-weight:400;max-width:660px;margin:0 auto 22px}
-.tspot-attr{font-size:.95rem;color:var(--text-secondary);margin-bottom:20px;line-height:1.5}
-.tspot-attr strong{color:var(--text-primary);font-weight:600}
-.tspot-link{display:inline-flex;align-items:center;gap:4px;font-size:.9rem;font-weight:600;color:var(--accent);text-decoration:none;transition:opacity .2s}
-.tspot-link:hover{opacity:.72}
-.tspot-divider{position:relative;width:100%;height:1px;background:var(--border-strong);margin:0;overflow:hidden}
-.tspot-divider-bar{position:absolute;top:0;left:0;height:100%;width:25%;background:var(--accent);transition:transform .4s cubic-bezier(.25,.46,.45,.94)}
-.tspot-logos{display:flex;align-items:center;justify-content:space-between;padding:28px 0 0;gap:0}
-.tspot-logo-btn{flex:1;display:flex;justify-content:center;align-items:center;background:none;border:none;cursor:pointer;padding:8px 12px;opacity:.3;filter:grayscale(1) brightness(1.4);transition:opacity .3s,filter .3s}
-.tspot-logo-btn.active{opacity:1;filter:none}
-.tspot-logo-btn:hover:not(.active){opacity:.55}
-.tspot-logo-btn img{height:32px;width:auto;max-width:130px;object-fit:contain;display:block}
-.tspot-logo-btn .tspot-benz-logo{height:62px;width:auto;max-width:76px}
-.tspot-logo-btn .tspot-edu-logo{height:44px;width:auto;max-width:180px;display:block}
-.tspot-wordmark{height:28px;width:auto;max-width:130px;display:block}
-.tspot-logo-btn--svg{opacity:.3;filter:none}
-.tspot-logo-btn--svg.active{opacity:1}
-[data-theme=light] .tspot-av-wrap{border-color:rgba(0,0,0,.1)}
-[data-theme=light] .tspot-av-bg{fill:#dde4f0}
-[data-theme=light] .tspot-av-fg{fill:#8c97b8}
-[data-theme=light] .tspot-logo-btn img{mix-blend-mode:multiply}
-[data-theme=light] .tspot-logo-btn .tspot-benz-logo{mix-blend-mode:multiply}
-[data-theme=light] .tspot-logo-btn{filter:grayscale(1) brightness(.65)}
-[data-theme=light] .tspot-logo-btn.active{filter:none;opacity:1}
-[data-theme=light] .tspot-logo-btn--svg{filter:none}
-[data-theme=light] .tspot-divider{background:rgba(0,0,0,.1)}
 
 /* ===== Clutch stars override ===== */
 .trusted-stat--clutch .trusted-stat-stars svg{color:var(--accent);width:20px;height:20px}
@@ -324,6 +289,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <a href="/case-studies" class="nav-link">Case Studies</a>
  <a href="#testimonials" class="nav-link">Testimonials</a>
  <a href="/sled-delivery-partner" class="nav-link">SLED</a>
+ <a href="#" class="nav-link">More</a>
  </div>
  <div class="nav-actions">
  <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme">
@@ -344,7 +310,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
  </svg>
  </button>
- <a href="contact" class="btn btn-glow btn-sm">
+ <a href="https://wa.me/16039991544" target="_blank" rel="noopener noreferrer" class="nav-whatsapp" aria-label="Chat with us on WhatsApp: +1 (603) 999-1544"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span>+1 (603) 999-1544</span></a> <a href="contact" class="btn btn-glow btn-sm">
  Contact Us
  <svg class="arrow-icon" viewBox="0 0 24 24">
  <line x1="5" y1="12" x2="19" y2="12" />
@@ -372,6 +338,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <a href="/case-studies">Case Studies</a>
  <a href="#testimonials">Testimonials</a>
  <a href="/sled-delivery-partner">SLED</a>
+<a href="#">More</a>
  <a href="/contact" class="btn btn-glow" style="margin-top:12px;">Contact Us</a>
  </div>
 
@@ -499,7 +466,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <p class="sled-lead">We help primes turn SLED opportunities winnable bids, ready to submit, faster.</p>
  <div class="sled-hero-btns">
  <a href="sled-delivery-partner" class="btn btn-glow">Explore SLED Portfolio<svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
- <a href="sled-case-studies" class="btn btn-outline">Explore Case Studies<svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+ <a href="sled-case-studies" class="btn btn-ghost">Explore Case Studies<svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
  </div>
  </div>
  <aside class="sled-hero-visual" aria-label="Sample SLED RFP">
@@ -1187,6 +1154,11 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
     <div class="tspot-divider" aria-hidden="true"><span class="tspot-divider-bar"></span></div>
 
     <!-- Logo tabs — spread full width -->
+    <div class="tspot-logos-row">
+    <button type="button" class="tspot-logos-arrow tspot-logos-arrow--prev" aria-label="Previous client">
+     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <div class="tspot-logos-viewport">
     <div class="tspot-logos" role="tablist" aria-label="Select client">
      <button class="tspot-logo-btn active" id="tspot-btn-benzninja" data-index="0" role="tab" aria-selected="true" aria-controls="tspot-benzninja"><img src="images/logos/benz.webp" alt="BenzNinja" loading="lazy" class="tspot-benz-logo"></button>
      <button class="tspot-logo-btn" id="tspot-btn-bloomslink" data-index="1" role="tab" aria-selected="false" aria-controls="tspot-bloomslink"><img src="images/logos/BloomLink.webp" alt="BloomsLink" loading="lazy"></button>
@@ -1201,6 +1173,11 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
       </svg>
      </button>
     </div>
+    </div>
+    <button type="button" class="tspot-logos-arrow tspot-logos-arrow--next" aria-label="Next client">
+     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    </div>
 
    </div><!-- /.tspot-inner -->
   </div><!-- /.container -->
@@ -1210,8 +1187,34 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
   var panels=document.querySelectorAll('.tspot-panel');
   var btns=document.querySelectorAll('.tspot-logo-btn');
   var bar=document.querySelector('.tspot-divider-bar');
-  if(!panels.length||!btns.length||!bar)return;
-  var current=0,timer,paused=false;
+  var track=document.querySelector('.tspot-logos');
+  var mq=window.matchMedia('(max-width:640px)');
+  if(!panels.length||!btns.length||!bar||!track)return;
+  var current=0,timer,paused=false,swiped=false;
+  function slideLogos(){
+   if(!mq.matches){track.style.transform='';return;}
+   var vp=track.parentElement;
+   var base=btns[0].offsetLeft;
+   var peek=current>0?44:0;
+   var shift=(btns[current].offsetLeft-base)-peek;
+   var maxShift=track.scrollWidth-vp.clientWidth;
+   if(shift<0)shift=0;
+   if(maxShift>0&&shift>maxShift)shift=maxShift;
+   track.style.transform='translateX(-'+shift+'px)';
+  }
+  function fitPanels(){
+   var wrap=document.querySelector('.tspot-panels');
+   if(!wrap)return;
+   if(!mq.matches){wrap.style.minHeight='';return;}
+   var max=0;
+   for(var i=0;i<panels.length;i++){
+    var p=panels[i];
+    p.style.position='absolute';p.style.display='block';p.style.visibility='hidden';p.style.left='0';p.style.right='0';
+    var h=p.offsetHeight;if(h>max)max=h;
+    p.style.position='';p.style.display='';p.style.visibility='';p.style.left='';p.style.right='';
+   }
+   if(max)wrap.style.minHeight=max+'px';
+  }
   function activate(i){
    panels[current].classList.remove('active');
    btns[current].classList.remove('active');
@@ -1221,16 +1224,56 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
    btns[current].classList.add('active');
    btns[current].setAttribute('aria-selected','true');
    bar.style.transform='translateX('+(current*100)+'%)';
+   slideLogos();
   }
   btns.forEach(function(btn,i){
-   btn.addEventListener('click',function(){clearInterval(timer);activate(i);if(!paused)startTimer();});
+   btn.addEventListener('click',function(){if(swiped)return;clearInterval(timer);activate(i);if(!paused)startTimer();});
   });
+  var prevBtn=document.querySelector('.tspot-logos-arrow--prev');
+  var nextBtn=document.querySelector('.tspot-logos-arrow--next');
+  if(prevBtn)prevBtn.addEventListener('click',function(){clearInterval(timer);activate(current-1);if(!paused)startTimer();});
+  if(nextBtn)nextBtn.addEventListener('click',function(){clearInterval(timer);activate(current+1);if(!paused)startTimer();});
   function startTimer(){clearInterval(timer);timer=setInterval(function(){activate(current+1);},6000);}
   var sec=document.querySelector('.tspot');
   if(sec){
    sec.addEventListener('mouseenter',function(){paused=true;clearInterval(timer);});
    sec.addEventListener('mouseleave',function(){paused=false;startTimer();});
   }
+  var panelsWrap=document.querySelector('.tspot-panels');
+  if(panelsWrap){
+   var touchStartX=0,touchStartY=0;
+   panelsWrap.addEventListener('touchstart',function(e){
+    touchStartX=e.touches[0].clientX;touchStartY=e.touches[0].clientY;
+   },{passive:true});
+   panelsWrap.addEventListener('touchend',function(e){
+    var dx=e.changedTouches[0].clientX-touchStartX;
+    var dy=e.changedTouches[0].clientY-touchStartY;
+    if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)){
+     clearInterval(timer);
+     activate(current+(dx<0?1:-1));
+     if(!paused)startTimer();
+    }
+   },{passive:true});
+  }
+  var logosVp=document.querySelector('.tspot-logos-viewport');
+  if(logosVp){
+   var lsx=0,lsy=0;
+   logosVp.addEventListener('touchstart',function(e){lsx=e.touches[0].clientX;lsy=e.touches[0].clientY;},{passive:true});
+   logosVp.addEventListener('touchend',function(e){
+    var dx=e.changedTouches[0].clientX-lsx;
+    var dy=e.changedTouches[0].clientY-lsy;
+    if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)){
+     swiped=true;setTimeout(function(){swiped=false;},350);
+     clearInterval(timer);
+     activate(current+(dx<0?1:-1));
+     if(!paused)startTimer();
+    }
+   },{passive:true});
+  }
+  window.addEventListener('resize',function(){fitPanels();slideLogos();});
+  window.addEventListener('load',fitPanels);
+  fitPanels();
+  slideLogos();
   bar.style.transition='none';
   bar.style.transform='translateX(0%)';
   requestAnimationFrame(function(){bar.style.transition='';});
@@ -1554,14 +1597,11 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <div class="footer-grid">
  <div class="footer-brand">
  <div class="footer-brand-logo">
- <img src="images/croncore-logo.webp" alt="Croncore" class="logo-dark" width="56" height="56"
-                            loading="lazy">
- <img src="images/concore-logo-light-theme.webp" alt="Croncore" class="logo-light" width="56"
-                            height="56" loading="lazy">
+ <img src="/images/croncore-logo.webp" alt="Croncore" class="logo-dark" width="56" height="56" loading="lazy">
+ <img src="/images/concore-logo-light-theme.webp" alt="Croncore" class="logo-light" width="56" height="56" loading="lazy">
  </div>
- <p>AI powered solutions for automation and business growth. Empowering companies with
- intelligent technology that delivers real results.</p>
- <a href="contact" class="btn btn-glow btn-sm">
+ <p>AI powered solutions for automation and business growth. Empowering companies with intelligent technology that delivers real results.</p>
+ <a href="/contact" class="btn btn-glow btn-sm">
  Contact Us
  <svg class="arrow-icon" viewBox="0 0 24 24">
  <line x1="5" y1="12" x2="19" y2="12" />
@@ -1572,36 +1612,32 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <nav class="footer-col" aria-label="Quick links">
  <h4>Quick Links</h4>
  <ul>
- <li><a href="#about">About Us</a></li>
+ <li><a href="/#about">About Us</a></li>
  <li><a href="/services">Services</a></li>
- <li><a href="#features">Features</a></li>
- <li><a href="#testimonials">Testimonials</a></li>
- <li><a href="insights">Insights</a></li>
+ <li><a href="/#testimonials">Testimonials</a></li>
+ <li><a href="/insights">Insights</a></li>
  <li><a href="/case-studies">Case Studies</a></li>
-<li><a href="/sled-delivery-partner">SLED</a></li>
- <li><a href="newsroom">Newsroom</a></li>
+ <li><a href="/sled-delivery-partner">SLED</a></li>
+ <li><a href="/newsroom">Newsroom</a></li>
+ <li><a href="/sitemap.xml">Sitemap</a></li>
  </ul>
  </nav>
  <nav class="footer-col" aria-label="Services">
  <h4>Services</h4>
  <ul>
- <li><a href="services#sp-services">AI Agents & Automations</a></li>
- <li><a href="services#sp-services">AI Models & Intelligence</a></li>
- <li><a href="services#sp-services">Compliant & Regulated AI</a></li>
- <li><a href="services#sp-services">Infrastructure & MLOps</a></li>
+ <li><a href="/services#custom-software-development">Custom Software Development</a></li>
+ <li><a href="/services#cyber-security-data">Cyber Security &amp; Data</a></li>
+ <li><a href="/services#ai-agents-automations">AI Agents &amp; Automations</a></li>
+ <li><a href="/services#erp-enterprise-platforms">ERP &amp; Enterprise Platforms</a></li>
  </ul>
  </nav>
  <nav class="footer-col" aria-label="Social links">
  <h4>Follow Us</h4>
  <ul>
- <li><a href="https://www.instagram.com/croncoreglobal/" rel="noopener noreferrer"
-                                target="_blank">Instagram</a></li>
- <li><a href="https://x.com/croncore_" rel="noopener noreferrer" target="_blank">Twitter / X</a>
- </li>
- <li><a href="https://www.facebook.com/profile.php?id=61575159626243" rel="noopener noreferrer"
-                                target="_blank">Facebook</a></li>
- <li><a href="https://www.linkedin.com/company/croncore/" rel="noopener noreferrer"
-                                target="_blank">LinkedIn</a></li>
+ <li><a href="https://www.instagram.com/croncoreglobal/" rel="noopener noreferrer" target="_blank">Instagram</a></li>
+ <li><a href="https://x.com/croncore_" rel="noopener noreferrer" target="_blank">Twitter / X</a></li>
+ <li><a href="https://www.facebook.com/profile.php?id=61575159626243" rel="noopener noreferrer" target="_blank">Facebook</a></li>
+ <li><a href="https://www.linkedin.com/company/croncore/" rel="noopener noreferrer" target="_blank">LinkedIn</a></li>
  </ul>
  </nav>
  </div>
@@ -1626,8 +1662,8 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <div class="footer-bottom">
  <span>&copy; 2026 Croncore LLC. All rights reserved.</span>
  <div class="footer-bottom-links">
- <a href="privacy-policy">Privacy Policy</a>
- <a href="terms">Terms of Service</a>
+ <a href="/privacy-policy">Privacy Policy</a>
+ <a href="/terms">Terms of Service</a>
  <button type="button" onclick="openConsentSettings()">Cookie Settings</button>
  <button type="button" onclick="doNotSell()">Do Not Sell or Share My Info</button>
  </div>
@@ -1766,7 +1802,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
 
  <!-- JavaScript (deferred: parse off the main thread, execute in order after DOM is ready) -->
  <script defer src="js/sanity.js"></script>
- <script defer src="js/main.js?v=7"></script>
+ <script defer src="js/main.js?v=8"></script>
  <script defer src="js/a11y.js?v=2"></script>
 
  <!-- Float Buttons -->
