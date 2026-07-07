@@ -25,3 +25,9 @@
 .sp-answers .faq-a p{font-size:.92rem}
 @media(max-width:768px){.sp-detail-grid,.sp-callout{grid-template-columns:1fr}}
 .sp-callout:has(.sp-callout-item:only-child){grid-template-columns:1fr;max-width:900px;margin-left:auto;margin-right:auto}
+/* ===== Testimonial logo row: desktop/tablet fill + even spacing (fix) ===== */
+@media (min-width:641px){
+  .tspot-logos-viewport{flex:1 1 auto;min-width:0}
+  .tspot-logos{justify-content:center;gap:clamp(40px,7vw,110px)}
+  .tspot-logo-btn{flex:0 1 auto;padding:8px 0}
+}
