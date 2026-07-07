@@ -74,7 +74,7 @@
 
  <script>(function(){var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
 
- <link rel="stylesheet" href="/css/styles.css?v=17">
+ <link rel="stylesheet" href="/css/styles.css?v=18">
 </head>
 <body>
  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFNLPH3H"
@@ -212,6 +212,51 @@
  </div>
  </section>
 
+ <!-- ===== CAPABILITIES DETAIL (added) ===== -->
+ <section class="sp-detail" id="capabilities-detail">
+ <div class="container">
+ <div class="sp-detail-header reveal">
+ <div class="section-tag"><span class="tag-pulse"></span> The Failure Modes We Get Hired to End</div>
+ <h2>Where ML projects go to die, and what a real pipeline changes.</h2>
+ <p>The industry's ugliest open secret is that most trained models never ship, and most that ship degrade unnoticed. Every engagement on this page starts at one of these failure modes.</p>
+ </div>
+ <div class="sp-detail-grid reveal">
+ <div class="sp-detail-block">
+ <h3>The Notebook Graveyard</h3>
+ <p>The model works, the demo lands, and six months later the project is dead in a personal repo nobody can find. Industry estimates put the share of ML models that never reach production between 70 and 87 percent, and the cause is almost never the model, it is the absence of a repeatable path from experiment to deploy. We build that path with the same CI/CD discipline as our <a href="/services/cloud-native-devops">cloud native platform work</a>: versioned, tested, promoted through gates, so shipping a model stops being a heroic one-off and becomes a Tuesday.</p>
+ </div>
+ <div class="sp-detail-block">
+ <h3>The Model Nobody Can Reproduce</h3>
+ <p>An auditor, a regulator, or your own incident review asks a simple question: which data, which code, which config produced the model currently making decisions? If the answer involves asking a data scientist who left, you have a governance finding waiting to be written. Our registry and lineage work ties every production model to its exact dataset state, training run, and eval results, which is the difference between an audit that takes an afternoon and one that takes a quarter.</p>
+ </div>
+ <div class="sp-detail-block">
+ <h3>Silent Drift Eating Your Accuracy</h3>
+ <p>Models degrade quietly as the world shifts under them, and the measured gap is brutal: organizations with drift detection catch degradation in about 9 days, versus over 4 months without it. One team we studied retrained quarterly by habit and discovered the model actually needed retraining every three weeks, a gap costing 18 percent of accuracy the whole time. Our pipelines wire drift triggers to automated retraining with rollback, and the watching itself runs through our <a href="/services/monitoring-observability">monitoring and observability</a> practice.</p>
+ </div>
+ <div class="sp-detail-block">
+ <h3>LLM Systems That Need the Same Discipline</h3>
+ <p>Prompts, adapters, retrieval indexes, and eval suites are model artifacts now, and most teams version none of them. We extend the pipeline to the LLM era: prompts and datasets as code, <a href="/services/model-fine-tuning">fine-tuned adapters</a> with regression evals on every change, and scheduled revalidation against base-model drift, so the AI feature that worked in March still works in September and you can prove it.</p>
+ </div>
+ <div class="sp-detail-block">
+ <h3>The Last Mile Into Production Serving</h3>
+ <p>A pipeline that ends at a registry has automated everything except the point. Ours end at deployment: eval-gated promotion into the <a href="/services/model-deployment-serving">serving infrastructure</a>, canary rollout, and automatic rollback if the new model regresses on the metrics that matter. Training to traffic, one pipeline, no human copying files between systems at midnight.</p>
+ </div>
+ </div>
+ <div class="sp-callout reveal">
+ <div class="sp-callout-item">
+ <h4>The Numbers That Justify the Plumbing.</h4>
+ <p>Fewer than 40 percent of models that do reach production sustain business value past twelve months, which means the deploy was never the finish line. The counter-evidence for doing this properly is just as measured: mature MLOps practices ship ML features around 4 times faster, detect degradation 28 times sooner, and organizations implementing them report 189 to 335 percent ROI over three years. Boring, reproducible pipelines are not overhead on the ML work. They are the difference between the statistic and the exception.</p>
+ </div>
+ </div>
+ <div class="sp-detail-cta reveal">
+ <a href="/contact" class="btn btn-glow">
+ Tell Us Where Your Pipeline Breaks
+ <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+ </a>
+ </div>
+ </div>
+ </section>
+
  <section class="sp-process">
  <div class="container">
  <div class="sp-process-header reveal">
@@ -243,6 +288,85 @@
  </div>
  </div>
  </section>
+
+ <!-- ===== STRAIGHT ANSWERS (added) ===== -->
+ <section class="faq sp-answers" id="straight-answers" aria-label="Cost, timeline and ownership">
+ <div class="container">
+ <div class="faq-top reveal">
+ <div class="section-tag"><span class="tag-pulse"></span> Straight Answers</div>
+ <h2 class="section-heading">Pipeline economics, the hiring math, and why the 80 percent fail.</h2>
+ </div>
+ <p class="sp-answers-intro reveal">MLOps is sold as either a platform purchase or a hiring spree. Usually it is neither. Here are the numbers behind the third option.</p>
+ <div class="faq-list">
+ <div class="faq-item active reveal">
+ <button class="faq-q" aria-expanded="true" aria-controls="sqa1">
+ What does an MLOps buildout cost?
+ <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+ </button>
+ <div class="faq-a" id="sqa1" role="region">
+ <p>A focused engagement fixing your highest-friction stage, usually eval gating or deployment automation, runs $20,000 to $60,000. A full pipeline with dataset versioning, experiment tracking, registry, and automated retraining runs $60,000 to $150,000 depending on how many models and how much history gets backfilled. The honest cost driver is your existing stack's messiness, not the tool list, which is why our first stage audits what you already run and why the proposal frequently includes deleting tools rather than adding them.</p>
+ </div>
+ </div>
+ <div class="faq-item reveal">
+ <button class="faq-q" aria-expanded="false" aria-controls="sqa2">
+ What ROI should we actually expect?
+ <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+ </button>
+ <div class="faq-a" id="sqa2" role="region">
+ <p>This is one of the few AI investments with hard third-party numbers. Organizations with mature MLOps report 189 to 335 percent ROI over three years, ship ML features roughly 4 times faster, and detect model degradation in days instead of months, a 28-fold difference that directly protects whatever the model earns or saves. The mechanism is mundane and that is the point: fewer failed deploys, no silent accuracy decay, and data scientists spending their time on models instead of plumbing. We baseline your current cycle time and incident rate before the build so the improvement is your measurement, not our claim.</p>
+ </div>
+ </div>
+ <div class="faq-item reveal">
+ <button class="faq-q" aria-expanded="false" aria-controls="sqa3">
+ Should we hire an MLOps engineer instead?
+ <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+ </button>
+ <div class="faq-a" id="sqa3" role="region">
+ <p>Eventually yes, and probably not first. Demand for the role grew over 35 percent year on year, salaries run $120,000 to $160,000 mid-level in the US and well beyond for seniors, and the scarce ones have their pick of employers, which means your first hire spends a year building foundations instead of improving models. Our embed model inverts the order: we build the pipeline, run the first cycles alongside your team, and hand over a working system with runbooks, so the person you eventually hire operates and extends a foundation instead of excavating one. It is also simply cheaper: the buildout costs less than one year of the salary.</p>
+ </div>
+ </div>
+ <div class="faq-item reveal">
+ <button class="faq-q" aria-expanded="false" aria-controls="sqa4">
+ Why do most models never ship, and does a pipeline really fix it?
+ <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+ </button>
+ <div class="faq-a" id="sqa4" role="region">
+ <p>The 70 to 87 percent failure range is structural, not intellectual: models die in the gap between the data scientist's environment and production reality, killed by irreproducible experiments, deployment paths that require heroics, and nobody owning the model after the notebook closes. A pipeline attacks each cause mechanically, versioned data and code make every run reproducible, automated promotion removes the heroics, and the registry makes ownership visible, and the evidence says it works: pipeline automation alone cuts failures roughly in half. What it does not fix is a model nobody defined success for, which is why our eval-gate stage forces that definition before anything ships.</p>
+ </div>
+ </div>
+ <div class="faq-item reveal">
+ <button class="faq-q" aria-expanded="false" aria-controls="sqa5">
+ Who owns the pipeline, and what happens when the tools change?
+ <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+ </button>
+ <div class="faq-a" id="sqa5" role="region">
+ <p>You own all of it, and the stack is deliberately assembled from open, widely-hired-for components, MLflow, Airflow, DVC, and their peers, running in your infrastructure, defined as code in your repositories. Tools in this space churn, so the design principle is swappability: the pipeline's stages are contracts, and any single tool behind a stage can be replaced without rebuilding the rest. The proprietary end-to-end platforms sell convenience and collect rent; we build the version your team can operate, extend, and hire for, which is also why our final stage is your engineers running it without us.</p>
+ </div>
+ </div>
+ </div>
+ <p class="sp-answers-close reveal">Bring the model your team is proudest of and the honest story of how it gets to production today. If that story involves a specific person's laptop, the audit will pay for itself by Friday.</p>
+ <div class="sp-answers-cta reveal">
+ <a href="/contact" class="btn btn-glow">
+ Book a Pipeline Audit
+ <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+ </a>
+ </div>
+ </div>
+ </section>
+
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+ {"@type":"Question","name":"What does an MLOps buildout cost?","acceptedAnswer":{"@type":"Answer","text":"A focused engagement fixing your highest-friction stage, usually eval gating or deployment automation, runs $20,000 to $60,000. A full pipeline with dataset versioning, experiment tracking, registry, and automated retraining runs $60,000 to $150,000 depending on how many models and how much history gets backfilled. The honest cost driver is your existing stack's messiness, not the tool list, which is why our first stage audits what you already run and why the proposal frequently includes deleting tools rather than adding them."}},
+ {"@type":"Question","name":"What ROI should we actually expect?","acceptedAnswer":{"@type":"Answer","text":"This is one of the few AI investments with hard third-party numbers. Organizations with mature MLOps report 189 to 335 percent ROI over three years, ship ML features roughly 4 times faster, and detect model degradation in days instead of months, a 28-fold difference that directly protects whatever the model earns or saves. The mechanism is mundane and that is the point: fewer failed deploys, no silent accuracy decay, and data scientists spending their time on models instead of plumbing. We baseline your current cycle time and incident rate before the build so the improvement is your measurement, not our claim."}},
+ {"@type":"Question","name":"Should we hire an MLOps engineer instead?","acceptedAnswer":{"@type":"Answer","text":"Eventually yes, and probably not first. Demand for the role grew over 35 percent year on year, salaries run $120,000 to $160,000 mid-level in the US and well beyond for seniors, and the scarce ones have their pick of employers, which means your first hire spends a year building foundations instead of improving models. Our embed model inverts the order: we build the pipeline, run the first cycles alongside your team, and hand over a working system with runbooks, so the person you eventually hire operates and extends a foundation instead of excavating one. It is also simply cheaper: the buildout costs less than one year of the salary."}},
+ {"@type":"Question","name":"Why do most models never ship, and does a pipeline really fix it?","acceptedAnswer":{"@type":"Answer","text":"The 70 to 87 percent failure range is structural, not intellectual: models die in the gap between the data scientist's environment and production reality, killed by irreproducible experiments, deployment paths that require heroics, and nobody owning the model after the notebook closes. A pipeline attacks each cause mechanically, versioned data and code make every run reproducible, automated promotion removes the heroics, and the registry makes ownership visible, and the evidence says it works: pipeline automation alone cuts failures roughly in half. What it does not fix is a model nobody defined success for, which is why our eval-gate stage forces that definition before anything ships."}},
+ {"@type":"Question","name":"Who owns the pipeline, and what happens when the tools change?","acceptedAnswer":{"@type":"Answer","text":"You own all of it, and the stack is deliberately assembled from open, widely-hired-for components, MLflow, Airflow, DVC, and their peers, running in your infrastructure, defined as code in your repositories. Tools in this space churn, so the design principle is swappability: the pipeline's stages are contracts, and any single tool behind a stage can be replaced without rebuilding the rest. The proprietary end-to-end platforms sell convenience and collect rent; we build the version your team can operate, extend, and hire for, which is also why our final stage is your engineers running it without us."}}
+ ]
+ }
+ </script>
 
  <section class="sp-cases">
  <div class="container">

@@ -74,7 +74,7 @@
 
  <script>(function(){var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
 
- <link rel="stylesheet" href="/css/styles.css?v=17">
+ <link rel="stylesheet" href="/css/styles.css?v=18">
 </head>
 <body>
  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFNLPH3H"
@@ -212,6 +212,55 @@
  </div>
  </section>
 
+ <!-- ===== CAPABILITIES DETAIL (added) ===== -->
+ <section class="sp-detail" id="capabilities-detail">
+ <div class="container">
+ <div class="sp-detail-header reveal">
+ <div class="section-tag"><span class="tag-pulse"></span> Capabilities</div>
+ <h2>When serving becomes the problem.</h2>
+ <p>Nobody budgets for serving until it hurts. The model worked, the demo landed, and then real traffic arrived. These are the versions of that call we hear most.</p>
+ </div>
+ <div class="sp-detail-grid reveal">
+ <div class="sp-detail-block">
+ <h3>The Latency Budget Product Cannot Hit</h3>
+ <p>Voice agents, live assistants, and interactive features have a physics problem: the user is waiting. We tune serving paths to p95 budgets with token streaming, speculative decoding, and quantization, and the most demanding consumer of this work is our own <a href="/services/speech-ai">speech AI</a> practice, where the entire round trip has half a second to happen.</p>
+ </div>
+ <div class="sp-detail-block">
+ <h3>The GPU Bill From Naive Serving</h3>
+ <p>Real production teams run 40 to 65 percent GPU utilization, and unoptimized deployments run far worse: single-request serving, idle capacity provisioned for peak, and frontier models answering questions a model a tenth the size handles fine. Fixing the serving layer is usually the single largest line in an <a href="/services/ai-cost-optimization">AI cost optimization</a> engagement, and it requires no retraining and no product change.</p>
+ </div>
+ <div class="sp-detail-block">
+ <h3>Serving Tuned and Custom Models</h3>
+ <p>API providers serve their models; yours are your problem. We productionize <a href="/services/model-fine-tuning">fine-tuned models</a> and custom builds, including multi-adapter serving where dozens of LoRA behaviors ride one base model and get hot-swapped per request, the architecture that makes per-customer AI economically sane.</p>
+ </div>
+ <div class="sp-detail-block">
+ <h3>Sovereign, On-Prem and Edge Serving</h3>
+ <p>When the model must live inside your perimeter, the serving stack comes with it: full inference infrastructure on <a href="/services/data-sovereignty-on-premise-ai">sovereign or air-gapped deployments</a>, and edge or on-device serving where the latency budget or the data cannot cross a network at all.</p>
+ </div>
+ <div class="sp-detail-block">
+ <h3>Agent Workloads That Multiply Everything</h3>
+ <p>Agentic systems change the serving math: one user action fans out into planning calls, tool calls, and verification calls, multiplying token volume several-fold over chat. Serving for agents means designing for that fan-out, burst concurrency, long contexts, and routing, before the traffic arrives, because an agent product discovering its serving limits in production discovers them all at once.</p>
+ </div>
+ </div>
+ <div class="sp-callout reveal">
+ <div class="sp-callout-item">
+ <h4>Capacity-Plan Against 50 Percent, Not 90.</h4>
+ <p>Vendor break-even models assume near-full GPU utilization; real teams sustain 40 to 65 percent because traffic is peaky and batching has limits. Every sizing decision we make starts from your measured workload profile, not an optimistic spreadsheet, which is why our first stage is profiling and why our capacity recommendations sometimes disappoint hardware vendors.</p>
+ </div>
+ <div class="sp-callout-item">
+ <h4>Routing Is the Biggest Lever on the Board.</h4>
+ <p>Most traffic does not need the biggest model. Dynamic routing, frontier models for the hard 5 to 15 percent of queries, small fast models for the rest, cuts blended inference cost 60 to 80 percent in typical mixed workloads while holding quality where users can see it. It is the highest-ROI change in serving, and it is pure architecture.</p>
+ </div>
+ </div>
+ <div class="sp-detail-cta reveal">
+ <a href="/contact" class="btn btn-glow">
+ Share Your Traffic Profile
+ <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+ </a>
+ </div>
+ </div>
+ </section>
+
  <section class="sp-process">
  <div class="container">
  <div class="sp-process-header reveal">
@@ -243,6 +292,95 @@
  </div>
  </div>
  </section>
+
+ <!-- ===== STRAIGHT ANSWERS (added) ===== -->
+ <section class="faq sp-answers" id="straight-answers" aria-label="Cost, timeline and ownership">
+ <div class="container">
+ <div class="faq-top reveal">
+ <div class="section-tag"><span class="tag-pulse"></span> Straight Answers</div>
+ <h2 class="section-heading">Serving economics, sizing reality, and the operations bill.</h2>
+ </div>
+ <p class="sp-answers-intro reveal">Serving is where AI budgets actually live: inference is roughly 80 percent of production AI spend. Here are the numbers that decide it.</p>
+ <div class="faq-list">
+ <div class="faq-item active reveal">
+ <button class="faq-q" aria-expanded="true" aria-controls="sqa1">
+ What does production LLM serving cost?
+ <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+ </button>
+ <div class="faq-a" id="sqa1" role="region">
+ <p>Anchor numbers for 2026: H100-class GPUs rent for roughly $2.50 to $3.50 an hour on specialist clouds, meaningfully more on hyperscalers, and a well-optimized single H100 serving a 70B-class model handles about 30 to 50 concurrent users at sub-2-second latency. Self-hosted 70B inference lands around a cent-and-a-half per thousand tokens all-in, typically 60 to 85 percent below equivalent API pricing at sustained volume. The qualifier that keeps those savings honest: they exist above roughly 500 million to a billion tokens a month of steady load. Below that, APIs win and we say so.</p>
+ </div>
+ </div>
+ <div class="faq-item reveal">
+ <button class="faq-q" aria-expanded="false" aria-controls="sqa2">
+ Cloud GPUs, hyperscalers, or our own hardware?
+ <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+ </button>
+ <div class="faq-a" id="sqa2" role="region">
+ <p>The utilization number decides it. Against hyperscaler on-demand pricing, owned hardware breaks even around 50 to 83 percent sustained utilization. Against specialist GPU clouds, cloud often wins even near full utilization. And real production teams sustain 40 to 65 percent, which is why our default recommendation is specialist cloud GPUs for most workloads, owned hardware only for sustained high-volume or sovereignty mandates, and hyperscalers when your enterprise agreements or data gravity make them free-ish in practice. The serving stack we build is portable across all three, deployed through the same <a href="/services/cloud-native-devops">cloud and DevOps foundation</a> as the rest of your infrastructure, so the hardware decision stays reversible.</p>
+ </div>
+ </div>
+ <div class="faq-item reveal">
+ <button class="faq-q" aria-expanded="false" aria-controls="sqa3">
+ How much can serving optimization gain without touching the model?
+ <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+ </button>
+ <div class="faq-a" id="sqa3" role="region">
+ <p>Order-of-magnitude gains are normal, which surprises buyers who assume the model is the bottleneck. Continuous batching alone delivers several-fold to order-of-magnitude throughput gains over naive request-at-a-time serving. Quantization cuts memory footprint two- to four-fold, letting bigger models fit smaller hardware or the same hardware serve more. Speculative decoding cuts latency two- to three-fold on suitable workloads. Stacked, the same GPUs routinely serve five to ten times the traffic they did before we arrived, which is why we profile and optimize before anyone is allowed to buy more hardware.</p>
+ </div>
+ </div>
+ <div class="faq-item reveal">
+ <button class="faq-q" aria-expanded="false" aria-controls="sqa4">
+ How many GPUs do we actually need?
+ <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+ </button>
+ <div class="faq-a" id="sqa4" role="region">
+ <p>Fewer than the vendor sizing sheet says, usually. Sizing follows from four measured numbers, request rate, token lengths in and out, peak-to-average ratio, and your latency budget, not from model size alone. A 7B-class model serves hundreds of concurrent users per GPU; a 70B serves tens; and routing shifts most traffic to the small end of that range. Our workload profiling stage exists to replace the sizing guess with those four measurements, and the answer it produces is frequently half the hardware the initial plan assumed.</p>
+ </div>
+ </div>
+ <div class="faq-item reveal">
+ <button class="faq-q" aria-expanded="false" aria-controls="sqa5">
+ What does it take to run this after handover?
+ <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+ </button>
+ <div class="faq-a" id="sqa5" role="region">
+ <p>The honest staffing line: plan 0.5 to 1 FTE per production GPU cluster for driver and firmware churn, hardware failures, stack upgrades, and on-call, and that person is often the largest cost in a self-hosted deployment. Our handover ships runbooks, alerting, and playbooks your platform team can operate alone, and for teams that do not want the pager, we run the serving layer on retainer. What we do not do is hand over a system whose operating cost was never mentioned, because a serving stack without an owner degrades on a schedule you can predict.</p>
+ </div>
+ </div>
+ <div class="faq-item reveal">
+ <button class="faq-q" aria-expanded="false" aria-controls="sqa6">
+ Who owns the serving stack, and how locked in are we?
+ <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+ </button>
+ <div class="faq-a" id="sqa6" role="region">
+ <p>You own everything, and the stack is deliberately built on open, portable components, vLLM, Triton, and their peers, running in your accounts, defined as code in your repositories. Serving is a layer where proprietary platforms quietly charge rent forever, and the exit cost only becomes visible when you try to leave. Ours is designed for the opposite test: any competent platform engineer could take the repo and run it tomorrow, and the configs move between clouds and on-prem without a rewrite. We keep the retainer by answering pages fast, not by holding the keys.</p>
+ </div>
+ </div>
+ </div>
+ <p class="sp-answers-close reveal">Send the traffic profile, or the invoice that made you look for this page. We will tell you what the same workload should cost, and profiling it is free.</p>
+ <div class="sp-answers-cta reveal">
+ <a href="/contact" class="btn btn-glow">
+ Get a Serving Cost Estimate
+ <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+ </a>
+ </div>
+ </div>
+ </section>
+
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+ {"@type":"Question","name":"What does production LLM serving cost?","acceptedAnswer":{"@type":"Answer","text":"Anchor numbers for 2026: H100-class GPUs rent for roughly $2.50 to $3.50 an hour on specialist clouds, meaningfully more on hyperscalers, and a well-optimized single H100 serving a 70B-class model handles about 30 to 50 concurrent users at sub-2-second latency. Self-hosted 70B inference lands around a cent-and-a-half per thousand tokens all-in, typically 60 to 85 percent below equivalent API pricing at sustained volume. The qualifier that keeps those savings honest: they exist above roughly 500 million to a billion tokens a month of steady load. Below that, APIs win and we say so."}},
+ {"@type":"Question","name":"Cloud GPUs, hyperscalers, or our own hardware?","acceptedAnswer":{"@type":"Answer","text":"The utilization number decides it. Against hyperscaler on-demand pricing, owned hardware breaks even around 50 to 83 percent sustained utilization. Against specialist GPU clouds, cloud often wins even near full utilization. And real production teams sustain 40 to 65 percent, which is why our default recommendation is specialist cloud GPUs for most workloads, owned hardware only for sustained high-volume or sovereignty mandates, and hyperscalers when your enterprise agreements or data gravity make them free-ish in practice. The serving stack we build is portable across all three, deployed through the same cloud and DevOps foundation as the rest of your infrastructure, so the hardware decision stays reversible."}},
+ {"@type":"Question","name":"How much can serving optimization gain without touching the model?","acceptedAnswer":{"@type":"Answer","text":"Order-of-magnitude gains are normal, which surprises buyers who assume the model is the bottleneck. Continuous batching alone delivers several-fold to order-of-magnitude throughput gains over naive request-at-a-time serving. Quantization cuts memory footprint two- to four-fold, letting bigger models fit smaller hardware or the same hardware serve more. Speculative decoding cuts latency two- to three-fold on suitable workloads. Stacked, the same GPUs routinely serve five to ten times the traffic they did before we arrived, which is why we profile and optimize before anyone is allowed to buy more hardware."}},
+ {"@type":"Question","name":"How many GPUs do we actually need?","acceptedAnswer":{"@type":"Answer","text":"Fewer than the vendor sizing sheet says, usually. Sizing follows from four measured numbers, request rate, token lengths in and out, peak-to-average ratio, and your latency budget, not from model size alone. A 7B-class model serves hundreds of concurrent users per GPU; a 70B serves tens; and routing shifts most traffic to the small end of that range. Our workload profiling stage exists to replace the sizing guess with those four measurements, and the answer it produces is frequently half the hardware the initial plan assumed."}},
+ {"@type":"Question","name":"What does it take to run this after handover?","acceptedAnswer":{"@type":"Answer","text":"The honest staffing line: plan 0.5 to 1 FTE per production GPU cluster for driver and firmware churn, hardware failures, stack upgrades, and on-call, and that person is often the largest cost in a self-hosted deployment. Our handover ships runbooks, alerting, and playbooks your platform team can operate alone, and for teams that do not want the pager, we run the serving layer on retainer. What we do not do is hand over a system whose operating cost was never mentioned, because a serving stack without an owner degrades on a schedule you can predict."}},
+ {"@type":"Question","name":"Who owns the serving stack, and how locked in are we?","acceptedAnswer":{"@type":"Answer","text":"You own everything, and the stack is deliberately built on open, portable components, vLLM, Triton, and their peers, running in your accounts, defined as code in your repositories. Serving is a layer where proprietary platforms quietly charge rent forever, and the exit cost only becomes visible when you try to leave. Ours is designed for the opposite test: any competent platform engineer could take the repo and run it tomorrow, and the configs move between clouds and on-prem without a rewrite. We keep the retainer by answering pages fast, not by holding the keys."}}
+ ]
+ }
+ </script>
 
  <section class="sp-cases">
  <div class="container">

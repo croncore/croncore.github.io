@@ -74,7 +74,7 @@
 
  <script>(function(){var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
 
- <link rel="stylesheet" href="/css/styles.css?v=17">
+ <link rel="stylesheet" href="/css/styles.css?v=18">
 </head>
 <body>
  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFNLPH3H"
@@ -212,6 +212,59 @@
  </div>
  </section>
 
+ <!-- ===== CAPABILITIES DETAIL (added) ===== -->
+ <section class="sp-detail" id="capabilities-detail">
+ <div class="container">
+ <div class="sp-detail-header reveal">
+ <div class="section-tag"><span class="tag-pulse"></span> Capabilities</div>
+ <h2>Six jobs where the answer lives in the weights.</h2>
+ <p>The 2026 rule of thumb is simple: retrieval for knowledge that changes, fine-tuning for behavior that should not. These are the six behaviors clients hire us to make permanent, and what each looks like in production.</p>
+ </div>
+ <div class="sp-detail-grid reveal">
+ <div class="sp-detail-block">
+ <h3>Locking In Tone, Format and Voice</h3>
+ <p>The most common job: a model that sounds like your brand on the ten-thousandth reply the way it did on the first, returns your JSON schema without a malformed field at 2am, and follows your formatting rules without a two-page prompt begging it to. Prompting gets you most of the way most of the time; tuning gets you all of the way all of the time, which is the difference between a demo and a product.</p>
+ </div>
+ <div class="sp-detail-block">
+ <h3>Cutting the Inference Bill With a Smaller Tuned Model</h3>
+ <p>The quiet economics play: distill a frontier model's behavior on your specific task into a small tuned model, and serve that instead. Domain-tuned 7B class models routinely match generic models several times their size on the one job they were tuned for, at a fraction of the serving cost, and a tuned model also needs a far shorter prompt, which cuts tokens on every single call. Our <a href="/services/ai-cost-optimization">AI cost optimization</a> practice often reaches for this exact lever first.</p>
+ </div>
+ <div class="sp-detail-block">
+ <h3>Domain Language the Base Model Fumbles</h3>
+ <p>Medical abbreviations, legal citation formats, financial instruments, your industry's acronyms that mean something different everywhere else. We tune models to hold your domain's vocabulary and conventions reliably, and pair the tuned model with retrieval for the facts that change, because the weights should carry how your field talks, not what happened last quarter.</p>
+ </div>
+ <div class="sp-detail-block">
+ <h3>Reliable Behavior for Agents</h3>
+ <p>An agent that calls the wrong tool 2 percent of the time is an agent nobody trusts with write access. We tune models for the behaviors <a href="/services/enterprise-ai-agents">AI agents</a> live or die on: tool-call accuracy, multi-turn coherence, knowing when to escalate, and refusal patterns that hold under pressure. Agent reliability is mostly a tuning problem wearing an orchestration costume.</p>
+ </div>
+ <div class="sp-detail-block">
+ <h3>Per-Customer Behaviors With Swappable Adapters</h3>
+ <p>Parameter-efficient tuning has a superpower the big retraining conversation ignores: adapters are small, cheap, and swappable per request. One base model, dozens of LoRA adapters, each carrying a customer's tone, terminology, or rules, hot-swapped at serving time. For SaaS products offering "AI in your brand voice" as a feature, this is the architecture that makes the unit economics work.</p>
+ </div>
+ <div class="sp-detail-block">
+ <h3>Preparing Models for Regulated Deployment</h3>
+ <p>Safety alignment, refusal behavior, and documented training provenance for models heading into regulated environments. One warning we make sure every client hears before the run: under the EU AI Act, substantially modifying a model, extensive fine-tuning included, can reclassify your organization from deployer to provider, inheriting the full documentation and conformity stack. We assess that boundary with our <a href="/services/gdpr-compliant-ai-systems">GDPR compliant AI</a> practice before training, because discovering it after is the expensive order of operations.</p>
+ </div>
+ </div>
+ <div class="sp-callout reveal">
+ <div class="sp-callout-item">
+ <h4>Form, Not Facts.</h4>
+ <p>The one-line rule that sorts almost every project: fine-tuning changes how a model behaves, retrieval changes what it can see. Teach the weights your tone, your formats, your refusal patterns, the things that should be identical next year. Put your prices, policies, and anything with a version number in retrieval, where updating it costs a document upload instead of a training run. Most production systems need both, and the design decision is which intelligence lives where, not which tool wins.</p>
+ </div>
+ <div class="sp-callout-item">
+ <h4>Your Data Usually Needs More Work Than Your Model.</h4>
+ <p>Data preparation is 30 to 50 percent of a typical tuning project, and it decides the outcome more than the method does. A few hundred meticulously curated examples beat ten thousand scraped ones, and our second stage exists because we routinely discover the dataset is the actual project. When a tuned model disappoints, the autopsy almost never reads SFT versus DPO. It reads the training data taught it exactly what it learned.</p>
+ </div>
+ </div>
+ <div class="sp-detail-cta reveal">
+ <a href="/contact" class="btn btn-glow">
+ Scope a Tuning Project
+ <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+ </a>
+ </div>
+ </div>
+ </section>
+
  <section class="sp-process">
  <div class="container">
  <div class="sp-process-header reveal">
@@ -243,6 +296,95 @@
  </div>
  </div>
  </section>
+
+ <!-- ===== STRAIGHT ANSWERS (added) ===== -->
+ <section class="faq sp-answers" id="straight-answers" aria-label="Cost, timeline and ownership">
+ <div class="container">
+ <div class="faq-top reveal">
+ <div class="section-tag"><span class="tag-pulse"></span> Straight Answers</div>
+ <h2 class="section-heading">Tuning economics, the operational tax, and the regulatory trap.</h2>
+ </div>
+ <p class="sp-answers-intro reveal">Fine-tuning has the cheapest compute in AI and some of the most under-quoted lifecycle costs. Here is the whole invoice, including the lines other vendors leave for you to discover.</p>
+ <div class="faq-list">
+ <div class="faq-item active reveal">
+ <button class="faq-q" aria-expanded="true" aria-controls="sqa1">
+ How much does fine-tuning cost?
+ <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+ </button>
+ <div class="faq-a" id="sqa1" role="region">
+ <p>The compute will surprise you: a parameter-efficient tune of even a 70B model runs hours on a small GPU cluster and hundreds of dollars in raw compute, and smaller models tune for less than a nice dinner. The engagement costs more because the compute was never the work: eval harness design, data curation, multiple tuning iterations, and deployment typically bring a focused project to $10,000 to $40,000, with complex behaviors, RLHF-grade alignment, or multi-adapter architectures running $40,000 to $80,000. Anyone quoting you GPU-hours is quoting 5 percent of the project.</p>
+ </div>
+ </div>
+ <div class="faq-item reveal">
+ <button class="faq-q" aria-expanded="false" aria-controls="sqa2">
+ What is the ongoing cost nobody quotes?
+ <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+ </button>
+ <div class="faq-a" id="sqa2" role="region">
+ <p>The operational tax, and the honest planning number is 3 to 5 times the initial training cost over the following twelve months. Tuned models are living systems: adapters need versioning and rollback plans, behavior needs periodic retraining as your task drifts, and the nastiest line item is base-model drift, when a hosted provider updates the underlying model and your adapter degrades silently. We build quarterly revalidation into every deployment, treat training configs and dataset snapshots as version-controlled code, and put the twelve-month lifecycle number in the proposal next to the build number, because a tuned model without an owner is a slow-motion outage.</p>
+ </div>
+ </div>
+ <div class="faq-item reveal">
+ <button class="faq-q" aria-expanded="false" aria-controls="sqa3">
+ Can fine-tuning actually reduce our inference bill?
+ <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+ </button>
+ <div class="faq-a" id="sqa3" role="region">
+ <p>At volume, dramatically, and this is the business case most buyers miss. Industry cost analysis puts fine-tuning at 10 to 50 times cheaper per query than retrieval-heavy approaches once a stable task passes roughly 100,000 daily queries, because the tuned behavior replaces thousands of instruction and example tokens on every single call, and often lets a small model replace a large one entirely. The savings compound across three lines at once: shorter prompts, smaller models, and lower latency. If one task dominates your token bill, a tuning project frequently pays for itself out of the first quarter's savings, and we will show you that math against your real usage before you commit.</p>
+ </div>
+ </div>
+ <div class="faq-item reveal">
+ <button class="faq-q" aria-expanded="false" aria-controls="sqa4">
+ Does fine-tuning change our status under the EU AI Act?
+ <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+ </button>
+ <div class="faq-a" id="sqa4" role="region">
+ <p>It can, and this is the trap we warn every client about before any training run: substantially modifying a general-purpose model, which extensive fine-tuning may constitute, can reclassify your organization from deployer to provider, inheriting technical documentation, conformity assessment, and post-market monitoring obligations you did not have the day before. The boundary is genuinely fact-specific, thin LoRA adapters for tone sit differently than deep behavioral retraining, so we run the classification assessment as part of scoping rather than leaving it for your counsel to discover after deployment. Five minutes of classification before the run beats a remediation program after it.</p>
+ </div>
+ </div>
+ <div class="faq-item reveal">
+ <button class="faq-q" aria-expanded="false" aria-controls="sqa5">
+ What happens when the base model gets updated or deprecated?
+ <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+ </button>
+ <div class="faq-a" id="sqa5" role="region">
+ <p>It will, and your plan for that day is part of the architecture, not an afterthought. On hosted platforms, provider updates can shift your adapter's behavior without notice, which is why our deployments ship with the eval harness as a permanent regression test: any drift shows up in your metrics, not your customers' complaints. On open weights, you control the timeline entirely, and we design tuning pipelines to be re-runnable, so migrating your behavior to a newer, better base model is a scheduled afternoon, not a rescue project. The dataset and the evals are the durable assets; the checkpoint is just their current expression.</p>
+ </div>
+ </div>
+ <div class="faq-item reveal">
+ <button class="faq-q" aria-expanded="false" aria-controls="sqa6">
+ What results should we realistically expect?
+ <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+ </button>
+ <div class="faq-a" id="sqa6" role="region">
+ <p>Measured ones, or the project was run wrong. Fine-tuning reliably delivers consistency, format adherence, tone stability, and task-specific accuracy on the behaviors it was trained for, along with the latency and cost gains of smaller models and shorter prompts. What it does not deliver is general intelligence gains or knowledge the training data never contained, and anyone promising those is selling the wrong tool. Our workflow makes the question empirical: the eval harness is built first, the tuned model runs in shadow against the baseline on your real traffic, and promotion happens when the numbers clear the bar you agreed to, not when the demo feels good.</p>
+ </div>
+ </div>
+ </div>
+ <p class="sp-answers-close reveal">Bring the prompt you are currently torturing to keep the model in line. If it is more than a page long, tuning will probably pay for itself in tokens alone, and the eval we build to prove it is yours either way.</p>
+ <div class="sp-answers-cta reveal">
+ <a href="/contact" class="btn btn-glow">
+ Get a Tuning Assessment
+ <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+ </a>
+ </div>
+ </div>
+ </section>
+
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+ {"@type":"Question","name":"How much does fine-tuning cost?","acceptedAnswer":{"@type":"Answer","text":"The compute will surprise you: a parameter-efficient tune of even a 70B model runs hours on a small GPU cluster and hundreds of dollars in raw compute, and smaller models tune for less than a nice dinner. The engagement costs more because the compute was never the work: eval harness design, data curation, multiple tuning iterations, and deployment typically bring a focused project to $10,000 to $40,000, with complex behaviors, RLHF-grade alignment, or multi-adapter architectures running $40,000 to $80,000. Anyone quoting you GPU-hours is quoting 5 percent of the project."}},
+ {"@type":"Question","name":"What is the ongoing cost nobody quotes?","acceptedAnswer":{"@type":"Answer","text":"The operational tax, and the honest planning number is 3 to 5 times the initial training cost over the following twelve months. Tuned models are living systems: adapters need versioning and rollback plans, behavior needs periodic retraining as your task drifts, and the nastiest line item is base-model drift, when a hosted provider updates the underlying model and your adapter degrades silently. We build quarterly revalidation into every deployment, treat training configs and dataset snapshots as version-controlled code, and put the twelve-month lifecycle number in the proposal next to the build number, because a tuned model without an owner is a slow-motion outage."}},
+ {"@type":"Question","name":"Can fine-tuning actually reduce our inference bill?","acceptedAnswer":{"@type":"Answer","text":"At volume, dramatically, and this is the business case most buyers miss. Industry cost analysis puts fine-tuning at 10 to 50 times cheaper per query than retrieval-heavy approaches once a stable task passes roughly 100,000 daily queries, because the tuned behavior replaces thousands of instruction and example tokens on every single call, and often lets a small model replace a large one entirely. The savings compound across three lines at once: shorter prompts, smaller models, and lower latency. If one task dominates your token bill, a tuning project frequently pays for itself out of the first quarter's savings, and we will show you that math against your real usage before you commit."}},
+ {"@type":"Question","name":"Does fine-tuning change our status under the EU AI Act?","acceptedAnswer":{"@type":"Answer","text":"It can, and this is the trap we warn every client about before any training run: substantially modifying a general-purpose model, which extensive fine-tuning may constitute, can reclassify your organization from deployer to provider, inheriting technical documentation, conformity assessment, and post-market monitoring obligations you did not have the day before. The boundary is genuinely fact-specific, thin LoRA adapters for tone sit differently than deep behavioral retraining, so we run the classification assessment as part of scoping rather than leaving it for your counsel to discover after deployment. Five minutes of classification before the run beats a remediation program after it."}},
+ {"@type":"Question","name":"What happens when the base model gets updated or deprecated?","acceptedAnswer":{"@type":"Answer","text":"It will, and your plan for that day is part of the architecture, not an afterthought. On hosted platforms, provider updates can shift your adapter's behavior without notice, which is why our deployments ship with the eval harness as a permanent regression test: any drift shows up in your metrics, not your customers' complaints. On open weights, you control the timeline entirely, and we design tuning pipelines to be re-runnable, so migrating your behavior to a newer, better base model is a scheduled afternoon, not a rescue project. The dataset and the evals are the durable assets; the checkpoint is just their current expression."}},
+ {"@type":"Question","name":"What results should we realistically expect?","acceptedAnswer":{"@type":"Answer","text":"Measured ones, or the project was run wrong. Fine-tuning reliably delivers consistency, format adherence, tone stability, and task-specific accuracy on the behaviors it was trained for, along with the latency and cost gains of smaller models and shorter prompts. What it does not deliver is general intelligence gains or knowledge the training data never contained, and anyone promising those is selling the wrong tool. Our workflow makes the question empirical: the eval harness is built first, the tuned model runs in shadow against the baseline on your real traffic, and promotion happens when the numbers clear the bar you agreed to, not when the demo feels good."}}
+ ]
+ }
+ </script>
 
  <section class="sp-cases">
  <div class="container">

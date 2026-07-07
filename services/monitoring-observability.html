@@ -74,7 +74,7 @@
 
  <script>(function(){var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
 
- <link rel="stylesheet" href="/css/styles.css?v=17">
+ <link rel="stylesheet" href="/css/styles.css?v=18">
 </head>
 <body>
  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFNLPH3H"
@@ -212,6 +212,51 @@
  </div>
  </section>
 
+ <!-- ===== CAPABILITIES DETAIL (added) ===== -->
+ <section class="sp-detail" id="capabilities-detail">
+ <div class="container">
+ <div class="sp-detail-header reveal">
+ <div class="section-tag"><span class="tag-pulse"></span> Capabilities</div>
+ <h2>Production AI fails quietly. This is where the lights go on.</h2>
+ <p>Software crashes loudly. AI degrades politely, still answering, still confident, just increasingly wrong, and the first detector is usually a customer. Every engagement here starts with one of these dark spots.</p>
+ </div>
+ <div class="sp-detail-grid reveal">
+ <div class="sp-detail-block">
+ <h3>The Regression Nobody Noticed</h3>
+ <p>A provider updates their model, a retrieval index goes stale, or last week's prompt change interacts badly with this week's traffic, and quality slides with no error thrown anywhere. The measured gap between instrumented and dark deployments is the whole argument: teams with continuous quality signals catch degradation in days, teams without them average months, and the loss compounds every day in between. In-production evaluation exists so the regression meets a dashboard before it meets a user.</p>
+ </div>
+ <div class="sp-detail-block">
+ <h3>Hallucinations With Legal Consequences</h3>
+ <p>A tribunal has already held a company liable for its chatbot inventing a policy that did not exist, and paid out accordingly, which converted hallucination tracking from an ML nicety into a liability control. We instrument grounding and factuality continuously: citation checks against source documents, refusal-rate baselines, and alerts when the model's confidence outruns its evidence, so the answer that would have become a screenshot becomes a ticket instead.</p>
+ </div>
+ <div class="sp-detail-block">
+ <h3>The AI Bill Nobody Can Attribute</h3>
+ <p>Finance sees one number: the monthly model spend, climbing. Nobody can say which feature, which customer tier, or which prompt is responsible, so nothing can be fixed. Our cost observability tags every request to its feature and customer, which routinely reveals that one workflow is quietly unprofitable while another is wildly cheap, and that attribution is the raw material our <a href="/services/ai-cost-optimization">AI cost optimization</a> practice turns into a smaller invoice.</p>
+ </div>
+ <div class="sp-detail-block">
+ <h3>Agents That Act Need a Flight Recorder</h3>
+ <p>A chatbot that answers wrong embarrasses you; an <a href="/services/enterprise-ai-agents">agent</a> that acts wrong costs money at machine speed, across a chain of reasoning steps and tool calls no single log line captures. We trace agentic systems end to end, every decision, every tool invocation, every intermediate result, replayable, so when an agent does something surprising, the question "why" has an answer measured in minutes, not a forensic project.</p>
+ </div>
+ <div class="sp-detail-block">
+ <h3>The Feedback Loop That Closes Itself</h3>
+ <p>Observability that only alarms is half a system. The drift signals, quality scores, and failure samples we capture feed directly back into <a href="/services/mlops-pipelines">retraining and eval pipelines</a>, so the same telemetry that catches the regression also supplies the labeled examples that fix it. Watching and improving stop being separate projects.</p>
+ </div>
+ </div>
+ <div class="sp-callout reveal">
+ <div class="sp-callout-item">
+ <h4>Three Different Questions Wearing One Word.</h4>
+ <p>"Monitoring" hides three disciplines. Is the service up and fast? That is reliability engineering, the <a href="/services/cloud-native-devops">cloud and DevOps</a> layer. Is someone attacking it? That is <a href="/services/managed-security-soc">security operations</a>, the adversary layer. Is the AI still giving good answers at a sane cost? That is this page, and it is the question the other two dashboards cannot see. Mature systems run all three, and confusing them is how companies end up with green dashboards and angry customers.</p>
+ </div>
+ </div>
+ <div class="sp-detail-cta reveal">
+ <a href="/contact" class="btn btn-glow">
+ Tell Us What Slipped Through Last
+ <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+ </a>
+ </div>
+ </div>
+ </section>
+
  <section class="sp-process">
  <div class="container">
  <div class="sp-process-header reveal">
@@ -243,6 +288,95 @@
  </div>
  </div>
  </section>
+
+ <!-- ===== STRAIGHT ANSWERS (added) ===== -->
+ <section class="faq sp-answers" id="straight-answers" aria-label="Cost, timeline and ownership">
+ <div class="container">
+ <div class="faq-top reveal">
+ <div class="section-tag"><span class="tag-pulse"></span> Straight Answers</div>
+ <h2 class="section-heading">What observability costs, what it saves, and what to instrument first.</h2>
+ </div>
+ <p class="sp-answers-intro reveal">AI observability is the cheapest layer of an AI stack and the one most teams skip until an incident writes the business case for them. Here are the numbers, ahead of the incident.</p>
+ <div class="faq-list">
+ <div class="faq-item active reveal">
+ <button class="faq-q" aria-expanded="true" aria-controls="sqa1">
+ What does AI observability cost to build?
+ <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+ </button>
+ <div class="faq-a" id="sqa1" role="region">
+ <p>A focused instrumentation of one production AI system, traces, quality probes, dashboards, and tuned alerting, typically runs $15,000 to $40,000. Full-stack coverage across multiple systems with in-production evaluation and cost attribution runs $40,000 to $90,000. It is deliberately the least expensive engagement in our AI catalog, because it is built on open telemetry standards and your existing logging spine rather than a new platform purchase, and because the audit stage frequently finds you are already capturing half the data and just never wired it to a question.</p>
+ </div>
+ </div>
+ <div class="faq-item reveal">
+ <button class="faq-q" aria-expanded="false" aria-controls="sqa2">
+ What does running it add to our inference bill?
+ <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+ </button>
+ <div class="faq-a" id="sqa2" role="region">
+ <p>Less than teams fear, by design. Trace and log capture rides asynchronously off the request path, adding negligible latency, and continuous quality scoring works by sampling, evaluating a few percent of real traffic rather than all of it, which typically lands the total overhead in the low single digits of your inference spend. Against what one undetected regression or one month of an unprofitable feature costs, it is the best-priced insurance in the stack, and every proposal states the projected overhead next to the coverage it buys.</p>
+ </div>
+ </div>
+ <div class="faq-item reveal">
+ <button class="faq-q" aria-expanded="false" aria-controls="sqa3">
+ What is the actual return on this?
+ <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+ </button>
+ <div class="faq-a" id="sqa3" role="region">
+ <p>Three concrete lines. Detection speed: instrumented teams catch model degradation in days against a months-long industry average without, and everything the model earns or protects is exposed for exactly that gap. Liability: the legal precedent now exists that a company answers for what its AI tells customers, and grounding metrics are the control that keeps that risk measured instead of discovered. And attribution: per-feature cost tracking routinely finds one workflow leaking money, and turning that off or rerouting it has paid for entire engagements in the first quarter. We baseline your current mean-time-to-detect before instrumenting, so the improvement is measured, not asserted.</p>
+ </div>
+ </div>
+ <div class="faq-item reveal">
+ <button class="faq-q" aria-expanded="false" aria-controls="sqa4">
+ What should we instrument first?
+ <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+ </button>
+ <div class="faq-a" id="sqa4" role="region">
+ <p>Follow the money and the exposure, not the org chart. First: whatever AI output reaches customers unreviewed, because that is where the reputational and legal risk lives. Second: the highest-volume workflow, because that is where silent quality decay and cost leaks compound fastest. Third: anything an agent can act on without a human gate. Our telemetry audit ranks your systems on exactly those three axes and usually produces a first target nobody in the room expected, which is rather the point of auditing instead of assuming.</p>
+ </div>
+ </div>
+ <div class="faq-item reveal">
+ <button class="faq-q" aria-expanded="false" aria-controls="sqa5">
+ Can this actually make our AI cheaper, or only safer?
+ <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+ </button>
+ <div class="faq-a" id="sqa5" role="region">
+ <p>Both, and the cheaper part is underrated. Cost attribution per request and per feature is the prerequisite for every optimization that follows: routing expensive queries to cheaper models, caching what repeats, and retiring the feature that costs more than it returns. Teams operating blind cannot make any of those moves because they cannot see the target. Observability does not cut the bill by itself, but every bill we have ever cut started with the visibility this page builds, which is why the two practices are designed as one pipeline.</p>
+ </div>
+ </div>
+ <div class="faq-item reveal">
+ <button class="faq-q" aria-expanded="false" aria-controls="sqa6">
+ Who owns the telemetry, and are we locked into anything?
+ <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+ </button>
+ <div class="faq-a" id="sqa6" role="region">
+ <p>You own every trace, score, and dashboard, and the foundation is deliberately boring: OpenTelemetry-standard instrumentation feeding your existing stores and alerting, not a proprietary platform holding your history hostage. Vendors in this space love to make the telemetry the moat; we build it so the data outlives any tool choice, including us, and any engineer fluent in standard observability tooling can operate and extend it. The history is the asset, every production interaction queryable and replayable, and an asset you cannot export was never yours.</p>
+ </div>
+ </div>
+ </div>
+ <p class="sp-answers-close reveal">Bring the story of the last time production AI surprised you, what happened, and how long until someone noticed. The audit will show you which signal would have caught it, and how many other surprises are currently in flight.</p>
+ <div class="sp-answers-cta reveal">
+ <a href="/contact" class="btn btn-glow">
+ Book a Telemetry Audit
+ <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+ </a>
+ </div>
+ </div>
+ </section>
+
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+ {"@type":"Question","name":"What does AI observability cost to build?","acceptedAnswer":{"@type":"Answer","text":"A focused instrumentation of one production AI system, traces, quality probes, dashboards, and tuned alerting, typically runs $15,000 to $40,000. Full-stack coverage across multiple systems with in-production evaluation and cost attribution runs $40,000 to $90,000. It is deliberately the least expensive engagement in our AI catalog, because it is built on open telemetry standards and your existing logging spine rather than a new platform purchase, and because the audit stage frequently finds you are already capturing half the data and just never wired it to a question."}},
+ {"@type":"Question","name":"What does running it add to our inference bill?","acceptedAnswer":{"@type":"Answer","text":"Less than teams fear, by design. Trace and log capture rides asynchronously off the request path, adding negligible latency, and continuous quality scoring works by sampling, evaluating a few percent of real traffic rather than all of it, which typically lands the total overhead in the low single digits of your inference spend. Against what one undetected regression or one month of an unprofitable feature costs, it is the best-priced insurance in the stack, and every proposal states the projected overhead next to the coverage it buys."}},
+ {"@type":"Question","name":"What is the actual return on this?","acceptedAnswer":{"@type":"Answer","text":"Three concrete lines. Detection speed: instrumented teams catch model degradation in days against a months-long industry average without, and everything the model earns or protects is exposed for exactly that gap. Liability: the legal precedent now exists that a company answers for what its AI tells customers, and grounding metrics are the control that keeps that risk measured instead of discovered. And attribution: per-feature cost tracking routinely finds one workflow leaking money, and turning that off or rerouting it has paid for entire engagements in the first quarter. We baseline your current mean-time-to-detect before instrumenting, so the improvement is measured, not asserted."}},
+ {"@type":"Question","name":"What should we instrument first?","acceptedAnswer":{"@type":"Answer","text":"Follow the money and the exposure, not the org chart. First: whatever AI output reaches customers unreviewed, because that is where the reputational and legal risk lives. Second: the highest-volume workflow, because that is where silent quality decay and cost leaks compound fastest. Third: anything an agent can act on without a human gate. Our telemetry audit ranks your systems on exactly those three axes and usually produces a first target nobody in the room expected, which is rather the point of auditing instead of assuming."}},
+ {"@type":"Question","name":"Can this actually make our AI cheaper, or only safer?","acceptedAnswer":{"@type":"Answer","text":"Both, and the cheaper part is underrated. Cost attribution per request and per feature is the prerequisite for every optimization that follows: routing expensive queries to cheaper models, caching what repeats, and retiring the feature that costs more than it returns. Teams operating blind cannot make any of those moves because they cannot see the target. Observability does not cut the bill by itself, but every bill we have ever cut started with the visibility this page builds, which is why the two practices are designed as one pipeline."}},
+ {"@type":"Question","name":"Who owns the telemetry, and are we locked into anything?","acceptedAnswer":{"@type":"Answer","text":"You own every trace, score, and dashboard, and the foundation is deliberately boring: OpenTelemetry-standard instrumentation feeding your existing stores and alerting, not a proprietary platform holding your history hostage. Vendors in this space love to make the telemetry the moat; we build it so the data outlives any tool choice, including us, and any engineer fluent in standard observability tooling can operate and extend it. The history is the asset, every production interaction queryable and replayable, and an asset you cannot export was never yours."}}
+ ]
+ }
+ </script>
 
  <section class="sp-cases">
  <div class="container">

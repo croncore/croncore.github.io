@@ -69,7 +69,7 @@
 
  <script>(function(){var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
 
- <link rel="stylesheet" href="/css/styles.css?v=17">
+ <link rel="stylesheet" href="/css/styles.css?v=18">
 </head>
 <body>
  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFNLPH3H"
@@ -210,6 +210,59 @@
  </div>
  </section>
 
+ <!-- ===== CAPABILITIES DETAIL (added) ===== -->
+ <section class="sp-detail" id="capabilities-detail">
+ <div class="container">
+ <div class="sp-detail-header reveal">
+ <div class="section-tag"><span class="tag-pulse"></span> Capabilities</div>
+ <h2>The workflows companies actually hand to agents.</h2>
+ <p>The AI projects that survive their first budget review share one trait: they started with a workflow, not a technology. These are the six places we deploy agents most, and what the work looks like when it lands.</p>
+ </div>
+ <div class="sp-detail-grid reveal">
+ <div class="sp-detail-block">
+ <h3>Customer Support Agents That Close Tickets</h3>
+ <p>Not deflection bots that frustrate customers into email. Agents that read the ticket, pull the account history, check the order system, issue the refund or the fix, and write back with the resolution, escalating to a human only when the case genuinely needs one. For the conversational front end on sales and service, this pairs with our <a href="/services/sales-crm-chatbots">sales and CRM chatbot</a> work; this page is about the agent that finishes the job behind it.</p>
+ </div>
+ <div class="sp-detail-block">
+ <h3>Back Office Agents for Document Heavy Work</h3>
+ <p>Invoices matched to purchase orders, claims triaged against policy rules, contracts checked for missing clauses, onboarding packets processed end to end. This is where the research says AI actually pays: MIT's study of enterprise AI found the rare successes concentrated in exactly this kind of specific, workflow integrated back office automation. The document understanding layer comes from our <a href="/services/process-document-ai">document AI</a> practice; the agent is what acts on it.</p>
+ </div>
+ <div class="sp-detail-block">
+ <h3>Sales and Revenue Operations Agents</h3>
+ <p>Leads are researched, scored, and routed within minutes of arrival. CRM records that update themselves after every call. Follow ups that go out on time because no human had to remember them. Revenue teams do not need more dashboards telling them what fell through the cracks; they need an agent standing in the crack.</p>
+ </div>
+ <div class="sp-detail-block">
+ <h3>Agents That Operate Your Own Systems</h3>
+ <p>The highest value agents are rarely the ones talking to customers. They are the ones working your internal systems: reconciling data between platforms, processing orders across your ERP and logistics tools, running the checks a human runs today. This is where our <a href="/services/api-development-integrations">agent ready API and MCP work</a> matters most, because an agent is only as capable and as safe as the interfaces it acts through.</p>
+ </div>
+ <div class="sp-detail-block">
+ <h3>Agents for Regulated Industries</h3>
+ <p>Finance, healthcare, insurance, and anyone touching European data get a different build: decision logging an auditor can replay, data flows designed for residency rules, and human approval gates where the regulation demands them. Our <a href="/services/gdpr-compliant-ai-systems">GDPR compliant AI</a> practice handles the framework so the agent ships compliant instead of retrofitted.</p>
+ </div>
+ <div class="sp-detail-block">
+ <h3>Agents Grounded in Your Data</h3>
+ <p>An agent reasoning over stale or contradictory data makes confident mistakes at machine speed, and bad data is the number one reason enterprise AI pilots die. Before any agent touches production, we make sure the <a href="/services/data-engineering-analytics">data foundation</a> underneath it is governed, current, and tested, because the model is never the weak point. The data is.</p>
+ </div>
+ </div>
+ <div class="sp-callout reveal">
+ <div class="sp-callout-item">
+ <h4>The 95 Percent Statistic Is Why Our Process Looks Like This.</h4>
+ <p>MIT found that 95 percent of enterprise AI pilots deliver zero measurable return. The same study found the successes share a pattern: narrow scope, deep workflow integration, and specialized external partners, roughly double the success rate of generic internal builds. That pattern is our process. Workflow mapping before models, shadow mode against real traffic before go live, and accuracy measured before anyone celebrates. We did not design our method to sound rigorous. We designed it to be in the 5 percent.</p>
+ </div>
+ <div class="sp-callout-item">
+ <h4>An Agent Is an Identity, and Identities Need Rules.</h4>
+ <p>Every agent we deploy gets what a new employee gets: scoped permissions, credentials that expire, and an audit trail of everything it touched. It can create the invoice and never delete the customer table. This discipline comes from our <a href="/services/zero-trust-identity">zero trust identity</a> practice, and it is the reason our clients' security teams sign off instead of slowing down.</p>
+ </div>
+ </div>
+ <div class="sp-detail-cta reveal">
+ <a href="/contact" class="btn btn-glow">
+ Map Your First Agent Workflow
+ <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+ </a>
+ </div>
+ </div>
+ </section>
+
  <!-- ===== PROCESS ===== -->
  <section class="sp-process">
  <div class="container">
@@ -242,6 +295,95 @@
  </div>
  </div>
  </section>
+
+ <!-- ===== STRAIGHT ANSWERS (added) ===== -->
+ <section class="faq sp-answers" id="straight-answers" aria-label="Cost, timeline and ownership">
+ <div class="container">
+ <div class="faq-top reveal">
+ <div class="section-tag"><span class="tag-pulse"></span> Straight Answers</div>
+ <h2 class="section-heading">Agent economics, the failure statistic, and the build or buy call.</h2>
+ </div>
+ <p class="sp-answers-intro reveal">AI agents are the most hyped and most doubted purchase in enterprise software right now, and both crowds are working from real numbers. Here are those numbers, in the open, before any sales call.</p>
+ <div class="faq-list">
+ <div class="faq-item active reveal">
+ <button class="faq-q" aria-expanded="true" aria-controls="sqa1">
+ How much does it cost to build an enterprise AI agent?
+ <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+ </button>
+ <div class="faq-a" id="sqa1" role="region">
+ <p>A focused single workflow agent typically runs $15,000 to $75,000. Most mid market deployments land between $25,000 and $120,000, and multi agent systems coordinating several specialists run $100,000 to $500,000 and up. The surprise for most buyers: the model is the cheap part. Integration with your real systems and the safety testing that keeps the agent on policy together consume 40 to 60 percent of the build. That is also why our quotes follow workflow mapping, not the other way around.</p>
+ </div>
+ </div>
+ <div class="faq-item reveal">
+ <button class="faq-q" aria-expanded="false" aria-controls="sqa2">
+ What does an agent cost to run after launch?
+ <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+ </button>
+ <div class="faq-a" id="sqa2" role="region">
+ <p>The number vendors put on slide two, and we put on slide one: the build is only 25 to 35 percent of what you will spend over three years. A production agent serving real volume typically runs $3,000 to $13,000 a month across model usage, infrastructure, monitoring, and tuning, and annual maintenance runs 15 to 30 percent of the build cost. Every proposal we write includes a projected cost per task and a three year total, and our <a href="/services/ai-cost-optimization">AI cost optimization</a> practice exists because that per task number can usually be cut hard once real usage data comes in.</p>
+ </div>
+ </div>
+ <div class="faq-item reveal">
+ <button class="faq-q" aria-expanded="false" aria-controls="sqa3">
+ Why do 95 percent of AI pilots fail, and how do we avoid joining them?
+ <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+ </button>
+ <div class="faq-a" id="sqa3" role="region">
+ <p>MIT's research found 95 percent of enterprise AI pilots produce zero measurable P&amp;L impact, and Gartner expects over 40 percent of agentic projects to be cancelled by 2027. The causes are consistent and almost never the model: data that was not ready, no success metric defined before the build, generic tools bolted onto specific workflows, and nobody owning adoption. The 5 percent that succeed are narrow, deeply integrated, and built with specialist partners. Our answer is structural: we define the success metric in workflow mapping, run the agent in shadow mode against real traffic for two weeks, and measure accuracy, escalation rate, and cost per task before go live. If the pilot numbers do not clear the bar, we tell you, and you have spent a fraction of a failed rollout finding out.</p>
+ </div>
+ </div>
+ <div class="faq-item reveal">
+ <button class="faq-q" aria-expanded="false" aria-controls="sqa4">
+ Should we build custom or use Copilot Studio or Agentforce?
+ <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+ </button>
+ <div class="faq-a" id="sqa4" role="region">
+ <p>Sometimes the platform is the right answer, and we will say so. Platform agents win when the workflow is a commodity, lives inside one ecosystem you already pay for, and needs no unusual logic: a Salesforce shop automating Salesforce tasks should look hard at Agentforce first. Custom wins when the workflow crosses systems, encodes rules that are actually your competitive edge, faces compliance requirements the platform cannot evidence, or when per conversation platform pricing turns ugly at your volume. The honest math is a three year cost comparison at your real usage, and we build that comparison into every scoping engagement, both options priced.</p>
+ </div>
+ </div>
+ <div class="faq-item reveal">
+ <button class="faq-q" aria-expanded="false" aria-controls="sqa5">
+ What ROI is realistic, and how fast?
+ <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+ </button>
+ <div class="faq-a" id="sqa5" role="region">
+ <p>For well scoped agents on high volume repetitive work, payback in 4 to 8 months is genuinely achievable, and industry surveys show roughly three quarters of mature AI deployments meeting or beating their ROI targets. The caveat that keeps those numbers honest: ROI only exists where a baseline was measured first. Before any build, we document what the workflow costs today in hours, errors, and delay, so the after picture is arithmetic instead of a vendor's slide. Complex multi agent transformations run on longer horizons, and anyone promising them a six month payback is selling you the 95 percent.</p>
+ </div>
+ </div>
+ <div class="faq-item reveal">
+ <button class="faq-q" aria-expanded="false" aria-controls="sqa6">
+ Which workflow should we automate first?
+ <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+ </button>
+ <div class="faq-a" id="sqa6" role="region">
+ <p>Not your hardest problem. Your most boring one. The ideal first agent workflow is high volume, repetitive, rule describable, backed by data that already exists, and tolerant of a human approval gate while trust builds. Invoice matching beats strategic forecasting. Ticket triage beats customer retention. The goal of the first agent is not transformation, it is a working system with provable numbers that earns the second and third agent their budget. Companies that start with the moonshot usually end up in the cancellation statistic; companies that start boring end up with a portfolio.</p>
+ </div>
+ </div>
+ </div>
+ <p class="sp-answers-close reveal">Bring us the workflow your team complains about most. In one call we will tell you what an agent would cost, what it would save, and whether the honest answer is that you do not need one yet.</p>
+ <div class="sp-answers-cta reveal">
+ <a href="/contact" class="btn btn-glow">
+ Get a Scoped Agent Estimate
+ <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+ </a>
+ </div>
+ </div>
+ </section>
+
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+ {"@type":"Question","name":"How much does it cost to build an enterprise AI agent?","acceptedAnswer":{"@type":"Answer","text":"A focused single workflow agent typically runs $15,000 to $75,000. Most mid market deployments land between $25,000 and $120,000, and multi agent systems coordinating several specialists run $100,000 to $500,000 and up. The surprise for most buyers: the model is the cheap part. Integration with your real systems and the safety testing that keeps the agent on policy together consume 40 to 60 percent of the build. That is also why our quotes follow workflow mapping, not the other way around."}},
+ {"@type":"Question","name":"What does an agent cost to run after launch?","acceptedAnswer":{"@type":"Answer","text":"The number vendors put on slide two, and we put on slide one: the build is only 25 to 35 percent of what you will spend over three years. A production agent serving real volume typically runs $3,000 to $13,000 a month across model usage, infrastructure, monitoring, and tuning, and annual maintenance runs 15 to 30 percent of the build cost. Every proposal we write includes a projected cost per task and a three year total, and our AI cost optimization practice exists because that per task number can usually be cut hard once real usage data comes in."}},
+ {"@type":"Question","name":"Why do 95 percent of AI pilots fail, and how do we avoid joining them?","acceptedAnswer":{"@type":"Answer","text":"MIT's research found 95 percent of enterprise AI pilots produce zero measurable P&L impact, and Gartner expects over 40 percent of agentic projects to be cancelled by 2027. The causes are consistent and almost never the model: data that was not ready, no success metric defined before the build, generic tools bolted onto specific workflows, and nobody owning adoption. The 5 percent that succeed are narrow, deeply integrated, and built with specialist partners. Our answer is structural: we define the success metric in workflow mapping, run the agent in shadow mode against real traffic for two weeks, and measure accuracy, escalation rate, and cost per task before go live. If the pilot numbers do not clear the bar, we tell you, and you have spent a fraction of a failed rollout finding out."}},
+ {"@type":"Question","name":"Should we build custom or use Copilot Studio or Agentforce?","acceptedAnswer":{"@type":"Answer","text":"Sometimes the platform is the right answer, and we will say so. Platform agents win when the workflow is a commodity, lives inside one ecosystem you already pay for, and needs no unusual logic: a Salesforce shop automating Salesforce tasks should look hard at Agentforce first. Custom wins when the workflow crosses systems, encodes rules that are actually your competitive edge, faces compliance requirements the platform cannot evidence, or when per conversation platform pricing turns ugly at your volume. The honest math is a three year cost comparison at your real usage, and we build that comparison into every scoping engagement, both options priced."}},
+ {"@type":"Question","name":"What ROI is realistic, and how fast?","acceptedAnswer":{"@type":"Answer","text":"For well scoped agents on high volume repetitive work, payback in 4 to 8 months is genuinely achievable, and industry surveys show roughly three quarters of mature AI deployments meeting or beating their ROI targets. The caveat that keeps those numbers honest: ROI only exists where a baseline was measured first. Before any build, we document what the workflow costs today in hours, errors, and delay, so the after picture is arithmetic instead of a vendor's slide. Complex multi agent transformations run on longer horizons, and anyone promising them a six month payback is selling you the 95 percent."}},
+ {"@type":"Question","name":"Which workflow should we automate first?","acceptedAnswer":{"@type":"Answer","text":"Not your hardest problem. Your most boring one. The ideal first agent workflow is high volume, repetitive, rule describable, backed by data that already exists, and tolerant of a human approval gate while trust builds. Invoice matching beats strategic forecasting. Ticket triage beats customer retention. The goal of the first agent is not transformation, it is a working system with provable numbers that earns the second and third agent their budget. Companies that start with the moonshot usually end up in the cancellation statistic; companies that start boring end up with a portfolio."}}
+ ]
+ }
+ </script>
 
  <!-- ===== CASE STUDIES ===== -->
  <section class="sp-cases">
