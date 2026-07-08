@@ -28,6 +28,6 @@
 /* ===== Testimonial logo row: desktop/tablet fill + even spacing (fix) ===== */
 @media (min-width:641px){
   .tspot-logos-viewport{flex:1 1 auto;min-width:0}
-  .tspot-logos{justify-content:center;gap:clamp(40px,7vw,110px)}
-  .tspot-logo-btn{flex:0 1 auto;padding:8px 0}
+  .tspot-logos{justify-content:space-between;gap:0}
+  .tspot-logo-btn{flex:1 1 0;padding:8px 0}
 }
