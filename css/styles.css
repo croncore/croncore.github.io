@@ -38,3 +38,33 @@
 .lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
 .lenis.lenis-stopped{overflow:hidden}
 .lenis.lenis-scrolling iframe{pointer-events:none}
+
+/* ===== Mobile nav polish (v22) — safe-area, active state, entrance ===== */
+.mobile-nav-header{height:calc(76px + env(safe-area-inset-top,0px));padding-top:env(safe-area-inset-top,0px)}
+.mobile-panels{top:calc(76px + env(safe-area-inset-top,0px))}
+.mobile-panel{-webkit-overflow-scrolling:touch}
+.mobile-panel-cta-wrap{padding-bottom:calc(36px + env(safe-area-inset-bottom,0px))}
+.mobile-panel-outline-cta{margin-bottom:calc(32px + env(safe-area-inset-bottom,0px))}
+.mobile-panel--root>a.is-current{color:var(--accent);box-shadow:inset 3px 0 0 var(--accent)}
+.mobile-panel--root>a.is-current .mobile-link-chevron{opacity:1;color:var(--accent)}
+.mobile-accordion-list a.is-current{color:var(--accent);font-weight:600}
+.mobile-accordion-list a.is-current::before{box-shadow:0 0 0 4px var(--accent-subtle)}
+@media (prefers-reduced-motion:no-preference){
+.nav-mobile-overlay.open .mobile-panel--root>a,
+.nav-mobile-overlay.open .mobile-panel--root>.mobile-link,
+.nav-mobile-overlay.open .mobile-panel--root>.mobile-panel-cta-wrap{animation:mnavRowIn .42s var(--ease) both}
+.nav-mobile-overlay.open .mobile-panel--root>:nth-child(1){animation-delay:.04s}
+.nav-mobile-overlay.open .mobile-panel--root>:nth-child(2){animation-delay:.08s}
+.nav-mobile-overlay.open .mobile-panel--root>:nth-child(3){animation-delay:.12s}
+.nav-mobile-overlay.open .mobile-panel--root>:nth-child(4){animation-delay:.16s}
+.nav-mobile-overlay.open .mobile-panel--root>:nth-child(5){animation-delay:.2s}
+.nav-mobile-overlay.open .mobile-panel--root>:nth-child(6){animation-delay:.24s}
+.nav-mobile-overlay.open .mobile-panel--root>:nth-child(7){animation-delay:.28s}
+@keyframes mnavRowIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+}
+/* Authoritative mobile-nav link colors (override global a:not([class]) rule) */
+.nav-mobile-overlay .mobile-panel--root>a,
+.nav-mobile-overlay .mobile-accordion-list a{color:var(--mobile-text)!important;text-decoration:none}
+.nav-mobile-overlay .mobile-panel--root>a.is-current,
+.nav-mobile-overlay .mobile-accordion-list a.is-current{color:var(--accent)!important}
+.nav-mobile-overlay .mobile-panel--root>.mobile-link .mobile-link-chevron{opacity:1;color:var(--accent)}
