@@ -46,7 +46,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <meta name="theme-color" content="#0A0E17">
 
  <!-- Theme flash prevention -->
- <script>(function () { var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light'); })()</script>
+ <script>(function () { var t = localStorage.getItem('croncore-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); if (t === 'light') document.documentElement.setAttribute('data-theme', 'light'); })()</script>
 
  <!-- Stylesheet -->
  <link rel="stylesheet" href="css/styles.css?v=23">
@@ -747,7 +747,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  </div>
 
  <!-- JavaScript -->
- <script src="js/main.js?v=10"></script>
+ <script src="js/main.js?v=11"></script>
  <script defer src="js/a11y.js?v=2"></script>
  
 
