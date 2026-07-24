@@ -72,9 +72,9 @@
  <link rel="manifest" href="/images/favicons/site.webmanifest" />
  <meta name="theme-color" content="#0A0E17">
 
- <script>(function(){var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
+ <script>(function(){var t = localStorage.getItem('croncore-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
 
- <link rel="stylesheet" href="/css/styles.css?v=23">
+ <link rel="stylesheet" href="/css/styles.css?v=25">
 </head>
 <body>
  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFNLPH3H"
@@ -581,7 +581,7 @@
  </footer>
  </div>
 
- <script src="/js/main.js?v=10"></script>
+ <script src="/js/main.js?v=15"></script>
 
  <div class="float-btns">
  <a href="https://wa.me/16039991544" target="_blank" rel="noopener noreferrer" class="float-btn float-btn--whatsapp" aria-label="Contact on WhatsApp">

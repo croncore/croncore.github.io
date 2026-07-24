@@ -115,10 +115,10 @@
  <meta name="theme-color" content="#0A0E17">
 
  <!-- Theme flash prevention -->
- <script>(function(){var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
+ <script>(function(){var t = localStorage.getItem('croncore-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
 
  <!-- Stylesheet -->
- <link rel="stylesheet" href="/css/styles.css?v=23">
+ <link rel="stylesheet" href="/css/styles.css?v=25">
 </head>
 <body>
  <!-- Google Tag Manager (noscript) -->
@@ -499,7 +499,7 @@
  </div>
 
  <!-- JavaScript -->
- <script src="/js/main.js?v=10"></script>
+ <script src="/js/main.js?v=15"></script>
 
  <!-- Float Buttons -->
  <div class="float-btns">
