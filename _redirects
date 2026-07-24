@@ -63,6 +63,6 @@
 # Insights posts without a pre-rendered file -> client-rendered article shell
 # (article.html fetches the post from Sanity and sets per-post canonical/title/OG).
 # Pre-rendered /insights/<slug>.html files, when present, are served first and win.
-/insights/*  /article.html  200
+/insights/*  /article  200
 
 /*  /404.html  404
