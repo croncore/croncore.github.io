@@ -104,3 +104,6 @@ a,button,[role="button"],input[type="button"],input[type="submit"],label,summary
 .mobile-spot-arrow{display:inline-block;font-size:1.05em;line-height:1;transform:translateY(-1px);transition:transform .2s var(--ease)}
 .mobile-spot:hover .mobile-spot-arrow{transform:translate(3px,-1px)}
 @media (prefers-reduced-motion:reduce){.mobile-accordion-list a{opacity:1!important;transform:none!important;animation:none!important}}
+
+/* Contact CTA pinned to bottom of the mobile menu */
+.mobile-panel-cta-wrap{margin-top:auto}
