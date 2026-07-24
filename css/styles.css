@@ -107,3 +107,8 @@ a,button,[role="button"],input[type="button"],input[type="submit"],label,summary
 
 /* Contact CTA pinned to bottom of the mobile menu */
 .mobile-panel-cta-wrap{margin-top:auto}
+
+/* Mobile nav root-item subtitles (Services/Case Studies second line; SLED aside) */
+.mobile-link-main{display:flex;flex-direction:column;gap:3px;min-width:0;text-align:left}
+.mobile-link-sub{font-size:.78rem;font-weight:400;letter-spacing:0;line-height:1.3;color:var(--mobile-text-muted)}
+.mobile-link-aside{margin-left:auto;padding-left:14px;font-size:.78rem;font-weight:400;line-height:1.3;color:var(--mobile-text-muted);text-align:right;flex-shrink:0}
