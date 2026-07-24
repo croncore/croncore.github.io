@@ -70,3 +70,37 @@
 .nav-mobile-overlay .mobile-panel--root>.mobile-link .mobile-link-chevron{opacity:1;color:var(--accent)}
 /* Remove residual tap delay on interactive elements (single-tap activation on touch) */
 a,button,[role="button"],input[type="button"],input[type="submit"],label,summary,.btn,.nav-link,.mobile-link{touch-action:manipulation}
+
+
+/* ===== Mobile nav v2 — richer treatment (descriptions, refined open state, spotlight, stagger) ===== */
+.nav-mobile-overlay{--mobile-acc-tint:rgba(0,212,255,.09);--mobile-spot-a:rgba(0,212,255,.13);--mobile-spot-b:rgba(123,97,255,.10)}
+[data-theme=light] .nav-mobile-overlay{--mobile-acc-tint:rgba(59,130,217,.10);--mobile-spot-a:rgba(59,130,217,.12);--mobile-spot-b:rgba(109,79,224,.09)}
+.mobile-accordion-toggle{border-left:3px solid transparent;transition:background .22s var(--ease),color .22s var(--ease),border-color .22s var(--ease)}
+.mobile-accordion-count{font-size:.72rem;font-weight:600;color:var(--mobile-text-muted);background:var(--mobile-back-bg);border-radius:20px;padding:2px 9px;margin-left:auto;flex-shrink:0;transition:color .22s,background .22s}
+.mobile-accordion.is-open .mobile-accordion-toggle{background:var(--mobile-acc-tint);color:var(--accent);border-left-color:var(--accent)}
+.mobile-accordion.is-open .mobile-accordion-toggle .mobile-accordion-chevron{transform:rotate(180deg);color:var(--accent);opacity:1}
+.mobile-accordion.is-open .mobile-accordion-count{color:var(--accent);background:transparent}
+.mobile-accordion-list a{align-items:flex-start;gap:13px;padding:15px 24px 15px 26px;opacity:0;transform:translateX(-8px)}
+.mobile-accordion-list a::before{width:6px;height:6px;border-radius:50%;margin-top:7px;box-shadow:0 0 0 3px var(--mobile-acc-tint)}
+.mobile-it-body{display:flex;flex-direction:column;gap:2px;min-width:0}
+.mobile-it-title{font-size:.96rem;font-weight:600;letter-spacing:-.005em;color:var(--mobile-text)}
+.mobile-it-desc{font-size:.8rem;line-height:1.45;color:var(--mobile-text-muted)}
+.mobile-accordion.is-open .mobile-accordion-list a{animation:mnavItemIn .4s var(--ease) forwards}
+.mobile-accordion.is-open .mobile-accordion-list a:nth-child(1){animation-delay:.04s}
+.mobile-accordion.is-open .mobile-accordion-list a:nth-child(2){animation-delay:.08s}
+.mobile-accordion.is-open .mobile-accordion-list a:nth-child(3){animation-delay:.12s}
+.mobile-accordion.is-open .mobile-accordion-list a:nth-child(4){animation-delay:.16s}
+.mobile-accordion.is-open .mobile-accordion-list a:nth-child(5){animation-delay:.20s}
+.mobile-accordion.is-open .mobile-accordion-list a:nth-child(6){animation-delay:.24s}
+.mobile-accordion.is-open .mobile-accordion-list a:nth-child(n+7){animation-delay:.28s}
+@keyframes mnavItemIn{to{opacity:1;transform:translateX(0)}}
+.mobile-spot{display:block;margin:16px 22px 20px;padding:18px;border-radius:16px;position:relative;overflow:hidden;text-decoration:none;background:linear-gradient(150deg,var(--mobile-spot-a),var(--mobile-spot-b));border:1px solid var(--mobile-border-strong);transition:transform .2s var(--ease)}
+.mobile-spot::after{content:'';position:absolute;right:-30px;top:-30px;width:120px;height:120px;background:radial-gradient(circle,var(--accent),transparent 68%);opacity:.15;pointer-events:none}
+.mobile-spot:active{transform:scale(.99)}
+.mobile-spot-tag{font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent)}
+.mobile-spot-title{display:block;margin:9px 0 6px;font-family:var(--font-display);font-size:1.05rem;font-weight:800;letter-spacing:-.01em;line-height:1.2;color:var(--mobile-text)}
+.mobile-spot-desc{display:block;color:var(--mobile-text-muted);font-size:.82rem;line-height:1.5}
+.mobile-spot-go{margin-top:12px;display:inline-flex;align-items:center;gap:7px;font-size:.8rem;font-weight:700;color:var(--accent)}
+.mobile-spot-arrow{display:inline-block;font-size:1.05em;line-height:1;transform:translateY(-1px);transition:transform .2s var(--ease)}
+.mobile-spot:hover .mobile-spot-arrow{transform:translate(3px,-1px)}
+@media (prefers-reduced-motion:reduce){.mobile-accordion-list a{opacity:1!important;transform:none!important;animation:none!important}}
