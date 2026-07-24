@@ -312,7 +312,7 @@ function renderPostHtml(post) {
   // ----- Replace the template's placeholder head block (lines 26-51) -----
   // The template has a clearly-marked region between the "Primary SEO" comment
   // and the closing Twitter image meta. Replace the whole region in one go.
-  const seoStart = '    <!-- Primary SEO (populated dynamically from Sanity in the script below) -->';
+  const seoStart = '<!-- Primary SEO (populated dynamically from Sanity in the script below) -->';
   const seoEndPattern = /<meta name="twitter:image"[^>]*>/;
 
   const startIdx = TEMPLATE.indexOf(seoStart);
@@ -397,22 +397,25 @@ function renderPostHtml(post) {
   // Replace the loading/error/empty-article block with the pre-rendered markup.
   // The template marks this region between "<!-- Article Status Pickers -->"
   // and the closing </article> tag of the empty wrapper.
-  const mainStart = '            <!-- Article Status Pickers -->';
+  const mainStart = '<!-- Article Status Pickers -->';
   const mainEndMarker = '            </article>\n\n        </main>';
   const mainStartIdx = html.indexOf(mainStart);
-  const mainEndIdx = html.indexOf(mainEndMarker, mainStartIdx);
+  const mainEndRe = /<\/article>\s*<\/main>/;
+  const mainEndMatch = mainStartIdx === -1 ? null : html.slice(mainStartIdx).match(mainEndRe);
+  const mainEndIdx = mainEndMatch ? mainStartIdx + mainEndMatch.index : -1;
   if (mainStartIdx === -1 || mainEndIdx === -1) {
     throw new Error('Could not locate article body region in article.html');
   }
   html =
     html.slice(0, mainStartIdx) +
     articleMarkup + '\n\n        </main>' +
-    html.slice(mainEndIdx + mainEndMarker.length);
+    html.slice(mainEndIdx + (mainEndMatch ? mainEndMatch[0].length : 0));
 
   // Strip the client-side Sanity fetch script — the page is fully rendered now.
   // The block runs from the inline DOMContentLoaded handler to the closing
   // </script> tag right before "<!-- Float Buttons -->".
-  const scriptStart = html.indexOf('<script>\n        document.addEventListener(\'DOMContentLoaded\', function () {\n            // ---- Soft-404 helper');
+  const soft404Idx = html.indexOf('// ---- Soft-404 helper');
+  const scriptStart = soft404Idx === -1 ? -1 : html.lastIndexOf('<script>', soft404Idx);
   if (scriptStart !== -1) {
     const scriptEnd = html.indexOf('</script>', scriptStart);
     if (scriptEnd !== -1) {
