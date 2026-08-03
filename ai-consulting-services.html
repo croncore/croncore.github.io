@@ -935,7 +935,8 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <div class="trusted-static-logo"><img src="images/logos/Sabzland-Logo.png" alt="Sabzland" loading="lazy" style="--scale: 2.05;"></div>
  <div class="trusted-static-logo"><img src="images/logos/Leap.png" alt="Leap" loading="lazy" style="--scale: 0.95;"></div>
  <div class="trusted-static-logo"><img src="images/logos/BloomLink.png" alt="BloomLink" loading="lazy" style="--scale: 0.55;"></div>
- <div class="trusted-static-logo"><img src="images/logos/edu-logo.png" alt="Edu" loading="lazy" style="--scale: 1.15;"></div>
+ <style>.trusted-static-logo img.logo-light{display:none}[data-theme=light] .trusted-static-logo img.logo-dark{display:none}[data-theme=light] .trusted-static-logo img.logo-light{display:block}</style>
+ <div class="trusted-static-logo"><img src="images/logos/eduimmersion.webp" alt="EduimMersion" loading="lazy" class="logo-dark" style="--scale: 1.15;" width="920" height="150"><img src="images/logos/eduimmersion-light.webp" alt="EduimMersion" loading="lazy" class="logo-light" style="--scale: 1.15;" width="920" height="150"></div>
  </div>
  </div>
  </section>
@@ -1413,15 +1414,16 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
     <div class="tspot-logos" role="tablist" aria-label="Select client">
      <button class="tspot-logo-btn active" id="tspot-btn-benzninja" data-index="0" role="tab" aria-selected="true" aria-controls="tspot-benzninja"><img src="images/logos/benz.webp" alt="BenzNinja" loading="lazy" class="tspot-benz-logo"></button>
      <button class="tspot-logo-btn" id="tspot-btn-bloomslink" data-index="1" role="tab" aria-selected="false" aria-controls="tspot-bloomslink"><img src="images/logos/BloomLink.webp" alt="BloomsLink" loading="lazy"></button>
-     <button class="tspot-logo-btn" id="tspot-btn-edumersion" data-index="2" role="tab" aria-selected="false" aria-controls="tspot-edumersion"><img src="images/logos/edu-logo.webp" alt="Edumersion" loading="lazy" class="tspot-edu-logo"></button>
-     <button class="tspot-logo-btn tspot-logo-btn--svg" id="tspot-btn-orical" data-index="3" role="tab" aria-selected="false" aria-controls="tspot-orical">
-      <svg class="tspot-wordmark" viewBox="0 0 148 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Oracle Merchant Services" role="img">
-       <rect x="1" y="8" width="26" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/>
-       <line x1="1" y1="14.5" x2="27" y2="14.5" stroke="currentColor" stroke-width="1.5"/>
-       <circle cx="8" cy="21" r="2.2" fill="currentColor"/>
-       <text x="35" y="24" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" font-size="14" fill="currentColor">Orical</text>
-       <text x="35" y="34" font-family="'Plus Jakarta Sans',sans-serif" font-weight="500" font-size="8" fill="currentColor" letter-spacing="1.2">MERCHANT SERVICES</text>
-      </svg>
+     <button class="tspot-logo-btn" id="tspot-btn-edumersion" data-index="2" role="tab" aria-selected="false" aria-controls="tspot-edumersion"><img src="images/logos/eduimmersion.webp" alt="EduimMersion" loading="lazy" class="tspot-edu-logo logo-dark"><img src="images/logos/eduimmersion-light.webp" alt="EduimMersion" loading="lazy" class="tspot-edu-logo logo-light"></button>
+     <style>
+      .tspot-logo-btn img.tspot-oms-logo{height:34px;width:auto;max-width:156px;object-fit:contain}
+      .tspot-logo-btn img.logo-light{display:none}
+      [data-theme=light] .tspot-logo-btn img.logo-dark{display:none}
+      [data-theme=light] .tspot-logo-btn img.logo-light{display:block}
+     </style>
+     <button class="tspot-logo-btn" id="tspot-btn-orical" data-index="3" role="tab" aria-selected="false" aria-controls="tspot-orical">
+      <img src="images/logos/oracle-merchant-services.webp" alt="Oracle Merchant Services" loading="lazy" class="tspot-oms-logo logo-dark">
+      <img src="images/logos/oracle-merchant-services-light.webp" alt="Oracle Merchant Services" loading="lazy" class="tspot-oms-logo logo-light">
      </button>
     </div>
     </div>
