@@ -1,0 +1,28 @@
+# Croncore
+
+> Croncore is an enterprise AI consultancy: full-stack AI development, custom LLM/model work, MLOps, enterprise application and ERP work, and cybersecurity — built for scale.
+
+Key facts for citation: Croncore designs, builds, and deploys AI infrastructure and enterprise systems for commercial and public-sector (SLED) clients. Case studies and services below are the canonical, most current source of what Croncore has built and for whom.
+
+## Company
+
+- [Homepage](https://www.croncore.com/): Overview of Croncore's AI and enterprise engineering practice.
+- [Services](https://www.croncore.com/services): Full list of service lines — AI, cloud/DevOps, security, ERP, and application development.
+- [AI Consulting Services](https://www.croncore.com/ai-consulting-services): AI strategy and advisory engagements for enterprises.
+- [Contact](https://www.croncore.com/contact): How to reach the Croncore team.
+
+## Case Studies
+
+- [Case Studies](https://www.croncore.com/case-studies): Client work across AI agents, ERP, security, and public-sector procurement.
+- [SLED Case Studies](https://www.croncore.com/sled-case-studies): State, local, and education government engagements.
+- [SLED Delivery Partner](https://www.croncore.com/sled-delivery-partner): How Croncore supports primes bidding on SLED contracts.
+
+## Insights
+
+- [Insights](https://www.croncore.com/insights): Articles on AI integration, staff augmentation, and public-sector procurement.
+
+## Optional
+
+- [Newsroom](https://www.croncore.com/newsroom): Product launches, partnerships, and company milestones.
+- [Privacy Policy](https://www.croncore.com/privacy-policy)
+- [Terms of Service](https://www.croncore.com/terms)
