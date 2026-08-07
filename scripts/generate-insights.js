@@ -107,6 +107,14 @@ const DECORATOR_TAGS = {
   'strike-through': 's',
 };
 
+// Sanity-authored links sometimes point at the bare apex domain, which
+// 301-redirects to www at the edge. Normalize to the canonical www host so
+// baked article links don't cost readers (and crawlers) an extra hop.
+function normalizeHref(href) {
+  if (!href) return href;
+  return href.replace(/^https?:\/\/croncore\.com(\/|$)/i, 'https://www.croncore.com$1');
+}
+
 function renderSpan(child, markDefs) {
   if (child._type !== 'span') return '';
   const text = escapeHtml(child.text || '').replace(/\n/g, '<br>');
@@ -122,7 +130,7 @@ function renderSpan(child, markDefs) {
     } else if (markDefs && markDefs[mark]) {
       const def = markDefs[mark];
       if (def._type === 'link') {
-        const href = escapeAttr(def.href || '#');
+        const href = escapeAttr(normalizeHref(def.href) || '#');
         const rel = def.blank ? ' target="_blank" rel="noopener noreferrer"' : '';
         openTags.push('<a href="' + href + '"' + rel + '>');
         closeTags.unshift('</a>');
