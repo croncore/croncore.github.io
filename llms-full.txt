@@ -11,9 +11,9 @@ This file contains a condensed, citation-ready version of every page on www.cron
 
 Homepage of Croncore, a full-stack AI research and software engineering firm (founded 2024, 50+ employees, Delaware-registered LLC) serving global enterprises and US public-sector primes. It presents four service disciplines — Custom Software Development, Cyber Security & Data, AI Agents & Automations, and ERP & Enterprise Platforms — plus a SLED pre-bid support offering for US public-sector primes.
 
-- Client case studies featured: Bezninja (autonomous sales agent), Bloomlink (sovereign Mongolian voice engine), Edumersion (EdTech platform), Oracle Merchant Services (AI voice agent), plus SLED wins like Macomb Community College and South Platte Renew
+- Client case studies featured: Bezninja (autonomous sales agent), Bloomlink (sovereign Mongolian voice engine), EduimMersion (EdTech platform), Oracle Merchant Services (AI voice agent), plus SLED wins like Macomb Community College and South Platte Renew
 - Stats cited: 50+ enterprise deployments, 20+ active projects, 50+ satisfied clients, 12M+ AI-powered decisions, 99.9% uptime SLA, Clutch 5.0 rating (15 reviews)
-- Testimonials from Bezninja leadership, Bloomlink CEO Otgonkhuu Amsarvaa, the Edumersion founder, and Oracle Merchant Services' Director of Operations
+- Testimonials from Bezninja leadership, Bloomlink CEO Otgonkhuu Amsarvaa, the EduimMersion founder, and Oracle Merchant Services' Director of Operations
 - Recognition: Clutch Top Ranked, Web Summit Impact Startup of the Year, BRICS and SCO Young Leaders Award, The News International coverage
 - Offices listed in Riyadh, Islamabad, London, and Dover, Delaware
 
@@ -30,7 +30,7 @@ Services hub organizing Croncore's work into four disciplines: Custom Software D
 
 Hub listing Croncore's 15 case studies across commercial AI and public-sector proposal support. Commercial entries: Bezninja (autonomous sales agent driving revenue growth), Bloomlink (sovereign voice engine for Mongolia — low-latency, on-region speech stack for telecom), a ground-up digital learning platform with adaptive AI tutoring, and Oracle Merchant Services (custom AI voice agent closing the speed-to-lead gap).
 
-- 11 SLED government pursuits where Croncore built the winning RFP/RFQ/ITB/IFB response behind a US prime: Derby downtown lighting, Macomb Community College AV equipment, South Platte Renew website, Pitkin County airfield maintenance, Rochester City School District K-12 ERP, Boulder Valley firewall ITB, Kansas City Kansas Public Schools data dashboard, Tiburon sea level rise adaptation, Town of Amherst comprehensive plan, UT Arlington 6G network GPUs, and Summerville ADA sidewalk design
+- 11 SLED government pursuits where Croncore built the RFP/RFQ/ITB/IFB response behind a US prime (7 awarded, 1 shortlisted, the rest submitted compliant and on time): Derby downtown lighting, Macomb Community College AV equipment, South Platte Renew website, Pitkin County airfield maintenance, Rochester City School District K-12 ERP, Boulder Valley firewall ITB, Kansas City Kansas Public Schools data dashboard, Tiburon sea level rise adaptation, Town of Amherst comprehensive plan, UT Arlington 6G network GPUs, and Summerville ADA sidewalk design
 - Sectors covered: sales automation, voice AI/telecom, EdTech, financial services, K-12 and higher education, municipal public works, and climate adaptation
 
 ### [Insights & Perspectives](https://www.croncore.com/insights)
@@ -144,7 +144,7 @@ Croncore runs manual, goal-driven penetration tests covering the OWASP Top 10 an
 Croncore operates a 24/7 managed SOC: tuned SIEM with threat intelligence, endpoint detection and response (EDR/MDR), proactive threat hunting, and incident response with a sub-15-minute triage SLA. The service runs a full SOC model with MDR-style active response under pre-agreed containment authority — isolating endpoints, disabling hijacked accounts, and blocking attacker infrastructure within client-defined rules of engagement.
 
 - Common triggers: post-incident hardening, cyber insurance requirements, ransomware defense for mid-market fleets, Microsoft 365 / cloud identity monitoring (BEC, MFA fatigue, OAuth abuse), and monitoring production SaaS platforms.
-- Published pricing: $15–$30 per endpoint per month; 100–500 endpoint environments typically $6,000–$18,000 per month, flat and all-inclusive for a defined scope.
+- Pricing: the page cites 2026 market rates of $15–$30 per endpoint per month and $6,000–$18,000 per month for 100–500 endpoint environments; Croncore's own quote is described qualitatively as flat, monthly, and all-inclusive for a defined scope (no figure published).
 - Build-vs-buy math on page: an in-house 24/7 SOC needs 5+ analysts (~$180,000 each fully loaded) plus $1M+ in tooling; managed onboarding takes 2–6 weeks.
 - Cites typical cyber insurance premium reductions of 15–30% with managed SOC coverage.
 
@@ -430,7 +430,7 @@ Croncore built Bezninja a custom AI sales agent to handle a flood of inbound lea
 
 ### [Derby Downtown Lighting RFP, Commerce City, CO](https://www.croncore.com/case-studies/derby-downtown-lighting-rfp)
 
-Croncore built the winning response to RFP PW 25 024 (Derby Downtown District Photometric Study & Lighting Plan, City of Commerce City, Colorado Public Works) on behalf of a U.S. prime contractor under NDA. The methodology-weighted best-value RFP covered a historic 130-property downtown district (64 commercial, 30 residential, 3 parks, 3 churches).
+Croncore built the winning response to RFP PW 25 024 (Derby Downtown District Photometric Study & Lighting Plan, City of Commerce City, Colorado Public Works) on behalf of a U.S. prime contractor under NDA. The methodology-weighted best-value RFP covered a historic 130-property downtown district.
 
 - Scorecard: Methodology & Approach 45%, Qualifications & Experience 30%, Proposed Fee 25%
 - Compliance constraints: 25-page limit, 11pt font minimum, two-envelope technical/pricing split, mandatory certifications
@@ -564,14 +564,14 @@ A 12-minute guide to AI integration services — connecting LLMs, ML models, com
 
 A short guide to IT staff augmentation — hiring vetted tech talent globally and managing them directly inside your own team, as opposed to handing a whole project to an outsourcer. It compares augmentation with managed services on control, integration, cost model, and best-fit scenarios.
 
-- Cited benefits: US developer hiring averages 49 days versus days with augmentation; typical savings of 30-50% versus local full-time hiring
+- Cited benefits: US developer hiring averages 49 days, which augmentation shortens substantially; typical savings of 30-50% versus local full-time hiring
 - Talent areas offered: Java, Python, React, Node.js, .NET, iOS (Swift) and Android (Kotlin), AWS/Azure/GCP cloud and DevOps, data science and ML, QA and testing
 - Four-step process: needs assessment, pre-vetted candidate shortlist within 48 hours, onboarding (legal, HR, hardware), and ongoing account management
 - Remote-staffing safeguards: time-zone overlap with US business hours, soft-skills vetting, and HIPAA, PCI-DSS, and GDPR-aligned handling
 - FAQ confirms the client owns 100% of IP and can interview developers directly
 
 
-## Legal
+## Optional
 
 ### [Privacy Policy](https://www.croncore.com/privacy-policy)
 

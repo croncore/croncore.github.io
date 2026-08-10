@@ -26,14 +26,14 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <meta property="og:url" content="https://www.croncore.com/newsroom">
  <meta property="og:title" content="Newsroom, Croncore">
  <meta property="og:description" content="Product launches, enterprise partnerships, and milestones from the team building production-grade AI.">
- <meta property="og:image" content="https://www.croncore.com/images/croncore-logo.png">
+ <meta property="og:image" content="https://www.croncore.com/images/concore-logo-light-theme.png">
 
  <!-- Twitter -->
  <meta name="twitter:card" content="summary_large_image">
- <meta name="twitter:site" content="@croncore">
+ <meta name="twitter:site" content="@croncore_">
  <meta name="twitter:title" content="Newsroom, Croncore">
  <meta name="twitter:description" content="Product launches, partnerships, and milestones from the Croncore team.">
- <meta name="twitter:image" content="https://www.croncore.com/images/croncore-logo.png">
+ <meta name="twitter:image" content="https://www.croncore.com/images/concore-logo-light-theme.png">
 
  <!-- Preconnect & Fonts -->
  <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -247,6 +247,11 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
             padding: 60px 20px;
             color: var(--text-muted);
         }
+    
+        /* Newsroom cards are announcements with no destination — do not
+           advertise clickability the way linked insights cards do. */
+        .insights-card { cursor: default; }
+        .insights-card:hover { transform: none; box-shadow: none; border-color: var(--border); }
     </style>
 
  <!-- Schema.org -->

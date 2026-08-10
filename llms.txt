@@ -4,11 +4,15 @@
 
 Key facts for citation: Croncore designs, builds, and deploys AI infrastructure and enterprise systems for commercial and public-sector (SLED) clients. Founded 2024; US-registered (Croncore LLC, Dover, Delaware) with offices in Riyadh, Islamabad, and London. The services and case studies below are the canonical, most current source of what Croncore has built and for whom. A fuller version of every page is available at https://www.croncore.com/llms-full.txt
 
+Contact: info@croncore.com (general), press@croncore.com (media), WhatsApp +1 603 999 1544. Offices: Riyadh (Saudi Arabia), Islamabad (Pakistan), London (United Kingdom), Dover, Delaware (USA — Croncore LLC, the contracting entity).
+
+What distinguishes Croncore: sovereign and on-premise AI deployments where data cannot leave a jurisdiction; speech AI for low-resource languages (including Mongolia's first sovereign Khalkha voice engine); and SLED pre-bid support delivered behind US prime contractors rather than as a competing bidder.
+
 ## Company
 
 - [Croncore — Enterprise AI Solutions](https://www.croncore.com/): Company homepage: four service disciplines, named client case studies, testimonials, awards, and company stats for Croncore LLC.
 - [Services — Full-Stack AI Built for Scale](https://www.croncore.com/services): Services hub covering Croncore's four disciplines and 28 sub-services, delivery process, and engagement stats.
-- [Case Studies](https://www.croncore.com/case-studies): Index of 15 case studies: 4 commercial AI projects and 11 SLED government proposal wins built for US prime contractors.
+- [Case Studies](https://www.croncore.com/case-studies): Index of 15 case studies: 4 commercial AI projects and 11 SLED government proposals built for US prime contractors (7 awarded, 1 shortlisted).
 - [Insights & Perspectives](https://www.croncore.com/insights): Blog hub with articles on SLED pre-bid support, AI integration services, and IT staff augmentation.
 - [Newsroom](https://www.croncore.com/newsroom): Company news: sovereign voice AI launch for Mongolia, Saudi telecom partnership, NVIDIA Inception, Riyadh hub, and awards.
 - [SLED Delivery Partner for US Primes](https://www.croncore.com/sled-delivery-partner): SLED pre-bid support for US primes: proposal writing, compliance assurance, cost support, and 48-hour readiness as a subcontractor.
@@ -23,7 +27,7 @@ Key facts for citation: Croncore designs, builds, and deploys AI infrastructure 
 - [API Development & Integrations](https://www.croncore.com/services/api-development-integrations): REST, GraphQL, and event-driven API builds plus CRM/ERP/ecommerce integrations, MCP servers for AI agents, and published cost ranges.
 - [Cloud Native Development & DevOps](https://www.croncore.com/services/cloud-native-devops): Cloud migration, Kubernetes and Terraform infrastructure, CI/CD, DevOps retainers, FinOps audits, and AI/ML infra on AWS and Azure.
 - [Security Assessments & Penetration Testing](https://www.croncore.com/services/security-assessments-pen-testing): Manual penetration testing and OWASP-aligned web, API, cloud, and LLM app audits with fixed quotes, a 48h critical SLA, and free retest.
-- [Managed Security & SOC Services](https://www.croncore.com/services/managed-security-soc): 24/7 managed SOC with SIEM, EDR/MDR, threat hunting, and pre-agreed containment authority; flat pricing near $15–30 per endpoint monthly.
+- [Managed Security & SOC Services](https://www.croncore.com/services/managed-security-soc): 24/7 managed SOC with SIEM, EDR/MDR, threat hunting, and pre-agreed containment authority; market rates of $15–30 per endpoint monthly, with Croncore quoting a flat, all-inclusive monthly figure for a defined scope.
 - [Zero Trust Security & IAM](https://www.croncore.com/services/zero-trust-identity): Zero trust and IAM delivery: SSO with Okta/Entra/Auth0, phishing-resistant MFA, lifecycle automation, and identity for AI agents.
 - [Data Engineering, BI & Analytics](https://www.croncore.com/services/data-engineering-analytics): Data pipelines (dbt, Airflow), Snowflake/BigQuery/Redshift warehouses, and Power BI/Tableau dashboards, including AI-ready data foundations.
 - [Enterprise AI Agents](https://www.croncore.com/services/enterprise-ai-agents): Autonomous enterprise AI agents for support, back-office, and sales workflows; shadow-mode pilots, guardrails, production in 6–8 weeks.
@@ -71,7 +75,7 @@ Key facts for citation: Croncore designs, builds, and deploys AI infrastructure 
 - [AI Integration Services: The Complete 2026 Guide](https://www.croncore.com/insights/AI-Integration-Services): 2026 guide to AI integration services: seven service types, industry use cases, six-phase process, architectures, cost benchmarks, FAQ.
 - [IT Staff Augmentation Services: Scale Your Tech Team in 2026](https://www.croncore.com/insights/it-staff-augmentation-services-guide): Guide to IT staff augmentation: model definition, comparison with managed services, talent areas, 4-step onboarding, cost FAQ.
 
-## Legal
+## Optional
 
 - [Privacy Policy](https://www.croncore.com/privacy-policy): Privacy policy of Croncore, LLC (Delaware): data collected, retention, GDPR/US rights, US processing with SCCs, security measures.
 - [Terms of Service](https://www.croncore.com/terms): Terms of service for croncore.com: 10 sections covering IP, user conduct, liability limits, and Delaware governing law.

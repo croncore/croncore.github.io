@@ -256,7 +256,7 @@ function renderPostHtml(post) {
   const authorName = (post.author && post.author.name) || 'Croncore';
   const heroImageUrl = imageUrl(post.mainImage, {width: 1600, fit: 'crop', quality: 85});
   const ogImageUrl = imageUrl(post.mainImage, {width: 1200, height: 630, fit: 'crop', quality: 80})
-    || (SITE_URL + '/images/og-cover.png');
+    || (SITE_URL + '/images/concore-logo-light-theme.png');
   const description = (post.excerpt && post.excerpt.trim())
     || portableTextToPlain(post.body, 160)
     || ('Read ' + title + ' on Croncore Insights — expert analysis on AI, automation, and enterprise systems.');
@@ -324,7 +324,7 @@ function renderPostHtml(post) {
     '',
     '    <!-- Twitter -->',
     '    <meta name="twitter:card" content="summary_large_image">',
-    '    <meta name="twitter:site" content="@croncore">',
+    '    <meta name="twitter:site" content="@croncore_">',
     '    <meta name="twitter:title" content="' + escapeAttr(title) + '">',
     '    <meta name="twitter:description" content="' + escapeAttr(description) + '">',
     '    <meta name="twitter:image" content="' + escapeAttr(ogImageUrl) + '">',
@@ -489,7 +489,7 @@ function renderListCard(post) {
       '<p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">' + escapeHtml(excerpt) + '</p>' +
       '<div class="insights-card-meta">' +
         '<span>' + escapeHtml(dateStr) + '</span>' +
-        '<a href="insights/' + encodeURIComponent(post.slug) + '" class="insights-card-link" aria-label="Read ' + escapeAttr(post.title || 'article') + '">Read article <svg class="arrow-icon" viewBox="0 0 24 24">' +
+        '<a href="insights/' + encodeURIComponent(post.slug) + '" class="insights-card-link" aria-label="Read article: ' + escapeAttr(post.title || '') + '">Read article <svg class="arrow-icon" viewBox="0 0 24 24">' +
           '<line x1="5" y1="12" x2="19" y2="12" />' +
           '<polyline points="12 5 19 12 12 19" />' +
         '</svg></a>' +

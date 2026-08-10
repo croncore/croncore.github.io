@@ -28,3 +28,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.croncore.com/sitemap.xml
+
+# AI / LLM reference files (llms.txt convention):
+# https://www.croncore.com/llms.txt
+# https://www.croncore.com/llms-full.txt
