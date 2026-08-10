@@ -167,8 +167,25 @@ function renderCodeBlock(node) {
   return '<pre><code' + lang + '>' + escapeHtml(node.code || '') + '</code></pre>';
 }
 
+function normalizeHeadingLevels(blocks) {
+  // Article bodies render under the page <h1>; CMS authors often start at h3.
+  // Remap heading levels so the sequence never skips (first body heading
+  // becomes h2, children nest one level deeper), keeping relative structure.
+  const stack = []; // [rawLevel, outLevel]
+  return blocks.map((b) => {
+    if (b._type !== 'block' || !/^h[1-6]$/.test(b.style || '')) return b;
+    const raw = parseInt(b.style.slice(1), 10);
+    while (stack.length && stack[stack.length - 1][0] >= raw) stack.pop();
+    const parentOut = stack.length ? stack[stack.length - 1][1] : 1;
+    const out = Math.min(parentOut + 1, 6);
+    stack.push([raw, out]);
+    return out === raw ? b : Object.assign({}, b, {style: 'h' + out});
+  });
+}
+
 function portableTextToHtml(blocks) {
   if (!blocks || !blocks.length) return '';
+  blocks = normalizeHeadingLevels(blocks);
   let html = '';
   let i = 0;
   while (i < blocks.length) {
@@ -434,7 +451,7 @@ function renderPostHtml(post) {
       if (m) cutFrom = m.index;
       html =
         html.slice(0, cutFrom) +
-        '\n    <!-- JavaScript -->\n    <script src="/js/main.js?v=4"></script>\n    ' +
+        '\n    <!-- JavaScript -->\n    <script src="/js/main.js?v=19"></script>\n    ' +
         html.slice(scriptEnd + '</script>'.length);
     }
   }
@@ -472,7 +489,7 @@ function renderListCard(post) {
       '<p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">' + escapeHtml(excerpt) + '</p>' +
       '<div class="insights-card-meta">' +
         '<span>' + escapeHtml(dateStr) + '</span>' +
-        '<a href="insights/' + encodeURIComponent(post.slug) + '" class="insights-card-link">Read More <svg class="arrow-icon" viewBox="0 0 24 24">' +
+        '<a href="insights/' + encodeURIComponent(post.slug) + '" class="insights-card-link" aria-label="Read ' + escapeAttr(post.title || 'article') + '">Read article <svg class="arrow-icon" viewBox="0 0 24 24">' +
           '<line x1="5" y1="12" x2="19" y2="12" />' +
           '<polyline points="12 5 19 12 12 19" />' +
         '</svg></a>' +

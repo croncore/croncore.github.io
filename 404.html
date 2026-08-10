@@ -43,7 +43,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <script>(function () { var t = localStorage.getItem('croncore-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); if (t === 'light') document.documentElement.setAttribute('data-theme', 'light'); })()</script>
 
  <!-- Stylesheet -->
- <link rel="stylesheet" href="/css/styles.css?v=27">
+ <link rel="stylesheet" href="/css/styles.css?v=28">
 
  <style>
         .nf-wrap {
@@ -93,7 +93,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
             color: var(--text-muted);
             font-size: 0.95rem;
         }
-        .nf-links h4 {
+        .nf-links h4,.nf-links h2 {
             font-size: 0.85rem;
             font-weight: 700;
             letter-spacing: 0.08em;
@@ -150,7 +150,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <a href="/insights" class="nav-link">Insights</a>
  
  <a href="/sled-delivery-partner" class="nav-link">SLED</a>
- <a href="#" class="nav-link">More</a>
+ <a href="/insights" class="nav-link">Insights</a>
  </div>
  <div class="nav-actions">
  <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme">
@@ -197,7 +197,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <a href="/insights">Insights</a>
 
 <a href="/sled-delivery-partner">SLED</a>
-<a href="#">More</a>
+<a href="/insights">Insights</a>
  <a href="/contact" class="btn btn-glow" style="margin-top:12px;">Contact Us</a>
  </div>
 
@@ -220,7 +220,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <a href="/contact" class="btn btn-ghost">Contact Us</a>
  </div>
  <div class="nf-links">
- <h4>Popular destinations</h4>
+ <h2>Popular destinations</h2>
  <ul>
  <li><a href="/services">Services</a></li>
  <li><a href="/insights">Insights</a></li>
@@ -254,7 +254,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  </a>
  </div>
  <nav class="footer-col" aria-label="Quick links">
- <h4>Quick Links</h4>
+ <div class="footer-col-title">Quick Links</div>
  <ul>
  <li><a href="/#about">About Us</a></li>
  <li><a href="/services">Services</a></li>
@@ -267,7 +267,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  </ul>
  </nav>
  <nav class="footer-col" aria-label="Services">
- <h4>Services</h4>
+ <div class="footer-col-title">Services</div>
  <ul>
  <li><a href="/services#custom-software-development">Custom Software Development</a></li>
  <li><a href="/services#cyber-security-data">Cyber Security &amp; Data</a></li>
@@ -276,7 +276,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  </ul>
  </nav>
  <nav class="footer-col" aria-label="Social links">
- <h4>Follow Us</h4>
+ <div class="footer-col-title">Follow Us</div>
  <ul>
  <li><a href="https://www.instagram.com/croncoreglobal/" rel="noopener noreferrer" target="_blank">Instagram</a></li>
  <li><a href="https://x.com/croncore_" rel="noopener noreferrer" target="_blank">Twitter / X</a></li>
@@ -287,19 +287,19 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  </div>
  <div class="footer-addresses">
  <div class="footer-address">
- <h5><img src="https://flagcdn.com/w20/sa.png" alt="Saudi Arabia Flag" width="20" height="15"> Saudi Arabia</h5>
+ <div class="footer-address-title"><img src="https://flagcdn.com/w20/sa.png" alt="Saudi Arabia Flag" width="20" height="15"> Saudi Arabia</div>
  <p>Prince Turki Bin Abdulaziz Al Awal Road,<br>Al Raed, Riyadh 12354</p>
  </div>
  <div class="footer-address">
- <h5><img src="https://flagcdn.com/w20/pk.png" alt="Pakistan Flag" width="20" height="15"> Pakistan</h5>
+ <div class="footer-address-title"><img src="https://flagcdn.com/w20/pk.png" alt="Pakistan Flag" width="20" height="15"> Pakistan</div>
  <p>Street 36 Silk Bank Plaza Lower Basement<br>WorkZone, Islamabad</p>
  </div>
  <div class="footer-address">
- <h5><img src="https://flagcdn.com/w20/gb.png" alt="United Kingdom Flag" width="20" height="15"> United Kingdom</h5>
+ <div class="footer-address-title"><img src="https://flagcdn.com/w20/gb.png" alt="United Kingdom Flag" width="20" height="15"> United Kingdom</div>
  <p>Office 63, Billingsgate Market,<br>London E14 5ST</p>
  </div>
  <div class="footer-address">
- <h5><img src="https://flagcdn.com/w20/us.png" alt="USA Flag" width="20" height="15"> USA</h5>
+ <div class="footer-address-title"><img src="https://flagcdn.com/w20/us.png" alt="USA Flag" width="20" height="15"> USA</div>
  <p>1111B S Governors Ave # 28375<br>Dover, DE 19904</p>
  </div>
  </div>
@@ -317,7 +317,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  </div>
 
  <!-- JavaScript -->
- <script src="/js/main.js?v=18"></script>
+ <script src="/js/main.js?v=19"></script>
 <script defer src="js/consent.js?v=1"></script>
 </body>
 </html>
