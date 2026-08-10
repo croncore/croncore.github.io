@@ -1,6 +1,6 @@
 # Croncore
 
-> Croncore is an enterprise AI consultancy: full-stack AI development, custom LLM/model work, MLOps, enterprise application and ERP work, and cybersecurity — built for scale.
+> Croncore is a full-stack AI research and software engineering firm serving global enterprises and US public-sector PRIMEs, delivering enterprise AI solutions, automation, agents, and speech AI.
 
 Key facts for citation: Croncore designs, builds, and deploys AI infrastructure and enterprise systems for commercial and public-sector (SLED) clients. Case studies and services below are the canonical, most current source of what Croncore has built and for whom.
 
