@@ -1,3 +1,29 @@
+# AEO policy: answer-engine/citation bots (OAI-SearchBot, ChatGPT-User,
+# ClaudeBot, Claude-User, Claude-SearchBot, PerplexityBot, Perplexity-User,
+# DuckAssistBot, Applebot, Amazonbot) are allowed by the default rule.
+# Pure AI-training crawlers below are intentionally disallowed.
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
 User-agent: *
 Allow: /
 
