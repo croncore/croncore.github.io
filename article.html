@@ -13,7 +13,10 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <!-- Primary SEO (populated dynamically from Sanity in the script below) -->
  <title id="page-title">Insights, Croncore</title>
  <meta name="description" id="page-description" content="Expert insights on AI, automation, and business scaling from the Croncore team.">
- <meta name="robots" id="page-robots" content="index, follow">
+ <!-- Legacy shell page: /article is 301-redirected in _redirects; noindex is a
+      safety net for direct hits. Generated /insights/<slug> pages get their own
+      robots meta from scripts/generate-insights.js (this block is replaced). -->
+ <meta name="robots" id="page-robots" content="noindex, nofollow">
  <meta name="author" id="page-author" content="Croncore">
  <link rel="canonical" id="page-canonical" href="https://www.croncore.com/insights">
 
