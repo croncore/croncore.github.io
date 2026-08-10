@@ -9,6 +9,13 @@
 # Slugs without a pre-rendered file fall through to the 404 rule at the bottom.
 
 # ---------- Legacy URL redirects (301) ----------
+# Bare /article (legacy shell page, served raw placeholders) -> /insights hub.
+# The /article/* splat below does NOT match the bare path, so both are needed.
+/article  /insights  301
+
+# The subservice boilerplate is not a real page — never serve it.
+/services/_template  /services  301
+
 # Old /article/<slug> URLs -> /insights/<slug>
 /article/*  /insights/:splat  301
 
