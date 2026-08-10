@@ -1,0 +1,593 @@
+# Croncore — Full Site Reference
+
+> Croncore is a full-stack AI research and software engineering firm serving global enterprises and US public-sector PRIMEs, delivering enterprise AI solutions, automation, agents, and speech AI.
+
+This file contains a condensed, citation-ready version of every page on www.croncore.com, grouped by section. Facts, metrics, and client names below are taken directly from the live pages. Shorter index: https://www.croncore.com/llms.txt
+
+
+## Company
+
+### [Croncore — Enterprise AI Solutions](https://www.croncore.com/)
+
+Homepage of Croncore, a full-stack AI research and software engineering firm (founded 2024, 50+ employees, Delaware-registered LLC) serving global enterprises and US public-sector primes. It presents four service disciplines — Custom Software Development, Cyber Security & Data, AI Agents & Automations, and ERP & Enterprise Platforms — plus a SLED pre-bid support offering for US public-sector primes.
+
+- Client case studies featured: Bezninja (autonomous sales agent), Bloomlink (sovereign Mongolian voice engine), Edumersion (EdTech platform), Oracle Merchant Services (AI voice agent), plus SLED wins like Macomb Community College and South Platte Renew
+- Stats cited: 50+ enterprise deployments, 20+ active projects, 50+ satisfied clients, 12M+ AI-powered decisions, 99.9% uptime SLA, Clutch 5.0 rating (15 reviews)
+- Testimonials from Bezninja leadership, Bloomlink CEO Otgonkhuu Amsarvaa, the Edumersion founder, and Oracle Merchant Services' Director of Operations
+- Recognition: Clutch Top Ranked, Web Summit Impact Startup of the Year, BRICS and SCO Young Leaders Award, The News International coverage
+- Offices listed in Riyadh, Islamabad, London, and Dover, Delaware
+
+### [Services — Full-Stack AI Built for Scale](https://www.croncore.com/services)
+
+Services hub organizing Croncore's work into four disciplines: Custom Software Development (web & SaaS, enterprise applications, API development & integrations, cloud-native & DevOps), Cyber Security & Data (security assessments & pen testing, managed security & SOC, zero trust & identity, data engineering & analytics), AI Agents & Automations (16 sub-services including enterprise AI agents, sales & CRM chatbots, custom LLM training, model fine-tuning, speech AI, MLOps, monitoring, and AI cost optimization), and ERP & Enterprise Platforms (ERP implementation, Salesforce & ServiceNow, platform customization, migrations & modernization).
+
+- Stats: 50%+ average efficiency gain, working prototype in 2 weeks, 4 core disciplines
+- Four-step process: discovery call, technical scoping, rapid prototype within 2 weeks, build & deploy in 2-week sprints
+- Practices cited: SOC 2-aligned, model-agnostic (no vendor lock-in), air-gapped options for sensitive workloads, weekly demos, post-launch drift monitoring
+- Experience logos: BenzNinja, Microsoft for Startups, Web Summit, Kuwait Ports Authority, Sabzland, Leap, BloomLink
+
+### [Case Studies](https://www.croncore.com/case-studies)
+
+Hub listing Croncore's 15 case studies across commercial AI and public-sector proposal support. Commercial entries: Bezninja (autonomous sales agent driving revenue growth), Bloomlink (sovereign voice engine for Mongolia — low-latency, on-region speech stack for telecom), a ground-up digital learning platform with adaptive AI tutoring, and Oracle Merchant Services (custom AI voice agent closing the speed-to-lead gap).
+
+- 11 SLED government pursuits where Croncore built the winning RFP/RFQ/ITB/IFB response behind a US prime: Derby downtown lighting, Macomb Community College AV equipment, South Platte Renew website, Pitkin County airfield maintenance, Rochester City School District K-12 ERP, Boulder Valley firewall ITB, Kansas City Kansas Public Schools data dashboard, Tiburon sea level rise adaptation, Town of Amherst comprehensive plan, UT Arlington 6G network GPUs, and Summerville ADA sidewalk design
+- Sectors covered: sales automation, voice AI/telecom, EdTech, financial services, K-12 and higher education, municipal public works, and climate adaptation
+
+### [Insights & Perspectives](https://www.croncore.com/insights)
+
+Croncore's article hub covering AI, automation, and enterprise technology. Content is pre-rendered at build time from a Sanity CMS backend so articles are crawlable without JavaScript.
+
+- "SLED Pre-Bid Support for US Primes" (Jul 23, 2026) — on state, local, and education procurement, the largest non-federal buying market in the US
+- "AI Integration Services: The Complete 2026 Guide" (May 2, 2026) — costs, use cases, and how to choose a partner; argues enterprises have an AI integration problem, not an AI problem
+- "IT Staff Augmentation Services: Scale Your Tech Team in 2026" (May 1, 2026) — bridging skill gaps and reducing overhead with augmented tech talent
+
+### [Newsroom](https://www.croncore.com/newsroom)
+
+Company announcements filtered by Product, Partnerships, Company, Awards, and Events. The featured story is Croncore's launch of Mongolia's first sovereign voice AI for the Khalkha language (April 28, 2026) — a national-scale, in-country STT/TTS engine deployed entirely on Mongolian infrastructure with zero cross-border data flow.
+
+- Partnerships: multi-year enterprise AI partnership with a leading Saudi telecom (Apr 2026); joined NVIDIA Inception for low-latency agent serving (Feb 2026)
+- Product: sub-200ms-latency speech inference stack shipped to production (Apr 2026); air-gapped on-prem AI profile for regulated financial environments (Feb 2026); enterprise agent SDK early access (Jan 2026)
+- Company: new Riyadh engineering hub for GCC demand across Saudi Arabia, UAE, and Kuwait (Mar 2026); crossed 50+ enterprise deployments across MENA, EU, and Central Asia (Jan 2026)
+- Awards/Events: "Best Sovereign AI Solution" at MENA Tech Summit 2026; CTO keynote at Web Summit 2026 on regulated AI
+
+### [SLED Delivery Partner for US Primes](https://www.croncore.com/sled-delivery-partner)
+
+Croncore works behind US prime contractors' brands as a remote pre-bid support partner on state, local, and education (SLED) solicitations, turning opportunities into compliant, submission-ready bids. Six disciplines: bid strategy & win themes, proposal writing & review, compliance assurance, cost proposal support, timeline & project planning, and submission readiness, delivered through a five-step teaming process where the prime reviews, approves, and submits.
+
+- Supports RFI, RFQ, RFP, Sources Sought, and IFB across IT & software, cybersecurity, AI/ML, web development, IT support, and public works
+- Compliance posture: NDA and teaming-agreement ready, NIST 800-171-aware handling, CMMC Level 2 fluent, Section 508 / WCAG 2.1 AA accessible documents, FERPA and CJIS aware
+- 48-hour turnaround: fit assessment, draft technical approach, and indicative pricing; nameable in the proposal within 48 hours
+- US-registered entity (Croncore LLC) with a remote delivery team on US-aligned hours; can also support post-award delivery
+- Includes 11 SLED case studies and a prime-contractor FAQ; explicitly does not guarantee wins
+
+### [SLED Case Studies](https://www.croncore.com/sled-case-studies)
+
+Proof page for Croncore's government proposal support: 11 real state, local, and education solicitations where Croncore built the RFP, RFQ, ITB, or IFB response behind a US prime contractor.
+
+- Pursuits: Derby downtown lighting RFP (methodology-weighted), Pitkin County airfield maintenance (time-critical closure with cost models), Rochester City School District K-12 ERP, Boulder Valley School District firewall ITB (price-dominant), Kansas City Kansas Public Schools data dashboard, Tiburon sea level rise adaptation, Town of Amherst comprehensive plan RFQ, UT Arlington 6G network GPUs IFB, Summerville Boone Street ADA sidewalk, Macomb Community College AV equipment RFQ, and South Platte Renew municipal website RFP
+- Sectors: K-12 education, higher education, municipal public works, water utilities, county government
+- States represented: Colorado, New York, California, Texas, Kansas, South Carolina, Michigan
+- Capabilities: AI and data analytics, cybersecurity, ERP/CRM systems, EdTech platforms, civil infrastructure, AV/IT equipment procurement; capability statements ready within 48 hours of a prime's intake call
+
+### [AI Consulting Services](https://www.croncore.com/ai-consulting-services)
+
+End-to-end AI consulting and development for enterprises, structured as three engagement models: AI Consulting (readiness assessment, use-case prioritisation, architecture & data strategy, adoption roadmap), AI Development (model training & fine-tuning, RAG & LLM integration, MLOps & deployment, API integration), and Custom AI Solutions (autonomous agents, domain-specific LLMs, voice & multilingual AI).
+
+- Nine expertise areas: machine learning, NLP, generative AI, large language models, Model Context Protocol (MCP) agent orchestration, data management & governance, computer vision, deep learning, and speech & voice AI including sovereign/low-resource languages
+- Track record cited: 50+ enterprise deployments, 200+ businesses served, 99% client satisfaction, 12M+ AI-powered decisions; Clutch 5.0 and Trustpilot 5.0 ratings; Microsoft for Startups and Web Summit partnerships
+- Industries: FinTech, healthcare (HIPAA-compliant), education, telecom & call centers, retail & e-commerce, government & public sector
+- Model-agnostic stack: OpenAI, Anthropic, Google Gemini, Meta Llama, Azure, AWS Bedrock, Mistral, Hugging Face, LangChain, LlamaIndex, Pinecone, PyTorch, TensorFlow, Whisper
+- Four-step process from discovery call to production, with a working prototype in 2 weeks
+
+### [Contact Sales](https://www.croncore.com/contact)
+
+Contact page for reaching Croncore's sales team about enterprise AI, generative AI, conversational agents, and workflow automation engagements. The form collects full name, email, industry, country, and an enquiry message; SLED-referred visitors get a service selector including AI Agents & Automations, Custom Software Development, Cyber Security & Data, ERP & Enterprise Platforms, EdTech AI Platforms, Data Sovereignty & On-Premise AI, and SLED Procurement Support.
+
+- A WhatsApp contact line (+1 603 999 1544) is available site-wide
+- Office addresses listed: Riyadh (Saudi Arabia), Islamabad (Pakistan), London (UK), and Dover, Delaware (USA)
+- The page states submitted information is used only to contact prospects about relevant content, products, and services, per the privacy policy
+
+
+## Services
+
+### [Web & SaaS Application Development](https://www.croncore.com/services/web-saas-applications)
+
+Croncore builds web and SaaS platforms on React, Next.js, and Node.js with Postgres and AWS or Azure infrastructure. Capabilities include multi-tenant architecture, Stripe-powered subscriptions and billing, SSO/MFA authentication with role-based access control, and built-in product analytics and audit logs.
+
+- Offerings: B2B SaaS product development, startup MVPs, customer portals and client dashboards, internal tools, legacy modernization (PHP/.NET/jQuery-era systems), and API development.
+- Published pricing: SaaS MVP $15,000–$60,000; mid-tier platform $60,000–$150,000; enterprise SaaS from $150,000, quoted fixed after discovery.
+- Timelines: MVP in 6–12 weeks; medium-complexity apps 3–6 months; enterprise platforms 6–12 months, delivered in two-week sprints with working demos.
+- Post-launch guidance: budget 15–25% of build cost per year for maintenance; clients own all code, IP, repositories, and cloud accounts.
+
+### [Enterprise Application Development](https://www.croncore.com/services/enterprise-application-development)
+
+Croncore builds mission-critical enterprise systems in .NET (C#), Java/Spring, and Python, engineered for heavy transaction volume (10M+ transactions/day targets), data integrity with audit trails and reconciliation, and SOC 2 / ISO 27001 aligned security controls.
+
+- System categories: custom ERP and operations systems, workflow and approval automation, logistics/inventory/supply chain software, billing and financial transaction systems, BI dashboards, and legacy replacement (VB6, Access, unsupported ERP modules).
+- Published pricing: departmental tools $50,000–$150,000; mid-market systems $150,000–$400,000; large mission-critical platforms $400,000 to over $1 million (industry average cited around $130,000).
+- Timelines: departmental tools 3–5 months; mid-scale 6–9 months; large platforms 12–24 months in phased rollouts with parallel-run legacy migration.
+- Hidden costs itemized on-page: training 15–20% of build, integration maintenance 20–30% per year, SOC 2 certification $30,000–$100,000+, annual maintenance 15–25% of build.
+- Clients own source code, documentation, infrastructure accounts, and credentials from the first commit.
+
+### [API Development & Integrations](https://www.croncore.com/services/api-development-integrations)
+
+Croncore designs REST, GraphQL, and event-driven APIs (webhooks, Kafka, SQS) and system integrations, citing 200+ integrations shipped. Work spans CRM and sales stacks (Salesforce, HubSpot, Pipedrive), ERP and finance (SAP, NetSuite, QuickBooks, Xero), ecommerce and payments (Shopify, WooCommerce, Stripe), legacy/EDI systems (mainframes, AS/400), and partner-facing public APIs with OAuth2, rate limiting, and usage metering.
+
+- Builds MCP servers and agent-ready API layers so AI agents can act on company systems with scoped permissions and audit logs.
+- Published pricing: one-way sync $2,000–$5,000; two-way integration $8,000–$25,000; legacy or compliance-heavy work $30,000–$80,000+; custom APIs from about $15,000.
+- Timelines: single integration 1–3 weeks; multi-system two-way sync 4–8 weeks; full integration layer or partner API product 2–4 months.
+- Ongoing maintenance guidance: roughly 10–20% of build cost per year; every integration ships with health dashboards, failure alerting, and dead-letter queues.
+- Clients own all integration code, credentials, and documentation.
+
+### [Cloud Native Development & DevOps](https://www.croncore.com/services/cloud-native-devops)
+
+Croncore builds cloud-native infrastructure on AWS and Azure: Docker containers orchestrated with Kubernetes (EKS, AKS, GKE), Terraform infrastructure-as-code, CI/CD pipelines, observability, and least-privilege IAM with cost controls.
+
+- Engagement types: phased cloud migration with rollback plans, DevOps-as-a-service on monthly retainer, cloud cost rescue/FinOps audits, internal developer platforms with preview environments, SRE and disaster recovery, and AI/ML infrastructure (GPU workloads, vector databases, model serving).
+- Published migration pricing: 10–20 workloads $50,000–$150,000; 50–100 workloads $150,000–$350,000; enterprise programs over $500,000.
+- Cost optimization engagements typically cut 20–40% of monthly cloud spend via rightsizing, reservation coverage, and egress fixes; the page cites industry data that about 29% of cloud spend is wasted.
+- States honest migration economics: year one typically runs 40–80% above baseline, with breakeven at 24–36 months; on-premise can win at 60–70%+ steady utilization.
+- Clients own cloud accounts, Terraform code, and pipeline configs.
+
+### [Security Assessments & Penetration Testing](https://www.croncore.com/services/security-assessments-pen-testing)
+
+Croncore runs manual, goal-driven penetration tests covering the OWASP Top 10 and API Top 10, cloud configuration audits (AWS/Azure IAM, exposed storage, secrets hygiene), vulnerability assessments, and phishing/social engineering. Engagements include a 48-hour critical-finding SLA and a free retest after remediation.
+
+- Engagement drivers: compliance evidence for SOC 2, ISO 27001, PCI DSS, HIPAA; enterprise deal security reviews; pre-launch product testing; M&A due diligence; and AI/LLM application testing against the OWASP Top 10 for LLM applications (prompt injection, jailbreaks, data leakage).
+- Published pricing: web app test $5,000–$15,000; API testing $5,000–$20,000; SOC 2-scoped engagements $8,000–$25,000 (market average cited ~$18,000); red team exercises $50,000+.
+- States a genuine manual test takes 40–80 skilled human hours; quotes under ~$3,000 are usually scanner output.
+- Timeline: scoped web app test 1–2 weeks; multi-app/cloud scopes 3–4 weeks; grey box recommended as the default method.
+- Reports include an executive summary plus technical findings with proof-of-concept and reproduction steps, briefed live.
+
+### [Managed Security & SOC Services](https://www.croncore.com/services/managed-security-soc)
+
+Croncore operates a 24/7 managed SOC: tuned SIEM with threat intelligence, endpoint detection and response (EDR/MDR), proactive threat hunting, and incident response with a sub-15-minute triage SLA. The service runs a full SOC model with MDR-style active response under pre-agreed containment authority — isolating endpoints, disabling hijacked accounts, and blocking attacker infrastructure within client-defined rules of engagement.
+
+- Common triggers: post-incident hardening, cyber insurance requirements, ransomware defense for mid-market fleets, Microsoft 365 / cloud identity monitoring (BEC, MFA fatigue, OAuth abuse), and monitoring production SaaS platforms.
+- Published pricing: $15–$30 per endpoint per month; 100–500 endpoint environments typically $6,000–$18,000 per month, flat and all-inclusive for a defined scope.
+- Build-vs-buy math on page: an in-house 24/7 SOC needs 5+ analysts (~$180,000 each fully loaded) plus $1M+ in tooling; managed onboarding takes 2–6 weeks.
+- Cites typical cyber insurance premium reductions of 15–30% with managed SOC coverage.
+
+### [Zero Trust Security & IAM](https://www.croncore.com/services/zero-trust-identity)
+
+Croncore designs zero trust access architecture: SSO across cloud and internal apps with Okta, Microsoft Entra ID, or Auth0; phishing-resistant MFA and passwordless auth (passkeys, FIDO2); automated joiner-mover-leaver lifecycle from the HR system outward; just-in-time privileged access; and customer identity (CIAM) for SaaS products.
+
+- Project drivers covered: VPN/flat-network replacement, offboarding gaps, cyber insurance and SOC 2/ISO 27001 mandates, post-merger identity consolidation, and governing non-human identities — service accounts, API keys, and AI agents — with scoped permissions and short-lived credentials.
+- Published pricing: platform licensing $2–$17 per user/month (Okta suites $6–$17, Entra $6–$12); implementation typically $15,000–$60,000 for mid-size rollouts.
+- Documents the "SSO tax": SaaS vendors charging 15–100%+ more per user for SSO tiers; Croncore inventories per-app upgrade costs before commitment.
+- Decision rule stated: 70%+ Microsoft-centric app stacks typically get 35–40% better value from Entra; heterogeneous stacks favor Okta.
+- Cites typical identity project payback of 10–14 months.
+
+### [Data Engineering, BI & Analytics](https://www.croncore.com/services/data-engineering-analytics)
+
+Croncore builds data platforms end to end: ETL/ELT pipelines with dbt and Airflow, cloud warehouses on Snowflake, BigQuery, and Redshift, documented data models, quality testing and lineage, streaming pipelines, and Power BI / Tableau dashboards designed around specific business decisions.
+
+- Engagement types: replacing manual spreadsheet reporting, reconciling conflicting reports into a single source of truth, AI-ready data foundations (governed, tested data for agents and retrieval systems), real-time operational dashboards, warehouse cost audits, and embedded analytics inside SaaS products.
+- Published pricing: focused pipeline project (2–3 sources plus core dashboards) $15,000–$30,000; full mid-market platform $70,000–$200,000.
+- Timelines: first pipelines and a working dashboard in 4–8 weeks; complete mid-market platform in 3–6 months.
+- Monthly run costs stated: a few hundred dollars for small setups, $1,000–$10,000 for mid-size, with cost monitors and auto-suspend designed in.
+- Offers a fractional model as an alternative to a $400,000–$800,000/year in-house data team; clients own all repositories and cloud accounts.
+
+### [Enterprise AI Agents](https://www.croncore.com/services/enterprise-ai-agents)
+
+Croncore builds autonomous AI agents that plan multi-step work, act across CRMs, ERPs, ticketing tools, and internal APIs, and self-correct — with connectors for Salesforce, HubSpot, Slack, Jira, SAP, Zendesk, Postgres, and any REST/GraphQL endpoint. Every deployment includes guardrails (approval gates, write-action allowlists, audit trails), long-running memory, multi-agent orchestration, and built-in observability with drift detection.
+
+- Deployment areas: customer support agents that resolve tickets end to end, back-office document workflows, sales/revenue operations, agents operating internal systems, regulated-industry builds with replayable decision logs, and data-grounded agents.
+- Process: workflow mapping, architecture spec, two-week shadow-mode pilot against real traffic measuring accuracy and cost per task, then phased rollout with kill switches; most engagements ship a production agent in 6–8 weeks.
+- Published pricing: single-workflow agent $15,000–$75,000; most mid-market deployments $25,000–$120,000; multi-agent systems $100,000–$500,000+. Running costs typically $3,000–$13,000/month.
+- Cites MIT research that 95% of enterprise AI pilots deliver no measurable return, and positions its process against that failure pattern.
+
+### [Sales & CRM Chatbots](https://www.croncore.com/services/sales-crm-chatbots)
+
+Croncore builds AI sales chatbots that qualify leads against BANT, MEDDIC, or custom frameworks, handle objections, book meetings via Google, Outlook, HubSpot, and Calendly calendars, and write to Salesforce, HubSpot, Pipedrive, and Zoho CRMs with bidirectional field-level sync. One conversation brain runs across web chat, WhatsApp, SMS, email, and Messenger with unified per-contact history and instant escalation of hot leads to reps with full context.
+
+- Funnel problems addressed: after-hours lead response (cites research that one-minute response makes leads 391% more likely to convert), form abandonment (conversational funnels cited at ~2.4x static form conversion), cart/quote recovery, and SDR triage overload.
+- Published pricing: single-channel custom build $10,000–$30,000; multi-channel with deep CRM logic $30,000–$75,000; platform bots $100–$2,500+/month acknowledged as sufficient for simple cases.
+- Run cost stated at roughly $0.50–$0.70 per bot-handled conversation versus $5–$15 for a human-handled tier-one interaction.
+- Typical launch in 4–6 weeks; payback benchmarks of 3–6 months; clients own the bot, prompts, and all conversation data.
+
+### [Operations Automation & AI Workflows](https://www.croncore.com/services/operations-automation)
+
+Croncore deploys AI agents for internal operations: ticket triage and routing, invoice extraction and approval flows, internal helpdesk Q&A in Slack/Teams with citations from policies and runbooks, cross-system data reconciliation, scheduled runbooks (onboarding, offboarding, month-end close), and anomaly escalation. Headline stats: 60%+ of tickets resolved without humans and 100% audit trail coverage.
+
+- Positions agents as complements to existing RPA — handling the exception pile, format changes, and judgment calls bots escalate — citing that RPA maintenance consumes 60–75% of typical RPA budgets.
+- Process: workflow audit measuring volume, time per step, and error rates; ROI-ranked build order; two-week shadow-mode pilot measuring human-agent agreement before autonomy; phased production with kill switches.
+- Published pricing: single workflow $8,000–$30,000; complex multi-system workflows $30,000–$60,000+; entry-level from $5,000–$8,000. Monthly run cost typically hundreds to low thousands per workflow.
+- States a realistic automation target of 60–80% of volume for a well-chosen workflow, with exceptions deliberately routed to humans; clients own all workflow definitions, prompts, and audit data.
+
+### [Process & Document AI](https://www.croncore.com/services/process-document-ai)
+
+Croncore builds document AI systems that ingest contracts, invoices, forms, PDFs, scans, and email attachments, extract fields (including tables, signatures, and handwriting), validate against business rules, and route results to ERPs, CRMs, or human reviewers by confidence score — with full provenance logging. Headline stats: 95%+ extraction accuracy and 80% of manual review eliminated.
+
+- Use cases: accounts payable automation (cites benchmark of $2.78 vs $12.88 per invoice processed), contract clause analysis with deviation flagging, claims/KYC/onboarding packet verification, legacy archive digitization (handwriting recognition cited at ~95% with modern multimodal models), RAG-based document Q&A with cited answers, and logistics/trade paperwork ($25–$40 per document manual cost cited).
+- Published pricing: single document type pipeline $15,000–$40,000; multi-type builds with cross-document validation $40,000–$100,000+.
+- Run cost stated at $0.10–$1.00 per document versus $5–$25 manual; single-type pipelines go live in 3–6 weeks with a mandatory parallel run.
+- Handles multilingual and low-resource-language documents natively; human-in-the-loop corrections continually retrain the system, which the client owns.
+
+### [GDPR Compliant AI Systems](https://www.croncore.com/services/gdpr-compliant-ai-systems)
+
+Croncore engineers AI systems for GDPR compliance from the first design review: EU/UK data residency for inference, training, and storage; consent-gated model behavior; right-to-erasure paths that propagate through training data, embeddings, and caches; DPIA-ready documentation; PII redaction at ingestion; and an auditable inference trail logging every decision with input, model version, output, and lawful basis.
+
+- Engagement types: AI products serving EU customer data, EU AI Act Annex III high-risk systems (hiring, credit, education, biometrics), architectures where data cannot leave the country (paired with on-premise/sovereign AI), shadow-AI cleanup via a governed internal AI gateway, compliance retrofits of shipped systems, and EdTech systems touching minors.
+- Cites AI Act fine tiers up to €35M/7% of turnover for prohibited practices and €15M/3% for high-risk violations, with GDPR fines stacking separately.
+- States a 20–40% build premium for compliance engineered in from day one, and ongoing high-risk compliance benchmarks of roughly €30,000–€50,000 per year.
+- Covers provider-vs-deployer classification under the AI Act and treats August 2, 2026 as the operative enforcement date.
+
+### [EdTech AI Platforms](https://www.croncore.com/services/edtech-ai-platforms)
+
+Croncore builds education AI for EdTech products, publishers, and ministry-scale platforms: adaptive conversational tutors that stay inside the curriculum's scope, rubric-aware automated grading with rationales teachers can defend, standards-pinned content generation, learning analytics with intervention signals, multilingual curriculum-aware models, and speech-based reading and oral assessment tuned for young and accented voices.
+
+- Student data protection is FERPA, COPPA, and GDPR aligned by default: no model training on student data, full erasure paths, and school-reviewable audit trails.
+- Cites evidence for well-designed AI tutoring: a 2025 Harvard randomized trial with effect sizes of 0.73–1.3 standard deviations and World Bank trials measuring gains equivalent to 1–2 years of schooling.
+- Anti-dependence design: tutors require a student attempt before helping, reveal one step at a time, and give teachers per-class control over help levels, with dashboards exposing overreliance.
+- Published pricing: single feature (one-subject tutor or one assessment type grader) $20,000–$60,000; full adaptive platforms $60,000–$200,000+.
+- Timelines: supervised pilot in 6–10 weeks; full platforms 3–6 months; clients own tuned models, generated content, and analytics.
+
+### [Data Sovereignty & On-Premise AI](https://www.croncore.com/services/data-sovereignty-on-premise-ai)
+
+Croncore builds AI systems that run entirely on client-owned infrastructure for governments, defense, regulated finance, healthcare, and enterprises de-risking from foreign providers. The full stack — model serving, vector store, orchestration — deploys on bare metal or private cloud with no external dependencies, including fully offline air-gapped operation with model updates delivered as signed bundles.
+
+The page states plainly that on-premise rarely beats cloud APIs on cost below roughly 100M tokens/month; the crossover for 60-85% inference savings sits around 500M-1B tokens/month of sustained load.
+
+- Capabilities: air-gapped operation, in-country data residency, HSM-backed key management, sovereign open-weight models, regulator-ready audit logging of every prompt and response
+- Four-stage process: threat/sovereignty modeling, sovereign architecture, cleared-site deployment (engineers work under NDAs, citizenship, and clearance protocols), operational handover to client operators
+- Build cost cited at $60,000-$200,000+ for architecture, hardening, integration, and compliance documentation; national/classified scopes run higher
+- Supports hybrid designs: sensitive workloads local, hard queries routed to approved frontier models through a governed gateway
+- Works with open-weight models (Llama, Mistral, Qwen, DeepSeek) tuned for the client's domain
+
+### [Regulatory AI Consulting](https://www.croncore.com/services/regulatory-ai-consulting)
+
+Croncore advises legal, risk, and engineering leaders on getting AI systems through governance: EU AI Act risk classification and conformity assessment support, SR 11-7 / NIST AI RMF-aligned model risk management, independent bias and fairness audits, AI governance frameworks, vendor and model risk reviews, and executive education. The team are engineers and risk practitioners (not a law firm) who ship working code alongside frameworks and participate in regulator briefings when needed.
+
+Engagements run from a four-week diagnostic to a six-month framework build, following a diagnostic → framework design → pilot on one real high-risk system → operationalize sequence.
+
+- Covers EU AI Act, NIST AI RMF, ISO 42001, SR 11-7, and US state laws (Colorado, NY)
+- Cites industry benchmarks: ~€30,000-€52,000/year ongoing compliance per high-risk system; conformity assessments €5,000-€50,000; ~85% of AI systems fall in the minimal-risk tier
+- ISO 42001 first-year certification cited at $85,000-$150,000 for smaller orgs, $180,000-$320,000 mid-market; existing ISO 27001 roughly halves cost and timeline
+- Quotes Deloitte finding: 87% of executives claim governance frameworks, fewer than 25% have operationalized them
+
+### [Custom LLM Training](https://www.croncore.com/services/custom-llm-training)
+
+Croncore designs and trains custom LLMs end to end: dataset curation with synthetic data generation, distributed pretraining on H100/A100 clusters, continued pretraining for domain adaptation (legal, medical, financial, scientific), custom eval harness design, distillation, and sovereign deployment. Clients keep the weights, training data, eval harness, and tooling. Typical engagements run six to nine months; the page states most of that time goes to data work and eval design, not the training run itself.
+
+The page is explicit that most buyers should not pretrain from scratch — fine-tuning or continued pretraining (cited at under 1.5% of from-scratch cost per NVIDIA's chip-design research) usually wins — and scoping tells clients which of the three paths fits.
+
+- Routinely trains models from 1B to 70B parameters; 20+ languages shipped to production
+- Cost tiers cited: 7B from-scratch $50,000-$500,000 all-in; 70B $1.2M-$6M; data preparation typically 30-50% of total cost
+- Serves national/sovereign language model programs, regulated enterprises with proprietary corpora, model-as-product companies, and defense clients requiring documented data lineage
+- Eval harness is built and signed off before any GPU spins up, with mid-run checkpoints and early-stop authority
+
+### [Model Fine-Tuning](https://www.croncore.com/services/model-fine-tuning)
+
+Croncore fine-tunes frontier and open-source LLMs on client data using SFT, DPO, RLHF/RLAIF, and LoRA/adapter methods, with an eval harness built before tuning starts and shadow deployment against the baseline before promotion. Most engagements ship a model that beats baseline on client evals inside six weeks (2-6 weeks from eval design to deployed model).
+
+Use cases covered: locking in tone/format/JSON reliability, distilling frontier behavior into cheaper small models, domain vocabulary, tool-call accuracy for agents, per-customer LoRA adapters hot-swapped at serving time, and safety alignment for regulated deployment. The page warns that extensive fine-tuning can reclassify an organization from deployer to provider under the EU AI Act, assessed during scoping.
+
+- Base models: Llama, Mistral, Qwen, Gemma, Phi, DeepSeek (open); OpenAI and Anthropic where tuning APIs exist
+- Focused projects cited at $10,000-$40,000; complex behaviors, RLHF-grade alignment, or multi-adapter architectures $40,000-$80,000
+- Cites 12-month operational cost of 3-5x the initial training cost, with quarterly revalidation built into deployments
+- Cites fine-tuning as 10-50x cheaper per query than retrieval-heavy approaches past ~100,000 daily queries on stable tasks
+- Clients own tuned open-weight models outright
+
+### [Multilingual & Low-Resource AI](https://www.croncore.com/services/multilingual-low-resource-ai)
+
+Croncore builds production AI for languages big providers underserve, with 20+ languages shipped to production, including Mongolian at national-scale voice plus production work in Pashto, Urdu, Arabic dialects, Swahili, and South/Central Asian languages. The practice covers field data collection with native linguists, cross-lingual transfer, custom tokenizers for scripts like Cyrillic, Arabic, Devanagari, and Mongol bichig, native-speaker evaluation suites where no public benchmark exists, and in-country sovereign hosting.
+
+The page cites peer-reviewed research that ~1.5 billion people face 4-6x higher effective API costs from English-centric tokenizer fragmentation, and positions custom tokenization as the structural fix.
+
+- Language adaptation programs cited at $60,000-$250,000 and 4-8 months, with corpus construction as the dominant cost and time line; national-scale programs run into seven figures
+- Corpora built via broadcaster/university/government-archive partnerships, OCR of physical archives, broadcast transcription, and validated synthetic augmentation
+- Dialects and mid-sentence code-switching are trained and evaluated explicitly
+- Client owns corpus, tokenizer, weights, evals, and pipelines, held in the client's jurisdiction
+- Feeds EdTech tutoring, document AI for mixed-script paperwork, and voice interfaces in voice-first markets
+
+### [Speech AI](https://www.croncore.com/services/speech-ai)
+
+Croncore builds custom STT and TTS models tuned to a client's accents, industry vocabulary, and noise profile, targeting sub-500ms end-to-end streaming STT and sub-300ms first-byte TTS, with 95%+ word-level accuracy on dialect and 20+ voices and languages in production (including low-resource languages like Mongolian). Deployments include real-time voice agents with barge-in and turn-taking, call-center automation, branded TTS personas, consent-based voice cloning with watermarking, and on-premise inference on GPU or CPU.
+
+Engagements start with an audio audit of the client's real recordings, then data/annotation, training and latency tuning, and production serving monitored on word error rate and latency p95.
+
+- Cites AI-handled call cost of $0.30-$0.50 versus $6-$12 fully loaded for a human call; market voice-agent pricing $0.05-$1.00/minute
+- Custom STT adaptation cited at $25,000-$80,000; full production voice agent with custom STT, branded TTS, and integration $60,000-$150,000+
+- Honest containment benchmarks cited: 20-40% early, 40-70% mature, ~41% cross-industry average
+- Accuracy bar: under 8% WER on clean audio, under 15% on noisy/accented calls
+- Clients own tuned models, the branded voice, and their call recordings; voice work shares the agent architecture used in Croncore's enterprise AI agents
+
+### [Model Deployment & Serving](https://www.croncore.com/services/model-deployment-serving)
+
+Croncore deploys and serves AI models at production scale: low-latency inference via quantization, speculative decoding, and KV-cache optimization; active-active multi-region deployment; predictive autoscaling on queue depth and token throughput; dynamic model routing; edge/on-device serving; and canary/blue-green rollouts with tested rollback. Routine SLOs cited: 99.95% availability and sub-500ms p95 for LLM workloads.
+
+The process runs workload profiling, stack selection, load and chaos testing, then production cutover with SLOs and on-call playbooks. The page notes real teams sustain 40-65% GPU utilization and sizes capacity against measured workloads, not vendor sheets.
+
+- Stacks: vLLM, Triton, TGI, SGLang for LLMs; ONNX Runtime, TorchServe, BentoML for traditional ML — on AWS, GCP, Azure, Oracle, or bare metal (NVIDIA H100/A100/L40S, AMD MI300)
+- Cites 2026 anchors: H100-class GPUs ~$2.50-$3.50/hr on specialist clouds; one optimized H100 serves ~30-50 concurrent users on a 70B model; self-hosting beats APIs 60-85% above ~500M-1B tokens/month
+- Routing frontier models to only the hard 5-15% of queries cuts blended inference cost 60-80% in typical mixed workloads
+- Serving optimization alone (batching, quantization, speculative decoding) routinely lets the same GPUs carry 5-10x traffic
+- Handover includes runbooks and staffing guidance (0.5-1 FTE per production GPU cluster); stack is open and portable, owned by the client
+
+### [MLOps Pipelines](https://www.croncore.com/services/mlops-pipelines)
+
+Croncore builds MLOps pipelines covering dataset versioning (DVC, LakeFS), reproducible training orchestrated via Airflow, Argo, Kubeflow, or Prefect, experiment tracking with MLflow, Weights & Biases, or Neptune, eval-gated promotion in CI, drift-triggered automated retraining with rollback, and a model registry with full lineage. LLM-specific pipelines version prompts, adapters, retrieval indexes, and eval suites the same way.
+
+Engagements start with a stack audit and end with the client's team owning the pipeline after paired first cycles; the first end-to-end pipeline ships in 4-8 weeks. Pipelines terminate at deployment — eval-gated promotion into serving with canary rollout — not at a registry.
+
+- Focused engagements (usually eval gating or deploy automation) cited at $20,000-$60,000; full pipeline builds $60,000-$150,000
+- Cites industry data: 70-87% of ML models never reach production; drift detection cuts degradation discovery from 4+ months to ~9 days
+- Cites mature-MLOps outcomes: ~4x faster ML feature shipping, 28x faster degradation detection, 189-335% ROI over three years
+- Stack assembled from open components (MLflow, Airflow, DVC) in client infrastructure, designed for tool swappability
+- Tool-agnostic: also works with SageMaker, Vertex, Databricks, Dagster, Metaflow where they fit
+
+### [Monitoring & Observability](https://www.croncore.com/services/monitoring-observability)
+
+Croncore instruments production AI systems with drift detection (input, output, concept), continuous in-production quality scoring by sampling real traffic, hallucination tracking via citation grounding and factuality checks, latency/throughput SLOs with token-level breakdowns, per-request/per-customer/per-feature cost attribution, and composite alerts targeting sub-5-minute detection of regressions. Agentic systems get end-to-end replayable traces of every decision and tool call.
+
+The process: telemetry audit, OpenTelemetry-based instrumentation (usually a sidecar layer, no rewrite of the core path), dashboards and SLOs, then game-day drills with synthetic regressions. Captured signals feed back into retraining and eval pipelines.
+
+- Instrumenting one production AI system cited at $15,000-$40,000; full-stack coverage across systems $40,000-$90,000
+- Runtime overhead lands in the low single digits of inference spend via async capture and sampled evaluation
+- Tools: OpenTelemetry spine; Langfuse, Helicone, or Arize for LLM tracing; Whylogs/Evidently for drift; Prometheus/Grafana for metrics; integrates with Datadog
+- Quality measured without ground truth via LLM-as-judge with calibrated rubrics, embedding distance, user feedback, and human review of flagged samples
+- PII redaction at capture, encrypted storage, and in-perimeter telemetry where regulation requires; client owns all telemetry
+
+### [AI Cost Optimization](https://www.croncore.com/services/ai-cost-optimization)
+
+Croncore audits production AI systems and cuts LLM and GPU spend through semantic/prefix/KV caching, model routing tuned to the client's accuracy bar, prompt and context compaction verified against evals, batched/async inference (5-10x cheaper per token on most providers), GPU right-sizing, and a FinOps layer with per-feature cost dashboards and budgets. Most engagements take 30-60% off the inference bill in the first quarter, with every change A/B tested against quality.
+
+The engagement is a two-week cost audit with attribution by feature, customer, and request type, then ranked recommendations, paired implementation, and ongoing FinOps governance. Pricing is fixed-fee, sometimes partially structured against measured savings.
+
+- Names the five common leaks: uncached redundant computation, oversized models, token bloat, synchronous processing of batch-tolerant work, and idle GPU capacity
+- Lever order: caching first (days of work), then prompt compaction, model routing (usually the largest single line), batching, and last a distilled fine-tuned model
+- Cites IDC finding that large enterprises underestimate AI infrastructure costs by 30% through 2027; inference is ~80% of production AI spend
+- Flags two re-architecture crossovers: fine-tuned small models past ~100K daily requests on one task; self-hosting past ~0.5-1B tokens/month
+- Works on both closed-API and on-premise stacks
+
+### [ERP Implementation](https://www.croncore.com/services/erp-implementation)
+
+Croncore implements Microsoft Dynamics 365, NetSuite, and SAP with platform configuration across finance, supply chain, sales, and operations; validated data migration with reconciliation; process alignment before configuration; integrations to CRM, e-commerce, and BI; role-based training and change management; and post-go-live hypercare. Typical implementations run three to nine months, phased rather than big-bang, with fixed quotes after discovery.
+
+A significant share of the work is rescuing stalled implementations, starting with a two-week independent audit. The page cites industry data that roughly half of first-time implementations struggle while experienced-partner projects succeed at around 85%, and that only 26% of employees actively use their ERP after implementation — which is why adoption work is half of every engagement.
+
+- 2026 market cost ranges cited: $25,000-$150,000 small business, $150,000-$750,000 mid-market, $750,000-$5M+ enterprise; implementation typically 1.5-2x first-year software cost
+- License is only 20-30% of true ERP cost; internal key users spend 25-50% of their time on the project
+- Platform guidance: NetSuite for fast-growing mid-market, Dynamics 365 for Microsoft-centric orgs, SAP for complex enterprises
+- Clients keep all credentials with documentation written for future administrators; no partner lock-in
+
+### [Salesforce & ServiceNow Consulting](https://www.croncore.com/services/salesforce-servicenow)
+
+Croncore builds on both platforms: custom objects, Lightning components, Apex, and flows across Sales, Service, and Experience Cloud; ITSM, ITOM, and scoped custom apps on the Now Platform; workflow automation; two-way CRM-ERP sync for quote-to-cash; data migration and deduplication; and adoption programs. It also audits license tiers against actual usage — right-tiering seats and negotiating renewals — and takes over messy existing orgs, cleaning technical debt and rebuilding on maintainable foundations. Configuration-first, custom code only where it earns its keep.
+
+The page includes detailed Agentforce cost guidance: pilot on consumption credits with metering dashboards, convert to per-user pricing only when usage data justifies it.
+
+- Salesforce implementations cited at $15,000-$150,000 (30-user Sales Cloud typically $40,000-$60,000; multi-cloud mid-market $75,000-$150,000+); partner rates $100-$300/hr
+- Year 1 typically runs 40-80% above the license line (Premier Support ~30% of license cost, storage overages, admin salary $70,000-$120,000)
+- Agentforce specifics cited: $2/conversation applies to one model only; Flex Credits $500 per 100,000; interactions consume 100-1,000 credits each
+- Cites independent research of $8.71 returned per dollar invested in CRM, conditional on adoption
+- Clients hold all credentials with documented runbooks; any certified partner could take over the org
+
+### [Platform Customization & Extensions](https://www.croncore.com/services/platform-customization-extensions)
+
+Croncore builds custom modules, plugins, workflow customizations, bespoke UI and reports, and custom API connectors for Microsoft Dynamics 365, NetSuite, SAP, Salesforce, and ServiceNow — always on each vendor's supported extension frameworks (SAP Clean Core, Salesforce managed packages, Microsoft's extension model) so customizations survive platform upgrades. The practice also takes over orphaned customizations built by departed consultants: mapping, testing against supported extension points, and remediating or replacing them.
+
+A technical debt audit precedes any customization or upgrade project, and the page notes it routinely finds code that can simply be deleted.
+
+- Focused extensions (module, report suite, point integration) cited at $10,000-$40,000; larger custom applications $40,000-$120,000
+- Cites research that mature installs carry tens of thousands of custom objects with 40-60% of custom code technically unused
+- Major upgrades on heavily customized on-prem systems can consume 25-50% of original implementation cost; customized systems tend to become unmanageable within 5-7 years
+- Clean extension-based cores activate platform AI features (Copilot, Joule, Agentforce) without remediation; heavily modified systems consistently struggle
+- Every extension documented to auditor standard; client owns the customization entirely
+
+### [ERP Migrations & Modernization](https://www.croncore.com/services/migrations-modernization)
+
+Croncore migrates on-premise ERPs (Dynamics, SAP, legacy systems) to cloud platforms and modernizes aging applications incrementally, with zero data loss as a stated commitment: extract-clean-map-validate cycles with full reconciliation, dry runs before cutover, phased and parallel-run strategies for minimal downtime, integration rebuilds on the new platform, and tested rollback plans at every go-live. The methodology runs assess/plan, prepare/cleanse, migrate/validate, then phased cutover with hypercare.
+
+The page centers the SAP ECC 6.0 deadline: mainstream maintenance ends December 31, 2027, Compatibility Packs expired May 2026, and Gartner data shows only 39% of ECC customers had migrated by end of 2024 — with Brownfield, Greenfield, and Selective Data Transition paths compared explicitly.
+
+- Analyst cost estimates cited: SAP-scale enterprise migrations $2M to $1B at the extreme; most mid-size transformations land in the hundreds of thousands to low millions over 18-36 months
+- Data migration alone is routinely 15-30% of total budget and the most underestimated line
+- Phased modernization reaches positive ROI in 12-14 months versus 36-48 for a full rewrite
+- Migration treated as a chance to leave technical debt behind, not relocate it; client owns the destination from go-live
+
+
+## Case Studies
+
+### [Bloomlink: Sovereign Voice Engine for Mongolia](https://www.croncore.com/case-studies/sovereign-voice-engine-for-mongolia)
+
+Croncore built Bloomlink, a Mongolian telecommunications company, a self-hosted neural text-to-speech engine so it could avoid per-character cloud TTS billing, data-exposure risk, and the poor Mongolian-language quality of commercial voice engines. The system runs entirely on Bloomlink's own servers as a Docker-based stack with a RESTful API.
+
+- Neural voice engine handling Mongolian tonal nuance at human-grade quality
+- Telephony-optimized pipeline outputting Asterisk-compatible audio (1 channel, 8000Hz, 16-bit PCM WAV) for call centers and IVR
+- Custom linguistic pre-processor converting symbols and numbers to phonetic Mongolian; 100% phonetic accuracy on currency, dates, and percentages
+- $0 recurring per-transaction cost and no cloud provider rate limits; CRM integration with zero changes to existing tools
+- Client testimonial from Otgonkhuu Amsarvaa, CEO of Bloomlink
+
+### [Oracle Merchant Services: AI Voice Agent for Speed-to-Lead](https://www.croncore.com/case-studies/custom-ai-voice-agent-closes-the-speed-to-lead-gap)
+
+Croncore built Oracle Merchant Services (fintech / merchant services) a bespoke AI voice agent to close the speed-to-lead gap, replacing a manual cold-outreach and qualification bottleneck with automated outbound calling that stays on brand.
+
+- Voice cloning modeled on an actual employee's voice, plus NLU and CRM integration
+- Agent trained on the company's service offerings, industry terminology, and merchant pain points
+- Autonomous high-volume outbound calling with decision-maker identification and real-time lead qualification; only high-intent leads passed to human closers
+- Results reported: 10+ FTE-equivalent outreach without added headcount, zero lead decay (every new contact reached instantly), 100% brand-consistent pitch on every call
+
+### [Quebec EdTech: Ground-Up Digital Learning Platform](https://www.croncore.com/case-studies/architecting-a-ground-up-digital-learning-powerhouse)
+
+Croncore acted as founding technical partner for a Quebec-based EdTech startup, building a privacy-first learning platform and sovereign AI tutor from scratch under Quebec Law 25 and GDPR requirements, hosted on sovereign Azure (Canada Central) with a Next.js and Python stack.
+
+- Custom full-stack LMS with real-time student tracking and educator dashboards, built for high concurrency
+- Private custom LLM tutor trained on the client's curriculum and hosted in secure local environments so no student data leaves the ecosystem
+- Compliance by design: automated encryption and right-to-be-forgotten protocols for Law 25 and GDPR alignment
+- Adaptive learning engine that adjusts curriculum paths from student performance
+- Results reported: 5x enrollment growth after commercial launch, 45% increase in repeat module retention, zero third-party data leakage
+
+### [Bezninja: Autonomous AI Sales Agent](https://www.croncore.com/case-studies/autonomous-sales-agent-drives-record-revenue-growth)
+
+Croncore built Bezninja a custom AI sales agent to handle a flood of inbound leads that had outrun its manual sales process. The agent runs on Azure OpenAI (GPT-4o) with RAG and a vector database, and operates autonomously across the top and middle of the sales funnel.
+
+- Knowledge base built from Bezninja's sales history, product documentation, and closing scripts
+- Direct integration with lead generation sources and the CRM for instant action
+- Four weeks of persona and closing-logic fine-tuning to detect high-intent signals
+- Results reported: 100% lead response rate (every inquiry answered within seconds), 2x faster conversion from first contact to close, 500+ deals autoclosed without human handoff, record revenue growth after launch
+
+### [Derby Downtown Lighting RFP, Commerce City, CO](https://www.croncore.com/case-studies/derby-downtown-lighting-rfp)
+
+Croncore built the winning response to RFP PW 25 024 (Derby Downtown District Photometric Study & Lighting Plan, City of Commerce City, Colorado Public Works) on behalf of a U.S. prime contractor under NDA. The methodology-weighted best-value RFP covered a historic 130-property downtown district (64 commercial, 30 residential, 3 parks, 3 churches).
+
+- Scorecard: Methodology & Approach 45%, Qualifications & Experience 30%, Proposed Fee 25%
+- Compliance constraints: 25-page limit, 11pt font minimum, two-envelope technical/pricing split, mandatory certifications
+- Croncore scope: bid strategy and win themes, proposal writing, compliance assurance, cost proposal support, timeline planning, submission QC
+- Outcome: 100% compliance, submitted on time, awarded; $148K total engagement value
+- Sept 22 to Oct 15, 2025 window; NIGP 91800/91842/91815, NAICS 541330/541310/541690
+
+### [Macomb Community College AV Equipment RFQ](https://www.croncore.com/case-studies/macomb-community-college-av-equipment-rfq)
+
+Croncore built a compliant, lowest-price response to RFQ 1971 (AV Equipment, Macomb Community College, Warren, Michigan) for a U.S. prime contractor under NDA. The RFQ required exact-match Extron and ScreenBeam equipment with zero tolerance for deviation from part numbers, payment terms, or standard forms.
+
+- Pass/fail evaluation: lowest responsive and responsible bidder with absolute spec adherence; over 90 firms downloaded the RFQ within 48 hours
+- Croncore scope: line-by-line pricing strategy, remote pricing research against distributor networks, FOB Warren freight isolation, logistics mapping to avoid 10% liquidated damages, dual-inbox electronic submission
+- Outcome: 100% compliance, submitted early, awarded the full lot across all six line items
+- May 18 to June 1, 2026 window; NAICS 334310
+
+### [South Platte Renew Website Redesign RFP](https://www.croncore.com/case-studies/south-platte-renew-website-rfp)
+
+Croncore built the winning response to RFP 26 022 (Website Redesign & Development, City of Englewood, CO, for South Platte Renew, a water recovery utility jointly owned by Littleton and Englewood) on behalf of a U.S. prime contractor under NDA.
+
+- Scorecard: Experience & Technical Capability 40%, Project Understanding & Management 40%, Price 20%
+- Hard mandates: open-source WordPress CMS only; WCAG 2.2 A/AA and C.R.S. 24-85-101 compliance with payment suspension if a validated VPAT was not provided within 30 days
+- Croncore scope included win themes around the PARC interactive mapping system, sprint-level accessibility testing with axe, WAVE, and Deque, task-level cost breakdown, and a Gantt chart tracking 9 mandatory milestones
+- Outcome: 100% compliance, submitted on time, awarded; $306K total projected engagement value
+- May 19 to June 16, 2026 window
+
+### [Airfield Maintenance RFP, Aspen/Pitkin County Airport](https://www.croncore.com/case-studies/airfield-maintenance-pitkin-county-rfp)
+
+Croncore delivered cost modeling, construction planning, and pre-bid proposal support for Pitkin County Project No. 036.26 (Airfield Maintenance and Interim Elk Lot Improvements 2026, Colorado) on behalf of a U.S. prime contractor under NDA. The project required a compressed 28-day full airfield closure (April 23 to May 21, 2026) with zero tolerance for morning reopening overruns.
+
+- Dual scope: Runway 15-33 asphalt milling/paving, grooving, and deicing apron trench drain repairs, plus Elk Lot parking reconfiguration and underground electrical work
+- FAA Advisory Circular 150/5370-2G compliance, AOA access control, security badging, FOD and wildlife mitigation
+- Bottom-up cost models covering night-shift labor premiums, equipment cycle times, and high-altitude asphalt compaction constraints
+- Outcome: 100% compliance with CSPP and formatting rules, submitted ahead of deadline; financial details withheld under client NDA
+- March 3 to March 23, 2026 window
+
+### [K-12 ERP System RFP, Rochester City School District](https://www.croncore.com/case-studies/rochester-erp-system-rfp)
+
+Croncore built the response to Rochester City School District's RFP to replace its Oracle Fusion Cloud environment with a purpose-built K-12 ERP, working behind a U.S. prime contractor under NDA. The district spans 21,000 students, 5,436 staff, 40+ schools, and 42 spoken languages.
+
+- Scorecard: Financial 30%, Product Match 25%, Consultant Quality 20%, References 15%, Value Add 5%, M/WBE 5%
+- Compliance: NYS Education Law 2-d, FERPA, COPPA, IDEA, executed Data Privacy Agreement, and NIST CSF alignment across all 23 categories
+- Deliverables: all ten mandatory tabbed sections, Excel appendices A-E, a 12-18 month eight-phase implementation schedule, a 3-run data migration strategy targeting 99% accuracy, and a 60-day hyper-care model
+- Outcome: 100% compliant, delivered before the April 17, 2026 deadline, with a full 5-year TCO workbook
+- Five-week response window (March 10 to April 17, 2026)
+
+### [Firewall Optimization ITB, Boulder Valley School District](https://www.croncore.com/case-studies/boulder-valley-firewall-optimization-itb)
+
+Croncore built the winning response to ITB No. 26-26 (Firewall Optimization, Boulder Valley School District RE-2, Colorado) for a U.S. prime contractor under NDA. The district needed end-of-life Palo Alto firewall infrastructure replaced across two data centers serving 30,000 students and 50+ schools.
+
+- Price-dominant sealed bid: Price 90%, Bid Response Quality 10%; Palo Alto Networks hardware mandated (two PA-5540 appliances, 100G QSFP28 and 10G SFP+ interfaces)
+- Eligibility gates: Colorado Secretary of State registration, authorized Palo Alto reseller status, bonding up to $500,000
+- Strategy: early Palo Alto deal registration and upstream distributor pricing locks to guarantee 5 years of fixed licensing fees, with escalation caps at or below the district's 2% target
+- Outcome: awarded; 5-year fixed-price base plus up to 3 one-year extension options; 100% compliant, on time
+- Three-week window (February 23 to March 16, 2026)
+
+### [Data Dashboard RFP, Kansas City Kansas Public Schools](https://www.croncore.com/case-studies/kansas-city-public-schools-data-dashboard-rfp)
+
+Croncore provided bid strategy, SOW deconstruction, and technical compliance mapping for RFP 26 003 (Districtwide Data Dashboard, Kansas City Kansas Public Schools / USD 500) behind a U.S. prime contractor under NDA. The dashboard unifies academic, operational, and financial data for 21,000 students across 45 facilities.
+
+- 125-point evaluation matrix; half the score rode on the live presentation, integration depth, and pricing
+- ETL pipelines mapped across 8 district source systems, including Infinite Campus, BusinessPLUS, Frontline, i-Ready, and Fastbridge
+- Pass/fail gates verified line by line: district data ownership, daily refreshes, OIDC/SAML SSO, FERPA, WCAG 2.1 AA
+- Deliverables: gating requirement register, 5-year TCO model, phased rollout plan, and live demo/Q&A scripting
+- Outcome: 100% data mapping coverage, zero disqualification risk, complete 5-year TCO; five-week window (February 25 to March 31, 2026)
+
+### [Sea Level Rise Adaptation RFP, Town of Tiburon, CA](https://www.croncore.com/case-studies/tiburon-sea-level-rise-rfp)
+
+Croncore built the winning response to RFP No. TOT 02 (Sea Level Rise Vulnerability Assessment and Adaptation Plan, Town of Tiburon, Marin County, California) for a U.S. prime contractor under NDA. All four evaluation categories were weighted equally, so the proposal had to score uniformly across approach, experience, staffing, and community engagement.
+
+- Scorecard: Project Understanding & Approach, Experience, Staffing, and Community Involvement each 25%
+- Regulatory alignment: California Coastal Act, Ocean Protection Council guidance, BCDC Regional Shoreline Adaptation Plan Guidelines, SB 272
+- Compliance items included a Non-Collusion Declaration and Iran Contracting Act Certification in a single signed electronic PDF
+- Outcome: awarded; contracted under a time-and-materials professional services agreement; 100% compliant, submitted on time
+- Under four-week window (August 14 to September 9, 2025)
+
+### [Comprehensive Plan RFQ, Town of Amherst, NY](https://www.croncore.com/case-studies/town-of-amherst-comprehensive-plan-rfq)
+
+Croncore built the proposal response to RFQ #202507 (Planning Team, Town of Amherst 2025 Comprehensive Plan, Erie County, New York) for a U.S. prime contractor under NDA. This was a qualification-based selection with no price at the RFQ stage, so the entire score rode on staff credentials, firm experience, and administrative compliance.
+
+- Scorecard: proposed staff experience 35%, firm experience 25%, with capacity, location, understanding of Amherst, and special capabilities at 10% each
+- Compliance: NYS Town Law 272-a, SEQRA support, ADA guidelines, five sealed copies with blue-ink original signatures, Exhibit G (Non-Collusion) and Exhibit I (Iran Divestment)
+- Croncore also structured a utilization plan meeting the 30% MWBE and 6% SDVOB targets
+- Outcome: 100% compliant, on time, and shortlisted; estimated engagement value $350K-$398K
+- August 14 to September 18, 2025 window
+
+### [6G Network GPUs IFB, University of Texas at Arlington](https://www.croncore.com/case-studies/uta-6g-network-gpus-ifb)
+
+Croncore built the winning bid for IFB # REQSL1598875 (UTA 2026 6G Network GPUs, University of Texas at Arlington) behind a U.S. prime contractor under NDA, sourcing current-generation NVIDIA RTX PRO 5000 Blackwell GPUs through a volatile supply channel for the university's 6G research infrastructure.
+
+- Best-value evaluation across eight factors with no published point split, from purchase price to HUB compliance and insurance terms
+- Tiered pricing structured around a 30-day Tier 1 quote validity to buffer channel price shifts
+- Explicit lead times stated per line item to neutralize a 14-day default delivery clause; campus rules required clean background screening for delivery personnel plus insurance liability coverage
+- Outcome: awarded, approximately $180K contract value; 100% compliant, submitted on time
+- March 6 to March 23, 2026 window
+
+### [Boone Street Sidewalk RFP, Town of Summerville, SC](https://www.croncore.com/case-studies/summerville-boone-street-sidewalk-rfp)
+
+Croncore built the winning response to RFP No. 2026-000301 (ADA-Compliant Sidewalk Design & Permitting, Boone Street Sidewalk Project, Town of Summerville, South Carolina) for a U.S. prime contractor under NDA. The CDBG/HUD-funded pursuit put 60% of the score on qualifications and experience within a strict 15-page limit.
+
+- Scorecard: Firm Qualifications 35%, Relevant Experience 25%, Project Schedule 15%, Fee 15%, References 10%
+- Competitive field named on the page: Kimley-Horn, Colliers, Weston & Sampson, Verdantas, McAdams, Lochmueller Group, and A. Morton Thomas
+- Compliance: SAM/UEI registration, Davis-Bacon and HUD labor standards, signed addenda, electronic portal submission; a firm 120-day design completion requirement scheduled credibly in the proposal
+- Outcome: awarded; 100% compliant, submitted on time
+- March 2 to March 26, 2026 window
+
+
+## Insights Articles
+
+### [SLED Pre-Bid Support for US Primes](https://www.croncore.com/insights/sled-pre-bid-support-for-primes)
+
+An 8-minute guide explaining what SLED (state, local, and education) pre-bid support is and why primes lose winnable bids. It sizes the SLED market at an estimated $1.5-2 trillion in annual spending across 90,000+ entities issuing over 500,000 solicitations a year, and argues the fragmentation of local procurement rules is both the barrier and the margin.
+
+- Five failure patterns: ignoring the scorecard, compliance-trap disqualification, gut-feel bid/no-bid calls, capture windows shorter than internal bandwidth, and generalist positioning
+- Six pre-bid disciplines: bid strategy and win themes, proposal writing, compliance assurance, cost proposal support, timeline planning, submission readiness
+- Teaming model: NDA-first, NIST 800-171-aware handling, CMMC Level 2 expectations mapped where required, Section 508 / WCAG 2.1 AA documents, FERPA and CJIS-aware handling, US-registered contracting entity (Croncore LLC)
+- Offer: within 48 hours of receiving a solicitation, a fit assessment, draft technical approach, and indicative pricing
+- Includes an FAQ covering subcontractor naming, compliance risk, and who writes the final proposal
+
+### [AI Integration Services: The Complete 2026 Guide](https://www.croncore.com/insights/AI-Integration-Services)
+
+A 12-minute guide to AI integration services — connecting LLMs, ML models, computer vision, and agents to existing enterprise systems, data, and workflows. It opens with IBM's 2026 Global AI Adoption Index finding that fewer than 1 in 4 enterprise AI initiatives reach production, with integration as the main blocker.
+
+- Seven service categories: generative AI/LLM integration, RAG, agentic workflow integration, ML/predictive analytics, computer vision, NLP/conversational AI, and AI-powered data integration
+- Eight industry use cases with reported ROI ranges (e.g., fraud detection 30-50% loss reduction; support copilots 20-40% lower handle time)
+- Six-phase delivery framework from readiness assessment through monitoring, plus five architecture patterns (API-based, microservices, RAG, agentic orchestration, hybrid cloud/on-prem)
+- 2026 cost benchmarks: readiness assessments $10K-$40K, RAG implementations $100K-$400K, enterprise platform builds $500K-$3M+, MLOps $8K-$40K/month
+- Eight-point partner-selection checklist, red flags, and an FAQ on timelines, legacy systems, and ROI
+
+### [IT Staff Augmentation Services: Scale Your Tech Team in 2026](https://www.croncore.com/insights/it-staff-augmentation-services-guide)
+
+A short guide to IT staff augmentation — hiring vetted tech talent globally and managing them directly inside your own team, as opposed to handing a whole project to an outsourcer. It compares augmentation with managed services on control, integration, cost model, and best-fit scenarios.
+
+- Cited benefits: US developer hiring averages 49 days versus days with augmentation; typical savings of 30-50% versus local full-time hiring
+- Talent areas offered: Java, Python, React, Node.js, .NET, iOS (Swift) and Android (Kotlin), AWS/Azure/GCP cloud and DevOps, data science and ML, QA and testing
+- Four-step process: needs assessment, pre-vetted candidate shortlist within 48 hours, onboarding (legal, HR, hardware), and ongoing account management
+- Remote-staffing safeguards: time-zone overlap with US business hours, soft-skills vetting, and HIPAA, PCI-DSS, and GDPR-aligned handling
+- FAQ confirms the client owns 100% of IP and can interview developers directly
+
+
+## Legal
+
+### [Privacy Policy](https://www.croncore.com/privacy-policy)
+
+Privacy policy for Croncore, LLC, an AI innovation and research firm incorporated in Delaware, USA, acting as data controller for croncore.com. Last updated March 12, 2026. Written to comply with US data protection laws (including Delaware's privacy acts) and the GDPR.
+
+- Data collected: contact and professional details, inquiry content, recruitment CVs, plus technical/analytics data and cookies
+- Non-sharing policy: personal data is not sold or disclosed to third parties for their marketing; proprietary client business data is not used to train Croncore's general-purpose models without a separate explicit agreement
+- Retention: business leads kept about one year if no relationship forms; client data kept for the contract term plus legally required periods
+- Processing occurs primarily in the United States; EU transfers are governed by Standard Contractual Clauses
+- User rights: access and rectification, erasure, objection/restriction, data portability, and consent withdrawal; security includes encryption at rest and in transit, access controls under NDAs, and annual audits
+
+### [Terms of Service](https://www.croncore.com/terms)
+
+Terms and conditions governing use of croncore.com and services provided by Croncore, LLC, a Delaware-registered company. Effective date: March 12, 2026. Organized into ten sections: acceptance of terms, services and "as is" nature, intellectual property rights, user conduct, third-party links, limitation of liability, indemnification, governing law, changes to terms, and contact.
+
+- Croncore, LLC provides AI innovation, research, and software modernization services; site content (AI demos, research, case studies) is informational, with no error-free or performance guarantees for experimental AI tools
+- All site content is Croncore's property; visitors receive a limited non-exclusive license and may not scrape, frame, or reverse-engineer the site or its AI logic without written consent
+- Users must not input sensitive data or PII into contact forms or AI demo interfaces
+- Governed by Delaware law, with legal actions filed in Delaware courts

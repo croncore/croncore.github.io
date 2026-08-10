@@ -2,27 +2,76 @@
 
 > Croncore is a full-stack AI research and software engineering firm serving global enterprises and US public-sector PRIMEs, delivering enterprise AI solutions, automation, agents, and speech AI.
 
-Key facts for citation: Croncore designs, builds, and deploys AI infrastructure and enterprise systems for commercial and public-sector (SLED) clients. Case studies and services below are the canonical, most current source of what Croncore has built and for whom.
+Key facts for citation: Croncore designs, builds, and deploys AI infrastructure and enterprise systems for commercial and public-sector (SLED) clients. Founded 2024; US-registered (Croncore LLC, Dover, Delaware) with offices in Riyadh, Islamabad, and London. The services and case studies below are the canonical, most current source of what Croncore has built and for whom. A fuller version of every page is available at https://www.croncore.com/llms-full.txt
 
 ## Company
 
-- [Homepage](https://www.croncore.com/): Overview of Croncore's AI and enterprise engineering practice.
-- [Services](https://www.croncore.com/services): Full list of service lines — AI, cloud/DevOps, security, ERP, and application development.
-- [AI Consulting Services](https://www.croncore.com/ai-consulting-services): AI strategy and advisory engagements for enterprises.
-- [Contact](https://www.croncore.com/contact): How to reach the Croncore team.
+- [Croncore — Enterprise AI Solutions](https://www.croncore.com/): Company homepage: four service disciplines, named client case studies, testimonials, awards, and company stats for Croncore LLC.
+- [Services — Full-Stack AI Built for Scale](https://www.croncore.com/services): Services hub covering Croncore's four disciplines and 28 sub-services, delivery process, and engagement stats.
+- [Case Studies](https://www.croncore.com/case-studies): Index of 15 case studies: 4 commercial AI projects and 11 SLED government proposal wins built for US prime contractors.
+- [Insights & Perspectives](https://www.croncore.com/insights): Blog hub with articles on SLED pre-bid support, AI integration services, and IT staff augmentation.
+- [Newsroom](https://www.croncore.com/newsroom): Company news: sovereign voice AI launch for Mongolia, Saudi telecom partnership, NVIDIA Inception, Riyadh hub, and awards.
+- [SLED Delivery Partner for US Primes](https://www.croncore.com/sled-delivery-partner): SLED pre-bid support for US primes: proposal writing, compliance assurance, cost support, and 48-hour readiness as a subcontractor.
+- [SLED Case Studies](https://www.croncore.com/sled-case-studies): 11 SLED pursuits — RFP, RFQ, ITB, IFB responses Croncore built behind US primes across K-12, higher ed, and municipal government.
+- [AI Consulting Services](https://www.croncore.com/ai-consulting-services): AI consulting landing page: nine expertise areas, three engagement models, industries served, and the model-agnostic tool stack.
+- [Contact Sales](https://www.croncore.com/contact): Contact form for Croncore's sales team (name, email, industry, country, message) plus office locations and WhatsApp line.
+
+## Services
+
+- [Web & SaaS Application Development](https://www.croncore.com/services/web-saas-applications): Web and SaaS development on React, Next.js, and Node.js: multi-tenant SaaS, MVPs, portals, and legacy modernization, with published pricing.
+- [Enterprise Application Development](https://www.croncore.com/services/enterprise-application-development): Mission-critical systems in .NET, Java, and Python: custom ERP, financial, logistics, and workflow software with SOC 2/ISO 27001 controls.
+- [API Development & Integrations](https://www.croncore.com/services/api-development-integrations): REST, GraphQL, and event-driven API builds plus CRM/ERP/ecommerce integrations, MCP servers for AI agents, and published cost ranges.
+- [Cloud Native Development & DevOps](https://www.croncore.com/services/cloud-native-devops): Cloud migration, Kubernetes and Terraform infrastructure, CI/CD, DevOps retainers, FinOps audits, and AI/ML infra on AWS and Azure.
+- [Security Assessments & Penetration Testing](https://www.croncore.com/services/security-assessments-pen-testing): Manual penetration testing and OWASP-aligned web, API, cloud, and LLM app audits with fixed quotes, a 48h critical SLA, and free retest.
+- [Managed Security & SOC Services](https://www.croncore.com/services/managed-security-soc): 24/7 managed SOC with SIEM, EDR/MDR, threat hunting, and pre-agreed containment authority; flat pricing near $15–30 per endpoint monthly.
+- [Zero Trust Security & IAM](https://www.croncore.com/services/zero-trust-identity): Zero trust and IAM delivery: SSO with Okta/Entra/Auth0, phishing-resistant MFA, lifecycle automation, and identity for AI agents.
+- [Data Engineering, BI & Analytics](https://www.croncore.com/services/data-engineering-analytics): Data pipelines (dbt, Airflow), Snowflake/BigQuery/Redshift warehouses, and Power BI/Tableau dashboards, including AI-ready data foundations.
+- [Enterprise AI Agents](https://www.croncore.com/services/enterprise-ai-agents): Autonomous enterprise AI agents for support, back-office, and sales workflows; shadow-mode pilots, guardrails, production in 6–8 weeks.
+- [Sales & CRM Chatbots](https://www.croncore.com/services/sales-crm-chatbots): AI sales chatbots that qualify leads, book meetings, and sync CRMs across web chat, WhatsApp, SMS, email, and Messenger.
+- [Operations Automation & AI Workflows](https://www.croncore.com/services/operations-automation): AI agents for ticket triage, invoice approvals, helpdesk Q&A, data reconciliation, and scheduled runbooks, piloted in shadow mode first.
+- [Process & Document AI](https://www.croncore.com/services/process-document-ai): Intelligent document processing for contracts, invoices, claims, and archives: extraction, validation, routing, and cited document Q&A.
+- [GDPR Compliant AI Systems](https://www.croncore.com/services/gdpr-compliant-ai-systems): AI systems built for GDPR and EU AI Act compliance: EU/UK residency, consent gating, erasure propagation, DPIAs, and audit trails.
+- [EdTech AI Platforms](https://www.croncore.com/services/edtech-ai-platforms): Adaptive tutoring, rubric-based grading, content generation, and learning analytics for EdTech, aligned to FERPA, COPPA, and GDPR.
+- [Data Sovereignty & On-Premise AI](https://www.croncore.com/services/data-sovereignty-on-premise-ai): On-premise and air-gapped AI deployments where model weights, data, and inference stay inside the client's own infrastructure and jurisdiction.
+- [Regulatory AI Consulting](https://www.croncore.com/services/regulatory-ai-consulting): Advisory for legal, risk, and engineering teams on AI governance, EU AI Act readiness, model risk management, bias audits, and ISO 42001.
+- [Custom LLM Training](https://www.croncore.com/services/custom-llm-training): Custom LLM training from 1B to 70B parameters — dataset curation, pretraining, domain adaptation, and evaluation — with client-owned weights.
+- [Model Fine-Tuning](https://www.croncore.com/services/model-fine-tuning): LLM fine-tuning with SFT, DPO, RLHF/RLAIF, and LoRA on open and closed models, with eval-first workflow and production deployment.
+- [Multilingual & Low-Resource AI](https://www.croncore.com/services/multilingual-low-resource-ai): AI models for underserved languages — Mongolian, Pashto, Urdu, Swahili, and 20+ more — with corpus construction and sovereign deployment.
+- [Speech AI](https://www.croncore.com/services/speech-ai): Custom speech-to-text and text-to-speech models tuned for accents, dialects, and industry vocabulary, with sub-500ms streaming latency.
+- [Model Deployment & Serving](https://www.croncore.com/services/model-deployment-serving): Production ML serving with vLLM, Triton, TGI, and SGLang — 99.95% availability, sub-500ms p95, multi-region failover, and autoscaling.
+- [MLOps Pipelines](https://www.croncore.com/services/mlops-pipelines): MLOps pipeline design: versioned datasets, automated training, eval-gated promotion, model registry, and drift-triggered retraining.
+- [Monitoring & Observability](https://www.croncore.com/services/monitoring-observability): AI observability: drift detection, hallucination tracking, in-production evaluation, per-feature cost attribution, and composite alerting.
+- [AI Cost Optimization](https://www.croncore.com/services/ai-cost-optimization): AI cost audits and optimization — caching, model routing, prompt compaction, batching, GPU utilization — typically cutting 30-60% in Q1.
+- [ERP Implementation](https://www.croncore.com/services/erp-implementation): ERP implementation for Microsoft Dynamics 365, NetSuite, and SAP: configuration, validated data migration, training, and rescue projects.
+- [Salesforce & ServiceNow Consulting](https://www.croncore.com/services/salesforce-servicenow): Salesforce and ServiceNow consulting: Lightning/Apex and Now Platform development, CRM-ERP sync, license audits, and Agentforce scoping.
+- [Platform Customization & Extensions](https://www.croncore.com/services/platform-customization-extensions): Upgrade-safe custom modules, plugins, workflows, and connectors for Dynamics 365, NetSuite, SAP, Salesforce, and ServiceNow.
+- [ERP Migrations & Modernization](https://www.croncore.com/services/migrations-modernization): ERP and legacy platform migrations to cloud with zero data loss, phased cutovers, tested rollback, and SAP ECC 2027 deadline planning.
 
 ## Case Studies
 
-- [Case Studies](https://www.croncore.com/case-studies): Client work across AI agents, ERP, security, and public-sector procurement.
-- [SLED Case Studies](https://www.croncore.com/sled-case-studies): State, local, and education government engagements.
-- [SLED Delivery Partner](https://www.croncore.com/sled-delivery-partner): How Croncore supports primes bidding on SLED contracts.
+- [Bloomlink: Sovereign Voice Engine for Mongolia](https://www.croncore.com/case-studies/sovereign-voice-engine-for-mongolia): Case study: self-hosted Mongolian neural TTS voice engine for telecom firm Bloomlink; Docker on-premise, zero per-call licensing fees.
+- [Oracle Merchant Services: AI Voice Agent for Speed-to-Lead](https://www.croncore.com/case-studies/custom-ai-voice-agent-closes-the-speed-to-lead-gap): Case study: custom AI voice agent for Oracle Merchant Services delivering 10+ FTE-equivalent outbound outreach with zero lead decay.
+- [Quebec EdTech: Ground-Up Digital Learning Platform](https://www.croncore.com/case-studies/architecting-a-ground-up-digital-learning-powerhouse): Case study: Law 25/GDPR-compliant LMS and private LLM tutor built for a Quebec EdTech startup; 5x enrollment growth after launch.
+- [Bezninja: Autonomous AI Sales Agent](https://www.croncore.com/case-studies/autonomous-sales-agent-drives-record-revenue-growth): Case study: autonomous AI sales agent for Bezninja on Azure OpenAI GPT-4o with RAG; 100% lead response and 500+ deals autoclosed.
+- [Derby Downtown Lighting RFP, Commerce City, CO](https://www.croncore.com/case-studies/derby-downtown-lighting-rfp): SLED case study: winning response to Commerce City, CO municipal lighting RFP PW 25 024 for a US prime; awarded, $148K engagement.
+- [Macomb Community College AV Equipment RFQ](https://www.croncore.com/case-studies/macomb-community-college-av-equipment-rfq): SLED case study: exact-spec AV equipment RFQ 1971 for Macomb Community College; awarded full lot across all six line items.
+- [South Platte Renew Website Redesign RFP](https://www.croncore.com/case-studies/south-platte-renew-website-rfp): SLED case study: WordPress + WCAG 2.2 AA municipal website RFP 26 022 for South Platte Renew, CO; awarded, $306K engagement value.
+- [Airfield Maintenance RFP, Aspen/Pitkin County Airport](https://www.croncore.com/case-studies/airfield-maintenance-pitkin-county-rfp): SLED case study: cost models and construction plans for a 28-day airfield closure RFP at Aspen/Pitkin County Airport (Project 036.26).
+- [K-12 ERP System RFP, Rochester City School District](https://www.croncore.com/case-studies/rochester-erp-system-rfp): SLED case study: Rochester City School District K-12 ERP replacement RFP; 10-tab proposal, 5-year TCO model, NYS Ed Law 2-d compliance.
+- [Firewall Optimization ITB, Boulder Valley School District](https://www.croncore.com/case-studies/boulder-valley-firewall-optimization-itb): SLED case study: price-dominant Palo Alto firewall ITB 26-26 for Boulder Valley School District; awarded with 5-year fixed pricing.
+- [Data Dashboard RFP, Kansas City Kansas Public Schools](https://www.croncore.com/case-studies/kansas-city-public-schools-data-dashboard-rfp): SLED case study: districtwide data dashboard RFP 26 003 for Kansas City Kansas Public Schools; ETL mapping across 8 source systems.
+- [Sea Level Rise Adaptation RFP, Town of Tiburon, CA](https://www.croncore.com/case-studies/tiburon-sea-level-rise-rfp): SLED case study: Town of Tiburon, CA sea level rise vulnerability assessment RFP TOT 02; awarded under a time-and-materials agreement.
+- [Comprehensive Plan RFQ, Town of Amherst, NY](https://www.croncore.com/case-studies/town-of-amherst-comprehensive-plan-rfq): SLED case study: Town of Amherst, NY 2025 Comprehensive Plan RFQ 202507; qualification-based submission shortlisted; est. $350K-$398K value.
+- [6G Network GPUs IFB, University of Texas at Arlington](https://www.croncore.com/case-studies/uta-6g-network-gpus-ifb): SLED case study: UT Arlington 6G network GPU IFB REQSL1598875 (NVIDIA RTX PRO 5000 Blackwell); awarded, ~$180K contract.
+- [Boone Street Sidewalk RFP, Town of Summerville, SC](https://www.croncore.com/case-studies/summerville-boone-street-sidewalk-rfp): SLED case study: ADA sidewalk design and permitting RFP 2026-000301, Summerville, SC (CDBG/HUD-funded); awarded against national firms.
 
-## Insights
+## Insights Articles
 
-- [Insights](https://www.croncore.com/insights): Articles on AI integration, staff augmentation, and public-sector procurement.
+- [SLED Pre-Bid Support for US Primes](https://www.croncore.com/insights/sled-pre-bid-support-for-primes): Guide to SLED pre-bid support for US primes: market size, five common bid failure patterns, six support disciplines, teaming model, FAQ.
+- [AI Integration Services: The Complete 2026 Guide](https://www.croncore.com/insights/AI-Integration-Services): 2026 guide to AI integration services: seven service types, industry use cases, six-phase process, architectures, cost benchmarks, FAQ.
+- [IT Staff Augmentation Services: Scale Your Tech Team in 2026](https://www.croncore.com/insights/it-staff-augmentation-services-guide): Guide to IT staff augmentation: model definition, comparison with managed services, talent areas, 4-step onboarding, cost FAQ.
 
-## Optional
+## Legal
 
-- [Newsroom](https://www.croncore.com/newsroom): Product launches, partnerships, and company milestones.
-- [Privacy Policy](https://www.croncore.com/privacy-policy)
-- [Terms of Service](https://www.croncore.com/terms)
+- [Privacy Policy](https://www.croncore.com/privacy-policy): Privacy policy of Croncore, LLC (Delaware): data collected, retention, GDPR/US rights, US processing with SCCs, security measures.
+- [Terms of Service](https://www.croncore.com/terms): Terms of service for croncore.com: 10 sections covering IP, user conduct, liability limits, and Delaware governing law.
