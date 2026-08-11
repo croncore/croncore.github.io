@@ -173,6 +173,34 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
         .no-hero .article-meta .dot,
         [data-theme="light"] .article-meta .dot { background: var(--text-muted); }
 
+        .article-meta .byline { font-weight: 600; color: rgba(255,255,255,0.82); }
+        .no-hero .article-meta .byline,
+        [data-theme="light"] .article-meta .byline { color: var(--text-primary); }
+
+        /* ===== AUTHOR BIO ===== */
+        .article-author {
+            margin: 44px 0 0;
+            padding: 20px 22px;
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 14px 14px 0;
+            background: var(--accent-subtle);
+        }
+        .article-author-name {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text-white);
+            margin: 0 0 6px;
+        }
+        [data-theme="light"] .article-author-name { color: var(--text-primary); }
+        .article-author-bio {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
         .article-title {
             font-size: clamp(1.8rem, 4.5vw, 3.2rem);
             line-height: 1.15;

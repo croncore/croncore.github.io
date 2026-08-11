@@ -33,6 +33,46 @@ const OUT_DIR = path.join(ROOT, 'insights');
 // Slugs we never want as standalone pages (test/draft content).
 const EXCLUDE_SLUGS = new Set(['testing', 'test']);
 
+// Author identity.
+//
+// The byline comes from the Sanity `author` document, which still carries the
+// legacy first-name-only record "Mark". Until that record is renamed in the
+// Studio, map it here so regenerating does not reintroduce the old byline.
+// Delete the alias once Sanity is corrected.
+const AUTHOR_ALIASES = {
+  'Mark': 'James Earl',
+};
+
+// Bios are keyed by the resolved (post-alias) name. Keep these strictly to
+// facts that are verifiable on the site: no titles, tenure, or credentials
+// that are not published elsewhere.
+const AUTHOR_BIOS = {
+  'James Earl':
+    'James Earl writes on enterprise AI, integration, and public-sector delivery for Croncore, ' +
+    'a full-stack AI research and software engineering firm serving global enterprises and ' +
+    'US public-sector PRIMEs.',
+};
+
+function resolveAuthor(post) {
+  const raw = (post.author && post.author.name) || 'Croncore';
+  const name = AUTHOR_ALIASES[raw] || raw;
+  return {name: name, bio: AUTHOR_BIOS[name] || ''};
+}
+
+// Person schema linked to the Croncore Organization. Only fields we can back
+// with published information are emitted, so no jobTitle and no sameAs until
+// those exist on the site.
+function authorSchema(author) {
+  const person = {'@type': 'Person', 'name': author.name};
+  if (author.bio) person.description = author.bio;
+  person.worksFor = {
+    '@type': 'Organization',
+    'name': 'Croncore',
+    'url': SITE_URL,
+  };
+  return person;
+}
+
 // ---------- Sanity fetch ----------
 
 function fetchSanityPosts() {
@@ -253,7 +293,8 @@ function renderPostHtml(post) {
   const slug = post.slug;
   const canonicalUrl = SITE_URL + '/insights/' + encodeURIComponent(slug);
   const category = post.category || 'Insights';
-  const authorName = (post.author && post.author.name) || 'Croncore';
+  const author = resolveAuthor(post);
+  const authorName = author.name;
   const heroImageUrl = imageUrl(post.mainImage, {width: 1600, fit: 'crop', quality: 85});
   const ogImageUrl = imageUrl(post.mainImage, {width: 1200, height: 630, fit: 'crop', quality: 80})
     || (SITE_URL + '/images/concore-logo-light-theme.png');
@@ -278,7 +319,7 @@ function renderPostHtml(post) {
     'description': description,
     'datePublished': publishedAt,
     'dateModified': modifiedAt,
-    'author': {'@type': 'Person', 'name': authorName},
+    'author': authorSchema(author),
     'publisher': {
       '@type': 'Organization',
       'name': 'Croncore',
@@ -361,6 +402,20 @@ function renderPostHtml(post) {
   const backIconSvg = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>';
   const clockIconSvg = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>';
 
+  // Visible byline + author bio block. Both are rendered only when we have a
+  // named author (the 'Croncore' fallback gets no personal byline).
+  const hasNamedAuthor = authorName && authorName !== 'Croncore';
+  const bylineMarkup = hasNamedAuthor
+    ? '<span class="dot"></span>\n' +
+      '                                <span class="byline">By ' + escapeHtml(authorName) + '</span>\n' +
+      '                                '
+    : '';
+  const authorBioMarkup = (hasNamedAuthor && author.bio)
+    ? '\n                    <aside class="article-author" aria-label="About the author">' +
+      '<p class="article-author-name">' + escapeHtml(authorName) + '</p>' +
+      '<p class="article-author-bio">' + escapeHtml(author.bio) + '</p></aside>'
+    : '';
+
   let articleMarkup;
   if (heroImageUrl) {
     const heroAlt = escapeAttr((post.mainImage && post.mainImage.alt) || title);
@@ -374,7 +429,7 @@ function renderPostHtml(post) {
       '                            <a href="/insights" class="article-back">' + backIconSvg + ' Back to Insights</a>',
       '                            <div class="article-meta">',
       '                                <span class="category">' + escapeHtml(category) + '</span>',
-      '                                <span class="dot"></span>',
+      '                                ' + bylineMarkup + '<span class="dot"></span>',
       '                                <span class="date">' + escapeHtml(dateStr) + '</span>',
       '                                <span class="dot"></span>',
       '                                <span class="reading-time">' + clockIconSvg + ' <span>' + escapeHtml(readingStr) + '</span></span>',
@@ -384,7 +439,7 @@ function renderPostHtml(post) {
       '                    </div>',
       '                </div>',
       '                <div class="article-body-wrap">',
-      '                    <div class="article-content" id="article-body">' + bodyHtml + '</div>',
+      '                    <div class="article-content" id="article-body">' + bodyHtml + '</div>' + authorBioMarkup,
       '                </div>',
       '                <div class="article-bottom-divider"><hr></div>',
       '                <div class="article-back-bottom">',
@@ -400,7 +455,7 @@ function renderPostHtml(post) {
       '                        <a href="/insights" class="article-back">' + backIconSvg + ' Back to Insights</a>',
       '                        <div class="article-meta">',
       '                            <span class="category">' + escapeHtml(category) + '</span>',
-      '                            <span class="dot"></span>',
+      '                            ' + bylineMarkup + '<span class="dot"></span>',
       '                            <span class="date">' + escapeHtml(dateStr) + '</span>',
       '                            <span class="dot"></span>',
       '                            <span class="reading-time">' + clockIconSvg + ' <span>' + escapeHtml(readingStr) + '</span></span>',
@@ -409,7 +464,7 @@ function renderPostHtml(post) {
       '                    </div>',
       '                </div>',
       '                <div class="article-body-wrap">',
-      '                    <div class="article-content" id="article-body">' + bodyHtml + '</div>',
+      '                    <div class="article-content" id="article-body">' + bodyHtml + '</div>' + authorBioMarkup,
       '                </div>',
       '                <div class="article-bottom-divider"><hr></div>',
       '                <div class="article-back-bottom">',
