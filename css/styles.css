@@ -122,3 +122,9 @@ a,button,[role="button"],input[type="button"],input[type="submit"],label,summary
 .services-top .answer-first{flex:1 0 100%;order:3;margin-top:4px;margin-bottom:0}
 .case-studies-header .answer-first{margin-top:12px;margin-bottom:10px}
 @media (max-width:768px){.answer-first{font-size:1rem;padding-left:14px}}
+
+/* Case study visible publish/update dates (Phase 2, Task 3) */
+.rfp-hero-dates{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin:20px 0 0;font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--on-dark,#f2f5fb);opacity:.82}
+.rfp-hero-dates .k{color:var(--accent-bright,#5aa9f0);font-weight:600;margin-right:5px}
+.rfp-hero-dates .sep{width:1px;height:11px;background:var(--dark-line,rgba(255,255,255,.28));display:inline-block}
+.rfp-hero-dates time{font-weight:500}
