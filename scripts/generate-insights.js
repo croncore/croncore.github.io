@@ -506,7 +506,7 @@ function renderPostHtml(post) {
       if (m) cutFrom = m.index;
       html =
         html.slice(0, cutFrom) +
-        '\n    <!-- JavaScript -->\n    <script src="/js/main.js?v=19"></script>\n    ' +
+        '\n    <!-- JavaScript -->\n    <script src="/js/main.js?v=20"></script>\n    ' +
         html.slice(scriptEnd + '</script>'.length);
     }
   }

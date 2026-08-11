@@ -41,6 +41,16 @@ Croncore's article hub covering AI, automation, and enterprise technology. Conte
 - "AI Integration Services: The Complete 2026 Guide" (May 2, 2026) — costs, use cases, and how to choose a partner; argues enterprises have an AI integration problem, not an AI problem
 - "IT Staff Augmentation Services: Scale Your Tech Team in 2026" (May 1, 2026) — bridging skill gaps and reducing overhead with augmented tech talent
 
+### [About Croncore](https://www.croncore.com/about)
+
+Company profile page. Croncore is a full-stack AI research and software engineering firm serving global enterprises and US public-sector PRIMEs, delivering enterprise AI solutions, automation, agents, and speech AI. Founded 2024; the contracting entity is Croncore LLC, registered in Delaware.
+
+- Offices (4): Riyadh, Saudi Arabia — Prince Turki Bin Abdulaziz Al Awal Road, Al Raed 12354; Islamabad, Pakistan — Street 36 Silk Bank Plaza Lower Basement, WorkZone; London, United Kingdom — Office 63, Billingsgate Market, E14 5ST; Dover, Delaware, USA — 1111B S Governors Ave # 28375, 19904
+- Four engineering disciplines delivered by one team: Custom Software Development, Cyber Security & Data, AI Agents & Automations, ERP & Enterprise Platforms
+- Track record highlighted: sovereign neural voice engine for Mongolia (Bloomlink), autonomous sales agent (Bezninja), founding technical partner to a Quebec EdTech startup, and SLED pre-bid support for US primes
+- Contact: info@croncore.com (sales), press@croncore.com (media)
+- No individual team members are named on this page or anywhere on the site
+
 ### [Newsroom](https://www.croncore.com/newsroom)
 
 Company announcements filtered by Product, Partnerships, Company, Awards, and Events. The featured story is Croncore's launch of Mongolia's first sovereign voice AI for the Khalkha language (April 28, 2026) — a national-scale, in-country STT/TTS engine deployed entirely on Mongolian infrastructure with zero cross-border data flow.

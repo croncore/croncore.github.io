@@ -9,7 +9,7 @@ var ROOT_LINKS=[
 {label:"Insights",href:"/insights"},
 {label:"SLED",href:"/sled-delivery-partner",sub:"For US public-sector primes"},
 {label:"Newsroom",href:"/newsroom"},
-{label:"About",href:"/#about"}
+{label:"About",href:"/about"}
 ];
 var CONTACT_HREF="/contact";
 function el(tag,cls,html){var n=document.createElement(tag);if(cls)n.className=cls;if(html!=null)n.innerHTML=html;return n;}function accToggle(acc){var willOpen=!acc.classList.contains("is-open"),par=acc.parentNode;if(par)par.querySelectorAll(".mobile-accordion.is-open").forEach(function(o){o.classList.remove("is-open");var ot=o.querySelector(".mobile-accordion-toggle");if(ot)ot.setAttribute("aria-expanded","false")});if(willOpen)acc.classList.add("is-open");return willOpen}function mkItemHTML(it){return '<span class="mobile-it-body"><span class="mobile-it-title">'+it.title+'</span>'+(it.desc?'<span class="mobile-it-desc">'+it.desc+'</span>':'')+'</span>'}
