@@ -75,7 +75,7 @@
 
  <script>(function(){var t = localStorage.getItem('croncore-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
 
- <link rel="stylesheet" href="/css/styles.css?v=28">
+ <link rel="stylesheet" href="/css/styles.css?v=30">
 </head>
 <body>
  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFNLPH3H"
@@ -382,7 +382,12 @@
  {"@type":"Question","name":"Can fine-tuning actually reduce our inference bill?","acceptedAnswer":{"@type":"Answer","text":"At volume, dramatically, and this is the business case most buyers miss. Industry cost analysis puts fine-tuning at 10 to 50 times cheaper per query than retrieval-heavy approaches once a stable task passes roughly 100,000 daily queries, because the tuned behavior replaces thousands of instruction and example tokens on every single call, and often lets a small model replace a large one entirely. The savings compound across three lines at once: shorter prompts, smaller models, and lower latency. If one task dominates your token bill, a tuning project frequently pays for itself out of the first quarter's savings, and we will show you that math against your real usage before you commit."}},
  {"@type":"Question","name":"Does fine-tuning change our status under the EU AI Act?","acceptedAnswer":{"@type":"Answer","text":"It can, and this is the trap we warn every client about before any training run: substantially modifying a general-purpose model, which extensive fine-tuning may constitute, can reclassify your organization from deployer to provider, inheriting technical documentation, conformity assessment, and post-market monitoring obligations you did not have the day before. The boundary is genuinely fact-specific, thin LoRA adapters for tone sit differently than deep behavioral retraining, so we run the classification assessment as part of scoping rather than leaving it for your counsel to discover after deployment. Five minutes of classification before the run beats a remediation program after it."}},
  {"@type":"Question","name":"What happens when the base model gets updated or deprecated?","acceptedAnswer":{"@type":"Answer","text":"It will, and your plan for that day is part of the architecture, not an afterthought. On hosted platforms, provider updates can shift your adapter's behavior without notice, which is why our deployments ship with the eval harness as a permanent regression test: any drift shows up in your metrics, not your customers' complaints. On open weights, you control the timeline entirely, and we design tuning pipelines to be re-runnable, so migrating your behavior to a newer, better base model is a scheduled afternoon, not a rescue project. The dataset and the evals are the durable assets; the checkpoint is just their current expression."}},
- {"@type":"Question","name":"What results should we realistically expect?","acceptedAnswer":{"@type":"Answer","text":"Measured ones, or the project was run wrong. Fine-tuning reliably delivers consistency, format adherence, tone stability, and task-specific accuracy on the behaviors it was trained for, along with the latency and cost gains of smaller models and shorter prompts. What it does not deliver is general intelligence gains or knowledge the training data never contained, and anyone promising those is selling the wrong tool. Our workflow makes the question empirical: the eval harness is built first, the tuned model runs in shadow against the baseline on your real traffic, and promotion happens when the numbers clear the bar you agreed to, not when the demo feels good."}}
+ {"@type":"Question","name":"What results should we realistically expect?","acceptedAnswer":{"@type":"Answer","text":"Measured ones, or the project was run wrong. Fine-tuning reliably delivers consistency, format adherence, tone stability, and task-specific accuracy on the behaviors it was trained for, along with the latency and cost gains of smaller models and shorter prompts. What it does not deliver is general intelligence gains or knowledge the training data never contained, and anyone promising those is selling the wrong tool. Our workflow makes the question empirical: the eval harness is built first, the tuned model runs in shadow against the baseline on your real traffic, and promotion happens when the numbers clear the bar you agreed to, not when the demo feels good."}},
+ {"@type":"Question","name":"Should we fine tune or use prompt engineering + RAG?","acceptedAnswer":{"@type":"Answer","text":"Try prompting and RAG first. Fine tune when you've squeezed those dry and still need consistent tone, format, or domain accuracy that the base model can't reliably hold across thousands of inputs."}},
+ {"@type":"Question","name":"How much data do we need?","acceptedAnswer":{"@type":"Answer","text":"Surprisingly little for SFT, often a few thousand high quality examples beat tens of thousands of mediocre ones. We'll review what you have and tell you what's missing."}},
+ {"@type":"Question","name":"Which base models can you fine tune?","acceptedAnswer":{"@type":"Answer","text":"Open: Llama, Mistral, Qwen, Gemma, Phi, DeepSeek. Closed: OpenAI and Anthropic where they expose tuning APIs. We pick based on quality, license, and where you need to deploy."}},
+ {"@type":"Question","name":"How do you prevent the model from getting worse on other tasks?","acceptedAnswer":{"@type":"Answer","text":"Catastrophic forgetting is a real risk. We mitigate it with eval suites that cover both target and adjacent tasks, conservative learning rates, and LoRA where appropriate to leave the base weights intact."}},
+ {"@type":"Question","name":"Do we own the tuned model?","acceptedAnswer":{"@type":"Answer","text":"Yes, when fine tuning open weight models. With closed models, ownership is governed by the provider's terms; we'll walk you through the trade offs at scoping time."}}
  ]
  }
  </script>
@@ -526,7 +531,7 @@
  <nav class="footer-col" aria-label="Quick links">
  <div class="footer-col-title">Quick Links</div>
  <ul>
- <li><a href="/#about">About Us</a></li>
+ <li><a href="/about">About Us</a></li>
  <li><a href="/services">Services</a></li>
  <li><a href="/#testimonials">Testimonials</a></li>
  <li><a href="/insights">Insights</a></li>
@@ -586,7 +591,7 @@
  </footer>
  </div>
 
- <script src="/js/main.js?v=19"></script>
+ <script src="/js/main.js?v=20"></script>
 
  <div class="float-btns">
  <a href="https://wa.me/16039991544" target="_blank" rel="noopener noreferrer" class="float-btn float-btn--whatsapp" aria-label="Contact on WhatsApp">

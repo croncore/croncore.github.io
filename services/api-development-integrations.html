@@ -77,7 +77,7 @@
  <script>(function(){var t = localStorage.getItem('croncore-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
 
  <!-- Stylesheet -->
- <link rel="stylesheet" href="/css/styles.css?v=28">
+ <link rel="stylesheet" href="/css/styles.css?v=30">
 </head>
 <body>
  <!-- Google Tag Manager (noscript) -->
@@ -182,7 +182,8 @@
  <div class="sp-why-header reveal">
  <div class="sp-why-header-left">
  <div class="section-tag"><span class="tag-pulse"></span> Capabilities</div>
- <h2>Integration done<br><span class="text-accent">the right way.</span></h2>
+ <h2>What does Croncore build<br><span class="text-accent">for API integration?</span></h2>
+ <p class="answer-first">Six things are in scope: REST and GraphQL APIs, third party integrations, event driven architecture, auth and security, data sync and ETL, and developer experience. Every interface is delivered with a published contract and versioning, so consumers know what changed before it breaks them.</p>
  </div>
  <p class="sp-why-header-right">APIs are the contracts your business runs on. We build them to be reliable, secure, and a pleasure to consume.</p>
  </div>
@@ -227,7 +228,8 @@
  <div class="container">
  <div class="sp-detail-header reveal">
  <div class="section-tag"><span class="tag-pulse"></span> Capabilities</div>
- <h2>The integrations companies actually hire us for.</h2>
+ <h2>Which integrations do companies actually hire Croncore for?</h2>
+ <p class="answer-first">Six integration problems come up most: CRM and sales stack, ERP and accounting and finance, ecommerce and payments, partner and public APIs, legacy and EDI, and AI ready APIs and MCP servers. The brief is almost always two systems that should already agree and do not.</p>
  <p>Nobody wakes up wanting an API. They want the quote in the CRM to match the invoice in the accounting system without anyone retyping it. These are the integration problems we solve most often, and the jobs behind them.</p>
  </div>
  <div class="sp-detail-grid reveal">
@@ -279,7 +281,8 @@
  <div class="container">
  <div class="sp-process-header reveal">
  <div class="section-tag"><span class="tag-pulse"></span> How We Build It</div>
- <h2>From spec to <span class="text-accent">live integration.</span></h2>
+ <h2>How does Croncore deliver <span class="text-accent">an integration?</span></h2>
+ <p class="answer-first">Four stages: map every system, data flow, and edge case, then define the sync rules; design schemas, auth, and error handling as an OpenAPI or GraphQL spec your team reviews before code is written; implement with contract tests, retries, and idempotency; then monitor, alert, and version.</p>
  <p>A disciplined approach to connecting systems, with contracts and tests so integrations do not break silently.</p>
  </div>
  <div class="sp-process-grid reveal">
@@ -392,7 +395,12 @@
  {"@type":"Question","name":"How long does an integration take to build?","acceptedAnswer":{"@type":"Answer","text":"A single straightforward integration ships in 1 to 3 weeks. A multi system integration with two way sync takes 4 to 8 weeks. A full integration layer connecting five or more systems, or a partner facing API product, runs 2 to 4 months. Undocumented legacy systems are the wildcard, which is why our first step is always mapping the systems before we commit to a date."}},
  {"@type":"Question","name":"What does it cost to keep integrations running?","acceptedAnswer":{"@type":"Answer","text":"Here is the number most vendors leave out: plan for roughly 10 to 20 percent of each integration's build cost per year. Vendor APIs change and deprecate versions, usage based fees grow with your volume, rate limits get hit, and someone has to respond when a sync fails at 2am. We cover this with a maintenance agreement that includes monitoring, alerting, and version upgrades, priced per integration so you can see exactly what each connection costs to own, not just to build."}},
  {"@type":"Question","name":"Can you make our systems accessible to AI agents?","acceptedAnswer":{"@type":"Answer","text":"Yes, and this is quickly becoming the most requested integration work we do. We build MCP servers and agent ready API layers that let AI assistants query your data and trigger actions with proper authentication, scoped permissions, and full audit logs, so an agent can create an invoice but can never delete your customer table. It is the bridge between your existing systems and everything on our AI and automation side, and doing it safely is entirely an API design problem."}},
- {"@type":"Question","name":"Who owns the integration code and the API keys?","acceptedAnswer":{"@type":"Answer","text":"You do. All integration code lives in your repositories, all credentials live in your vaults and vendor accounts, and all documentation is written for your team, not ours. If we part ways, you lose nothing but our phone number. Vendor lock in through integrations is one of the oldest tricks in this industry, and refusing to play it is a deliberate choice we put in the contract."}}
+ {"@type":"Question","name":"Who owns the integration code and the API keys?","acceptedAnswer":{"@type":"Answer","text":"You do. All integration code lives in your repositories, all credentials live in your vaults and vendor accounts, and all documentation is written for your team, not ours. If we part ways, you lose nothing but our phone number. Vendor lock in through integrations is one of the oldest tricks in this industry, and refusing to play it is a deliberate choice we put in the contract."}},
+ {"@type":"Question","name":"Can you integrate with a tool that has no public API?","acceptedAnswer":{"@type":"Answer","text":"Often, yes, through partner APIs, file based exchange, screen level automation, or database level integration. We assess the options and recommend the most reliable one."}},
+ {"@type":"Question","name":"REST or GraphQL, which should we use?","acceptedAnswer":{"@type":"Answer","text":"It depends on your consumers. GraphQL shines for flexible, client driven data needs; REST is simpler and cacheable for well defined resources. We often use both and recommend based on your case."}},
+ {"@type":"Question","name":"How do you keep data in sync across systems?","acceptedAnswer":{"@type":"Answer","text":"Event driven sync with webhooks and queues, plus reconciliation jobs that catch drift. We design for idempotency and retries so a hiccup never corrupts your data."}},
+ {"@type":"Question","name":"Will the APIs be secure enough to expose to partners?","acceptedAnswer":{"@type":"Answer","text":"Yes. OAuth2, scoped API keys, rate limiting, signed webhooks, and audit logging come standard, so you can safely open APIs to internal teams and external partners."}},
+ {"@type":"Question","name":"Do you document everything?","acceptedAnswer":{"@type":"Answer","text":"Always. You get OpenAPI or GraphQL schemas, hosted docs, and changelogs, so onboarding a new developer or partner takes hours, not weeks."}}
  ]
  }
  </script>
@@ -539,7 +547,7 @@
  <nav class="footer-col" aria-label="Quick links">
  <div class="footer-col-title">Quick Links</div>
  <ul>
- <li><a href="/#about">About Us</a></li>
+ <li><a href="/about">About Us</a></li>
  <li><a href="/services">Services</a></li>
  <li><a href="/#testimonials">Testimonials</a></li>
  <li><a href="/insights">Insights</a></li>
@@ -600,7 +608,7 @@
  </div>
 
  <!-- JavaScript -->
- <script src="/js/main.js?v=19"></script>
+ <script src="/js/main.js?v=20"></script>
 
  <!-- Float Buttons -->
  <div class="float-btns">

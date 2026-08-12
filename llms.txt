@@ -14,6 +14,7 @@ What distinguishes Croncore: sovereign and on-premise AI deployments where data 
 - [Services — Full-Stack AI Built for Scale](https://www.croncore.com/services): Services hub covering Croncore's four disciplines and 28 sub-services, delivery process, and engagement stats.
 - [Case Studies](https://www.croncore.com/case-studies): Index of 15 case studies: 4 commercial AI projects and 11 SLED government proposals built for US prime contractors (7 awarded, 1 shortlisted).
 - [Insights & Perspectives](https://www.croncore.com/insights): Blog hub with articles on SLED pre-bid support, AI integration services, and IT staff augmentation.
+- [About Croncore](https://www.croncore.com/about): Company profile: Croncore LLC, founded 2024, Delaware-registered, four offices (Riyadh, Islamabad, London, Dover DE), four engineering disciplines, and the published track record.
 - [Newsroom](https://www.croncore.com/newsroom): Company news: sovereign voice AI launch for Mongolia, Saudi telecom partnership, NVIDIA Inception, Riyadh hub, and awards.
 - [SLED Delivery Partner for US Primes](https://www.croncore.com/sled-delivery-partner): SLED pre-bid support for US primes: proposal writing, compliance assurance, cost support, and 48-hour readiness as a subcontractor.
 - [SLED Case Studies](https://www.croncore.com/sled-case-studies): 11 SLED pursuits — RFP, RFQ, ITB, IFB responses Croncore built behind US primes across K-12, higher ed, and municipal government.

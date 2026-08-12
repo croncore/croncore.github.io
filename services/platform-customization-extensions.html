@@ -77,7 +77,7 @@
  <script>(function(){var t = localStorage.getItem('croncore-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
 
  <!-- Stylesheet -->
- <link rel="stylesheet" href="/css/styles.css?v=28">
+ <link rel="stylesheet" href="/css/styles.css?v=30">
 </head>
 <body>
  <!-- Google Tag Manager (noscript) -->
@@ -381,9 +381,14 @@
  {"@type":"Question","name":"How much does a custom module or extension cost?","acceptedAnswer":{"@type":"Answer","text":"A focused extension, a custom module, a report suite, or a point integration, typically runs $10,000 to $40,000 depending on the platform and the complexity of what it must connect to. Larger custom applications built on the platform's own extensibility framework, the kind that effectively becomes a new capability rather than a tweak, run $40,000 to $120,000. The number that actually decides the price is not lines of code, it is which framework the work happens on: building on supported APIs and extension points costs a bit more upfront and dramatically less at every future upgrade, which is the trade our quotes are built around by default, not as an upsell."}},
  {"@type":"Question","name":"What does undisciplined customization actually cost us later?","acceptedAnswer":{"@type":"Answer","text":"More than the original build, reliably. Major upgrades on heavily customized on-premise systems can consume 25 to 50 percent of the original implementation cost, almost entirely retesting and repairing custom code that was never built to survive a version change. The timeline is predictable too: customized systems tend to become unmanageable within 5 to 7 years of go-live, which is precisely when the next major upgrade is being planned, so the debt and the deadline arrive together. Properly governed, extension-based customization avoids this bill almost entirely, which is the actual argument for paying slightly more to do it right the first time."}},
  {"@type":"Question","name":"How do we know how much technical debt we are already carrying?","acceptedAnswer":{"@type":"Answer","text":"You almost certainly do not, and that is normal, not a failure. Research on mature enterprise systems finds the average install carries tens of thousands of custom objects and millions of lines of custom code, with 40 to 60 percent of it technically unused, meaning the organization pays to carry, test, and migrate code that does nothing. We run a technical debt audit before any customization or upgrade project: what exists, what is actually used, what is safe, and what is quietly at risk, and the resulting list routinely finds work that can simply be deleted, which is the cheapest optimization available on any platform."}},
- {"@type":"Question","name":"Should we rebuild our old customizations or leave them alone?","acceptedAnswer":{"@type":"Answer","text":"Depends entirely on what the audit finds, which is why we run one before recommending either. Customizations already sitting on supported APIs and documented extension points are usually safe to leave and simply maintain. Customizations built on deprecated hooks, direct core modifications, or undocumented workarounds are the ones quietly setting up your next upgrade to fail, and those get prioritized for remediation regardless of how well they currently work, because currently working and safe through the next upgrade are different questions entirely."}},
+ {"@type":"Question","name":"Should we rebuild our old customizations or leave them alone?","acceptedAnswer":{"@type":"Answer","text":"Depends entirely on what the audit finds, which is why we run one before recommending either. Customizations already sitting on supported APIs and documented extension points are usually safe to leave and simply maintain. Customizations built on deprecated hooks, direct core modifications, or undocumented workarounds are the ones quietly setting up your next upgrade to fail, and those get prioritized for remediation regardless of how well they currently work, because \"currently working\" and \"safe through the next upgrade\" are different questions entirely."}},
  {"@type":"Question","name":"Does clean customization actually help us adopt AI features faster?","acceptedAnswer":{"@type":"Answer","text":"Yes, and this is now a stated reason vendors push the discipline, not a side benefit. Platforms are shipping their AI, Copilot, Joule, Agentforce, expecting a reasonably standard core to plug into, and heavily modified systems consistently struggle to activate these features without significant remediation first. Enterprises running clean, extension-based customizations report meaningfully lower ongoing maintenance and faster access to new platform capabilities as they ship, which increasingly means AI features specifically. If AI agents are anywhere on your roadmap, a clean core is the prerequisite most companies discover only after the AI project stalls on it."}},
- {"@type":"Question","name":"Who owns the customization once it is built?","acceptedAnswer":{"@type":"Answer","text":"You do, entirely, and documentation is the actual product here as much as the code. Every extension we build is documented to the standard an auditor or a future developer who never met us would need: what it does, which supported framework it sits on, why it exists, and what would need to change if the platform's next release touches that area. Customization is where vendor and consultant lock-in most often hides, undocumented logic only its original author understands, and refusing to build that way is a deliberate choice, not a courtesy."}}
+ {"@type":"Question","name":"Who owns the customization once it is built?","acceptedAnswer":{"@type":"Answer","text":"You do, entirely, and documentation is the actual product here as much as the code. Every extension we build is documented to the standard an auditor or a future developer who never met us would need: what it does, which supported framework it sits on, why it exists, and what would need to change if the platform's next release touches that area. Customization is where vendor and consultant lock-in most often hides, undocumented logic only its original author understands, and refusing to build that way is a deliberate choice, not a courtesy."}},
+ {"@type":"Question","name":"Will customization break our upgrades?","acceptedAnswer":{"@type":"Answer","text":"Not when it is done right. We build on supported extension frameworks and APIs, avoid unsupported hacks, and document everything, so platform upgrades stay smooth."}},
+ {"@type":"Question","name":"When should we customize vs. change our process?","acceptedAnswer":{"@type":"Answer","text":"We push to use standard functionality wherever it is good enough, and customize only where your process is a genuine competitive advantage. That keeps cost and risk down."}},
+ {"@type":"Question","name":"Which platforms do you customize?","acceptedAnswer":{"@type":"Answer","text":"Microsoft Dynamics 365, NetSuite, SAP, Salesforce, and ServiceNow, among others, across modules, plugins, workflows, UI, and integrations."}},
+ {"@type":"Question","name":"Can you take over a customization someone else built?","acceptedAnswer":{"@type":"Answer","text":"Yes. We review the existing work, document and stabilize it, and improve or rebuild it on a maintainable, upgrade safe foundation."}},
+ {"@type":"Question","name":"Do you provide ongoing support?","acceptedAnswer":{"@type":"Answer","text":"We do. We support customizations through future platform releases and can retain them as the platform and your needs evolve."}}
  ]
  }
  </script>
@@ -531,7 +536,7 @@
  <nav class="footer-col" aria-label="Quick links">
  <div class="footer-col-title">Quick Links</div>
  <ul>
- <li><a href="/#about">About Us</a></li>
+ <li><a href="/about">About Us</a></li>
  <li><a href="/services">Services</a></li>
  <li><a href="/#testimonials">Testimonials</a></li>
  <li><a href="/insights">Insights</a></li>
@@ -592,7 +597,7 @@
  </div>
 
  <!-- JavaScript -->
- <script src="/js/main.js?v=19"></script>
+ <script src="/js/main.js?v=20"></script>
 
  <!-- Float Buttons -->
  <div class="float-btns">

@@ -75,7 +75,7 @@
 
  <script>(function(){var t = localStorage.getItem('croncore-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
 
- <link rel="stylesheet" href="/css/styles.css?v=28">
+ <link rel="stylesheet" href="/css/styles.css?v=30">
 </head>
 <body>
  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFNLPH3H"
@@ -382,7 +382,12 @@
  {"@type":"Question","name":"Why is the data the real project, not the GPUs?","acceptedAnswer":{"@type":"Answer","text":"Because data preparation is typically 30 to 50 percent of the total cost and close to 100 percent of the outcome. Sourcing, cleaning, deduplication, quality filtering, and tokenizer design decide what the model can know before a single training step runs, and a mediocre corpus trained on a perfect cluster produces a well-engineered disappointment. This is also where thin domains get solved: synthetic data generation, carefully validated, fills corpus gaps that no amount of extra compute can. When a training project fails, the autopsy almost always reads data, which is why our pipeline stage runs before, and often costs more than, the training itself."}},
  {"@type":"Question","name":"Do we need a 70B model, or will a smaller one do?","acceptedAnswer":{"@type":"Answer","text":"Probably smaller, and the evidence is consistent: domain-adapted 7B to 13B models routinely outperform generic models several times their size on the specific task they were trained for, at a quarter of the serving hardware. Every parameter you train, you also pay to serve, forever, so the sizing rule is the smallest model that clears your evaluation, not the largest one the budget allows. We test candidate sizes against your actual eval harness before committing the main run, because the difference between a 13B and a 70B is not just the training invoice, it is every inference bill for the life of the system."}},
  {"@type":"Question","name":"What goes wrong in custom training, and how do we protect the budget?","acceptedAnswer":{"@type":"Answer","text":"The failure mode is rarely a crashed run, it is a completed one that answers the wrong question: no agreed evaluation, a corpus assembled optimistically, or a size chosen by ambition rather than testing. The protections are procedural and non negotiable in our process: the eval harness is designed and signed off before scoping ends, the corpus is profiled and sampled before the pipeline is built, intermediate checkpoints are evaluated mid-run with authority to stop early, and capability gains are demonstrated on smaller runs before the expensive one. Custom training is a six month commitment, and every gate exists so that no six figure decision is made on faith."}},
- {"@type":"Question","name":"Is a model for our national or low-resource language realistic?","acceptedAnswer":{"@type":"Answer","text":"Yes, and it is some of the most meaningful work in this field. The foundation labs optimize for the languages of their revenue, which leaves most of the world's languages with tokenizers that fragment their script and corpora scraped without curation. We have shipped models across more than twenty languages by treating the language as the project: tokenizer design for the script's actual structure, corpus building with native speaker curation where public data is thin, synthetic augmentation validated by humans, and evaluation written in and for the language rather than translated from English benchmarks. Paired with sovereign deployment, the result is a national capability, not a licensed dependency."}}
+ {"@type":"Question","name":"Is a model for our national or low-resource language realistic?","acceptedAnswer":{"@type":"Answer","text":"Yes, and it is some of the most meaningful work in this field. The foundation labs optimize for the languages of their revenue, which leaves most of the world's languages with tokenizers that fragment their script and corpora scraped without curation. We have shipped models across more than twenty languages by treating the language as the project: tokenizer design for the script's actual structure, corpus building with native speaker curation where public data is thin, synthetic augmentation validated by humans, and evaluation written in and for the language rather than translated from English benchmarks. Paired with sovereign deployment, the result is a national capability, not a licensed dependency."}},
+ {"@type":"Question","name":"When does a custom model actually beat fine tuning?","acceptedAnswer":{"@type":"Answer","text":"When you need true sovereignty over weights and data, when your domain or language is poorly represented in foundation models, or when your scale makes inference cost the bottleneck. Otherwise, fine tuning usually wins on cost and time."}},
+ {"@type":"Question","name":"What model sizes do you train?","acceptedAnswer":{"@type":"Answer","text":"From 1B to 70B parameters routinely. Beyond that, training cost climbs steeply, we'll walk you through the trade offs vs. distillation or fine tuning a frontier model."}},
+ {"@type":"Question","name":"Whose GPUs do we train on?","acceptedAnswer":{"@type":"Answer","text":"Your cloud, your on premise cluster, or compute we provision. For sovereignty sensitive projects we deploy entirely in your jurisdiction with no data leaving your perimeter."}},
+ {"@type":"Question","name":"How long does a training run take?","acceptedAnswer":{"@type":"Answer","text":"Six to nine months end to end for most engagements. The training run itself is weeks; the data work, eval design, and alignment phases are where the time actually goes."}},
+ {"@type":"Question","name":"Do we get to keep the weights?","acceptedAnswer":{"@type":"Answer","text":"Yes. Weights, training data, eval harness, and operational tooling all transfer to you. We're a development partner, not a hosted API vendor."}}
  ]
  }
  </script>
@@ -526,7 +531,7 @@
  <nav class="footer-col" aria-label="Quick links">
  <div class="footer-col-title">Quick Links</div>
  <ul>
- <li><a href="/#about">About Us</a></li>
+ <li><a href="/about">About Us</a></li>
  <li><a href="/services">Services</a></li>
  <li><a href="/#testimonials">Testimonials</a></li>
  <li><a href="/insights">Insights</a></li>
@@ -586,7 +591,7 @@
  </footer>
  </div>
 
- <script src="/js/main.js?v=19"></script>
+ <script src="/js/main.js?v=20"></script>
 
  <div class="float-btns">
  <a href="https://wa.me/16039991544" target="_blank" rel="noopener noreferrer" class="float-btn float-btn--whatsapp" aria-label="Contact on WhatsApp">

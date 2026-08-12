@@ -77,7 +77,7 @@
  <script>(function(){var t = localStorage.getItem('croncore-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
 
  <!-- Stylesheet -->
- <link rel="stylesheet" href="/css/styles.css?v=28">
+ <link rel="stylesheet" href="/css/styles.css?v=30">
 </head>
 <body>
  <!-- Google Tag Manager (noscript) -->
@@ -391,7 +391,12 @@
  {"@type":"Question","name":"Okta or Microsoft Entra, which is actually cheaper for us?","acceptedAnswer":{"@type":"Answer","text":"There is a reliable decision rule. If 70 percent or more of your applications live in the Microsoft world, Entra typically delivers 35 to 40 percent better value, because much of it rides on licenses you already own. If your stack is heterogeneous, Google Workspace here, AWS there, Salesforce and forty other tools everywhere, Okta's neutrality and integration catalog usually justify its premium. We hold no reseller allegiance to either, so the recommendation follows your app inventory, not our margin, and we put the three year cost of both options side by side in the assessment."}},
  {"@type":"Question","name":"What ROI can we expect from an identity project?","acceptedAnswer":{"@type":"Answer","text":"This is one of the few security investments with honest, measurable payback, typically 10 to 14 months. The returns are concrete: password reset tickets drop sharply once SSO and self service land, onboarding shrinks from days of access requests to minutes of automation, offboarding risk disappears with it, and license reclamation from orphaned accounts often uncovers real money. Add the insurance premium effect of enforced MFA and the audit hours saved at compliance time, and the business case usually writes itself. We baseline these numbers before the project so the after picture is provable."}},
  {"@type":"Question","name":"What about service accounts, API keys, and AI agents?","acceptedAnswer":{"@type":"Answer","text":"They are the fastest growing risk in most environments and the least governed. Machine identities already outnumber human ones in a typical mid size company, and most of them hold standing credentials that never expire, never rotate, and never get reviewed. As AI agents join the workforce, that problem compounds, because an agent with an over broad token does damage at machine speed. We apply the same zero trust rules to non-humans as to humans: scoped access, short lived credentials, just in time elevation, and audit logs that show exactly which identity did what. If your roadmap includes agents, this is the prerequisite, not the follow up."}},
- {"@type":"Question","name":"Who controls the identity platform, and what if we part ways?","acceptedAnswer":{"@type":"Answer","text":"You do, entirely. The tenant is registered to your organization, admin rights sit with your named people, and every policy, integration, and workflow we build is documented in your repositories. Identity is the worst possible place for vendor dependency, because it holds the keys to everything else, so we engineer our own replaceability: any competent identity engineer could take over from our documentation tomorrow. Clients stay because the access reviews keep passing, not because leaving is hard."}}
+ {"@type":"Question","name":"Who controls the identity platform, and what if we part ways?","acceptedAnswer":{"@type":"Answer","text":"You do, entirely. The tenant is registered to your organization, admin rights sit with your named people, and every policy, integration, and workflow we build is documented in your repositories. Identity is the worst possible place for vendor dependency, because it holds the keys to everything else, so we engineer our own replaceability: any competent identity engineer could take over from our documentation tomorrow. Clients stay because the access reviews keep passing, not because leaving is hard."}},
+ {"@type":"Question","name":"What does zero trust actually mean in practice?","acceptedAnswer":{"@type":"Answer","text":"It means no user or device is trusted by default, every access request is verified based on identity, device health, and context. In practice that is SSO, MFA, least privilege access, and continuous validation."}},
+ {"@type":"Question","name":"Will tighter security frustrate our users?","acceptedAnswer":{"@type":"Answer","text":"Done right, it is the opposite. SSO and passwordless reduce login friction, while conditional access only steps up verification when risk is high. Security and usability improve together."}},
+ {"@type":"Question","name":"Which identity platforms do you work with?","acceptedAnswer":{"@type":"Answer","text":"Okta, Microsoft Entra ID (Azure AD), Auth0, and Ping, among others. We build on your existing investment where possible rather than forcing a migration."}},
+ {"@type":"Question","name":"Can you integrate with our legacy apps?","acceptedAnswer":{"@type":"Answer","text":"Yes. We bring older apps into SSO via SAML, OIDC, or proxy based approaches, so even legacy systems sit behind modern, centrally controlled access."}},
+ {"@type":"Question","name":"How long does a zero trust rollout take?","acceptedAnswer":{"@type":"Answer","text":"It is a phased journey, not a switch. Teams typically see SSO and MFA across critical apps within weeks, with least privilege and full conditional access maturing over the following months."}}
  ]
  }
  </script>
@@ -539,7 +544,7 @@
  <nav class="footer-col" aria-label="Quick links">
  <div class="footer-col-title">Quick Links</div>
  <ul>
- <li><a href="/#about">About Us</a></li>
+ <li><a href="/about">About Us</a></li>
  <li><a href="/services">Services</a></li>
  <li><a href="/#testimonials">Testimonials</a></li>
  <li><a href="/insights">Insights</a></li>
@@ -600,7 +605,7 @@
  </div>
 
  <!-- JavaScript -->
- <script src="/js/main.js?v=19"></script>
+ <script src="/js/main.js?v=20"></script>
 
  <!-- Float Buttons -->
  <div class="float-btns">

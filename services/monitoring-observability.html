@@ -75,7 +75,7 @@
 
  <script>(function(){var t = localStorage.getItem('croncore-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
 
- <link rel="stylesheet" href="/css/styles.css?v=28">
+ <link rel="stylesheet" href="/css/styles.css?v=30">
 </head>
 <body>
  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFNLPH3H"
@@ -374,7 +374,12 @@
  {"@type":"Question","name":"What is the actual return on this?","acceptedAnswer":{"@type":"Answer","text":"Three concrete lines. Detection speed: instrumented teams catch model degradation in days against a months-long industry average without, and everything the model earns or protects is exposed for exactly that gap. Liability: the legal precedent now exists that a company answers for what its AI tells customers, and grounding metrics are the control that keeps that risk measured instead of discovered. And attribution: per-feature cost tracking routinely finds one workflow leaking money, and turning that off or rerouting it has paid for entire engagements in the first quarter. We baseline your current mean-time-to-detect before instrumenting, so the improvement is measured, not asserted."}},
  {"@type":"Question","name":"What should we instrument first?","acceptedAnswer":{"@type":"Answer","text":"Follow the money and the exposure, not the org chart. First: whatever AI output reaches customers unreviewed, because that is where the reputational and legal risk lives. Second: the highest-volume workflow, because that is where silent quality decay and cost leaks compound fastest. Third: anything an agent can act on without a human gate. Our telemetry audit ranks your systems on exactly those three axes and usually produces a first target nobody in the room expected, which is rather the point of auditing instead of assuming."}},
  {"@type":"Question","name":"Can this actually make our AI cheaper, or only safer?","acceptedAnswer":{"@type":"Answer","text":"Both, and the cheaper part is underrated. Cost attribution per request and per feature is the prerequisite for every optimization that follows: routing expensive queries to cheaper models, caching what repeats, and retiring the feature that costs more than it returns. Teams operating blind cannot make any of those moves because they cannot see the target. Observability does not cut the bill by itself, but every bill we have ever cut started with the visibility this page builds, which is why the two practices are designed as one pipeline."}},
- {"@type":"Question","name":"Who owns the telemetry, and are we locked into anything?","acceptedAnswer":{"@type":"Answer","text":"You own every trace, score, and dashboard, and the foundation is deliberately boring: OpenTelemetry-standard instrumentation feeding your existing stores and alerting, not a proprietary platform holding your history hostage. Vendors in this space love to make the telemetry the moat; we build it so the data outlives any tool choice, including us, and any engineer fluent in standard observability tooling can operate and extend it. The history is the asset, every production interaction queryable and replayable, and an asset you cannot export was never yours."}}
+ {"@type":"Question","name":"Who owns the telemetry, and are we locked into anything?","acceptedAnswer":{"@type":"Answer","text":"You own every trace, score, and dashboard, and the foundation is deliberately boring: OpenTelemetry-standard instrumentation feeding your existing stores and alerting, not a proprietary platform holding your history hostage. Vendors in this space love to make the telemetry the moat; we build it so the data outlives any tool choice, including us, and any engineer fluent in standard observability tooling can operate and extend it. The history is the asset, every production interaction queryable and replayable, and an asset you cannot export was never yours."}},
+ {"@type":"Question","name":"We already have Datadog. Do we need something else?","acceptedAnswer":{"@type":"Answer","text":"Datadog covers infra and latency well. AI observability adds quality, drift, and cost tracking, usually as a thin layer that feeds into Datadog and your existing alerting."}},
+ {"@type":"Question","name":"What tools do you use?","acceptedAnswer":{"@type":"Answer","text":"OpenTelemetry as the spine. Langfuse, Helicone, or Arize for LLM tracing. Whylogs or Evidently for drift. Prometheus/Grafana for metrics. We integrate with what you already run."}},
+ {"@type":"Question","name":"How do you measure quality without ground truth?","acceptedAnswer":{"@type":"Answer","text":"LLM as judge with calibrated rubrics, embedding distance from reference outputs, user feedback signals (thumbs, escalations), and periodic human review of flagged samples."}},
+ {"@type":"Question","name":"Can you instrument an existing AI system without rewriting it?","acceptedAnswer":{"@type":"Answer","text":"Yes, most engagements start with a side car instrumentation layer that captures telemetry without touching the core code path."}},
+ {"@type":"Question","name":"What about PII in logs?","acceptedAnswer":{"@type":"Answer","text":"PII redaction at capture, encrypted storage, role based access. Where regulation requires it, we keep telemetry within your perimeter, see our on premise offering."}}
  ]
  }
  </script>
@@ -518,7 +523,7 @@
  <nav class="footer-col" aria-label="Quick links">
  <div class="footer-col-title">Quick Links</div>
  <ul>
- <li><a href="/#about">About Us</a></li>
+ <li><a href="/about">About Us</a></li>
  <li><a href="/services">Services</a></li>
  <li><a href="/#testimonials">Testimonials</a></li>
  <li><a href="/insights">Insights</a></li>
@@ -578,7 +583,7 @@
  </footer>
  </div>
 
- <script src="/js/main.js?v=19"></script>
+ <script src="/js/main.js?v=20"></script>
 
  <div class="float-btns">
  <a href="https://wa.me/16039991544" target="_blank" rel="noopener noreferrer" class="float-btn float-btn--whatsapp" aria-label="Contact on WhatsApp">

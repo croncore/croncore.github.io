@@ -77,7 +77,7 @@
  <script>(function(){var t = localStorage.getItem('croncore-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
 
  <!-- Stylesheet -->
- <link rel="stylesheet" href="/css/styles.css?v=28">
+ <link rel="stylesheet" href="/css/styles.css?v=30">
 </head>
 <body>
  <!-- Google Tag Manager (noscript) -->
@@ -391,7 +391,12 @@
  {"@type":"Question","name":"Should we hire a data engineer or use a service like this?","acceptedAnswer":{"@type":"Answer","text":"Run the math first. One good data engineer costs $150,000 to $200,000 fully loaded, and one is rarely enough, because pipelines need coverage when that person is on holiday, and research shows about half of a data engineer's time goes to maintaining what already exists. A fractional engagement gives you a senior team for a fraction of one salary. The crossover point is real: when data work becomes multiple full time roles worth of new development, hire, and we will help you hand over. Until then, renting the team is usually the better spend."}},
  {"@type":"Question","name":"What will it cost to run each month after launch?","acceptedAnswer":{"@type":"Answer","text":"Two layers, and be suspicious of anyone who only quotes the first. Tooling and warehouse compute typically runs a few hundred dollars a month for small setups, $1,000 to $10,000 for mid size companies, and beyond for heavy workloads. Then the hidden layer: egress fees, idle compute, and unoptimized queries that quietly burn credits. We design with cost monitors, auto suspend, and query governance from day one, and we put a projected monthly run cost in the proposal so the second invoice is never a surprise."}},
  {"@type":"Question","name":"Can our own team run the platform after you leave?","acceptedAnswer":{"@type":"Answer","text":"Yes, and that is a design goal, not a courtesy. Everything is built on standard, hireable tools, documented as it is built, and versioned in your repositories and your cloud accounts. The final phase of every engagement is training your people to add sources and build dashboards themselves. Plenty of clients keep us on a small retainer for the plumbing, but that is a choice, never a hostage situation."}},
- {"@type":"Question","name":"When is a data project not worth doing?","acceptedAnswer":{"@type":"Answer","text":"More often than this industry admits. If you have one or two clean sources and your questions fit inside your accounting tool or a $100 a month BI subscription, buy the tool and skip the consultants. A custom data platform earns its cost when sources multiply, numbers stop matching, reporting eats real staff hours, or an AI initiative needs a foundation. Industry benchmarks put warehouse ROI around 400 percent over five years with payback inside a year, but those returns only exist where the pain already does. Part of our audit is telling you which side of that line you are on."}}
+ {"@type":"Question","name":"When is a data project not worth doing?","acceptedAnswer":{"@type":"Answer","text":"More often than this industry admits. If you have one or two clean sources and your questions fit inside your accounting tool or a $100 a month BI subscription, buy the tool and skip the consultants. A custom data platform earns its cost when sources multiply, numbers stop matching, reporting eats real staff hours, or an AI initiative needs a foundation. Industry benchmarks put warehouse ROI around 400 percent over five years with payback inside a year, but those returns only exist where the pain already does. Part of our audit is telling you which side of that line you are on."}},
+ {"@type":"Question","name":"Power BI or Tableau, which should we use?","acceptedAnswer":{"@type":"Answer","text":"Both are strong. Power BI fits Microsoft centric orgs and budgets well; Tableau excels at rich visual exploration. We recommend based on your stack, skills, and licensing, and build for both."}},
+ {"@type":"Question","name":"Do we need a data warehouse?","acceptedAnswer":{"@type":"Answer","text":"If reports come from spreadsheets and conflicting systems, yes. A warehouse gives you one governed source of truth so every team’s numbers finally agree. We right size it to your scale."}},
+ {"@type":"Question","name":"Can you work with our existing tools?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. We integrate with the databases, SaaS apps, and BI tools you already have, and adopt modern stack components (dbt, Airflow, Fivetran) only where they add real value."}},
+ {"@type":"Question","name":"How do you ensure the data is trustworthy?","acceptedAnswer":{"@type":"Answer","text":"Automated data quality tests, lineage tracking, and clear documentation. When a number looks off, you can trace exactly where it came from, and trust the ones that look right."}},
+ {"@type":"Question","name":"Can this feed our AI and ML initiatives?","acceptedAnswer":{"@type":"Answer","text":"Yes, a clean, governed data foundation is exactly what AI needs. The platform we build doubles as the feature and training data layer for our AI work."}}
  ]
  }
  </script>
@@ -539,7 +544,7 @@
  <nav class="footer-col" aria-label="Quick links">
  <div class="footer-col-title">Quick Links</div>
  <ul>
- <li><a href="/#about">About Us</a></li>
+ <li><a href="/about">About Us</a></li>
  <li><a href="/services">Services</a></li>
  <li><a href="/#testimonials">Testimonials</a></li>
  <li><a href="/insights">Insights</a></li>
@@ -600,7 +605,7 @@
  </div>
 
  <!-- JavaScript -->
- <script src="/js/main.js?v=19"></script>
+ <script src="/js/main.js?v=20"></script>
 
  <!-- Float Buttons -->
  <div class="float-btns">
