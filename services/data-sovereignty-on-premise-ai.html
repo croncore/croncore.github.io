@@ -75,7 +75,7 @@
 
  <script>(function(){var t = localStorage.getItem('croncore-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
 
- <link rel="stylesheet" href="/css/styles.css?v=28">
+ <link rel="stylesheet" href="/css/styles.css?v=30">
 </head>
 <body>
  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFNLPH3H"
@@ -382,7 +382,12 @@
  {"@type":"Question","name":"What does a sovereign deployment actually cost, all layers included?","acceptedAnswer":{"@type":"Answer","text":"Three layers, and be suspicious of quotes showing only one. The build, meaning architecture, hardening, integration, and the compliance documentation, typically runs $60,000 to $200,000 and beyond for national or classified scopes. The infrastructure, whether your existing data center or new GPU capacity, is a capital line we spec against your workload rather than against a vendor's ambitions, and modest models for narrow tasks often run on hardware far below what buyers fear. The layer everyone underestimates is operations: production reliability wants dedicated engineering coverage, and staffing is routinely the largest line over three years. Our handover model exists precisely to move that layer to your operators on a defined schedule instead of leaving it as our permanent invoice."}},
  {"@type":"Question","name":"Do we actually need this, or is compliant cloud AI enough?","acceptedAnswer":{"@type":"Answer","text":"For most companies, compliant cloud AI is enough, and we say that while selling the alternative. Contractual safeguards, regional endpoints, and minimization, the architecture our GDPR compliant AI practice builds, satisfies the majority of regulated use cases at a fraction of the operational weight. Sovereignty becomes the answer when one of four things is true: a government or defense mandate requires it, foreign jurisdictional exposure is unacceptable to your regulator or your board, the environment must operate air gapped, or your compliance obligations require model transparency a closed provider cannot give. The classification review sorts this in one session, and pointing a buyer back to the lighter option is a routine outcome of it."}},
  {"@type":"Question","name":"Can we keep some workloads in the cloud, or is it all or nothing?","acceptedAnswer":{"@type":"Answer","text":"Hybrid is the pattern most enterprises should actually run, and pretending otherwise sells you more perimeter than you need. Sensitive and high volume workloads run local, and routing the routine majority of traffic to your own models typically cuts inference cost 60 to 80 percent, while the hardest few percent of tasks can still call an approved frontier model through a governed, logged gateway, if your compliance bar allows any external calls at all. The design work is deciding which data and which decisions may never leave, writing that as enforceable policy rather than intention, and building the router that makes the policy physical. Fully air gapped clients skip the hybrid entirely, and the architecture supports both without a rebuild."}},
- {"@type":"Question","name":"Who owns the models, and what if a provider changes the license?","acceptedAnswer":{"@type":"Answer","text":"Everything inside the perimeter is yours: the tuned weights, the serving stack, the pipelines, the logs, and the documentation, running on infrastructure registered to you and operable by any competent team. On the license question, this is precisely why sovereign builds use open weight models under licenses vetted for your jurisdiction before deployment: a foreign provider changing API terms, pricing, or availability cannot reach a model that lives on your metal. The nightmare this service exists to prevent is a regulated system whose intelligence can be revoked by someone else's business decision, and the whole architecture is the answer to it."}}
+ {"@type":"Question","name":"Who owns the models, and what if a provider changes the license?","acceptedAnswer":{"@type":"Answer","text":"Everything inside the perimeter is yours: the tuned weights, the serving stack, the pipelines, the logs, and the documentation, running on infrastructure registered to you and operable by any competent team. On the license question, this is precisely why sovereign builds use open weight models under licenses vetted for your jurisdiction before deployment: a foreign provider changing API terms, pricing, or availability cannot reach a model that lives on your metal. The nightmare this service exists to prevent is a regulated system whose intelligence can be revoked by someone else's business decision, and the whole architecture is the answer to it."}},
+ {"@type":"Question","name":"Can a frontier quality model really run on premise?","acceptedAnswer":{"@type":"Answer","text":"Open weight models from Llama, Mistral, Qwen, and DeepSeek are within striking distance of frontier closed models for most tasks, and we tune them for your domain to close the rest of the gap."}},
+ {"@type":"Question","name":"What hardware do we need?","acceptedAnswer":{"@type":"Answer","text":"Depends on the model and throughput target. We size hardware during scoping, from single server appliances to multi GPU clusters, and design to your existing data center capacity where possible."}},
+ {"@type":"Question","name":"How do model updates work in an air gapped environment?","acceptedAnswer":{"@type":"Answer","text":"Signed update bundles, manually transferred and verified inside your perimeter. Versioned, rollback able, and signed by keys you control, no automatic outbound calls."}},
+ {"@type":"Question","name":"Can your engineers work in our cleared environment?","acceptedAnswer":{"@type":"Answer","text":"Yes, we routinely work under NDAs, citizenship requirements, and on site clearance protocols. Engagement structure adapts to your security posture."}},
+ {"@type":"Question","name":"What happens after handover?","acceptedAnswer":{"@type":"Answer","text":"Your operators run the system. We transfer runbooks, monitoring playbooks, and on call procedures, and we offer a retainer for tuning, model updates, and incident support."}}
  ]
  }
  </script>
@@ -526,7 +531,7 @@
  <nav class="footer-col" aria-label="Quick links">
  <div class="footer-col-title">Quick Links</div>
  <ul>
- <li><a href="/#about">About Us</a></li>
+ <li><a href="/about">About Us</a></li>
  <li><a href="/services">Services</a></li>
  <li><a href="/#testimonials">Testimonials</a></li>
  <li><a href="/insights">Insights</a></li>
@@ -586,7 +591,7 @@
  </footer>
  </div>
 
- <script src="/js/main.js?v=19"></script>
+ <script src="/js/main.js?v=20"></script>
 
  <div class="float-btns">
  <a href="https://wa.me/16039991544" target="_blank" rel="noopener noreferrer" class="float-btn float-btn--whatsapp" aria-label="Contact on WhatsApp">

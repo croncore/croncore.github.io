@@ -75,7 +75,7 @@
 
  <script>(function(){var t = localStorage.getItem('croncore-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
 
- <link rel="stylesheet" href="/css/styles.css?v=28">
+ <link rel="stylesheet" href="/css/styles.css?v=30">
 </head>
 <body>
  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFNLPH3H"
@@ -382,7 +382,12 @@
  {"@type":"Question","name":"What actually happens if we get it wrong?","acceptedAnswer":{"@type":"Answer","text":"Three tiers of AI Act fines, up to €35 million or 7 percent of global turnover for prohibited practices, €15 million or 3 percent for high risk violations, the tier most companies face, and the ceilings exceed GDPR's. Where personal data is involved, GDPR fines stack on top under a separate authority. Beyond money: regulators can order systems withdrawn from the market, mandate retraining, and list non compliant systems in a public register, and early enforcement will be complaint driven, a rejected candidate or a denied loan applicant is all it takes to open a file. GDPR enforcement started slow and passed €4 billion in cumulative fines; the AI Act inherits that machinery already warmed up."}},
  {"@type":"Question","name":"Are we a provider or a deployer, and why does it matter enormously?","acceptedAnswer":{"@type":"Answer","text":"It is the classification that decides most of your obligations, and studies suggest around 40 percent of enterprise AI systems currently sit unclassified or misclassified. Using a foundation model through its API generally makes you a deployer, with lighter duties. Substantially modifying one, extensive fine tuning included, can reclassify you as a provider, inheriting the full technical documentation, conformity assessment, and post market monitoring stack. Teams discover this after the fine tuning project, which is the expensive order. We run the classification before any build decision, because the answer changes both the architecture and the budget."}},
  {"@type":"Question","name":"Is the August 2026 deadline real, or is the delay happening?","acceptedAnswer":{"@type":"Answer","text":"As of this writing, both, and that is precisely the trap. A provisional political agreement from May 2026, the Digital Omnibus, would defer Annex III high risk obligations to December 2027, but it has not been enacted, which leaves August 2, 2026 as the legally operative enforcement date. Pausing your compliance program on a provisional agreement is a bet with full penalty exposure on the downside and nothing on the upside, because the work transfers intact if the deadline moves: early compliance is not wasted compliance. Our advice, and the advice of most counsel we work alongside: build to August 2, and treat any extension as breathing room you did not need."}},
- {"@type":"Question","name":"What do we do about the AI tools our employees already use?","acceptedAnswer":{"@type":"Answer","text":"First, accept the finding before the audit forces it: surveys consistently show most employees use AI at work, approved or not, and every unapproved paste of customer data into a consumer tool is processing without lawful basis. The fix has two halves that only work together. Block the ungoverned channels at the network layer, and simultaneously give people a governed alternative, an internal AI gateway with logging, redaction, and a real DPA behind it, that is genuinely as useful as the tool you took away. Companies that only block get shadow AI with better hiding. Companies that only offer get partial adoption. We deploy both halves as one project, usually in weeks."}}
+ {"@type":"Question","name":"What do we do about the AI tools our employees already use?","acceptedAnswer":{"@type":"Answer","text":"First, accept the finding before the audit forces it: surveys consistently show most employees use AI at work, approved or not, and every unapproved paste of customer data into a consumer tool is processing without lawful basis. The fix has two halves that only work together. Block the ungoverned channels at the network layer, and simultaneously give people a governed alternative, an internal AI gateway with logging, redaction, and a real DPA behind it, that is genuinely as useful as the tool you took away. Companies that only block get shadow AI with better hiding. Companies that only offer get partial adoption. We deploy both halves as one project, usually in weeks."}},
+ {"@type":"Question","name":"Can we use OpenAI or Anthropic and still be GDPR compliant?","acceptedAnswer":{"@type":"Answer","text":"Yes, with the right contractual setup (DPA, SCCs), regional endpoints, and data minimization in the prompt path. We design the integration layer that makes their APIs usable under your DPO's terms."}},
+ {"@type":"Question","name":"Where is the model hosted?","acceptedAnswer":{"@type":"Answer","text":"EU or UK by default, AWS Frankfurt/Ireland, Azure West Europe, GCP europe west, or your private cloud. For on prem, see our data sovereignty offering."}},
+ {"@type":"Question","name":"How do you handle subject access and erasure?","acceptedAnswer":{"@type":"Answer","text":"Subject access is a query against the audit log. Erasure cascades through prompts, embeddings, retrieval indices, and any cached state, with a documented SLA for completion."}},
+ {"@type":"Question","name":"What about the EU AI Act?","acceptedAnswer":{"@type":"Answer","text":"We design with risk classification in mind from day one. Where your use case falls into a high risk category, we deliver the technical documentation, conformity assessment support, and post market monitoring infrastructure required."}},
+ {"@type":"Question","name":"Do you support DPIAs?","acceptedAnswer":{"@type":"Answer","text":"Yes, every engagement ships a DPIA ready package: data flow diagrams, risk assessment, mitigations, and residual risk register. Your DPO finalizes; we provide the technical scaffolding."}}
  ]
  }
  </script>
@@ -526,7 +531,7 @@
  <nav class="footer-col" aria-label="Quick links">
  <div class="footer-col-title">Quick Links</div>
  <ul>
- <li><a href="/#about">About Us</a></li>
+ <li><a href="/about">About Us</a></li>
  <li><a href="/services">Services</a></li>
  <li><a href="/#testimonials">Testimonials</a></li>
  <li><a href="/insights">Insights</a></li>
@@ -586,7 +591,7 @@
  </footer>
  </div>
 
- <script src="/js/main.js?v=19"></script>
+ <script src="/js/main.js?v=20"></script>
 
  <div class="float-btns">
  <a href="https://wa.me/16039991544" target="_blank" rel="noopener noreferrer" class="float-btn float-btn--whatsapp" aria-label="Contact on WhatsApp">

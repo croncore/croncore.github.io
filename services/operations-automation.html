@@ -75,7 +75,7 @@
 
  <script>(function(){var t = localStorage.getItem('croncore-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
 
- <link rel="stylesheet" href="/css/styles.css?v=28">
+ <link rel="stylesheet" href="/css/styles.css?v=30">
 </head>
 <body>
  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFNLPH3H"
@@ -174,7 +174,8 @@
  <div class="sp-why-header reveal">
  <div class="sp-why-header-left">
  <div class="section-tag"><span class="tag-pulse"></span> Capabilities</div>
- <h2>Where we automate<br><span class="text-accent">most often.</span></h2>
+ <h2>What does Croncore<br><span class="text-accent">automate most often?</span></h2>
+ <p class="answer-first">Six workflows come up most: ticket triage and routing, invoice and approval flows, internal helpdesk Q&amp;A, data reconciliation, scheduled runbooks, and anomaly detection with escalation. These are high volume, rules driven, well instrumented work with clear inputs and a defined outcome.</p>
  </div>
  <p class="sp-why-header-right">Not every workflow is an AI problem. We start with the highest volume, highest friction work, where automation pays back fastest and the failure modes are knowable.</p>
  </div>
@@ -218,7 +219,8 @@
  <div class="container">
  <div class="sp-detail-header reveal">
  <div class="section-tag"><span class="tag-pulse"></span> Capabilities</div>
- <h2>Five signs your operations are running on heroics.</h2>
+ <h2>How do I know my operations need automation?</h2>
+ <p class="answer-first">Five signs: headcount grew but output did not, an exception pile your RPA cannot touch, an inbox that secretly runs your business, month end that takes two weeks, and onboarding and offboarding that always slips. Each one is a symptom of work being held together manually.</p>
  <p>Nobody searches for "operations automation" on a good day. They search after the third month end that slipped, the RPA bot that broke again, or the realization that headcount doubled and throughput did not. Here is what each of those looks like from our side.</p>
  </div>
  <div class="sp-detail-grid reveal">
@@ -266,7 +268,8 @@
  <div class="container">
  <div class="sp-process-header reveal">
  <div class="section-tag"><span class="tag-pulse"></span> How We Build It</div>
- <h2>From workflow audit to <span class="text-accent">live automation.</span></h2>
+ <h2>How does Croncore roll out <span class="text-accent">an automation?</span></h2>
+ <p class="answer-first">Four stages: a workflow audit that measures volume, time per step, error rate, and escalation paths before anything changes; a build order ranked by ROI and blast radius; a two week shadow mode pilot that recommends rather than executes; then phased production with monitoring and kill switches.</p>
  <p>We pick the right workflow first, prove it works in shadow mode, then roll it out, with kill switches and rollback at every stage.</p>
  </div>
  <div class="sp-process-grid reveal">
@@ -378,7 +381,12 @@
  {"@type":"Question","name":"Can our own team just build this with n8n or Zapier?","acceptedAnswer":{"@type":"Answer","text":"For simple, linear, low stakes flows, yes, and you should. The line appears when the automation touches money, compliance, or customer promises, because then the real product is not the workflow, it is everything around it: error handling when a system times out mid transfer, audit trails an auditor accepts, retry logic that does not double pay an invoice, and someone accountable when it breaks at 2am. DIY automations tend to work until their builder changes jobs. If your workflow can fail quietly without damage, build it yourself with our blessing. If a silent failure costs real money, that is what you are hiring us for."}},
  {"@type":"Question","name":"How much of a workflow can realistically be automated?","acceptedAnswer":{"@type":"Answer","text":"Less than the vendors imply and more than the skeptics fear. A realistic target for a well chosen workflow is 60 to 80 percent of volume handled end to end, with the remaining exceptions deliberately routed to humans, and McKinsey's estimate is that agents can automate 15 to 40 percent of knowledge work that was previously unautomatable, not all of it. Our own stat above, 60 percent plus of tickets resolved without humans, sits inside that honest range on purpose. Anyone promising 100 percent automation is describing a workflow that will fail silently, which is worse than one that escalates loudly."}},
  {"@type":"Question","name":"What does it cost to run each month?","acceptedAnswer":{"@type":"Answer","text":"Model and infrastructure spend scales with volume and typically lands in the hundreds to low thousands per month per workflow, a fraction of the labor it replaces. The comparison that matters is maintenance: traditional RPA maintenance consumes most of its budget because bots break on every change, while agents absorb format and interface drift by design, so upkeep is a tuning retainer rather than a repair contract. Every proposal includes a projected cost per task at your volumes, next to the measured cost of the human handling it today, so the margin is visible before you sign."}},
- {"@type":"Question","name":"Who owns the automations if we part ways?","acceptedAnswer":{"@type":"Answer","text":"You do, entirely and usefully. Workflow definitions, prompts, integration code, and runbooks live in your repositories, run under your cloud and model accounts, and are documented for an engineer who has never met us. The audit data from stage one, your workflow volumes, error rates, and costs, is yours too, and it is valuable even if you never automate anything. We are confident enough in the biweekly tuning to make leaving easy, because retention through lock-in is just churn with extra steps."}}
+ {"@type":"Question","name":"Who owns the automations if we part ways?","acceptedAnswer":{"@type":"Answer","text":"You do, entirely and usefully. Workflow definitions, prompts, integration code, and runbooks live in your repositories, run under your cloud and model accounts, and are documented for an engineer who has never met us. The audit data from stage one, your workflow volumes, error rates, and costs, is yours too, and it is valuable even if you never automate anything. We are confident enough in the biweekly tuning to make leaving easy, because retention through lock-in is just churn with extra steps."}},
+ {"@type":"Question","name":"Which workflows are best suited to automation?","acceptedAnswer":{"@type":"Answer","text":"High volume, rules driven, and well instrumented work with clear inputs and a defined outcome. Ticket triage, invoice processing, and internal helpdesk Q&A are usually the first wins."}},
+ {"@type":"Question","name":"How do you prevent the agent from taking the wrong action?","acceptedAnswer":{"@type":"Answer","text":"Action allowlists, dollar value approval gates, rate limits, and a shadow mode pilot before any write actions. We also build a kill switch you can hit from a dashboard at any time."}},
+ {"@type":"Question","name":"Does this replace our team?","acceptedAnswer":{"@type":"Answer","text":"It replaces the repetitive work. Your team stops doing the same triage 200 times a day and starts working on the cases that actually need their judgment, and the work the team didn't have time for before."}},
+ {"@type":"Question","name":"Will it integrate with our existing tools?","acceptedAnswer":{"@type":"Answer","text":"Yes, Jira, ServiceNow, Zendesk, Slack, Teams, Confluence, NetSuite, SAP, Workday, custom internal tools. If it has an API or a webhook, we connect to it."}},
+ {"@type":"Question","name":"What's the typical ROI timeline?","acceptedAnswer":{"@type":"Answer","text":"For high volume workflows, payback is usually inside 90 days post launch. We share a measurement plan during scoping so you know exactly what you're tracking against."}}
  ]
  }
  </script>
@@ -522,7 +530,7 @@
  <nav class="footer-col" aria-label="Quick links">
  <div class="footer-col-title">Quick Links</div>
  <ul>
- <li><a href="/#about">About Us</a></li>
+ <li><a href="/about">About Us</a></li>
  <li><a href="/services">Services</a></li>
  <li><a href="/#testimonials">Testimonials</a></li>
  <li><a href="/insights">Insights</a></li>
@@ -582,7 +590,7 @@
  </footer>
  </div>
 
- <script src="/js/main.js?v=19"></script>
+ <script src="/js/main.js?v=20"></script>
 
  <div class="float-btns">
  <a href="https://wa.me/16039991544" target="_blank" rel="noopener noreferrer" class="float-btn float-btn--whatsapp" aria-label="Contact on WhatsApp">

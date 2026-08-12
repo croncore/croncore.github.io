@@ -60,7 +60,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <script>(function () { var t = localStorage.getItem('croncore-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); if (t === 'light') document.documentElement.setAttribute('data-theme', 'light'); })()</script>
 
  <!-- Stylesheet -->
- <link rel="stylesheet" href="/css/styles.css?v=28">
+ <link rel="stylesheet" href="/css/styles.css?v=30">
  
  <!-- Article Specific Styles -->
  <style>
@@ -172,6 +172,34 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
         }
         .no-hero .article-meta .dot,
         [data-theme="light"] .article-meta .dot { background: var(--text-muted); }
+
+        .article-meta .byline { font-weight: 600; color: rgba(255,255,255,0.82); }
+        .no-hero .article-meta .byline,
+        [data-theme="light"] .article-meta .byline { color: var(--text-primary); }
+
+        /* ===== AUTHOR BIO ===== */
+        .article-author {
+            margin: 44px 0 0;
+            padding: 20px 22px;
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 14px 14px 0;
+            background: var(--accent-subtle);
+        }
+        .article-author-name {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text-white);
+            margin: 0 0 6px;
+        }
+        [data-theme="light"] .article-author-name { color: var(--text-primary); }
+        .article-author-bio {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin: 0;
+        }
 
         .article-title {
             font-size: clamp(1.8rem, 4.5vw, 3.2rem);
@@ -519,7 +547,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <nav class="footer-col" aria-label="Quick links">
  <div class="footer-col-title">Quick Links</div>
  <ul>
- <li><a href="/#about">About Us</a></li>
+ <li><a href="/about">About Us</a></li>
  <li><a href="/services">Services</a></li>
  <li><a href="/#testimonials">Testimonials</a></li>
  <li><a href="/insights">Insights</a></li>
@@ -581,7 +609,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
 
  <!-- JavaScript -->
  <script src="/js/sanity.js"></script>
- <script src="/js/main.js?v=19"></script>
+ <script src="/js/main.js?v=20"></script>
  <script>
         document.addEventListener('DOMContentLoaded', function () {
             // ---- Soft-404 helper: when a slug doesn't match any post, mark

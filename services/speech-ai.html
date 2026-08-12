@@ -75,7 +75,7 @@
 
  <script>(function(){var t = localStorage.getItem('croncore-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
 
- <link rel="stylesheet" href="/css/styles.css?v=28">
+ <link rel="stylesheet" href="/css/styles.css?v=30">
 </head>
 <body>
  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFNLPH3H"
@@ -174,7 +174,8 @@
  <div class="sp-why-header reveal">
  <div class="sp-why-header-left">
  <div class="section-tag"><span class="tag-pulse"></span> Capabilities</div>
- <h2>Speech that<br><span class="text-accent">handles real life.</span></h2>
+ <h2>How does Croncore&#39;s<br><span class="text-accent">speech AI work?</span></h2>
+ <p class="answer-first">Six capabilities make up the stack: custom STT models, natural TTS voices, real time streaming, voice cloning, multilingual and code switching support, and production serving. Each is tuned against your own recordings rather than benchmark audio, which is where general purpose APIs lose accuracy.</p>
  </div>
  <p class="sp-why-header-right">Off the shelf APIs handle clean studio audio. Production speech is messy: accents, code switching, background noise, jargon. We tune for the audio you actually have.</p>
  </div>
@@ -218,7 +219,8 @@
  <div class="container">
  <div class="sp-detail-header reveal">
  <div class="section-tag"><span class="tag-pulse"></span> Capabilities</div>
- <h2>Six places a voice that actually listens changes the math.</h2>
+ <h2>Where does voice AI actually pay off?</h2>
+ <p class="answer-first">Six deployments: call center voice agents, accents and dialects the big APIs give up on, industry vocabulary general models butcher, voice for learning and assessment, branded and produced audio, and voice interfaces where typing was never the right input in the first place.</p>
  <p>Voice AI finally works, and the market numbers prove it, but only when it survives contact with real audio: accents, noise, jargon, and callers who interrupt. These are the six deployments where that survival is the whole product.</p>
  </div>
  <div class="sp-detail-grid reveal">
@@ -270,7 +272,8 @@
  <div class="container">
  <div class="sp-process-header reveal">
  <div class="section-tag"><span class="tag-pulse"></span> How We Build It</div>
- <h2>From audio sample to <span class="text-accent">production voice.</span></h2>
+ <h2>How does Croncore build a <span class="text-accent">production speech model?</span></h2>
+ <p class="answer-first">Four stages: an audio audit that samples your call recordings, IVR logs, and field audio to characterize accent, noise, and vocabulary; labeling pipelines with native speaker QA; model training followed by quantization and serving optimization; then production serving monitored on word error rate and p95 latency.</p>
  <p>Speech models live or die on data quality and latency tuning. We invest heavily in both before tuning anything else.</p>
  </div>
  <div class="sp-process-grid reveal">
@@ -382,7 +385,12 @@
  {"@type":"Question","name":"What containment rate is realistic?","acceptedAnswer":{"@type":"Answer","text":"Lower than the sales decks say, then higher than you expect. Honest benchmarks: 20 to 40 percent containment in early deployment, 40 to 70 percent in mature ones, with the cross-industry average around 41 percent. Two warnings the industry earned: any vendor promising 80 percent on day one is describing their best case as their base case, and containment optimized alone is a trap, because an agent can force-resolve calls that should have escalated and the dashboard will call it success. We track containment paired with satisfaction and repeat-contact rates from day one, so a resolved call means the customer's problem ended, not just the call."}},
  {"@type":"Question","name":"What accuracy should we demand, and how do we verify it?","acceptedAnswer":{"@type":"Answer","text":"The benchmark line: under 8 percent word error rate on clean audio, under 15 percent on noisy or accented calls, and word-level accuracy on the vocabulary your business actually depends on, since a transcript that nails every word except the part number has failed. The verification method is the only one that works: never accept accuracy claims measured on a vendor's demo audio, including ours. Hand over a sample of your genuine recordings, worst lines included, and demand the error rate on that. Our audio audit is that test made standard procedure, and the resulting benchmark is yours to hold every future vendor against."}},
  {"@type":"Question","name":"Will our customers actually talk to an AI?","acceptedAnswer":{"@type":"Answer","text":"Yes, if it earns it in the first five seconds, and the bar was set by decades of IVR abuse, not by us. What the deployment data shows: callers stay when the agent responds fast enough to feel conversational, lets them interrupt, understands them the first time, and offers a human without being begged. What kills adoption is the opposite of each, plus any hint of the phone-tree maze. We design every agent with instant barge-in, a clean escalation path, and disclosure that is honest without being apologetic, because the goal is not to trick callers into thinking it is human, it is to resolve their problem fast enough that they stop caring."}},
- {"@type":"Question","name":"Who owns the voices, the models, and the recordings?","acceptedAnswer":{"@type":"Answer","text":"You do, across every layer that matters. The tuned speech models are your asset, the branded TTS voice is contractually yours with the talent agreements written for it, and your call recordings, which quietly become the training data that keeps improving the models, stay your property in your infrastructure. This matters more in voice than most buyers realize: platform vendors can hold your custom voice and your accumulated audio hostage at renewal time, and a brand voice you cannot take with you is not a brand asset. We build so the voice, the models, and the data walk with you if we ever part ways."}}
+ {"@type":"Question","name":"Who owns the voices, the models, and the recordings?","acceptedAnswer":{"@type":"Answer","text":"You do, across every layer that matters. The tuned speech models are your asset, the branded TTS voice is contractually yours with the talent agreements written for it, and your call recordings, which quietly become the training data that keeps improving the models, stay your property in your infrastructure. This matters more in voice than most buyers realize: platform vendors can hold your custom voice and your accumulated audio hostage at renewal time, and a brand voice you cannot take with you is not a brand asset. We build so the voice, the models, and the data walk with you if we ever part ways."}},
+ {"@type":"Question","name":"Why not just use Whisper or ElevenLabs?","acceptedAnswer":{"@type":"Answer","text":"For some use cases, those are great. We're called in when accuracy on accents, dialects, or industry vocabulary isn't acceptable, when sovereignty matters, or when latency budgets force on prem inference."}},
+ {"@type":"Question","name":"Can we run inference on premise?","acceptedAnswer":{"@type":"Answer","text":"Yes, that's often the requirement. We optimize models for your hardware (GPU or CPU) and ship a serving stack that meets your latency and throughput targets without leaving your perimeter."}},
+ {"@type":"Question","name":"What latency can we expect?","acceptedAnswer":{"@type":"Answer","text":"Sub 500ms end to end for streaming STT, sub 300ms first byte for TTS, on appropriate hardware. We design to your latency budget, not the other way around."}},
+ {"@type":"Question","name":"How do you handle voice cloning ethically?","acceptedAnswer":{"@type":"Answer","text":"Authorized voices only, with documented consent and audit trails. Output watermarking is on by default. We won't clone a voice without the owner's signed agreement."}},
+ {"@type":"Question","name":"What languages do you support?","acceptedAnswer":{"@type":"Answer","text":"20+ in production today, including low resource languages like Mongolian. For new languages, see our multilingual AI offering."}}
  ]
  }
  </script>
@@ -526,7 +534,7 @@
  <nav class="footer-col" aria-label="Quick links">
  <div class="footer-col-title">Quick Links</div>
  <ul>
- <li><a href="/#about">About Us</a></li>
+ <li><a href="/about">About Us</a></li>
  <li><a href="/services">Services</a></li>
  <li><a href="/#testimonials">Testimonials</a></li>
  <li><a href="/insights">Insights</a></li>
@@ -586,7 +594,7 @@
  </footer>
  </div>
 
- <script src="/js/main.js?v=19"></script>
+ <script src="/js/main.js?v=20"></script>
 
  <div class="float-btns">
  <a href="https://wa.me/16039991544" target="_blank" rel="noopener noreferrer" class="float-btn float-btn--whatsapp" aria-label="Contact on WhatsApp">

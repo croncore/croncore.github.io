@@ -47,7 +47,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <script>(function(){var t = localStorage.getItem('croncore-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
 
  <!-- Stylesheet -->
- <link rel="stylesheet" href="css/styles.css?v=28">
+ <link rel="stylesheet" href="css/styles.css?v=30">
 
  <style>
         /* ========== Landing page enhancements ========== */
@@ -761,6 +761,45 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
             .trusted-static-logo { width: 100px !important; }
         }
     </style>
+
+ <!-- Schema.org - Service -->
+ <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "AI Consulting Services",
+        "description": "End-to-end AI consulting and development for enterprises: readiness assessment, strategy and roadmap, model selection, integration, deployment, and MLOps, delivered across nine core AI disciplines by one engineering team.",
+        "provider": {
+            "@type": "Organization",
+            "name": "Croncore",
+            "url": "https://www.croncore.com"
+        },
+        "serviceType": "AI Consulting & Development",
+        "areaServed": "Worldwide",
+        "url": "https://www.croncore.com/ai-consulting-services",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Croncore AI Engagement Models",
+            "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Consulting", "description": "Strategy first engagements that align AI investment with measurable business outcomes, covering readiness assessment, high value use cases, and a tailored roadmap." } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Development", "description": "Production ready engineering across the full AI stack: model selection, training, integration, and deployment." } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom AI Solutions", "description": "Bespoke AI products built from the ground up for unique workflows, autonomous agents, custom trained models, multilingual systems, and AI native applications." } }
+            ]
+        }
+    }
+    </script>
+
+ <!-- Schema.org - BreadcrumbList -->
+ <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.croncore.com/" },
+            { "@type": "ListItem", "position": 2, "name": "AI Consulting Services", "item": "https://www.croncore.com/ai-consulting-services" }
+        ]
+    }
+    </script>
 </head>
 
 <body>
@@ -948,7 +987,8 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <div class="container">
  <div class="lp-section-head reveal">
  <div class="section-tag"><span class="tag-pulse"></span> Our Expertise</div>
- <h2>Deep AI capabilities, <span class="text-accent">production tested at scale.</span></h2>
+ <h2>What AI capabilities <span class="text-accent">does Croncore offer?</span></h2>
+ <p class="answer-first">Machine learning, natural language processing, generative AI, large language models, Model Context Protocol, data management and governance, computer vision, deep learning, and speech and voice AI. All nine are delivered by the same engineering team and run in production systems, not pilots.</p>
  <p>Nine core disciplines, one cohesive engineering team, from foundational machine learning to the latest generative AI architectures.</p>
  </div>
  <div class="sp-why-grid reveal">
@@ -1024,7 +1064,8 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <div class="container">
  <div class="lp-section-head reveal">
  <div class="section-tag"><span class="tag-pulse"></span> Our Services</div>
- <h2>Three engagement models, <span class="text-accent">built around your goals.</span></h2>
+ <h2>How can I engage Croncore <span class="text-accent">on an AI project?</span></h2>
+ <p class="answer-first">Through three engagement models: AI consulting, a strategy first assessment of readiness, use cases, and roadmap; AI development, production engineering across the full AI stack; and custom AI solutions, bespoke products built from the ground up for workflows no off the shelf platform can match.</p>
  <p>Whether you're exploring AI for the first time or scaling an existing initiative, we meet you where you are and take you where you need to go.</p>
  </div>
 
@@ -1115,7 +1156,8 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <div class="container">
  <div class="lp-section-head reveal">
  <div class="section-tag"><span class="tag-pulse"></span> Why Croncore</div>
- <h2>Why enterprises choose <span class="text-accent">Croncore as their AI partner.</span></h2>
+ <h2>Why do enterprises choose <span class="text-accent">Croncore as their AI partner?</span></h2>
+ <p class="answer-first">Six reasons come up most: domain expertise, governance focus, future ready architecture, client first delivery, proven AI leadership, and global presence. Croncore operates four offices, in Riyadh, Islamabad, London, and Dover, Delaware, which is the registered address of Croncore LLC, the US entity.</p>
  <p>We are not a generic dev shop. We are an AI native engineering team built around governance, business alignment, and long term partnership.</p>
  </div>
  <div class="sp-why-grid reveal">
@@ -1211,7 +1253,8 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <div class="container">
  <div class="lp-section-head reveal">
  <div class="section-tag"><span class="tag-pulse"></span> How It Works</div>
- <h2>From first call to <span class="text-accent">live AI in 4 steps.</span></h2>
+ <h2>How does an AI consulting engagement <span class="text-accent">work, step by step?</span></h2>
+ <p class="answer-first">Four steps: a focused 60 minute discovery call mapping goals, constraints, and existing systems; technical scoping that returns architecture, model selection, and an integration plan as a written spec; a working prototype within two weeks; then iterative two week sprints to a production ready system with handover.</p>
  <p>No ambiguity, no surprise invoices. A clear, sprint based process from kickoff to production launch.</p>
  </div>
  <div class="lp-process-grid reveal">
@@ -1283,7 +1326,8 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <div class="container">
  <div class="lp-section-head reveal">
  <div class="section-tag"><span class="tag-pulse"></span> Industries</div>
- <h2>AI built for the <span class="text-accent">industries we know best.</span></h2>
+ <h2>Which industries does Croncore <span class="text-accent">build AI for?</span></h2>
+ <p class="answer-first">FinTech, healthcare, education, telecom and call centers, retail and e commerce, and government and public sector. These are the six domains where compliance, accuracy, and reliability matter most, and Croncore works across all of them rather than specializing in a single vertical.</p>
  <p>As a versatile AI development partner, we build systems for industries where compliance, accuracy, and reliability matter most.</p>
  </div>
  <div class="lp-grid-3 reveal">
@@ -1338,7 +1382,8 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <div class="container">
  <div class="lp-section-head reveal" style="margin-bottom: 0;">
  <div class="section-tag"><span class="tag-pulse"></span> Tools &amp; Technologies</div>
- <h2>We're <span class="text-accent">model agnostic</span> by design.</h2>
+ <h2>Which AI models and platforms <span class="text-accent">does Croncore work with?</span></h2>
+ <p class="answer-first">OpenAI, Anthropic, Google Gemini, Meta Llama, Microsoft Azure, AWS Bedrock, Mistral AI, Hugging Face, LangChain, LlamaIndex, Pinecone, PyTorch, TensorFlow, and Whisper. Model choice is made per use case rather than by a standing vendor commitment, so the stack stays portable.</p>
  <p>We work across every major AI ecosystem and open source platform. Your stack stays portable, no vendor lock in, ever.</p>
  </div>
  <div class="lp-tech-row reveal">
@@ -1602,6 +1647,22 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  </div>
  </section>
 
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+ {"@type":"Question","name":"How do I know if my company is ready for AI?","acceptedAnswer":{"@type":"Answer","text":"We start every engagement with a free AI readiness assessment. We'll evaluate your data quality, infrastructure, business goals, and team capability, then give you an honest recommendation on what's possible right now and what should wait."}},
+ {"@type":"Question","name":"Can I work with Croncore if I don't have an in house AI team?","acceptedAnswer":{"@type":"Answer","text":"Yes, most of our clients don't. We act as your dedicated AI engineering team, handling everything from strategy to deployment, and optionally training your internal staff to maintain the systems we build."}},
+ {"@type":"Question","name":"How long does a typical AI development project take?","acceptedAnswer":{"@type":"Answer","text":"You'll see a working prototype within 2 weeks of kickoff. Production ready systems typically ship in 6 12 weeks depending on scope, integrations, and compliance requirements. We work in 2 week sprints with clear deliverables at each step."}},
+ {"@type":"Question","name":"How do you ensure my AI system is safe and compliant?","acceptedAnswer":{"@type":"Answer","text":"Compliance is built in from day one. We support GDPR, HIPAA, SOC 2 aligned practices, on premise and air gapped deployments, full audit trails, and data sovereignty requirements for regulated industries."}},
+ {"@type":"Question","name":"What's the difference between custom and pre trained models?","acceptedAnswer":{"@type":"Answer","text":"Pre trained models (like GPT 4 or Claude) are general purpose and accessible via API, fast to deploy, but limited to public knowledge. Custom and fine tuned models are trained on your data, giving better accuracy, lower cost at scale, and full data control. We help you choose the right approach for each use case."}},
+ {"@type":"Question","name":"Does Croncore offer AI services worldwide?","acceptedAnswer":{"@type":"Answer","text":"Yes. We deliver projects worldwide with teams across the US, UK, Saudi Arabia, and Pakistan, providing timezone coverage, multilingual capability, and on the ground engagement when needed."}}
+ ]
+ }
+ </script>
+
+
  <!-- ===== CLOSING CTA ===== -->
  <section class="cta" id="cta" aria-label="Final call to action">
  <div class="container">
@@ -1660,7 +1721,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <nav class="footer-col" aria-label="Quick links">
  <div class="footer-col-title">Quick Links</div>
  <ul>
- <li><a href="/#about">About Us</a></li>
+ <li><a href="/about">About Us</a></li>
  <li><a href="/services">Services</a></li>
  <li><a href="/#testimonials">Testimonials</a></li>
  <li><a href="/insights">Insights</a></li>
@@ -1721,7 +1782,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  </div>
 
  <!-- JavaScript -->
- <script src="js/main.js?v=19"></script>
+ <script src="js/main.js?v=20"></script>
  <script defer src="js/a11y.js?v=2"></script>
  
 

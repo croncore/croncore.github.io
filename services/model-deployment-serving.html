@@ -75,7 +75,7 @@
 
  <script>(function(){var t = localStorage.getItem('croncore-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
 
- <link rel="stylesheet" href="/css/styles.css?v=28">
+ <link rel="stylesheet" href="/css/styles.css?v=30">
 </head>
 <body>
  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFNLPH3H"
@@ -378,7 +378,12 @@
  {"@type":"Question","name":"How much can serving optimization gain without touching the model?","acceptedAnswer":{"@type":"Answer","text":"Order-of-magnitude gains are normal, which surprises buyers who assume the model is the bottleneck. Continuous batching alone delivers several-fold to order-of-magnitude throughput gains over naive request-at-a-time serving. Quantization cuts memory footprint two- to four-fold, letting bigger models fit smaller hardware or the same hardware serve more. Speculative decoding cuts latency two- to three-fold on suitable workloads. Stacked, the same GPUs routinely serve five to ten times the traffic they did before we arrived, which is why we profile and optimize before anyone is allowed to buy more hardware."}},
  {"@type":"Question","name":"How many GPUs do we actually need?","acceptedAnswer":{"@type":"Answer","text":"Fewer than the vendor sizing sheet says, usually. Sizing follows from four measured numbers, request rate, token lengths in and out, peak-to-average ratio, and your latency budget, not from model size alone. A 7B-class model serves hundreds of concurrent users per GPU; a 70B serves tens; and routing shifts most traffic to the small end of that range. Our workload profiling stage exists to replace the sizing guess with those four measurements, and the answer it produces is frequently half the hardware the initial plan assumed."}},
  {"@type":"Question","name":"What does it take to run this after handover?","acceptedAnswer":{"@type":"Answer","text":"The honest staffing line: plan 0.5 to 1 FTE per production GPU cluster for driver and firmware churn, hardware failures, stack upgrades, and on-call, and that person is often the largest cost in a self-hosted deployment. Our handover ships runbooks, alerting, and playbooks your platform team can operate alone, and for teams that do not want the pager, we run the serving layer on retainer. What we do not do is hand over a system whose operating cost was never mentioned, because a serving stack without an owner degrades on a schedule you can predict."}},
- {"@type":"Question","name":"Who owns the serving stack, and how locked in are we?","acceptedAnswer":{"@type":"Answer","text":"You own everything, and the stack is deliberately built on open, portable components, vLLM, Triton, and their peers, running in your accounts, defined as code in your repositories. Serving is a layer where proprietary platforms quietly charge rent forever, and the exit cost only becomes visible when you try to leave. Ours is designed for the opposite test: any competent platform engineer could take the repo and run it tomorrow, and the configs move between clouds and on-prem without a rewrite. We keep the retainer by answering pages fast, not by holding the keys."}}
+ {"@type":"Question","name":"Who owns the serving stack, and how locked in are we?","acceptedAnswer":{"@type":"Answer","text":"You own everything, and the stack is deliberately built on open, portable components, vLLM, Triton, and their peers, running in your accounts, defined as code in your repositories. Serving is a layer where proprietary platforms quietly charge rent forever, and the exit cost only becomes visible when you try to leave. Ours is designed for the opposite test: any competent platform engineer could take the repo and run it tomorrow, and the configs move between clouds and on-prem without a rewrite. We keep the retainer by answering pages fast, not by holding the keys."}},
+ {"@type":"Question","name":"Which serving stacks do you use?","acceptedAnswer":{"@type":"Answer","text":"vLLM, Triton, TGI, SGLang for LLMs; ONNX Runtime, TorchServe, BentoML for traditional ML. We pick based on the model, hardware, and your team's familiarity."}},
+ {"@type":"Question","name":"Can you optimize serving without retraining the model?","acceptedAnswer":{"@type":"Answer","text":"Yes. Quantization, KV cache reuse, prefix caching, dynamic batching, and speculative decoding can deliver 2/5x throughput improvements without touching weights."}},
+ {"@type":"Question","name":"What clouds and hardware do you support?","acceptedAnswer":{"@type":"Answer","text":"AWS, GCP, Azure, Oracle, and bare metal on prem. NVIDIA H100 / A100 / L40S, plus AMD MI300 and inference optimized CPUs where the workload allows."}},
+ {"@type":"Question","name":"What SLOs can you commit to?","acceptedAnswer":{"@type":"Answer","text":"99.95% availability and sub 500ms p95 are routine for most LLM workloads. Sub second voice and sub 100ms classification are achievable on right sized hardware."}},
+ {"@type":"Question","name":"How do you handle model rollouts safely?","acceptedAnswer":{"@type":"Answer","text":"Shadow traffic, canary, blue green, with eval gates between each stage. Every deploy can be rolled back in seconds, and we test rollback before launch."}}
  ]
  }
  </script>
@@ -522,7 +527,7 @@
  <nav class="footer-col" aria-label="Quick links">
  <div class="footer-col-title">Quick Links</div>
  <ul>
- <li><a href="/#about">About Us</a></li>
+ <li><a href="/about">About Us</a></li>
  <li><a href="/services">Services</a></li>
  <li><a href="/#testimonials">Testimonials</a></li>
  <li><a href="/insights">Insights</a></li>
@@ -582,7 +587,7 @@
  </footer>
  </div>
 
- <script src="/js/main.js?v=19"></script>
+ <script src="/js/main.js?v=20"></script>
 
  <div class="float-btns">
  <a href="https://wa.me/16039991544" target="_blank" rel="noopener noreferrer" class="float-btn float-btn--whatsapp" aria-label="Contact on WhatsApp">
