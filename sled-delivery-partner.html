@@ -32,15 +32,6 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
 
 <!-- Preload LCP image -->
 <link rel="preload" as="image" href="images/capitol-dome.webp" fetchpriority="high">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style"
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
-      onload="this.onload=null;this.rel='stylesheet'">
-<noscript>
-<link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
-</noscript>
 <link rel="icon" type="image/png" href="images/favicons/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="images/favicons/favicon.svg" />
 <link rel="shortcut icon" href="images/favicons/favicon.ico" />
@@ -48,7 +39,15 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
 <link rel="manifest" href="images/favicons/site.webmanifest" />
 <meta name="theme-color" content="#FFFFFF">
 <script>(function(){var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
-<link rel="stylesheet" href="css/styles.css?v=30">
+<!-- Preload hint so Cloudflare advertises the stylesheet in its 103 Early
+     Hints response; the download then overlaps the HTML itself. -->
+<link rel="preload" as="style" href="css/styles.css?v=31">
+<link rel="stylesheet" href="css/styles.css?v=31">
+ <!-- Self-hosted fonts (see @font-face at the top of css/styles.css).
+      Preload the two faces used above the fold so text paints in the real
+      typeface on first render instead of swapping in later. -->
+ <link rel="preload" as="font" type="font/woff2" href="/fonts/plus-jakarta-sans-latin.woff2" crossorigin>
+ <link rel="preload" as="font" type="font/woff2" href="/fonts/manrope-latin.woff2" crossorigin>
 
 <style>
 /* ===== SLED page styles ===== */
@@ -423,8 +422,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <nav class="nav" id="navbar" role="navigation" aria-label="Primary navigation">
 <div class="container nav-inner">
 <a href="/" class="nav-brand" aria-label="Croncore SLED, home">
-<img src="images/croncore-logo.webp" alt="Croncore" class="nav-brand-img logo-dark" width="56" height="56" loading="eager">
-<img src="images/concore-logo-light-theme.webp" alt="Croncore" class="nav-brand-img logo-light" width="56" height="56" loading="eager">
+<img src="images/croncore-logo.webp" alt="Croncore" class="nav-brand-img logo-dark" width="502" height="120" loading="lazy" decoding="async">
+<img src="images/concore-logo-light-theme.webp" alt="Croncore" class="nav-brand-img logo-light" width="511" height="120" loading="eager" fetchpriority="high" decoding="async">
 <span class="sled-brand-pill">SLED</span>
 </a>
 <div class="nav-pill">
@@ -458,8 +457,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="sled-hero" aria-label="SLED Delivery Partner Hero">
 <!-- US map background, spans the whole hero as a faded watermark -->
 <div class="sled-map" aria-hidden="true">
- <img src="images/us-map.webp" alt="" class="sled-map-img sled-map-img--light" width="1646" height="956">
- <img src="images/us-map-dark.webp" alt="" class="sled-map-img sled-map-img--dark" width="1536" height="1024">
+ <img src="images/us-map.webp" alt="" class="sled-map-img sled-map-img--light" width="1200" height="697">
+ <img src="images/us-map-dark.webp" alt="" class="sled-map-img sled-map-img--dark" width="1200" height="800">
 </div>
 <div class="container">
 <div class="sled-hero-grid">
@@ -474,7 +473,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <aside class="sled-hero-visual" aria-label="Sample SLED RFP">
  <!-- Capitol dome -->
- <img class="sled-capitol" src="images/capitol-dome.webp" alt="US Capitol building" fetchpriority="high" width="1024" height="1024">
+ <img class="sled-capitol" src="images/capitol-dome.webp" alt="US Capitol building" fetchpriority="high" width="820" height="820">
 
  <!-- Floating ACTIVE badge -->
  <div class="sled-active-badge" aria-hidden="true">
@@ -755,7 +754,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
  <!-- Card 10: Macomb Community College AV RFQ -->
  <article class="cs-card" data-category="govcon" aria-label="Macomb Community College AV Equipment RFQ Case Study">
- <div class="cs-card-bg"><img src="images/case-studies/macomb-community-college.webp" alt="Macomb Community College AV Equipment RFQ Case Study" loading="lazy" width="1000" height="666"></div>
+ <div class="cs-card-bg"><img src="images/case-studies/macomb-community-college.webp" alt="Macomb Community College AV Equipment RFQ Case Study" loading="lazy" width="800" height="533"></div>
  <div class="cs-card-overlay"></div>
  <div class="cs-card-info">
  <span class="cs-card-tag">Higher Ed &middot; Public Purchasing</span>
@@ -767,7 +766,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
  <!-- Card 11: South Platte Renew Website RFP -->
  <article class="cs-card" data-category="govcon" aria-label="South Platte Renew Website RFP Case Study">
- <div class="cs-card-bg"><img src="images/case-studies/south-platte-renew.webp" alt="South Platte Renew Digital Transformation, Municipal Website RFP Case Study" loading="lazy" width="1280" height="853"></div>
+ <div class="cs-card-bg"><img src="images/case-studies/south-platte-renew.webp" alt="South Platte Renew Digital Transformation, Municipal Website RFP Case Study" loading="lazy" width="800" height="534"></div>
  <div class="cs-card-overlay"></div>
  <div class="cs-card-info">
  <span class="cs-card-tag">Municipal Water &middot; Public Utilities</span>
@@ -1042,19 +1041,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  </div>
  <div class="footer-addresses">
  <div class="footer-address">
- <div class="footer-address-title"><img src="https://flagcdn.com/w20/sa.png" alt="Saudi Arabia Flag" width="20" height="15"> Saudi Arabia</div>
+ <div class="footer-address-title"><img alt="Saudi Arabia Flag" width="20" height="15" src="/images/flags/sa.webp" loading="lazy" decoding="async"> Saudi Arabia</div>
  <p>Prince Turki Bin Abdulaziz Al Awal Road,<br>Al Raed, Riyadh 12354</p>
  </div>
  <div class="footer-address">
- <div class="footer-address-title"><img src="https://flagcdn.com/w20/pk.png" alt="Pakistan Flag" width="20" height="15"> Pakistan</div>
+ <div class="footer-address-title"><img alt="Pakistan Flag" width="20" height="15" src="/images/flags/pk.webp" loading="lazy" decoding="async"> Pakistan</div>
  <p>Street 36 Silk Bank Plaza Lower Basement<br>WorkZone, Islamabad</p>
  </div>
  <div class="footer-address">
- <div class="footer-address-title"><img src="https://flagcdn.com/w20/gb.png" alt="United Kingdom Flag" width="20" height="15"> United Kingdom</div>
+ <div class="footer-address-title"><img alt="United Kingdom Flag" width="20" height="15" src="/images/flags/gb.webp" loading="lazy" decoding="async"> United Kingdom</div>
  <p>Office 63, Billingsgate Market,<br>London E14 5ST</p>
  </div>
  <div class="footer-address">
- <div class="footer-address-title"><img src="https://flagcdn.com/w20/us.png" alt="USA Flag" width="20" height="15"> USA</div>
+ <div class="footer-address-title"><img alt="USA Flag" width="20" height="15" src="/images/flags/us.webp" loading="lazy" decoding="async"> USA</div>
  <p>1111B S Governors Ave # 28375<br>Dover, DE 19904</p>
  </div>
  </div>

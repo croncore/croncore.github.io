@@ -4,3 +4,4 @@ studio/dist/
 studio/.sanity/
 studio/.env*
 refrence/
+node_modules/
