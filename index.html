@@ -123,19 +123,6 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
     }
     </script>
 
- <!-- Preconnect & Fonts -->
- <!-- Load Google Fonts without blocking first paint; dropped unused 300 weight
-         (CSS only uses 400/500/600/700/800). display=swap renders fallback text instantly. -->
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link rel="preload" as="style"
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
-        onload="this.onload=null;this.rel='stylesheet'">
- <noscript>
- <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
- </noscript>
-
  <!-- Favicon & Icons -->
  <link rel="icon" type="image/png" href="images/favicons/favicon-96x96.png" sizes="96x96" />
  <link rel="icon" type="image/svg+xml" href="images/favicons/favicon.svg" />
@@ -148,7 +135,17 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <script>(function () { var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light'); })()</script>
 
  <!-- Stylesheet -->
- <link rel="stylesheet" href="css/styles.css?v=30">
+ <!-- Content API queried by js/sanity.js; warm the connection early. -->
+ <link rel="preconnect" href="https://b5z10ias.apicdn.sanity.io" crossorigin>
+ <!-- Preload hint so Cloudflare advertises the stylesheet in its 103 Early
+      Hints response; the download then overlaps the HTML itself. -->
+ <link rel="preload" as="style" href="css/styles.css?v=31">
+ <link rel="stylesheet" href="css/styles.css?v=31">
+ <!-- Self-hosted fonts (see @font-face at the top of css/styles.css).
+      Preload the two faces used above the fold so text paints in the real
+      typeface on first render instead of swapping in later. -->
+ <link rel="preload" as="font" type="font/woff2" href="/fonts/plus-jakarta-sans-latin.woff2" crossorigin>
+ <link rel="preload" as="font" type="font/woff2" href="/fonts/manrope-latin.woff2" crossorigin>
 
  <style>
 /* ===== Hero Carousel ===== */
@@ -282,10 +279,8 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <nav class="nav" id="navbar" role="navigation" aria-label="Primary navigation">
  <div class="container nav-inner">
  <a href="/" class="nav-brand" aria-label="Croncore Home">
- <img src="images/croncore-logo.webp" alt="Croncore" class="nav-brand-img logo-dark" width="56"
-                        height="56" loading="eager">
- <img src="images/concore-logo-light-theme.webp" alt="Croncore" class="nav-brand-img logo-light"
-                        width="56" height="56" loading="eager">
+ <img src="images/croncore-logo.webp" alt="Croncore" class="nav-brand-img logo-dark" width="502" height="120" loading="lazy" decoding="async">
+ <img src="images/concore-logo-light-theme.webp" alt="Croncore" class="nav-brand-img logo-light" width="511" height="120" loading="eager" fetchpriority="high" decoding="async">
  </a>
  <div class="nav-pill">
  <a href="/services" class="nav-link">Services</a>
@@ -460,8 +455,8 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <!-- Slide 2: SLED hero -->
  <div class="hero-slide hero-slide--sled" role="group" aria-roledescription="slide" aria-label="2 of 2" aria-hidden="true" inert>
  <div class="sled-map" aria-hidden="true">
- <img src="images/us-map.webp" alt="" class="sled-map-img sled-map-img--light" loading="lazy" width="1646" height="956">
- <img src="images/us-map-dark.webp" alt="" class="sled-map-img sled-map-img--dark" loading="lazy" width="1536" height="1024">
+ <img data-src="images/us-map.webp" alt="" class="sled-map-img sled-map-img--light" loading="lazy" decoding="async" width="1200" height="697">
+ <img data-src="images/us-map-dark.webp" alt="" class="sled-map-img sled-map-img--dark" loading="lazy" decoding="async" width="1200" height="800">
  </div>
  <div class="container">
  <div class="sled-hero-grid">
@@ -474,7 +469,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  </div>
  </div>
  <aside class="sled-hero-visual" aria-label="Sample SLED RFP">
- <img class="sled-capitol" src="images/capitol-dome.webp" alt="US Capitol building" loading="lazy" width="1024" height="1024">
+ <img class="sled-capitol" data-src="images/capitol-dome.webp" alt="" loading="lazy" decoding="async" width="820" height="820">
  <div class="sled-active-badge" aria-hidden="true">
  <div class="sled-active-text">
  <div class="ba-lbl">RFP Status</div>
@@ -567,7 +562,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  </p>
  <div class="trusted-static-stats">
  <a class="trusted-stat trusted-stat--review trusted-stat--clutch" href="https://clutch.co/profile/croncore" target="_blank" rel="noopener noreferrer" aria-label="Clutch 5.0 rating">
- <img class="trusted-stat-brand" src="images/cluch.svg" alt="Clutch">
+ <img class="trusted-stat-brand" src="images/cluch.svg" alt="Clutch" width="406" height="115">
  <span class="trusted-stat-value">5.0</span>
  <span class="trusted-stat-stars" aria-hidden="true">
  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.39 6.96H22l-6.13 4.45 2.36 7.09L12 16.27l-6.23 4.23 2.36-7.09L2 8.96h7.61z"/></svg>
@@ -587,14 +582,14 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  </a>
  </div>
  <div class="trusted-static-logos">
- <div class="trusted-static-logo"><img src="images/logos/benz.webp" alt="BENZ Ninja" loading="lazy" style="--scale: 1.15;" width="342" height="280"></div>
- <div class="trusted-static-logo"><img src="images/logos/ChatGPT Image Mar 1, 2026, 07_47_15 PM.webp" alt="Web Summit" loading="lazy" style="--scale: 1.7;" width="400" height="266"></div>
- <div class="trusted-static-logo"><img src="images/logos/Kuwait Ports Authority .webp" alt="Kuwait Ports Authority" loading="lazy" style="--scale: 1.15;" width="400" height="272"></div>
+ <div class="trusted-static-logo"><img src="images/logos/benz.webp" alt="BENZ Ninja" loading="lazy" style="--scale: 1.15;" width="200" height="164"></div>
+ <div class="trusted-static-logo"><img src="images/logos/ChatGPT Image Mar 1, 2026, 07_47_15 PM.webp" alt="Web Summit" loading="lazy" style="--scale: 1.7;" width="240" height="160"></div>
+ <div class="trusted-static-logo"><img src="images/logos/Kuwait Ports Authority .webp" alt="Kuwait Ports Authority" loading="lazy" style="--scale: 1.15;" width="200" height="136"></div>
  <div class="trusted-static-logo"><img src="images/logos/Sabzland-Logo.webp" alt="Sabzland" loading="lazy" style="--scale: 2.05;" width="400" height="266"></div>
  <div class="trusted-static-logo"><img src="images/logos/Leap.webp" alt="Leap" loading="lazy" style="--scale: 0.95;" width="400" height="266"></div>
  <div class="trusted-static-logo"><img src="images/logos/BloomLink.webp" alt="BloomLink" loading="lazy" style="--scale: 0.55;" width="400" height="133"></div>
  <style>.trusted-static-logo img.logo-light{display:none}[data-theme=light] .trusted-static-logo img.logo-dark{display:none}[data-theme=light] .trusted-static-logo img.logo-light{display:block}</style>
- <div class="trusted-static-logo"><img src="images/logos/eduimmersion.webp" alt="EduimMersion" loading="lazy" class="logo-dark" style="--scale: 1.15;" width="920" height="150"><img src="images/logos/eduimmersion-light.webp" alt="EduimMersion" loading="lazy" class="logo-light" style="--scale: 1.15;" width="920" height="150"></div>
+ <div class="trusted-static-logo"><img src="images/logos/eduimmersion.webp" alt="EduimMersion" loading="lazy" class="logo-dark" style="--scale: 1.15;" width="420" height="69"><img src="images/logos/eduimmersion-light.webp" alt="EduimMersion" loading="lazy" class="logo-light" style="--scale: 1.15;" width="420" height="69"></div>
  </div>
  </div>
  </section>
@@ -615,7 +610,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <div class="svc-panel" tabindex="0">
  <div class="svc-panel-inner">
  <div class="svc-panel-icon">
- <img src="images/services%20images/1.webp" alt="" class="svc-panel-img" loading="lazy" width="851" height="793">
+ <img src="images/services%20images/1.webp" alt="" class="svc-panel-img" loading="lazy" width="320" height="299">
  </div>
  <div class="svc-text-group">
  <h3 class="svc-panel-title">Custom Software Development</h3>
@@ -635,7 +630,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <div class="svc-panel" tabindex="0">
  <div class="svc-panel-inner">
  <div class="svc-panel-icon">
- <img src="images/services%20images/2.webp" alt="" class="svc-panel-img" loading="lazy" width="851" height="788">
+ <img src="images/services%20images/2.webp" alt="" class="svc-panel-img" loading="lazy" width="320" height="297">
  </div>
  <div class="svc-text-group">
  <h3 class="svc-panel-title">Cyber Security & Data</h3>
@@ -655,7 +650,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <div class="svc-panel" tabindex="0">
  <div class="svc-panel-inner">
  <div class="svc-panel-icon">
- <img src="images/services%20images/3.webp" alt="" class="svc-panel-img" loading="lazy" width="851" height="793">
+ <img src="images/services%20images/3.webp" alt="" class="svc-panel-img" loading="lazy" width="320" height="299">
  </div>
  <div class="svc-text-group">
  <h3 class="svc-panel-title">AI Agents & Automations</h3>
@@ -675,7 +670,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <div class="svc-panel" tabindex="0">
  <div class="svc-panel-inner">
  <div class="svc-panel-icon">
- <img src="images/services%20images/4.webp" alt="" class="svc-panel-img" loading="lazy" width="856" height="834">
+ <img src="images/services%20images/4.webp" alt="" class="svc-panel-img" loading="lazy" width="320" height="312">
  </div>
  <div class="svc-text-group">
  <h3 class="svc-panel-title">ERP & Enterprise Platforms</h3>
@@ -735,7 +730,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <!-- Card 1: Bezninja -->
  <article class="cs-card" data-category="agents" aria-label="Bezninja Case Study">
  <div class="cs-card-bg">
- <img src="images/case-studies/benzninja.webp" alt="Bezninja, Business Services Case Study" loading="lazy" width="1080" height="1350">
+ <img src="images/case-studies/benzninja.webp" alt="Bezninja, Business Services Case Study" loading="lazy" width="800" height="1000">
  </div>
  <a href="case-studies/autonomous-sales-agent-drives-record-revenue-growth" class="cs-card-link-overlay"
                                     aria-label="Read Bezninja case study"></a>
@@ -744,7 +739,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <!-- Card 2: Bloomlink -->
  <article class="cs-card" data-category="llm" aria-label="Bloomlink Case Study">
  <div class="cs-card-bg">
- <img src="images/case-studies/telco.webp" alt="Bloomlink, Telecom & Call Centers Case Study" loading="lazy" width="1080" height="1350">
+ <img src="images/case-studies/telco.webp" alt="Bloomlink, Telecom & Call Centers Case Study" loading="lazy" width="800" height="1000">
  </div>
  <a href="case-studies/sovereign-voice-engine-for-mongolia" class="cs-card-link-overlay"
                                     aria-label="Read Bloomlink case study"></a>
@@ -753,7 +748,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <!-- Card 3: EdTech -->
  <article class="cs-card" data-category="llm" aria-label="EdTech Case Study">
  <div class="cs-card-bg">
- <img src="images/case-studies/education-digital-learning.webp" alt="Education & Digital Learning Case Study" loading="lazy" width="1080" height="1350">
+ <img src="images/case-studies/education-digital-learning.webp" alt="Education & Digital Learning Case Study" loading="lazy" width="800" height="1000">
  </div>
  <a href="case-studies/architecting-a-ground-up-digital-learning-powerhouse" class="cs-card-link-overlay"
                                     aria-label="Read EdTech case study"></a>
@@ -762,7 +757,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <!-- Card 4: Oracle Merchant Services -->
  <article class="cs-card" data-category="agents" aria-label="Oracle Merchant Services Case Study">
  <div class="cs-card-bg">
- <img src="images/case-studies/financial-services.webp" alt="Oracle Merchant Services, Financial Services Case Study" loading="lazy" width="1080" height="1350">
+ <img src="images/case-studies/financial-services.webp" alt="Oracle Merchant Services, Financial Services Case Study" loading="lazy" width="800" height="1000">
  </div>
  <a href="case-studies/custom-ai-voice-agent-closes-the-speed-to-lead-gap" class="cs-card-link-overlay"
                                     aria-label="Read Oracle Merchant Services case study"></a>
@@ -771,7 +766,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <!-- Card 5: Macomb Community College AV Equipment RFQ -->
  <article class="cs-card" data-category="govcon" aria-label="Macomb Community College AV Equipment RFQ Case Study">
  <div class="cs-card-bg">
- <img src="images/case-studies/macomb-community-college.webp" alt="Macomb Community College AV Equipment RFQ, Government Proposal Support Case Study" loading="lazy" width="1000" height="666">
+ <img src="images/case-studies/macomb-community-college.webp" alt="Macomb Community College AV Equipment RFQ, Government Proposal Support Case Study" loading="lazy" width="800" height="533">
  </div>
  <a href="case-studies/macomb-community-college-av-equipment-rfq" class="cs-card-link-overlay"
                                     aria-label="Read Macomb Community College AV Equipment RFQ case study"></a>
@@ -780,7 +775,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <!-- Card 6: South Platte Renew Website RFP -->
  <article class="cs-card" data-category="govcon" aria-label="South Platte Renew Website RFP Case Study">
  <div class="cs-card-bg">
- <img src="images/case-studies/south-platte-renew.webp" alt="South Platte Renew Digital Transformation, Municipal Website RFP Case Study" loading="lazy" width="1280" height="853">
+ <img src="images/case-studies/south-platte-renew.webp" alt="South Platte Renew Digital Transformation, Municipal Website RFP Case Study" loading="lazy" width="800" height="534">
  </div>
  <a href="case-studies/south-platte-renew-website-rfp" class="cs-card-link-overlay"
                                     aria-label="Read South Platte Renew Website RFP case study"></a>
@@ -1164,9 +1159,9 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
     </button>
     <div class="tspot-logos-viewport">
     <div class="tspot-logos" role="tablist" aria-label="Select client">
-     <button class="tspot-logo-btn active" id="tspot-btn-benzninja" data-index="0" role="tab" aria-selected="true" aria-controls="tspot-benzninja"><img src="images/logos/benz.webp" alt="BenzNinja" loading="lazy" class="tspot-benz-logo"></button>
-     <button class="tspot-logo-btn" id="tspot-btn-bloomslink" data-index="1" role="tab" aria-selected="false" aria-controls="tspot-bloomslink"><img src="images/logos/BloomLink.webp" alt="BloomsLink" loading="lazy"></button>
-     <button class="tspot-logo-btn" id="tspot-btn-edumersion" data-index="2" role="tab" aria-selected="false" aria-controls="tspot-edumersion"><img src="images/logos/eduimmersion.webp" alt="EduimMersion" loading="lazy" class="tspot-edu-logo logo-dark"><img src="images/logos/eduimmersion-light.webp" alt="EduimMersion" loading="lazy" class="tspot-edu-logo logo-light"></button>
+     <button class="tspot-logo-btn active" id="tspot-btn-benzninja" data-index="0" role="tab" aria-selected="true" aria-controls="tspot-benzninja"><img src="images/logos/benz.webp" alt="BenzNinja" loading="lazy" class="tspot-benz-logo" width="200" height="164"></button>
+     <button class="tspot-logo-btn" id="tspot-btn-bloomslink" data-index="1" role="tab" aria-selected="false" aria-controls="tspot-bloomslink"><img src="images/logos/BloomLink.webp" alt="BloomsLink" loading="lazy" width="400" height="133"></button>
+     <button class="tspot-logo-btn" id="tspot-btn-edumersion" data-index="2" role="tab" aria-selected="false" aria-controls="tspot-edumersion"><img src="images/logos/eduimmersion.webp" alt="EduimMersion" loading="lazy" class="tspot-edu-logo logo-dark" width="420" height="69"><img src="images/logos/eduimmersion-light.webp" alt="EduimMersion" loading="lazy" class="tspot-edu-logo logo-light" width="420" height="69"></button>
      <style>
       .tspot-logo-btn img.tspot-oms-logo{height:34px;width:auto;max-width:156px;object-fit:contain}
       .tspot-logo-btn img.logo-light{display:none}
@@ -1174,8 +1169,8 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
       [data-theme=light] .tspot-logo-btn img.logo-light{display:block}
      </style>
      <button class="tspot-logo-btn" id="tspot-btn-orical" data-index="3" role="tab" aria-selected="false" aria-controls="tspot-orical">
-      <img src="images/logos/oracle-merchant-services.webp" alt="Oracle Merchant Services" loading="lazy" class="tspot-oms-logo logo-dark">
-      <img src="images/logos/oracle-merchant-services-light.webp" alt="Oracle Merchant Services" loading="lazy" class="tspot-oms-logo logo-light">
+      <img src="images/logos/oracle-merchant-services.webp" alt="Oracle Merchant Services" loading="lazy" class="tspot-oms-logo logo-dark" width="420" height="102">
+      <img src="images/logos/oracle-merchant-services-light.webp" alt="Oracle Merchant Services" loading="lazy" class="tspot-oms-logo logo-light" width="420" height="98">
      </button>
     </div>
     </div>
@@ -1211,11 +1206,19 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
    var wrap=document.querySelector('.tspot-panels');
    if(!wrap)return;
    if(!mq.matches){wrap.style.minHeight='';return;}
-   var max=0;
-   for(var i=0;i<panels.length;i++){
-    var p=panels[i];
+   /* Batch the writes, then the reads, then the writes again. Interleaving them
+      per panel forced a synchronous layout on every iteration. */
+   var i,p;
+   for(i=0;i<panels.length;i++){
+    p=panels[i];
     p.style.position='absolute';p.style.display='block';p.style.visibility='hidden';p.style.left='0';p.style.right='0';
-    var h=p.offsetHeight;if(h>max)max=h;
+   }
+   var max=0;
+   for(i=0;i<panels.length;i++){
+    var h=panels[i].offsetHeight;if(h>max)max=h;
+   }
+   for(i=0;i<panels.length;i++){
+    p=panels[i];
     p.style.position='';p.style.display='';p.style.visibility='';p.style.left='';p.style.right='';
    }
    if(max)wrap.style.minHeight=max+'px';
@@ -1646,19 +1649,19 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  </div>
  <div class="footer-addresses">
  <div class="footer-address">
- <div class="footer-address-title"><img src="https://flagcdn.com/w20/sa.png" alt="Saudi Arabia Flag" width="20" height="15"> Saudi Arabia</div>
+ <div class="footer-address-title"><img alt="Saudi Arabia Flag" width="20" height="15" src="/images/flags/sa.webp" loading="lazy" decoding="async"> Saudi Arabia</div>
  <p>Prince Turki Bin Abdulaziz Al Awal Road,<br>Al Raed, Riyadh 12354</p>
  </div>
  <div class="footer-address">
- <div class="footer-address-title"><img src="https://flagcdn.com/w20/pk.png" alt="Pakistan Flag" width="20" height="15"> Pakistan</div>
+ <div class="footer-address-title"><img alt="Pakistan Flag" width="20" height="15" src="/images/flags/pk.webp" loading="lazy" decoding="async"> Pakistan</div>
  <p>Street 36 Silk Bank Plaza Lower Basement<br>WorkZone, Islamabad</p>
  </div>
  <div class="footer-address">
- <div class="footer-address-title"><img src="https://flagcdn.com/w20/gb.png" alt="United Kingdom Flag" width="20" height="15"> United Kingdom</div>
+ <div class="footer-address-title"><img alt="United Kingdom Flag" width="20" height="15" src="/images/flags/gb.webp" loading="lazy" decoding="async"> United Kingdom</div>
  <p>Office 63, Billingsgate Market,<br>London E14 5ST</p>
  </div>
  <div class="footer-address">
- <div class="footer-address-title"><img src="https://flagcdn.com/w20/us.png" alt="USA Flag" width="20" height="15"> USA</div>
+ <div class="footer-address-title"><img alt="USA Flag" width="20" height="15" src="/images/flags/us.webp" loading="lazy" decoding="async"> USA</div>
  <p>1111B S Governors Ave # 28375<br>Dover, DE 19904</p>
  </div>
  </div>
@@ -1674,6 +1677,23 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  </div>
  </footer>
  </div>
+
+
+ <!-- Deferred media: images that live in the hidden carousel slide. They are
+      fetched once the page has loaded so they never compete with the resources
+      the first paint depends on. -->
+ <script>
+    (function () {
+      function hydrate() {
+        document.querySelectorAll('img[data-src]').forEach(function (img) {
+          img.src = img.dataset.src;
+          img.removeAttribute('data-src');
+        });
+      }
+      if (document.readyState === 'complete') { setTimeout(hydrate, 0); }
+      else { window.addEventListener('load', function () { setTimeout(hydrate, 0); }); }
+    })();
+    </script>
 
  <!-- Hero Carousel -->
  <script>
