@@ -46,11 +46,6 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
     }
     </script>
 
- <!-- Preconnect & Fonts -->
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
  <!-- Favicon & Icons -->
  <link rel="icon" type="image/png" href="images/favicons/favicon-96x96.png" sizes="96x96" />
  <link rel="icon" type="image/svg+xml" href="images/favicons/favicon.svg" />
@@ -63,7 +58,15 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <script>(function(){var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');})()</script>
 
  <!-- Stylesheet -->
- <link rel="stylesheet" href="css/styles.css?v=30">
+ <!-- Preload hint so Cloudflare advertises the stylesheet in its 103 Early
+      Hints response; the download then overlaps the HTML itself. -->
+ <link rel="preload" as="style" href="css/styles.css?v=31">
+ <link rel="stylesheet" href="css/styles.css?v=31">
+ <!-- Self-hosted fonts (see @font-face at the top of css/styles.css).
+      Preload the two faces used above the fold so text paints in the real
+      typeface on first render instead of swapping in later. -->
+ <link rel="preload" as="font" type="font/woff2" href="/fonts/plus-jakarta-sans-latin.woff2" crossorigin>
+ <link rel="preload" as="font" type="font/woff2" href="/fonts/manrope-latin.woff2" crossorigin>
 </head>
 <body>
  <!-- Google Tag Manager (noscript) -->
@@ -85,8 +88,8 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <nav class="nav" id="navbar" role="navigation" aria-label="Primary navigation">
  <div class="container nav-inner">
  <a href="/" class="nav-brand" aria-label="Croncore Home">
- <img src="images/croncore-logo.png" alt="Croncore" class="nav-brand-img logo-dark" width="56" height="56" loading="eager">
- <img src="images/concore-logo-light-theme.png" alt="Croncore" class="nav-brand-img logo-light" width="56" height="56" loading="eager">
+ <img src="images/croncore-logo.webp" alt="Croncore" class="nav-brand-img logo-dark" width="502" height="120" loading="lazy" decoding="async">
+ <img src="images/concore-logo-light-theme.webp" alt="Croncore" class="nav-brand-img logo-light" width="511" height="120" loading="eager" fetchpriority="high" decoding="async">
  </a>
  <div class="nav-pill">
  <a href="/services" class="nav-link">Services</a>
@@ -168,13 +171,13 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <div class="sp-partners-inner reveal">
  <span class="sp-partners-label">Backed by experience with</span>
  <div class="sp-partners-logos">
- <img src="images/logos/ChatGPT Image Mar 1, 2026, 07_42_30 PM.png" alt="BenzNinja" loading="lazy" style="height: 48px;">
- <img src="images/logos/ChatGPT Image Mar 1, 2026, 07_44_36 PM.png" alt="Microsoft for Startups" loading="lazy" style="height: 120px;">
- <img src="images/logos/ChatGPT Image Mar 1, 2026, 07_47_15 PM.png" alt="Web Summit" loading="lazy" style="height: 100px;">
- <img src="images/logos/Kuwait Ports Authority .png" alt="Kuwait Ports Authority" loading="lazy" style="height: 80px;">
- <img src="images/logos/Sabzland-Logo.png" alt="Sabzland" loading="lazy" style="height: 100px;">
- <img src="images/logos/Leap.png" alt="Leap" loading="lazy" style="height: 40px;">
- <img src="images/logos/BloomLink.png" alt="BloomLink" loading="lazy" style="height: 36px;">
+ <img src="images/logos/ChatGPT Image Mar 1, 2026, 07_42_30 PM.webp" alt="BenzNinja" loading="lazy" style="height: 48px;" width="200" height="164">
+ <img src="images/logos/ChatGPT Image Mar 1, 2026, 07_44_36 PM.webp" alt="Microsoft for Startups" loading="lazy" style="height: 120px;" width="320" height="213">
+ <img src="images/logos/ChatGPT Image Mar 1, 2026, 07_47_15 PM.webp" alt="Web Summit" loading="lazy" style="height: 100px;" width="320" height="213">
+ <img src="images/logos/Kuwait Ports Authority .webp" alt="Kuwait Ports Authority" loading="lazy" style="height: 80px;" width="260" height="177">
+ <img src="images/logos/Sabzland-Logo.webp" alt="Sabzland" loading="lazy" style="height: 100px;" width="320" height="213">
+ <img src="images/logos/Leap.webp" alt="Leap" loading="lazy" style="height: 40px;" width="200" height="133">
+ <img src="images/logos/BloomLink.webp" alt="BloomLink" loading="lazy" style="height: 36px;" width="300" height="100">
  </div>
  </div>
  </div>
@@ -211,7 +214,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  </a>
  </div>
  <div class="sp-service-visual">
- <img src="images/services%20images/1.webp" alt="Custom Software Development" style="width:100%;border-radius:var(--r-md);" loading="lazy">
+ <img src="images/services%20images/1.webp" alt="Custom Software Development" style="width:100%;border-radius:var(--r-md);height:auto;" loading="lazy" width="320" height="299">
  </div>
  </div>
  <div class="sp-service-quote reveal">
@@ -239,7 +242,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  </a>
  </div>
  <div class="sp-service-visual">
- <img src="images/services%20images/2.webp" alt="Cyber Security & Data" style="width:100%;border-radius:var(--r-md);" loading="lazy">
+ <img src="images/services%20images/2.webp" alt="Cyber Security & Data" style="width:100%;border-radius:var(--r-md);height:auto;" loading="lazy" width="320" height="297">
  </div>
  </div>
  <div class="sp-service-quote reveal">
@@ -279,7 +282,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  </a>
  </div>
  <div class="sp-service-visual">
- <img src="images/services%20images/3.webp" alt="AI Agents & Automations" style="width:100%;border-radius:var(--r-md);" loading="lazy">
+ <img src="images/services%20images/3.webp" alt="AI Agents & Automations" style="width:100%;border-radius:var(--r-md);height:auto;" loading="lazy" width="320" height="299">
  </div>
  </div>
  <div class="sp-service-quote reveal">
@@ -307,7 +310,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  </a>
  </div>
  <div class="sp-service-visual">
- <img src="images/services%20images/4.webp" alt="ERP & Enterprise Platforms" style="width:100%;border-radius:var(--r-md);" loading="lazy">
+ <img src="images/services%20images/4.webp" alt="ERP & Enterprise Platforms" style="width:100%;border-radius:var(--r-md);height:auto;" loading="lazy" width="320" height="312">
  </div>
  </div>
  <div class="sp-service-quote reveal">
@@ -428,9 +431,9 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
     </button>
     <div class="tspot-logos-viewport">
     <div class="tspot-logos" role="tablist" aria-label="Select client">
-     <button class="tspot-logo-btn active" id="tspot-btn-benzninja" data-index="0" role="tab" aria-selected="true" aria-controls="tspot-benzninja"><img src="images/logos/benz.webp" alt="BenzNinja" loading="lazy" class="tspot-benz-logo"></button>
-     <button class="tspot-logo-btn" id="tspot-btn-bloomslink" data-index="1" role="tab" aria-selected="false" aria-controls="tspot-bloomslink"><img src="images/logos/BloomLink.webp" alt="BloomsLink" loading="lazy"></button>
-     <button class="tspot-logo-btn" id="tspot-btn-edumersion" data-index="2" role="tab" aria-selected="false" aria-controls="tspot-edumersion"><img src="images/logos/eduimmersion.webp" alt="EduimMersion" loading="lazy" class="tspot-edu-logo logo-dark"><img src="images/logos/eduimmersion-light.webp" alt="EduimMersion" loading="lazy" class="tspot-edu-logo logo-light"></button>
+     <button class="tspot-logo-btn active" id="tspot-btn-benzninja" data-index="0" role="tab" aria-selected="true" aria-controls="tspot-benzninja"><img src="images/logos/benz.webp" alt="BenzNinja" loading="lazy" class="tspot-benz-logo" width="200" height="164"></button>
+     <button class="tspot-logo-btn" id="tspot-btn-bloomslink" data-index="1" role="tab" aria-selected="false" aria-controls="tspot-bloomslink"><img src="images/logos/BloomLink.webp" alt="BloomsLink" loading="lazy" width="400" height="133"></button>
+     <button class="tspot-logo-btn" id="tspot-btn-edumersion" data-index="2" role="tab" aria-selected="false" aria-controls="tspot-edumersion"><img src="images/logos/eduimmersion.webp" alt="EduimMersion" loading="lazy" class="tspot-edu-logo logo-dark" width="420" height="69"><img src="images/logos/eduimmersion-light.webp" alt="EduimMersion" loading="lazy" class="tspot-edu-logo logo-light" width="420" height="69"></button>
      <style>
       .tspot-logo-btn img.tspot-oms-logo{height:34px;width:auto;max-width:156px;object-fit:contain}
       .tspot-logo-btn img.logo-light{display:none}
@@ -438,8 +441,8 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
       [data-theme=light] .tspot-logo-btn img.logo-light{display:block}
      </style>
      <button class="tspot-logo-btn" id="tspot-btn-orical" data-index="3" role="tab" aria-selected="false" aria-controls="tspot-orical">
-      <img src="images/logos/oracle-merchant-services.webp" alt="Oracle Merchant Services" loading="lazy" class="tspot-oms-logo logo-dark">
-      <img src="images/logos/oracle-merchant-services-light.webp" alt="Oracle Merchant Services" loading="lazy" class="tspot-oms-logo logo-light">
+      <img src="images/logos/oracle-merchant-services.webp" alt="Oracle Merchant Services" loading="lazy" class="tspot-oms-logo logo-dark" width="420" height="102">
+      <img src="images/logos/oracle-merchant-services-light.webp" alt="Oracle Merchant Services" loading="lazy" class="tspot-oms-logo logo-light" width="420" height="98">
      </button>
     </div>
     </div>
@@ -663,19 +666,19 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  </div>
  <div class="footer-addresses">
  <div class="footer-address">
- <div class="footer-address-title"><img src="https://flagcdn.com/w20/sa.png" alt="Saudi Arabia Flag" width="20" height="15"> Saudi Arabia</div>
+ <div class="footer-address-title"><img alt="Saudi Arabia Flag" width="20" height="15" src="/images/flags/sa.webp" loading="lazy" decoding="async"> Saudi Arabia</div>
  <p>Prince Turki Bin Abdulaziz Al Awal Road,<br>Al Raed, Riyadh 12354</p>
  </div>
  <div class="footer-address">
- <div class="footer-address-title"><img src="https://flagcdn.com/w20/pk.png" alt="Pakistan Flag" width="20" height="15"> Pakistan</div>
+ <div class="footer-address-title"><img alt="Pakistan Flag" width="20" height="15" src="/images/flags/pk.webp" loading="lazy" decoding="async"> Pakistan</div>
  <p>Street 36 Silk Bank Plaza Lower Basement<br>WorkZone, Islamabad</p>
  </div>
  <div class="footer-address">
- <div class="footer-address-title"><img src="https://flagcdn.com/w20/gb.png" alt="United Kingdom Flag" width="20" height="15"> United Kingdom</div>
+ <div class="footer-address-title"><img alt="United Kingdom Flag" width="20" height="15" src="/images/flags/gb.webp" loading="lazy" decoding="async"> United Kingdom</div>
  <p>Office 63, Billingsgate Market,<br>London E14 5ST</p>
  </div>
  <div class="footer-address">
- <div class="footer-address-title"><img src="https://flagcdn.com/w20/us.png" alt="USA Flag" width="20" height="15"> USA</div>
+ <div class="footer-address-title"><img alt="USA Flag" width="20" height="15" src="/images/flags/us.webp" loading="lazy" decoding="async"> USA</div>
  <p>1111B S Governors Ave # 28375<br>Dover, DE 19904</p>
  </div>
  </div>

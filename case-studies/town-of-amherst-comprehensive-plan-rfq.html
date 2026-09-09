@@ -24,9 +24,6 @@
 <meta name="twitter:title" content="Comprehensive Plan RFQ, Town of Amherst, Croncore">
 <meta name="twitter:description" content="Inside a compliance-heavy municipal planning RFQ, and how Croncore built the winning response.">
 <meta name="twitter:image" content="https://www.croncore.com/images/case-studies/town-of-amherst-ny.webp">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="/images/favicons/favicon-96x96.png" sizes="96x96"/>
 <link rel="icon" type="image/svg+xml" href="/images/favicons/favicon.svg"/>
 <link rel="shortcut icon" href="/images/favicons/favicon.ico"/>
@@ -34,7 +31,15 @@
 <link rel="manifest" href="/images/favicons/site.webmanifest"/>
 <meta name="theme-color" content="#1d2433">
 <script>(function(){var t=localStorage.getItem('croncore-theme')||'light';if(t==='light')document.documentElement.setAttribute('data-theme','light');})()</script>
-<link rel="stylesheet" href="/css/styles.css?v=30">
+<!-- Preload hint so Cloudflare advertises the stylesheet in its 103 Early
+     Hints response; the download then overlaps the HTML itself. -->
+<link rel="preload" as="style" href="/css/styles.css?v=31">
+<link rel="stylesheet" href="/css/styles.css?v=31">
+ <!-- Self-hosted fonts (see @font-face at the top of css/styles.css).
+      Preload the two faces used above the fold so text paints in the real
+      typeface on first render instead of swapping in later. -->
+ <link rel="preload" as="font" type="font/woff2" href="/fonts/plus-jakarta-sans-latin.woff2" crossorigin>
+ <link rel="preload" as="font" type="font/woff2" href="/fonts/manrope-latin.woff2" crossorigin>
 <style>
 .rfp-case{--bg:oklch(0.984 0.004 255);--surface:oklch(0.999 0.002 255);--surface-2:oklch(0.966 0.006 255);--line:oklch(0.908 0.008 255);--line-soft:oklch(0.938 0.006 255);--ink:oklch(0.245 0.022 260);--ink-2:oklch(0.42 0.020 260);--ink-3:oklch(0.57 0.018 260);--dark:oklch(0.215 0.035 262);--dark-2:oklch(0.175 0.034 263);--dark-line:oklch(0.33 0.030 262);--on-dark:oklch(0.968 0.008 255);--on-dark-2:oklch(0.76 0.018 258);--on-dark-3:oklch(0.60 0.024 258);--accent:oklch(0.60 0.165 256);--accent-bright:oklch(0.72 0.155 248);--accent-deep:oklch(0.50 0.165 260);--accent-glow:oklch(0.60 0.165 256 / 0.20);--grad-blue:linear-gradient(120deg,oklch(0.52 0.17 264),oklch(0.62 0.165 252) 55%,oklch(0.74 0.15 244));--maxw:1180px;--gut:clamp(20px,5vw,64px);--r-sm:8px;--r-md:14px;--r-lg:22px;--shadow-sm:0 1px 2px oklch(0.2 0.02 60/0.05),0 2px 6px oklch(0.2 0.02 60/0.04);--shadow-md:0 4px 14px oklch(0.2 0.02 60/0.07),0 12px 34px oklch(0.2 0.02 60/0.07);--ease:cubic-bezier(0.22,1,0.36,1);font-family:'Manrope',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:17px;}
 .rfp-case h1,.rfp-case h2,.rfp-case h3{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-weight:600;line-height:1.04;letter-spacing:-0.02em;color:var(--ink);text-wrap:balance;}
@@ -57,7 +62,7 @@ html:not([data-theme="light"]) .rfp-stat.confirmed .big{color:var(--accent-brigh
 .rfp-btn:hover .arrow{transform:translate(4px,-4px);}
 .rfp-hero{position:relative;background:var(--dark);color:var(--on-dark);padding:150px 0 0;overflow:hidden;}
 .rfp-hero::before{content:"";position:absolute;inset:0;z-index:2;background:radial-gradient(900px 520px at 78% 8%,var(--accent-glow),transparent 60%),radial-gradient(700px 480px at 8% 92%,oklch(0.6 0.165 256/0.12),transparent 60%);pointer-events:none;}
-.rfp-hero-photo{position:absolute;inset:0;z-index:0;width:100%;height:100%;display:block;background-image:url("images/case-studies/town-of-amherst-ny.webp");background-size:cover;background-position:50% 40%;background-color:var(--dark);}
+.rfp-hero-photo{position:absolute;inset:0;z-index:0;width:100%;height:100%;display:block;background-image:url("/images/case-studies/town-of-amherst-ny.webp");background-size:cover;background-position:50% 40%;background-color:var(--dark);}
 .rfp-hero-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(104deg,oklch(0.205 0.035 262/0.82) 0%,oklch(0.205 0.035 262/0.55) 42%,oklch(0.205 0.035 262/0.22) 100%),linear-gradient(to bottom,oklch(0.205 0.035 262/0.65) 0%,transparent 22%,transparent 44%,var(--dark) 95%);}
 @media(max-width:720px){.rfp-hero{padding-top:100px;}.rfp-hero-photo{background-position:50% 20%;}.rfp-hero-shade{background:linear-gradient(180deg,oklch(0.205 0.035 262/0.92) 0%,oklch(0.205 0.035 262/0.82) 30%,oklch(0.205 0.035 262/0.88) 60%,var(--dark) 96%),linear-gradient(104deg,oklch(0.205 0.035 262/0.55),transparent 70%);}.rfp-hero h1{font-size:clamp(30px,8.4vw,40px);line-height:1.1;}.rfp-hero-sub{font-size:14.5px;}}
 .rfp-hero-grid{position:absolute;inset:0;z-index:3;background-image:radial-gradient(oklch(1 0 0/0.07) 1.4px,transparent 1.5px);background-size:30px 30px;mask-image:linear-gradient(to bottom,transparent,#000 18%,#000 78%,transparent);-webkit-mask-image:linear-gradient(to bottom,transparent,#000 18%,#000 78%,transparent);pointer-events:none;}
@@ -208,8 +213,8 @@ html:not([data-theme="light"]) .c-badge.high{background:oklch(0.40 0.08 55/0.35)
 <nav class="nav" id="navbar" role="navigation" aria-label="Primary navigation">
 <div class="container nav-inner">
 <a href="/" class="nav-brand" aria-label="Croncore Home">
-<img src="/images/croncore-logo.png" alt="Croncore" class="nav-brand-img logo-dark" width="56" height="56" loading="eager">
-<img src="/images/concore-logo-light-theme.png" alt="Croncore" class="nav-brand-img logo-light" width="56" height="56" loading="eager">
+<img src="/images/croncore-logo.webp" alt="Croncore" class="nav-brand-img logo-dark" width="502" height="120" loading="lazy" decoding="async">
+<img src="/images/concore-logo-light-theme.webp" alt="Croncore" class="nav-brand-img logo-light" width="511" height="120" loading="eager" fetchpriority="high" decoding="async">
 </a>
 <div class="nav-pill">
 <a href="/services" class="nav-link">Services</a>
@@ -493,19 +498,19 @@ html:not([data-theme="light"]) .c-badge.high{background:oklch(0.40 0.08 55/0.35)
  </div>
  <div class="footer-addresses">
  <div class="footer-address">
- <div class="footer-address-title"><img src="https://flagcdn.com/w20/sa.png" alt="Saudi Arabia Flag" width="20" height="15"> Saudi Arabia</div>
+ <div class="footer-address-title"><img alt="Saudi Arabia Flag" width="20" height="15" src="/images/flags/sa.webp" loading="lazy" decoding="async"> Saudi Arabia</div>
  <p>Prince Turki Bin Abdulaziz Al Awal Road,<br>Al Raed, Riyadh 12354</p>
  </div>
  <div class="footer-address">
- <div class="footer-address-title"><img src="https://flagcdn.com/w20/pk.png" alt="Pakistan Flag" width="20" height="15"> Pakistan</div>
+ <div class="footer-address-title"><img alt="Pakistan Flag" width="20" height="15" src="/images/flags/pk.webp" loading="lazy" decoding="async"> Pakistan</div>
  <p>Street 36 Silk Bank Plaza Lower Basement<br>WorkZone, Islamabad</p>
  </div>
  <div class="footer-address">
- <div class="footer-address-title"><img src="https://flagcdn.com/w20/gb.png" alt="United Kingdom Flag" width="20" height="15"> United Kingdom</div>
+ <div class="footer-address-title"><img alt="United Kingdom Flag" width="20" height="15" src="/images/flags/gb.webp" loading="lazy" decoding="async"> United Kingdom</div>
  <p>Office 63, Billingsgate Market,<br>London E14 5ST</p>
  </div>
  <div class="footer-address">
- <div class="footer-address-title"><img src="https://flagcdn.com/w20/us.png" alt="USA Flag" width="20" height="15"> USA</div>
+ <div class="footer-address-title"><img alt="USA Flag" width="20" height="15" src="/images/flags/us.webp" loading="lazy" decoding="async"> USA</div>
  <p>1111B S Governors Ave # 28375<br>Dover, DE 19904</p>
  </div>
  </div>
