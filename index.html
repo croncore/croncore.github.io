@@ -2,9 +2,11 @@
 <html lang="en" dir="ltr">
 
 <head>
- <!-- Analytics (deferred after page load) -->
+ <!-- Analytics: gtag.js + GTM (~490 KB of script) load on the first interaction,
+      or 5s after the load event for visitors who never interact, so they stay
+      off the main thread while the page is rendering. -->
 <script>
-window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});gtag('js',new Date());(function(){function l(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-J34ZPS4FTY';document.head.appendChild(s);gtag('config','G-J34ZPS4FTY');(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NFNLPH3H');}if(document.readyState==='complete'){l();}else{window.addEventListener('load',l);}})();
+window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});gtag('js',new Date());(function(){var done;function l(){if(done)return;done=1;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-J34ZPS4FTY';document.head.appendChild(s);gtag('config','G-J34ZPS4FTY');(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NFNLPH3H');}var E=['pointerdown','keydown','touchstart','scroll','mousemove'];function go(){E.forEach(function(e){removeEventListener(e,go,true);});l();}E.forEach(function(e){addEventListener(e,go,{capture:true,passive:true});});function arm(){setTimeout(go,5000);}if(document.readyState==='complete'){arm();}else{window.addEventListener('load',arm);}})();
 </script>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -135,17 +137,18 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <script>(function () { var t = localStorage.getItem('croncore-theme') || 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light'); })()</script>
 
  <!-- Stylesheet -->
- <!-- Content API queried by js/sanity.js; warm the connection early. -->
- <link rel="preconnect" href="https://b5z10ias.apicdn.sanity.io" crossorigin>
  <!-- Preload hint so Cloudflare advertises the stylesheet in its 103 Early
       Hints response; the download then overlaps the HTML itself. -->
- <link rel="preload" as="style" href="css/styles.css?v=31">
- <link rel="stylesheet" href="css/styles.css?v=31">
+ <link rel="preload" as="style" href="css/styles.css?v=32">
+ <link rel="stylesheet" href="css/styles.css?v=32">
  <!-- Self-hosted fonts (see @font-face at the top of css/styles.css).
-      Preload the two faces used above the fold so text paints in the real
-      typeface on first render instead of swapping in later. -->
+      Preload the faces used above the fold so text paints in the real
+      typeface on first render instead of swapping in later. JetBrains Mono
+      (hero terminal) is preloaded too: left to be discovered from the CSS it
+      is fetched at top priority behind the stylesheet, after every lazy image. -->
  <link rel="preload" as="font" type="font/woff2" href="/fonts/plus-jakarta-sans-latin.woff2" crossorigin>
  <link rel="preload" as="font" type="font/woff2" href="/fonts/manrope-latin.woff2" crossorigin>
+ <link rel="preload" as="font" type="font/woff2" href="/fonts/jetbrains-mono-latin.woff2" crossorigin>
 
  <style>
 /* ===== Hero Carousel ===== */
@@ -280,7 +283,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <div class="container nav-inner">
  <a href="/" class="nav-brand" aria-label="Croncore Home">
  <img src="images/croncore-logo.webp" alt="Croncore" class="nav-brand-img logo-dark" width="502" height="120" loading="lazy" decoding="async">
- <img src="images/concore-logo-light-theme.webp" alt="Croncore" class="nav-brand-img logo-light" width="511" height="120" loading="eager" fetchpriority="high" decoding="async">
+ <img src="images/concore-logo-light-theme.webp" srcset="images/concore-logo-light-theme-272.webp 272w, images/concore-logo-light-theme.webp 511w" sizes="(max-width: 768px) 136px, 153px" alt="Croncore" class="nav-brand-img logo-light" width="511" height="120" loading="eager" fetchpriority="high" decoding="async">
  </a>
  <div class="nav-pill">
  <a href="/services" class="nav-link">Services</a>
@@ -730,7 +733,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <!-- Card 1: Bezninja -->
  <article class="cs-card" data-category="agents" aria-label="Bezninja Case Study">
  <div class="cs-card-bg">
- <img src="images/case-studies/benzninja.webp" alt="Bezninja, Business Services Case Study" loading="lazy" width="800" height="1000">
+ <img src="images/case-studies/benzninja.webp" srcset="images/case-studies/benzninja-600.webp 600w, images/case-studies/benzninja.webp 800w" sizes="(max-width: 540px) 340px, 470px" alt="Bezninja, Business Services Case Study" loading="lazy" width="800" height="1000">
  </div>
  <a href="case-studies/autonomous-sales-agent-drives-record-revenue-growth" class="cs-card-link-overlay"
                                     aria-label="Read Bezninja case study"></a>
@@ -739,7 +742,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <!-- Card 2: Bloomlink -->
  <article class="cs-card" data-category="llm" aria-label="Bloomlink Case Study">
  <div class="cs-card-bg">
- <img src="images/case-studies/telco.webp" alt="Bloomlink, Telecom & Call Centers Case Study" loading="lazy" width="800" height="1000">
+ <img src="images/case-studies/telco.webp" srcset="images/case-studies/telco-600.webp 600w, images/case-studies/telco.webp 800w" sizes="(max-width: 540px) 340px, 470px" alt="Bloomlink, Telecom & Call Centers Case Study" loading="lazy" width="800" height="1000">
  </div>
  <a href="case-studies/sovereign-voice-engine-for-mongolia" class="cs-card-link-overlay"
                                     aria-label="Read Bloomlink case study"></a>
@@ -1279,9 +1282,19 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
    },{passive:true});
   }
   window.addEventListener('resize',function(){fitPanels();slideLogos();});
-  window.addEventListener('load',fitPanels);
-  fitPanels();
-  slideLogos();
+  /* Measuring the panels forces a synchronous layout of everything parsed so
+     far, and this script runs mid-parse, well before first paint. The section
+     sits far below the fold, so measure the first time it nears the viewport
+     (and again on load if that already happened, once fonts have settled). */
+  var measured=false;
+  function measure(){measured=true;fitPanels();slideLogos();}
+  if('IntersectionObserver' in window){
+   var io=new IntersectionObserver(function(en){if(en[0].isIntersecting){io.disconnect();measure();}},{rootMargin:'1000px 0px'});
+   io.observe(sec||track);
+   window.addEventListener('load',function(){if(measured)fitPanels();});
+  }else{
+   window.addEventListener('load',measure);
+  }
   bar.style.transition='none';
   bar.style.transform='translateX(0%)';
   requestAnimationFrame(function(){bar.style.transition='';});
@@ -1373,7 +1386,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <div class="rec-card">
  <div class="news-logo-container">
  <img src="images/Thenews-logo.svg" alt="The News International" class="news-logo-img"
-                                width="120" height="auto">
+                                width="120" height="38" loading="lazy" decoding="async">
  </div>
  <p class="rec-desc">The News International</p>
  </div>
@@ -1679,33 +1692,29 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  </div>
 
 
- <!-- Deferred media: images that live in the hidden carousel slide. They are
-      fetched once the page has loaded so they never compete with the resources
-      the first paint depends on. -->
- <script>
-    (function () {
-      function hydrate() {
-        document.querySelectorAll('img[data-src]').forEach(function (img) {
-          img.src = img.dataset.src;
-          img.removeAttribute('data-src');
-        });
-      }
-      if (document.readyState === 'complete') { setTimeout(hydrate, 0); }
-      else { window.addEventListener('load', function () { setTimeout(hydrate, 0); }); }
-    })();
-    </script>
-
  <!-- Hero Carousel -->
  <script>
     (function () {
       'use strict';
       var DURATION = 6000;
-      var slides, btns, cur, timer;
+      var slides, btns, cur, timer, preloadTimer;
       var userPaused = false;
       var hovering   = false;
       var elapsed    = 0;   // ms elapsed on current slide before last freeze
       var resumeAt   = 0;   // Date.now() when countdown last resumed (0 = not running)
       var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* Slide 2's images (~90 KB) carry data-src instead of src. They are
+         fetched shortly before that slide is first shown, or as soon as someone
+         interacts with the carousel, so they stay out of the page's initial
+         load instead of competing with the hero for bandwidth. */
+      var PRELOAD_LEAD = 2000;
+      function hydrate() {
+        document.querySelectorAll('.hero-carousel img[data-src]').forEach(function (img) {
+          img.src = img.dataset.src;
+          img.removeAttribute('data-src');
+        });
+      }
 
       function isFrozen() { return userPaused || hovering; }
 
@@ -1740,11 +1749,14 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
           var rem = Math.max(400, DURATION - elapsed);
           resumeAt = Date.now();
           timer = setTimeout(function () { goTo(cur + 1); }, rem);
+          clearTimeout(preloadTimer);
+          preloadTimer = setTimeout(hydrate, Math.max(0, rem - PRELOAD_LEAD));
         }
       }
 
       function goTo(i) {
         if (i === cur) return;
+        hydrate();
         slides[cur].classList.remove('active');
         btns[cur].classList.remove('active');
         setSlideVisibility(cur, false);
@@ -1798,6 +1810,9 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
 
         var carousel = document.querySelector('.hero-carousel');
         if (carousel) {
+          ['pointerenter', 'touchstart', 'focusin'].forEach(function (type) {
+            carousel.addEventListener(type, hydrate, { once: true, passive: true });
+          });
           carousel.addEventListener('mouseenter', function () {
             if (!hovering) { hovering = true; if (!userPaused) doFreeze(); }
           });
@@ -1823,10 +1838,6 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
     })();
     </script>
 
- <!-- JavaScript (deferred: parse off the main thread, execute in order after DOM is ready) -->
- <script defer src="js/sanity.js"></script>
- <script defer src="js/main.js?v=20"></script>
- <script defer src="js/a11y.js?v=2"></script>
 
  <!-- Float Buttons -->
  <div class="float-btns">
@@ -1841,7 +1852,40 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <svg class="float-btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
  </a>
  </div>
-<script defer src="js/consent.js?v=1"></script>
+ <!-- Site scripts, injected once the first contentful paint has been presented
+      instead of being fetched alongside the page. Nothing above the fold needs
+      them to render (the hero text is in that first paint), and downloading and
+      running them before it was the last thing holding back LCP on mobile.
+      async=false keeps them executing in this order (main.js expects sanity.js
+      to have run). The timeout is a backstop for when no paint entry arrives:
+      browsers without Paint Timing, and tabs opened in the background, for which
+      Chrome never reports a first paint. -->
+ <script>
+    (function () {
+      var done = false;
+      function load() {
+        if (done) return;
+        done = true;
+        ['js/sanity.js', 'js/main.js?v=21', 'js/a11y.js?v=2', 'js/consent.js?v=1'].forEach(function (src) {
+          var s = document.createElement('script');
+          s.src = src;
+          s.async = false;
+          document.body.appendChild(s);
+        });
+      }
+      try {
+        new PerformanceObserver(function (list, observer) {
+          if (list.getEntriesByName('first-contentful-paint').length) {
+            observer.disconnect();
+            setTimeout(load, 0);
+          }
+        }).observe({ type: 'paint', buffered: true });
+      } catch (e) {
+        requestAnimationFrame(function () { setTimeout(load, 0); });
+      }
+      setTimeout(load, 3000);
+    })();
+    </script>
 </body>
 
 </html>
