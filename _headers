@@ -1,5 +1,10 @@
+# Images are referenced by stable filenames, so `immutable` would pin stale
+# bytes at the edge for a year after any edit — replacing an image in place
+# would simply never reach visitors. Preferred practice is still to version
+# the filename when swapping an asset (e.g. 1.webp -> 1.v2.webp); this TTL is
+# the safety net for when that step is missed.
 /images/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
 
 /fonts/*
   Cache-Control: public, max-age=31536000, immutable
