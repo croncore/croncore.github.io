@@ -908,7 +908,9 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <h2>Request a Free Consultation</h2>
  <p>Tell us what you need and we'll match you with the right experts within 24 hours.</p>
 
- <form class="lp-form-grid" action="contact" method="get" id="lpHeroForm">
+ <form class="lp-form-grid" action="https://formspree.io/f/mlgwernn" method="POST" id="lpHeroForm">
+ <input type="hidden" name="source" value="AI Consulting landing page">
+ <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
  <div class="lp-form-field">
  <label for="lp-name">Name<span class="req">*</span></label>
  <input id="lp-name" type="text" name="name" placeholder="Your full name" required autocomplete="name">
@@ -925,6 +927,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  Submit Request
  <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
  </button>
+ <p class="lp-form-status" role="status" aria-live="polite" style="margin:0;font-size:.85rem"></p>
  <p class="lp-form-fineprint">By submitting this form, you agree to our <a href="terms">Terms of Service</a> and <a href="privacy-policy">Privacy Policy</a>.</p>
  </form>
  </aside>
@@ -1797,6 +1800,17 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  </a>
  </div>
 <script defer src="js/consent.js?v=2"></script>
+<script>
+/* Hero lead form: send to the same inbox as the contact form (it used to GET
+   /contact, which dropped the answers and put name/email in the URL). */
+(function(){var f=document.getElementById('lpHeroForm');if(!f||!window.fetch)return;
+f.addEventListener('submit',function(e){e.preventDefault();
+var b=f.querySelector('button[type=submit]'),s=f.querySelector('.lp-form-status'),label=b.innerHTML;
+b.disabled=true;b.textContent='Sending\u2026';s.textContent='';
+fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}}).then(function(r){if(!r.ok)throw new Error('send failed');
+f.reset();b.innerHTML=label;b.disabled=false;s.textContent='Thanks. Your request is in and we will get back to you within 24 hours.';})
+.catch(function(){b.innerHTML=label;b.disabled=false;s.textContent='Sorry, that did not send. Please try again or email info@croncore.com.';});});})();
+</script>
 </body>
 
 </html>

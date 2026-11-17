@@ -175,13 +175,13 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
 
  <div class="form-group">
  <label for="fullName" class="sr-only">Full Name</label>
- <input type="text" id="fullName" name="fullName" class="form-input" placeholder="Full Name *" required aria-required="true" aria-describedby="error-fullName">
+ <input type="text" id="fullName" name="fullName" autocomplete="name" class="form-input" placeholder="Full Name *" required aria-required="true" aria-describedby="error-fullName">
  <p id="error-fullName" class="form-error" role="alert">This field is required.</p>
  </div>
 
  <div class="form-group">
  <label for="email" class="sr-only">Email Address</label>
- <input type="email" id="email" name="email" class="form-input" placeholder="Email Address *" required aria-required="true" aria-describedby="error-email">
+ <input type="email" id="email" name="email" autocomplete="email" class="form-input" placeholder="Email Address *" required aria-required="true" aria-describedby="error-email">
  <p id="error-email" class="form-error" role="alert">Please enter a valid email address.</p>
  </div>
 
@@ -203,6 +203,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <p id="error-message" class="form-error" role="alert">This field is required.</p>
  </div>
 
+ <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
  <p class="form-privacy">
  We are committed to your privacy. Croncore uses the information you give us to contact you about our relevant content, products and services. For more information, see our <a href="privacy-policy">Privacy Policy</a>.
  </p>
@@ -421,7 +422,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
      trigger.className = 'sled-dd-trigger';
      trigger.setAttribute('aria-haspopup', 'listbox');
      trigger.setAttribute('aria-expanded', 'false');
-     trigger.innerHTML = '<span class="sled-dd-label' + (pinnedValue ? '' : ' sled-dd-placeholder') + '">' + (pinnedValue || placeholder) + '</span>' + CHEVRON_SVG;
+     trigger.innerHTML = '<span class="sr-only">Service: </span><span class="sled-dd-label' + (pinnedValue ? '' : ' sled-dd-placeholder') + '">' + (pinnedValue || placeholder) + '</span>' + CHEVRON_SVG;
 
      /* Panel */
      var panel = document.createElement('div');
@@ -563,7 +564,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
      trigger.className = 'sled-dd-trigger';
      trigger.setAttribute('aria-haspopup', 'listbox');
      trigger.setAttribute('aria-expanded', 'false');
-     trigger.innerHTML = '<span class="sled-dd-label">' + current + '</span>' + CHEVRON_SVG;
+     trigger.innerHTML = '<span class="sr-only">Country: </span><span class="sled-dd-label">' + current + '</span>' + CHEVRON_SVG;
 
      var panel = document.createElement('div');
      panel.className = 'sled-dd-panel';
@@ -764,7 +765,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
      var fullNameGroup = form.querySelector('[name="fullName"]').closest('.form-group');
      var companyDiv = document.createElement('div');
      companyDiv.className = 'form-group';
-     companyDiv.innerHTML = '<input type="text" name="companyName" class="form-input" placeholder="Company Name *" required><p class="form-error">This field is required.</p>';
+     companyDiv.innerHTML = '<label for="companyName" class="sr-only">Company Name</label><input type="text" id="companyName" name="companyName" autocomplete="organization" class="form-input" placeholder="Company Name *" required aria-required="true" aria-describedby="error-companyName"><p id="error-companyName" class="form-error" role="alert">This field is required.</p>';
      fullNameGroup.after(companyDiv);
 
      /* Replace Industry input with custom dropdown */
