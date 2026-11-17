@@ -139,8 +139,8 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
  <!-- Stylesheet -->
  <!-- Preload hint so Cloudflare advertises the stylesheet in its 103 Early
       Hints response; the download then overlaps the HTML itself. -->
- <link rel="preload" as="style" href="css/styles.css?v=32">
- <link rel="stylesheet" href="css/styles.css?v=32">
+ <link rel="preload" as="style" href="css/styles.css?v=33">
+ <link rel="stylesheet" href="css/styles.css?v=33">
  <!-- Self-hosted fonts (see @font-face at the top of css/styles.css).
       Preload the faces used above the fold so text paints in the real
       typeface on first render instead of swapping in later. JetBrains Mono
@@ -1866,7 +1866,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
       function load() {
         if (done) return;
         done = true;
-        ['js/sanity.js', 'js/main.js?v=21', 'js/a11y.js?v=2', 'js/consent.js?v=1'].forEach(function (src) {
+        ['js/sanity.js', 'js/main.js?v=22', 'js/a11y.js?v=2', 'js/consent.js?v=1'].forEach(function (src) {
           var s = document.createElement('script');
           s.src = src;
           s.async = false;
