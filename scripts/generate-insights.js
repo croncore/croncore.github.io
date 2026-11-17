@@ -509,7 +509,7 @@ function renderPostHtml(post) {
       if (m) cutFrom = m.index;
       html =
         html.slice(0, cutFrom) +
-        '\n    <!-- JavaScript -->\n    <script src="/js/main.js?v=22"></script>\n    <script defer src="/js/a11y.js?v=2"></script>\n    ' +
+        '\n    <!-- JavaScript -->\n    <script src="/js/main.js?v=23"></script>\n    <script defer src="/js/a11y.js?v=2"></script>\n    ' +
         html.slice(scriptEnd + '</script>'.length);
     }
   }

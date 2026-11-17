@@ -85,7 +85,11 @@
 
       /* Modal buttons */
       '.cc-modal-btns{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}',
-      '.cc-modal-btns .cc-btn{flex:1;padding:11px 20px;text-align:center}'
+      '.cc-modal-btns .cc-btn{flex:1;padding:11px 20px;text-align:center}',
+
+      /* Keyboard focus on the switches + larger tap targets on phones */
+      '.cc-switch input:focus-visible+.cc-track{outline:2px solid var(--accent,#00D4FF);outline-offset:2px}',
+      '@media(max-width:768px){.cc-btn{padding:12px 20px;min-height:44px}}'
     ].join('');
     document.head.appendChild(s);
   }
@@ -165,7 +169,7 @@
     el.setAttribute('aria-label', 'Cookie consent');
     el.setAttribute('aria-describedby', 'cc-banner-text');
     el.innerHTML =
-      '<p id="cc-banner-text" class="cc-text">We use cookies to understand how visitors use our site and improve performance. See our <a href="privacy-policy">Privacy Policy</a>.</p>' +
+      '<p id="cc-banner-text" class="cc-text">We use cookies to understand how visitors use our site and improve performance. See our <a href="/privacy-policy">Privacy Policy</a>.</p>' +
       '<div class="cc-actions">' +
         '<button class="cc-btn cc-btn-primary" id="cc-accept">Accept all</button>' +
         '<button class="cc-btn cc-btn-outline" id="cc-reject">Reject non-essential</button>' +
@@ -208,10 +212,10 @@
     overlay.innerHTML =
       '<div id="cc-panel">' +
         '<h2>Cookie Preferences</h2>' +
-        '<p id="cc-panel-desc">Essential cookies are always on. Choose which optional cookies you allow. See our <a href="privacy-policy">Privacy Policy</a>.</p>' +
+        '<p id="cc-panel-desc">Essential cookies are always on. Choose which optional cookies you allow. See our <a href="/privacy-policy">Privacy Policy</a>.</p>' +
         '<div class="cc-row"><div class="cc-row-info"><div class="cc-row-title">Essential</div><div class="cc-row-desc">Site navigation, security, theme preferences.</div></div><span class="cc-always-on">Always on</span></div>' +
-        '<div class="cc-row"><div class="cc-row-info"><div class="cc-row-title">Analytics</div><div class="cc-row-desc">Helps us understand how visitors use the site (Google Analytics 4).</div></div><label class="cc-switch"><input type="checkbox" id="cc-chk-a"' + (a ? ' checked' : '') + '><span class="cc-track"></span></label></div>' +
-        '<div class="cc-row"><div class="cc-row-info"><div class="cc-row-title">Advertising</div><div class="cc-row-desc">Used to measure ad effectiveness and personalization.</div></div><label class="cc-switch"><input type="checkbox" id="cc-chk-ads"' + (ads ? ' checked' : '') + '><span class="cc-track"></span></label></div>' +
+        '<div class="cc-row"><div class="cc-row-info"><div class="cc-row-title">Analytics</div><div class="cc-row-desc">Helps us understand how visitors use the site (Google Analytics 4).</div></div><label class="cc-switch"><input type="checkbox" id="cc-chk-a" aria-label="Analytics cookies"' + (a ? ' checked' : '') + '><span class="cc-track"></span></label></div>' +
+        '<div class="cc-row"><div class="cc-row-info"><div class="cc-row-title">Advertising</div><div class="cc-row-desc">Used to measure ad effectiveness and personalization.</div></div><label class="cc-switch"><input type="checkbox" id="cc-chk-ads" aria-label="Advertising cookies"' + (ads ? ' checked' : '') + '><span class="cc-track"></span></label></div>' +
         '<div class="cc-modal-btns">' +
           '<button class="cc-btn cc-btn-primary" id="cc-save">Save preferences</button>' +
           '<button class="cc-btn cc-btn-outline" id="cc-all">Accept all</button>' +
