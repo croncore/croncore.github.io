@@ -31,7 +31,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
 <meta name="twitter:image" content="https://www.croncore.com/images/concore-logo-light-theme.png">
 
 <!-- Preload LCP image -->
-<link rel="preload" as="image" href="images/capitol-dome.webp" fetchpriority="high">
+<link rel="preload" as="image" href="images/capitol-dome.webp" fetchpriority="high" media="(min-width:1001px)">
 <link rel="icon" type="image/png" href="images/favicons/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="images/favicons/favicon.svg" />
 <link rel="shortcut icon" href="images/favicons/favicon.ico" />
@@ -457,8 +457,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="sled-hero" aria-label="SLED Delivery Partner Hero">
 <!-- US map background, spans the whole hero as a faded watermark -->
 <div class="sled-map" aria-hidden="true">
- <img src="images/us-map.webp" alt="" class="sled-map-img sled-map-img--light" width="1200" height="697">
- <img src="images/us-map-dark.webp" alt="" class="sled-map-img sled-map-img--dark" width="1200" height="800">
+ <img src="images/us-map.webp" alt="" class="sled-map-img sled-map-img--light" loading="lazy" decoding="async" width="1200" height="697">
+ <img src="images/us-map-dark.webp" alt="" class="sled-map-img sled-map-img--dark" loading="lazy" decoding="async" width="1200" height="800">
 </div>
 <div class="container">
 <div class="sled-hero-grid">
@@ -473,7 +473,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <aside class="sled-hero-visual" aria-label="Sample SLED RFP">
  <!-- Capitol dome -->
- <img class="sled-capitol" src="images/capitol-dome.webp" alt="US Capitol building" fetchpriority="high" width="820" height="820">
+ <img class="sled-capitol" src="images/capitol-dome.webp" alt="US Capitol building" loading="lazy" decoding="async" width="820" height="820">
 
  <!-- Floating ACTIVE badge -->
  <div class="sled-active-badge" aria-hidden="true">
