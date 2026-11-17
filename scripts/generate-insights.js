@@ -152,6 +152,9 @@ const DECORATOR_TAGS = {
 // baked article links don't cost readers (and crawlers) an extra hop.
 function normalizeHref(href) {
   if (!href) return href;
+  href = String(href).trim();
+  // Only allow web, mail, phone, relative and in-page links (mirrors js/sanity.js).
+  if (!/^(https?:|mailto:|tel:|\/|#|\.\.?\/)/i.test(href)) return '#';
   return href.replace(/^https?:\/\/croncore\.com(\/|$)/i, 'https://www.croncore.com$1');
 }
 
@@ -263,11 +266,18 @@ function portableTextToHtml(blocks) {
   return html;
 }
 
-function portableTextToPlain(blocks, maxLen) {
+function portableTextToPlain(blocks, maxLen, skipHeadings) {
   if (!blocks || !blocks.length) return '';
   let out = '';
   for (let i = 0; i < blocks.length && out.length < (maxLen || 200); i++) {
     const b = blocks[i];
+    // For meta descriptions, start from the first paragraph, not a heading.
+    if (skipHeadings && /^h[1-6]$/.test(b.style || '')) continue;
+    if (skipHeadings && b._type === 'block' && b.children) {
+      // A short line with no closing punctuation is a heading typed as body text.
+      const line = b.children.map((c) => c.text || '').join('').trim();
+      if (line.length < 100 && !/[.!?:…"”)]$/.test(line)) continue;
+    }
     if (b._type === 'block' && b.children) {
       out += b.children.map((c) => c.text || '').join('') + ' ';
     }
@@ -289,7 +299,13 @@ function formatDateLong(iso) {
 }
 
 function renderPostHtml(post) {
-  const title = post.title || 'Untitled';
+  // Editors sometimes type the brand into the CMS title ("… | Croncore");
+  // strip it so it is not repeated in the H1, schema and <title>.
+  const title = (post.title || 'Untitled').replace(/\s*[|–—-]\s*Croncore\s*$/i, '').trim() || 'Untitled';
+  // Keep <title> within ~60 characters: drop the suffix when the title is long.
+  const pageTitle = (title + ' | Croncore Insights').length <= 60 ? title + ' | Croncore Insights'
+    : (title + ' | Croncore').length <= 60 ? title + ' | Croncore'
+    : title;
   const slug = post.slug;
   const canonicalUrl = SITE_URL + '/insights/' + encodeURIComponent(slug);
   const category = post.category || 'Insights';
@@ -299,7 +315,7 @@ function renderPostHtml(post) {
   const ogImageUrl = imageUrl(post.mainImage, {width: 1200, height: 630, fit: 'crop', quality: 80})
     || (SITE_URL + '/images/concore-logo-light-theme.png');
   const description = (post.excerpt && post.excerpt.trim())
-    || portableTextToPlain(post.body, 160)
+    || portableTextToPlain(post.body, 155, true)
     || ('Read ' + title + ' on Croncore Insights — expert analysis on AI, automation, and enterprise systems.');
   const publishedAt = post.publishedAt || '';
   const modifiedAt = post._updatedAt || publishedAt;
@@ -342,7 +358,7 @@ function renderPostHtml(post) {
   // ----- Build the new <head> block (server-rendered metadata) -----
   const headBlock = [
     '    <!-- Primary SEO (server-rendered at build time) -->',
-    '    <title>' + escapeHtml(title) + ' — Croncore Insights</title>',
+    '    <title>' + escapeHtml(pageTitle) + '</title>',
     '    <meta name="description" content="' + escapeAttr(description) + '">',
     '    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">',
     '    <meta name="author" content="' + escapeAttr(authorName) + '">',
@@ -500,13 +516,13 @@ function renderPostHtml(post) {
     const scriptEnd = html.indexOf('</script>', scriptStart);
     if (scriptEnd !== -1) {
       // Also strip the preceding sanity.js include since we don't need it.
-      const sanityIncludePattern = /\n\s*<!-- JavaScript -->\n\s*<script src="\/js\/sanity\.js"><\/script>/;
+      const sanityIncludePattern = /\n\s*<!-- JavaScript -->\n\s*<script src="\/js\/sanity\.js(?:\?v=\d+)?"><\/script>/;
       const m = html.slice(0, scriptStart).match(sanityIncludePattern);
       let cutFrom = scriptStart;
       if (m) cutFrom = m.index;
       html =
         html.slice(0, cutFrom) +
-        '\n    <!-- JavaScript -->\n    <script src="/js/main.js?v=21"></script>\n    ' +
+        '\n    <!-- JavaScript -->\n    <script src="/js/main.js?v=23"></script>\n    <script defer src="/js/a11y.js?v=2"></script>\n    ' +
         html.slice(scriptEnd + '</script>'.length);
     }
   }

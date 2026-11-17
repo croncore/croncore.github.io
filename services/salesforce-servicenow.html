@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
- <!-- Analytics (deferred after page load) -->
+ <!-- Analytics (Consent Mode default, deferred after page load) -->
 <script>
-(function(){function l(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-J34ZPS4FTY';document.head.appendChild(s);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag('js',new Date());gtag('config','G-J34ZPS4FTY');(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NFNLPH3H');}if(document.readyState==='complete'){l();}else{window.addEventListener('load',l);}})();
+window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});gtag('js',new Date());(function(){function l(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-J34ZPS4FTY';document.head.appendChild(s);gtag('config','G-J34ZPS4FTY');(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NFNLPH3H');}if(document.readyState==='complete'){l();}else{window.addEventListener('load',l);}})();
 </script>
 
  <meta charset="UTF-8">
@@ -74,8 +74,8 @@
  <!-- Stylesheet -->
  <!-- Preload hint so Cloudflare advertises the stylesheet in its 103 Early
       Hints response; the download then overlaps the HTML itself. -->
- <link rel="preload" as="style" href="/css/styles.css?v=32">
- <link rel="stylesheet" href="/css/styles.css?v=32">
+ <link rel="preload" as="style" href="/css/styles.css?v=34">
+ <link rel="stylesheet" href="/css/styles.css?v=34">
  <!-- Self-hosted fonts (see @font-face at the top of css/styles.css).
       Preload the two faces used above the fold so text paints in the real
       typeface on first render instead of swapping in later. -->
@@ -86,6 +86,8 @@
  <!-- Google Tag Manager (noscript) -->
  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFNLPH3H"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+ <a href="#main-content" class="skip-link">Skip to main content</a>
 
  <!-- Background layers -->
  <canvas id="neuralCanvas" aria-hidden="true"></canvas>
@@ -140,7 +142,7 @@
  <a href="/contact" class="btn btn-glow" style="margin-top:12px;">Contact Us</a>
  </div>
 
- <main>
+ <main id="main-content">
 
  <!-- ===== HERO ===== -->
  <section class="sp-hero">
@@ -604,7 +606,8 @@
  </div>
 
  <!-- JavaScript -->
- <script src="/js/main.js?v=21"></script>
+ <script src="/js/main.js?v=23"></script>
+ <script defer src="/js/a11y.js?v=2"></script>
 
  <!-- Float Buttons -->
  <div class="float-btns">
@@ -619,5 +622,6 @@
  <svg class="float-btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
  </a>
  </div>
+<script defer src="/js/consent.js?v=2"></script>
 </body>
 </html>

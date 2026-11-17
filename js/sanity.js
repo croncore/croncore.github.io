@@ -79,6 +79,13 @@
     }
 
     function escapeAttr(str) { return escapeHtml(str); }
+    // Only allow web, mail, phone, relative and in-page links from CMS content
+    // (blocks javascript:, data: and other script-capable schemes).
+    function safeHref(href) {
+        href = String(href || '').trim();
+        if (/^(https?:|mailto:|tel:|\/|#|\.\.?\/)/i.test(href)) return href;
+        return '#';
+    }
 
     var DECORATOR_TAGS = {
         'strong': 'strong',
@@ -105,7 +112,7 @@
             } else if (markDefs && markDefs[mark]) {
                 var def = markDefs[mark];
                 if (def._type === 'link') {
-                    var href = escapeAttr(def.href || '#');
+                    var href = escapeAttr(safeHref(def.href));
                     var rel = def.blank ? ' target="_blank" rel="noopener noreferrer"' : '';
                     openTags.push('<a href="' + href + '"' + rel + '>');
                     closeTags.unshift('</a>');

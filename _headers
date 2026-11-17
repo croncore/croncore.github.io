@@ -17,3 +17,24 @@
 
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
+
+# ---------- Security headers (all responses) ----------
+# No CSP yet: the site has ~90 inline scripts plus GTM, so an enforced policy
+# needs a nonce/hash pass first. These four are safe on a static site.
+/*
+  Strict-Transport-Security: max-age=15552000
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Cross-Origin-Opener-Policy: same-origin-allow-popups
+
+# ---------- Keep non-production hosts out of search ----------
+# The Pages default domain and branch previews are full copies of the site.
+# www.croncore.com is not matched by these rules, so production stays indexable.
+https://croncore.pages.dev/*
+  X-Robots-Tag: noindex, nofollow
+
+https://:branch.croncore.pages.dev/*
+  X-Robots-Tag: noindex, nofollow
+
+https://staging.croncore.com/*
+  X-Robots-Tag: noindex, nofollow
