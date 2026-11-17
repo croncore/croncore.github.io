@@ -66,11 +66,12 @@
 /case-study-ai-driven-materials-management-plan        /404.html  404
 
 # ---------- Repo internals: not part of the public site ----------
-# Pages serves every file in the repo root, so answer these with the 404 page.
-/studio/*          /404.html  404
-/scripts/*         /404.html  404
-/SANITY_SETUP.md   /404.html  404
-/.gitignore        /404.html  404
+# Pages serves every file in the repo root. A 404 rule does not override a
+# real file here (checked on a deploy), but a redirect does, so send these home.
+/studio/*          /  302
+/scripts/*         /  302
+/SANITY_SETUP.md   /  302
+/.gitignore        /  302
 
 # ---------- 404 fallback ----------
 # Anything that did not match above and is not a real file -> 404 page with HTTP 404
