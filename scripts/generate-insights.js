@@ -152,6 +152,9 @@ const DECORATOR_TAGS = {
 // baked article links don't cost readers (and crawlers) an extra hop.
 function normalizeHref(href) {
   if (!href) return href;
+  href = String(href).trim();
+  // Only allow web, mail, phone, relative and in-page links (mirrors js/sanity.js).
+  if (!/^(https?:|mailto:|tel:|\/|#|\.\.?\/)/i.test(href)) return '#';
   return href.replace(/^https?:\/\/croncore\.com(\/|$)/i, 'https://www.croncore.com$1');
 }
 
@@ -500,7 +503,7 @@ function renderPostHtml(post) {
     const scriptEnd = html.indexOf('</script>', scriptStart);
     if (scriptEnd !== -1) {
       // Also strip the preceding sanity.js include since we don't need it.
-      const sanityIncludePattern = /\n\s*<!-- JavaScript -->\n\s*<script src="\/js\/sanity\.js"><\/script>/;
+      const sanityIncludePattern = /\n\s*<!-- JavaScript -->\n\s*<script src="\/js\/sanity\.js(?:\?v=\d+)?"><\/script>/;
       const m = html.slice(0, scriptStart).match(sanityIncludePattern);
       let cutFrom = scriptStart;
       if (m) cutFrom = m.index;
