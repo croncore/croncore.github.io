@@ -163,7 +163,7 @@ html[data-theme=light] .cs-filter-btn.active{background:#2B6CC4;border-color:#2B
   /* 16px stops iOS Safari zooming the page when a field is focused */
   .form-input,.form-select,.form-textarea,.sled-dd-search{font-size:16px}
   /* Form toast: top of screen, clear of the fields and floating buttons */
-  .toast{top:88px;bottom:auto;left:16px;right:16px;transform:translateY(-140px)}
+  .toast{top:100px;bottom:auto;left:16px;right:16px;transform:translateY(-160px)}
   .toast.show{transform:translateY(0)}
 }
 /* Floating contact buttons must not sit on top of the open mobile menu */
