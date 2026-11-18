@@ -259,7 +259,22 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
 
 /* ===== Clutch stars override ===== */
 .trusted-stat--clutch .trusted-stat-stars svg{color:var(--accent);width:20px;height:20px}
-    </style>
+    /* Desktop layout: RFP card readable in front, Capitol behind it to the right
+   (same fix as the SLED page hero). */
+@media(min-width:1001px){
+.hero-slide--sled .sled-rfp-card{left:64px;max-width:400px}
+.hero-slide--sled .sled-capitol{z-index:1;max-width:460px}
+}
+@media(min-width:1400px){.hero-slide--sled .sled-capitol{right:-125px}}
+/* About: the text column also holds the stats grid, so centring put the
+   dashboard ~200px below the heading. Align both columns at the top. */
+@media(min-width:1025px){
+.about-grid{align-items:start}
+/* Stats sit in the text column in the markup; stretch them across both
+   columns (grid is 1.1fr 1fr with an 80px gap) as one row of four. */
+.about-stats-grid{grid-template-columns:repeat(4,1fr);width:calc(210% + 80px);margin-left:calc(-110% - 80px);margin-top:56px}
+}
+</style>
 </head>
 
 <body>
@@ -1866,7 +1881,7 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
       function load() {
         if (done) return;
         done = true;
-        ['js/sanity.js?v=2', 'js/main.js?v=23', 'js/a11y.js?v=2', 'js/consent.js?v=2'].forEach(function (src) {
+        ['js/sanity.js?v=2', 'js/main.js?v=23', 'js/a11y.js?v=2', 'js/consent.js?v=3'].forEach(function (src) {
           var s = document.createElement('script');
           s.src = src;
           s.async = false;
