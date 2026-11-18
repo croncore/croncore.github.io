@@ -359,7 +359,14 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
 @media(min-width:1001px){
 .sled-rfp-card{left:64px;max-width:400px}
 .sled-capitol{z-index:1;max-width:460px}
+}
+/* The card is decorative (pointer-events:none) but its button is a real link. */
 .sled-rfp-cta{pointer-events:auto}
+/* Phones/tablets: the Capitol used to sit on top of the stacked card and hide
+   its labels and button. It now stands below the card, on the hero's edge. */
+@media(max-width:1000px){
+.sled-hero-visual{padding-bottom:215px}
+.sled-capitol{top:auto;bottom:-40px;left:50%;transform:translateX(-50%);width:auto;max-width:none;height:240px;z-index:1}
 }
 @media(min-width:1400px){.sled-capitol{right:-125px}}
 </style>

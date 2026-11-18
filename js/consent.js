@@ -136,6 +136,9 @@
 
   function setPageInert(state) {
     var pc = document.querySelector('.page-content') || document.querySelector('main');
+    // Leave the page inert if the mobile menu is open (a11y.js owns that state).
+    var nav = document.getElementById('mobileNav');
+    if (!state && nav && nav.classList.contains('open')) return;
     if (pc) { state ? pc.setAttribute('inert', '') : pc.removeAttribute('inert'); }
   }
 
