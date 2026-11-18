@@ -164,8 +164,10 @@
     if (document.getElementById('cc-banner')) return;
     var el = document.createElement('div');
     el.id = 'cc-banner';
-    el.setAttribute('role', 'dialog');
-    el.setAttribute('aria-modal', 'true');
+    // Non-modal: the banner sits at the bottom and the page stays usable.
+    // (It used to mark the whole page inert, so first-time visitors could not
+    // click the menu or any link until they answered it.)
+    el.setAttribute('role', 'region');
     el.setAttribute('aria-label', 'Cookie consent');
     el.setAttribute('aria-describedby', 'cc-banner-text');
     el.innerHTML =
@@ -183,19 +185,11 @@
     // Push float buttons above the banner
     requestAnimationFrame(function () { setTimeout(pushFloatBtns, 50); });
 
-    // Focus first button
-    setTimeout(function () {
-      var first = el.querySelector('button');
-      if (first) first.focus();
-    }, 50);
-
-    // Focus trap + Esc
+    // Esc dismisses (as "reject") only while keyboard focus is inside the banner.
     el._keyHandler = function (e) {
-      if (e.key === 'Escape') { accept(false, false); return; }
-      trapFocus(el, e);
+      if (e.key === 'Escape' && el.contains(document.activeElement)) { accept(false, false); }
     };
     document.addEventListener('keydown', el._keyHandler);
-    setPageInert(true);
   }
 
   function showModal() {
