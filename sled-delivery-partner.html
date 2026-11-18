@@ -353,6 +353,33 @@ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(argu
 .sled-why-card .sled-why-num{font-family:var(--font-mono);font-size:.8rem;color:var(--accent);letter-spacing:.08em;margin-bottom:14px}
 .sled-why-card h3{font-size:1.05rem;font-weight:700;color:var(--text-primary);margin:0 0 10px}
 .sled-why-card p{font-size:.9rem;color:var(--text-secondary);line-height:1.65;margin:0}
+/* Desktop layout: the RFP card stays readable in front and the Capitol stands
+   behind it to the right (it used to sit centred on top of the card and hide
+   the labels and the button). Phones/tablets keep their own layout below. */
+@media(min-width:1001px){
+.sled-rfp-card{left:64px;max-width:400px}
+.sled-capitol{z-index:1;max-width:460px}
+}
+/* Headline line breaks: the blue phrase was forced onto one line, which left
+   a short 'partner for' line above a long one. Let it wrap with the rest and
+   balance the lines; 'pre-bid' never splits at its hyphen. */
+.sled-hero h1{text-wrap:balance}
+.sled-hero h1 .nb{white-space:nowrap}
+@media(min-width:1001px){
+.sled-hero h1 .text-glow{white-space:normal}
+/* keep 'partner for US public' on one line as the column narrows */
+.sled-hero h1{font-size:clamp(2.4rem,calc(5vw - 6px),3.5rem)}
+}
+@media(max-width:600px){.sled-hero h1{font-size:min(2.4rem,calc((100vw - 32px)/9.6))}}
+/* The card is decorative (pointer-events:none) but its button is a real link. */
+.sled-rfp-cta{pointer-events:auto}
+/* Phones/tablets: the Capitol used to sit on top of the stacked card and hide
+   its labels and button. It now stands below the card, on the hero's edge. */
+@media(max-width:1000px){
+.sled-hero-visual{padding-bottom:215px}
+.sled-capitol{top:auto;bottom:-40px;left:50%;transform:translateX(-50%);width:auto;max-width:none;height:240px;z-index:1}
+}
+@media(min-width:1400px){.sled-capitol{right:-125px}}
 </style>
 
 <!-- Schema.org - BreadcrumbList -->
@@ -464,7 +491,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="container">
 <div class="sled-hero-grid">
 <div>
-<h1>Croncore is a SLED pre-bid support partner for <span class="text-glow">US public sector primes.</span></h1>
+<h1>Croncore is a SLED <span class="nb">pre-bid</span> support partner for <span class="text-glow">US public sector primes.</span></h1>
 <p class="sled-lead">We help primes turn SLED opportunities into winnable bids, ready to submit, faster.</p>
 <div class="sled-hero-btns">
  <a href="contact?source=sled&amp;intent=team" class="btn btn-glow">Team with us on a bid<svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
@@ -1111,6 +1138,6 @@ if (firstFaq) {
  <svg class="float-btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
  </a>
 </div>
-<script defer src="js/consent.js?v=2"></script>
+<script defer src="js/consent.js?v=3"></script>
 </body>
 </html>
